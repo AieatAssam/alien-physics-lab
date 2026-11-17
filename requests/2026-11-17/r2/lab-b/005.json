@@ -1,0 +1,27 @@
+{
+  "request_id": "2026-11-17/r2/lab-b/005",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Free-flight edge test for species C: single C at (1,1) with speed 3.6 over 40 time units, many wall bounces including corner-adjacent reflections. Tests the free-flight model at high speed and long duration, and whether C has any self-force or drag.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          1.0,
+          1.0
+        ],
+        "vel": [
+          3.0,
+          2.0
+        ]
+      }
+    ],
+    "duration": 40.0,
+    "sample_dt": 0.1
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

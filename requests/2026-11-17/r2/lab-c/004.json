@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-17/r2/lab-c/004",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Replicate of round-1 003 (A-A) at 25x finer sampling. Tests determinism versus noise and resolves the close approach near t=1.4 that 0.1 sampling undersamples.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.0,
+          4.0
+        ],
+        "vel": [
+          1.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          7.0,
+          6.0
+        ],
+        "vel": [
+          -1.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 10.0,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

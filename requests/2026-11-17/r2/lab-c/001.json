@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-17/r2/lab-c/001",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Pair at rest, sep 3.0 along x, both species A. Sign test: attractive pair force accelerates them toward each other, repulsive away, none stays at rest. Round-1 003 showed a strong deflection at speed 1 with no rest-state control.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 10.0,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

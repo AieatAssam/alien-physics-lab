@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-17/r2/lab-c/005",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Pair at rest, sep 1.5, both species A. Probes the short-range force law: the at-rest acceleration at sep 1.5 vs sep 3.0 (001).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.25,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.75,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 10.0,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

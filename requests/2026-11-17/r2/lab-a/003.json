@@ -1,0 +1,14 @@
+{
+  "request_id": "2026-11-17/r2/lab-a/003",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "Wall test, y-direction (bottom wall). Single species-A particle from [5,2] moving -y at 1.0 reaches y=0 at t=2. Elastic reflection predicts y=2.0 at t=4; wall stop predicts y=0.0 at t=4; wrap-around predicts y=8.0 at t=4.",
+  "setup": {
+    "particles": [
+      {"species": "A", "pos": [5.0, 2.0], "vel": [0.0, -1.0]}
+    ],
+    "duration": 4.0,
+    "sample_dt": 0.05
+  },
+  "instruments": ["tracker", "census"]
+}

@@ -1,0 +1,16 @@
+{
+  "paper_id": "P-0001",
+  "lab": "lab-b",
+  "title": "Free flight of a lone species-A particle with specular wall reflection",
+  "claims": [
+    {
+      "claim_id": "P-0001-c1",
+      "statement": "A lone species-A particle (no other particle in the chamber) moves in a straight line at constant velocity and reflects specularly at the walls x = 0, 10 and y = 0, 10. Tracker positions deviate from this model with sd about 0.05 per coordinate, no drift over the run. Tested only for start (2, 2), velocity (1.0, 0.5), duration 10, one x-wall reflection; not tested for other species, speeds, durations, or corners.",
+      "domain": {"species": ["A"], "r_range": [0.0, 14.15], "max_particles": 1},
+      "predicted_error": 0.01,
+      "evidence": ["2026-11-17/r1/lab-b/001"]
+    }
+  ],
+  "cites": [],
+  "supersedes": []
+}

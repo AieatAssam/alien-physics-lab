@@ -1,0 +1,15 @@
+{
+  "request_id": "2026-11-17/r2/lab-a/004",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "Pair test. Moving species-A particle from [2,5] at +1.0 x and a stationary species-A particle at [6,5.5], closest approach 0.5 at t=4. Any pairwise deflection of the moving particle relative to the single-particle baseline (requests 2026-11-17/r1/lab-a/001-002) or displacement of the stationary particle beyond noise (control 006) indicates interaction. Repeated as 005.",
+  "setup": {
+    "particles": [
+      {"species": "A", "pos": [2.0, 5.0], "vel": [1.0, 0.0]},
+      {"species": "A", "pos": [6.0, 5.5], "vel": [0.0, 0.0]}
+    ],
+    "duration": 5.0,
+    "sample_dt": 0.05
+  },
+  "instruments": ["tracker", "census"]
+}

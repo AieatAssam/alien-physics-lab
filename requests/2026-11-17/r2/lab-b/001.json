@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-17/r2/lab-b/001",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Species dependence: A-A pair at rest, 2.0 apart, same geometry as round-1 A-B probe (002). If AA attracts like AB, the interaction is not species-pair specific. If inert, it is.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 10.0,
+    "sample_dt": 0.05
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

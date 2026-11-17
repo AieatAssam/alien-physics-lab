@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-17/r2/lab-b/003",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Distance dependence: A-B pair at rest, 1.0 apart. Tests whether the pair accelerates harder at short range and whether it still passes through.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          5.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 10.0,
+    "sample_dt": 0.05
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

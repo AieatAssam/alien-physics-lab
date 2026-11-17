@@ -1,0 +1,14 @@
+{
+  "request_id": "2026-11-17/r2/lab-a/001",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "Wall test, x-direction, speed 1. Single species-A particle from [2,5] moving +x at 1.0 reaches the x=10 wall at t=8. Discriminates elastic reflection (x returns to 6.0 at t=12), wall stop (x stays 10.0), and wrap-around (x = 4.0 at t=12). Repeated as 002.",
+  "setup": {
+    "particles": [
+      {"species": "A", "pos": [2.0, 5.0], "vel": [1.0, 0.0]}
+    ],
+    "duration": 12.0,
+    "sample_dt": 0.05
+  },
+  "instruments": ["tracker", "census"]
+}

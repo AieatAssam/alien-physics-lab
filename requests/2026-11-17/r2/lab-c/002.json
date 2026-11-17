@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-17/r2/lab-c/002",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Species dependence of the pair deflection: A-B with the identical initial conditions to round-1 003 (A-A). Tests whether the interaction depends on species pair.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.0,
+          4.0
+        ],
+        "vel": [
+          1.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          7.0,
+          6.0
+        ],
+        "vel": [
+          -1.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 10.0,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

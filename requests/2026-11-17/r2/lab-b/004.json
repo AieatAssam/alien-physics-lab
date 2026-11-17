@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-17/r2/lab-b/004",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Central-force test: A-B pair at rest, offset by (2.0, 0.5). If the force is central, the separation vector keeps its direction (atan(0.25) = 14.04 deg) while no wall is hit (duration 1.5 is before the first wall contact in 002).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          6.0,
+          5.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.5,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

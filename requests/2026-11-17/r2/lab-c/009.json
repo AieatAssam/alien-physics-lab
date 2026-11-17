@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-17/r2/lab-c/009",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Species dependence: C-C with the identical initial conditions to round-1 003 (A-A).",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          3.0,
+          4.0
+        ],
+        "vel": [
+          1.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          7.0,
+          6.0
+        ],
+        "vel": [
+          -1.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 10.0,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

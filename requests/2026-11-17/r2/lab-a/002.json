@@ -1,0 +1,14 @@
+{
+  "request_id": "2026-11-17/r2/lab-a/002",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "Exact repeat of 001 (x-wall test, speed 1) to confirm wall behaviour before trusting it.",
+  "setup": {
+    "particles": [
+      {"species": "A", "pos": [2.0, 5.0], "vel": [1.0, 0.0]}
+    ],
+    "duration": 12.0,
+    "sample_dt": 0.05
+  },
+  "instruments": ["tracker", "census"]
+}

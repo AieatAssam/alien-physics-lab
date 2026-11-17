@@ -1,0 +1,14 @@
+{
+  "request_id": "2026-11-17/r2/lab-a/006",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "Control for 004/005: stationary species-A particle at [6,5.5] alone. Tests whether a particle at rest drifts without a partner, so that any displacement in the pair run can be attributed to the partner.",
+  "setup": {
+    "particles": [
+      {"species": "A", "pos": [6.0, 5.5], "vel": [0.0, 0.0]}
+    ],
+    "duration": 5.0,
+    "sample_dt": 0.05
+  },
+  "instruments": ["tracker", "census"]
+}

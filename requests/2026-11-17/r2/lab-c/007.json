@@ -1,0 +1,27 @@
+{
+  "request_id": "2026-11-17/r2/lab-c/007",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Species C: single particle, same ICs as round-1 001, duration 100. Checks free motion and whether species C decays (census events) over many wall bounces. Round 1 did not test C or long durations.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          2.0,
+          5.0
+        ],
+        "vel": [
+          1.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 100.0,
+    "sample_dt": 0.05
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}
