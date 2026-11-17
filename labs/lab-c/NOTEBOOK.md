@@ -1,3 +1,3 @@
-# Scripted lab notebook
+# LAB-C notebook
 
-Round 3 on 2026-11-17.
+No entries yet.
