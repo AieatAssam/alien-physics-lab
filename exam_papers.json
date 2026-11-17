@@ -1,0 +1,21 @@
+[
+  {
+    "claims": [
+      {
+        "domain": {
+          "max_particles": 1,
+          "r_range": [
+            0.0,
+            14.15
+          ],
+          "species": [
+            "A"
+          ]
+        }
+      }
+    ],
+    "order": 1,
+    "paper_id": "P-0001",
+    "predicted_error": 0.01
+  }
+]

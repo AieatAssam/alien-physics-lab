@@ -1,0 +1,3 @@
+{"date": "2026-11-17", "evidence": ["2026-11-17/r2/lab-a/001", "2026-11-17/r2/lab-a/002", "2026-11-17/r2/lab-a/003"], "kind": "standing", "paper_id": "P-0001", "review_lab": "lab-a", "verdict": "replicated"}
+{"cause": "standing replication", "date": "2026-11-17", "evidence": ["2026-11-17/r2/lab-a/001", "2026-11-17/r2/lab-a/002", "2026-11-17/r2/lab-a/003"], "from": null, "paper_id": "P-0001", "to": "accepted"}
+{"cause": "submitted", "date": "2026-11-17", "evidence": [], "from": null, "paper_id": "P-0002", "to": "submitted"}
