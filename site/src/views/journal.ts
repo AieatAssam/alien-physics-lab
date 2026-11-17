@@ -41,6 +41,9 @@ export async function render(el: HTMLElement, _route: Route): Promise<Cleanup | 
   const body = el.querySelector<HTMLElement>("[data-body]")!;
   const empty = el.querySelector<HTMLElement>("[data-empty]")!;
   const filterGroup = el.querySelector<HTMLElement & { value: string }>("[data-filter]")!;
+  const markEnd = () => filterGroup.toggleAttribute("data-end", filterGroup.scrollLeft + filterGroup.clientWidth >= filterGroup.scrollWidth - 2);
+  filterGroup.addEventListener("scroll", markEnd, { passive: true });
+  requestAnimationFrame(markEnd);
 
   const draw = (filter: string): void => {
     const list = filter === "all" ? papers : papers.filter((p) => p.status === filter);

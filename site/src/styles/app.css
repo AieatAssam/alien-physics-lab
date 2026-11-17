@@ -75,9 +75,10 @@ ui-button, ui-toggle { display: inline-flex; max-width: 100%; }
 ui-select, ui-slider, ui-tabs, ui-meter, ui-progress { display: block; min-width: 0; }
 
 /* segmented control: the journal status filter */
-ui-segmented-control.journal-filter { position: relative; display: inline-flex; flex-wrap: wrap; gap: var(--space-3xs); max-width: 100%; padding: var(--space-2xs); border-radius: var(--radius-pill); background: var(--color-paper-2); box-shadow: inset 0 0 0 1px var(--color-rule-2); }
+ui-segmented-control.journal-filter { position: relative; display: inline-flex; flex-wrap: nowrap; gap: var(--space-3xs); max-width: 100%; overflow-x: auto; scrollbar-width: none; overscroll-behavior-x: contain; padding: var(--space-2xs); border-radius: var(--radius-pill); background: var(--color-paper-2); box-shadow: inset 0 0 0 1px var(--color-rule-2); }
 .journal-filter [data-slot="segmented-control-indicator"] { position: absolute; top: 0; left: 0; width: var(--segmented-control-indicator-width); height: var(--segmented-control-indicator-height); transform: translate(var(--segmented-control-indicator-left), var(--segmented-control-indicator-top)); border-radius: var(--radius-pill); background: var(--color-paper-3); box-shadow: inset 0 0 0 1px var(--color-rule-2); transition: transform var(--dur-micro) var(--ease-out); pointer-events: none; }
-.journal-filter ui-segmented-control-item { position: relative; z-index: 1; display: inline-flex; align-items: center; min-height: 44px; padding: 0 var(--space-md); border-radius: var(--radius-pill); font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-muted); cursor: pointer; user-select: none; }
+.journal-filter::-webkit-scrollbar { display: none; }
+.journal-filter ui-segmented-control-item { flex: none; white-space: nowrap; position: relative; z-index: 1; display: inline-flex; align-items: center; min-height: 44px; padding: 0 var(--space-md); border-radius: var(--radius-pill); font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-muted); cursor: pointer; user-select: none; }
 .journal-filter ui-segmented-control-item:hover { color: var(--color-ink); }
 .journal-filter ui-segmented-control-item[data-checked] { color: var(--color-ink); }
 
@@ -178,6 +179,8 @@ ui-slider:has([disabled]) [data-slot="slider-thumb"] { background: var(--color-m
 }
 .mono { font-family: var(--font-outlier); font-size: 13px; color: var(--color-ink-2); overflow-wrap: anywhere; }
 .row__title a { color: var(--color-ink); display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+@media (max-width: 720px) { .journal-filter { -webkit-mask-image: linear-gradient(to right, var(--color-ink) 80%, transparent); mask-image: linear-gradient(to right, var(--color-ink) 80%, transparent); } .journal-filter[data-end] { -webkit-mask-image: none; mask-image: none; } }
+@media (max-width: 720px) { .row__title a { white-space: normal; text-wrap: pretty; } }
 
 /* ---------- paper ---------- */
 .claim { display: grid; gap: var(--space-sm); min-width: 0; }
