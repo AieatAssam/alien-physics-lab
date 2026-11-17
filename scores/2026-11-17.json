@@ -1,0 +1,11 @@
+{
+  "coverage": 0.035,
+  "date": "2026-11-17",
+  "knowledge_index": 1.5,
+  "papers": {
+    "P-0001": {
+      "calibration": 3.7e-12,
+      "skill": 0.43
+    }
+  }
+}
