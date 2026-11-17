@@ -32,7 +32,7 @@ case "$harness" in
     limit "${timeout_min}m" claude -p "$prompt" --model "$model" --max-turns "$max_turns" \
       --permission-mode acceptEdits \
       --allowedTools "Read" "Write" "Edit" "Bash" "Glob" "Grep" \
-      --disallowedTools "WebFetch" "WebSearch"
+      --disallowedTools "WebFetch" "WebSearch" < /dev/null
     ;;
   codex)
     prompt=$(python3 agents/compose_round.py prompt --lab "$lab" --round "$round" --date "$date") || exit 1
