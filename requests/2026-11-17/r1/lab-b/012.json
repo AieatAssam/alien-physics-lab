@@ -29,9 +29,10 @@
       }
     ],
     "duration": 5.0,
-    "sample_dt": 0.5
+    "sample_dt": 0.1
   },
   "instruments": [
-    "tracker"
+    "tracker",
+    "census"
   ]
 }

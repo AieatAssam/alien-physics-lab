@@ -1,3 +1,3 @@
 # Scripted lab notebook
 
-Round 3 on 2026-11-17.
+Round 1 on 2026-11-17.

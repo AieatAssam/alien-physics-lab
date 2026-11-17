@@ -27,9 +27,6 @@
     "out-lab-b/requests/2026-11-17/r1/lab-b/010.json",
     "out-lab-b/requests/2026-11-17/r1/lab-b/011.json",
     "out-lab-b/requests/2026-11-17/r1/lab-b/012.json",
-    "out-lab-b/requests/2026-11-17/r1/lab-b/101.json",
-    "out-lab-b/requests/2026-11-17/r1/lab-b/102.json",
-    "out-lab-b/requests/2026-11-17/r1/lab-b/103.json",
     "out-lab-c/requests/2026-11-17/r1/lab-c/001.json",
     "out-lab-c/requests/2026-11-17/r1/lab-c/002.json",
     "out-lab-c/requests/2026-11-17/r1/lab-c/003.json",
@@ -41,12 +38,7 @@
     "out-lab-c/requests/2026-11-17/r1/lab-c/009.json",
     "out-lab-c/requests/2026-11-17/r1/lab-c/010.json",
     "out-lab-c/requests/2026-11-17/r1/lab-c/011.json",
-    "out-lab-c/requests/2026-11-17/r1/lab-c/012.json",
-    "out-lab-c/requests/2026-11-17/r1/lab-c/101.json",
-    "out-lab-c/requests/2026-11-17/r1/lab-c/102.json",
-    "out-lab-c/requests/2026-11-17/r1/lab-c/103.json",
-    "out-lab-b/reviews/P-0001/lab-b.json",
-    "out-lab-c/reviews/P-0001/lab-c.json"
+    "out-lab-c/requests/2026-11-17/r1/lab-c/012.json"
   ],
   "rejected": []
 }
