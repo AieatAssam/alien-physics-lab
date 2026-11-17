@@ -1,0 +1,121 @@
+{
+  "accepted": [
+    "out-lab-a/labs/lab-a/NOTEBOOK.md",
+    "out-lab-b/labs/lab-b/NOTEBOOK.md",
+    "out-lab-c/labs/lab-c/NOTEBOOK.md"
+  ],
+  "rejected": [
+    {
+      "path": "out-lab-c/requests/2026-11-17/r1/lab-c/001.json",
+      "reason": "request path does not match this round or lab"
+    },
+    {
+      "path": "out-lab-c/requests/2026-11-17/r1/lab-c/002.json",
+      "reason": "request path does not match this round or lab"
+    },
+    {
+      "path": "out-lab-c/requests/2026-11-17/r1/lab-c/003.json",
+      "reason": "request path does not match this round or lab"
+    },
+    {
+      "path": "out-lab-c/requests/2026-11-17/r1/lab-c/004.json",
+      "reason": "request path does not match this round or lab"
+    },
+    {
+      "path": "out-lab-a/requests/2026-11-17/r2/lab-a/001.json",
+      "reason": "request path does not match this round or lab"
+    },
+    {
+      "path": "out-lab-a/requests/2026-11-17/r2/lab-a/002.json",
+      "reason": "request path does not match this round or lab"
+    },
+    {
+      "path": "out-lab-a/requests/2026-11-17/r2/lab-a/003.json",
+      "reason": "request path does not match this round or lab"
+    },
+    {
+      "path": "out-lab-a/requests/2026-11-17/r2/lab-a/004.json",
+      "reason": "request path does not match this round or lab"
+    },
+    {
+      "path": "out-lab-a/requests/2026-11-17/r2/lab-a/005.json",
+      "reason": "request path does not match this round or lab"
+    },
+    {
+      "path": "out-lab-a/requests/2026-11-17/r2/lab-a/006.json",
+      "reason": "request path does not match this round or lab"
+    },
+    {
+      "path": "out-lab-a/requests/2026-11-17/r2/lab-a/007.json",
+      "reason": "request path does not match this round or lab"
+    },
+    {
+      "path": "out-lab-a/requests/2026-11-17/r2/lab-a/008.json",
+      "reason": "request path does not match this round or lab"
+    },
+    {
+      "path": "out-lab-a/requests/2026-11-17/r2/lab-a/009.json",
+      "reason": "request path does not match this round or lab"
+    },
+    {
+      "path": "out-lab-a/requests/2026-11-17/r2/lab-a/010.json",
+      "reason": "request path does not match this round or lab"
+    },
+    {
+      "path": "out-lab-a/requests/2026-11-17/r2/lab-a/011.json",
+      "reason": "request path does not match this round or lab"
+    },
+    {
+      "path": "out-lab-a/requests/2026-11-17/r2/lab-a/012.json",
+      "reason": "request path does not match this round or lab"
+    },
+    {
+      "path": "out-lab-b/requests/2026-11-17/r2/lab-b/001.json",
+      "reason": "request path does not match this round or lab"
+    },
+    {
+      "path": "out-lab-b/requests/2026-11-17/r2/lab-b/002.json",
+      "reason": "request path does not match this round or lab"
+    },
+    {
+      "path": "out-lab-b/requests/2026-11-17/r2/lab-b/003.json",
+      "reason": "request path does not match this round or lab"
+    },
+    {
+      "path": "out-lab-b/requests/2026-11-17/r2/lab-b/004.json",
+      "reason": "request path does not match this round or lab"
+    },
+    {
+      "path": "out-lab-b/requests/2026-11-17/r2/lab-b/005.json",
+      "reason": "request path does not match this round or lab"
+    },
+    {
+      "path": "out-lab-b/requests/2026-11-17/r2/lab-b/006.json",
+      "reason": "request path does not match this round or lab"
+    },
+    {
+      "path": "out-lab-b/requests/2026-11-17/r2/lab-b/007.json",
+      "reason": "request path does not match this round or lab"
+    },
+    {
+      "path": "out-lab-b/requests/2026-11-17/r2/lab-b/008.json",
+      "reason": "request path does not match this round or lab"
+    },
+    {
+      "path": "out-lab-b/requests/2026-11-17/r2/lab-b/009.json",
+      "reason": "request path does not match this round or lab"
+    },
+    {
+      "path": "out-lab-b/requests/2026-11-17/r2/lab-b/010.json",
+      "reason": "request path does not match this round or lab"
+    },
+    {
+      "path": "out-lab-b/requests/2026-11-17/r2/lab-b/011.json",
+      "reason": "request path does not match this round or lab"
+    },
+    {
+      "path": "out-lab-b/requests/2026-11-17/r2/lab-b/012.json",
+      "reason": "request path does not match this round or lab"
+    }
+  ]
+}
