@@ -87,7 +87,7 @@ jobs:
         run: docker build -t alien-sandbox tools/sandbox
       - name: Predict review and claim evidence
         run: |
-          mkdir -p out && chmod 777 out
+          mkdir -p out && chmod 777 out && touch out/.keep  # artifact must exist even with no papers
           docker run --rm --network none --read-only --tmpfs /tmp \
             --cpus 1 --memory 512m --pids-limit 128 \
             -v "$PWD:/repo:ro" -v "$PWD/out:/out" \
@@ -96,6 +96,7 @@ jobs:
         with:
           name: predictions
           path: out/
+          include-hidden-files: true
           retention-days: 7
 
   editor:
@@ -171,7 +172,7 @@ jobs:
         run: docker build -t alien-sandbox tools/sandbox
       - name: Predict exam setups
         run: |
-          mkdir -p out && chmod 777 out
+          mkdir -p out && chmod 777 out && touch out/.keep  # artifact must exist even with no papers
           docker run --rm --network none --read-only --tmpfs /tmp \
             --cpus 1 --memory 512m --pids-limit 128 \
             -v "$PWD:/repo:ro" -v "$PWD/exam-in:/exam:ro" -v "$PWD/out:/out" \
@@ -180,6 +181,7 @@ jobs:
         with:
           name: exam-predictions
           path: out/
+          include-hidden-files: true
           retention-days: 1
 
   exam-score:
