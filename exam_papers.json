@@ -1,1 +1,45 @@
-[]
+[
+  {
+    "claims": [
+      {
+        "domain": {
+          "max_particles": 2,
+          "r_range": [
+            0.75,
+            4.0
+          ],
+          "species": [
+            "A"
+          ]
+        }
+      },
+      {
+        "domain": {
+          "max_particles": 2,
+          "r_range": [
+            0.75,
+            4.0
+          ],
+          "species": [
+            "B"
+          ]
+        }
+      },
+      {
+        "domain": {
+          "max_particles": 2,
+          "r_range": [
+            0.75,
+            4.0
+          ],
+          "species": [
+            "C"
+          ]
+        }
+      }
+    ],
+    "order": 1,
+    "paper_id": "P-0001",
+    "predicted_error": 0.13500633333333334
+  }
+]

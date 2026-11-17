@@ -1,1 +1,4 @@
 {"cause": "submitted", "date": "2026-11-17", "evidence": [], "from": null, "paper_id": "P-0001", "to": "submitted"}
+{"date": "2026-11-17", "evidence": ["2026-11-17/r1/lab-b/101", "2026-11-17/r1/lab-b/102", "2026-11-17/r1/lab-b/103"], "kind": "standing", "paper_id": "P-0001", "review_lab": "lab-b", "verdict": "replicated"}
+{"date": "2026-11-17", "evidence": ["2026-11-17/r1/lab-c/101", "2026-11-17/r1/lab-c/102", "2026-11-17/r1/lab-c/103"], "kind": "standing", "paper_id": "P-0001", "review_lab": "lab-c", "verdict": "replicated"}
+{"cause": "standing replication", "date": "2026-11-17", "evidence": ["2026-11-17/r1/lab-b/101", "2026-11-17/r1/lab-b/102", "2026-11-17/r1/lab-b/103", "2026-11-17/r1/lab-c/101", "2026-11-17/r1/lab-c/102", "2026-11-17/r1/lab-c/103"], "from": "submitted", "paper_id": "P-0001", "to": "accepted"}
