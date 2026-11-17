@@ -1,0 +1,15 @@
+{
+  "accepted": [
+    "out-lab-redteam/labs/lab-redteam/NOTEBOOK.md"
+  ],
+  "rejected": [
+    {
+      "path": "out-lab-redteam/labs/lab-a/NOTEBOOK.md",
+      "reason": "not in the allow-list"
+    },
+    {
+      "path": "out-lab-redteam/.github/workflows/pwn.yml",
+      "reason": "anything under .github/ is not allowed"
+    }
+  ]
+}
