@@ -45,6 +45,7 @@ jobs:
   round1:
     needs: [date, config]
     uses: ./.github/workflows/round.yml
+    secrets: inherit  # env secrets still scoped by each job's environment
     with:
       date: ${{ needs.date.outputs.date }}
       round: 1
@@ -54,6 +55,7 @@ jobs:
   round2:
     needs: [date, config, round1]
     uses: ./.github/workflows/round.yml
+    secrets: inherit  # env secrets still scoped by each job's environment
     with:
       date: ${{ needs.date.outputs.date }}
       round: 2
@@ -63,6 +65,7 @@ jobs:
   round3:
     needs: [date, config, round2]
     uses: ./.github/workflows/round.yml
+    secrets: inherit  # env secrets still scoped by each job's environment
     with:
       date: ${{ needs.date.outputs.date }}
       round: 3

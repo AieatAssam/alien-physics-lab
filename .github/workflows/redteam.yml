@@ -11,6 +11,7 @@ permissions:
 jobs:
   round:
     uses: ./.github/workflows/round.yml
+    secrets: inherit  # env secrets still scoped by each job's environment
     with:
       date: redteam
       round: 1
