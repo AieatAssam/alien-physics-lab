@@ -1,0 +1,13 @@
+/* species and status tokens. The only glow on the site is canvas-side (replay.ts). */
+:root {
+  --species-A: oklch(82% 0.13 205); /* cyan */
+  --species-B: oklch(84% 0.15 140); /* green */
+  --species-C: oklch(76% 0.17 340); /* pink */
+  --species-D: oklch(88% 0.14 100); /* citron */
+  --species-E: oklch(74% 0.13 265); /* periwinkle */
+  --status-submitted: var(--color-muted);
+  --status-accepted: var(--color-live);
+  --status-contested: var(--color-accent);
+  --status-retracted: var(--color-accent-2);
+  --status-superseded: var(--color-rule-2);
+}

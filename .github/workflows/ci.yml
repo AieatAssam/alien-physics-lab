@@ -1,0 +1,38 @@
+# Checks on every push to main: schema and gate tests, leak check, site build.
+name: ci
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install test deps
+        run: python -m pip install jsonschema pyyaml numpy pytest
+      - name: Run tests
+        run: pytest -q tests
+      - name: Check for truth markers
+        run: python tools/leak_check.py .
+
+  site:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+      - name: Build site
+        run: |
+          npm --prefix site ci
+          npm --prefix site run build

@@ -1,0 +1,101 @@
+# Season reveal (manual). Publishes the true laws, scores the structure, tags the season.
+name: reveal
+
+on:
+  workflow_dispatch:
+    inputs:
+      season:
+        description: Season number to reveal
+        required: true
+        type: number
+
+concurrency:
+  group: season
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  reveal:
+    runs-on: ubuntu-latest
+    environment: physics
+    permissions:
+      contents: write
+    env:
+      SEASON_SEED: ${{ secrets.SEASON_SEED }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Load deploy key
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.UNIVERSE_DEPLOY_KEY }}
+      - name: Check out the private universe
+        run: git clone --depth 1 "git@github.com:${{ github.repository_owner }}/alien-physics-universe.git" _universe
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install physics deps
+        run: python -m pip install numpy jsonschema pyyaml
+      - name: Publish truth and reset ledgers
+        run: cd _universe && python -m universe.reveal --public .. --season "${{ inputs.season }}"
+      - name: Commit reveal and tag
+        run: |
+          tools/commit.sh "reveal: season ${{ inputs.season }}" seasons ledger
+          git tag "season-${{ inputs.season }}"
+          git push origin "season-${{ inputs.season }}"
+
+  judge:
+    needs: reveal
+    runs-on: ubuntu-latest
+    environment: agents
+    permissions:
+      contents: read
+    timeout-minutes: 90
+    env:
+      MODELS_CONFIG: ${{ vars.MODELS_CONFIG }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install Claude Code
+        run: npm install -g "@anthropic-ai/claude-code@${{ vars.CLAUDE_CODE_VERSION || 'latest' }}"
+      - name: Score structure
+        run: agents/judge.sh "${{ inputs.season }}"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: structural
+          path: out/
+          retention-days: 7
+          if-no-files-found: ignore
+
+  commit-structural:
+    needs: judge
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/download-artifact@v4
+        with:
+          name: structural
+          path: judged
+      - name: Copy the judge's single output file
+        run: cp "judged/seasons/${{ inputs.season }}/structural.json" "seasons/${{ inputs.season }}/structural.json"
+      - name: Commit structural score
+        run: |
+          tools/commit.sh "structural score: season ${{ inputs.season }}" "seasons/${{ inputs.season }}/structural.json"

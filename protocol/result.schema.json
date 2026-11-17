@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Experiment result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["request_id", "status", "cost", "budget_remaining"],
+  "properties": {
+    "request_id": {"$ref": "#/$defs/request_id"},
+    "status": {"enum": ["ok", "rejected"]},
+    "cost": {"type": "number", "minimum": 0},
+    "budget_remaining": {"type": "number"},
+    "reason": {"type": "string"},
+    "samples": {"type": "array", "items": {"$ref": "#/$defs/sample"}},
+    "events": {"type": "array", "items": {"$ref": "#/$defs/event"}}
+  },
+  "if": {"properties": {"status": {"const": "rejected"}}, "required": ["status"]},
+  "then": {"required": ["reason"]},
+  "$defs": {
+    "request_id": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}/r\\d+/lab-[a-z0-9-]+/\\d{3}$"},
+    "species": {"type": "string", "pattern": "^[A-E]$"},
+    "vec2": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "number"}},
+    "sample": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["t", "particles"],
+      "properties": {
+        "t": {"type": "number"},
+        "particles": {"type": "array", "items": {"$ref": "#/$defs/observed"}}
+      }
+    },
+    "observed": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id"],
+      "properties": {
+        "id": {"type": "integer", "minimum": 0},
+        "species": {"$ref": "#/$defs/species"},
+        "pos": {"$ref": "#/$defs/vec2"}
+      }
+    },
+    "event": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["t", "type", "id"],
+      "properties": {
+        "t": {"type": "number"},
+        "type": {"enum": ["vanish", "appear", "decay"]},
+        "id": {"type": "integer", "minimum": 0},
+        "into": {"type": "array", "items": {"$ref": "#/$defs/species"}}
+      }
+    }
+  }
+}

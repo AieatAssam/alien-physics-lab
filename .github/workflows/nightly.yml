@@ -1,0 +1,248 @@
+# Nightly season run: three rounds, then the editor, the exam, and the site.
+name: nightly
+
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: season
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  date:
+    runs-on: ubuntu-latest
+    permissions: {}
+    outputs:
+      date: ${{ steps.d.outputs.date }}
+    steps:
+      - id: d
+        run: echo "date=$(date -u +%F)" >> "$GITHUB_OUTPUT"
+
+  config:
+    runs-on: ubuntu-latest
+    permissions: {}
+    outputs:
+      labs: ${{ steps.c.outputs.labs }}
+      models: ${{ steps.c.outputs.models }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+      - id: c
+        env:
+          MODELS_CONFIG: ${{ vars.MODELS_CONFIG }}
+        run: |
+          cfg=${MODELS_CONFIG:-$(cat config/models.default.json)}
+          echo "models=$(jq -c . <<<"$cfg")" >> "$GITHUB_OUTPUT"
+          echo "labs=$(jq -c '.labs | keys' <<<"$cfg")" >> "$GITHUB_OUTPUT"
+
+  round1:
+    needs: [date, config]
+    uses: ./.github/workflows/round.yml
+    with:
+      date: ${{ needs.date.outputs.date }}
+      round: 1
+      labs: ${{ needs.config.outputs.labs }}
+      labs_json: ${{ needs.config.outputs.models }}
+
+  round2:
+    needs: [date, config, round1]
+    uses: ./.github/workflows/round.yml
+    with:
+      date: ${{ needs.date.outputs.date }}
+      round: 2
+      labs: ${{ needs.config.outputs.labs }}
+      labs_json: ${{ needs.config.outputs.models }}
+
+  round3:
+    needs: [date, config, round2]
+    uses: ./.github/workflows/round.yml
+    with:
+      date: ${{ needs.date.outputs.date }}
+      round: 3
+      labs: ${{ needs.config.outputs.labs }}
+      labs_json: ${{ needs.config.outputs.models }}
+
+  editor-predict:
+    needs: round3
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+      - name: Build sandbox image
+        run: docker build -t alien-sandbox tools/sandbox
+      - name: Predict review and claim evidence
+        run: |
+          mkdir -p out && chmod 777 out
+          docker run --rm --network none --read-only --tmpfs /tmp \
+            --cpus 1 --memory 512m --pids-limit 128 \
+            -v "$PWD:/repo:ro" -v "$PWD/out:/out" \
+            alien-sandbox python /repo/tools/predict_runner.py public --repo /repo --out /out
+      - uses: actions/upload-artifact@v4
+        with:
+          name: predictions
+          path: out/
+          retention-days: 7
+
+  editor:
+    needs: [date, editor-predict]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/download-artifact@v4
+        with:
+          name: predictions
+          path: pred
+      - name: Apply status machine
+        run: python tools/editor.py --repo . --date "${{ needs.date.outputs.date }}" --predictions pred
+      - name: Commit events and reputation
+        run: |
+          tools/commit.sh "editor: ${{ needs.date.outputs.date }}" events.jsonl reputation.json exam_papers.json papers reviews predictions
+
+  exam-setups:
+    needs: [date, editor]
+    runs-on: ubuntu-latest
+    environment: physics
+    permissions:
+      contents: read
+    env:
+      SEASON_SEED: ${{ secrets.SEASON_SEED }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+      - name: Load deploy key
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.UNIVERSE_DEPLOY_KEY }}
+      - name: Check out the private universe
+        run: git clone --depth 1 "git@github.com:${{ github.repository_owner }}/alien-physics-universe.git" _universe
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install physics deps
+        run: python -m pip install numpy jsonschema pyyaml
+      - name: Emit exam setups (never committed)
+        run: mkdir -p exam && cd _universe && python -m universe.exam setups --out "$GITHUB_WORKSPACE/exam/setups.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: exam-setups
+          path: exam/
+          retention-days: 1
+
+  exam-predict:
+    needs: [exam-setups, editor]
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: exam-setups
+          path: exam-in
+      - name: Build sandbox image
+        run: docker build -t alien-sandbox tools/sandbox
+      - name: Predict exam setups
+        run: |
+          mkdir -p out && chmod 777 out
+          docker run --rm --network none --read-only --tmpfs /tmp \
+            --cpus 1 --memory 512m --pids-limit 128 \
+            -v "$PWD:/repo:ro" -v "$PWD/exam-in:/exam:ro" -v "$PWD/out:/out" \
+            alien-sandbox python /repo/tools/predict_runner.py exam --repo /repo --setups /exam/setups.json --out /out
+      - uses: actions/upload-artifact@v4
+        with:
+          name: exam-predictions
+          path: out/
+          retention-days: 1
+
+  exam-score:
+    needs: [date, exam-predict]
+    runs-on: ubuntu-latest
+    environment: physics
+    permissions:
+      contents: write
+    env:
+      SEASON_SEED: ${{ secrets.SEASON_SEED }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Load deploy key
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.UNIVERSE_DEPLOY_KEY }}
+      - name: Check out the private universe
+        run: git clone --depth 1 "git@github.com:${{ github.repository_owner }}/alien-physics-universe.git" _universe
+      - uses: actions/download-artifact@v4
+        with:
+          name: exam-predictions
+          path: exam-preds
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install physics deps
+        run: python -m pip install numpy jsonschema pyyaml
+      - name: Score predictions against truth
+        run: cd _universe && python -m universe.score --public .. --date "${{ needs.date.outputs.date }}" --predictions "$GITHUB_WORKSPACE/exam-preds/predictions" --papers "$GITHUB_WORKSPACE/exam_papers.json"
+      - name: Commit scores
+        run: |
+          tools/commit.sh "scores: ${{ needs.date.outputs.date }}" scores
+
+  site:
+    needs: [date, exam-score]
+    if: always() && !cancelled()
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+      - name: Build data and site
+        run: |
+          python site/build_data.py --repo . --out site/public/data
+          npm --prefix site ci
+          npm --prefix site run build
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/dist
+      - id: deploy
+        uses: actions/deploy-pages@v4
