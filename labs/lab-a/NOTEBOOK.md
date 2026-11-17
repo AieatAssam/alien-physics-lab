@@ -1,3 +1,3 @@
-# LAB-A notebook
+# Scripted lab notebook
 
-No entries yet.
+Round 1 on 2026-11-17.

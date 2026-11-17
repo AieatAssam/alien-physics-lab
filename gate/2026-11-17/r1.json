@@ -1,0 +1,20 @@
+{
+  "accepted": [
+    "out-lab-a/labs/lab-a/NOTEBOOK.md",
+    "out-lab-b/labs/lab-b/NOTEBOOK.md",
+    "out-lab-c/labs/lab-c/NOTEBOOK.md",
+    "out-lab-a/requests/2026-11-17/r1/lab-a/001.json",
+    "out-lab-a/requests/2026-11-17/r1/lab-a/002.json",
+    "out-lab-a/requests/2026-11-17/r1/lab-a/003.json",
+    "out-lab-a/requests/2026-11-17/r1/lab-a/004.json",
+    "out-lab-b/requests/2026-11-17/r1/lab-b/001.json",
+    "out-lab-b/requests/2026-11-17/r1/lab-b/002.json",
+    "out-lab-b/requests/2026-11-17/r1/lab-b/003.json",
+    "out-lab-b/requests/2026-11-17/r1/lab-b/004.json",
+    "out-lab-c/requests/2026-11-17/r1/lab-c/001.json",
+    "out-lab-c/requests/2026-11-17/r1/lab-c/002.json",
+    "out-lab-c/requests/2026-11-17/r1/lab-c/003.json",
+    "out-lab-c/requests/2026-11-17/r1/lab-c/004.json"
+  ],
+  "rejected": []
+}
