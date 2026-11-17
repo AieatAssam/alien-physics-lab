@@ -2,10 +2,7 @@
   "accepted": [
     "out-lab-a/labs/lab-a/NOTEBOOK.md",
     "out-lab-b/labs/lab-b/NOTEBOOK.md",
-    "out-lab-c/labs/lab-c/NOTEBOOK.md",
-    "out-lab-a/papers/P-0001/model.py",
-    "out-lab-a/papers/P-0001/claim.json",
-    "out-lab-a/papers/P-0001/paper.md"
+    "out-lab-c/labs/lab-c/NOTEBOOK.md"
   ],
   "rejected": []
 }
