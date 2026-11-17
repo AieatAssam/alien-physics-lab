@@ -290,7 +290,29 @@ def quantise(v: Any, L: float) -> int:
     return max(0, min(QMAX, round(x / L * QMAX)))
 
 
-def to_track(samples: list[Any], L: float) -> dict | None:
+def particle_species(p: dict, id_species: dict[int, str]) -> str | None:
+    """Sample's own species if it has one (census), else the species known for its id, else None."""
+    if p.get("species") is not None:
+        return str(p["species"])
+    pid = num_or_none(p.get("id"))
+    return id_species.get(int(pid)) if pid is not None else None
+
+
+def id_species_map(req: dict, result: dict) -> dict[int, str]:
+    """Particle id -> species. Ids index the request's setup.particles; decay products get species from `appear` events."""
+    setup = req.get("setup") if isinstance(req.get("setup"), dict) else {}
+    ids = {i: str(p["species"]) for i, p in enumerate(setup.get("particles") or [])
+           if isinstance(p, dict) and p.get("species") is not None}
+    for e in result.get("events") if isinstance(result.get("events"), list) else []:
+        if not isinstance(e, dict) or e.get("type") != "appear" or num_or_none(e.get("id")) is None:
+            continue
+        into = e.get("into")
+        if isinstance(into, list) and into:
+            ids.setdefault(int(e["id"]), str(into[0]))
+    return ids
+
+
+def to_track(samples: list[Any], L: float, id_species: dict[int, str]) -> dict | None:
     rows = [s for s in samples if isinstance(s, dict) and num_or_none(s.get("t")) is not None]
     if not rows:
         return None
@@ -301,24 +323,25 @@ def to_track(samples: list[Any], L: float) -> dict | None:
     else:
         picks = list(range(n))
     chosen = [rows[i] for i in picks]
-    species = sorted({
-        str(p.get("species"))
+    particles = [
+        [p for p in (s.get("particles") or []) if isinstance(p, dict)]
         for s in chosen
-        for p in (s.get("particles") or [])
-        if isinstance(p, dict) and p.get("species") is not None
-    })
+    ]
+    names = {particle_species(p, id_species) for ps in particles for p in ps}
+    species = sorted(n for n in names if n is not None)
+    if None in names:
+        species.append("?")  # unknown ids share the last index
     sidx = {name: i for i, name in enumerate(species)}
     ts: list[float] = []
     frames: list[list[list[int]]] = []
-    for s in chosen:
-        ps = [p for p in (s.get("particles") or []) if isinstance(p, dict) and p.get("species") is not None]
+    for s, ps in zip(chosen, particles):
         ps.sort(key=lambda p: (num_or_none(p.get("id")) is None, num_or_none(p.get("id")) or 0.0))
         frame: list[list[int]] = []
         for p in ps:
             pos = p.get("pos")
             if not isinstance(pos, list) or len(pos) < 2:
                 continue
-            frame.append([sidx[str(p["species"])], quantise(pos[0], L), quantise(pos[1], L)])
+            frame.append([sidx[particle_species(p, id_species) or "?"], quantise(pos[0], L), quantise(pos[1], L)])
         ts.append(round(float(s["t"]), 4))
         frames.append(frame)
     return {"species": species, "t": ts, "frames": frames}
@@ -354,13 +377,14 @@ def build_replays(repo: Path, L: float) -> dict[str, dict]:
         result = read_json(rf, {})
         if not isinstance(result, dict) or result.get("status", "ok") != "ok":
             continue
-        samples = result.get("samples")
-        track = to_track(samples if isinstance(samples, list) else [], L)
-        if track is None:
-            continue
         req = read_json(repo / "requests" / f"{rel}.json", {})
         if not isinstance(req, dict):
             req = {}
+        id_species = id_species_map(req, result)
+        samples = result.get("samples")
+        track = to_track(samples if isinstance(samples, list) else [], L, id_species)
+        if track is None:
+            continue
         rid = str(result.get("request_id") or req.get("request_id") or rel)
         lab = str(req.get("lab") or (rel.split("/")[0] if "/" in rel else ""))
         t_end = track["t"][-1]
@@ -380,7 +404,7 @@ def build_replays(repo: Path, L: float) -> dict[str, dict]:
         if isinstance(pred_doc, dict):
             pred_samples = next((v for _, v in sorted(pred_doc.items()) if isinstance(v, list)), None)
         if pred_samples is not None:
-            ptrack = to_track(pred_samples, L)
+            ptrack = to_track(pred_samples, L, id_species)
             if ptrack is not None:
                 replay["prediction"] = {
                     "species": ptrack["species"],
@@ -476,9 +500,12 @@ def build(repo: Path, out: Path, repo_url: str) -> dict[str, int]:
             "experiments": [r for r in rids_sorted if replays[r]["lab"] == lab][-REPLAY_GALLERY_MAX:],
         }
 
+    # nights played: one per score date, or per result date while nothing is scored yet
+    score_dates = {s["date"] for s in scores}
+    night_count = len(score_dates) if score_dates else len(sorted_dirs(repo / "results", "*"))
     index = {
         "season": season.get("season"),
-        "night": season.get("night"),
+        "night": night_count,
         "difficulty": season.get("difficulty"),
         "repo_url": repo_url,
         "labs": lab_ids,

@@ -23,7 +23,7 @@ DEFAULT_SPECIES = ["A"]
 SEPS = [0.75, 1.5, 2.5, 4.0]
 REVIEW_FRAC = [0.25, 0.5, 0.75]
 PROBE_DURATION = 5.0
-SAMPLE_DT = 0.5
+SAMPLE_DT = 0.1
 L = 10.0  # chamber side, as in protocol/season.json; the fit and the reviewers read it from there
 MARGIN = 3.0
 N_GRID = [1.0 + 0.25 * i for i in range(11)]
@@ -102,7 +102,7 @@ def probe_setup(species, sep):
 
 def request(lab, date, rnd, seq, purpose, setup, account="research", cites=None):
     req = {"request_id": f"{date}/r{rnd}/{lab}/{seq:03d}", "lab": lab, "account": account,
-           "purpose": purpose, "setup": setup, "instruments": ["tracker"]}
+           "purpose": purpose, "setup": setup, "instruments": ["tracker", "census"]}
     if cites:
         req["cites_paper"] = cites
     return req

@@ -14,6 +14,9 @@ concurrency:
 
 jobs:
   round:
+    # round.yml's gate and sim jobs commit and need contents: write; a called workflow cannot exceed the caller's grant.
+    permissions:
+      contents: write
     uses: ./.github/workflows/round.yml
     secrets: inherit  # env secrets still scoped by each job's environment
     with:
