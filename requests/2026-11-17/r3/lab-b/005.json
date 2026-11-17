@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-17/r3/lab-b/005",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Long-range A-C: A at (3,5) and C at (7,5) at rest, 4.0 apart. Compare the early separation growth with r2/006 (sep 2.0) to estimate the distance dependence of the A-C repulsion.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          7.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 3.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

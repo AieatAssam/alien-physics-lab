@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-17/r3/lab-c/009",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Species pair at rest: B-C, r=2.0. Completes the 6-pair species matrix at r=2.",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          4.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          6.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.4,
+    "sample_dt": 0.0002
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

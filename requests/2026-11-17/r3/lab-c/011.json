@@ -1,0 +1,28 @@
+{
+  "request_id": "2026-11-17/r3/lab-c/011",
+  "lab": "lab-c",
+  "account": "review",
+  "cites_paper": "P-0001",
+  "purpose": "Review of P-0001 (lone species-A free flight with specular walls). Edge test: speed 3.36 (paper tested only speed 1), duration 100 (paper tested 10), y-wall hits (paper tested x-wall only). Predicted by P-0001 model.py.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          1.3,
+          2.7
+        ],
+        "vel": [
+          2.9,
+          -1.7
+        ]
+      }
+    ],
+    "duration": 100.0,
+    "sample_dt": 0.05
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

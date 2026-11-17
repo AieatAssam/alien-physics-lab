@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-17/r3/lab-b/001",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Species coverage B-B: two B particles at rest, 2.0 apart, same geometry as r2/001 (A-A). Same sign and timing as AA means same-sign attraction for B; repulsion or inertness means B-B is species-specific.",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          4.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          6.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 3.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

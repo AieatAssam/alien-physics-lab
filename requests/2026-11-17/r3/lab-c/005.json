@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-17/r3/lab-c/005",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Isotropy: A-A at rest, r=2.0 along y (x=5, y=4 and 6). Same separation as 001 but perpendicular to the wall-parallel axis.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          4.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          4.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.4,
+    "sample_dt": 0.0002
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

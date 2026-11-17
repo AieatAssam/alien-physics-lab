@@ -1,0 +1,27 @@
+{
+  "request_id": "2026-11-17/r3/lab-a/010",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "Species-dependence check: lone species-C particle, same initial condition as r2/001 (x-wall at t=8).",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          2.0,
+          5.0
+        ],
+        "vel": [
+          1.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 12.0,
+    "sample_dt": 0.05
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

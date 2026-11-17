@@ -1,0 +1,16 @@
+{
+  "paper_id": "P-0002",
+  "lab": "lab-b",
+  "title": "Free flight of a lone species-C particle over 40 time units with specular wall reflection",
+  "claims": [
+    {
+      "claim_id": "P-0002-c1",
+      "statement": "A lone species-C particle (no other particle in the chamber) moves in a straight line at constant velocity and reflects specularly at the walls x = 0, 10 and y = 0, 10, with no measurable drag or drift. Tested at speed 3.6, duration 40 (many wall bounces). Tracker residuals from the reflected-line model have sd about 0.05 per coordinate, with no drift across four 10-unit segments.",
+      "domain": {"species": ["C"], "r_range": [0.0, 14.15], "max_particles": 1},
+      "predicted_error": 0.01,
+      "evidence": ["2026-11-17/r2/lab-b/005"]
+    }
+  ],
+  "cites": ["P-0001"],
+  "supersedes": []
+}

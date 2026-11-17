@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-17/r3/lab-b/006",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Close-approach resolution and replicate: A-B at rest 1.0 apart, same geometry as r2/003 (dt 0.05, T 10), now dt 0.01 over T 1. Tests whether a central power law misses close-approach turnaround because of coarse sampling, and whether the same initial state reproduces r2/003 within noise.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          5.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

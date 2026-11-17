@@ -1,0 +1,28 @@
+{
+  "request_id": "2026-11-17/r3/lab-a/013",
+  "lab": "lab-a",
+  "account": "review",
+  "purpose": "Review of P-0001: exact corner hit. Lone species-A at (8,8) moving (3,3) reaches corner (10,10) at t=2/3; claim makes no corner statement.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          8.0,
+          8.0
+        ],
+        "vel": [
+          3.0,
+          3.0
+        ]
+      }
+    ],
+    "duration": 20.0,
+    "sample_dt": 0.05
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0001"
+}

@@ -1,0 +1,28 @@
+{
+  "request_id": "2026-11-17/r3/lab-a/014",
+  "lab": "lab-a",
+  "account": "review",
+  "purpose": "Review of P-0001: high speed (about 7.8) lone species-A, multiple wall reflections, claim speed range untested above 3.6.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          5.0
+        ],
+        "vel": [
+          6.0,
+          5.0
+        ]
+      }
+    ],
+    "duration": 30.0,
+    "sample_dt": 0.05
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0001"
+}

@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-17/r3/lab-c/002",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Force curve: A-A at rest, r=1.0 along x, short window 0.2 so the pair has not yet crossed. Gives the short-range acceleration.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.2,
+    "sample_dt": 0.0001
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

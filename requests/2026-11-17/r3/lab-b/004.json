@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-17/r3/lab-b/004",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Short-range A-C: A at (4.5,5) and C at (5.5,5) at rest, 1.0 apart, geometry of r2/003 (A-B). If the A-C repulsion holds at 1.0 it is monotonic in r over 1-2; if it attracts at short range the sign changes with distance and the A-C claim must be narrowed.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 3.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

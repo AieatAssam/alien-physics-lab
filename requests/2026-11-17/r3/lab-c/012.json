@@ -1,0 +1,28 @@
+{
+  "request_id": "2026-11-17/r3/lab-c/012",
+  "lab": "lab-c",
+  "account": "review",
+  "cites_paper": "P-0001",
+  "purpose": "Review of P-0001: corner test. Lone species-A particle on the exact diagonal (1,1) hits corner (10,10) at t=8 and corner (0,0) at t=18. Paper states corners are untested.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.0,
+          2.0
+        ],
+        "vel": [
+          1.0,
+          1.0
+        ]
+      }
+    ],
+    "duration": 20.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

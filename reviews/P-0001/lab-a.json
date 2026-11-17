@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0001",
+  "lab": "lab-a",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-17/r2/lab-a/001",
+    "2026-11-17/r2/lab-a/002",
+    "2026-11-17/r2/lab-a/003"
+  ],
+  "comment": "Partial review; edge tests are queued (2026-11-17/r3/lab-a/012-014, review credits, cites P-0001). Within the tested region the claim holds. Lone species-A particle, speed 1.0 (not 1.1), start (2,5) moving +x: tracker fit to the elastic-reflection model over 12 s, which includes one x=10 wall hit at t=8, has residual rms 0.048 and 0.055 in the two repeats (runs 001, 002). Post-impact x-velocity -0.988 and -0.999 (elastic predicts -1). Start (5,2) moving -y: elastic reflection at y=0 (t=2) fits with rms 0.046; post-impact y-velocity +0.986 (predicts +1). Wall-stop and wrap-around are rejected in both directions (rms 0.8 to 5.6). Noise sd about 0.05 per coordinate. Not tested here: the x=0 and y=10 walls, corners, durations above 12, speeds other than 1.0, other species, and the census (no events in 12 s). Verdict is replicated for the x=10 and y=0 walls only. I am not yet endorsing the corner or high-speed parts of the claim."
+}

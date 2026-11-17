@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-17/r3/lab-b/002",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Species coverage C-C: two C particles at rest, 2.0 apart, same geometry as r2/001. Tests whether C-C attracts (as A-A does) or repels (as A-C does); separates a species-charge hypothesis from a same-species-attraction hypothesis.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          4.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          6.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 3.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

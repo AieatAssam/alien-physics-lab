@@ -1,66 +1,103 @@
 # LAB-A notebook
 
-## Season 1 context
-- Chamber [0,10]^2. Species in use: A, B, C (`protocol/season.json`). L = 10.0, difficulty 2.
-- Budget: research 40 credits/day. No review credits used so far. No papers exist yet, so no reviews are due.
-- Unknowns: cost constant k (inferred, see below), tracker noise sigma (estimated), whether particles interact, whether species decay (census events), wall behaviour, whether free motion depends on species.
+Season 1, chamber [0,10]^2, species in use A, B, C (`protocol/season.json`), difficulty 2.
+Persona: cautious experimentalist. Every run is repeated before it is trusted.
 
-## Established so far
+## Budget ledger (2026-11-17)
+- Research allowance 40. Used 9.26 at start of round 3 (ledger). Round 2 results left 30.74 remaining.
+- Round 3 requests planned: 14.04 research. If all accepted and run, 16.70 remains for the next day.
+- Review allowance 15. Planned round 3 use: 6.00 (requests `r3/lab-a/012-014`, cite P-0001). Remaining after: 9.00.
 
-### Cost constant k (round 1, requests 2026-11-17/r1/lab-a/001 and 002)
-- Both runs: 1 particle, duration 5.0, cost 1.1 each.
-- Under the stated form cost = 1 + k * particles * duration: k = 0.02.
-- Caveat: one (particles, duration) pair only. The pair test in round 2 (2 particles, 5 s, expected cost 1.2) and the 12 s wall runs (expected 1.24) give independent checks of the linear form. Budget ledger agrees: research_used 2.2 after two runs of 1.1.
+## Established
 
-### Tracker noise (round 1, analysis in `out/labs/lab-a/analysis/fit_r1.py`)
-- Free straight-line fit of species-A particle, v = (1, 0), 101 samples over [0, 5].
-- Run 001: x = 2.0035 + 0.9983 t, y = 4.9954 + 0.0040 t. Residual sd x = 0.052, y = 0.045.
-- Run 002: x = 2.0048 + 0.9994 t, y = 5.0018 - 0.0024 t. Residual sd x = 0.050, y = 0.046.
-- Residual lag-1 autocorrelation within +/-0.1 in all four series: no visible structure, consistent with independent noise.
-- Run-to-run difference: mean dx = -0.004, dy = +0.009; per-measurement sd from differences /sqrt2: x = 0.050, y = 0.047. Consistent with pure measurement noise, with no run-to-run systematic difference detected.
-- Working estimate: tracker noise sd about 0.05 per coordinate, similar in x and y. Based on 2 runs x 101 samples in one geometry, so the uncertainty on the sd is roughly 0.004 in the sampling sense. It does not cover noise that varies with position, speed or species.
-- Fitted intercepts agree with the requested start (2, 5) to within about 0.01, so the noise appears zero-mean.
-- Fitted velocity = (1, 0) within 0.003 in both runs. Free motion over t <= 5 is straight-line within that tolerance.
+### Cost constant k = 0.02 (confirmed across four (particles, duration) combinations)
+- Formula `cost = 1 + k * N * T`, k = 0.02, matches every result so far:
+  - N=1, T=5: 1.10 (r1/001, r1/002, r2/006)
+  - N=2, T=5: 1.20 (r2/004, r2/005)
+  - N=1, T=4: 1.08 (r2/003)
+  - N=1, T=12: 1.24 (r2/001, r2/002)
+- Budget ledger matches result costs exactly.
 
-### Trajectory range in round 1
-- Particle never came closer than 2.0 to x = 2 or reached x = 7.02. No wall was reached, so no wall behaviour is known.
+### Tracker noise sd about 0.05 per coordinate (zero mean)
+- Round 1: residual sd 0.045-0.052 across four straight-line series (r1/001, r1/002).
+- Round 2 wall fits: residual rms 0.046-0.055 across the elastic-model fits (r2/001, 002, 003).
+- Pair repeats (r2/004 minus r2/005): difference sd 0.063-0.072 per coordinate. Pure noise predicts 0.05*sqrt2 = 0.071, so the repeats agree within noise.
+- Noise is assumed independent of position, speed and species. Only tested for species A, speed 1, short runs.
+
+### Walls (lone species-A, speed 1.0): elastic reflection, speed preserved
+- x = 10 wall, start (2,5) v (1,0) (r2/001, r2/002; 12 s, bounce at t=8):
+  - Elastic model rms 0.048 and 0.055. Wall-stop model rms 1.34 and 1.34. Wrap-around rms 3.73 and 3.74.
+  - Post-impact x-velocity -0.988 and -0.999 (elastic predicts -1). Pre-impact +0.9998 and +1.0002.
+  - Endpoint x(12) = 6.07 and 6.07, elastic predicts 6.0. (Note: the endpoint alone does not reject wall-stop; the full trajectory does.)
+- y = 0 wall, start (5,2) v (0,-1) (r2/003; 4 s, bounce at t=2):
+  - Elastic model rms 0.046. Wall-stop rms 0.83. Wrap-around rms 5.64.
+  - Post-impact y-velocity +0.986 (elastic predicts +1), intercept -1.96 (elastic -2).
+- Conclusion: for a lone species-A particle at speed 1, reflection is specular and speed is preserved, at both walls tested. Corners, x=0, y=10, speeds other than 1, and durations above 12 untested by me. P-0001 (lab-b) makes the same claim for lone A; see review below.
+
+### Pair interaction exists (H5 REFUTED). Two species-A particles attract at separation about 3
+- Pair run r2/004 and repeat r2/005: moving A from (2,5) v (1,0), stationary A at (6,5.5). Control r2/006 (stationary A alone) shows no drift (dx 0.015, dy -0.005, sd 0.05).
+- Repeat agreement: summary statistics agree within 0.05.
+- The stationary partner moves toward the moving particle from the start. The moving particle is pulled forward early:
+  - Its x-deviation from the free line 2+t: +0.04 at t=0.5 (separation about 3.4), +0.19 at t=0.75 (separation about 2.9), +0.5 at t=1.0 (separation 2.2).
+  - Closest encounter near separation 0.8 around t=1.5, followed by strong scattering. Both particles end up far from their free-line positions (moving particle y reaches 9.7 by t=5).
+- No census events. No species change in 5 s.
+- Free-motion model (no interaction) misses by rms 0.10-0.16; with a central attractive force the fit residual drops to 0.035 (about the noise of a pooled two-run mean). The interaction is real and repeatable.
+- What I did NOT establish: the force law. A central power-law fit (K/r^p, optional softening) is ill-conditioned on this data. Fits over t<=0.9, 1.0, 1.1 give p=2.7, 3.2, 3.4 with K ranging 23 to 100. I will not publish a force law from it.
+
+### Design error in my round-2 pair test (own it)
+- I planned "closest approach 0.5 at t=4" as if the stationary partner were inert until the moving particle arrived. That was wrong: the partner is attracted from separation about 3.5, so the encounter happened near t=1.5 at x about 5, not at t=4. The pair run is therefore an interaction-dominated run, not the clean "no interaction at 0.5" baseline I intended. The H5 test is decided by the result above, not by the planned geometry.
 
 ## Hypotheses (status)
-- H1 (ballistic free flight): supported only for t <= 5, x in [2, 7], speed 1, species A, one particle. Not yet tested to the walls. Round 2 tests the walls.
-- H2 (species does not change free motion): untested. Round 1 used only species A.
-- H3 (cost = 1 + k N T): consistent so far with one point. Round 2 gives 3 more cost points.
-- H4 (no decay): untested. Needs a long single-particle census run (planned for a later round, cost about 3 credits for 100 s).
-- H5 (no pairwise interaction at separation about 0.5): untested. Round 2 pair test.
-- H6 (wall reflection is elastic): untested. Round 2 walls. Competing: wall stop, wrap-around, speed change on impact.
+- H1 (lone-A ballistic free flight, species A, speed 1, short runs): supported (r1/001, 002; r2/001, 002).
+- H2 (species does not change free motion): untested for B and C. Requests r3/009, r3/010 (lone B and C, same initial condition as r2/001) will decide.
+- H3 (cost = 1 + k N T): supported. Four (N,T) combinations, k=0.02.
+- H4 (no decay): untested. Request r3/011 (lone A, 100 s, census) is the first long test.
+- H5 (no pairwise interaction at separation about 0.5): REFUTED. Attraction onset at separation about 3.5 for two species-A particles, scattering at separation about 0.8.
+- H6 (wall reflection is elastic): supported for lone A at speed 1 on the x=10 and y=0 walls. Wall-stop and wrap-around rejected.
+- H7 (new): pair attraction is central, depends on distance, and holds only for like species. Untested. Round 3 at-rest pairs (r3/001-008) map it.
 
-## Round 2 (2026-11-17) requests, research account
-All under `out/requests/2026-11-17/r2/lab-a/`. Expected cost in brackets. Total expected about 7.1 credits.
-- 001 (1.24): single A, [2,5], v (1,0), T = 12. Hits x = 10 at t = 8.
-  - Elastic reflection: x(12) = 6.0.
-  - Wall stop: x(12) = 10.0.
-  - Wrap-around: x(12) = 4.0.
-- 002 (1.24): exact repeat of 001.
-- 003 (1.08): single A, [5,2], v (0,-1), T = 4. Hits y = 0 at t = 2.
-  - Elastic reflection: y(4) = 2.0.
-  - Wall stop: y(4) = 0.0.
-  - Wrap-around: y(4) = 8.0.
-- 004 (1.20): pair. Moving A from [2,5] v (1,0), stationary A at [6,5.5]. Closest approach 0.5 at t = 4. The moving particle's y should stay at 5.0 (baseline), and the stationary one should stay at (6, 5.5).
-- 005 (1.20): exact repeat of 004.
-- 006 (1.10): control. Stationary A alone at [6,5.5]. Used to check drift without a partner.
+## Round 3 (2026-11-17): requests submitted, results pending
+All under `out/requests/2026-11-17/r3/lab-a/`. Expected cost in brackets.
+
+Research:
+- 001, 002 (1.04 each): at-rest pair of A at (2,5) and (5,5), separation 3.0, T=1.0. Short duration to stay short of contact. Repeat.
+- 003, 004 (1.08 each): at-rest pair, separation 4.0, T=2.0. Repeat.
+- 005, 006 (1.08 each): at-rest pair, separation 5.0, T=2.0. Repeat.
+- 007, 008 (1.08 each): at-rest pair, separation 6.0, T=2.0. Repeat.
+  - Predicted displacement per particle over T if a central attraction K/r^p with the round-2 fit (K=23, p=2.7) holds: about 0.5 for separation 4 at T=2, about 0.3 for separation 5. These are above the 0.05 noise over 100 samples.
+  - Decision rule: the displacement-vs-separation curve gives a force-vs-distance estimate. If the four separations give a monotone curve with repeats agreeing, I will fit it and publish a narrow pair claim.
+- 009, 010 (1.24 each): lone species-B and species-C particle, same initial condition as r2/001 (x-wall at t=8). Decides H2 across species.
+- 011 (3.00): lone species-A, 100 s, census. Decides H4 (decay). Also long free flight with multiple reflections.
+
+Review (account review, cites_paper P-0001, lab-b's lone-particle wall claim; domain max_particles 1, species A):
+- 012 (3.00): 100 s lone A from (1,8) v (3.6,-2.1), many reflections. Tests P-0001 for duration and speed. Note: the claim states the model; I compare to its `model.py` predictor.
+- 013 (1.40): exact corner hit: A from (8,8) v (3,3), corner at t=2/3. Tests reflection at corners.
+- 014 (1.60): high speed about 7.8, A from (5,5) v (6,5), 30 s. Tests P-0001 above speed 3.6.
+
+Analysis code: `out/labs/lab-a/analysis/` (fit_r2.py, pair_accel_r2.py, pair_fit_r2.py, make_round3_requests.py).
+
+## Review of P-0001 (lab-b): replicated, partial
+- `out/reviews/P-0001/lab-a.json`: verdict replicated, evidence r2/001-003.
+- Scope: x=10 and y=0 walls for lone A at speed 1.0. I did not endorse the corner or high-speed parts. Round 3 requests 012-014 will test those and I will update or amend the review then.
+- Noted for lab-b: their pair probe (A-B) shows strong interaction; that matches the A-A attraction above. Their claim's max_particles=1 keeps it clear of the pair physics.
 
 ## Plan and decision rules
-1. Wall result (001/002/003). If both repeats agree on one of the three wall models, the reflection/stop/wrap outcome is recorded. Only then is a free-flight claim worth publishing, because a claim with species and count only (the claim domain has no duration or speed field) would be scored against wall-touching exam setups.
-2. Pair result (004/005 against 006 and the round 1 baseline). If the stationary A is displaced more than about 0.1 from (6, 5.5) in a repeat-consistent way, or the moving particle's y deviates from 5.0 by more than about 0.1 near t = 4, I call it interaction. If not, I narrow the claim to "no interaction detected at separation >= 0.5 for species A, 2 particles".
-3. No paper this round. Publishing a claim that the scorer can't restrict to the tested time range would be overreach. I will publish P-0001 in the next session, after the wall results are read.
-4. Next round candidates, to decide after results: species B and C single-particle free motion at the round 1 ICs (cost 1.1 each), a 100 s single-A census run for decay (cost about 3.0), and a same-species pair at larger separation for the distance dependence of any interaction.
+1. Next session, read r3/001-008 (pair series). Compute displacement per particle over T for each separation, repeats first. If repeats disagree beyond noise (sd about 0.07 on pooled difference), treat that separation as unresolved.
+2. Publish a pair claim only with a narrow domain: species A, 2 particles, separation range supported by data, time range supported by data. The predictor must not extrapolate past contact. Target paper P-0002 (P-0001 is taken). Draft after r3/001-008 are read.
+3. If r3/009-010 show B or C free flight matches A, claim species-independence of free motion for speed 1 at the round-1 start. If not, name the species dependence.
+4. If r3/011 (100 s census) shows any decay event, record its time and species transition before publishing anything about decay. No event in 100 s at 1000 samples (dt 0.1) would support "no decay for lone A over 100 s at speed about 1" only.
+5. Review 012-014 against P-0001's `model.py` predictor: compute residual rms, compare to 3*predicted_error (0.03 chamber units). Verdict replicated, narrowed, or falsified accordingly.
+6. Budget after round 3 (if all run): 16.70 research, 9.00 review.
 
 ## What would change my mind
-- If the wall runs give a speed change after impact, then the model is not simple specular reflection and the claim must name it.
-- If 004 and 005 disagree with each other beyond noise, I treat pair effects as unresolved, not as evidence either way.
-- If the control 006 drifts, the baseline for the pair run is no longer the single-particle fit.
+- If the at-rest pair displacements are not monotone in separation, the force is not a simple central function of distance. I would then stop describing a force and report only the observations.
+- If r3/011 shows census events, the apparent no-decay evidence from short runs is not enough for any claim.
+- If r3/009 or 010 deviate from the A-wall result (x-wall at t=8, same initial condition), species matters for walls, and H2 and H6 must be stated per species.
+- If repeats (r3/001 vs 002, etc.) disagree beyond noise, the effect size is not reproducible and I treat that measurement as inconclusive.
 
 ## Self-criticism
-- Everything so far is one speed (1.0), one direction (+x), one species (A), and one start point. A law that is zero here can hide speed, direction or species dependence.
-- The noise estimate comes from a single geometry and was checked only in x and y over t <= 5. It should not be quoted as a global noise level.
-- k = 0.02 rests on one cost measurement under an assumed linear form. I will call it "consistent with" until more cost points agree.
-- Budget is 37.8 credits remaining before round 2. After round 2 about 30.7 credits remain for the decay and species tests.
+- The pair data are from one geometry (both particles on the line y about 5, moving partner at speed 1 along +x). Attraction direction and strength could depend on the velocity direction of the moving particle. The at-rest series is designed to remove that.
+- I chose an interaction test whose geometry I did not check against the free-motion prediction. The planned H5 test could not have decided the question as designed. Future geometry: at-rest pairs first, then moving.
+- The k=0.02 cost value rests on four distinct (N, T) pairs. Good, but still no check at N=16.
+- The noise estimate covers species A at speed 1 only. It is not a global noise level.
+- My review of P-0001 is partial and uses walls only. I did not test corners or speeds. Do not read the verdict as covering the full claim.

@@ -1,0 +1,28 @@
+{
+  "request_id": "2026-11-17/r3/lab-a/012",
+  "lab": "lab-a",
+  "account": "review",
+  "purpose": "Review of P-0001 (lab-b): lone species-A over 100 s with many reflections at speed about 4 (claim tested only to 10 s at speed 1.1).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          1.0,
+          8.0
+        ],
+        "vel": [
+          3.6,
+          -2.1
+        ]
+      }
+    ],
+    "duration": 100.0,
+    "sample_dt": 0.05
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0001"
+}
