@@ -65,7 +65,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: out-${{ matrix.lab }}
+          name: out-r${{ inputs.round }}-${{ matrix.lab }}  # unique per round: all rounds share one run
           path: out/
           include-hidden-files: true
           retention-days: 7
@@ -88,8 +88,13 @@ jobs:
         run: python -m pip install jsonschema
       - uses: actions/download-artifact@v4
         with:
-          pattern: out-*
-          path: artifacts
+          pattern: out-r${{ inputs.round }}-*
+          path: artifacts-raw
+      - name: Strip round prefix (gate expects out-<lab>)
+        run: |
+          mkdir -p artifacts
+          for d in artifacts-raw/out-r${{ inputs.round }}-*; do [ -d "$d" ] && mv "$d" "artifacts/out-${d##*/out-r${{ inputs.round }}-}"; done
+          true
       - name: Validate and copy accepted files
         run: python tools/gate.py --artifacts artifacts --repo . --date "${{ inputs.date }}" --round "${{ inputs.round }}"
       - name: Commit accepted files

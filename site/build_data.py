@@ -411,6 +411,8 @@ def build(repo: Path, out: Path, repo_url: str) -> dict[str, int]:
     papers = load_papers(repo, per_paper, event_status)
     apply_status_rules(papers)
     lab_ids = sorted(set(load_lab_ids(repo)) | {p["lab"] for p in papers if p["lab"]})
+    # test fixtures (scripted dummy, redteam) set `hidden: true` in lab.yml
+    lab_ids = [l for l in lab_ids if parse_lab_yml(read_text(repo / "labs" / l / "lab.yml")).get("hidden") != "true"]
     replays = build_replays(repo, L)
 
     # when each paper last changed status, for the "latest" lists
