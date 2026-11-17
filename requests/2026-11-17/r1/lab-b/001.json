@@ -1,0 +1,14 @@
+{
+  "request_id": "2026-11-17/r1/lab-b/001",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Baseline free flight of one species-A particle: measure noise scale, straight-line drift, and wall reflection. Duration 10 at 0.1 spacing, one particle so cost is minimal and cost constant k is learned.",
+  "setup": {
+    "particles": [
+      {"species": "A", "pos": [2.0, 2.0], "vel": [1.0, 0.5]}
+    ],
+    "duration": 10.0,
+    "sample_dt": 0.1
+  },
+  "instruments": ["tracker", "census"]
+}

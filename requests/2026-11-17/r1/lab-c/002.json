@@ -1,0 +1,14 @@
+{
+  "request_id": "2026-11-17/r1/lab-c/002",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Species dependence: single species-B particle with identical initial conditions to 001. Tests whether motion or census differs by species at zero interaction.",
+  "setup": {
+    "particles": [
+      {"species": "B", "pos": [2.0, 5.0], "vel": [1.0, 0.0]}
+    ],
+    "duration": 10.0,
+    "sample_dt": 0.1
+  },
+  "instruments": ["tracker", "census"]
+}

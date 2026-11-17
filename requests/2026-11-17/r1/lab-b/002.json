@@ -1,0 +1,15 @@
+{
+  "request_id": "2026-11-17/r1/lab-b/002",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Pair interaction probe: two particles at rest, 2 units apart, species A and B. If a force exists between species, separation changes beyond noise; if the pair is inert, both stay put. Tests whether interaction depends on species pair.",
+  "setup": {
+    "particles": [
+      {"species": "A", "pos": [4.0, 5.0], "vel": [0.0, 0.0]},
+      {"species": "B", "pos": [6.0, 5.0], "vel": [0.0, 0.0]}
+    ],
+    "duration": 10.0,
+    "sample_dt": 0.1
+  },
+  "instruments": ["tracker", "census"]
+}

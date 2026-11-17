@@ -1,0 +1,14 @@
+{
+  "request_id": "2026-11-17/r1/lab-a/002",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "Exact repeat of request 001 to test reproducibility of tracker output and census labels (repeats every run twice before trusting it).",
+  "setup": {
+    "particles": [
+      {"species": "A", "pos": [2.0, 5.0], "vel": [1.0, 0.0]}
+    ],
+    "duration": 5.0,
+    "sample_dt": 0.05
+  },
+  "instruments": ["tracker", "census"]
+}
