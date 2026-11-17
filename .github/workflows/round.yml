@@ -60,6 +60,18 @@ jobs:
             npm install -g "@openai/codex"
           fi
           python -m pip install pyyaml
+      - name: Cut the lab off from GitHub and the season site
+        # The lab only needs the model API. The checkout above is all the repo it gets; blocking these
+        # hosts stops it reading the live site, Actions logs or other repos. Actions' own hosts stay open.
+        run: |
+          site="$(tr '[:upper:]' '[:lower:]' <<<"${{ github.repository_owner }}").github.io"
+          for h in "$site" github.com www.github.com api.github.com raw.githubusercontent.com \
+                   codeload.github.com gist.github.com gist.githubusercontent.com; do
+            echo "0.0.0.0 $h # lab-block" | sudo tee -a /etc/hosts >/dev/null
+          done
+          ! curl -sS --max-time 5 -o /dev/null "https://$site/" 2>/dev/null
+          sudo rm -f /etc/sudoers.d/runner  # the lab cannot undo the block; the VM is thrown away after the job
+          ! sudo -n true 2>/dev/null
       - name: Run lab session
         run: agents/run_lab.sh "${{ matrix.lab }}" "${{ inputs.round }}"
       - uses: actions/upload-artifact@v4

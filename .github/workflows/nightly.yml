@@ -246,6 +246,8 @@ jobs:
           python site/build_data.py --repo . --out site/public/data
           npm --prefix site ci
           npm --prefix site run build
+      - name: No ground truth in the published site (reveal.json is published only after reveal)
+        run: "! grep -rlE 'exam_truth|true_laws|twist_params|SEASON_SEED|universe\\.json' --exclude=reveal.json site/dist"
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site/dist
