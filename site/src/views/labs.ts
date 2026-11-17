@@ -1,20 +1,27 @@
+import "@ui-sdk/web/tabs";
+import "@ui-sdk/web/progress";
 import { loadIndex, loadLab, loadReplay, type BudgetRow, type LabDetail } from "../data";
 import { mountReplay, type ReplayHandle } from "../replay";
 import { esc, labHref, markdown, message, NO_DATA, num, replayHref, type Cleanup, type Route } from "../util";
 
 const GALLERY_MAX = 12;
 
+function budgetBar(label: string, used: number, allowance: number, review: boolean): string {
+  // progress max is the allowance; a zero allowance leaves max at 1 so the bar reads empty
+  const max = allowance > 0 ? allowance : 1;
+  const value = allowance > 0 ? Math.min(used, allowance) : 0;
+  return `<div class="budget-row"><span class="muted">${label}</span>
+      <ui-progress class="budget__bar${review ? " budget__bar--review" : ""}" value="${value.toFixed(4)}" max="${max}" aria-label="${label} budget">
+        <ui-progress-track><ui-progress-indicator></ui-progress-indicator></ui-progress-track>
+      </ui-progress>
+      <span class="readout">${esc(num(used, 1))} / ${esc(num(allowance, 0))}</span></div>`;
+}
+
 function budgetRow(b: BudgetRow): string {
-  const rFrac = b.research_allowance > 0 ? Math.min(1, b.research_used / b.research_allowance) : 0;
-  const vFrac = b.review_allowance > 0 ? Math.min(1, b.review_used / b.review_allowance) : 0;
   return `<div class="budget">
     <span class="mono">${esc(b.date)}</span>
-    <div class="budget-row"><span class="muted">research</span>
-      <div><div class="budget__track"><div class="budget__fill" style="transform: scaleX(${rFrac.toFixed(4)})"></div></div>
-      <span class="readout">${esc(num(b.research_used, 1))} / ${esc(num(b.research_allowance, 0))}</span></div></div>
-    <div class="budget-row"><span class="muted">review</span>
-      <div><div class="budget__track"><div class="budget__fill budget__fill--review" style="transform: scaleX(${vFrac.toFixed(4)})"></div></div>
-      <span class="readout">${esc(num(b.review_used, 1))} / ${esc(num(b.review_allowance, 0))}</span></div></div>
+    ${budgetBar("research", b.research_used, b.research_allowance, false)}
+    ${budgetBar("review", b.review_used, b.review_allowance, true)}
   </div>`;
 }
 
@@ -74,11 +81,13 @@ export async function render(el: HTMLElement, route: Route): Promise<Cleanup | v
   el.innerHTML = `<div class="container">
     <header class="page-head">
       <h1 class="display-s">labs</h1>
-      <nav class="lab-nav" aria-label="labs">${labs
-        .map((l) => `<a class="pill" href="${labHref(l)}"${l === current ? ' aria-current="page"' : ""}>${esc(l)}</a>`)
-        .join("")}</nav>
     </header>
-    <div data-profile>${detail ? profile(detail) : `<p class="muted">no profile for ${esc(current)} yet</p>`}</div>
+    <ui-tabs class="lab-tabs" default-value="${esc(current)}">
+      <ui-tabs-list aria-label="labs">${labs
+        .map((l) => `<ui-tabs-tab value="${esc(l)}"><a href="${labHref(l)}"${l === current ? ' aria-current="page"' : ""}>${esc(l)}</a></ui-tabs-tab>`)
+        .join("")}</ui-tabs-list>
+      <ui-tabs-panel value="${esc(current)}" data-profile>${detail ? profile(detail) : `<p class="muted">no profile for ${esc(current)} yet</p>`}</ui-tabs-panel>
+    </ui-tabs>
   </div>`;
 
   const handles: ReplayHandle[] = [];

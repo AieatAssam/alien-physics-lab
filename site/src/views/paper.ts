@@ -1,3 +1,4 @@
+import "@ui-sdk/web/button";
 import { loadPaper, loadReplay, type Claim, type ReplayData, type Review } from "../data";
 import { mountReplay, type ReplayHandle } from "../replay";
 import { badge, esc, labHref, markdown, message, NO_DATA, num, replayHref, type Cleanup, type Route } from "../util";
@@ -23,7 +24,7 @@ function reviewHtml(r: Review, i: number): string {
     ${r.evidence.length ? `<p class="mono">${r.evidence.map((e) => `<a class="link" href="${replayHref(e)}">${esc(e)}</a>`).join(" ")}</p>` : ""}
     ${
       first
-        ? `<div class="review__counter"><button type="button" class="btn btn-secondary" data-counter="${i}" data-rid="${esc(first)}">play counter-experiment</button><div data-counter-host="${i}"></div></div>`
+        ? `<div class="review__counter"><ui-button><button type="button" class="btn btn-secondary" data-counter="${i}" data-rid="${esc(first)}">play counter-experiment</button></ui-button><div data-counter-host="${i}"></div></div>`
         : ""
     }
   </article>`;

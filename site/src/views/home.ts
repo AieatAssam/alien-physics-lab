@@ -13,25 +13,63 @@ function chart(scores: Score[]): string {
   const x = (i: number) => (n <= 1 ? (padL + W - padR) / 2 : padL + (i * (W - padL - padR)) / (n - 1));
   const y = (v: number) => padT + (1 - Math.min(1, Math.max(0, v))) * (H - padT - padB);
   const line = (key: "ki" | "coverage") => {
-    const pts = scores.map((s, i) => (s[key] === null ? null : `${x(i).toFixed(1)},${y(s[key] as number).toFixed(1)}`)).filter(Boolean);
+    const pts = scores.map((s, i) => (s[key] === null ? null : `${x(i).toFixed(1)},${y((s[key] as number) / (key === "ki" ? 100 : 1)).toFixed(1)}`)).filter(Boolean);
     return pts.join(" ");
   };
   const grid = [0, 0.5, 1]
-    .map((v) => `<line class="grid-line" x1="${padL}" x2="${W - padR}" y1="${y(v)}" y2="${y(v)}"/><text x="${padL - 8}" y="${y(v) + 4}" text-anchor="end">${v.toFixed(1)}</text>`)
+    .map((v) => `<line class="grid-line" x1="${padL}" x2="${W - padR}" y1="${y(v)}" y2="${y(v)}"/>`)
     .join("");
-  const dots = scores
-    .map((s, i) => (s.ki === null ? "" : `<circle class="dot" cx="${x(i).toFixed(1)}" cy="${y(s.ki).toFixed(1)}" r="3"/>`))
+  const kiIdx = scores.map((_, i) => i).filter((i) => scores[i].ki !== null);
+  const lastKi = kiIdx[kiIdx.length - 1];
+  const earlier = kiIdx.slice(0, -1);
+  const dots = earlier
+    .map((i) => `<circle class="dot" cx="${x(i).toFixed(1)}" cy="${y((scores[i].ki as number) / 100).toFixed(1)}" r="2.5"/>`)
     .join("");
+  // area under the KI line: the accent gradient fades to transparent at the baseline
+  const baseY = y(0).toFixed(1);
+  const kiPts = kiIdx.map((i) => `${x(i).toFixed(1)},${y((scores[i].ki as number) / 100).toFixed(1)}`);
+  const area =
+    kiPts.length > 1
+      ? `<polygon class="ki-area" fill="url(#ki-area-fill)" points="${x(kiIdx[0]).toFixed(1)},${baseY} ${kiPts.join(" ")} ${x(lastKi).toFixed(1)},${baseY}"/>`
+      : "";
+  // one point: no line to draw, so a short baseline through the marker
+  const single =
+    kiIdx.length === 1
+      ? `<line class="ki-line" x1="${(x(lastKi) - 56).toFixed(1)}" x2="${(x(lastKi) + 56).toFixed(1)}" y1="${y((scores[lastKi].ki as number) / 100).toFixed(1)}" y2="${y((scores[lastKi].ki as number) / 100).toFixed(1)}"/>`
+      : "";
+  const marker =
+    lastKi === undefined
+      ? ""
+      : `<g class="ki-marker" transform="translate(${x(lastKi).toFixed(1)} ${y((scores[lastKi].ki as number) / 100).toFixed(1)})">
+          <circle class="halo halo--outer" r="14"/><circle class="halo halo--inner" r="7"/><circle class="dot" r="3.5"/>
+        </g>`;
   const first = scores[0]?.date ?? "";
   const last = scores[n - 1]?.date ?? "";
-  return `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="knowledge index and coverage by night">
-    ${grid}
-    <polyline class="cov-line" points="${line("coverage")}"/>
-    <polyline class="ki-line" points="${line("ki")}"/>
-    ${dots}
-    <text x="${padL}" y="${H - 8}">${esc(first)}</text>
-    <text x="${W - padR}" y="${H - 8}" text-anchor="end">${esc(last)}</text>
-  </svg>`;
+  // axis labels are HTML, positioned in percent, so their font size stays in CSS px at any width
+  const pct = (px: number, total: number) => `${((px / total) * 100).toFixed(2)}%`;
+  const yLabels = [0, 0.5, 1]
+    .map((v) => `<span class="chart__label chart__label--y" style="left:${pct(padL - 8, W)};top:${pct(y(v), H)}">${v * 100}</span>`)
+    .join("");
+  return `<div class="chart-wrap">
+    <svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="knowledge index and coverage by night">
+      <defs>
+        <linearGradient id="ki-area-fill" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" style="stop-color: var(--color-accent); stop-opacity: 0.25"/>
+          <stop offset="1" style="stop-color: var(--color-accent); stop-opacity: 0"/>
+        </linearGradient>
+      </defs>
+      ${grid}
+      <polyline class="cov-line" points="${line("coverage")}"/>
+      ${area}
+      <polyline class="ki-line" points="${line("ki")}"/>
+      ${single}
+      ${dots}
+      ${marker}
+    </svg>
+    ${yLabels}
+    <span class="chart__label chart__label--start" style="left:${pct(padL, W)};top:${pct(H - 8, H)}">${esc(first)}</span>
+    <span class="chart__label chart__label--end" style="left:${pct(W - padR, W)};top:${pct(H - 8, H)}">${esc(last)}</span>
+  </div>`;
 }
 
 function latestList(items: LatestItem[], empty: string): string {
@@ -72,7 +110,7 @@ export async function render(el: HTMLElement, _route: Route): Promise<Cleanup | 
       <h2 class="section-head" id="ki-head">knowledge index</h2>
       <div class="grid-2">
         <div class="kpi">
-          <span class="kpi__figure">${last && ki !== null ? esc(num(ki, 3)) : "—"}</span>
+          <span class="kpi__figure">${last && ki !== null ? esc(num(ki, 1)) : "—"}</span>
           <span class="readout">coverage ${esc(num(cov, 2))}</span>
           ${last ? "" : `<p class="muted">no exam scored yet</p>`}
         </div>
@@ -105,7 +143,7 @@ export async function render(el: HTMLElement, _route: Route): Promise<Cleanup | 
         <p><a class="link" href="${replayHref(featured.request_id)}">open this replay</a></p>`;
       const host = stage.querySelector<HTMLElement>("[data-host]");
       if (host) {
-        handle = mountReplay(host, featured, { autoplay: true, label: featured.purpose, overlay: false });
+        handle = mountReplay(host, featured, { autoplay: true, loop: true, label: featured.purpose, overlay: false });
       }
     } else {
       stage.innerHTML = `<div class="replay__placeholder blueprint">no experiment published yet</div>`;

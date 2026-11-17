@@ -95,16 +95,16 @@ function chrome(index: Index | null): string {
   return `<header class="site-head">
     <div class="container site-head__bar">
       <a class="wordmark" href="#/">alien physics lab</a>
+      <nav class="nav" aria-label="site">
+        ${NAV.map(([n, href]) => `<a href="${href}" data-name="${n}">${n}</a>`).join("")}
+      </nav>
       <div class="season">
         <span class="readout">season ${esc(season ?? "—")}</span>
         <span class="readout">night ${esc(night ?? "—")}</span>
       </div>
     </div>
-    <nav class="container nav" aria-label="site">
-      ${NAV.map(([n, href]) => `<a href="${href}" data-name="${n}">${n}</a>`).join("")}
-    </nav>
   </header>
-  <main class="main container" id="view"></main>
+  <main class="main" id="view"></main>
   <footer class="site-foot">
     <div class="container site-foot__inner">
       <a class="wordmark" href="#/">alien physics lab</a>

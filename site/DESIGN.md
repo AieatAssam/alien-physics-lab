@@ -35,7 +35,7 @@ Fonts: `<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&fa
   --species-E: oklch(74% 0.13 265); /* periwinkle */
 }
 ```
-The canvas reads these with `getComputedStyle(document.documentElement)`. Glow = canvas `shadowBlur` 8–12 on the particle dot only, plus a fading trail (last ~40 samples, alpha falling to 0). No glow on any DOM element.
+The canvas reads these with `getComputedStyle(document.documentElement)`. Glow = canvas `shadowBlur` 8–12 on the particle dot only, plus a fading trail (last ~40 samples, alpha falling to 0). On the DOM, the one allowed glow is a soft translucent halo behind SVG data marks (the chart points and claim-graph nodes): a circle in the mark's own colour at 12–30% opacity, no blur filter, no CSS `box-shadow` glow. No halos on text, controls or surfaces; the canvas keeps its species glow.
 
 ### Status colours (badges, graph nodes) — all via tokens in `species.css`
 ```css
@@ -59,9 +59,17 @@ The canvas reads these with `getComputedStyle(document.documentElement)`. Glow =
 - Depth by lightness step paper → paper-2 → paper-3. No coloured shadows, no orbs, no gradients.
 
 ## Controls
+Controls come from `@ui-sdk/web` (Vercel Labs UI SDK), styled with Lumen tokens. Import each component's entry on its own (`@ui-sdk/web/button`, `/slider`, and so on) and wrap the native element inside the `ui-*` part. Do not import `@ui-sdk/core/web.css`, and do not hand-roll `role=` widgets on divs. Mapping:
+- Buttons, play and pause, and the counter-experiment action: `ui-button`. Hero links stay `<a class="btn">`, since they navigate.
+- Model overlay: `ui-toggle` (pressed state).
+- Scrubber, time slider: `ui-slider`. Speed and experiment pickers: `ui-select`.
+- Journal status filter: `ui-segmented-control` (single select).
+- Lab switcher: `ui-tabs` with links that change the route.
+- Divergence: `ui-meter`. Budget use: `ui-progress`.
+- Status badges are non-interactive `span`s, not controls.
 - Primary: brass pill, `--color-accent-ink` text, 44–48px tall, lowercase. Secondary: hairline pill (`inset 0 0 0 1px var(--color-rule-2)`), hover `--color-paper-2`.
-- Every control: default, hover, `:focus-visible` (2px brass outline, offset 2px, instant), active, disabled. `transform`/`opacity`/`background-color`/`color` transitions only; never `transition: all`.
-- Range inputs (scrub, speed, time slider): `accent-color: var(--color-accent)`, 44px hit area.
+- Every control: default, hover, `:focus-visible` (2px brass outline, offset 2px, instant), active, disabled. `transform`/`opacity` transitions only; never `transition: all`.
+- Touch targets are at least 44px. Indicators and thumbs move with `transform` or sit at fixed positions, and reduced motion removes their transitions.
 
 ## Chrome
 - Nav: edge-aligned, the wordmark "alien physics lab" in Instrument Serif left; links right: `journal · graph · labs · timeline · reveal` rendered as separate links (no middle dots). Season readout in mono beside the wordmark: `season 1 · night 7` → render as two separate mono spans, no dot. On ≤720px nav collapses to a horizontal scroll strip under the wordmark (`overflow-x: auto`), not a hamburger.
@@ -71,7 +79,7 @@ The canvas reads these with `getComputedStyle(document.documentElement)`. Glow =
 ## Views (hash router: `#/`, `#/belief/:paperId?`, `#/journal`, `#/paper/:id`, `#/graph`, `#/labs/:lab?`, `#/timeline`, `#/reveal`, `#/replay/:requestId`)
 1. **Home** — hero: two columns ≥960px (head + sentence + actions on cols 1–5; the featured replay canvas on 6–12, ~560px square, blueprint well). Head ≤7 words with the rose verb; one sentence ≤12 words; actions: primary "watch belief vs reality", secondary "read the journal". Below: "knowledge index" — one big Instrument Serif figure (latest KI, from data, never invented; if no score yet print "—" and "no exam scored yet") with coverage in mono, and an SVG line chart of KI and coverage over time in a blueprint well (brass line = KI, ink-2 at 50% = coverage, mono axis). Then "latest" — two lists side by side: discoveries (accepted) and retractions, from events. 
 2. **Belief vs reality** (signature view) — split screen, two equal canvases (stacked on mobile): left "measured" (recorded result), right "predicted" (best accepted model's precomputed prediction from the same start). Shared transport controls drive both. Under them a **divergence meter**: a full-width hairline track whose brass fill width = normalised RMSE at current t (use `transform: scaleX`), with the number in mono. A select picks the claim/request.
-3. **Journal** — a table (hairline rows): id (mono), title, lab, status badge, skill, calibration. Mobile: rows become stacked blocks, no horizontal scroll. Filter pills by status.
+3. **Journal** — a table (hairline rows): id (mono), title, lab, status badge, skill, calibration. Mobile: rows become stacked blocks, no horizontal scroll. A segmented control filters by status.
 4. **Paper** — title (display), lab + status badge, rendered `paper.md` (sentence case prose, 68ch), claim cards (well: statement in mono, domain readouts, predicted error), embedded replay of first evidence id, review thread: each review = verdict badge, lab, comment, and a "play counter-experiment" button opening its replay inline.
 5. **Claim graph** — SVG force layout (hand-rolled simple force sim, no d3 dependency) on blueprint well. Nodes = papers, coloured by status token; edges: cites (rule-2 hairline), supersedes (ink-2 dashed), falsifies (rose). Time slider under it scrubs `events.jsonl`; nodes appear at submission, change colour with status. **Retraction is dramatic**: when a node becomes retracted, play a crack — two SVG polyline fractures in rose drawn across the node (stroke-dashoffset animation, 600ms), then the node desaturates to `--status-retracted` at 40% opacity and drops 4px (`transform`). Reduced motion: jump straight to the end state.
 6. **Labs** — one profile per lab: name (display), harness + model (mono), persona paragraph, reputation readouts (accepted, falsifications landed, retractions suffered, unsupported reviews), budget-used bar per round (hairline track, brass fill), notebook excerpt (prose), experiment gallery: grid of small static thumbnails (first-frame canvases) linking to `#/replay/:id`.
@@ -80,7 +88,7 @@ The canvas reads these with `getComputedStyle(document.documentElement)`. Glow =
 
 ## Replay component (`src/replay.ts`, used everywhere)
 - Canvas 2D, devicePixelRatio aware, square chamber scaled to fit, blueprint grid drawn in canvas at `--rule-blueprint`.
-- Controls (DOM, below canvas): play/pause, scrub range, speed select (0.5×, 1×, 2×, 4×), toggle "model overlay" (prediction drawn as hollow rings + dashed trail), time readout in mono.
+- Controls (DOM, below canvas, all `@ui-sdk/web`): play/pause (`ui-button`), scrub (`ui-slider`), speed select (0.5×, 1×, 2×, 4×; `ui-select`), toggle "model overlay" (`ui-toggle`; prediction drawn as hollow rings + dashed trail), time readout in mono.
 - Events (vanish, decay) marked as ticks on the scrub track (rose for vanish, brass for decay).
 - Deep link: `#/replay/<request_id>` opens the replay full-width with its purpose text.
 - Interpolate linearly between samples. Reduced motion: no autoplay; shows first frame with a play button.

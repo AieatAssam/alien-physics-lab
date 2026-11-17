@@ -476,7 +476,9 @@ def build(repo: Path, out: Path, repo_url: str) -> dict[str, int]:
 
     rids_sorted = sorted(replays)
     predicted = [r for r in rids_sorted if "prediction" in replays[r]]
-    featured = (predicted or rids_sorted or [None])[-1]
+    # featured = most particles in its first sample; ties and no counts fall back to the last id of the pool
+    pool = predicted or rids_sorted
+    featured = max(pool, key=lambda r: (max((len(f) for f in replays[r]["frames"]), default=0), r)) if pool else None
 
     # per-lab files
     lab_docs: dict[str, dict] = {}

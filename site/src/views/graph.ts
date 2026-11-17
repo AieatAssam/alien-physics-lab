@@ -1,3 +1,5 @@
+import "@ui-sdk/web/button";
+import "@ui-sdk/web/slider";
 import { loadEvents, loadIndex, type EventRec, type PaperSummary } from "../data";
 import { badge, esc, message, NO_DATA, paperHref, type Cleanup, type Route } from "../util";
 
@@ -112,6 +114,8 @@ export async function render(el: HTMLElement, _route: Route): Promise<Cleanup | 
       return `<g class="node" data-id="${esc(p.id)}" data-status="${esc(p.status)}" transform="translate(${q.x.toFixed(1)} ${q.y.toFixed(1)})">
         <a href="${paperHref(p.id)}" aria-label="${esc(p.id)} ${esc(p.title)}">
           <g class="node-body">
+            <circle class="halo halo--outer" r="16"/>
+            <circle class="halo halo--inner" r="11"/>
             <circle r="9"/>
             <polyline class="crack" points="-12,-6 -4,-1 1,-7 12,2"/>
             <polyline class="crack" points="-9,8 -2,3 3,9 10,5"/>
@@ -125,7 +129,14 @@ export async function render(el: HTMLElement, _route: Route): Promise<Cleanup | 
     .map((e) => {
       const a = pos.get(e.from)!;
       const b = pos.get(e.to)!;
-      return `<line class="edge edge--${e.kind}" data-from="${esc(e.from)}" data-to="${esc(e.to)}" x1="${a.x.toFixed(1)}" y1="${a.y.toFixed(1)}" x2="${b.x.toFixed(1)}" y2="${b.y.toFixed(1)}"/>`;
+      // a gentle arc: the control point sits off the chord's midpoint, bent by a fixed fraction of its length
+      const mx = (a.x + b.x) / 2;
+      const my = (a.y + b.y) / 2;
+      const dx = b.x - a.x;
+      const dy = b.y - a.y;
+      const cx = mx - dy * 0.14;
+      const cy = my + dx * 0.14;
+      return `<path class="edge edge--${e.kind}" data-from="${esc(e.from)}" data-to="${esc(e.to)}" d="M${a.x.toFixed(1)} ${a.y.toFixed(1)} Q${cx.toFixed(1)} ${cy.toFixed(1)} ${b.x.toFixed(1)} ${b.y.toFixed(1)}"/>`;
     })
     .join("");
 
@@ -134,15 +145,17 @@ export async function render(el: HTMLElement, _route: Route): Promise<Cleanup | 
       <h1 class="display-s">claim graph</h1>
       <p class="lead">Papers as nodes. Scrub the slider to watch the field grow, and a retraction crack.</p>
     </header>
-    <div class="blueprint graph-well">
+    <div class="blueprint graph-well" data-well>
       <svg class="graph" viewBox="0 0 ${W} ${H}" role="img" aria-label="claim graph of papers">
         <g class="edges">${lines}</g>
         <g class="nodes">${nodes}</g>
       </svg>
     </div>
     <div class="slider-row" style="margin-top: var(--space-lg)">
-      <button type="button" class="btn btn-secondary" data-play${N ? "" : " disabled"}>play</button>
-      <input type="range" min="0" max="${N}" step="1" value="${N}" aria-label="time: number of events applied" data-slider${N ? "" : " disabled"} />
+      <ui-button><button type="button" class="btn btn-secondary" data-play${N ? "" : " disabled"}>play</button></ui-button>
+      <ui-slider class="graph-slider" data-slider default-value="${N}" min="0" max="${N}" step="1"${N ? "" : " disabled"}>
+        <ui-slider-control><ui-slider-track><ui-slider-indicator></ui-slider-indicator><ui-slider-thumb aria-label="time: number of events applied"></ui-slider-thumb></ui-slider-track></ui-slider-control>
+      </ui-slider>
       <span class="readout" data-readout></span>
     </div>
     <div class="graph-legend" style="margin-top: var(--space-lg)">
@@ -152,13 +165,14 @@ export async function render(el: HTMLElement, _route: Route): Promise<Cleanup | 
   </div>`;
 
   const svg = el.querySelector<SVGSVGElement>("svg.graph")!;
-  const slider = el.querySelector<HTMLInputElement>("[data-slider]")!;
+  const slider = el.querySelector<HTMLElement & { value: number }>("[data-slider]")!;
+  const well = el.querySelector<HTMLElement>("[data-well]")!;
   const readout = el.querySelector<HTMLElement>("[data-readout]")!;
   const play = el.querySelector<HTMLButtonElement>("[data-play]")!;
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const nodeEls = new Map<string, SVGGElement>();
   svg.querySelectorAll<SVGGElement>(".node").forEach((g) => nodeEls.set(g.dataset.id ?? "", g));
-  const edgeEls = Array.from(svg.querySelectorAll<SVGLineElement>(".edge"));
+  const edgeEls = Array.from(svg.querySelectorAll<SVGPathElement>(".edge"));
   const prev = new Map<string, string>();
   let k = N;
   let first = true;
@@ -197,13 +211,15 @@ export async function render(el: HTMLElement, _route: Route): Promise<Cleanup | 
       l.classList.toggle("is-hidden", !(a?.visible && b?.visible));
     });
     const e = next > 0 ? events[next - 1] : null;
-    slider.value = String(next);
+    slider.value = next;
     first = false;
     readout.innerHTML = `<span>event ${next} of ${N}</span> <span class="mono">${esc(e?.date ?? "—")}</span>`;
   };
 
-  slider.addEventListener("input", () => {
-    k = Number(slider.value);
+  slider.addEventListener("valuechange", (e) => {
+    const { value, reason } = (e as CustomEvent<{ value: number; reason: string }>).detail;
+    if (reason === "imperative") return;
+    k = Number(value);
     apply(k);
   });
   const stop = (): void => {
@@ -225,5 +241,7 @@ export async function render(el: HTMLElement, _route: Route): Promise<Cleanup | 
   });
   // start with the field at its final state; the first apply places nodes without animating cracks
   apply(N);
+  // on phones the svg is wider than the well: centre the scroll so the middle of the graph shows first
+  well.scrollLeft = (well.scrollWidth - well.clientWidth) / 2;
   return () => stop();
 }

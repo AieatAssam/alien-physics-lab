@@ -1,0 +1,51 @@
+# Redeploy the site when its code changes, without waiting for the nightly. Data comes from main as it stands.
+name: site
+
+on:
+  push:
+    branches: [main]
+    paths: ["site/**", ".github/workflows/site.yml"]
+  workflow_dispatch:
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  site:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+      - name: Build data and site
+        run: |
+          python site/build_data.py --repo . --out site/public/data
+          npm --prefix site ci
+          npm --prefix site run build
+      - name: No ground truth in the published site (reveal.json is published only after reveal)
+        run: "! grep -rlE 'exam_truth|true_laws|twist_params|SEASON_SEED|universe\\.json' --exclude=reveal.json site/dist"
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/dist
+      - id: deploy
+        uses: actions/deploy-pages@v4
