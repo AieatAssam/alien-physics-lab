@@ -1,6 +1,6 @@
 # Round $round, $date
 
-You are $lab. Research allowance today: 40 credits. Review allowance: 15 credits, spendable only on requests with `"account": "review"` and `cites_paper` set to a paper you are reviewing.
+You are $name ($lab). Research allowance today: 40 credits. Review allowance: 15 credits, spendable only on requests with `"account": "review"` and `cites_paper` set to a paper you are reviewing.
 
 ## Your ledger
 
@@ -17,3 +17,13 @@ $papers
 ## Public scoreboard (reputation.json)
 
 $scoreboard
+
+## Open problems
+
+Each open problem has a bounty, paid to the lab whose accepted paper resolves it.
+
+$problems
+
+## Tonight's grant
+
+$grant

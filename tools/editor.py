@@ -10,6 +10,7 @@ Standing reviews are sticky, so a transient sandbox failure cannot demote a pape
 import argparse
 import json
 import math
+from itertools import combinations_with_replacement
 from pathlib import Path
 
 from domain import in_domain
@@ -119,6 +120,100 @@ def publish_predictions(pred_dir, repo):
     return len(docs)
 
 
+def covers(paper, need, min_particles):
+    """True if one claim of the paper has every species in need and max_particles >= min_particles."""
+    return any(set(need) <= set(c["domain"]["species"]) and c["domain"]["max_particles"] >= min_particles
+               for c in paper["claims"])
+
+
+def grant_winners(repo):
+    """Winner of each grant award file that names one."""
+    winners = []
+    for path in sorted((repo / "grants").glob("*/award.json")):
+        winner = read(path).get("winner")
+        if winner:
+            winners.append(winner)
+    return winners
+
+
+def problems(papers, events, species, today):
+    """Open and resolved problems, from public files only. Events are walked in file order."""
+    first = min((e["date"] for e in events), default=today)
+    found = {}
+    needs = {}
+    for s in species:
+        needs[f"uncharted-{s}"] = ((s,), 1)
+    for a, b in combinations_with_replacement(sorted(species), 2):
+        needs[f"pair-{a}{b}"] = ((a, b), 2)
+    for pid, (need, minp) in needs.items():
+        if len(need) == 1:
+            title = f"chart species {need[0]}"
+            detail = f"Publish an accepted claim whose species include {need[0]}."
+            kind, bounty = "uncharted-species", 1
+        else:
+            names = " and ".join(sorted(set(need)))
+            title = f"how two {need[0]} particles interact" if need[0] == need[1] else f"how {need[0]} and {need[1]} interact"
+            detail = f"Publish an accepted claim with {names} in its species and max_particles of 2 or more."
+            kind, bounty = "uncharted-pair", 2
+        found[pid] = {"id": pid, "kind": kind, "title": title, "detail": detail, "bounty": bounty, "since": first}
+
+    status, last_standing = {}, {}
+    for ev in events:
+        pid, day = ev["paper_id"], ev["date"]
+        if ev.get("kind") == "standing":
+            last_standing[pid] = ev["review_lab"]
+        if ev.get("kind") == "unsupported" and status.get(pid, "submitted") == "submitted":
+            key = f"disputed-{pid}"
+            if key not in found:
+                found[key] = {"id": key, "kind": "disputed", "title": f"settling the dispute over {pid}",
+                              "detail": f"Resolved when {pid} is accepted or retracted.", "bounty": 1, "since": day}
+        if "to" not in ev:
+            continue
+        status[pid] = ev["to"]
+        if ev["to"] == "contested" and f"contested-{pid}" not in found:
+            found[f"contested-{pid}"] = {"id": f"contested-{pid}", "kind": "contested", "title": f"superseding contested {pid}",
+                                         "detail": f"Resolved when an accepted paper supersedes {pid}.",
+                                         "bounty": 2, "since": day}
+        if ev["to"] == "superseded" and f"contested-{pid}" in found:
+            by = ev["cause"].rsplit(" ", 1)[-1]
+            winner = papers[by]["lab"] if by in papers else None
+            resolve(found, f"contested-{pid}", day, winner, by)
+        if ev["to"] in ("accepted", "retracted") and f"disputed-{pid}" in found:
+            resolve(found, f"disputed-{pid}", day, last_standing.get(pid), pid)
+        if ev["to"] == "accepted" and pid in papers:
+            for uid, (need, minp) in needs.items():
+                if uid in found and "resolved_on" not in found[uid] and covers(papers[pid], need, minp):
+                    resolve(found, uid, day, papers[pid]["lab"], pid)
+
+    # A contested or disputed problem whose paper left that state without resolving is dropped.
+    for pid, prob in list(found.items()):
+        if "resolved_on" in prob or prob["kind"] not in ("contested", "disputed"):
+            continue
+        paper = pid.split("-", 1)[1]
+        wanted = "contested" if prob["kind"] == "contested" else "submitted"
+        if status.get(paper, "submitted") != wanted:
+            del found[pid]
+
+    out = {"open": [], "resolved": []}
+    for prob in sorted(found.values(), key=lambda p: p["id"]):
+        if "resolved_on" in prob:
+            out["resolved"].append({k: v for k, v in prob.items() if k != "detail"})
+        else:
+            out["open"].append(prob)
+    out["resolved"].sort(key=lambda p: (p["resolved_on"], p["id"]))
+    return out
+
+
+def resolve(found, key, day, winner, by):
+    if "resolved_on" not in found[key]:
+        found[key].update(resolved_on=day, winner=winner, by_paper=by)
+
+
+def season_species(repo):
+    path = repo / "protocol" / "season.json"
+    return read(path).get("species", []) if path.exists() else []
+
+
 def run(repo, date, pred_dir, side=DEFAULT_SIDE):
     repo = Path(repo)
     events_path = repo / "events.jsonl"
@@ -191,10 +286,14 @@ def run(repo, date, pred_dir, side=DEFAULT_SIDE):
             for ev in new_events:
                 fh.write(json.dumps(ev, sort_keys=True) + "\n")
 
+    probs = problems(papers, events_of(events_path), season_species(repo), date)
+    (repo / "problems.json").write_text(json.dumps(probs, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
     rep_out = {}
     def lab(name):
         return rep_out.setdefault(name, {"accepted": 0, "falsifications_landed": 0,
-                                         "retractions_suffered": 0, "unsupported_reviews": 0})
+                                         "retractions_suffered": 0, "unsupported_reviews": 0,
+                                         "bounties_won": 0, "grants_won": 0})
     for pid, paper in papers.items():
         if status[pid] in ("accepted", "contested"):
             lab(paper["lab"])["accepted"] += status[pid] == "accepted"
@@ -206,6 +305,11 @@ def run(repo, date, pred_dir, side=DEFAULT_SIDE):
     for ev in events_of(events_path):
         if ev.get("kind") == "unsupported":
             lab(ev["review_lab"])["unsupported_reviews"] += 1
+    for prob in probs["resolved"]:
+        if prob["winner"]:
+            lab(prob["winner"])["bounties_won"] += prob["bounty"]
+    for winner in grant_winners(repo):
+        lab(winner)["grants_won"] += 1
     (repo / "reputation.json").write_text(json.dumps(rep_out, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     # Input to universe.score: the papers the exam predicts (accepted or contested), with the mean claimed error.
     exam_papers = [

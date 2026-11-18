@@ -11,6 +11,14 @@
     "lab-c": {
       "harness": "claude-code",
       "model": "claude-sonnet-5-5"
+    },
+    "lab-keystone": {
+      "harness": "claude-code",
+      "model": "claude-sonnet-5-5"
+    },
+    "lab-vernier": {
+      "harness": "claude-code",
+      "model": "claude-sonnet-5-5"
     }
   },
   "judge": {

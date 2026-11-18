@@ -13,6 +13,18 @@ export function text(value: unknown): string {
   return typeof value === "string" && value.length > 0 ? value : "—";
 }
 
+let labNames: Record<string, string> = {};
+
+/** Fed once from index.json lab_names at boot. Ids stay in URLs; names are for display. */
+export function setLabNames(names: Record<string, string>): void {
+  labNames = names;
+}
+
+/** The display name for a lab id, or the id itself when the lab has no name. */
+export function labName(id: string): string {
+  return labNames[id] || id;
+}
+
 export function paperHref(id: string): string {
   return `#/paper/${encodeURIComponent(id)}`;
 }

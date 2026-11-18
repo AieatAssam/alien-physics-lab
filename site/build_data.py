@@ -27,6 +27,12 @@ DEFAULT_REVIEW_ALLOWANCE = 15
 NOTEBOOK_TAIL_CHARS = 1500
 RECENT_LATEST = 8
 REPLAY_GALLERY_MAX = 60
+MAX_PREDICTIONS = 3
+PREDICTION_ORDER = {"accepted": 0, "contested": 1, "submitted": 2}
+DIGEST_BULLETS = 4
+QUOTE_MAX_CHARS = 200
+# arrows, middle dots, bullets, dingbats and emoji, plus ASCII arrows; digests never carry them
+BAD_PROSE = re.compile(r"[·•←-⇿▶☀-➿\U0001F000-\U0001FAFF]|->|=>")
 
 
 # ---------- small readers ----------
@@ -162,6 +168,8 @@ def load_events(repo: Path) -> list[dict]:
             e["paper"] = e["paper_id"]
         if "type" not in e and "status" in e:
             e["type"] = "status"
+        if "status" not in e and "to" in e:
+            e["status"] = e["to"]
         events.append(e)
     return events
 
@@ -280,6 +288,167 @@ def notebook_excerpt(repo: Path, lab: str) -> str:
     return tail[cut + 2:] if cut >= 0 else tail
 
 
+def lab_name(repo: Path, lab: str) -> str:
+    name = parse_lab_yml(read_text(repo / "labs" / lab / "lab.yml")).get("name", "").strip()
+    return name or lab
+
+
+def notebook_quote(text: str) -> str | None:
+    """First sentence of the notebook that is not a heading and not the boilerplate placeholder."""
+    body = []
+    for line in text.splitlines():
+        s = line.strip()
+        if s and not s.startswith("#"):
+            body.append(re.sub(r"^([-*+>]|\d+[.)])\s+", "", s))
+    for sentence in re.split(r"(?<=[.!?])\s+", " ".join(body)):
+        sentence = sentence.strip()
+        if sentence and len(sentence) <= QUOTE_MAX_CHARS and "no entries yet" not in sentence.lower():
+            return sentence
+    return None
+
+
+def plain(text: Any) -> str:
+    """One line of plain text for digests: no arrows, middle dots, emoji or exclamation marks."""
+    s = BAD_PROSE.sub(" ", str(text or "")).replace("!", ".")
+    return " ".join(s.split())
+
+
+def load_problems(repo: Path) -> dict[str, list[dict]]:
+    doc = read_json(repo / "problems.json", {})
+    doc = doc if isinstance(doc, dict) else {}
+    out: dict[str, list[dict]] = {}
+    for key in ("open", "resolved"):
+        items = doc.get(key)
+        out[key] = [x for x in items if isinstance(x, dict)] if isinstance(items, list) else []
+    return out
+
+
+def load_grants(repo: Path) -> list[dict]:
+    """One entry per grants/<date> folder, newest first: the award, the proposals and the winner's grant requests."""
+    out = []
+    for d in reversed(sorted_dirs(repo / "grants", "*")):
+        award = read_json(d / "award.json", {})
+        award = award if isinstance(award, dict) else {}
+        winner = award.get("winner") if isinstance(award.get("winner"), str) else None
+        proposals = []
+        for f in sorted_files(d / "proposals", "*.json"):
+            p = read_json(f, {})
+            if isinstance(p, dict):
+                proposals.append({"lab": str(p.get("lab") or f.stem), "title": str(p.get("title") or ""),
+                                  "pitch": str(p.get("pitch") or "")})
+        pitch = next((p["pitch"] for p in proposals if winner and p["lab"] == winner), None)
+        votes = award.get("votes") if isinstance(award.get("votes"), dict) else {}
+        request_ids: list[str] = []
+        req_dir = repo / "requests" / d.name
+        if winner and req_dir.is_dir():
+            for f in sorted(req_dir.rglob("*.json")):
+                req = read_json(f, {})
+                if isinstance(req, dict) and req.get("lab") == winner and req.get("account") == "grant" and req.get("request_id"):
+                    request_ids.append(str(req["request_id"]))
+        out.append({
+            "date": d.name,
+            "winner": winner,
+            "title": str(award["title"]) if award.get("title") else None,
+            "pitch": pitch,
+            "votes": {str(k): v for k, v in votes.items()},
+            "proposals": proposals,
+            "request_ids": request_ids,
+        })
+    return out
+
+
+def build_rivalries(events: list[dict], paper_lab: dict[str, str]) -> list[dict]:
+    """Per (reviewer, author) pair: how many standing and unsupported reviews the reviewer filed on the author's papers."""
+    pairs: dict[tuple[str, str], dict[str, int]] = {}
+    for e in events:
+        if e.get("kind") not in ("standing", "unsupported"):
+            continue
+        reviewer = str(e.get("review_lab") or "")
+        author = paper_lab.get(str(e.get("paper") or ""), "")
+        if not reviewer or not author:
+            continue
+        row = pairs.setdefault((reviewer, author), {"replicated": 0, "falsified": 0, "unsupported": 0})
+        if e["kind"] == "unsupported":
+            row["unsupported"] += 1
+        elif e.get("verdict") in ("replicated", "falsified"):
+            row[str(e["verdict"])] += 1
+    rows = [{"reviewer": r, "author": a, **c} for (r, a), c in pairs.items()]
+    rows.sort(key=lambda x: (-(x["replicated"] + x["falsified"] + x["unsupported"]), x["reviewer"], x["author"]))
+    return rows
+
+
+def build_digests(events: list[dict], scores: list[dict], problems: dict[str, list[dict]],
+                  grants: list[dict], names: dict[str, str], paper_lab: dict[str, str]) -> list[dict]:
+    """One digest per date that has events, scores or a grant, newest first.
+
+    Items carry a priority (lower is more dramatic); the first item is the headline, the next four are bullets.
+    """
+    def who(lab: str) -> str:
+        return names.get(lab, lab) if lab else ""
+
+    items: dict[str, list[tuple[int, str]]] = {}
+
+    def add(date: str, prio: int, text: str) -> None:
+        if date:
+            items.setdefault(date, []).append((prio, plain(text)))
+
+    dated = sorted((e for e in events if e.get("date")), key=lambda e: str(e["date"]))
+    for e in dated:
+        date = str(e["date"])
+        pid = str(e.get("paper") or "")
+        author = who(paper_lab.get(pid, ""))
+        reviewer = who(str(e.get("review_lab") or ""))
+        if e.get("to") == "retracted":
+            add(date, 1, f"{pid} by {author} retracted")
+        elif e.get("to") == "accepted":
+            reps = [r for r in dated if r.get("kind") == "standing" and r.get("verdict") == "replicated"
+                    and r.get("paper") == pid and str(r["date"]) <= date]
+            by = who(str(reps[-1].get("review_lab") or "")) if reps else ""
+            add(date, 4, f"{pid} by {author} accepted" + (f" after {by} replicated it" if by else ""))
+        elif e.get("to") == "submitted":
+            add(date, 6, f"{pid} by {author} submitted")
+        if e.get("kind") == "standing" and e.get("verdict") == "falsified":
+            add(date, 2, f"{reviewer} knocked down {pid}")
+        elif e.get("kind") == "unsupported":
+            add(date, 7, f"{reviewer} flagged {pid} as unsupported")
+
+    for prob in problems.get("resolved", []):
+        date = str(prob.get("resolved_on") or "")
+        title = plain(prob.get("title"))
+        winner = who(str(prob.get("winner") or ""))
+        if winner:
+            add(date, 3, f"{winner} took the {prob.get('bounty', 0)}-point bounty for {title}")
+        else:
+            add(date, 3, f"the bounty for {title} closed with no winner")
+
+    for g in grants:
+        if g["winner"]:
+            title = f": {g['title']}" if g["title"] else ""
+            add(g["date"], 5, f"{who(g['winner'])} won the grant{title}")
+
+    prev: float | None = None
+    for s in scores:
+        ki = s["ki"]
+        if ki is None:
+            continue
+        if prev is None:
+            add(s["date"], 8, f"knowledge index reached {ki:.2f}")
+        elif ki != prev:
+            add(s["date"], 8, f"knowledge index moved from {prev:.2f} to {ki:.2f}")
+        prev = ki
+
+    all_dates = set(items) | {str(e["date"]) for e in dated} | {s["date"] for s in scores} | {g["date"] for g in grants}
+    out = []
+    for date in sorted(all_dates, reverse=True):
+        ranked = [t for _, t in sorted(items.get(date, []), key=lambda x: x[0])]
+        out.append({
+            "date": date,
+            "headline": ranked[0] if ranked else "nothing new was recorded",
+            "bullets": ranked[1:1 + DIGEST_BULLETS],
+        })
+    return out
+
+
 # ---------- replays ----------
 
 def quantise(v: Any, L: float) -> int:
@@ -367,8 +536,11 @@ def request_to_rel(rel: str) -> str:
     return rel.replace("/", "__") + ".json"
 
 
-def build_replays(repo: Path, L: float) -> dict[str, dict]:
-    """Keyed by request_id. Only results with status ok and at least one sample are included."""
+def build_replays(repo: Path, L: float, paper_info: dict[str, tuple[str, str]]) -> dict[str, dict]:
+    """Keyed by request_id. Only results with status ok and at least one sample are included.
+
+    paper_info maps paper id to (status, lab). predictions/public/<rid>.json is {paper_id: samples}.
+    """
     results_dir = repo / "results"
     predictions_dir = repo / "predictions" / "public"
     out: dict[str, dict] = {}
@@ -399,19 +571,20 @@ def build_replays(repo: Path, L: float) -> dict[str, dict]:
             "events": clean_events(result.get("events"), t_end),
         }
         pred_doc = read_json(predictions_dir / f"{rel}.json", None)
-        # predictions/public/<request_id>.json is {paper_id: samples}; the first paper with samples is shown.
-        pred_samples = None
-        if isinstance(pred_doc, dict):
-            pred_samples = next((v for _, v in sorted(pred_doc.items()) if isinstance(v, list)), None)
-        if pred_samples is not None:
-            ptrack = to_track(pred_samples, L, id_species)
+        preds = []
+        for pid, samples in (pred_doc.items() if isinstance(pred_doc, dict) else []):
+            if pid not in paper_info or not isinstance(samples, list) or paper_info[pid][0] not in PREDICTION_ORDER:
+                continue
+            ptrack = to_track(samples, L, id_species)
             if ptrack is not None:
-                replay["prediction"] = {
-                    "species": ptrack["species"],
-                    "t": ptrack["t"],
-                    "frames": ptrack["frames"],
-                    "events": [],
-                }
+                status, plab = paper_info[pid]
+                preds.append({"paper_id": pid, "lab": plab, "status": status,
+                              "track": {**ptrack, "events": []}})
+        preds.sort(key=lambda p: (PREDICTION_ORDER[p["status"]], p["paper_id"]))
+        preds = preds[:MAX_PREDICTIONS]
+        if preds:
+            replay["predictions"] = preds
+            replay["prediction"] = preds[0]["track"]  # the first one, kept for older readers
         out[rid] = replay
     return out
 
@@ -434,10 +607,14 @@ def build(repo: Path, out: Path, repo_url: str) -> dict[str, int]:
     event_status = {e["paper"]: str(e["to"]) for e in events if isinstance(e.get("paper"), str) and "to" in e}
     papers = load_papers(repo, per_paper, event_status)
     apply_status_rules(papers)
-    lab_ids = sorted(set(load_lab_ids(repo)) | {p["lab"] for p in papers if p["lab"]})
+    all_lab_ids = sorted(set(load_lab_ids(repo)) | {p["lab"] for p in papers if p["lab"]})
+    names = {lab: lab_name(repo, lab) for lab in all_lab_ids}
     # test fixtures (scripted dummy, redteam) set `hidden: true` in lab.yml
-    lab_ids = [l for l in lab_ids if parse_lab_yml(read_text(repo / "labs" / l / "lab.yml")).get("hidden") != "true"]
-    replays = build_replays(repo, L)
+    lab_ids = [l for l in all_lab_ids if parse_lab_yml(read_text(repo / "labs" / l / "lab.yml")).get("hidden") != "true"]
+    paper_lab = {p["id"]: p["lab"] for p in papers}
+    replays = build_replays(repo, L, {p["id"]: (p["status"], p["lab"]) for p in papers})
+    problems = load_problems(repo)
+    grants = load_grants(repo)
 
     # when each paper last changed status, for the "latest" lists
     last_date: dict[str, str] = {}
@@ -488,14 +665,18 @@ def build(repo: Path, out: Path, repo_url: str) -> dict[str, int]:
         reviews_by_lab = [(p, r) for p in papers for r in p["reviews"] if r["lab"] == lab]
         lab_docs[lab] = {
             "lab": lab,
+            "name": names.get(lab, lab),
             "harness": lab_yml.get("harness", ""),
             "model": lab_yml.get("model", ""),
             "persona": lab_yml.get("persona", ""),
+            "quote": notebook_quote(read_text(repo / "labs" / lab / "NOTEBOOK.md")),
             "reputation": {
                 "accepted": sum(1 for p in mine if p["status"] == "accepted"),
                 "falsifications": sum(1 for _, r in reviews_by_lab if r["verdict"] == "falsified" and r["standing"] != "unsupported"),
                 "retractions": sum(1 for p in mine if p["status"] == "retracted"),
                 "unsupported_reviews": sum(1 for _, r in reviews_by_lab if r["standing"] == "unsupported"),
+                "bounties_won": sum(int(p.get("bounty") or 0) for p in problems.get("resolved", []) if p.get("winner") == lab),
+                "grants_won": sum(1 for g in grants if g.get("winner") == lab),
             },
             "budget": load_ledger(repo, lab),
             "notebook_excerpt": notebook_excerpt(repo, lab),
@@ -511,11 +692,16 @@ def build(repo: Path, out: Path, repo_url: str) -> dict[str, int]:
         "difficulty": season.get("difficulty"),
         "repo_url": repo_url,
         "labs": lab_ids,
+        "lab_names": {lab: names.get(lab, lab) for lab in lab_ids},
         "scores": [{"date": s["date"], "ki": s["ki"], "coverage": s["coverage"]} for s in scores],
         "papers": summaries,
         "latest": {"accepted": latest("accepted"), "retracted": latest("retracted")},
         "featured": featured,
         "predicted": predicted,
+        "digests": build_digests(events, scores, problems, grants, names, paper_lab),
+        "rivalries": build_rivalries(events, paper_lab),
+        "problems": problems,
+        "grants": grants,
     }
 
     # write: wipe generated subdirectories so stale files never survive a rebuild

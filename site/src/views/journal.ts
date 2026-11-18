@@ -1,6 +1,6 @@
 import "@ui-sdk/web/segmented-control";
 import { loadIndex, type PaperSummary } from "../data";
-import { badge, esc, message, NO_DATA, num, paperHref, labHref, type Cleanup, type Route } from "../util";
+import { badge, esc, labName, message, NO_DATA, num, paperHref, labHref, type Cleanup, type Route } from "../util";
 
 const FILTERS = ["all", "submitted", "accepted", "contested", "retracted", "superseded"];
 
@@ -8,7 +8,7 @@ function row(p: PaperSummary): string {
   return `<div class="row">
     <div class="row__cell"><span class="row__cell--label">id</span><span class="mono">${esc(p.id)}</span></div>
     <div class="row__title"><a class="link" href="${paperHref(p.id)}" title="${esc(p.title)}">${esc(p.title)}</a></div>
-    <div class="row__cell"><span class="row__cell--label">lab</span><a class="link" href="${labHref(p.lab)}">${esc(p.lab)}</a></div>
+    <div class="row__cell"><span class="row__cell--label">lab</span><a class="link" href="${labHref(p.lab)}">${esc(labName(p.lab))}</a></div>
     <div class="row__cell"><span class="row__cell--label">status</span>${badge(p.status)}</div>
     <div class="row__cell"><span class="row__cell--label">skill</span><span class="mono">${esc(num(p.skill))}</span></div>
     <div class="row__cell"><span class="row__cell--label">calibration</span><span class="mono">${esc(num(p.calibration))}</span></div>

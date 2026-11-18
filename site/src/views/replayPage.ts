@@ -1,6 +1,6 @@
 import { loadReplay } from "../data";
 import { mountReplay, type ReplayHandle } from "../replay";
-import { esc, labHref, message, type Cleanup, type Route } from "../util";
+import { esc, labHref, labName, message, type Cleanup, type Route } from "../util";
 
 export async function render(el: HTMLElement, route: Route): Promise<Cleanup | void> {
   const rid = route.params.join("/");
@@ -18,7 +18,7 @@ export async function render(el: HTMLElement, route: Route): Promise<Cleanup | v
       <h1 class="display-s">${esc(data.purpose || "experiment")}</h1>
       <div class="page-head__meta">
         <span class="mono">${esc(data.request_id)}</span>
-        ${data.lab ? `<a class="link" href="${labHref(data.lab)}">${esc(data.lab)}</a>` : ""}
+        ${data.lab ? `<a class="link" href="${labHref(data.lab)}">${esc(labName(data.lab))}</a>` : ""}
       </div>
     </header>
     <div data-host class="replay--wide"></div>

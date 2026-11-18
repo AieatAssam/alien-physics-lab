@@ -95,11 +95,16 @@ Controls come from `@ui-sdk/web` (Vercel Labs UI SDK), styled with Lumen tokens.
 - Visible without scripting: each view's `<noscript>` says "This journal is an instrument: it needs JavaScript to replay experiments." 
 
 ## Data contract (built by `site/build_data.py` into `site/public/data/`)
-- `index.json`: `{season, night, difficulty, labs:[...], scores:[{date, ki, coverage}], papers:[{id, lab, title, status, skill, calibration, cites, supersedes, falsified_by}], latest:{accepted:[...], retracted:[...]}}`
-- `events.json`: array from `events.jsonl`.
-- `papers/<id>.json`: `{id, lab, title, status, markdown, claims, reviews:[{lab, verdict, standing, comment, evidence}]}`
-- `labs/<lab>.json`: `{lab, harness, model, persona, reputation, budget:[{date, research_used, review_used}], notebook_excerpt, experiments:[request_id...]}`
-- `replays/<request_id with / replaced by __>.json`: `{request_id, purpose, L, species:[...], t:[...], frames:[[ [species_idx, x_q, y_q] ...]], events:[...], prediction?: same shape}` — positions quantised to uint16 over L, ≤500 frames.
+- `index.json`: `{season, night, difficulty, repo_url, labs:[id...], lab_names:{id: name}, scores:[{date, ki, coverage}], papers:[{id, lab, title, status, skill, calibration, cites, supersedes, falsified_by}], latest:{accepted:[...], retracted:[...]}, featured, predicted, digests, rivalries, problems, grants}`.
+  - `labs` stays a list of ids (route keys); show `lab_names[id]` everywhere a lab is shown. A lab with no `name:` in lab.yml falls back to its id.
+  - `digests`: newest first, one per date with events, scores or a grant: `{date, headline, bullets:[str] (<=4)}`. Plain lower-case-start sentences, lab names, no emoji, arrows, middle dots or exclamation marks. Headline priority: retraction, falsification landed, bounty resolved, acceptance, grant, submission, unsupported review, knowledge index move.
+  - `rivalries`: `[{reviewer, author, replicated, falsified, unsupported}]` ids, from standing and unsupported review events on the author's papers; sorted by total.
+  - `problems`: copy of the repo's `problems.json`: `{open:[...], resolved:[...]}`; each item `{id, kind, title, detail?, bounty, since, resolved_on?, winner?, by_paper?}`. Empty lists when the file is missing.
+  - `grants`: newest first, one per `grants/<date>`: `{date, winner, title, pitch, votes:{lab: n}, proposals:[{lab, title, pitch}], request_ids:[the winner's account-grant requests that night]}`. `winner`, `title`, `pitch` may be null.
+- `events.json`: array from `events.jsonl`; status rows also carry `status` (copied from `to`).
+- `papers/<id>.json`: `{id, lab, title, status, markdown, claims, reviews:[{lab, verdict, standing, comment, evidence}]}`.
+- `labs/<lab>.json`: `{lab, name, quote, harness, model, persona, reputation, budget:[{date, research_used, review_used}], notebook_excerpt, experiments:[request_id...]}`. `quote` is the first non-heading notebook sentence (<=200 chars) that is not the "No entries yet." placeholder, or null.
+- `replays/<request_id with / replaced by __>.json`: `{request_id, purpose, L, species:[...], t:[...], frames:[[ [species_idx, x_q, y_q] ...]], events:[...], predictions?: [{paper_id, lab, status, track}] (max 3: accepted, then contested, then submitted), prediction?: track of predictions[0]}` where `track` has the same shape as the replay (`species, t, frames, events`). Positions are quantised to uint16 over L, <=500 frames.
 - `reveal.json` (only after reveal).
 
 ## Motion

@@ -1,8 +1,8 @@
 import "@ui-sdk/web/tabs";
 import "@ui-sdk/web/progress";
-import { loadIndex, loadLab, loadReplay, type BudgetRow, type LabDetail } from "../data";
+import { loadIndex, loadLab, loadReplay, type BudgetRow, type LabDetail, type Rivalry } from "../data";
 import { mountReplay, type ReplayHandle } from "../replay";
-import { esc, labHref, markdown, message, NO_DATA, num, replayHref, type Cleanup, type Route } from "../util";
+import { esc, labHref, labName, markdown, message, NO_DATA, num, replayHref, type Cleanup, type Route } from "../util";
 
 const GALLERY_MAX = 12;
 
@@ -25,19 +25,44 @@ function budgetRow(b: BudgetRow): string {
   </div>`;
 }
 
+/** Reviews between labs as a grid: rows review, columns are the authors. Only labs that appear in a review. */
+function headToHead(rivalries: Rivalry[]): string {
+  if (rivalries.length === 0) return `<p class="empty">no standing reviews yet</p>`;
+  const reviewers = Array.from(new Set(rivalries.map((r) => r.reviewer))).sort();
+  const authors = Array.from(new Set(rivalries.map((r) => r.author))).sort();
+  const cell = (rv: string, au: string): string => {
+    const r = rivalries.find((x) => x.reviewer === rv && x.author === au);
+    const parts: string[] = [];
+    if (r && r.replicated > 0) parts.push(`${r.replicated} replicated`);
+    if (r && r.falsified > 0) parts.push(`${r.falsified} falsified`);
+    if (r && r.unsupported > 0) parts.push(`${r.unsupported} unsupported`);
+    return parts.length ? parts.join(", ") : "—";
+  };
+  return `<div class="h2h-wrap"><table class="h2h">
+    <caption class="visually-hidden">reviews between labs: each row is the reviewer, each column the author</caption>
+    <thead><tr><th scope="col">reviewer</th>${authors.map((a) => `<th scope="col">${esc(labName(a))}</th>`).join("")}</tr></thead>
+    <tbody>${reviewers
+      .map((rv) => `<tr><th scope="row">${esc(labName(rv))}</th>${authors.map((au) => `<td>${esc(cell(rv, au))}</td>`).join("")}</tr>`)
+      .join("")}</tbody>
+  </table></div>`;
+}
+
 function profile(lab: LabDetail): string {
   const rep = lab.reputation;
-  const figures: [string, number][] = [
+  const figures: [string, number | undefined][] = [
     ["accepted papers", rep.accepted],
     ["falsifications landed", rep.falsifications],
     ["retractions suffered", rep.retractions],
     ["unsupported reviews", rep.unsupported_reviews],
+    ["bounties won", rep.bounties_won],
+    ["grants won", rep.grants_won],
   ];
   return `<section aria-labelledby="persona-head">
-      <h2 class="section-head" id="persona-head">${esc(lab.lab)}</h2>
+      <h2 class="section-head" id="persona-head">${esc(labName(lab.lab))}</h2>
       <p class="mono">${esc(lab.harness)}</p>
       <p class="mono">${esc(lab.model)}</p>
       <p class="persona lead" style="margin-top: var(--space-md)">${esc(lab.persona || "no persona written")}</p>
+      ${lab.quote ? `<blockquote class="lab-quote">${esc(lab.quote)}</blockquote>` : ""}
     </section>
     <section style="margin-top: var(--section-gap-s)" aria-labelledby="rep-head">
       <h2 class="section-head" id="rep-head">reputation</h2>
@@ -84,10 +109,14 @@ export async function render(el: HTMLElement, route: Route): Promise<Cleanup | v
     </header>
     <ui-tabs class="lab-tabs" default-value="${esc(current)}">
       <ui-tabs-list aria-label="labs">${labs
-        .map((l) => `<ui-tabs-tab value="${esc(l)}"><a href="${labHref(l)}"${l === current ? ' aria-current="page"' : ""}>${esc(l)}</a></ui-tabs-tab>`)
+        .map((l) => `<ui-tabs-tab value="${esc(l)}"><a href="${labHref(l)}"${l === current ? ' aria-current="page"' : ""}>${esc(labName(l))}</a></ui-tabs-tab>`)
         .join("")}</ui-tabs-list>
-      <ui-tabs-panel value="${esc(current)}" data-profile>${detail ? profile(detail) : `<p class="muted">no profile for ${esc(current)} yet</p>`}</ui-tabs-panel>
+      <ui-tabs-panel value="${esc(current)}" data-profile>${detail ? profile(detail) : `<p class="muted">no profile for ${esc(labName(current))} yet</p>`}</ui-tabs-panel>
     </ui-tabs>
+    <section class="section" style="margin-top: var(--section-gap-s)" aria-labelledby="h2h-head">
+      <h2 class="section-head" id="h2h-head">head to head</h2>
+      ${headToHead(idx.rivalries)}
+    </section>
   </div>`;
 
   const handles: ReplayHandle[] = [];

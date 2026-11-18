@@ -119,7 +119,7 @@ jobs:
         run: python tools/editor.py --repo . --date "${{ needs.date.outputs.date }}" --predictions pred
       - name: Commit events and reputation
         run: |
-          tools/commit.sh "editor: ${{ needs.date.outputs.date }}" events.jsonl reputation.json exam_papers.json papers reviews predictions
+          tools/commit.sh "editor: ${{ needs.date.outputs.date }}" events.jsonl reputation.json exam_papers.json problems.json papers reviews predictions
 
   exam-setups:
     needs: [date, editor]

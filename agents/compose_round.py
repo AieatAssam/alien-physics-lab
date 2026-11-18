@@ -34,6 +34,53 @@ def read_or(path, default):
     return path.read_text(encoding="utf-8") if path.exists() else default
 
 
+def lab_name(lab):
+    path = ROOT / "labs" / lab / "lab.yml"
+    return (yaml.safe_load(path.read_text(encoding="utf-8")) or {}).get("name", lab) if path.exists() else lab
+
+
+def display(lab):
+    """'Name (lab-x)', or the bare id when the lab has no name."""
+    name = lab_name(lab)
+    return f"{name} ({lab})" if name != lab else lab
+
+
+def open_problems():
+    data = json.loads(read_or(ROOT / "problems.json", '{"open": []}'))
+    lines = [f"- {p['id']}: {p['title']} (bounty {p['bounty']}). {p['detail']}" for p in data.get("open", [])]
+    return "\n".join(lines) or "- none"
+
+
+def grant_section(rnd, date, lab):
+    gdir = ROOT / "grants" / date
+    if rnd == 1:
+        return (f"You may propose one main-event experiment tonight. Write `out/grants/{date}/proposals/{lab}.json` "
+                "with fields lab, date, title (at most 120 characters), pitch (at most 600 characters) and setup "
+                "(same shape as a request's setup). Proposals count in round 1 only.")
+    if rnd == 2:
+        lines = []
+        for path in sorted((gdir / "proposals").glob("*.json")):
+            prop = json.loads(path.read_text(encoding="utf-8"))
+            setup = prop.get("setup", {})
+            lines.append(f"- {display(prop['lab'])}: {prop['title']}. {prop['pitch']} "
+                         f"Particles: {len(setup.get('particles', []))}. Duration: {setup.get('duration')}.")
+        listing = "\n".join(lines) or "- none"
+        return (f"Proposals tonight:\n\n{listing}\n\n"
+                f"You may vote for one proposal from another lab. Write `out/grants/{date}/votes/{lab}.json` "
+                "with fields lab, date, vote (that lab's id, not yours) and reason (at most 300 characters). "
+                "Votes count in round 2 only.")
+    path = gdir / "award.json"
+    award = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
+    if not award.get("winner"):
+        return "No grant was awarded tonight."
+    credits = award.get("credits", 0)
+    text = (f"Winner: {display(award['winner'])}. Title: {award.get('title') or 'none'}. "
+            f"Credits: {credits}.")
+    if award["winner"] == lab:
+        text += f" You may file requests with `\"account\": \"grant\"` up to {credits} credits."
+    return text
+
+
 def results_for(lab):
     paths = sorted(ROOT.glob(f"results/*/r*/{lab}/*.json"))[-40:]
     lines = []
@@ -50,7 +97,7 @@ def papers_for(lab):
         pid = claim["paper_id"]
         if claim["lab"] == lab or (ROOT / "reviews" / pid / f"{lab}.json").exists():
             continue
-        lines.append(f"- {pid} by {claim['lab']}: {claim['title']} (papers/{pid}/paper.md)")
+        lines.append(f"- {pid} by {display(claim['lab'])}: {claim['title']} (papers/{pid}/paper.md)")
     return "\n".join(lines) or "- none"
 
 
@@ -58,9 +105,10 @@ def prompt(lab, rnd, date):
     cfg = lab_settings(lab)
     ledger = read_or(ROOT / "ledger" / f"{lab}.json", "no entries yet, full allowance available")
     rnd_text = Template((PROMPTS / "round.md").read_text(encoding="utf-8")).substitute(
-        round=rnd, date=date, lab=lab, ledger=ledger.strip(),
+        round=rnd, date=date, lab=lab, name=lab_name(lab), ledger=ledger.strip(),
         results=results_for(lab), papers=papers_for(lab),
         scoreboard=read_or(ROOT / "reputation.json", "none yet")[:3000],
+        problems=open_problems(), grant=grant_section(rnd, date, lab),
     )
     apparatus = (ROOT / "protocol" / "APPARATUS.md").read_text(encoding="utf-8")
     base = (PROMPTS / "base.md").read_text(encoding="utf-8")

@@ -5,7 +5,7 @@ import "@ui-sdk/web/select";
 import "@ui-sdk/web/slider";
 import "@ui-sdk/web/toggle";
 import type { ReplayData, ReplayEvent, Track } from "./data";
-import { esc } from "./util";
+import { esc, labName, num } from "./util";
 
 /** A ui-sdk element that carries its value as a property. */
 export type UiValue<T> = HTMLElement & { value: T };
@@ -20,6 +20,8 @@ export interface ReplayOptions {
   source?: "measured" | "predicted";
   /** Start with the model overlay on (only when a prediction exists). */
   overlay?: boolean;
+  /** Select the prediction made for this paper. With no such prediction, the overlay stays off. */
+  paper?: string;
   /** Show the DOM transport (default true). */
   controls?: boolean;
   /** Autoplay on mount (ignored under reduced motion). */
@@ -111,6 +113,19 @@ export function divergence(measured: Track | null, predicted: Track | null, t: n
   return n === 0 ? null : Math.sqrt(sum / n) / L;
 }
 
+/** One overlay choice per prediction. Older data with a single `prediction` becomes one unnamed choice. */
+interface Candidate { paper_id: string | null; label: string; track: Track }
+
+function candidatesOf(data: ReplayData): Candidate[] {
+  const list: Candidate[] = (data.predictions ?? []).map((p) => ({
+    paper_id: p.paper_id,
+    label: `${p.paper_id}, ${labName(p.lab)}`,
+    track: p.track,
+  }));
+  if (list.length === 0 && data.prediction) list.push({ paper_id: null, label: "model", track: data.prediction });
+  return list;
+}
+
 function eventType(e: ReplayEvent): string {
   return e.type === "vanish" || e.type === "decay" ? e.type : "other";
 }
@@ -118,12 +133,17 @@ function eventType(e: ReplayEvent): string {
 export function mountReplay(host: HTMLElement, data: ReplayData, opts: ReplayOptions = {}): ReplayHandle {
   const L = data.L > 0 ? data.L : 10;
   const measured: Track = { species: data.species, t: data.t, frames: data.frames, events: data.events };
-  const predicted: Track | null = data.prediction ?? null;
+  const cands = candidatesOf(data);
+  const paperPick = opts.paper ? cands.findIndex((c) => c.paper_id === opts.paper) : 0;
+  let sel = Math.max(0, paperPick);
+  let predicted: Track | null = cands[sel]?.track ?? null;
   const primary: Track = opts.source === "predicted" && predicted ? predicted : measured;
-  const dur = opts.duration ?? duration(measured, predicted);
+  // the shared clock covers every candidate, so switching the overlay never changes the length
+  const dur = opts.duration ?? duration(measured, ...cands.map((c) => c.track));
   const thumb = !!opts.thumb;
   const controls = !thumb && opts.controls !== false;
-  const hasPred = predicted !== null;
+  const hasPred = cands.length > 0;
+  const multi = cands.length > 1;
   const label = esc(opts.label ?? "replay of an experiment");
   const events = (measured.events ?? []).filter((e) => Number.isFinite(e.t) && dur > 0);
 
@@ -131,6 +151,7 @@ export function mountReplay(host: HTMLElement, data: ReplayData, opts: ReplayOpt
     .map((e) => `<i class="tick" data-type="${eventType(e)}" style="left:${Math.min(100, (e.t / dur) * 100).toFixed(2)}%" title="${esc(e.type)} at ${e.t.toFixed(2)} s"></i>`)
     .join("");
 
+  const overlayOn = !!opts.overlay && hasPred && (opts.paper === undefined || paperPick >= 0);
   const transport = controls
     ? `<div class="replay__controls">
         <ui-button><button type="button" class="btn btn-primary" data-act="play"${dur > 0 ? "" : " disabled"}>play</button></ui-button>
@@ -148,7 +169,15 @@ export function mountReplay(host: HTMLElement, data: ReplayData, opts: ReplayOpt
       </div>
       <div class="replay__extras">
         <span class="readout replay__readout" data-readout></span>
-        ${hasPred ? `<ui-toggle data-overlay${opts.overlay ? " default-pressed" : ""}><button type="button" class="btn btn-secondary" data-act="overlay">model overlay</button></ui-toggle>` : ""}
+        ${hasPred ? `<div class="replay__overlay">
+          ${multi ? `<ui-select data-pred default-value="${sel}">
+            <ui-select-label class="visually-hidden">prediction to overlay</ui-select-label>
+            <ui-select-trigger><button type="button"><ui-select-value></ui-select-value></button></ui-select-trigger>
+            <ui-select-content>${cands.map((c, i) => `<ui-select-item value="${i}">${esc(c.label)}</ui-select-item>`).join("")}</ui-select-content>
+          </ui-select>` : ""}
+          <ui-toggle data-overlay${overlayOn ? " default-pressed" : ""}><button type="button" class="btn btn-secondary" data-act="overlay">model overlay</button></ui-toggle>
+          <span class="readout" data-residual hidden></span>
+        </div>` : ""}
       </div>`
     : "";
 
@@ -165,6 +194,8 @@ export function mountReplay(host: HTMLElement, data: ReplayData, opts: ReplayOpt
   const scrub = host.querySelector<UiValue<number>>("[data-scrub]");
   const speedSel = host.querySelector<UiValue<string>>("[data-speed]");
   const overlayToggle = host.querySelector<HTMLElement>("[data-overlay]");
+  const predSel = host.querySelector<UiValue<string>>("[data-pred]");
+  const residual = host.querySelector<HTMLElement>("[data-residual]");
   const readout = host.querySelector<HTMLElement>("[data-readout]");
 
   const css = getComputedStyle(document.documentElement);
@@ -176,7 +207,7 @@ export function mountReplay(host: HTMLElement, data: ReplayData, opts: ReplayOpt
   let cur = 0;
   let speed = 1;
   let playing = false;
-  let overlay = !!opts.overlay && hasPred;
+  let overlay = overlayOn;
   let raf = 0;
   let last = 0;
   let destroyed = false;
@@ -185,6 +216,10 @@ export function mountReplay(host: HTMLElement, data: ReplayData, opts: ReplayOpt
     if (readout) readout.textContent = `${cur.toFixed(2)} / ${dur.toFixed(2)} s`;
     if (scrub) scrub.value = dur > 0 ? Math.round((cur / dur) * 1000) : 0;
     if (playBtn) playBtn.textContent = playing ? "pause" : cur >= dur && dur > 0 ? "replay" : "play";
+    if (residual) {
+      residual.hidden = !(overlay && predicted);
+      if (overlay && predicted) residual.textContent = `off by ${num(divergence(measured, predicted, cur, L), 3)}`;
+    }
   }
 
   function draw(): void {
@@ -252,14 +287,15 @@ export function mountReplay(host: HTMLElement, data: ReplayData, opts: ReplayOpt
     });
 
     // model overlay: prediction as hollow rings and a dashed trail
-    if (overlay && predicted && primary === measured) {
-      const pred = particlesAt(predicted, cur, L);
-      const pi = Math.max(0, frameIndex(predicted, cur));
+    const pr = predicted;
+    if (overlay && pr && primary === measured) {
+      const pred = particlesAt(pr, cur, L);
+      const pi = Math.max(0, frameIndex(pr, cur));
       pred.forEach((p, k) => {
-        const col = speciesColour(predicted, p.s);
+        const col = speciesColour(pr, p.s);
         const pts: { x: number; y: number }[] = [];
         for (let f = Math.max(0, pi - TRAIL + 1); f <= pi; f++) {
-          const q = predicted.frames[f]?.[k];
+          const q = pr.frames[f]?.[k];
           if (!q || q[0] !== p.s) {
             pts.length = 0;
             continue;
@@ -351,6 +387,15 @@ export function mountReplay(host: HTMLElement, data: ReplayData, opts: ReplayOpt
   overlayToggle?.addEventListener("pressedchange", (e) => {
     overlay = (e as CustomEvent<{ value: boolean }>).detail.value;
     draw();
+    updateUi();
+  });
+  predSel?.addEventListener("valuechange", (e) => {
+    const i = Number((e as CustomEvent<{ value: string }>).detail.value);
+    if (!Number.isInteger(i) || !cands[i]) return;
+    sel = i;
+    predicted = cands[i].track;
+    draw();
+    updateUi();
   });
 
   draw();

@@ -8,15 +8,32 @@ export interface PaperSummary {
   skill: number | null; calibration: number | null;
   cites: string[]; supersedes: string[]; falsified_by: string[];
 }
+export interface Digest { date: string; headline: string; bullets: string[] }
+export interface Rivalry { reviewer: string; author: string; replicated: number; falsified: number; unsupported: number }
+export interface ProblemItem {
+  id: string; kind: string; title: string; detail?: string; bounty: number; since: string;
+  resolved_on?: string; winner?: string | null; by_paper?: string | null;
+}
+export interface Problems { open: ProblemItem[]; resolved: ProblemItem[] }
+export interface Proposal { lab: string; title: string; pitch: string }
+export interface GrantRecord {
+  date: string; winner: string | null; title: string | null; pitch: string | null;
+  votes: Record<string, number>; proposals: Proposal[]; request_ids: string[];
+}
 export interface Index {
   season: number | null; night: number | null; difficulty: string | number | null;
   repo_url: string;
   labs: string[];
+  lab_names: Record<string, string>;
   scores: Score[];
   papers: PaperSummary[];
   latest: { accepted: LatestItem[]; retracted: LatestItem[] };
   featured: string | null;
   predicted: string[];
+  digests: Digest[];
+  rivalries: Rivalry[];
+  problems: Problems;
+  grants: GrantRecord[];
 }
 export interface EventRec {
   date: string; type: string;
@@ -42,8 +59,11 @@ export interface PaperDetail {
 }
 export interface BudgetRow { date: string; research_used: number; review_used: number; research_allowance: number; review_allowance: number }
 export interface LabDetail {
-  lab: string; harness: string; model: string; persona: string;
-  reputation: { accepted: number; falsifications: number; retractions: number; unsupported_reviews: number };
+  lab: string; name: string; quote: string | null; harness: string; model: string; persona: string;
+  reputation: {
+    accepted: number; falsifications: number; retractions: number; unsupported_reviews: number;
+    bounties_won?: number; grants_won?: number;
+  };
   budget: BudgetRow[]; notebook_excerpt: string; experiments: string[];
 }
 export interface Track {
@@ -51,9 +71,11 @@ export interface Track {
   events?: ReplayEvent[];
 }
 export interface ReplayEvent { t: number; type: string; id?: number }
+export interface Prediction { paper_id: string; lab: string; status: string; track: Track }
 export interface ReplayData extends Track {
   request_id: string; purpose: string; lab: string; L: number;
   prediction?: Track | null;
+  predictions?: Prediction[];
 }
 export interface RevealItem { name: string; kind: string; true_law: string; believed_law: string; status: string }
 export interface Reveal { structural_score: number | null; items: RevealItem[] }

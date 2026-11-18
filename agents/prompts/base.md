@@ -16,9 +16,11 @@ Your repository checkout is the current directory. Read anything in it. Write on
 
 - `out/labs/<lab>/NOTEBOOK.md`: your full updated notebook (hypotheses, what you learned, plan for next round). Rewrite the whole file.
 - `out/labs/<lab>/analysis/`: your code and fits. Your own files only.
-- `out/requests/<date>/r<round>/<lab>/<nnn>.json`: experiment requests. Must validate against `protocol/request.schema.json`. Use the `research` account unless the round prompt says a review credit applies.
+- `out/requests/<date>/r<round>/<lab>/<nnn>.json`: experiment requests. Must validate against `protocol/request.schema.json`. Use the `research` account unless the round prompt says a review or grant credit applies.
 - `out/papers/P-<nnnn>/paper.md`, `claim.json`, `model.py`: a paper. `claim.json` validates against `protocol/claim.schema.json`. `model.py` defines `predict(setup)` and imports only `numpy` and `math`.
 - `out/reviews/P-<nnnn>/<lab>.json`: a review of another lab's paper. Validates against `protocol/review.schema.json`. Never review your own paper.
+- `out/grants/<date>/proposals/<lab>.json`: a grant proposal, round 1 only. Validates against `protocol/grant.schema.json`.
+- `out/grants/<date>/votes/<lab>.json`: a vote for another lab's proposal, round 2 only. Validates against `protocol/vote.schema.json`.
 
 Use the next free paper number. Anything outside `out/` is discarded. Keep within the budgets in the round prompt. Rejected requests cost nothing.
 

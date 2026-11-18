@@ -16,6 +16,8 @@ from pathlib import Path
 
 import jsonschema
 
+from grants import tally
+
 KB = 1024
 LIMIT_DEFAULT = 200 * KB
 LIMIT_MODEL = 50 * KB
@@ -28,6 +30,7 @@ PAPER_FILES = {"paper.md", "claim.json", "model.py"}
 REQ_RE = re.compile(r"^requests/(\d{4}-\d{2}-\d{2})/r(\d+)/(lab-[a-z0-9-]+)/(\d{3})\.json$")
 PAPER_RE = re.compile(r"^papers/(P-\d{4})/(paper\.md|claim\.json|model\.py)$")
 REVIEW_RE = re.compile(r"^reviews/(P-\d{4})/(lab-[a-z0-9-]+)\.json$")
+GRANT_RE = re.compile(r"^grants/(\d{4}-\d{2}-\d{2})/(proposals|votes)/(lab-[a-z0-9-]+)\.json$")
 
 
 def collect(out):
@@ -167,6 +170,31 @@ def check_review(validators, lab, pid, rlab, owner_lab, full):
     return None
 
 
+def check_grant(validators, args, lab, m, full):
+    """Reason a grant proposal (round 1) or vote (round 2) is rejected, else None."""
+    date, kind, plab = m.groups()
+    want = 1 if kind == "proposals" else 2
+    if args.round != want:
+        return f"grant {kind} are accepted only in round {want}"
+    if date != args.date or plab != lab:
+        return "grant path does not match this date or lab"
+    data, err = read_json(full)
+    if err:
+        return err
+    problem = schema_problem(validators["grant" if kind == "proposals" else "vote"], data)
+    if problem:
+        return problem
+    if data["lab"] != lab or data["date"] != date:
+        return "grant lab or date does not match its path"
+    if kind == "proposals":
+        return None
+    if data["vote"] == lab:
+        return "labs cannot vote for themselves"
+    if not (args.repo / "grants" / date / "proposals" / f"{data['vote']}.json").exists():
+        return "voted lab has no proposal for this date"
+    return None
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--artifacts", required=True, type=Path)
@@ -179,7 +207,7 @@ def main(argv=None):
     known = {p.parent.name for p in (repo / "labs").glob("*/lab.yml")}
     validators = {
         n: jsonschema.Draft202012Validator(load_json(repo / "protocol" / f"{n}.schema.json"))
-        for n in ("request", "claim", "review")
+        for n in ("request", "claim", "review", "grant", "vote")
     }
     rejected = []
     accepted = []  # (key, rel, full); key is the artifact-relative path reported
@@ -206,7 +234,7 @@ def main(argv=None):
             else:
                 items.append((lab, rel, full, key))
 
-    requests, papers, reviews = [], {}, []
+    requests, papers, reviews, grants = [], {}, [], []
     for lab, rel, full, key in items:
         why = generic_problem(lab, rel, full)
         if why:
@@ -221,8 +249,17 @@ def main(argv=None):
             papers.setdefault((lab, m[1]), []).append((key, rel, full))
         elif m := REVIEW_RE.match(rel):
             reviews.append((lab, m, rel, full, key))
+        elif m := GRANT_RE.match(rel):
+            grants.append((lab, m, rel, full, key))
         else:
             reject(key, "not in the allow-list")
+
+    for lab, m, rel, full, key in grants:
+        why = check_grant(validators, args, lab, m, full)
+        if why:
+            reject(key, why)
+        else:
+            accepted.append((key, rel, full))
 
     counts = {}
     for lab, m, rel, full, key in sorted(requests, key=lambda r: r[2]):
@@ -262,6 +299,8 @@ def main(argv=None):
         dest = repo / rel
         dest.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(full, dest)
+    if args.round == 2:
+        tally(repo, args.date)
 
     report = {"accepted": [k for k, _, _ in accepted], "rejected": rejected}
     out = repo / "gate" / args.date / f"r{args.round}.json"

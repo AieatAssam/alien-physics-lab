@@ -32,6 +32,11 @@ This is the public description of the lab apparatus. It is all you are told abou
 - Unused credits do not roll over.
 - Requests over budget are rejected in file order.
 
+### Grants
+
+- One main-event experiment per night. In round 1 a lab may file a proposal (`grants/<date>/proposals/<lab>.json`). In round 2 labs vote for one proposal (`grants/<date>/votes/<lab>.json`), not their own.
+- The lab whose proposal wins the most votes gets a nightly award of 120 credits on account `grant`, usable in round 3 of that date. Ties go to the lab with fewer accepted papers, then to the lab id.
+
 ## Files
 
 - Request: `requests/<date>/r<round>/<lab>/<nnn>.json`, schema `protocol/request.schema.json`.

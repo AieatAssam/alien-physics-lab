@@ -1,6 +1,6 @@
 import "./styles/app.css";
 import { loadIndex, type Index } from "./data";
-import { esc, type Cleanup, type Route } from "./util";
+import { esc, setLabNames, type Cleanup, type Route } from "./util";
 import * as home from "./views/home";
 import * as belief from "./views/belief";
 import * as journal from "./views/journal";
@@ -10,6 +10,7 @@ import * as labs from "./views/labs";
 import * as timeline from "./views/timeline";
 import * as reveal from "./views/reveal";
 import * as replayPage from "./views/replayPage";
+import * as problems from "./views/problems";
 
 type View = { render: (el: HTMLElement, route: Route) => Promise<Cleanup | void> };
 
@@ -23,6 +24,7 @@ const views: Record<string, View> = {
   timeline,
   reveal,
   replay: replayPage,
+  problems,
 };
 
 const NAV: [string, string][] = [
@@ -31,6 +33,7 @@ const NAV: [string, string][] = [
   ["labs", "#/labs"],
   ["timeline", "#/timeline"],
   ["reveal", "#/reveal"],
+  ["problems", "#/problems"],
 ];
 
 interface Parsed { name: string; route: Route }
@@ -120,6 +123,7 @@ async function boot(): Promise<void> {
   const app = document.getElementById("app");
   if (!app) return;
   const index = await loadIndex();
+  setLabNames(index?.lab_names ?? {});
   app.innerHTML = chrome(index);
   chromeEl = app;
   viewEl = app.querySelector<HTMLElement>("#view");

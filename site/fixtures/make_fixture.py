@@ -19,11 +19,11 @@ import shutil
 from pathlib import Path
 
 LABS = {
-    "lab-a": ("orbit-harness", "model-alpha",
+    "lab-a": ("Plumbline", "orbit-harness", "model-alpha",
               "A cautious experimentalist.\nRepeats every run twice before trusting it."),
-    "lab-b": ("orbit-harness", "model-beta",
+    "lab-b": ("Icarus", "orbit-harness", "model-beta",
               "A bold theorist.\nPrefers one striking run to a dozen dull ones."),
-    "lab-c": ("grid-harness", "model-gamma",
+    "lab-c": ("Nullius", "grid-harness", "model-gamma",
               "A sceptic.\nTries hard to falsify every claim it reads."),
 }
 NIGHTS = ["2026-11-01", "2026-11-02", "2026-11-03", "2026-11-04", "2026-11-05", "2026-11-06"]
@@ -108,7 +108,7 @@ def main() -> None:
     rng = random.Random(7)
 
     for sub in ("labs", "results", "requests", "predictions", "papers", "reviews",
-                "ledger", "scores", "protocol", "seasons", "events.jsonl"):
+                "ledger", "scores", "protocol", "seasons", "grants", "events.jsonl", "problems.json"):
         target = root / sub
         if target.is_dir():
             shutil.rmtree(target)
@@ -117,10 +117,10 @@ def main() -> None:
     root.mkdir(parents=True, exist_ok=True)
 
     # labs
-    for lab, (harness, model, persona) in LABS.items():
+    for lab, (name, harness, model, persona) in LABS.items():
         persona_lines = "\n".join("  " + ln for ln in persona.splitlines())
         write_text(root / "labs" / lab / "lab.yml",
-                   f"harness: {harness}\nmodel: {model}\npersona: |\n{persona_lines}\n")
+                   f"name: {name}\nharness: {harness}\nmodel: {model}\npersona: |\n{persona_lines}\n")
         notes = "\n\n".join(
             f"## Night {i + 1}\n\nRan the planned sweep. Residuals stayed within the expected band and "
             f"the energy drift was small. Next I want to repeat the close-approach runs with a finer "
@@ -145,7 +145,8 @@ def main() -> None:
         ("lab-c", "grid-03", 5, None, "ok"),
         ("lab-c", "grid-04", 2, None, "failed"),
     ]
-    predicted_ids = {"lab-a/orbit-03", "lab-b/orbit-02"}
+    # predictions/public/<rid>.json is {paper_id: samples}; lab-b/orbit-02 carries two
+    predictions = {"lab-a/orbit-03": {"P-0001": 0.2}, "lab-b/orbit-02": {"P-0001": 0.2, "P-0002": 0.35}}
     for i, (lab, name, n, vanish_id, status) in enumerate(specs):
         rid = f"{lab}/{name}"
         purpose = PURPOSES[i % len(PURPOSES)]
@@ -160,9 +161,9 @@ def main() -> None:
             continue
         write_json(root / "results" / lab / f"{name}.json",
                    {"request_id": rid, "status": "ok", "samples": samples, "events": events})
-        if rid in predicted_ids:
+        if rid in predictions:
             write_json(root / "predictions" / "public" / lab / f"{name}.json",
-                       {"request_id": rid, "samples": biased(samples, 0.2)})
+                       {pid: biased(samples, bias) for pid, bias in predictions[rid].items()})
 
     # papers
     papers = [
@@ -177,7 +178,6 @@ def main() -> None:
         ("P-0005", "lab-a", "retracted", 0.39, 0.40, [], ["lab-a/orbit-04"],
          "Vanishing particles leave a residual field"),
     ]
-    status_events = []
     for pid, lab, status, skill, cal, supersedes, evidence, title in papers:
         md = (
             f"# {title}\n\n"
@@ -203,7 +203,6 @@ def main() -> None:
             "supersedes": supersedes,
         })
         write_json(root / "papers" / pid / "status.json", {"status": status, "skill": skill, "calibration": cal, "lab": lab})
-        status_events.append((pid, lab, status))
 
     # reviews (file per reviewing lab; standing file optional)
     write_json(root / "reviews" / "P-0002" / "lab-c.json", {
@@ -256,18 +255,80 @@ def main() -> None:
                        for pid in pids[: 2 + i // 2]},
         })
 
-    # events.jsonl, one row per status change, dated over the nights
-    lines = []
-    for i, (pid, lab, status) in enumerate(status_events):
-        date = NIGHTS[min(i, len(NIGHTS) - 1)]
-        lines.append(json.dumps({
-            "date": date, "paper_id": pid, "lab": lab, "status": status,
-            "cause": "replicated in an independent run" if status == "accepted" else "review outcome",
-        }))
-    if status_events:
-        lines.append(json.dumps({"date": NIGHTS[-1], "paper_id": "P-0005", "lab": "lab-a",
-                                 "status": "retracted", "cause": "residual traced to a filtering bug"}))
-    write_text(root / "events.jsonl", "\n".join(lines) + "\n")
+    # events.jsonl in the real journal's shapes: status rows use from/to, review rows use kind
+    # (standing = a review that replicated or falsified, unsupported = a review that did not hold up)
+    n = NIGHTS
+    events = [
+        {"date": n[0], "paper_id": "P-0001", "from": None, "to": "submitted", "cause": "submitted", "evidence": []},
+        {"date": n[1], "kind": "standing", "paper_id": "P-0001", "review_lab": "lab-b", "verdict": "replicated",
+         "evidence": ["lab-a/orbit-03"]},
+        {"date": n[1], "paper_id": "P-0001", "from": "submitted", "to": "accepted",
+         "cause": "standing replication", "evidence": ["lab-a/orbit-03"]},
+        {"date": n[1], "paper_id": "P-0002", "from": None, "to": "submitted", "cause": "submitted", "evidence": []},
+        {"date": n[2], "paper_id": "P-0003", "from": None, "to": "submitted", "cause": "submitted", "evidence": []},
+        {"date": n[3], "kind": "standing", "paper_id": "P-0003", "review_lab": "lab-c", "verdict": "falsified",
+         "evidence": ["lab-b/orbit-03"]},
+        {"date": n[3], "paper_id": "P-0004", "from": None, "to": "submitted", "cause": "submitted", "evidence": []},
+        {"date": n[3], "paper_id": "P-0005", "from": None, "to": "submitted", "cause": "submitted", "evidence": []},
+        {"date": n[4], "kind": "standing", "paper_id": "P-0004", "review_lab": "lab-a", "verdict": "replicated",
+         "evidence": ["lab-c/grid-01"]},
+        {"date": n[4], "paper_id": "P-0004", "from": "submitted", "to": "accepted",
+         "cause": "standing replication", "evidence": ["lab-c/grid-01"]},
+        {"date": n[4], "paper_id": "P-0002", "from": "submitted", "to": "contested",
+         "cause": "review outcome", "evidence": []},
+        {"date": n[4], "kind": "unsupported", "paper_id": "P-0005", "review_lab": "lab-c", "verdict": "replicated",
+         "evidence": ["lab-a/orbit-04"]},
+        {"date": n[5], "paper_id": "P-0005", "from": "submitted", "to": "retracted",
+         "cause": "residual traced to a filtering bug", "evidence": ["lab-a/orbit-04"]},
+    ]
+    write_text(root / "events.jsonl", "\n".join(json.dumps(e) for e in events) + "\n")
+
+    # grants: round 1 proposals, round 2 votes, the tally, and the winner's grant request
+    gd = NIGHTS[3]
+    proposals = [
+        ("lab-a", "single orbiter decay sweep", "Repeat the radial sweep at four radii with a finer sample step."),
+        ("lab-b", "pair scattering at close range", "Two particles at rest, 2.5 apart, to see whether the pair force depends on species."),
+        ("lab-c", "grid collision law", "Fire pairs across the grid and fit the collision exponent."),
+    ]
+    for lab, title, pitch in proposals:
+        write_json(root / "grants" / gd / "proposals" / f"{lab}.json",
+                   {"lab": lab, "date": gd, "title": title, "pitch": pitch, "setup": {"particles": []}})
+    for lab, vote, reason in [("lab-a", "lab-b", "the close-range pair run is the cleanest test"),
+                              ("lab-b", "lab-c", "a grid law would sharpen my own pair fit"),
+                              ("lab-c", "lab-b", "a pair test can be falsified, so I want it run")]:
+        write_json(root / "grants" / gd / "votes" / f"{lab}.json",
+                   {"lab": lab, "date": gd, "vote": vote, "reason": reason})
+    write_json(root / "grants" / gd / "award.json", {
+        "date": gd, "winner": "lab-b", "credits": 120, "title": "pair scattering at close range",
+        "votes": {"lab-b": 2, "lab-c": 1}, "tiebreak": "most votes",
+    })
+    write_json(root / "requests" / gd / "r3" / "lab-b" / "001.json", {
+        "request_id": f"{gd}/r3/lab-b/001", "lab": "lab-b", "account": "grant",
+        "purpose": "pair scattering at close range, main event of the night",
+        "setup": {"particles": [{"species": "A", "pos": [2.0, 5.0], "vel": [0.0, 0.0]},
+                                {"species": "B", "pos": [4.5, 5.0], "vel": [0.0, 0.0]}]},
+    })
+
+    # open and resolved problems, as tools/editor.py writes them
+    write_json(root / "problems.json", {
+        "open": [
+            {"id": "uncharted-B", "kind": "uncharted-species", "title": "species B has no accepted domain",
+             "detail": "no accepted paper covers species B yet", "bounty": 1, "since": n[0]},
+            {"id": "contested-P-0002", "kind": "contested", "title": "three-body energy is contested",
+             "detail": "P-0002 is contested and awaits a superseding paper", "bounty": 2, "since": n[4]},
+        ],
+        "resolved": [
+            {"id": "uncharted-A", "kind": "uncharted-species", "title": "species A has no accepted domain",
+             "detail": "no accepted paper covered species A", "bounty": 1, "since": n[0],
+             "resolved_on": n[1], "winner": "lab-a", "by_paper": "P-0001"},
+            {"id": "pair-AC", "kind": "uncharted-pair", "title": "species A and C never interact",
+             "detail": "no accepted paper has a pair of A and C", "bounty": 2, "since": n[0],
+             "resolved_on": n[4], "winner": "lab-c", "by_paper": "P-0004"},
+            {"id": "disputed-P-0005", "kind": "disputed", "title": "residual field claim is disputed",
+             "detail": "P-0005 drew an unsupported review", "bounty": 1, "since": n[4],
+             "resolved_on": n[5], "winner": "lab-c", "by_paper": "P-0005"},
+        ],
+    })
 
     # protocol and season reveal
     write_json(root / "protocol" / "season.json", {

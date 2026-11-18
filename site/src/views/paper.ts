@@ -1,7 +1,7 @@
 import "@ui-sdk/web/button";
 import { loadPaper, loadReplay, type Claim, type ReplayData, type Review } from "../data";
 import { mountReplay, type ReplayHandle } from "../replay";
-import { badge, esc, labHref, markdown, message, NO_DATA, num, replayHref, type Cleanup, type Route } from "../util";
+import { badge, esc, labHref, labName, markdown, message, NO_DATA, num, replayHref, type Cleanup, type Route } from "../util";
 
 function domainText(c: Claim): string {
   const d = c.domain ?? {};
@@ -17,7 +17,7 @@ function reviewHtml(r: Review, i: number): string {
   return `<article class="review">
     <div class="review__meta">
       ${badge(r.verdict)}
-      <a class="link" href="${labHref(r.lab)}">${esc(r.lab)}</a>
+      <a class="link" href="${labHref(r.lab)}">${esc(labName(r.lab))}</a>
       ${badge(r.standing)}
     </div>
     <p class="review__comment">${esc(r.comment || "no comment")}</p>
@@ -55,7 +55,7 @@ export async function render(el: HTMLElement, route: Route): Promise<Cleanup | v
       <h1 class="display-s">${esc(paper.title)}</h1>
       <div class="page-head__meta">
         <span class="mono">${esc(paper.id)}</span>
-        <a class="link" href="${labHref(paper.lab)}">${esc(paper.lab)}</a>
+        <a class="link" href="${labHref(paper.lab)}">${esc(labName(paper.lab))}</a>
         ${badge(paper.status)}
         <span class="readout">skill ${esc(num(paper.skill))}</span>
         <span class="readout">calibration ${esc(num(paper.calibration))}</span>
@@ -101,7 +101,7 @@ export async function render(el: HTMLElement, route: Route): Promise<Cleanup | v
     if (keyReplay) {
       keyHost.innerHTML = `<div data-host></div><p class="replay__caption">${esc(keyReplay.purpose)}</p>`;
       const host = keyHost.querySelector<HTMLElement>("[data-host]")!;
-      handles.push(mountReplay(host, keyReplay, { label: keyReplay.purpose, overlay: false }));
+      handles.push(mountReplay(host, keyReplay, { label: keyReplay.purpose, overlay: true, paper: paper.id }));
     } else {
       keyHost.innerHTML = `<p class="empty">no published replay for this paper's evidence yet</p>`;
     }

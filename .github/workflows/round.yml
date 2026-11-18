@@ -111,7 +111,7 @@ jobs:
         run: python tools/gate.py --artifacts artifacts --repo . --date "${{ inputs.date }}" --round "${{ inputs.round }}"
       - name: Commit accepted files
         run: |
-          tools/commit.sh "gate: ${{ inputs.date }} round ${{ inputs.round }}" labs requests papers reviews gate
+          tools/commit.sh "gate: ${{ inputs.date }} round ${{ inputs.round }}" labs requests papers reviews gate grants
 
   sim:
     needs: gate

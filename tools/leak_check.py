@@ -11,7 +11,7 @@ MARKERS = ["exam_truth", "true_laws", "twist_params", "universe.json", "SEASON_S
 TWISTS = ["three_body", "three-body", "charge_exchange", "speed_limit", "drifting_coupling",
           "dark_species", "hidden_conserved", "anisotropy", "torus", "build spec"]
 SCAN = ["labs", "papers", "reviews", "results", "requests", "ledger", "scores",
-        "events.jsonl", "gate", "protocol", "agents", "config"]
+        "events.jsonl", "gate", "protocol", "agents", "config", "grants", "problems.json"]
 
 
 def hits(repo):

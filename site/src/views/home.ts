@@ -1,6 +1,6 @@
-import { loadIndex, loadReplay, type LatestItem, type Score } from "../data";
+import { loadIndex, loadReplay, type Digest, type GrantRecord, type LatestItem, type Score } from "../data";
 import { mountReplay, type ReplayHandle } from "../replay";
-import { esc, num, paperHref, replayHref, type Cleanup, type Route, NO_DATA } from "../util";
+import { esc, labName, num, paperHref, replayHref, type Cleanup, type Route, NO_DATA } from "../util";
 
 function chart(scores: Score[]): string {
   const W = 640;
@@ -72,12 +72,28 @@ function chart(scores: Score[]): string {
   </div>`;
 }
 
+/** Tonight: the newest digest as a sentence with its bullets, then the newest grant's winner if there is one. */
+function tonight(digest: Digest | undefined, grant: GrantRecord | undefined): string {
+  if (!digest) return `<p class="empty">no nightly digest yet</p>`;
+  const rid = grant?.request_ids?.[0];
+  const grantLine =
+    grant && grant.winner
+      ? `<p class="tonight__grant">${esc(labName(grant.winner))} won the grant "${esc(grant.title ?? "—")}"${
+          rid ? ` <a class="link" href="${replayHref(rid)}">watch the grant replay</a>` : ""
+        }</p>`
+      : "";
+  return `<p class="readout">${esc(digest.date)}</p>
+    <h2 class="section-head tonight__head" id="tonight-head">${esc(digest.headline)}</h2>
+    ${digest.bullets.length ? `<ul class="tonight__list">${digest.bullets.map((b) => `<li>${esc(b)}</li>`).join("")}</ul>` : ""}
+    ${grantLine}`;
+}
+
 function latestList(items: LatestItem[], empty: string): string {
   if (items.length === 0) return `<p class="empty">${esc(empty)}</p>`;
   return `<ul class="list-plain">${items
     .map(
       (p) => `<li><a class="link" href="${paperHref(p.id)}">${esc(p.title)}</a>
-        <span class="mono">${esc(p.id)}</span><span class="muted">${esc(p.lab)}${p.date ? ` ${esc(p.date)}` : ""}</span></li>`,
+        <span class="mono">${esc(p.id)}</span><span class="muted">${esc(labName(p.lab))}${p.date ? ` ${esc(p.date)}` : ""}</span></li>`,
     )
     .join("")}</ul>`;
 }
@@ -104,6 +120,10 @@ export async function render(el: HTMLElement, _route: Route): Promise<Cleanup | 
         </div>
       </div>
       <div class="hero__stage" data-featured></div>
+    </section>
+
+    <section class="section tonight" aria-labelledby="tonight-head" style="margin-top: var(--section-gap-s)">
+      ${tonight(idx.digests[0], idx.grants[0])}
     </section>
 
     <section class="section" aria-labelledby="ki-head" style="margin-top: var(--section-gap-s)">
@@ -143,7 +163,7 @@ export async function render(el: HTMLElement, _route: Route): Promise<Cleanup | 
         <p><a class="link" href="${replayHref(featured.request_id)}">open this replay</a></p>`;
       const host = stage.querySelector<HTMLElement>("[data-host]");
       if (host) {
-        handle = mountReplay(host, featured, { autoplay: true, loop: true, label: featured.purpose, overlay: false });
+        handle = mountReplay(host, featured, { autoplay: true, loop: true, label: featured.purpose, overlay: true });
       }
     } else {
       stage.innerHTML = `<div class="replay__placeholder blueprint">no experiment published yet</div>`;
