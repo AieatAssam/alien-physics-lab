@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-18/r1/lab-a/008",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "A-A pair at rest, separation 9 along x (y=5), T=4. Edge of the chamber span; far-field discriminator as in 006.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          0.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          9.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 4.0,
+    "sample_dt": 0.04
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

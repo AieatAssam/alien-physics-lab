@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-18/r1/lab-a/007",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "Repeat of 006 (A-A, separation 8, T=4).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          1.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          9.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 4.0,
+    "sample_dt": 0.04
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

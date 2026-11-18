@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-18/r1/lab-c/007",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Species ratio across separation: A-B at rest, r=4.0 along x (T=0.8). Round 3 gave A-B at r=2 = 1.8 and A-A at r=2 = 2.6. A product-form pair law F_ij = kappa q_i q_j / r^2 predicts F_AB(4) about 0.39 (A-A at r=4 is 0.57, from 2026-11-17/r3/lab-c/003).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          7.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.8,
+    "sample_dt": 0.0004
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

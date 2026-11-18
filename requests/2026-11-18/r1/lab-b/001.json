@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-18/r1/lab-b/001",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Determinism replicate: exact repeat of 2026-11-17/r3/lab-b/006 (A-B at rest 1.0 apart, sample_dt 0.01, T 1). Prediction if the simulator is deterministic at fixed dt: coordinate differences at shared times are noise only (rms about 0.07). Falsified if they are larger.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          5.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

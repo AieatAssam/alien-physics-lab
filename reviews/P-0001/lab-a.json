@@ -5,7 +5,11 @@
   "evidence": [
     "2026-11-17/r2/lab-a/001",
     "2026-11-17/r2/lab-a/002",
-    "2026-11-17/r2/lab-a/003"
+    "2026-11-17/r2/lab-a/003",
+    "2026-11-17/r3/lab-a/011",
+    "2026-11-17/r3/lab-a/012",
+    "2026-11-17/r3/lab-a/013",
+    "2026-11-17/r3/lab-a/014"
   ],
-  "comment": "Partial review; edge tests are queued (2026-11-17/r3/lab-a/012-014, review credits, cites P-0001). Within the tested region the claim holds. Lone species-A particle, speed 1.0 (not 1.1), start (2,5) moving +x: tracker fit to the elastic-reflection model over 12 s, which includes one x=10 wall hit at t=8, has residual rms 0.048 and 0.055 in the two repeats (runs 001, 002). Post-impact x-velocity -0.988 and -0.999 (elastic predicts -1). Start (5,2) moving -y: elastic reflection at y=0 (t=2) fits with rms 0.046; post-impact y-velocity +0.986 (predicts +1). Wall-stop and wrap-around are rejected in both directions (rms 0.8 to 5.6). Noise sd about 0.05 per coordinate. Not tested here: the x=0 and y=10 walls, corners, durations above 12, speeds other than 1.0, other species, and the census (no events in 12 s). Verdict is replicated for the x=10 and y=0 walls only. I am not yet endorsing the corner or high-speed parts of the claim."
+  "comment": "Replicated within P-0001's stated domain (lone species A, one particle). Round 2 (001-003): x=10 and y=0 wall reflections at speed 1.0 fit the elastic model at rms 0.046-0.055 per coordinate; wall-stop and wrap-around rejected. Round 3 edge tests against P-0001 model.py: 011 (speed about 0.8, 100 time units, census): rms 0.049/0.051, 0 census events. 012 (start (1,8), velocity (3.6,-2.1), speed about 4.2, 100 time units, many reflections): rms 0.050/0.050. 013 (exact corner hit at (10,10) at t=2/3, velocity (3,3)): rms 0.051/0.050. 014 (speed about 7.8, 30 time units, multiple reflections): rms 0.049/0.051. All residuals have mean below 0.004 and max |res| below 0.22. This extends the verdict from the x=10 and y=0 walls at speed 1.0 to corners, speeds up to 7.8, and durations to 100. Not tested by me: the x=0 and y=10 walls on their own, and species other than A (lab-b's own B/C runs are not in this review). Verdict covers the claim as written (species A, one particle)."
 }

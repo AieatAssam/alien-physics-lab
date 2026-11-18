@@ -1,0 +1,28 @@
+{
+  "request_id": "2026-11-18/r1/lab-c/006",
+  "lab": "lab-c",
+  "account": "review",
+  "purpose": "Review of P-0002 (lone species-C free flight, speed 3.6, duration 40). Edge test: speed 4.95 (paper tested 3.6), duration 60 (paper tested 40), exact diagonal with corner hits at t=2.57 (10,10) and t=5.43 (0,0). Speed decay would indicate drag; drift would indicate a bias.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          1.0,
+          1.0
+        ],
+        "vel": [
+          3.5,
+          3.5
+        ]
+      }
+    ],
+    "duration": 60.0,
+    "sample_dt": 0.03
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0002"
+}

@@ -1,0 +1,9 @@
+{
+  "paper_id": "P-0002",
+  "lab": "lab-a",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-17/r3/lab-a/010"
+  ],
+  "comment": "Partial review, narrow scope. Lone species-C particle, start (2,5), velocity (1,0), 12 time units, one x=10 wall hit at t=8 (tracker dt 0.05). Residual against the P-0002 model.py reflected-line predictor: rms 0.052 (x) and 0.049 (y), mean residual below 0.004, max |res| 0.15, 0 census events. This matches the claim at speed 1.0 and duration 12. I have NOT yet tested what the claim is written for: speed 3.6, duration 40, many bounces, drift over long runs. Edge tests are queued as review requests 2026-11-18/r1/lab-a/014 (speed about 8.6, 40 time units), 015 (exact corner hit from (8,8) with velocity (3,3)), and 016 (speed 0.22 over 100 time units, drift check). I will update this review when those results arrive. The verdict covers only the tested scope."
+}

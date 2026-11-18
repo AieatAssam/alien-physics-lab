@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-18/r1/lab-a/010",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "A-A pair at rest, separation 4 along the 45-degree diagonal, T=2. Isotropy: compare with horizontal separation 4 (r3/003-004).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.0,
+          2.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          4.82842712474619,
+          4.82842712474619
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

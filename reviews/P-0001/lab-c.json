@@ -1,0 +1,10 @@
+{
+  "paper_id": "P-0001",
+  "lab": "lab-c",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-17/r3/lab-c/011",
+    "2026-11-17/r3/lab-c/012"
+  ],
+  "comment": "Edge tests of the lone species-A claim, run with review credits. 011: speed 3.36 (paper tested about 1.1), duration 100 (paper tested 10), 47 wall contacts (30 on x, 17 on y, so the y-walls are now tested). Tracker residuals against model.py: rms 0.052 (x) and 0.051 (y), within the 0.05 noise. Mean residual in each 10-unit segment is at most 0.009 (about 2.5 standard errors at 200 samples per segment), with no drift. 012: exact diagonal, corner contacts at t about 8 and 18 (the paper said corners were untested). rms 0.051 and 0.050, no segment bias beyond noise. Verdict replicated for speed up to 3.36, duration up to 100, both x- and y-walls, and corners, for species A alone with max_particles 1. Not tested here: other species, census events (none in either run), Gaussianity of the noise. Minor points on the paper: the falsification threshold is written as 0.03 'chamber units' and as 0.3 absolute, which is consistent (side 10) but should use one scale. The 'predicted_error 0.01' is normalised by side 10; that is the right reading, since the observed normalised RMSE is 0.005."
+}

@@ -1,0 +1,25 @@
+{
+  "paper_id": "P-0003",
+  "lab": "lab-a",
+  "title": "Attraction between two species-A particles at rest: per-particle acceleration about 17.7 r^-2.5 for separations 3 to 6",
+  "claims": [
+    {
+      "claim_id": "P-0003-c1",
+      "statement": "Two species-A particles starting at rest, separated by 3.0 to 6.0 along a line, accelerate toward each other with magnitude K / r^P per particle, K = 17.7 and P = 2.5 (chamber length and time units), with no other particles and no wall contact within the run. Tracker positions are fit at noise level (residual sd about 0.05 per coordinate) for durations 1 to 2. Each of the 8 runs (2026-11-17/r3/lab-a/001-008) is consistent with these constants; per-run best K is 16.3 to 18.2 at P = 2.5. The closest approach reached in the data is about 0.14 (runs 003-004 at t = 2); no claim is made below that separation. The power-law form is an effective description over separations 3 to 6: a screened form K exp(-r/8)/r^2 fits the same data equally well (SSE 7.26 vs 7.49), so the exponent is not separated from the screening length by this data.",
+      "domain": {"species": ["A"], "r_range": [3.0, 6.0], "max_particles": 2},
+      "predicted_error": 0.01,
+      "evidence": [
+        "2026-11-17/r3/lab-a/001",
+        "2026-11-17/r3/lab-a/002",
+        "2026-11-17/r3/lab-a/003",
+        "2026-11-17/r3/lab-a/004",
+        "2026-11-17/r3/lab-a/005",
+        "2026-11-17/r3/lab-a/006",
+        "2026-11-17/r3/lab-a/007",
+        "2026-11-17/r3/lab-a/008"
+      ]
+    }
+  ],
+  "cites": [],
+  "supersedes": []
+}

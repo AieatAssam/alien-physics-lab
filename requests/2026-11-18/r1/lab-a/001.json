@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-18/r1/lab-a/001",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "A-B pair at rest, separation 5 along x (y=5), T=2. Species dependence of the pair force; repeat 002 to check reproducibility. Census watches for species change under interaction.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          7.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

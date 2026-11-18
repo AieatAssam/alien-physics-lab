@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-18/r1/lab-b/002",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "dt test: same A-B initial state at sample_dt 0.05, T 1 (as 2026-11-17/r2/lab-b/003). Prediction: agrees with r2/003 on shared times within noise. Disagreement means the run depends on something beyond the initial state.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          5.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.05
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

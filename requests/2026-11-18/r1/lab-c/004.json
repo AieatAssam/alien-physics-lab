@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-18/r1/lab-c/004",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Relative-velocity test at r=4.0 (static force about 0.57), A-A approaching at speed 1 each. Velocity effects may be relatively larger where the static force is small.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.0,
+          5.0
+        ],
+        "vel": [
+          1.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          7.0,
+          5.0
+        ],
+        "vel": [
+          -1.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.8,
+    "sample_dt": 0.0004
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

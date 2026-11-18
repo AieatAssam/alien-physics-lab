@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-18/r1/lab-c/009",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Isotropy check, corrected. A-A at rest along y at r=2.0: (5,4) and (5,6). Replaces 2026-11-17/r3/lab-c/005, which placed both particles at (5,4) by mistake (a generator bug; r=0 is not a valid isotropy test). Compare with 2026-11-17/r3/lab-c/001 (along x).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          4.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          6.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.4,
+    "sample_dt": 0.0002
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

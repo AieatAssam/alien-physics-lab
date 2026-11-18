@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-18/r1/lab-b/003",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "dt convergence: same A-B initial state at sample_dt 0.02, T 1. If the close-approach trajectory depends on sample_dt, r3/003 should sit between the dt 0.05 and dt 0.01 runs; if it matches one of them, the dependence is a step-size effect.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          5.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

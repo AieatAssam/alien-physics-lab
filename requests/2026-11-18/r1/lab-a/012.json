@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-18/r1/lab-a/012",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "A-A pair at rest, separation 2 along x (y=5), T=0.5. Near-field low end of the proposed domain; the attraction should be strong (about 3 per particle) but contact is far.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.5,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}
