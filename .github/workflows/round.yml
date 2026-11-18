@@ -70,6 +70,10 @@ jobs:
             echo "0.0.0.0 $h # lab-block" | sudo tee -a /etc/hosts >/dev/null
           done
           ! curl -sS --max-time 5 -o /dev/null "https://$site/" 2>/dev/null
+          # Exam scores grade papers against the hidden laws: an oracle, so the lab never sees them.
+          # .git goes too, or the scores could be read back out of the checkout's objects.
+          rm -rf scores .git
+          ! test -e scores && ! test -e .git
           sudo rm -f /etc/sudoers.d/runner  # the lab cannot undo the block; the VM is thrown away after the job
           ! sudo -n true 2>/dev/null
       - name: Run lab session
