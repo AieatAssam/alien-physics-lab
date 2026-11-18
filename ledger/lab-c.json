@@ -5,6 +5,12 @@
       "research_used": 28.26,
       "review_allowance": 15,
       "review_used": 4.4
+    },
+    "2026-11-18": {
+      "research_allowance": 40,
+      "research_used": 8.2,
+      "review_allowance": 15,
+      "review_used": 2.2
     }
   },
   "lab": "lab-c"
