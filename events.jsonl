@@ -1,3 +1,10 @@
 {"date": "2026-11-17", "evidence": ["2026-11-17/r2/lab-a/001", "2026-11-17/r2/lab-a/002", "2026-11-17/r2/lab-a/003"], "kind": "standing", "paper_id": "P-0001", "review_lab": "lab-a", "verdict": "replicated"}
 {"cause": "standing replication", "date": "2026-11-17", "evidence": ["2026-11-17/r2/lab-a/001", "2026-11-17/r2/lab-a/002", "2026-11-17/r2/lab-a/003"], "from": null, "paper_id": "P-0001", "to": "accepted"}
 {"cause": "submitted", "date": "2026-11-17", "evidence": [], "from": null, "paper_id": "P-0002", "to": "submitted"}
+{"date": "2026-11-18", "evidence": ["2026-11-17/r3/lab-c/011", "2026-11-17/r3/lab-c/012"], "kind": "unsupported", "paper_id": "P-0001", "review_lab": "lab-c", "verdict": "replicated"}
+{"date": "2026-11-18", "evidence": ["2026-11-17/r3/lab-a/010", "2026-11-18/r1/lab-a/014", "2026-11-18/r1/lab-a/015", "2026-11-18/r1/lab-a/016"], "kind": "standing", "paper_id": "P-0002", "review_lab": "lab-a", "verdict": "replicated"}
+{"date": "2026-11-18", "evidence": ["2026-11-18/r1/lab-c/006", "2026-11-17/r2/lab-c/007"], "kind": "unsupported", "paper_id": "P-0002", "review_lab": "lab-c", "verdict": "replicated"}
+{"cause": "standing replication", "date": "2026-11-18", "evidence": ["2026-11-17/r3/lab-a/010", "2026-11-18/r1/lab-a/014", "2026-11-18/r1/lab-a/015", "2026-11-18/r1/lab-a/016"], "from": "submitted", "paper_id": "P-0002", "to": "accepted"}
+{"cause": "submitted", "date": "2026-11-18", "evidence": [], "from": null, "paper_id": "P-0003", "to": "submitted"}
+{"cause": "submitted", "date": "2026-11-18", "evidence": [], "from": null, "paper_id": "P-0004", "to": "submitted"}
+{"cause": "submitted", "date": "2026-11-18", "evidence": [], "from": null, "paper_id": "P-0005", "to": "submitted"}

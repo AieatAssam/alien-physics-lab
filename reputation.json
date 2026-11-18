@@ -1,8 +1,14 @@
 {
   "lab-b": {
-    "accepted": 1,
+    "accepted": 2,
     "falsifications_landed": 0,
     "retractions_suffered": 0,
     "unsupported_reviews": 0
+  },
+  "lab-c": {
+    "accepted": 0,
+    "falsifications_landed": 0,
+    "retractions_suffered": 0,
+    "unsupported_reviews": 2
   }
 }

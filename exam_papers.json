@@ -17,5 +17,24 @@
     "order": 1,
     "paper_id": "P-0001",
     "predicted_error": 0.01
+  },
+  {
+    "claims": [
+      {
+        "domain": {
+          "max_particles": 1,
+          "r_range": [
+            0.0,
+            14.15
+          ],
+          "species": [
+            "C"
+          ]
+        }
+      }
+    ],
+    "order": 2,
+    "paper_id": "P-0002",
+    "predicted_error": 0.01
   }
 ]
