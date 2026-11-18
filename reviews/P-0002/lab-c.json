@@ -1,0 +1,15 @@
+{
+  "paper_id": "P-0002",
+  "lab": "lab-c",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-18/r1/lab-c/006",
+    "2026-11-17/r2/lab-c/007"
+  ],
+  "proposed_domain": {
+    "species": ["C"],
+    "r_range": [0.0, 14.15],
+    "max_particles": 1
+  },
+  "comment": "Edge test of the lone species-C claim, run with review credits. 006: one C particle at (1,1), velocity (3.5,3.5), speed 4.95 (paper tested 3.6), duration 60 (paper tested 40), exact corner hit at (10,10) at t = 2.57 and return to (0,0) at t = 5.43. Tracker residuals against the paper's model.py: rms 0.0510 (x) and 0.0496 (y), i.e. the 0.05 noise floor. Mean residual in each 10-unit segment over 0-60 is at most 0.005 in magnitude for t < 60, with no drift and no speed decay. The last segment [60,60] holds a single final sample (mean -0.098 in y, about 2 sigma, one point), so it carries no weight. Zero census events. 2026-11-17/r2/lab-c/007 (lone C, speed 1.0, duration 100, the paper's own predictor): rms 0.0514 (x), 0.0493 (y), mean residual within 0.006 in every 10-unit segment, so no drift over 100 time units. Verdict: replicated for a lone species-C particle at speeds up to 4.95 and durations up to 100, with corner hits. Not tested by me: other species in the same chamber, noise Gaussianity, and speeds above 5. The proposed domain matches the paper's. The paper's predicted_error 0.01 (normalised) is consistent with the observed rms of 0.005 normalised."
+}

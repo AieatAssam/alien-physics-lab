@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-18/r2/lab-b/021",
+  "lab": "lab-b",
+  "account": "review",
+  "purpose": "Review of P-0003 at the long end of its separation range: A-A at rest, sep 6 along x at y=2 (x=2 and x=8), T=2. Prediction: attraction at K/r^2.5 with r=6 (per-particle accel ~0.20), pair moves toward x=5 along y=2 only; no wall contact. Falsified if the separation-time curve departs from the predictor by more than 0.15 on average per coordinate.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.0,
+          2.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.0,
+          2.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0003"
+}

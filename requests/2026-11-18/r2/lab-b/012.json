@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-18/r2/lab-b/012",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Pair magnitude and sign: C-C at rest, 3 apart, T=1, dt 0.0005. Fit the window t<=1 for each particle's acceleration (cubic fit, known initial state). Newton's third law (m_i a_i = -m_j a_j) gives mass ratios. Charge-product rule predicts |F_AB|^2 = |F_AA||F_BB| and |F_AC|^2 = |F_AA||F_CC| and |F_BC|^2 = |F_BB||F_CC|. Prediction: no P-0003 prediction (non-A pair). Falsified if the rank-one relation fails by more than the fit error.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          3.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          6.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.0005
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

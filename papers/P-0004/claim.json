@@ -1,0 +1,23 @@
+{
+  "paper_id": "P-0004",
+  "lab": "lab-a",
+  "title": "Species-dependent pair coupling at separation 5: A attracts B, A repels C, both at rest",
+  "claims": [
+    {
+      "claim_id": "P-0004-c1",
+      "statement": "Two particles at rest, separation 5.0 along a line, one species A and one species B, accelerate toward each other with per-particle magnitudes K_A(B) = 9.0 (on A) and K_B(A) = 12.3 (on B), in units of 1/r^2.5 at r = 5 (chamber and time units). Repeated in 2026-11-18/r1/lab-a/001 and 002 (agreement 4%), each consistent with the predictor at tracker noise (residual rms 0.049-0.053 per coordinate, no census events over T = 2). For comparison, two A at the same separation accelerate with K_A(A) = 18.0 (P-0003 runs). The A-on-B and B-on-A values are not equal; the ratio K_B/K_A = 1.37 is what momentum conservation requires if m_B/m_A = 0.73. No claim is made about masses. Constants are fit to these runs; the prediction test is the B-C pair (2026-11-18/r2/lab-a/001-002, round 2).",
+      "domain": {"species": ["A", "B"], "r_range": [5.0, 5.0], "max_particles": 2},
+      "predicted_error": 0.01,
+      "evidence": ["2026-11-18/r1/lab-a/001", "2026-11-18/r1/lab-a/002", "2026-11-17/r3/lab-a/005", "2026-11-17/r3/lab-a/006"]
+    },
+    {
+      "claim_id": "P-0004-c2",
+      "statement": "Two particles at rest, separation 5.0 along a line, one species A and one species C, REPEL: A is accelerated away from C with K_A(C) = -8.6 and C away from A with K_C(A) = -21.4 (same units). Single run 2026-11-18/r1/lab-a/005; the raw displacements at t = 2 (A moves 0.29 away, C moves 0.76 away) are many times the tracker noise, and the predictor fits the run at noise level (rms 0.048 per coordinate, no census events). This is a single-run claim; the sign is firm, the magnitudes need the repeat (2026-11-18/r2/lab-a/005) before they are trusted.",
+      "domain": {"species": ["A", "C"], "r_range": [5.0, 5.0], "max_particles": 2},
+      "predicted_error": 0.01,
+      "evidence": ["2026-11-18/r1/lab-a/005"]
+    }
+  ],
+  "cites": ["P-0003"],
+  "supersedes": []
+}

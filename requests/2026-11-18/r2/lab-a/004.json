@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-18/r2/lab-a/004",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "Repeat of r1/004 (C-C pair at rest, separation 5, T=2). Single-run value K_CC about 12.5 must be repeated; the factorisation predicts 4.1 (see r2/001-002 purpose), so this run also tests it.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          2.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          7.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

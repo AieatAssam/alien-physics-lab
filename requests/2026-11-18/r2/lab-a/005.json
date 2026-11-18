@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-18/r2/lab-a/005",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "Repeat of r1/005 (A-C pair at rest, separation 5, T=2). Single-run result: the pair repels (K_A(C) about -8.6, K_C(A) about -21.4). Sign and magnitude to be confirmed.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          7.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-18/r2/lab-c/002",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Velocity-term test, A-A approach at r=6.0 along x, speed 2 each (relative radial speed -4, twice the round-1 pair). Compare with the rest-fitted law plus no velocity term.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.0,
+          5.0
+        ],
+        "vel": [
+          2.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.0,
+          5.0
+        ],
+        "vel": [
+          -2.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.0005
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

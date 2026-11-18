@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-18/r2/lab-b/018",
+  "lab": "lab-b",
+  "account": "review",
+  "purpose": "Review of P-0003 at the edge of its stated domain: A-A at rest, sep 4 along x, centred at x=5 with y=1 (1 unit from the bottom wall), T=2 (top of stated duration range). P-0003 says the pair force is central with no other effects. Prediction from P-0003 model.py: motion along x only, y stays at 1.0 within noise; x-positions match the predictor within 0.15 per coordinate. Falsified if y drifts by more than 0.15 or x departs from the predictor by more than 0.15 on average.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.0,
+          1.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          7.0,
+          1.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0003"
+}

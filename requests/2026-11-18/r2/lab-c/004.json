@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-18/r2/lab-c/004",
+  "lab": "lab-c",
+  "account": "review",
+  "purpose": "Review of P-0003 (lab-a, A-A at rest, K/r^2.5 with K=17.74). Domain edge test at the far end: separation 6.0 along x, at rest, duration 2.0 (paper's maximum). Paper predicts per-particle acceleration 0.201.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0003"
+}

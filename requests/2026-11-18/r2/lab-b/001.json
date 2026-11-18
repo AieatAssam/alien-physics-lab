@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-18/r2/lab-b/001",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Duration dependence: A-B at rest 1 apart (4.5,5)/(5.5,5), T=10, dt=0.005; same state as 2026-11-17/r2/lab-b/003 (T=10), which departs from four T=1 runs after t~0.25. A: duration sets the trajectory, so this run matches r2/003 on t<=1 (rms ~0.07) and departs from the T=1 runs (rms >0.15 on 0.25-0.6). B: r2/003 was a one-off, so this run matches the T=1 runs (rms ~0.07).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          5.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 10.0,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-18/r2/lab-a/007",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "A-A pair at rest, separation 7 along x (y=5), T=4. Maps the effective pair force between separation 6 (K_eff about 16.5) and separation 8 (K_eff about 13.6): tests whether the P=2.5 constant (P-0003) drifts with separation. Repeat is -007.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          1.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 4.0,
+    "sample_dt": 0.04
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

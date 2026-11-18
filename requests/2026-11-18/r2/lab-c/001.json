@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-18/r2/lab-c/001",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Replicate of 2026-11-17/r2/lab-c/001 (A-A at rest, r=3.0, close approach near t=1.2, separation grew to about 9 by t=2). Same initial state, finer sampling (dt 0.001) through the close approach. Tests whether the post-crossing kinetic energy excess reproduces.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

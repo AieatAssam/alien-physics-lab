@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-18/r2/lab-b/020",
+  "lab": "lab-b",
+  "account": "review",
+  "purpose": "Review of P-0003 at the short end of its separation range, orientation and position test: A-A at rest, sep 3 vertical at x=8 (2 units from the right wall), y=3.5 and 6.5, T=2. Prediction: pair moves along y only, central, with the P-0003 law. Falsified if x drifts by more than 0.15 or the y-separation departs from the predictor by more than 0.15 on average.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          8.0,
+          3.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.0,
+          6.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0003"
+}

@@ -6,114 +6,126 @@ Persona: cautious experimentalist. Every run is repeated before it is trusted.
 ## Budget ledger
 
 ### 2026-11-17 (closed)
-- Research allowance 40. Used 23.3 in total across rounds 1-3 (ledger). Round 3 matched the plan: 14.04 research (001-011, 013) and 6.00 review (012-014). Unused credits do not roll over.
+- Research allowance 40, used 23.3 (ledger, rounds 1-3). Review used 6.0 (ledger).
 
-### 2026-11-18 (round 1, this session)
-- Research allowance 40. Planned: 14.54 (requests 001-013). Unused after plan: 25.46.
-- Review allowance 15, spendable only on requests citing a paper I review. Planned: 6.20 (014-016, cite P-0002). Unused after plan: 8.80.
-- Request costs checked against `cost = 1 + 0.02 * N * T` (all 16 requests, see table below). Requests validated against `protocol/request.schema.json` by hand (jsonschema not installed in this environment; constraint check only, not a full schema validation).
+### 2026-11-18
+- Research allowance 40. Round 1 (r1, requests 001-013): 14.54 used, results all in (16 ok). Round 2 (r2, requests 001-007): 7.72 planned, not yet run. Planned total 22.26; unused after plan 17.74.
+- Review allowance 15. Round 1 review (r1/014-016, cites P-0002): 6.20 used. Unused 8.80. No review requests this round.
+- Every cost in the 16 round-1 results equals `1 + 0.02 N T` (checked, see below). Cost budget was checked against the ledger, and the ledger matches the result costs.
 
 ## Established
 
-### Cost constant k = 0.02
-- Four (N, T) combinations so far, all matching `1 + 0.02 N T`: (1,5) 1.10, (2,5) 1.20, (1,4) 1.08, (1,12) 1.24. Result costs match the ledger exactly.
-- Not yet checked at N = 16. Round-1 request 013 (16 particles, T = 1, predicted cost 1.32) does this.
+### Cost constant (H3): supported at N = 1, 2, 16
+- k = 0.02. All 16 round-1 results match `1 + 0.02 N T`, including r1/013 (N = 16, T = 1, cost 1.32).
 
-### Tracker noise sd about 0.05 per coordinate (zero mean)
-- Round 1: residual sd 0.045-0.052 on straight-line series.
-- Round 2: wall-fit residual rms 0.046-0.055. Pair repeat difference sd 0.063-0.072 (pure noise predicts 0.071).
-- Round 3: residual rms vs P-0001 and P-0002 predictors 0.047-0.057 across lone-particle runs (001-014). vs P-0003 predictor 0.047-0.059 across at-rest pairs.
-- Noise is assumed independent of position, speed and species. The lone-particle checks cover species A, B and C; the pair checks cover species A only.
+### Tracker noise: about 0.05 per coordinate
+- Round 1 residual rms 0.047-0.053 on every pair and lone run that fits its model (r1/001, 002, 005, 010-012, 014-016). Unchanged from earlier rounds.
 
-### Lone-particle free flight with specular walls (H1, H2, H6): supported
-- Species A, speed 1.0: x = 10 and y = 0 walls, elastic reflection, speed preserved (r2/001-003). Wall-stop and wrap-around rejected.
-- Species A, speed up to 7.8, duration 100, corner hit: all consistent with the P-0001 predictor at noise level (r3/011-014). Corner reflection at (10,10) at t = 2/3 included.
-- Species B and C (speed 1.0, 12 time units, x = 10 wall at t = 8): consistent with the same reflected-line predictor (r3/009, r3/010). Species independence of free motion holds for this case.
-- Species C at speed 1.0, 12 units: consistent with P-0002's predictor (r3/010). Speed 3.6 and duration 40 are lab-b's run; my own edge tests for P-0002 are queued (2026-11-18/r1/lab-a/014-016).
+### No decays or census changes observed
+- Round 1: 0 census events in all 16 runs (pairs to T = 4, lone C to T = 100, 16-particle run to T = 1). Round 3 lone A (T = 100) also none. This supports "no decay seen", for the runs made. It is not a general claim.
 
-### Lone-particle decay (H4): no event in one run
-- Lone A, speed 0.8, 100 time units, census every 0.1: 0 census events (r3/011). This supports only "no decay of a lone A over 100 time units in this one run". Not a general claim.
+### Free flight with specular walls (H1, H2, H6): supported
+- Species A: P-0001 domain, r2/001-003 and r3/011-014 (speeds to 7.8, T up to 100, corner hit).
+- Species C: P-0002 scope (speed 3.6, 40 units) and wider edge tests (round 1 review, r1/014-016): speed 8.6 over 40 units, corner hit from (8,8) at v (3,3) over 20 units, and speed 0.22 over 100 units. Residual rms 0.048-0.052, means below 0.004, no drift, no events.
+- Species B and C free motion (speed 1, 12 units): consistent with the same reflected-line predictor (r3/009-010).
 
-### Pair attraction between two species-A particles at rest (H5 refuted; H7 supported, narrow)
-- Round 2 (r2/004-006): a moving A and a stationary A attract (H5 that they do not interact is refuted). The force law was not fit from that run.
-- Round 3 at-rest series (r3/001-008): two A at rest, separation 3, 4, 5, 6, repeated at each separation, T = 1 or 2.
-  - Fit of K / r^P (two-body integration, both particles, both coordinates): best P = 2.50, K = 17.74, rms 0.051 per coordinate. P in 2.25 to 2.75 gives rms 0.054-0.055; P = 2.0 or 3.0 give rms 0.062-0.064 (clearly worse). Noise is 0.05, so P = 2.5 is the best fit and the residual is at noise level.
-  - Per-run best K at P = 2.5: 17.2, 17.7 (sep 3), 17.7, 17.8 (sep 4), 18.2, 17.9 (sep 5), 16.3, 16.8 (sep 6). Repeats agree at each separation. The sep-6 runs sit about 7% lower.
-  - Closest approach in the sep-4 runs (003-004) is about 0.14 at t = 2. The fit still holds there, but no claim is made below that separation.
-  - Screened form K exp(-r/lambda)/r^2 fits the same data slightly better: lambda = 8 gives SSE 7.26 vs 7.49 for the power law. So the exponent and screening length are not separated by these data. Far-field runs (round-1 006-009) will discriminate: the two forms differ by about 15% at separation 8.5-9.
-  - No census events in any pair run (002-008) over 2 time units.
-- Written up as P-0003 (`out/papers/P-0003/`): claim domain species A, two particles, separation 3-6, at rest, duration up to 2. predicted_error 0.01 (normalized, 2x the observed rms). Constants are fit to these same runs; the prediction test is round 1.
+### Pair force at separation 5, species-dependent (H8 refuted)
+Per-particle coefficients K in acceleration = K / r^2.5 (time and chamber units), fit with P = 2.5 at r = 5, T = 2, pairs at rest. Positive means attraction.
 
-### Note on my own earlier estimates (fixed)
-- My quadratic fit to the at-rest runs printed 2 x the x^2 coefficient (the basis is 0.5 t^2, so the coefficient is the acceleration). It also gives a time-averaged value, not the initial acceleration, because the force grows as the pair closes. Both points are why the two-body fit is used instead. Nothing published depends on the quadratic numbers.
+| pair | particle | K | runs | rms |
+|---|---|---|---|---|
+| A-A | A (on A) | 18.0 | r3/005, 006 (repeat agrees: 18.18, 17.87) | 0.050 |
+| A-B | A (on B) | 9.0 | r1/001, 002 (8.81, 9.16) | 0.052 |
+| A-B | B (on A) | 12.35 | r1/001, 002 (12.41, 12.28) | 0.052 |
+| A-C | A (on C) | -8.6 | r1/005 (single run) | 0.048 |
+| A-C | C (on A) | -21.4 | r1/005 (single run) | 0.048 |
+| B-B | B (on B) | 5.9 | r1/003 (single run) | 0.050 |
+| C-C | C (on C) | 12.5 | r1/004 (single run) | 0.050 |
+
+- A-B repeat agrees to 4%. The A-C pair repels: A moves 0.29 away and C moves 0.76 away over t = 2, against noise 0.05 per coordinate. B-B and C-C each come from one run (repeats queued as r2/003-004).
+- The raw data show the A-C sign clearly, but my earlier fit that allowed only positive K missed it (the A-C fit sat at the grid edge). Signed fits are the correct analysis.
+- Interpretation (inference, not measurement): if the pair force obeys Newton's third law, m_B/m_A = 8.99/12.35 = 0.73 and m_C/m_A = 8.59/21.38 = 0.40. These are masses inferred from forces, not measured masses. The A-A, A-B, B-B, A-C, and C-C coefficients are consistent with a factorised coupling g_ij = q_i q_j with q_A^2 = 18.0, q_A q_B = 9.0, q_A q_C = -8.6 (in units of m_A). That predicts q_B^2 = 4.5 (B-B measured 4.3) and q_C^2 = 4.1 (C-C measured 5.0). The C-C disagreement is 20%, and a single run. This is the open question.
+- Prediction (r2/001-002): B-C pair at rest should repel, K_B(C) = -5.9 and K_C(B) = -10.7 (from g_BC = g_AB g_AC / g_AA = -4.29). A miss of more than about 20% rejects the factorisation.
+
+### Far-field: the constant-K power law fails beyond separation 6 (P-0003 extrapolation)
+Per-separation effective K at P = 2.5 (A-A, at rest):
+- r = 4: 17.7 (r3/003-004, repeat agrees)
+- r = 5: 18.0 (r3/005-006)
+- r = 6: 16.5 (r3/007-008; per-run 16.3, 16.8)
+- r = 8: 13.6 (r1/006-007; per-run 13.64, 13.60)
+- r = 9: 11.7 (r1/008-009; per-run 11.76, 11.64)
+
+The effective exponent rises with separation: local P_eff about 2.4 at r = 4.5, 3.0 at r = 5.5, 3.8 at r = 8.5. So a constant K with P = 2.5 holds near 4-5 and fails further out. The P-0003 predictor (K = 17.74, P = 2.5) gives residual rms 0.081-0.087 against the sep 8-9 runs, which is outside its noise band. That is outside P-0003's stated domain (3-6), so P-0003 is not falsified, but its power-law form does not extend.
+- Power law (P = 2.5, shared K) and screened inverse square (K exp(-r/8)/r^2) fit r1/006-009 equally well (rms 0.047-0.053, same as noise). The far-field data do not separate the two forms.
+
+### Isotropy at separation 4 (H10): supported
+- A-A along the 45-degree diagonal (r1/010): K = 17.67. Along y (r1/011): K = 17.71. Horizontal (r3/003-004): 17.70, 17.70. All four agree to 0.2%.
+- Caveat: separation-4 runs approach to about 0.3 by t = 2. The fit is sensitive there (see the integrator note). The agreement is good, but I weight it lower than the far-field result.
+
+### Near field (separation 2, T = 0.5): not a usable test
+- r1/012: K = 15.2, rms 0.047. T = 0.5 gives a small displacement, so K is poorly constrained. Not claimed.
+
+### Lone-particle free motion and P-0002: replicated
+- P-0002 review updated (`out/reviews/P-0002/lab-a.json`): replicated within its domain, and at speeds 0.22-8.6, durations to 100, corner hit (r1/014-016).
+
+### P-0003 status
+- Predictor reproduces its own evidence runs (r3/001-008) at noise level (rms 0.046-0.059, no events).
+- Not falsified within its domain (separation 3-6, T up to 2). Its constant-K, P = 2.5 form is not valid beyond about 6 (far-field, above).
+- Numerical note: near closest approach (separation 3-4, T = 2), the predicted trajectory is sensitive to K and to the integrator step. In my own integrator, K = 17.74 gives an unstable trajectory at step 0.001 (separation 4, diagonal), while K = 17.67 is converged across steps 0.005 to 0.0002. P-0003's own step (H = 0.002) gives noise-level fits on its runs. Other labs checking P-0003 at separation 3-4 should use a converged integrator and a step test.
+
+## Papers and reviews
+- P-0003 (lab-a, A-A pair, separation 3-6): published, unchanged. Domain stays as written.
+- P-0004 (lab-a, species-dependent pair coupling at separation 5): `out/papers/P-0004/`. c1 (A-B) replicated in two runs. c2 (A-C repulsion) single run; the sign is firm, magnitudes await the repeat. Model reproduces r1/001, 002, 005 at noise level (in-sample).
+- Reviews: P-0001 (lab-a, lab-c, earlier), P-0002 (lab-a, updated to replicated).
 
 ## Hypotheses (status)
-- H1 (lone-A ballistic free flight): supported. Now extended to speed 7.8 and 100 time units (r3/011-014).
-- H2 (species does not change free motion): supported for B and C at speed 1, 12 units, x=10 wall (r3/009-010). Not tested at other speeds for B or C; lab-b's P-0002 covers C at speed 3.6, duration 40.
-- H3 (cost = 1 + k N T): supported at four (N, T) pairs; N = 16 check queued (round 1 request 013).
-- H4 (no decay): one run, lone A, 100 time units, census: 0 events (r3/011). Not yet tested with pairs or other species.
-- H5 (no pairwise interaction at separation about 0.5): refuted (round 2).
-- H6 (wall reflection is elastic): supported for lone A at speed 1 on the x=10 and y=0 walls, and for lone A at speeds 4.2 and 7.8, including a corner hit (r3/012-014). Extended to species B and C at speed 1 (r3/009-010).
-- H7 (pair attraction is central, depends on distance, power-law-like at separations 3-6, species A only): supported at noise level for P = 2.5, K = 17.74 (P-0003). The form is not confirmed (screened inverse square fits equally well). Far-field, species and isotropy tests are queued (round 1).
-- H8 (new): the pair force is isotropic (direction-independent) and the same for B-B, C-C, A-B and A-C pairs. Round 1 requests 001-005 (species) and 010-011 (isotropy) test this.
+- H1 lone-particle free flight: supported (A, B, C; speeds 0.2-8.6; durations to 100).
+- H2 species does not change free motion: supported for B and C at speed 1, and for C at speeds 0.2-8.6 (P-0002 tests). Not tested for B at high speed.
+- H3 cost = 1 + k N T, k = 0.02: supported at N = 1, 2, 16.
+- H4 no decay: no event in any round-1 run and in round 3 lone-A run. Supported for the runs made, not general.
+- H5 no pairwise interaction: refuted (round 2).
+- H6 wall reflection is elastic: supported (lone A, B, C).
+- H7 pair attraction, central, P = 2.5, K = 17.7 for A-A over 3-6, T up to 2: supported inside 3-6. Constant-K P = 2.5 rejected beyond 6. Form not discriminated (power vs screened).
+- H8 pair force is the same for all species pairs: REFUTED at separation 5. A-B, A-C differ from A-A (A on B 9.0 vs A on A 18.0; A-C repels). B-B and C-C are single runs (repeats queued).
+- H9 (new, from P-0004 inference): coupling factorises as g_ij = q_i q_j with masses m_B = 0.73, m_C = 0.40 (m_A = 1). Test: r2/001-002 (B-C, predicted K_B(C) = -5.9, K_C(B) = -10.7). C-C mismatch of 20% is the first warning.
+- H10 isotropy at separation 4: supported (K 17.67-17.71 across three directions).
 
-## Reviews
-- P-0001 (lab-b, lone A free flight): `out/reviews/P-0001/lab-a.json`. Verdict replicated for the claim as written (species A, one particle), with evidence r2/001-003 and r3/011-014. Corners, speeds up to 7.8 and durations up to 100 are now covered. x=0 and y=10 walls on their own are still not separately tested.
-- P-0002 (lab-b, lone C, speed 3.6, 40 units): `out/reviews/P-0002/lab-a.json`. Partial, narrow verdict: replicated at speed 1.0, 12 units (r3/010) only. The claim's own scope (speed 3.6, 40 units, corners, long slow run) is queued as review requests 014-016. I will update this review when those results arrive. If any of them disagrees with the predictor by more than 0.03 normalized, I will call it falsified or narrowed per the results.
-
-## Round 1 (2026-11-18): requests written, results pending
-Output: `out/requests/2026-11-18/r1/lab-a/001-016.json`. Generator: `out/labs/lab-a/analysis/make_round1_requests.py`.
+## Round 2 (2026-11-18): requests written, results pending
+Output: `out/requests/2026-11-18/r2/lab-a/001-007.json`. Generator: `out/labs/lab-a/analysis/make_round2_requests.py`.
 
 | id | setup | T | cost | purpose |
 |---|---|---|---|---|
-| 001, 002 | A-B at rest, sep 5 | 2 | 1.08 each | species dependence of pair force (repeat) |
-| 003 | B-B at rest, sep 5 | 2 | 1.08 | species dependence |
-| 004 | C-C at rest, sep 5 | 2 | 1.08 | species dependence |
-| 005 | A-C at rest, sep 5 | 2 | 1.08 | mixed species |
-| 006, 007 | A-A at rest, sep 8 | 4 | 1.16 each | far field; power law vs screened form |
-| 008, 009 | A-A at rest, sep 9 | 4 | 1.16 each | far field (repeat) |
-| 010 | A-A at rest, sep 4, 45 degrees | 2 | 1.08 | isotropy |
-| 011 | A-A at rest, sep 4, along y | 2 | 1.08 | isotropy |
-| 012 | A-A at rest, sep 2 | 0.5 | 1.02 | near-field low end of domain |
-| 013 | 16 species-A at rest, 4x4 grid, spacing 2 | 1 | 1.32 | cost constant at N = 16 |
-| 014 | review: lone C, speed 8.6 (7,-5) from (3,6) | 40 | 1.80 | P-0002 at high speed (cites P-0002) |
-| 015 | review: lone C, corner hit (8,8) v (3,3) | 20 | 1.40 | P-0002 corner (cites P-0002) |
-| 016 | review: lone C, speed 0.22 from (5,5) | 100 | 3.00 | P-0002 drift over long run (cites P-0002) |
+| 001, 002 | B-C pair at rest, separation 5 | 2 | 1.08 each | prediction test of factorisation: B and C repel, K_B(C) ~ -5.9, K_C(B) ~ -10.7 |
+| 003 | B-B pair at rest, separation 5 (repeat of r1/003) | 2 | 1.08 | confirm K_BB = 5.9 |
+| 004 | C-C pair at rest, separation 5 (repeat of r1/004) | 2 | 1.08 | confirm K_CC = 12.5 (factorisation predicts 4.1) |
+| 005 | A-C pair at rest, separation 5 (repeat of r1/005) | 2 | 1.08 | confirm repulsion magnitudes |
+| 006, 007 | A-A pair at rest, separation 7, T=4 | 4 | 1.16 each | effective force between 6 (16.5) and 8 (13.6) |
 
-Expected research total 14.54, review 6.20.
+Expected research total 7.72. Remaining unused after plan: 17.74.
 
 ## Decision rules for next session
-1. Read round-1 results 001-013 as they arrive. Check repeats first (001 vs 002, 006 vs 007, 008 vs 009). If a repeat pair disagrees beyond noise, treat that measurement as unresolved and say so.
-2. Species (001-005): fit each species pair with the same two-body fit. If A-B, B-B, C-C, A-C agree with A-A at the same separation, state species-independence of the pair force for separations 3-6 (new paper). If not, name the species dependence and its size.
-3. Far field (006-009): compare the power law (K = 17.74, P = 2.5) with the screened form (lambda = 8, K = 15). Whichever fits the 8-9 separation data better, the other is ruled out if the difference exceeds 3 times the noise on the fitted displacement. If neither fits, say so and refit P-0003's domain to match.
-4. Isotropy (010-011): compare with the horizontal sep-4 runs (r3/003-004). Same K within noise → central, isotropic. A discrepancy → the force depends on direction; then P-0003's "central" claim is narrowed.
-5. Near field (012): compare to the power-law prediction at separation 2 (about 3.1 per particle at rest). Use it to decide whether P-0003's domain can extend below 3.
-6. N = 16 (013): compute the cost from the result and check it is 1.32. Mismatch → revise k.
-7. P-0002 edge tests (014-016): compare each against P-0002's `model.py` with `out/labs/lab-a/analysis/compare_model_r3.py`. Residual rms within 0.03 normalized (0.3 chamber units) → replicated for that test. Outside → falsified or narrowed, and write it up.
-8. P-0003 update: a prediction test passes if 006-009 and 010-011 are inside the noise band of the P-0003 predictor (rms per coordinate about 0.05 for T up to 4 and sep 8-9). If they are not, retract the constants or narrow the domain before anything else is published.
+1. Check r2 results when they arrive. Use `out/labs/lab-a/analysis/round1_2026-11-18.py` pattern for fits; use signed K (negative is repulsion) and per-particle coefficients for mixed species.
+2. B-C (001-002): repeat must agree within 5% of predicted K_B(C) = -5.9 and K_C(B) = -10.7. Pass: factorisation holds for B-C. Miss by more than 20%: factorisation rejected, and P-0004 says so.
+3. B-B (003) and C-C (004): if the repeats match r1 within 5% (5.9, 12.5), publish B-B and C-C coefficients as part of P-0004 (new claim). If C-C moves toward 4.1, the factorisation survives and my 5.0 was noise; if it stays at 5.0, factorisation fails for C-C.
+4. A-C repeat (005): if magnitudes match (-8.6, -21.4) within 5%, P-0004 c2 is promoted to replicated. Otherwise narrow c2 to the sign only.
+5. Far field (006-007): K_eff(7) between 13.6 and 16.5 means the drop is smooth. Compare the two forms with the per-run fit. If the sep-7 value does not fit a smooth curve through 6, 8, 9, the P=2.5 law is wrong in a way neither form captures.
+6. Do not publish a separation-3 or separation-4 prediction without a converged integrator (step test). The fits there are sensitive.
 
 ## What would change my mind
-- If the far-field runs (006-009) fall well off the power-law prediction (more than 15%), the force is not a power law over 3-9 and P-0003 must be narrowed or replaced.
-- If the isotropy runs (010-011) disagree with the horizontal runs, the force is not central. Then P-0003's central form is wrong.
-- If the species runs show a census event, a species change under interaction is possible and every pair claim needs a census check.
-- If any P-0002 edge test (014-016) departs from the predictor by more than 3 times predicted_error, my partial review changes to falsified or narrowed.
-- If the 16-particle cost is not 1.32, k = 0.02 does not hold at N = 16 and all cost-based budgeting needs revision.
+- If the B-C prediction misses by more than 20%: the coupling is not a product of per-species factors. Then P-0004 is narrowed to the measured pairs only.
+- If the repeat of A-C does not repel: c2 is wrong (single-run artefact), and I retract the sign.
+- If far-field separation 7 falls on the P-0003 power-law curve (K about 17.7 times something smaller), the drop is not monotone and H7's domain has to shrink further.
 
 ## Self-criticism
-- P-0003 is fit to the same 8 runs that set K and P. The residual test is in-sample. The prediction test is round 1 (006-011). I have said so in the paper, but the claim's predicted_error (0.01 normalized) should be read as a consistency level, not as a forecast.
-- The power law (P = 2.5) is an effective description. The screened inverse-square form fits as well on current data, and I say that in the paper. I have no evidence yet that P = 2.5 is a physical exponent.
-- Per-run best K at separation 6 is about 7% lower than at separation 4. Noise alone may explain it, but the two sep-6 runs agree, so it could be real. It is the first thing the far-field and screened-form tests should address.
-- Round 2's moving-pair run (r2/004-005) reached separation about 0.8. P-0003 does not claim anything there. I have not checked whether the same law explains that run.
-- The noise estimate (0.05) is from A-species lone runs and at-rest pairs. Species B and C noise is only checked through the lone-particle residuals (r3/009-010), which agree.
-- My P-0001 and P-0002 reviews are limited to the tested scope. The P-0002 review is partial on purpose; the verdict will be updated when the edge-test results arrive.
-- The ledger's research total for 11-17 is consistent with the round-3 plan, but I did not re-derive the full ledger across rounds 1-3 from result costs. Treat the 23.3 used figure as the ledger's, not my own check.
+- My earlier analysis fit only positive K, which hid the A-C repulsion for a whole round. Signed fits are now standard.
+- The separation-4 and separation-3 fits are numerically sensitive near closest approach. The isotropy agreement and P-0003's separation 3-4 fits rest on that. I have not run a full step-convergence study for each run, only for run 010.
+- The mass and charge reading is inference from Newton's third law, not a measurement. The C-C value already disagrees with it. I should not treat the factorisation as established until r2/001-004 are in.
+- P-0004 c2 is a single run. I published it with the sign-only caveat in the paper; if the repeat fails, I will say so in a revision.
+- The per-separation K values for 6 and 8-9 come from fits with a shared K over two runs each (r3 007-008; r1 006-009) at P = 2.5. The drift is real at noise level, but the local-exponent numbers are rough.
 
 ## Analysis code
-All in `out/labs/lab-a/analysis/`. Pure python, no numpy (numpy is not installed here).
-- `pair_rest_r3.py`: per-run quadratic fits; reports window-averaged acceleration (not the initial acceleration).
-- `pair_central_fit_r3.py`: two-body integration, grid over P, K.
-- `pair_central_refine_r3.py`: golden-section K for each P, with rms.
-- `pair_form_compare_r3.py`: power law vs screened inverse square.
-- `compare_model_r3.py`: residuals of any paper's `model.py` against result samples, with census events.
-- `make_round1_requests.py`: writes `out/requests/2026-11-18/r1/lab-a/`.
-- Earlier: `fit_r1.py`, `fit_r2.py`, `pair_fit_r2.py`, `pair_accel_r2.py`, `make_round3_requests.py`.
+All in `out/labs/lab-a/analysis/` (my own files). Pure python, no numpy (not installed).
+- `round1_2026-11-18.py`: round-1 cost check; species, far-field, isotropy, near-field fits with a shared K; P-0003 residuals. Usage: `python3 -I round1_2026-11-18.py <repo_root>`.
+- `make_round2_requests.py`: writes `out/requests/2026-11-18/r2/lab-a/001-007.json`.
+- `round1_species_signed.py`: signed per-particle fits for A-B and A-C (runs 001, 002, 005) and P-0002 edge-test residuals (r1/014-016). Run output matches the notebook table.
+- Older scripts in the repo under `labs/lab-a/analysis/` (fit_r1, fit_r2, pair_central_fit_r3, compare_model_r3, etc.) are unchanged. `compare_model_r3.py` is the residual tool used for P-0002 and P-0004 checks.

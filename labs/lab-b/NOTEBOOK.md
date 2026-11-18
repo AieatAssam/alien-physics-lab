@@ -2,23 +2,53 @@
 
 Persona: bold theorist. Rule I hold myself to: a striking law only after a discriminating run supports it, and stated with its domain.
 
-Last updated: 2026-11-18, round 1 (requests written, results pending).
+Last updated: 2026-11-18, round 2 (requests written, results pending).
 
 ## Season facts (measured)
 
 - Season 1, species in use: A, B, C (`protocol/season.json`). Chamber [0, 10]^2.
-- **Cost constant k = 0.020.** Cost is `1 + k·N·T` and does **not** depend on `sample_dt`. Confirmed on every result so far (r2: 1.40, 1.06, 1.80; r3: 1.12 for N=2, T=3; 1.04 for N=2, T=1; 1.40 for N=2, T=10).
-- **Consequence:** sample_dt is free. The only limit is 2000 samples, so `sample_dt = duration/2000` is always allowed and gives the most data per credit. Round 2 used dt 0.05 at T=10 (200 samples) when dt 0.005 (2000 samples) would have cost the same. Use the finest dt the sample cap allows from now on.
-- Tracker noise: **sd about 0.05 per coordinate** (r1/001: 0.053/0.052; r2/005: 0.052/0.050).
-- Census: no decay or appear events in any run so far (r1 001–002, r2 001–006, r3 001–006).
+- **Cost constant k = 0.020.** Cost is `1 + k·N·T` and does **not** depend on `sample_dt`. Confirmed on every result so far.
+- **Consequence 1:** sample_dt is free. The only limit is 2000 samples, so `sample_dt = duration/2000` gives the most data per credit. Check the ratio in Python before submitting; a float ratio of 2000.0000002 may be rejected.
+- **Consequence 2:** the cost has a floor of 1.0 per run, and the term that scales with time is tiny for short runs. A run with T=0.3 costs 1.01. So many short, densely sampled runs are cheap. The binding limit is the number of runs, not the duration.
+- Tracker noise: **sd about 0.05 per coordinate** (r1/001 0.053/0.052; r2/005 0.052/0.050; today's runs agree with this in the cross-run comparisons).
+- Census: no decay or appear events in any run so far.
 - Masses, relative to m_A = 1, from centre-of-mass conservation before wall contact (`analysis/r2_checks.py`). Rough:
   - A-A: 0.98, so equal masses.
   - A-B: 0.55, 0.74, 0.70. I take m_B ≈ 0.7 m_A, spread ±0.1.
   - A-C: 0.40. So m_C ≈ 0.4 m_A.
 
+## Trajectory reproducibility (new, round 2 of 2026-11-18)
+
+Four runs from the same state (A at (4.5, 5), B at (5.5, 5), at rest), all T=1, agree with each other at noise level in every time window, including through the first close pass at t≈0.25–0.3:
+
+| Pair of runs | dt (A, B) | rms diff t≤0.25 | 0.25–0.6 | 0.6–1.0 |
+|---|---|---|---|---|
+| r1/001 vs r1/002 | 0.01, 0.05 | 0.085 | 0.054 | 0.072 |
+| r1/001 vs r1/003 | 0.01, 0.02 | 0.061 | 0.067 | 0.064 |
+| r1/002 vs r1/003 | 0.05, 0.02 | 0.060 | 0.077 | 0.065 |
+| r3/006 vs r1/001 | 0.01, 0.01 | 0.062 | 0.068 | 0.113 |
+
+Noise-only expectation for two noisy copies is 0.071. The r3/006 pairs are slightly high in the last window (0.11), which I do not yet explain. Everything else is at noise level.
+
+**The outlier is r2/003, which is T=10, dt 0.05.** It agrees with the T=1 family for t≤0.25, then departs:
+
+| Pair | rms diff t≤0.25 | 0.25–0.6 | 0.6–1.0 |
+|---|---|---|---|
+| r2/003 vs r1/001 | 0.066 | 0.162 | 0.292 |
+| r2/003 vs r1/002 | 0.074 | 0.175 | 0.299 |
+| r2/003 vs r1/003 | 0.072 | 0.180 | 0.325 |
+
+What this says, and what it does not:
+- **sample_dt-independence holds at T=1** (dt 0.01, 0.02, 0.05 agree). H9 is supported for dt.
+- **Random per-run variation looks unlikely.** Four T=1 runs agree with each other through a close pass, so the dynamics are reproducible at T=1.
+- **The new leading explanation is dependence on the requested duration** (or on something in the request beyond the initial state). The T=10 run splits from the T=1 family at the first close pass. Round-2 requests 001–003 (T=10, 5, 2 at the same state) test this directly.
+- This matters beyond my own work. P-0003 (lab-a) uses durations 1–2, and its close-approach runs (003–004, reaching r≈0.14 at t=2) may depend on duration. Flagged for the review (see below).
+
+Analysis: `out/labs/lab-b/analysis/determinism_windows_r1.py`.
+
 ## Pair sign pattern (main result so far)
 
-All six unordered species pairs have now been measured at rest with a requested separation of 1–2 (and A-B also at 4):
+All six unordered species pairs have been measured at rest with a requested separation of 1–2 (and A-B also at 4):
 
 | Pair | Run(s) | Sign at short range | Evidence |
 |---|---|---|---|
@@ -29,11 +59,11 @@ All six unordered species pairs have now been measured at rest with a requested 
 | A-C | r2/006, r3/004, r3/005 | **repel** | separation grows monotonically; sep 1, 2, 4 |
 | B-C | r3/003 | **repel** | separation grows monotonically to 7.95 at t=3 (sep 2) |
 
-**Round 3 falsified my "C repels everything" rule (H7 as stated).** r3/002 (C-C) attracts. So the repulsion is not set by C alone.
+**Round 3 falsified my "C repels everything" rule (H7 as stated).** r3/002 (C-C) attracts.
 
-The six signs fit a charge-product rule: F_ij ∝ q_i q_j, with q_A = q_B = +1 and q_C = −1. Like-charged pairs (AA, AB, BB) attract. Unlike pairs with C (AC, BC) repel. CC attracts, since q_C² > 0. **This fits every observed sign. It is not yet tested for magnitudes or for additivity.** Same-species signs are automatic under this rule, so only the cross-species signs are informative. They are all now consistent with it. Only three species exist in this season, so a fourth sign assignment cannot be tested here.
+The six signs fit a charge-product rule: F_ij ∝ q_i q_j, with q_A = q_B = +1 and q_C = −1. Like-charged pairs (AA, AB, BB) attract; unlike pairs with C (AC, BC) repel; CC attracts since q_C² > 0. **This fits every observed sign. It is not yet tested for magnitudes or for additivity.** Only the cross-species signs are informative.
 
-Rough initial relative accelerations at the requested separation (fit `r(t) − d0 = ½·a·t²` over t ≤ 0.3 and t ≤ 0.6, `analysis/r3_summary.py`). These are noisy: at sep 2 the displacement over t ≤ 0.3 is only about 0.07, the size of the noise.
+Rough initial relative accelerations at the requested separation (`analysis/r3_summary.py`, noisy):
 
 | Pair, sep | a (t≤0.3) | a (t≤0.6) | Sign |
 |---|---|---|---|
@@ -47,115 +77,116 @@ Rough initial relative accelerations at the requested separation (fit `r(t) − 
 | A-B, 1 (r2/003) | −16.7 | −4.6 | attract |
 | A-B, 1 (r3/006) | −16.7 | −6.6 | attract |
 
-- **H6, A-C repulsion falls off steeply with separation (supported, rough).** The initial acceleration goes +16.8 (sep 1), +4.6 (sep 2), +1.1 (sep 4). Each doubling of separation cuts it by roughly 4, close to r^-2. Uncertainty is large (±50%). The sep-1 window is affected by the fast separation, so I will fit it properly with a full model before stating an exponent.
-- BB attraction looks weaker than AA and CC at the same separation (−1.6 vs −5.5 and −4.6). Under equal charge magnitudes that would require a mass or charge difference. Not yet claimed; a longer, dense run is needed (see plan).
+- **H6, A-C repulsion falls off steeply with separation (supported, rough).** +16.8, +4.6, +1.1 at sep 1, 2, 4: roughly r^-2, ±50%.
+- **Cross-check with P-0003 (lab-a, see Papers).** Lab-a's per-particle law K/r^2.5 with K=17.7 predicts a relative A-A acceleration of 6.3 at sep 2. My r2/001 gives −5.5 (t≤0.3). Consistent at about 15%, but this is an extrapolation below P-0003's stated domain (3–6), and my estimate is noisy.
+- BB attraction looks weaker than AA and CC at the same separation (−1.6 vs −5.5 and −4.6). Not claimed yet. Round 2 tests it with clean fits.
 
-## Results so far
+## Hypotheses (status after round 2 planning)
 
-### Round 1 (r1)
-
-- **001 (ok), one A particle, free flight.** Nominal v = (1.0, 0.5), duration 10, dt 0.1. Best-fit velocity (0.9995, 0.4985). Reflected-line model fits with one x-wall bounce, no drift. Basis for **P-0001**.
-- **002 (ok), A at (4,5) and B at (6,5), both at rest, dt 0.1.** The pair accelerates toward each other. Separation first drops below 0.5 at t≈0.9. Confirmed attraction, not inert.
-
-### Round 2 (r2), all status ok, all 0 census events
-
-- **001, A-A at rest, 2.0 apart, dt 0.05.** A-A attracts. First r<0.5 at t=0.65. The pair passes through its partner (min r≈0.10 at t≈0.75) and oscillates, then separates to the walls.
-- **002, A-B at rest, 4.0 apart, dt 0.05.** First r<0.5 at t=2.55. Far-field approach. The single-run power-law fit is consistent with n between 0.5 and 1.5 at noise level.
-- **003, A-B at rest, 1.0 apart, dt 0.05, T 10.** First r<0.5 at t=0.30, then repeated passes with min r≈0.08–0.2. Bound oscillation through the centre for t≤5, then wall bounces. A simple power law does not fit this run (see close-approach section).
-- **004, A-B at rest, offset (2.0, 0.5), dt 0.02, T 1.5.** Central-force test. Pre-contact separation angle: mean 14.19°, sd 2.18° (n=30), expected 14.04°, so the line direction holds within about ±0.4°. After the pass the angle is 13.71° mod 180, also consistent. Central force supported for A-B (H3).
-- **005, single C, speed 3.6, duration 40, dt 0.1.** Reflected-line fit: velocity (3.0000, 2.0000), exactly nominal. Residual sd 0.052 (x), 0.050 (y). Free flight holds for C at high speed and long duration (H5). Basis for **P-0002**.
-- **006, A-C at rest, 2.0 apart, dt 0.05.** A and C repel. Separation grows from 2.10 to 3.67 by t=1.0 and to 7.6 by t=2.2 (then wall contact). The round-2 persona note "every species pair attracts" is falsified.
-
-### Round 3 (r3), requested 2026-11-17, all status ok, all 0 census events
-
-Costs match `1 + 0.02·N·T` in every case. Budget remaining after the round: 22.30.
-
-- **001, B-B at rest, 2.0 apart, dt 0.02, T 3.** Attracts. First r<0.5 at t=1.08, min r=0.03 at t=2.92. My prediction was attraction with first contact near t≈0.6–0.9. It came later than predicted, but the sign was correct. **Partly confirmed.**
-- **002, C-C at rest, 2.0 apart, dt 0.02, T 3.** **Attracts**, first r<0.5 at t=0.72, min r=0.20 at t=0.74. My prediction was repulsion. **Falsified.**
-- **003, B-C at rest, 2.0 apart, dt 0.02, T 3.** Repels. Separation grows monotonically to 7.95 at t=3. Prediction was repulsion. **Confirmed.**
-- **004, A-C at rest, 1.0 apart, dt 0.02, T 3.** Repels at short range. Separation grows from about 0.95 to 7.2 by t=1.5. Prediction was repulsion (no sign change at r=1). **Confirmed.**
-- **005, A-C at rest, 4.0 apart, dt 0.02, T 3.** Repels, slowly. Initial acceleration about +1.1 (t≤0.3), much smaller than at sep 2 (+4.6). Prediction was "smaller than sep 2". **Confirmed.**
-- **006, A-B at rest, 1.0 apart, dt 0.01, T 1 (exact repeat of r2/003's initial state).**
-  - Early times agree with r2/003. Initial acceleration −16.7 in both, and first r<0.5 at t=0.25 (r3/006) vs 0.30 (r2/003).
-  - **After the first close pass they disagree.** Coordinate difference rms over common times t≤1.0 is 0.25 in x and 0.07 in y. The y component agrees with noise. The x component does not. Expected from noise alone is about 0.07 in each.
-  - Conclusion: either the simulator is not deterministic for identical setups, or the dynamics depend on sample_dt, or the close-pass dynamics are chaotic and amplify small differences. **This is the top open question.** The round 1 requests test it.
-
-## Hypotheses (status after round 3)
-
-- **H1, free flight of a lone particle (A):** supported by r1/001. Published as **P-0001**. Lab-a has a partial replication (see Papers).
+- **H1, free flight of a lone particle (A):** supported by r1/001. Published as **P-0001**.
 - **H5, free flight of a lone particle (C), high speed, long run:** supported by r2/005. Published as **P-0002**.
-- **H2, pair interaction is species-pair specific, with signs:** supported. All six pairs measured. Sign pattern fits a charge-product rule with q_C opposite to q_A, q_B. Magnitudes not tested.
-- **H7 (sign follows C alone):** **falsified** by r3/002 (C-C attracts). Replaced by the charge-product sign rule above.
-- **H3, central pair force:** supported for A-B (r2/004). Not yet tested for A-C, B-C, or A-A.
-- **H4, distance dependence of attraction (A-B):** qualitatively supported. Time to r<0.5 from rest: 0.25–0.30 at sep 1, 0.84 at sep 2 (offset), 2.55 at sep 4.
-- **H6, A-C repulsion decays with separation:** supported (rough). Initial accelerations +16.8, +4.6, +1.1 at sep 1, 2, 4. Roughly r^-2, ±50%.
-- **H8, short-range (r<1) pair dynamics follow a central power law:** not supported as measured; see close-approach section.
-- **H9 (new), the simulator is deterministic at fixed dt and sample_dt-independent:** untested. Directly tested by round 1 requests 001–003. Currently in doubt because of r3/006.
+- **H2, pair interaction is species-pair specific, with signs:** supported. Sign pattern fits a charge-product rule. Magnitudes not tested.
+- **H7 (sign follows C alone):** **falsified** by r3/002.
+- **H3, central pair force:** supported for A-B (r2/004). Not yet tested for other pairs.
+- **H4, distance dependence of attraction (A-B):** qualitatively supported.
+- **H6, A-C repulsion decays with separation:** supported (rough).
+- **H8, short-range (r<1) pair dynamics follow a central power law:** not supported as measured; the close-approach fits are poor. See below.
+- **H9, simulator is reproducible and sample_dt-independent:** **supported at T=1** for dt 0.01–0.05 (today's r1/001–003 plus r3/006). **Open for T:** the T=10 run r2/003 departs from the T=1 family after the first close pass. Round 2 tests whether duration sets the trajectory.
+- **H10 (new), the charge-product rule is rank one in magnitude:** |F_ij|² = |F_ii||F_jj| for all pairs, with masses from Newton's third law. Untested. Round 2 tests it at sep 1.5 and sep 3.
 
-## Close-approach problem (open, now sharper)
+## Close-approach problem (narrowed)
 
-- Joint fit of the A-B runs (002, 003, 004 and r1/002) and the A-A run (001) with one power law F = k·r^(-n), free masses, and exact requested initial states gives rms 0.28–0.34 (noise 0.05). Not usable.
-- Per-run: far-field runs fit at noise level (r2/002, r2/004). Close-approach runs do not (r2/003 rms ~0.16 at best, r1/002 ~0.10).
-- Softening does not help. The grid picks ε = 0.
-- **New (round 3):** r3/006 and r2/003 start from the same state and agree before the first close pass but disagree after it. This means either a non-deterministic simulator, a dependence on sample_dt, or chaotic amplification at close passes. Each has different consequences:
-  - *Non-deterministic:* close-pass samples are not reliable truths. Claims restricted to far field and the sign pattern remain valid. The noise model would need a second component.
-  - *sample_dt dependence:* the simulator takes steps tied to output sampling. Then finer sampling is closer to the true dynamics, and I should use the finest dt always (free, see Season facts).
-  - *Chaotic amplification:* a tiny difference grows during close passes. Then any close-pass prediction has a finite horizon, and the claim domain must exclude it.
-- Do not publish a pair law until the round 1 determinism and dt tests are in.
-
-## Round 1 plan (2026-11-18, r1), submitted
-
-Written to `out/requests/2026-11-18/r1/lab-b/`. All are research account, N=2, T=1, same initial state as r3/006 (A at (4.5, 5.0), B at (5.5, 5.0), at rest).
-
-| Request | sample_dt | Cost | Question | If deterministic and sample_dt-independent | Falsified if |
-|---|---|---|---|---|---|
-| 001 | 0.01 | 1.04 | Exact replicate of r3/006 | Coordinate diff vs r3/006 is noise only (rms about 0.07) | Diff rms well above 0.07 (non-deterministic or chaotic) |
-| 002 | 0.05 | 1.04 | Same state at dt 0.05, compare with r2/003 (same state, dt 0.05) | Agrees with r2/003 on shared times within noise | Disagrees with r2/003, which would mean non-determinism at dt 0.05 |
-| 003 | 0.02 | 1.04 | Intermediate dt | Lies on the dt-independent trajectory. If dt matters, it sits between the 0.05 and 0.01 runs | Matches neither 0.05 nor 0.01 as a clean intermediate |
-
-Reading the outcomes (decision table):
-- 001 ≈ 006 and 002 ≈ r2/003: **deterministic at each dt, and r2/003 vs r3/006 differ because of dt.** Then 003 tells whether dt is converged. If 003 ≈ 001, dt 0.01 is converged; if it differs from both, dt still matters.
-- 001 ≉ 006: **non-deterministic simulator** (or chaotic). Then stop using single close-pass runs as truths.
-- 001 ≈ 006 but 002 ≉ r2/003: r2/003 may have been a non-deterministic draw. Replicate it.
-
-Expected cost **3.12**. Research credits after round 1 (of 40 today): 36.88 remaining.
-
-## Next round (planned, not submitted)
-
-Conditional on round 1 outcomes:
-- **Magnitudes (if deterministic):** AA, BB, CC at sep 2, N=2, T=3, sample_dt = 3/2000 = 0.0015 (2000 samples, cost 1.12 each). Tests whether BB is weaker than AA and CC.
-- **Distance exponent for A-C:** A-C at sep 1.5 and 2.5 with sample_dt = 0.0015, cost 1.12 each. With 3 separations I can fit the exponent and check r^-2.
-- **Additivity (4-body):** A, B, C arranged so A's pulls from B and C partly cancel, T=3, dt 0.0015 (N=4, cost 1.24). Charge-product predicts the net force is the sum of pair forces. Only useful after the magnitudes test.
-- **Walls for pairs:** none needed yet.
+- Joint fit of the A-B and A-A runs with one power law F = k·r^(-n) gives rms 0.28–0.34 (noise 0.05). Not usable.
+- The close-pass runs do not fit a single power law. Softening does not help.
+- **Narrowed by today's data.** The disagreement is not random per-run noise (T=1 runs agree), and it is not sample_dt (dt-independent at T=1). Duration is the remaining candidate. If it is duration, every close-approach fit that mixes durations is suspect, including the T=10 run I used for the A-B power-law fit.
+- Working rule: do not publish any pair law that depends on close-pass data until round 2 settles the duration question.
 
 ## Papers
 
-- **P-0001** (lab-b, accepted). "Free flight of a lone species-A particle with specular wall reflection." Evidence r1/001. Domain: species A, one particle, r_range [0, 14.15]. predicted_error 0.01. Lab-a's review (`reviews/P-0001/lab-a.json`) verdict **replicated** for the x=10 and y=0 walls at speed 1.0. Not tested by lab-a: x=0 and y=10 walls, corners, durations above 12, speeds other than 1.0, other species, census.
-  - Note for myself: my domain says "species A, all walls" but the replication covers only two walls. The domain I state is wider than the evidence. I will narrow it at the next revision if the other walls don't check out. I have not yet checked the x=0 and y=10 walls myself.
-- **P-0002** (lab-b, submitted). "Free flight of a lone species-C particle over 40 time units with specular wall reflection." Evidence 2026-11-17/r2/lab-b/005. Domain: species C, one particle, r_range [0, 14.15]. predicted_error 0.01. Cites P-0001. RMSE against 005 is 0.051 per coordinate, equal to the tracker noise sd. No review yet.
-- Pair claims: none. I will not publish a pair law until the close-approach question is resolved. A sign-pattern claim alone is not a trajectory predictor and is hard to express as `predict(setup)`. Options for the next paper: (a) a sign-pattern paper with a model that predicts pair direction only for r ≥ 1, scored on sign at each sample time; or (b) wait for magnitudes. Leaning to (b), because a sign-only claim cannot be falsified cheaply by others and gives little to build on.
+- **P-0001** (lab-b, accepted). "Free flight of a lone species-A particle with specular wall reflection." Evidence r1/001. Domain: species A, one particle, r_range [0, 14.15]. Lab-a's review (`reviews/P-0001/lab-a.json`) verdict **replicated** for the x=10 and y=0 walls at speed 1.0. Not tested by lab-a: x=0 and y=10 walls, corners, durations above 12, speeds other than 1.0, other species. My domain says "species A, all walls" but the replication covers two walls. I will narrow it at the next revision if the other walls don't check out.
+- **P-0002** (lab-b, submitted). "Free flight of a lone species-C particle over 40 time units with specular wall reflection." Evidence 2026-11-17/r2/lab-b/005. Domain: species C, one particle. Cites P-0001. Lab-a's review (`reviews/P-0002/lab-a.json`) verdict **replicated** on a narrow scope (speed 1.0, duration 12). Edge tests in lab-a's review requests 2026-11-18/r1/lab-a/014–016 pending.
+- Pair claims: none yet. I will not publish a pair law until the duration question and the magnitude test are in.
 
-## Review budget
+## Review of P-0003 (lab-a, "A-A attraction, K/r^2.5, separation 3–6")
 
-- Review allowance 15 credits (2026-11-18): unused. No papers awaiting my review at round start. None spent.
+P-0003 is awaiting my review. Its claim: two A particles at rest, separation 3–6 along x, durations 1–2, no walls, per-particle accel 17.7/r^2.5, with the claim covering only that domain. Its evidence is eight runs, all horizontal at y=5, and its fit is to those same runs (a consistency check, not a prediction test). Lab-a states the power law and a screened form fit equally well, and it makes no statement below r≈0.14.
+
+Points I can test inside its stated domain:
+- **Orientation.** The claim says "along a line", but every run is horizontal. A diagonal pair tests isotropy.
+- **Position.** The claim says "no other effects" and "no wall contact". A pair 1 unit from the bottom wall, at T=2, tests that.
+- **Domain edges.** Separation 3 and 6, duration 2.
+- **Duration dependence.** If trajectories depend on requested duration (see above), P-0003's T=2 runs reaching r≈0.14 may be off. I will flag this in the review once round-2 results arrive.
+
+Review requests (account `review`, cites P-0003), written this round: 2026-11-18/r2/lab-b/018–021 (see round-2 table). Review credits used: 4.32 of 15 (pending).
+
+Not yet done: the review file (`out/reviews/P-0003/lab-b.json`). I will write it after the results arrive, with a verdict only as strong as the data. I must not review P-0003 on the basis of the predictions alone.
+
+## Results so far
+
+### Round 1 of 2026-11-18 (r1), all status ok, all 0 census events
+
+Cost 1.04 each, as predicted (`1 + 0.02·2·1`). Budget after round 1: 36.88.
+
+- **001, A-B at (4.5,5)/(5.5,5), at rest, dt 0.01, T 1.** Replicate of r3/006. Agrees with r3/006 at about noise level, with a slight excess in the last window (0.11 vs 0.07). Basis for the determinism conclusion above.
+- **002, same state, dt 0.05, T 1.** Agrees with 001 at noise level (0.075). **Disagrees with r2/003 (T=10, same dt and state) after t≈0.25.**
+- **003, same state, dt 0.02, T 1.** Agrees with 001 and 002 at noise level.
+
+### Round 3 of 2026-11-17 (r3), requested 2026-11-17, all status ok
+
+- **001, B-B at rest, 2.0 apart, dt 0.02, T 3.** Attracts. First r<0.5 at t=1.08. Partly confirmed.
+- **002, C-C at rest, 2.0 apart, dt 0.02, T 3.** **Attracts.** Falsified my H7.
+- **003, B-C at rest, 2.0 apart, dt 0.02, T 3.** Repels. Confirmed.
+- **004, A-C at rest, 1.0 apart, dt 0.02, T 3.** Repels at short range. Confirmed.
+- **005, A-C at rest, 4.0 apart, dt 0.02, T 3.** Repels, slowly. Confirmed.
+- **006, A-B at rest, 1.0 apart, dt 0.01, T 1.** Replicate of r2/003 initial state. Agrees with r2/003 before the first close pass but differs after. Today's analysis says this is consistent with the duration explanation (r2/003 is T=10).
+
+### Earlier rounds
+
+- Round 1 of 2026-11-17: r1/001 (lone A free flight, basis for P-0001), r1/002 (A-B pair, attract).
+- Round 2 of 2026-11-17: r2/001 (A-A at rest 2.0 apart, T=10, dt 0.05, attracts), r2/002 (A-B at rest 4.0 apart, far-field approach), r2/003 (A-B at rest 1.0 apart, T=10, dt 0.05, close passes), r2/004 (A-B offset, central force supported), r2/005 (lone C, basis for P-0002), r2/006 (A-C at rest 2.0 apart, repel).
+
+## Round 2 plan (2026-11-18 r2), submitted
+
+Files: `out/requests/2026-11-18/r2/lab-b/001–021.json`. Research 18.24 credits (remaining 18.64 after the round). Review 4.32 credits (of 15).
+
+| Request | Account | Setup | Cost | Question | Prediction if the hypothesis holds | Falsified if |
+|---|---|---|---|---|---|---|
+| 001 | research | A-B at (4.5,5)/(5.5,5), rest, T 10, dt 0.005 | 1.40 | Is T=10 reproducible, and is it the same as r2/003? | Matches r2/003 on t≤1 (rms ~0.07). Departs from the T=1 family after 0.25 | Matches the T=1 family: then r2/003 was a one-off and duration does not matter |
+| 002 | research | same, T 5, dt 0.0025 | 1.20 | Where does the departure start as T changes? | Matches the T=10 branch if the trajectory depends on T | Matches T=1 family (duration not the cause) or an intermediate branch (continuous dependence) |
+| 003 | research | same, T 2, dt 0.001 | 1.08 | Duration on the domain edge | Matches T=1 family on t≤1 if dependence is only at long T | Departs from T=1 family by t≈0.6 (short-T effect) |
+| 004–009 | research | six pairs at sep 1.5 (AA, BB, CC, AB, AC, BC), rest, T 1, dt 0.0005 | 6.24 | Magnitude and sign at sep 1.5; fit t≤0.3 | AA per-particle accel ≈6.4 (P-0003 extrapolated). Rank-one: F_AB² = F_AA F_BB, etc. | Rank-one relation off by more than fit error (~10%) |
+| 010–015 | research | six pairs at sep 3, rest, T 1, dt 0.0005 | 6.24 | Same at sep 3; fit t≤1.0 | AA per-particle ≈1.14 (P-0003, its domain). Rank-one as above | Rank-one off by more than fit error; AA differs from 1.14 by more than 10% |
+| 016 | research | AA at sep 1.0, T 1 | 1.04 | Short-range AA; fit t≤0.2 | Per-particle ≈17.7 (P-0003 extrapolated) | Differs by more than 25% |
+| 017 | research | AA at sep 2.0, T 1 | 1.04 | Short-range AA; fit t≤0.3 | Per-particle ≈3.13 | Differs by more than 25% |
+| 018 | review | AA at (3,1)/(7,1), sep 4 along x at y=1, rest, T 2, dt 0.001 | 1.08 | P-0003 edge: near wall, off-centre, T=2 | Motion along x only; y stays 1.0; x matches the predictor | y drift > 0.15, or x departs from predictor by > 0.15 on average |
+| 019 | review | AA at (3,3)/(5.83,5.83), sep 4 diagonal, T 2 | 1.08 | P-0003 orientation test (all its runs are horizontal) | Central, same law: diagonal relative curve matches the predictor | Departs from predictor by > 0.15 on average |
+| 020 | review | AA at (8,3.5)/(8,6.5), sep 3 vertical, near right wall, T 2 | 1.08 | P-0003 short-end orientation and wall-proximity test | Motion along y only; x stays 8.0; matches predictor | x drift > 0.15, or separation departs > 0.15 |
+| 021 | review | AA at (2,2)/(8,2), sep 6 along x at y=2, T 2 | 1.08 | P-0003 long-end edge | Attraction ~0.20 per particle; matches predictor | Departs from predictor by > 0.15 on average |
+
+Predictions are written in the requests as well. For the magnitude runs I fit each particle's acceleration with a cubic (known initial state) and derive mass ratios from Newton's third law, m_i a_i = −m_j a_j. Then I check the rank-one relation.
 
 ## Ledger
 
 - Research 2026-11-17: allowance 40. Used 17.70 (round 1: 2.60; round 2: 8.46; round 3: 6.64). The 22.30 left over does not roll over.
-- Research 2026-11-18: allowance 40. Round 1 planned spend 3.12. Remaining after round 1: about 36.88.
+- Research 2026-11-18: allowance 40. Round 1 spend 3.12. Round 2 planned 18.24. Remaining after round 2: 18.64.
+- Review 2026-11-18: allowance 15. Round 2 planned 4.32 (requests 018–021, cites P-0003). Remaining after: 10.68.
 
-## Analysis files
+## Analysis files (`out/labs/lab-b/analysis/`)
 
-All pure Python, run with `python3 -I`. No numpy in this environment.
+- `determinism_windows_r1.py`: windowed rms comparison of runs sharing an initial state. Used for today's reproducibility table. Run with `python3 -I`.
+- `make_round2_requests.py`: writes round-2 requests and checks sample counts (cap 2000) and review fields.
+- `early_accel_fit.py <request.json> <result.json> <tmax> ...`: cubic early-window fit per particle (x0, v0 = 0 from the request), residual rms, and the mass ratio from Newton's third law. Checked on synthetic data with known acceleration and 0.05 noise: unbiased. **Precision:** with the jerk term free, sd about 10% per particle for a 0.3-wide window at a=6.4 (sep 1.5 AA), and about 2.6% for a 1.0-wide window at a≈1.1 (sep 3). The rank-one test needs to be read against those errors.
+- Existing short-dt runs (r2/001, r3/001–003, r2/006) have only 6–30 samples in a 0.3–0.6 window. Their per-particle fits are not precise enough to test mass or the rank-one relation. Round 2 is designed to fix this with 2000 samples per run.
 
-- `analysis/r3_summary.py <results_root> <run_id>:<requested_sep> ...`: separation time series, first r<0.5, min r, initial relative acceleration from the requested separation. Fixed in round 1 to use the requested separation, not the noisy t=0 sample.
-- `analysis/r3_compare.py <fileA> <fileB> <tmax>`: shared-time coordinate differences between two runs with the same requested initial state. Used for r3/006 vs r2/003.
-- `analysis/r2_summary.py`, `analysis/r2_checks.py`, `analysis/free_flight_fit.py`, `analysis/pair_scan.py`, `analysis/single_run_fit.py`, `analysis/soft_fit.py`: round 1–2 tools (in `labs/lab-b/analysis/`).
-- Note: `r2_summary.py` uses the noisy t=0 sample as the initial separation. Use `r3_summary.py` with the requested separation for acceleration estimates.
+Existing tools in `labs/lab-b/analysis/` (repo, read-only for me): `r3_summary.py`, `r3_compare.py`, `r2_summary.py`, `r2_checks.py`, `free_flight_fit.py`, `pair_scan.py`, `single_run_fit.py`, `soft_fit.py`. Run with `python3 -I`. No numpy in this environment.
 
-## Notes for next session
+Note: `r2_summary.py` uses the noisy t=0 sample as the initial separation. Use `r3_summary.py` with the requested separation for acceleration estimates.
 
-- Round 1 results will arrive in `results/2026-11-18/r1/lab-b/`. Check costs against `1 + 0.02·2·1 = 1.04`.
-- Run `r3_compare.py` on 001 vs `results/2026-11-17/r3/lab-b/006.json`, then on 002 vs `results/2026-11-17/r2/lab-b/003.json`, then on 003 vs both. Apply the decision table above.
-- Before publishing a pair claim: a `model.py` that predicts full trajectories including walls and gives RMSE at noise level on every run it cites, and a determinism check on the close-pass runs it cites.
-- Use `sample_dt = duration/2000` for every new request from now on. Cost does not depend on dt.
+## Next session
+
+- Round-2 results arrive in `results/2026-11-18/r2/lab-b/` (research 001–017) and `results/2026-11-18/r2/lab-b/018–021` (review).
+- **First, the duration question.** Compare 001, 002, 003 against r2/003 (T=10) and r1/001 (T=1) using `determinism_windows_r1.py`, adding the new files. Decision: if the T=10 replicate matches r2/003, duration matters and I must flag all T-mixed fits. If it matches the T=1 family, r2/003 was a one-off and I can use it normally.
+- **Then the magnitude fit.** Fit each run's early window for per-particle accelerations, derive mass ratios, check the rank-one relation (H10). Write it as a short claim only if it holds at both separations.
+- **Then the review.** Compare 018–021 with `papers/P-0003/model.py` (run it on each setup, which is lab-a's predictor, not mine to alter). Write `out/reviews/P-0003/lab-b.json` with verdict `replicated`, `narrowed`, or `falsified` based on those runs only. If the duration test shows T-dependence, note it in the comment, since it bears on P-0003's T=2 close-approach runs.
+- Budget: 18.64 research credits and 10.68 review credits remain for 2026-11-18.
+- Use `sample_dt = duration/2000` (check the float ratio) for every new request.

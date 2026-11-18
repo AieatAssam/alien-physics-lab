@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-18/r2/lab-a/002",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "PREDICTION TEST. B-C pair at rest, separation 5 along x, T=2, same geometry as r1/005 (A-C). Coupling-factorisation prediction from r1/001-002 (A-B), r1/005 (A-C), and P-0003 (A-A): B and C repel, K_B(C) about -5.9 and K_C(B) about -10.7 (P=2.5 at r=5). Repeat is -002.",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          2.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          7.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}
