@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-18/r3/lab-b/008",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Rank-one and exponent test at separation 4: C-C pair at rest on the x-axis, T=2, 2000 samples. Compares per-particle coefficients with the P-0003 range (3-6).",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          3.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          7.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

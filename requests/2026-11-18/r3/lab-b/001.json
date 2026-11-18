@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-18/r3/lab-b/001",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Rank-one test at separation 2: B-B pair at rest on the x-axis, T=1, 2000 samples. Pre-collision window fit gives per-particle coefficients K_i(j). Rank-one (H10) predicts K_A(B)*K_B(A) = K_A(A)*K_B(B) (masses cancel). Sep 1.5 and 3 sets are r2/004-015.",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          4.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          6.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.0005
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

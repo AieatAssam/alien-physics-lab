@@ -1,0 +1,44 @@
+{
+  "paper_id": "P-0005",
+  "lab": "lab-a",
+  "title": "Pair accelerations at separation 5 for species A, B, C at rest: replicated coefficients and a passed B-C prediction",
+  "claims": [
+    {
+      "claim_id": "P-0005-c1",
+      "statement": "Two particles at rest, initial separation 5.0 along a line, species A and B: each accelerates toward the other with K_A(B) = 8.99 (on A) and K_B(A) = 12.34 (on B), in units of 1/r^2.5 at r = 5 (chamber and time units, P = 2.5 fixed). Run values K_A(B) = 8.82, 9.16 and K_B(A) = 12.39, 12.28 (2026-11-18/r1/lab-a/001-002) agree within 4%. Each run fits the predictor at tracker noise (rms 0.051-0.052 per coordinate, T = 2, no census events). No claim about masses or about any other separation.",
+      "domain": {"species": ["A", "B"], "r_range": [5.0, 5.0], "max_particles": 2},
+      "predicted_error": 0.05,
+      "evidence": ["2026-11-18/r1/lab-a/001", "2026-11-18/r1/lab-a/002"]
+    },
+    {
+      "claim_id": "P-0005-c2",
+      "statement": "Two particles at rest, initial separation 5.0 along a line, species A and C: they REPEL. K_A(C) = -8.77 (A away from C) and K_C(A) = -21.25 (C away from A), same units. Run values K_A(C) = -8.60 and -8.94, K_C(A) = -21.38 and -21.12 (2026-11-18/r1/lab-a/005 and r2/lab-a/005). Both runs fit the predictor at noise level (rms 0.047-0.048 per coordinate, T = 2, no census events). The sign and the magnitudes replicate.",
+      "domain": {"species": ["A", "C"], "r_range": [5.0, 5.0], "max_particles": 2},
+      "predicted_error": 0.05,
+      "evidence": ["2026-11-18/r1/lab-a/005", "2026-11-18/r2/lab-a/005"]
+    },
+    {
+      "claim_id": "P-0005-c3",
+      "statement": "Two species-B particles at rest, initial separation 5.0 along a line, both accelerate toward each other with K_B(B) = 6.12 (per-particle fits over two runs range 5.60 to 6.75; the run-level spread is about 9%). Runs 2026-11-18/r1/lab-a/003 and r2/lab-a/003. Residual rms 0.048-0.050 per coordinate, T = 2, no census events.",
+      "domain": {"species": ["B"], "r_range": [5.0, 5.0], "max_particles": 2},
+      "predicted_error": 0.10,
+      "evidence": ["2026-11-18/r1/lab-a/003", "2026-11-18/r2/lab-a/003"]
+    },
+    {
+      "claim_id": "P-0005-c4",
+      "statement": "Two species-C particles at rest, initial separation 5.0 along a line, both accelerate toward each other with K_C(C) = 12.36 (per-particle fits over two runs range 12.08 to 12.70). Runs 2026-11-18/r1/lab-a/004 and r2/lab-a/004. Residual rms 0.048-0.050 per coordinate, T = 2, no census events.",
+      "domain": {"species": ["C"], "r_range": [5.0, 5.0], "max_particles": 2},
+      "predicted_error": 0.05,
+      "evidence": ["2026-11-18/r1/lab-a/004", "2026-11-18/r2/lab-a/004"]
+    },
+    {
+      "claim_id": "P-0005-c5",
+      "statement": "Pre-registered prediction, passed: two particles at rest, initial separation 5.0, species B and C, REPEL, with K_B(C) = -6.10 (B away from C) and K_C(B) = -10.59 (C away from B). The predicted values, written before the runs from the coupling product g_BC = g_AB * g_AC / g_AA (P-0004), were -5.9 and -10.7; the measured values differ by 3.6% and 1.5%, inside the 5% pre-set tolerance. Runs 2026-11-18/r2/lab-a/001 and 002 (per-run K_B(C) = -5.93, -6.27; K_C(B) = -10.65, -10.53). Caveat: these K values are fitted to these same two runs, so the residual rms is in-sample; the test is the comparison with the prediction.",
+      "domain": {"species": ["B", "C"], "r_range": [5.0, 5.0], "max_particles": 2},
+      "predicted_error": 0.05,
+      "evidence": ["2026-11-18/r2/lab-a/001", "2026-11-18/r2/lab-a/002"]
+    }
+  ],
+  "cites": ["P-0003", "P-0004"],
+  "supersedes": ["P-0004"]
+}

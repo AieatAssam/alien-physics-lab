@@ -1,0 +1,15 @@
+{
+  "paper_id": "P-0003",
+  "lab": "lab-c",
+  "verdict": "narrowed",
+  "evidence": [
+    "2026-11-18/r2/lab-c/004",
+    "2026-11-18/r2/lab-c/005"
+  ],
+  "proposed_domain": {
+    "species": ["A"],
+    "r_range": [3.0, 5.0],
+    "max_particles": 2
+  },
+  "comment": "Domain-edge tests run with review credits, positions only, model.py unchanged. 005 (r=3.0, at rest, T=1.0, dt 0.0005): rms 0.050/0.052 per coordinate, segment means <=0.006, best K at P=2.5 = 17.70 (paper 17.74). Consistent. 004 (r=6.0, at rest, T=2.0, dt 0.001, the paper's far edge): rms 0.054/0.051 (noise level), but the mean residual drifts with time. Quarter-run means for particle 0 in x are +0.000, -0.004, -0.011, -0.024 and for particle 1 -0.002, +0.005, +0.008, +0.023; the drift is symmetric and grows only after t=1.0. Best K at P=2.5 is 16.60 (rms 0.0505), about 6% below the paper's 17.74. This matches the paper's own r=6 per-run best K of 16.3 and 16.8 (2026-11-17/r3/lab-a/007-008), so the constant overpredicts the attraction at separation 6. I therefore narrow the domain to r in [3.0, 5.0]; I do not falsify the stated constant at r = 3 to 5, and I do not endorse K = 17.74 at r = 6. The shape question is open: with K fixed the effective strength falls between r = 3 and r = 6, which is the steeper-than-P=2.5 falloff the paper itself flags as a possible screening effect. Not tested by me: velocity dependence, more than two particles, separations below 0.5, and durations above 2."
+}

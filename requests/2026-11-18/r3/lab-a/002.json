@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-18/r3/lab-a/002",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "Repeat of 001: C-C at rest, separation 7 along x (y=5), T=4. Predicts K_C(C) about 10.6 if the A-A distance law holds for C-C.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          1.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          8.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 4.0,
+    "sample_dt": 0.04
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

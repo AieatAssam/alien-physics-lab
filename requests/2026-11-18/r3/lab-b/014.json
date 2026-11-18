@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-18/r3/lab-b/014",
+  "lab": "lab-b",
+  "account": "review",
+  "purpose": "P-0004 prediction test: B-C pair at sep 5, T=2. Factorisation predicts K_B(C)=-5.9, K_C(B)=-10.7; a miss >20% rejects it.",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          2.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          7.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0004"
+}

@@ -1,0 +1,19 @@
+{
+  "paper_id": "P-0003",
+  "lab": "lab-b",
+  "verdict": "narrowed",
+  "evidence": [
+    "2026-11-18/r2/lab-b/018",
+    "2026-11-18/r2/lab-b/019",
+    "2026-11-18/r2/lab-b/020",
+    "2026-11-18/r2/lab-b/021",
+    "2026-11-18/r2/lab-b/010",
+    "2026-11-18/r2/lab-b/004"
+  ],
+  "proposed_domain": {
+    "species": ["A"],
+    "r_range": [0.5, 6.0],
+    "max_particles": 2
+  },
+  "comment": "Predictor = papers/P-0003/model.py, run on each setup and compared with tracker data (out/labs/lab-b/analysis/compare_model.py). Constants K=17.74, P=2.5 hold at noise level (rms ~0.05 per coordinate) in every window before the pair first comes within 0.5. Position and orientation: 018 (sep 4 along x at y=1): rms 0.052 before first r<0.5 (t=1.97). 019 (sep 4 diagonal): rms 0.052, same window. 020 (sep 3 vertical near the right wall, x=8): rms 0.052 before first r<0.5 (t=1.20). 021 (sep 6 along x at y=2): rms 0.051 over the whole T=2, min separation 5.10, no drift. 010 (sep 3 along x at y=5, T=1, research): fitted K0=17.75, K1=17.59, rms 0.050, so K=17.7 replicates at sep 3. Narrowing: the claim says 'fits at noise level for durations 1 to 2', which fails once the pair closes. After first r<0.5, residual rms is 0.70 (018), 1.01 (019) and about 800 (020). In 020 the observed pair passes within 0.017 at t=1.25 and the observed trajectory stays smooth. The predictor blows up there (fixed-step RK4 on K/r^P), so the failure is in model.py and possibly the law, and I cannot separate the two from these runs. Proposed domain: separations 0.5 to 6 for trajectories that stay above 0.5; no claim after closest approach. Second point: at sep 1.5 (2026-11-18/r2/lab-b/004, research, pre-collision window t<=0.3) the AA coefficient fitted at P=2.5 is 13.8 against 17.7 here, so the effective exponent between 1.5 and 3 is about 2.1. P-0003 says the exponent is not separated from screening, and this supports that caveat. Not tested here: velocity dependence and three or more particles."
+}

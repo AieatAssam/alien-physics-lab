@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-18/r3/lab-b/013",
+  "lab": "lab-b",
+  "account": "review",
+  "purpose": "P-0004 c2 replication: A-C pair at sep 5 on the x-axis, T=2. Predicts K_A(C)=-8.6, K_C(A)=-21.4 (repulsion).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          7.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0004"
+}

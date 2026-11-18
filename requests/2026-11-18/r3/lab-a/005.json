@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-18/r3/lab-a/005",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "Distance-law test, A-C at rest, separation 7 along x (y=5), T=4. Same-law prediction from sep-5 means: K_A(C) about -7.5, K_C(A) about -18.3.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          1.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          8.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 4.0,
+    "sample_dt": 0.04
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

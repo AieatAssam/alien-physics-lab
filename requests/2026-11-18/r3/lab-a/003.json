@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-18/r3/lab-a/003",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "Distance-law test, C-C at rest, separation 9 along x (y=5), T=4. A-A ratio K(9)/K(5)=0.65 (r1/008-009) predicts K_C(C) about 8.0.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          0.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          9.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 4.0,
+    "sample_dt": 0.04
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

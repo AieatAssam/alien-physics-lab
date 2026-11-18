@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-18/r3/lab-a/006",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "Distance-law test, B-B at rest, separation 7 along x (y=5), T=4. Same-law prediction: K_B(B) about 5.3 (sep-5 mean 6.12).",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          1.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          8.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 4.0,
+    "sample_dt": 0.04
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}
