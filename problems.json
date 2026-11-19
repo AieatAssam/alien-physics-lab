@@ -1,0 +1,140 @@
+{
+  "open": [
+    {
+      "bounty": 1,
+      "detail": "Resolved when P-0003 is accepted or retracted.",
+      "id": "disputed-P-0003",
+      "kind": "disputed",
+      "since": "2026-11-19",
+      "title": "settling the dispute over P-0003"
+    },
+    {
+      "bounty": 1,
+      "detail": "Resolved when P-0006 is accepted or retracted.",
+      "id": "disputed-P-0006",
+      "kind": "disputed",
+      "since": "2026-11-19",
+      "title": "settling the dispute over P-0006"
+    },
+    {
+      "bounty": 1,
+      "detail": "Resolved when P-0007 is accepted or retracted.",
+      "id": "disputed-P-0007",
+      "kind": "disputed",
+      "since": "2026-11-19",
+      "title": "settling the dispute over P-0007"
+    }
+  ],
+  "resolved": [
+    {
+      "bounty": 1,
+      "by_paper": "P-0001",
+      "id": "uncharted-A",
+      "kind": "uncharted-species",
+      "resolved_on": "2026-11-17",
+      "since": "2026-11-17",
+      "title": "chart species A",
+      "winner": "lab-b"
+    },
+    {
+      "bounty": 1,
+      "by_paper": "P-0002",
+      "id": "disputed-P-0002",
+      "kind": "disputed",
+      "resolved_on": "2026-11-18",
+      "since": "2026-11-18",
+      "title": "settling the dispute over P-0002",
+      "winner": "lab-a"
+    },
+    {
+      "bounty": 1,
+      "by_paper": "P-0002",
+      "id": "uncharted-C",
+      "kind": "uncharted-species",
+      "resolved_on": "2026-11-18",
+      "since": "2026-11-17",
+      "title": "chart species C",
+      "winner": "lab-b"
+    },
+    {
+      "bounty": 1,
+      "by_paper": "P-0005",
+      "id": "disputed-P-0005",
+      "kind": "disputed",
+      "resolved_on": "2026-11-19",
+      "since": "2026-11-19",
+      "title": "settling the dispute over P-0005",
+      "winner": "lab-c"
+    },
+    {
+      "bounty": 2,
+      "by_paper": "P-0005",
+      "id": "pair-AA",
+      "kind": "uncharted-pair",
+      "resolved_on": "2026-11-19",
+      "since": "2026-11-17",
+      "title": "how two A particles interact",
+      "winner": "lab-a"
+    },
+    {
+      "bounty": 2,
+      "by_paper": "P-0005",
+      "id": "pair-AB",
+      "kind": "uncharted-pair",
+      "resolved_on": "2026-11-19",
+      "since": "2026-11-17",
+      "title": "how A and B interact",
+      "winner": "lab-a"
+    },
+    {
+      "bounty": 2,
+      "by_paper": "P-0005",
+      "id": "pair-AC",
+      "kind": "uncharted-pair",
+      "resolved_on": "2026-11-19",
+      "since": "2026-11-17",
+      "title": "how A and C interact",
+      "winner": "lab-a"
+    },
+    {
+      "bounty": 2,
+      "by_paper": "P-0005",
+      "id": "pair-BB",
+      "kind": "uncharted-pair",
+      "resolved_on": "2026-11-19",
+      "since": "2026-11-17",
+      "title": "how two B particles interact",
+      "winner": "lab-a"
+    },
+    {
+      "bounty": 2,
+      "by_paper": "P-0005",
+      "id": "pair-BC",
+      "kind": "uncharted-pair",
+      "resolved_on": "2026-11-19",
+      "since": "2026-11-17",
+      "title": "how B and C interact",
+      "winner": "lab-a"
+    },
+    {
+      "bounty": 2,
+      "by_paper": "P-0005",
+      "id": "pair-CC",
+      "kind": "uncharted-pair",
+      "resolved_on": "2026-11-19",
+      "since": "2026-11-17",
+      "title": "how two C particles interact",
+      "winner": "lab-a"
+    },
+    {
+      "bounty": 1,
+      "by_paper": "P-0005",
+      "id": "uncharted-B",
+      "kind": "uncharted-species",
+      "resolved_on": "2026-11-19",
+      "since": "2026-11-17",
+      "title": "chart species B",
+      "winner": "lab-a"
+    }
+  ]
+}

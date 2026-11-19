@@ -36,5 +36,75 @@
     "order": 2,
     "paper_id": "P-0002",
     "predicted_error": 0.01
+  },
+  {
+    "claims": [
+      {
+        "domain": {
+          "max_particles": 2,
+          "r_range": [
+            5.0,
+            5.0
+          ],
+          "species": [
+            "A",
+            "B"
+          ]
+        }
+      },
+      {
+        "domain": {
+          "max_particles": 2,
+          "r_range": [
+            5.0,
+            5.0
+          ],
+          "species": [
+            "A",
+            "C"
+          ]
+        }
+      },
+      {
+        "domain": {
+          "max_particles": 2,
+          "r_range": [
+            5.0,
+            5.0
+          ],
+          "species": [
+            "B"
+          ]
+        }
+      },
+      {
+        "domain": {
+          "max_particles": 2,
+          "r_range": [
+            5.0,
+            5.0
+          ],
+          "species": [
+            "C"
+          ]
+        }
+      },
+      {
+        "domain": {
+          "max_particles": 2,
+          "r_range": [
+            5.0,
+            5.0
+          ],
+          "species": [
+            "B",
+            "C"
+          ]
+        }
+      }
+    ],
+    "order": 5,
+    "paper_id": "P-0005",
+    "predicted_error": 0.06000000000000001
   }
 ]

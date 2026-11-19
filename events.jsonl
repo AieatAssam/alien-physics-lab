@@ -8,3 +8,17 @@
 {"cause": "submitted", "date": "2026-11-18", "evidence": [], "from": null, "paper_id": "P-0003", "to": "submitted"}
 {"cause": "submitted", "date": "2026-11-18", "evidence": [], "from": null, "paper_id": "P-0004", "to": "submitted"}
 {"cause": "submitted", "date": "2026-11-18", "evidence": [], "from": null, "paper_id": "P-0005", "to": "submitted"}
+{"date": "2026-11-19", "evidence": ["2026-11-19/r1/lab-keystone/001"], "kind": "unsupported", "paper_id": "P-0001", "review_lab": "lab-keystone", "verdict": "replicated"}
+{"date": "2026-11-19", "evidence": ["2026-11-19/r2/lab-vernier/004"], "kind": "unsupported", "paper_id": "P-0001", "review_lab": "lab-vernier", "verdict": "replicated"}
+{"date": "2026-11-19", "evidence": ["2026-11-19/r1/lab-keystone/002"], "kind": "unsupported", "paper_id": "P-0002", "review_lab": "lab-keystone", "verdict": "replicated"}
+{"date": "2026-11-19", "evidence": ["2026-11-19/r1/lab-keystone/005", "2026-11-19/r1/lab-keystone/003", "2026-11-19/r1/lab-keystone/004"], "kind": "unsupported", "paper_id": "P-0003", "review_lab": "lab-keystone", "verdict": "replicated"}
+{"date": "2026-11-19", "evidence": ["2026-11-19/r1/lab-b/001", "2026-11-19/r1/lab-b/002", "2026-11-18/r3/lab-b/012", "2026-11-18/r3/lab-b/013", "2026-11-18/r3/lab-b/014"], "kind": "standing", "paper_id": "P-0005", "review_lab": "lab-b", "verdict": "replicated"}
+{"date": "2026-11-19", "evidence": ["2026-11-19/r1/lab-c/023", "2026-11-19/r1/lab-c/024", "2026-11-19/r1/lab-c/025", "2026-11-19/r1/lab-c/020"], "kind": "standing", "paper_id": "P-0005", "review_lab": "lab-c", "verdict": "replicated"}
+{"date": "2026-11-19", "evidence": ["2026-11-19/r1/lab-vernier/008", "2026-11-19/r1/lab-vernier/009"], "kind": "unsupported", "paper_id": "P-0005", "review_lab": "lab-vernier", "verdict": "replicated"}
+{"date": "2026-11-19", "evidence": ["2026-11-19/r2/lab-vernier/003"], "kind": "unsupported", "paper_id": "P-0006", "review_lab": "lab-vernier", "verdict": "replicated"}
+{"date": "2026-11-19", "evidence": ["2026-11-19/r2/lab-vernier/001"], "kind": "unsupported", "paper_id": "P-0007", "review_lab": "lab-vernier", "verdict": "replicated"}
+{"cause": "superseded by P-0005", "date": "2026-11-19", "evidence": [], "from": "submitted", "paper_id": "P-0004", "to": "superseded"}
+{"cause": "standing replication", "date": "2026-11-19", "evidence": ["2026-11-19/r1/lab-b/001", "2026-11-19/r1/lab-b/002", "2026-11-18/r3/lab-b/012", "2026-11-18/r3/lab-b/013", "2026-11-18/r3/lab-b/014", "2026-11-19/r1/lab-c/023", "2026-11-19/r1/lab-c/024", "2026-11-19/r1/lab-c/025", "2026-11-19/r1/lab-c/020"], "from": "submitted", "paper_id": "P-0005", "to": "accepted"}
+{"cause": "submitted", "date": "2026-11-19", "evidence": [], "from": null, "paper_id": "P-0006", "to": "submitted"}
+{"cause": "submitted", "date": "2026-11-19", "evidence": [], "from": null, "paper_id": "P-0007", "to": "submitted"}
+{"cause": "submitted", "date": "2026-11-19", "evidence": [], "from": null, "paper_id": "P-0008", "to": "submitted"}
