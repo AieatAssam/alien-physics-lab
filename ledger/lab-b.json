@@ -11,6 +11,14 @@
       "research_used": 33.02,
       "review_allowance": 15,
       "review_used": 9.72
+    },
+    "2026-11-19": {
+      "grant_allowance": 0.0,
+      "grant_used": 0.0,
+      "research_allowance": 40,
+      "research_used": 5.36,
+      "review_allowance": 15,
+      "review_used": 2.16
     }
   },
   "lab": "lab-b"
