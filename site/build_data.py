@@ -293,17 +293,37 @@ def lab_name(repo: Path, lab: str) -> str:
     return name or lab
 
 
+QUOTE_HEADING = re.compile(r"hypothes|learned|finding|plan", re.IGNORECASE)
+
+
+def _sentences(lines: list[str]) -> list[str]:
+    return [s.strip() for s in re.split(r"(?<=[.!?])\s+", " ".join(lines)) if s.strip()]
+
+
+def _quote_ok(sentence: str) -> bool:
+    """A quote with no file paths, code ticks or boilerplate length, within the length cap."""
+    return (30 <= len(sentence) <= QUOTE_MAX_CHARS and not any(x in sentence for x in ("/", ".json", ".py", "`"))
+            and "no entries yet" not in sentence.lower())
+
+
 def notebook_quote(text: str) -> str | None:
-    """First sentence of the notebook that is not a heading and not the boilerplate placeholder."""
-    body = []
+    """First clean sentence under a hypothesis, learned, finding or plan heading; else the first body sentence."""
+    sections: list[tuple[str, list[str]]] = [("", [])]
     for line in text.splitlines():
         s = line.strip()
-        if s and not s.startswith("#"):
-            body.append(re.sub(r"^([-*+>]|\d+[.)])\s+", "", s))
-    for sentence in re.split(r"(?<=[.!?])\s+", " ".join(body)):
-        sentence = sentence.strip()
-        if sentence and len(sentence) <= QUOTE_MAX_CHARS and "no entries yet" not in sentence.lower():
-            return sentence
+        if s.startswith("#"):
+            sections.append((s.lstrip("#").strip(), []))
+        elif s:
+            sections[-1][1].append(re.sub(r"^([-*+>]|\d+[.)])\s+", "", s))
+    for heading, lines in sections:
+        if QUOTE_HEADING.search(heading):
+            for sentence in _sentences(lines):
+                if _quote_ok(sentence):
+                    return sentence.replace("**", "").replace("`", "")
+    # fallback: the first body sentence that is not the boilerplate placeholder
+    for sentence in _sentences([line for _, lines in sections for line in lines]):
+        if len(sentence) <= QUOTE_MAX_CHARS and "no entries yet" not in sentence.lower():
+            return sentence.replace("**", "").replace("`", "")
     return None
 
 

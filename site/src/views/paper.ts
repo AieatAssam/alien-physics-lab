@@ -12,6 +12,11 @@ function domainText(c: Claim): string {
   return parts.length ? parts.join("") : "domain —";
 }
 
+/** The page h1 already shows the title, so a paper.md whose first element is an h1 drops it. */
+function dropLeadingH1(src: string): string {
+  return src.replace(/^\s*#[ \t]+[^\n]*\n?/, "");
+}
+
 function reviewHtml(r: Review, i: number): string {
   const first = r.evidence[0];
   return `<article class="review">
@@ -62,7 +67,7 @@ export async function render(el: HTMLElement, route: Route): Promise<Cleanup | v
       </div>
     </header>
 
-    <div class="prose">${markdown(paper.markdown || "")}</div>
+    <div class="prose">${markdown(dropLeadingH1(paper.markdown || ""))}</div>
 
     <section class="section" style="margin-top: var(--section-gap-s)" aria-labelledby="ev-head">
       <h2 class="section-head" id="ev-head">key evidence</h2>

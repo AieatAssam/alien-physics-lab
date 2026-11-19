@@ -74,6 +74,8 @@ async function route(): Promise<void> {
   cleanup = undefined;
   const { name, route: r } = parse(location.hash);
   markCurrent(name);
+  // keep the active link visible in the phone scroll strip; no smooth behaviour is set anywhere, so reduced motion needs no branch
+  chromeEl?.querySelector<HTMLAnchorElement>('.nav a[aria-current="page"]')?.scrollIntoView({ inline: "nearest", block: "nearest" });
   viewEl.innerHTML = `<div class="container"><p class="muted">loading…</p></div>`;
   if (name !== lastName) window.scrollTo({ top: 0 });
   lastName = name;
@@ -127,6 +129,12 @@ async function boot(): Promise<void> {
   app.innerHTML = chrome(index);
   chromeEl = app;
   viewEl = app.querySelector<HTMLElement>("#view");
+  const nav = app.querySelector<HTMLElement>(".nav");
+  if (nav) {
+    const markEnd = () => nav.toggleAttribute("data-end", nav.scrollLeft + nav.clientWidth >= nav.scrollWidth - 2);
+    nav.addEventListener("scroll", markEnd, { passive: true });
+    requestAnimationFrame(markEnd);
+  }
   window.addEventListener("hashchange", () => void route());
   await route();
 }

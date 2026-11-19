@@ -48,7 +48,7 @@ function chart(scores: Score[]): string {
   // axis labels are HTML, positioned in percent, so their font size stays in CSS px at any width
   const pct = (px: number, total: number) => `${((px / total) * 100).toFixed(2)}%`;
   const yLabels = [0, 0.5, 1]
-    .map((v) => `<span class="chart__label chart__label--y" style="left:${pct(padL - 8, W)};top:${pct(y(v), H)}">${v * 100}</span>`)
+    .map((v) => `<span class="chart__label chart__label--y${v === 0 ? " chart__label--zero" : ""}" style="left:${pct(padL - 8, W)};top:${pct(y(v), H)}">${v * 100}</span>`)
     .join("");
   return `<div class="chart-wrap">
     <svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="knowledge index and coverage by night">

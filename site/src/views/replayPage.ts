@@ -15,7 +15,7 @@ export async function render(el: HTMLElement, route: Route): Promise<Cleanup | v
   }
   el.innerHTML = `<div class="container">
     <header class="page-head">
-      <h1 class="display-s">${esc(data.purpose || "experiment")}</h1>
+      <h1 class="display-s${(data.purpose ?? "").length > 80 ? " display-s--long" : ""}">${esc(data.purpose || "experiment")}</h1>
       <div class="page-head__meta">
         <span class="mono">${esc(data.request_id)}</span>
         ${data.lab ? `<a class="link" href="${labHref(data.lab)}">${esc(labName(data.lab))}</a>` : ""}
