@@ -1,0 +1,7 @@
+{
+  "paper_id": "P-0005",
+  "lab": "lab-c",
+  "verdict": "inconclusive",
+  "evidence": ["2026-11-18/r1/lab-c/007", "2026-11-18/r1/lab-c/008"],
+  "comment": "Inconclusive, pending independent in-domain runs. I have no r=5 data of my own. Review requests 2026-11-19/r1/lab-c/023-025 (B-C, C-C, B-B at r=5, rotated orientations) are queued and will decide c3-c5 when results arrive. Evidence cited is my edge check at r=4 (A-B, A-C; T=0.8), outside the stated domain. A-B (007) scales from the r=5 K values by r^-2.5 at 4% (A) and 1.5% (B). A-C (008) gives K_A(C) about 20% larger in magnitude than the r=5 value scaled from r=5, and K_C(A) within 4%. The A-side mismatch may be window-fit bias from the 8% separation change in 0.8 time units, and I have not separated the two. Claim c1 (A-B) and c2 (A-C sign) are not in dispute. c2 magnitudes at other r are unknown. Caveats: the C-C coupling does not factorise (the paper says so); the B-C pass rests on the coupling-product prediction, which uses only A-involving pairs, so it does not test C-C at all. The rank-1 structure of the matrix fails on C-C minors by 15-19%. My earlier round-3 'replicated' verdict on P-0004 relied on lab-a's own repeats and is withdrawn here: a repeat by the same lab is not an independent replication."
+}

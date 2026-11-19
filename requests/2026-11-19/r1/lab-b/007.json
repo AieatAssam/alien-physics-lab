@@ -1,0 +1,49 @@
+{
+  "request_id": "2026-11-19/r1/lab-b/007",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Additivity, mixed species, 3-4-5 triangle (config 2): A-B side 4, B-C side 3, A-C side 5, at rest. Same falsifier as 006.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.0,
+          2.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          6.0,
+          2.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          6.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.0005
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

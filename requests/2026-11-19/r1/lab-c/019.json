@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-19/r1/lab-c/019",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Far field: A-A at rest, r=9.0 along x (x=0.5 and 9.5), T=3.0. Together with 007 (A-A, r=6) and 013 (A-A, r=8), separates the power-law (P=2.5) and screened forms of the A-A law at large r.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          0.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          9.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 3.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

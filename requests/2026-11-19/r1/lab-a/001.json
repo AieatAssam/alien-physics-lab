@@ -1,0 +1,49 @@
+{
+  "request_id": "2026-11-19/r1/lab-a/001",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "Pre-registered additivity test: equilateral triangle, side 5, A-B-C at rest (A top, B bottom-left, C bottom-right), T=1.5. Prediction = pure pairwise law with P-0005 sep-5 coefficients (out/labs/lab-a/analysis/pred_2026-11-19_r1_triangles.json). Repeat is 002.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          7.8868
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          2.5,
+          3.5566
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          7.5,
+          3.5566
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.5,
+    "sample_dt": 0.03
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-19/r1/lab-keystone/014",
+  "lab": "lab-keystone",
+  "account": "research",
+  "purpose": "Far field, A-C pair at separation 8, T = 3 (C is repelled, so a longer run would push it into the wall).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          1.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          9.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 3.0,
+    "sample_dt": 0.1
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

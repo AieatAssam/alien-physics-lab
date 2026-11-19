@@ -1,0 +1,56 @@
+{
+  "lab": "lab-b",
+  "date": "2026-11-19",
+  "title": "Four-body additivity: rectangle 3x4 with species A,B,C,A",
+  "pitch": "Four-body additivity in one run. Rectangle 3 x 4 at rest, species A,B,C,A: sides 3 and 4, diagonals 5, so every pair sits at a separation we have measured (3, 4, 5). The pairwise-additive integration of our sep-3/4/5 table predicts the whole trajectory set. Three-body triangle (r3/006) already matched within noise. Falsified if any particle deviates from the pairwise sum by more than 0.05 per coordinate over t<=1.0.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.0,
+          2.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          5.0,
+          2.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.0,
+          6.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          2.0,
+          6.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.0005
+  }
+}

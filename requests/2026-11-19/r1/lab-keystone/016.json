@@ -1,0 +1,27 @@
+{
+  "request_id": "2026-11-19/r1/lab-keystone/016",
+  "lab": "lab-keystone",
+  "account": "research",
+  "purpose": "Lone species-B free flight, 20 time units, many wall bounces. The lone-particle baseline has only been measured for A and C.",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          2.0,
+          2.0
+        ],
+        "vel": [
+          1.5,
+          -1.0
+        ]
+      }
+    ],
+    "duration": 20.0,
+    "sample_dt": 0.1
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

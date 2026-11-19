@@ -1,0 +1,392 @@
+[
+  {
+    "request_id": "2026-11-19/r1/lab-keystone/001",
+    "note": "free flight, prediction = straight-line with specular walls (see P-0001/P-0002)",
+    "cost": 1.2
+  },
+  {
+    "request_id": "2026-11-19/r1/lab-keystone/002",
+    "note": "free flight, prediction = straight-line with specular walls (see P-0001/P-0002)",
+    "cost": 1.4
+  },
+  {
+    "request_id": "2026-11-19/r1/lab-keystone/003",
+    "cost": 1.24,
+    "H1_final_pos": [
+      [
+        3.414,
+        5.0
+      ],
+      [
+        6.586,
+        5.0
+      ]
+    ],
+    "H2_final_pos": [
+      [
+        3.075,
+        5.0
+      ],
+      [
+        6.925,
+        5.0
+      ]
+    ],
+    "H1_min_pair_sep": 3.172,
+    "H2_min_pair_sep": 3.85,
+    "H1_minus_H2_max_displacement": 0.339
+  },
+  {
+    "request_id": "2026-11-19/r1/lab-keystone/004",
+    "cost": 1.24,
+    "H1_final_pos": [
+      [
+        2.063,
+        5.0
+      ],
+      [
+        7.937,
+        5.0
+      ]
+    ],
+    "H2_final_pos": [
+      [
+        1.766,
+        5.0
+      ],
+      [
+        8.234,
+        5.0
+      ]
+    ],
+    "H1_min_pair_sep": 5.875,
+    "H2_min_pair_sep": 6.468,
+    "H1_minus_H2_max_displacement": 0.296
+  },
+  {
+    "request_id": "2026-11-19/r1/lab-keystone/005",
+    "cost": 1.04,
+    "H1_final_pos": [
+      [
+        4.227,
+        5.0
+      ],
+      [
+        5.773,
+        5.0
+      ]
+    ],
+    "H2_final_pos": [
+      [
+        4.208,
+        5.0
+      ],
+      [
+        5.792,
+        5.0
+      ]
+    ],
+    "H1_min_pair_sep": 1.545,
+    "H2_min_pair_sep": 1.585,
+    "H1_minus_H2_max_displacement": 0.02
+  },
+  {
+    "request_id": "2026-11-19/r1/lab-keystone/006",
+    "cost": 1.04,
+    "H1_final_pos": [
+      [
+        3.823,
+        5.0
+      ],
+      [
+        6.057,
+        5.0
+      ]
+    ],
+    "H2_final_pos": [
+      [
+        3.819,
+        5.0
+      ],
+      [
+        6.063,
+        5.0
+      ]
+    ],
+    "H1_min_pair_sep": 2.233,
+    "H2_min_pair_sep": 2.244,
+    "H1_minus_H2_max_displacement": 0.006
+  },
+  {
+    "request_id": "2026-11-19/r1/lab-keystone/007",
+    "cost": 1.04,
+    "H1_final_pos": [
+      [
+        3.249,
+        5.0
+      ],
+      [
+        7.109,
+        5.0
+      ]
+    ],
+    "H2_final_pos": [
+      [
+        3.249,
+        5.0
+      ],
+      [
+        7.109,
+        5.0
+      ]
+    ],
+    "H1_min_pair_sep": 3.0,
+    "H2_min_pair_sep": 3.0,
+    "H1_minus_H2_max_displacement": 0.0
+  },
+  {
+    "request_id": "2026-11-19/r1/lab-keystone/008",
+    "cost": 1.04,
+    "H1_final_pos": [
+      [
+        3.708,
+        5.0
+      ],
+      [
+        6.292,
+        5.0
+      ]
+    ],
+    "H2_final_pos": [
+      [
+        3.707,
+        5.0
+      ],
+      [
+        6.293,
+        5.0
+      ]
+    ],
+    "H1_min_pair_sep": 2.583,
+    "H2_min_pair_sep": 2.587,
+    "H1_minus_H2_max_displacement": 0.002
+  },
+  {
+    "request_id": "2026-11-19/r1/lab-keystone/009",
+    "cost": 1.04,
+    "H1_final_pos": [
+      [
+        3.955,
+        5.0
+      ],
+      [
+        6.045,
+        5.0
+      ]
+    ],
+    "H2_final_pos": [
+      [
+        3.947,
+        5.0
+      ],
+      [
+        6.053,
+        5.0
+      ]
+    ],
+    "H1_min_pair_sep": 2.091,
+    "H2_min_pair_sep": 2.105,
+    "H1_minus_H2_max_displacement": 0.007
+  },
+  {
+    "request_id": "2026-11-19/r1/lab-keystone/010",
+    "cost": 1.04,
+    "H1_final_pos": [
+      [
+        3.317,
+        5.0
+      ],
+      [
+        6.818,
+        5.0
+      ]
+    ],
+    "H2_final_pos": [
+      [
+        3.317,
+        5.0
+      ],
+      [
+        6.817,
+        5.0
+      ]
+    ],
+    "H1_min_pair_sep": 3.0,
+    "H2_min_pair_sep": 3.0,
+    "H1_minus_H2_max_displacement": 0.001
+  },
+  {
+    "request_id": "2026-11-19/r1/lab-keystone/011",
+    "cost": 1.12,
+    "H1_final_pos": [
+      [
+        4.481,
+        2.664
+      ],
+      [
+        5.519,
+        2.664
+      ],
+      [
+        5.0,
+        8.627
+      ]
+    ],
+    "H2_final_pos": [
+      [
+        4.479,
+        2.663
+      ],
+      [
+        5.521,
+        2.663
+      ],
+      [
+        5.0,
+        8.635
+      ]
+    ],
+    "H1_min_pair_sep": 1.037,
+    "H2_min_pair_sep": 1.041,
+    "H1_minus_H2_max_displacement": 0.009
+  },
+  {
+    "request_id": "2026-11-19/r1/lab-keystone/012",
+    "cost": 1.16,
+    "H1_final_pos": [
+      [
+        4.098,
+        2.947
+      ],
+      [
+        6.208,
+        3.792
+      ],
+      [
+        1.612,
+        8.388
+      ],
+      [
+        7.053,
+        5.902
+      ]
+    ],
+    "H2_final_pos": [
+      [
+        4.099,
+        2.938
+      ],
+      [
+        6.197,
+        3.803
+      ],
+      [
+        1.606,
+        8.394
+      ],
+      [
+        7.062,
+        5.901
+      ]
+    ],
+    "H1_min_pair_sep": 2.273,
+    "H2_min_pair_sep": 2.269,
+    "H1_minus_H2_max_displacement": 0.01
+  },
+  {
+    "request_id": "2026-11-19/r1/lab-keystone/013",
+    "cost": 1.24,
+    "H1_final_pos": [
+      [
+        2.025,
+        5.0
+      ],
+      [
+        7.592,
+        5.0
+      ]
+    ],
+    "H2_final_pos": [
+      [
+        1.893,
+        5.0
+      ],
+      [
+        7.774,
+        5.0
+      ]
+    ],
+    "H1_min_pair_sep": 5.567,
+    "H2_min_pair_sep": 5.88,
+    "H1_minus_H2_max_displacement": 0.181
+  },
+  {
+    "request_id": "2026-11-19/r1/lab-keystone/014",
+    "cost": 1.12,
+    "H1_final_pos": [
+      [
+        0.79,
+        5.0
+      ],
+      [
+        9.509,
+        5.0
+      ]
+    ],
+    "H2_final_pos": [
+      [
+        0.818,
+        5.0
+      ],
+      [
+        9.442,
+        5.0
+      ]
+    ],
+    "H1_min_pair_sep": 8.0,
+    "H2_min_pair_sep": 8.0,
+    "H1_minus_H2_max_displacement": 0.067
+  },
+  {
+    "request_id": "2026-11-19/r1/lab-keystone/015",
+    "cost": 1.16,
+    "H1_final_pos": [
+      [
+        0.74,
+        5.0
+      ],
+      [
+        9.451,
+        5.0
+      ]
+    ],
+    "H2_final_pos": [
+      [
+        0.774,
+        5.0
+      ],
+      [
+        9.392,
+        5.0
+      ]
+    ],
+    "H1_min_pair_sep": 8.0,
+    "H2_min_pair_sep": 8.0,
+    "H1_minus_H2_max_displacement": 0.06
+  },
+  {
+    "request_id": "2026-11-19/r1/lab-keystone/016",
+    "note": "free flight, prediction = straight-line with specular walls (see P-0001/P-0002)",
+    "cost": 1.4
+  }
+]

@@ -1,0 +1,49 @@
+{
+  "request_id": "2026-11-19/r1/lab-b/006",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Additivity, mixed species, 3-4-5 triangle (config 1): A-B side 3, B-C side 4, A-C side 5, at rest. Prediction from the pair table at each pair's own separation (written before results). Falsified if any particle deviates from the pairwise-additive integration by more than 0.05 per coordinate over t<=1.0.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.0,
+          2.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          5.0,
+          2.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.0,
+          6.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.0005
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

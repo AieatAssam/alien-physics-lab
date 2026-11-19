@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-19/r1/lab-c/011",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Species matrix BC at rest, r=6.0 along x, T=3.0. Per-particle acceleration from trajectory fit; with P-0005 (r=5) this gives the r-dependence of each pair coupling. Tests the coupling-product law and the Newton-third-law mass cycle at this separation.",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          2.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          8.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 3.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

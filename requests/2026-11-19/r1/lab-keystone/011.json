@@ -1,0 +1,49 @@
+{
+  "request_id": "2026-11-19/r1/lab-keystone/011",
+  "lab": "lab-keystone",
+  "account": "research",
+  "purpose": "Three-body additivity: A, A, C at rest, triangle sides about 4-4.5. Tests whether the pairwise sum holds for N = 3 (untested in any paper).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.0,
+          3.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          7.0,
+          3.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.0,
+          7.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.05
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

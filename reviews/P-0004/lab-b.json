@@ -1,0 +1,25 @@
+{
+  "paper_id": "P-0004",
+  "lab": "lab-b",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-18/r3/lab-b/012",
+    "2026-11-18/r3/lab-b/013",
+    "2026-11-18/r3/lab-b/014",
+    "2026-11-18/r3/lab-b/015",
+    "2026-11-18/r3/lab-b/016"
+  ],
+  "proposed_domain": {
+    "species": [
+      "A",
+      "B",
+      "C"
+    ],
+    "r_range": [
+      3.0,
+      5.0
+    ],
+    "max_particles": 2
+  },
+  "comment": "Independent runs at separation 5, same geometry as P-0004, fitted with pair_fit_integrated.py (tmax 2, rms 0.050 per coordinate). c1 (A-B): K_A(B) = 8.94 vs claimed 9.0 (-0.7%); K_B(A) = 12.58 vs claimed 12.3 (+2.3%). Replicated, although the 1% predicted_error is tighter than the 2.3% deviation on K_B(A). c2 (A-C, repulsion): K_A(C) = -8.72 vs -8.6 (+1.4%); K_C(A) = -20.97 vs -21.4 (-2.0%). Sign and magnitude replicate. P-0004 B-C prediction (K_B(C) = -5.9, K_C(B) = -10.7; miss by >20% would reject the factorisation): measured -6.34 and -10.45, deviations +7.5% and -2.3%. Passes. Domain: at separation 3 (r3/015 A-B: 8.92 / 12.61; r3/016 A-C: -8.95 / -21.36) the coefficients match separation 5 within 2%. So the claims hold at 3 as well as at 5. The proposed domain is r in [3,5] for A, B, C pairs with two particles. Not tested: separation below 3 (A-B drops about 12% between 3 and 2 in my runs), three or more particles (see P-0006 c3 for one additivity test), and velocity dependence. The factorisation's C-C failure (the paper's own self-criticism) is not part of the claims here and I did not test it."
+}

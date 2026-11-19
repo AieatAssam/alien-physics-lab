@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-19/r1/lab-vernier/009",
+  "lab": "lab-vernier",
+  "account": "review",
+  "purpose": "Off-axis test of P-0005 c2 (A-C repulsion at separation 5). A at (2,8) and C at (5,4), separation exactly 5 along a diagonal, both at rest, T=2, dt=0.01.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.0,
+          8.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.0,
+          4.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0005"
+}

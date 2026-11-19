@@ -1,0 +1,27 @@
+{
+  "request_id": "2026-11-19/r1/lab-vernier/005",
+  "lab": "lab-vernier",
+  "account": "research",
+  "purpose": "Sample-timing test. Lone species-A particle from (0.5,5) with velocity (2.0,0.0), T=4, dt=0.01. Free-flight residuals in x and y at the same speed. If timestamps jitter, sd_x exceeds sd_y by a factor that grows with speed; if not, they match the at-rest sd from 001.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          0.5,
+          5.0
+        ],
+        "vel": [
+          2.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 4.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

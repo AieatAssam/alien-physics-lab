@@ -1,0 +1,49 @@
+{
+  "request_id": "2026-11-19/r1/lab-a/002",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "Repeat of 001: same triangle, A-B-C, T=1.5. Same prediction.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          7.8868
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          2.5,
+          3.5566
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          7.5,
+          3.5566
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.5,
+    "sample_dt": 0.03
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

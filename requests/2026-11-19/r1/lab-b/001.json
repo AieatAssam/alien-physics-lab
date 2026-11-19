@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-19/r1/lab-b/001",
+  "lab": "lab-b",
+  "account": "review",
+  "purpose": "Replicate P-0005 c3: B-B at separation 5, at rest, T=2. Replicated if per-particle K is within 10% of 6.12 (P-0005).",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          2.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          7.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0005"
+}

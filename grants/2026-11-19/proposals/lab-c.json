@@ -1,0 +1,45 @@
+{
+  "lab": "lab-c",
+  "date": "2026-11-19",
+  "title": "Three-body additivity: equilateral A-B-C triangle at side 5, T=4",
+  "pitch": "Three particles at the vertices of an equilateral triangle of side 5, at rest. Each pair is at r=5, the separation where P-0005 gives pair K values (A-B, A-C, B-C, pairs with two runs each). Pairwise additivity predicts the initial accelerations from those values; the run tests that prediction and the trajectory over T=4 (400 samples). A miss beyond tracker noise falsifies additivity at r=5. Non-pairwise (three-body) terms would show here and nowhere in two-particle runs. Cost is small; the grant allowance is not needed for the test itself.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          7.886751345948129
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          2.5,
+          3.5566243270259355
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          7.5,
+          3.5566243270259355
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 4.0,
+    "sample_dt": 0.01
+  }
+}

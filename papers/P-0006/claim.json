@@ -1,0 +1,51 @@
+{
+  "paper_id": "P-0006",
+  "lab": "lab-a",
+  "title": "Shared distance law at separations 7 and 9: pair coefficients scale with one factor (0.86 at 7, 0.65 at 9) for species A, B, C at rest",
+  "claims": [
+    {
+      "claim_id": "P-0006-c1",
+      "statement": "Two species-C particles at rest, separation 7.0 along x: each accelerates toward the other with K_C(C) = 10.44 (mean of four per-particle fits: 10.60, 10.60, 10.20, 10.35). Predicted by the shared law as 0.86 x 12.36 = 10.63 (P-0005 c4 at separation 5); measured is 1.8% lower. Runs 2026-11-18/r3/lab-a/001 and 002. Ratio K(7)/K(5) = 0.845. Residual rms 0.050-0.052 per coordinate, T = 4, no census events. Domain: separation 7 only.",
+      "domain": {"species": ["C"], "r_range": [7.0, 7.0], "max_particles": 2},
+      "predicted_error": 0.05,
+      "evidence": ["2026-11-18/r3/lab-a/001", "2026-11-18/r3/lab-a/002"]
+    },
+    {
+      "claim_id": "P-0006-c2",
+      "statement": "Two species-C particles at rest, separation 9.0 along x: each accelerates toward the other with K_C(C) = 7.83 (per-particle fits 7.75, 7.90). Predicted as 0.65 x 12.36 = 8.03; measured is 2.5% lower. Run 2026-11-18/r3/lab-a/003 (single run). Ratio K(9)/K(5) = 0.634. Residual rms 0.050 per coordinate, T = 4, no census events. The factor 0.65 comes from two A-A runs at separation 9 (2026-11-18/r1/lab-a/008-009, mean 11.70, per-particle spread about 5%), so the predicted value carries about 5% uncertainty. Domain: separation 9 only.",
+      "domain": {"species": ["C"], "r_range": [9.0, 9.0], "max_particles": 2},
+      "predicted_error": 0.05,
+      "evidence": ["2026-11-18/r3/lab-a/003"]
+    },
+    {
+      "claim_id": "P-0006-c3",
+      "statement": "Two particles at rest, separation 7.0 along x, species B and C, repel: K_B(C) = -5.13 (B away from C) and K_C(B) = -8.70 (C away from B), means of 2026-11-18/r3/lab-a/004 and 007 (K_B(C) = -5.15, -5.10; K_C(B) = -8.75, -8.65). The repeat pair agrees within 1.2%. Shared-law predictions -5.25 and -9.11 are 2.3% and 4.5% high in magnitude. Residual rms 0.048-0.051 per coordinate, T = 4, no census events. Domain: separation 7 only.",
+      "domain": {"species": ["B", "C"], "r_range": [7.0, 7.0], "max_particles": 2},
+      "predicted_error": 0.05,
+      "evidence": ["2026-11-18/r3/lab-a/004", "2026-11-18/r3/lab-a/007"]
+    },
+    {
+      "claim_id": "P-0006-c4",
+      "statement": "Two particles at rest, separation 7.0 along x, species A and C, repel: K_A(C) = -7.50 (predicted -7.54, 0.5% off) and K_C(A) = -17.35 (predicted -18.28, 5.1% smaller in magnitude). Run 2026-11-18/r3/lab-a/005 (single run). Residual rms 0.052 per coordinate, T = 4, no census events. The K_C(A) deviation is the largest of the round-3 ratios and is stated as measured, not corrected. Domain: separation 7 only.",
+      "domain": {"species": ["A", "C"], "r_range": [7.0, 7.0], "max_particles": 2},
+      "predicted_error": 0.06,
+      "evidence": ["2026-11-18/r3/lab-a/005"]
+    },
+    {
+      "claim_id": "P-0006-c5",
+      "statement": "Two species-B particles at rest, separation 7.0 along x: each accelerates toward the other with K_B(B) = 5.43 (per-particle fits 5.30 and 5.55 in one run). Shared-law prediction 0.86 x 6.12 = 5.26; measured is 3.2% higher. Run 2026-11-18/r3/lab-a/006 (single run). Residual rms 0.051 per coordinate, T = 4, no census events. Domain: separation 7 only.",
+      "domain": {"species": ["B"], "r_range": [7.0, 7.0], "max_particles": 2},
+      "predicted_error": 0.05,
+      "evidence": ["2026-11-18/r3/lab-a/006"]
+    },
+    {
+      "claim_id": "P-0006-c6",
+      "statement": "The predictor in model.py (sep-5 pair coefficients scaled by 0.86 at separation 7 and 0.65 at separation 9, P = 2.5 fixed) reproduces all seven runs 2026-11-18/r3/lab-a/001-007 at tracker noise, out of sample: residual rms 0.048-0.052 per coordinate, maximum |residual| below 0.21, no census events. Every per-particle K in c1-c5 lies within 6% of its shared-law prediction. Domain: pairs of species A, B, C at rest, initial separation 7 or 9, T up to 4.",
+      "domain": {"species": ["A", "B", "C"], "r_range": [7.0, 9.0], "max_particles": 2},
+      "predicted_error": 0.06,
+      "evidence": ["2026-11-18/r3/lab-a/001", "2026-11-18/r3/lab-a/002", "2026-11-18/r3/lab-a/003", "2026-11-18/r3/lab-a/004", "2026-11-18/r3/lab-a/005", "2026-11-18/r3/lab-a/006", "2026-11-18/r3/lab-a/007"]
+    }
+  ],
+  "cites": ["P-0003", "P-0005"],
+  "supersedes": []
+}

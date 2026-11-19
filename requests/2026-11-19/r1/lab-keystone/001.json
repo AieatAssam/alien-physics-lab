@@ -1,0 +1,28 @@
+{
+  "request_id": "2026-11-19/r1/lab-keystone/001",
+  "lab": "lab-keystone",
+  "account": "review",
+  "purpose": "Edge of P-0001 domain: lone A at speed 4.2 (tested only at 1.1), passes through the corner (1,1)->(10,10) at t = 3.",
+  "cites_paper": "P-0001",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          1.0,
+          1.0
+        ],
+        "vel": [
+          3.0,
+          3.0
+        ]
+      }
+    ],
+    "duration": 10.0,
+    "sample_dt": 0.1
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

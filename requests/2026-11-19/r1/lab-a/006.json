@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-19/r1/lab-a/006",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "B-B pair, separation 5 along y (x=5), at rest, T=4. Off-axis orientation for the B-B coefficient. Isotropy is supported for A-A only (H10).",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          5.0,
+          2.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          5.0,
+          7.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 4.0,
+    "sample_dt": 0.04
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

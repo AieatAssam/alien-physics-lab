@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-19/r1/lab-c/023",
+  "lab": "lab-c",
+  "account": "review",
+  "purpose": "Review check of P-0005-c5 (B-C prediction) at its stated separation r=5, rotated 45 degrees: B and C at rest along the diagonal. Claim domain says 'along a line'; orientation was tested only for A-A.",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          3.232233047033631,
+          3.232233047033631
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          6.767766952966369,
+          6.767766952966369
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0005"
+}

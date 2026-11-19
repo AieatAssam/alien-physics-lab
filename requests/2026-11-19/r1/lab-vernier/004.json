@@ -1,0 +1,27 @@
+{
+  "request_id": "2026-11-19/r1/lab-vernier/004",
+  "lab": "lab-vernier",
+  "account": "research",
+  "purpose": "Species dependence of noise. Lone species-B particle at rest at (5,5), same geometry and sampling as 001.",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          5.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 20.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

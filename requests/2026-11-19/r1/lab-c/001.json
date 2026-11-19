@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-19/r1/lab-c/001",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Species matrix AA at rest, r=3.0 (P-0005 measures only r=5) along x, T=1.0. Per-particle acceleration from trajectory fit; with P-0005 (r=5) this gives the r-dependence of each pair coupling. Tests the coupling-product law and the Newton-third-law mass cycle at this separation.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

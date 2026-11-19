@@ -1,0 +1,45 @@
+{
+  "lab": "lab-vernier",
+  "date": "2026-11-19",
+  "title": "Three-body superposition: do pair couplings add at separation 5?",
+  "pitch": "A, B, C at rest on an equilateral triangle of side 5. If pair couplings add, each particle's initial acceleration is the sum over its two partners of K_i(j)/5^2.5 along the pair direction, using P-0005 values (A on B 8.99, A on C -8.77, B on A 12.34, B on C -6.10, C on A -21.25, C on B -10.59). Each measured N=2 coupling is already in P-0005; the N=3 sum is not yet tested. Tracker noise ~0.05 per coordinate. T=2.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.5,
+          2.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          7.5,
+          2.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.0,
+          6.8301
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.01
+  }
+}

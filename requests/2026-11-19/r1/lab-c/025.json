@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-19/r1/lab-c/025",
+  "lab": "lab-c",
+  "account": "review",
+  "purpose": "Review check of P-0005-c3 (B-B at r=5) along the anti-diagonal, at rest.",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          3.232233047033631,
+          6.767766952966369
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          6.767766952966369,
+          3.232233047033631
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0005"
+}

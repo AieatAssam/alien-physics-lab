@@ -1,0 +1,49 @@
+{
+  "request_id": "2026-11-19/r1/lab-c/020",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Pair additivity: equilateral triangle A,B,C, side 5.0, all at rest. Prediction from P-0005 pair K values (pairwise sum, all distances 5.0) is written in the notebook before results. Three bodies, no pair at other separation.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          7.886751345948129
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          2.5,
+          3.5566243270259355
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          7.5,
+          3.5566243270259355
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

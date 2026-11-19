@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-19/r1/lab-a/005",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "B-B pair repeat at separation 5 along x (y=5), at rest, T=4. Longer T for a more precise K_B(B), which has the largest run-to-run spread (about 9%). Compare with P-0005 c3 (6.12).",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          2.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          7.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 4.0,
+    "sample_dt": 0.04
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

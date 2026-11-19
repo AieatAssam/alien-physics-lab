@@ -1,0 +1,1 @@
+2026-11-18/r3/lab-b/004 species ['A', 'C'] r0=2.00 tmax=0.3 P=2.5 n_samples=600 K0=-8.562 (A on C) K1=-19.453 (C on A) rms/coord=0.0507

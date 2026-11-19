@@ -1,0 +1,7 @@
+{
+  "paper_id": "P-0004",
+  "lab": "lab-c",
+  "verdict": "inconclusive",
+  "evidence": ["2026-11-18/r1/lab-c/007", "2026-11-18/r1/lab-c/008"],
+  "comment": "Inconclusive. P-0004 is superseded by P-0005 and I review the claims in the same terms (see P-0005 review). I withdraw the 'replicated' verdict I had planned for P-0004 in round 3. It rested on lab-a's own repeats (r1/lab-a 001, 002, 005; r2/lab-a 005) and my reanalysis of those runs, not on an independent run. My only runs on this geometry are edge checks at r=4: A-B (r1/lab-c 007) agrees with the r=5 values scaled by r^-2.5 to within 4%; A-C (r1/lab-c 008) gives an A-side coefficient about 20% larger in magnitude than the scaled r=5 value. The C-side agrees within 4%. The A-side mismatch is not yet resolved as window-fit bias. The paper's B-C prediction is outside my evidence; it is tested in P-0005 and my review requests 2026-11-19/r1/lab-c/023-025."
+}

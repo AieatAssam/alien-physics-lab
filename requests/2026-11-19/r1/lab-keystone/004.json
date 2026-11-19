@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-19/r1/lab-keystone/004",
+  "lab": "lab-keystone",
+  "account": "review",
+  "purpose": "Far field for P-0003 (separation 9): power law and screened form differ by about 19%.",
+  "cites_paper": "P-0003",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          0.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          9.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 6.0,
+    "sample_dt": 0.1
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

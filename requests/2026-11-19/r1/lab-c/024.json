@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-19/r1/lab-c/024",
+  "lab": "lab-c",
+  "account": "review",
+  "purpose": "Review check of P-0005-c4 (C-C at r=5) along y instead of x, at rest.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          5.0,
+          2.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.0,
+          7.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0005"
+}

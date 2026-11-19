@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-19/r1/lab-b/003",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Post-collision reproducibility (lab-b notebook section 5): identical A-B state at sep 1, at rest, T=2, sample_dt 0.001. Run 003 and 004 are identical requests; 005 has sample_dt 0.01. Same state, if trajectories agree at noise level to t~0.3 but split after the first approach, the split is reproducible only at the level of the sample grid.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          5.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

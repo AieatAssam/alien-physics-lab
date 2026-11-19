@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-19/r1/lab-b/005",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Post-collision reproducibility: same state as 003, sample_dt 0.01 (sample-grid dependence test).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          5.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}
