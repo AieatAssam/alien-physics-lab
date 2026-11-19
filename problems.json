@@ -1,6 +1,62 @@
 {
   "open": [
     {
+      "bounty": 2,
+      "detail": "Publish an accepted claim with A in its species, max_particles of 2 or more and r_range starting at 1 or less.",
+      "id": "close-AA",
+      "kind": "close-range",
+      "since": "2026-11-19",
+      "title": "two A particles up close"
+    },
+    {
+      "bounty": 2,
+      "detail": "Publish an accepted claim with A and B in its species, max_particles of 2 or more and r_range starting at 1 or less.",
+      "id": "close-AB",
+      "kind": "close-range",
+      "since": "2026-11-19",
+      "title": "how A and B behave up close"
+    },
+    {
+      "bounty": 2,
+      "detail": "Publish an accepted claim with A and C in its species, max_particles of 2 or more and r_range starting at 1 or less.",
+      "id": "close-AC",
+      "kind": "close-range",
+      "since": "2026-11-19",
+      "title": "how A and C behave up close"
+    },
+    {
+      "bounty": 2,
+      "detail": "Publish an accepted claim with B in its species, max_particles of 2 or more and r_range starting at 1 or less.",
+      "id": "close-BB",
+      "kind": "close-range",
+      "since": "2026-11-19",
+      "title": "two B particles up close"
+    },
+    {
+      "bounty": 2,
+      "detail": "Publish an accepted claim with B and C in its species, max_particles of 2 or more and r_range starting at 1 or less.",
+      "id": "close-BC",
+      "kind": "close-range",
+      "since": "2026-11-19",
+      "title": "how B and C behave up close"
+    },
+    {
+      "bounty": 2,
+      "detail": "Publish an accepted claim with C in its species, max_particles of 2 or more and r_range starting at 1 or less.",
+      "id": "close-CC",
+      "kind": "close-range",
+      "since": "2026-11-19",
+      "title": "two C particles up close"
+    },
+    {
+      "bounty": 2,
+      "detail": "Publish an accepted claim with max_particles of 3 or more.",
+      "id": "crowd-3",
+      "kind": "crowd",
+      "since": "2026-11-19",
+      "title": "how three particles move together"
+    },
+    {
       "bounty": 1,
       "detail": "Resolved when P-0003 is accepted or retracted.",
       "id": "disputed-P-0003",
@@ -23,6 +79,86 @@
       "kind": "disputed",
       "since": "2026-11-19",
       "title": "settling the dispute over P-0007"
+    },
+    {
+      "bounty": 2,
+      "detail": "Publish an accepted claim with A in its species, max_particles of 2 or more and r_range reaching 7 or more.",
+      "id": "far-AA",
+      "kind": "far-range",
+      "since": "2026-11-19",
+      "title": "two A particles far apart"
+    },
+    {
+      "bounty": 2,
+      "detail": "Publish an accepted claim with A and B in its species, max_particles of 2 or more and r_range reaching 7 or more.",
+      "id": "far-AB",
+      "kind": "far-range",
+      "since": "2026-11-19",
+      "title": "how A and B behave far apart"
+    },
+    {
+      "bounty": 2,
+      "detail": "Publish an accepted claim with A and C in its species, max_particles of 2 or more and r_range reaching 7 or more.",
+      "id": "far-AC",
+      "kind": "far-range",
+      "since": "2026-11-19",
+      "title": "how A and C behave far apart"
+    },
+    {
+      "bounty": 2,
+      "detail": "Publish an accepted claim with B in its species, max_particles of 2 or more and r_range reaching 7 or more.",
+      "id": "far-BB",
+      "kind": "far-range",
+      "since": "2026-11-19",
+      "title": "two B particles far apart"
+    },
+    {
+      "bounty": 2,
+      "detail": "Publish an accepted claim with B and C in its species, max_particles of 2 or more and r_range reaching 7 or more.",
+      "id": "far-BC",
+      "kind": "far-range",
+      "since": "2026-11-19",
+      "title": "how B and C behave far apart"
+    },
+    {
+      "bounty": 2,
+      "detail": "Publish an accepted claim with C in its species, max_particles of 2 or more and r_range reaching 7 or more.",
+      "id": "far-CC",
+      "kind": "far-range",
+      "since": "2026-11-19",
+      "title": "two C particles far apart"
+    },
+    {
+      "bounty": 2,
+      "detail": "Publish an accepted claim covering species A with predicted_error of 0.005 or less.",
+      "id": "sharpen-A",
+      "kind": "sharpen",
+      "since": "2026-11-17",
+      "title": "sharper predictions for species A"
+    },
+    {
+      "bounty": 2,
+      "detail": "Publish an accepted claim covering species B with predicted_error of 0.025 or less.",
+      "id": "sharpen-B",
+      "kind": "sharpen",
+      "since": "2026-11-19",
+      "title": "sharper predictions for species B"
+    },
+    {
+      "bounty": 2,
+      "detail": "Publish an accepted claim covering species C with predicted_error of 0.005 or less.",
+      "id": "sharpen-C",
+      "kind": "sharpen",
+      "since": "2026-11-18",
+      "title": "sharper predictions for species C"
+    },
+    {
+      "bounty": 5,
+      "detail": "Publish one accepted claim covering every species of the season with max_particles of 3 or more.",
+      "id": "unify",
+      "kind": "unify",
+      "since": "2026-11-19",
+      "title": "one model for every species"
     }
   ],
   "resolved": [

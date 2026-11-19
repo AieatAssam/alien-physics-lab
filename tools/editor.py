@@ -18,6 +18,10 @@ from domain import in_domain
 MARGIN = 3.0
 MIN_REPLICATIONS = 3
 DEFAULT_SIDE = 10.0
+SHARPEN_LEVELS = 3
+# (id, title, bounty, max_particles needed); each opens when the previous one resolves
+CROWD = (("crowd-3", "how three particles move together", 2, 3), ("crowd-8", "a crowd of eight", 3, 8),
+         ("crowd-16", "a full chamber", 4, 16))
 
 
 def read(path):
@@ -120,10 +124,10 @@ def publish_predictions(pred_dir, repo):
     return len(docs)
 
 
-def covers(paper, need, min_particles):
-    """True if one claim of the paper has every species in need and max_particles >= min_particles."""
+def covers(paper, need, min_particles, extra=lambda domain: True):
+    """True if one claim of the paper has every species in need, max_particles >= min_particles and passes extra."""
     return any(set(need) <= set(c["domain"]["species"]) and c["domain"]["max_particles"] >= min_particles
-               for c in paper["claims"])
+               and extra(c["domain"]) for c in paper["claims"])
 
 
 def grant_winners(repo):
@@ -136,11 +140,15 @@ def grant_winners(repo):
     return winners
 
 
-def problems(papers, events, species, today):
-    """Open and resolved problems, from public files only. Events are walked in file order."""
+def problems(papers, events, species, today, L=DEFAULT_SIDE, reviewed=frozenset()):
+    """Open and resolved problems, from public files only. Events are walked in file order.
+
+    A problem is settled only by an event later than the one that opened it, so a paper cannot
+    unlock and settle a problem at once. reviewed: ids of papers with a file under reviews/.
+    """
     first = min((e["date"] for e in events), default=today)
-    found = {}
-    needs = {}
+    found, rules, needs, sharpen = {}, {}, {}, {}
+    status, last_standing = {}, {}
     for s in species:
         needs[f"uncharted-{s}"] = ((s,), 1)
     for a, b in combinations_with_replacement(sorted(species), 2):
@@ -156,8 +164,66 @@ def problems(papers, events, species, today):
             detail = f"Publish an accepted claim with {names} in its species and max_particles of 2 or more."
             kind, bounty = "uncharted-pair", 2
         found[pid] = {"id": pid, "kind": kind, "title": title, "detail": detail, "bounty": bounty, "since": first}
+        rules[pid] = lambda paper, need=need, minp=minp: covers(paper, need, minp)
 
-    status, last_standing = {}, {}
+    def sharpen_target(s):
+        """Half the smallest predicted_error among accepted claims covering species s, or None."""
+        errs = [c["predicted_error"] for pid, paper in papers.items() if status.get(pid) == "accepted"
+                for c in paper["claims"] if s in c["domain"]["species"] and c.get("predicted_error") is not None]
+        return 0.5 * min(errs) if errs else None
+
+    def open_problem(uid, kind, title, detail, bounty, since, rule):
+        if uid not in found:
+            found[uid] = {"id": uid, "kind": kind, "title": title, "detail": detail, "bounty": bounty, "since": since}
+            rules[uid] = rule
+
+    def open_crowd(i, day):
+        uid, title, bounty, n = CROWD[i]
+        open_problem(uid, "crowd", title, f"Publish an accepted claim with max_particles of {n} or more.",
+                     bounty, day, lambda paper: covers(paper, (), n))
+
+    def open_sharpen(s, level, day):
+        target = sharpen_target(s)
+        if target is None:
+            return
+        uid = f"sharpen-{s}" if level == 1 else f"sharpen-{s}-{level}"
+        open_problem(uid, "sharpen", f"sharper predictions for species {s}",
+                     f"Publish an accepted claim covering species {s} with predicted_error of {target:.3g} or less.",
+                     2, day,
+                     lambda paper: any(s in c["domain"]["species"] and c.get("predicted_error") is not None
+                                       and c["predicted_error"] <= target for c in paper["claims"]))
+        sharpen[uid] = (s, level)
+
+    def unlock(uid, day):
+        """Open the problems that the just-resolved uid unlocks; each is dated to day."""
+        crowd_ids = [c[0] for c in CROWD]
+        if uid.startswith("pair-"):
+            (a, b), _ = needs[uid]
+            open_crowd(0, day)
+            names = a if a == b else f"{a} and {b}"
+            near = f"two {a} particles up close" if a == b else f"how {a} and {b} behave up close"
+            far = f"two {a} particles far apart" if a == b else f"how {a} and {b} behave far apart"
+            open_problem(f"close-{a}{b}", "close-range", near,
+                         f"Publish an accepted claim with {names} in its species, max_particles of 2 or more "
+                         f"and r_range starting at {0.1 * L:g} or less.", 2, day,
+                         lambda paper: covers(paper, (a, b), 2, lambda d: d["r_range"][0] <= 0.1 * L))
+            open_problem(f"far-{a}{b}", "far-range", far,
+                         f"Publish an accepted claim with {names} in its species, max_particles of 2 or more "
+                         f"and r_range reaching {0.7 * L:g} or more.", 2, day,
+                         lambda paper: covers(paper, (a, b), 2, lambda d: d["r_range"][1] >= 0.7 * L))
+        if uid in crowd_ids[:-1]:
+            open_crowd(crowd_ids.index(uid) + 1, day)
+        if uid.startswith("uncharted-"):
+            s = needs[uid][0][0]
+            open_sharpen(s, 1, day)
+            if species and all(found[f"uncharted-{x}"].get("resolved_on") for x in species):
+                open_problem("unify", "unify", "one model for every species",
+                             "Publish one accepted claim covering every species of the season with max_particles of 3 or more.",
+                             5, day, lambda paper: covers(paper, tuple(species), 3))
+        if uid in sharpen and sharpen[uid][1] < SHARPEN_LEVELS:
+            s, level = sharpen[uid]
+            open_sharpen(s, level + 1, day)
+
     for ev in events:
         pid, day = ev["paper_id"], ev["date"]
         if ev.get("kind") == "standing":
@@ -181,9 +247,31 @@ def problems(papers, events, species, today):
         if ev["to"] in ("accepted", "retracted") and f"disputed-{pid}" in found:
             resolve(found, f"disputed-{pid}", day, last_standing.get(pid), pid)
         if ev["to"] == "accepted" and pid in papers:
-            for uid, (need, minp) in needs.items():
-                if uid in found and "resolved_on" not in found[uid] and covers(papers[pid], need, minp):
+            # Only problems already open before this event are checked against this paper.
+            for uid in [u for u in found if u in rules and "resolved_on" not in found[u]]:
+                if rules[uid](papers[pid]):
                     resolve(found, uid, day, papers[pid]["lab"], pid)
+                    unlock(uid, day)
+
+    # unreviewed-P: a submitted paper still without a review file two distinct dates after it was submitted.
+    dates = sorted({e["date"] for e in events} | {today})
+    submitted = {}
+    for ev in events:
+        if ev.get("to") == "submitted":
+            submitted.setdefault(ev["paper_id"], ev["date"])
+    for pid, sub in submitted.items():
+        after = [d for d in dates if d > sub]
+        if len(after) < 2:
+            continue
+        since = after[1]
+        standing = next((e for e in events if e.get("kind") == "standing" and e["paper_id"] == pid), None)
+        uid = f"unreviewed-{pid}"
+        base = {"id": uid, "kind": "unreviewed", "title": f"first review of {pid}",
+                "detail": f"Resolved by the first standing review of {pid}.", "bounty": 1, "since": since}
+        if standing and standing["date"] >= since:
+            found[uid] = {**base, "resolved_on": standing["date"], "winner": standing["review_lab"], "by_paper": pid}
+        elif standing is None and pid not in reviewed and status.get(pid) == "submitted":
+            found[uid] = base
 
     # A contested or disputed problem whose paper left that state without resolving is dropped.
     for pid, prob in list(found.items()):
@@ -286,7 +374,8 @@ def run(repo, date, pred_dir, side=DEFAULT_SIDE):
             for ev in new_events:
                 fh.write(json.dumps(ev, sort_keys=True) + "\n")
 
-    probs = problems(papers, events_of(events_path), season_species(repo), date)
+    reviewed = {d.name for d in (repo / "reviews").glob("P-*") if d.is_dir() and any(d.iterdir())}
+    probs = problems(papers, events_of(events_path), season_species(repo), date, side, reviewed)
     (repo / "problems.json").write_text(json.dumps(probs, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
     rep_out = {}

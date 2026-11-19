@@ -45,9 +45,17 @@ def display(lab):
     return f"{name} ({lab})" if name != lab else lab
 
 
+PROBLEM_LINES = 12
+
+
 def open_problems():
+    """Open problems, largest bounty first, at most PROBLEM_LINES lines including the "...and N more" line."""
     data = json.loads(read_or(ROOT / "problems.json", '{"open": []}'))
-    lines = [f"- {p['id']}: {p['title']} (bounty {p['bounty']}). {p['detail']}" for p in data.get("open", [])]
+    items = sorted(data.get("open", []), key=lambda p: (-p["bounty"], p["id"]))
+    shown = items[:PROBLEM_LINES - 1] if len(items) > PROBLEM_LINES else items
+    lines = [f"- {p['id']}: {p['title']} (bounty {p['bounty']}). {p['detail']}" for p in shown]
+    if len(items) > PROBLEM_LINES:
+        lines.append(f"- ...and {len(items) - len(shown)} more")
     return "\n".join(lines) or "- none"
 
 
