@@ -173,3 +173,67 @@ def test_model_importing_os_rejected(env):
     assert "import not allowed in model.py: os" in rejected["out-lab-a/papers/P-0002/model.py"]
     assert not any(a.startswith("out-lab-a/papers/P-0002") for a in accepted)
     assert not (repo / "papers" / "P-0002").exists()
+
+
+def report_of(repo):
+    return json.loads((repo / "gate" / DATE / "r1.json").read_text())
+
+
+def test_same_new_id_in_batch_renumbers_later_lab(env):
+    repo, art = env
+    for lab in ("lab-a", "lab-b"):
+        paper_files(art, lab, "P-0007")
+        write(art / f"out-{lab}" / "papers" / "P-0007" / "paper.md", "# P-0007\n\nSee P-0007-c1.\n")
+
+    rejected, accepted = run_gate(repo, art)
+
+    assert rejected == {}
+    assert "out-lab-b/papers/P-0007/model.py" in accepted
+    assert report_of(repo)["renumbered"] == [{"lab": "lab-b", "from": "P-0007", "to": "P-0008"}]
+    assert json.loads((repo / "papers" / "P-0007" / "claim.json").read_text())["lab"] == "lab-a"
+    moved = json.loads((repo / "papers" / "P-0008" / "claim.json").read_text())
+    assert moved["paper_id"] == "P-0008" and moved["lab"] == "lab-b"
+    assert [c["claim_id"] for c in moved["claims"]] == ["P-0008-c1"]
+    assert (repo / "papers" / "P-0008" / "paper.md").read_text() == "# P-0008\n\nSee P-0008-c1.\n"
+    assert (repo / "papers" / "P-0008" / "model.py").exists()
+    # the lab's own source files are not rewritten
+    assert json.loads((art / "out-lab-b" / "papers" / "P-0007" / "claim.json").read_text())["paper_id"] == "P-0007"
+
+
+def test_id_owned_by_other_lab_in_repo_renumbered(env):
+    repo, art = env
+    write_json(repo / "papers" / "P-0003" / "claim.json", claim("P-0003", "lab-b"))
+    write(repo / "papers" / "P-0003" / "paper.md", "# theirs\n")
+    paper_files(art, "lab-a", "P-0003")
+
+    rejected, _ = run_gate(repo, art)
+
+    assert rejected == {}
+    assert report_of(repo)["renumbered"] == [{"lab": "lab-a", "from": "P-0003", "to": "P-0004"}]
+    assert json.loads((repo / "papers" / "P-0004" / "claim.json").read_text())["lab"] == "lab-a"
+    assert json.loads((repo / "papers" / "P-0003" / "claim.json").read_text())["lab"] == "lab-b"
+
+
+def test_own_existing_id_still_rejected(env):
+    repo, art = env
+    write_json(repo / "papers" / "P-0003" / "claim.json", claim("P-0003", "lab-a"))
+    paper_files(art, "lab-a", "P-0003")
+
+    rejected, _ = run_gate(repo, art)
+
+    assert rejected["out-lab-a/papers/P-0003/claim.json"] == "paper id already exists in repo"
+    assert report_of(repo)["renumbered"] == []
+
+
+def test_bytecode_dropped_silently(env):
+    repo, art = env
+    paper_files(art, "lab-a", "P-0001")
+    write(art / "out-lab-a" / "papers" / "P-0001" / "__pycache__" / "model.cpython-311.pyc", "bytes")
+    write(art / "out-lab-a" / "labs" / "lab-a" / "helper.pyc", "bytes")
+
+    rejected, accepted = run_gate(repo, art)
+
+    assert rejected == {}
+    assert not any(a.endswith(".pyc") or "__pycache__" in a for a in accepted)
+    assert not (repo / "papers" / "P-0001" / "__pycache__").exists()
+    assert not (repo / "labs" / "lab-a" / "helper.pyc").exists()

@@ -27,10 +27,16 @@ MAX_REQUESTS = 30
 ALLOWED_IMPORTS = {"numpy", "math"}
 PAPER_FILES = {"paper.md", "claim.json", "model.py"}
 
+ID_RE = re.compile(r"^P-\d{4}$")
 REQ_RE = re.compile(r"^requests/(\d{4}-\d{2}-\d{2})/r(\d+)/(lab-[a-z0-9-]+)/(\d{3})\.json$")
 PAPER_RE = re.compile(r"^papers/(P-\d{4})/(paper\.md|claim\.json|model\.py)$")
 REVIEW_RE = re.compile(r"^reviews/(P-\d{4})/(lab-[a-z0-9-]+)\.json$")
 GRANT_RE = re.compile(r"^grants/(\d{4}-\d{2}-\d{2})/(proposals|votes)/(lab-[a-z0-9-]+)\.json$")
+
+
+def is_noise(rel):
+    """Bytecode left by running model.py. Dropped silently, never rejected."""
+    return "__pycache__" in rel.split("/") or rel.endswith(".pyc")
 
 
 def collect(out):
@@ -41,7 +47,9 @@ def collect(out):
             full = Path(root) / name
             if full.is_dir() and not full.is_symlink():
                 continue
-            found.append((full.relative_to(out).as_posix(), full))
+            rel = full.relative_to(out).as_posix()
+            if not is_noise(rel):
+                found.append((rel, full))
     return found
 
 
@@ -118,12 +126,10 @@ def check_request(validators, args, lab, m, full):
     return None
 
 
-def check_paper(validators, repo, lab, pid, files):
+def check_paper(validators, lab, pid, files):
     """files maps basename to path for one paper dir submitted by lab."""
     if set(files) != PAPER_FILES:
         return "a paper needs exactly paper.md, claim.json and model.py"
-    if (repo / "papers" / pid).exists():
-        return "paper id already exists in repo"
     claim, err = read_json(files["claim.json"])
     if err:
         return err
@@ -148,6 +154,22 @@ def paper_lab(repo, owner, pid):
         return None
     data, _ = read_json(path)
     return data.get("lab") if isinstance(data, dict) else None
+
+
+def renumber_paper(files, old, new):
+    """(name -> text) for paper.md and claim.json under id new, or (None, reason)."""
+    try:
+        paper = files["paper.md"].read_text(encoding="utf-8")
+    except ValueError:
+        return None, "paper.md is not UTF-8"
+    claim = load_json(files["claim.json"])
+    claim["paper_id"] = new
+    for c in claim["claims"]:
+        c["claim_id"] = re.sub(rf"^{old}(?!\d)", new, c["claim_id"])
+    return {
+        "paper.md": re.sub(rf"{old}(?!\d)", new, paper),
+        "claim.json": json.dumps(claim, indent=2) + "\n",
+    }, None
 
 
 def check_review(validators, lab, pid, rlab, owner_lab, full):
@@ -211,6 +233,8 @@ def main(argv=None):
     }
     rejected = []
     accepted = []  # (key, rel, full); key is the artifact-relative path reported
+    rewritten = {}  # key -> new text, for renumbered paper.md and claim.json
+    renumbered = []
 
     def reject(key, why):
         rejected.append({"path": key, "reason": why})
@@ -274,18 +298,36 @@ def main(argv=None):
             accepted.append((key, rel, full))
 
     owner = {}  # paper_id -> lab, for papers accepted in this batch
+    # Renumbered ids go past every id in the repo or this batch, so they cannot collide with a later paper.
+    taken_nums = [int(p.name[2:]) for p in (repo / "papers").glob("P-*") if ID_RE.match(p.name)]
+    next_num = max([0, *taken_nums, *(int(pid[2:]) for _, pid in papers)]) + 1
     for (lab, pid), group in sorted(papers.items()):
         files = {Path(rel).name: full for _, rel, full in group}
-        if pid in owner:
-            why = "paper id already used in this round"
+        taken = paper_lab(repo, owner, pid) not in (None, lab)  # another lab owns this id
+        if not taken and (repo / "papers" / pid).exists():
+            why = "paper id already exists in repo"
         else:
-            why = check_paper(validators, repo, lab, pid, files)
+            why = check_paper(validators, lab, pid, files)
         if why:
             for key, _, _ in group:
                 reject(key, why)
-        else:
-            owner[pid] = lab
-            accepted.extend(group)
+            continue
+        new, texts = pid, {}
+        if taken:
+            new = f"P-{next_num:04d}"
+            texts, why = renumber_paper(files, pid, new)
+            if why:
+                for key, _, _ in group:
+                    reject(key, why)
+                continue
+            next_num += 1
+            renumbered.append({"lab": lab, "from": pid, "to": new})
+        owner[new] = lab
+        for key, rel, full in group:
+            name = Path(rel).name
+            accepted.append((key, f"papers/{new}/{name}", full))
+            if name in texts:
+                rewritten[key] = texts[name]
 
     for lab, m, rel, full, key in reviews:
         pid, rlab = m[1], m[2]
@@ -295,19 +337,24 @@ def main(argv=None):
         else:
             accepted.append((key, rel, full))
 
-    for _, rel, full in accepted:
+    for key, rel, full in accepted:
         dest = repo / rel
         dest.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copyfile(full, dest)
+        if key in rewritten:
+            dest.write_text(rewritten[key], encoding="utf-8")
+        else:
+            shutil.copyfile(full, dest)
     if args.round == 2:
         tally(repo, args.date)
 
-    report = {"accepted": [k for k, _, _ in accepted], "rejected": rejected}
+    report = {"accepted": [k for k, _, _ in accepted], "rejected": rejected, "renumbered": renumbered}
     out = repo / "gate" / args.date / f"r{args.round}.json"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     for r in rejected:
         print(f"rejected {r['path']}: {r['reason']}")
+    for r in renumbered:
+        print(f"renumbered {r['lab']} {r['from']} -> {r['to']}")
     print(f"accepted {len(accepted)}, rejected {len(rejected)}")
     return 0
 
