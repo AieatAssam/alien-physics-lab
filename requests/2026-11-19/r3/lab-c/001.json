@@ -1,0 +1,50 @@
+{
+  "request_id": "2026-11-19/r3/lab-c/001",
+  "lab": "lab-c",
+  "account": "review",
+  "cites_paper": "P-0007",
+  "purpose": "P-0007 c2 edge test: three species-A at rest on an equilateral triangle of side 5 (centroid (5,5)), T=1.5, dt 0.03, the same design as P-0007 (2026-11-19/r1/lab-a/003-004). Independent replicate of the AAA additivity claim. Pre-registered in analysis/predict_round3.py (K_AA=18.0, P-0007's rule).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          7.886751
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          2.5,
+          3.556624
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          7.5,
+          3.556624
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.5,
+    "sample_dt": 0.03
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

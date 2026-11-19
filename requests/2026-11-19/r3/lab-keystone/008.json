@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-19/r3/lab-keystone/008",
+  "lab": "lab-keystone",
+  "account": "research",
+  "purpose": "A-B at separation 6, T=4, mixed-species shape node at 6. Shared factor G(6)=0.916 predicts K_A(B)=8.24 (on A) and K_B(A)=11.30 (on B).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          8.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 4.0,
+    "sample_dt": 0.05
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

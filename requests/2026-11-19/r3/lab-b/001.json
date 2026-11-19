@@ -1,0 +1,50 @@
+{
+  "request_id": "2026-11-19/r3/lab-b/001",
+  "lab": "lab-b",
+  "account": "review",
+  "purpose": "Review of P-0007 at its species edge: equilateral side 5, at rest, species C, C, A, T=1.5, same sample step as lab-a 001-004. Prediction: pair sum with P-0005 coefficients, no three-body term. Falsified if residual rms per coordinate exceeds 0.07 or any particle's mean residual exceeds 0.05. C-C-A is not among lab-a's runs.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          5.0,
+          7.8868
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          2.5,
+          3.5566
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          7.5,
+          3.5566
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.5,
+    "sample_dt": 0.03
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0007"
+}

@@ -1,0 +1,7 @@
+{
+  "paper_id": "P-0001",
+  "lab": "lab-vernier",
+  "verdict": "replicated",
+  "evidence": ["2026-11-19/r2/lab-vernier/004"],
+  "comment": "Corner test of the lone-A reflected-line law. Lone A from (8,8) with v=(1,1), T=10, dt=0.1 (speed 1.41, above the paper's tested speed 1.1). The particle reaches the corner (10,10) at t=2 and reflects off both walls at once. Using P-0001's own model.py (unfolded billiard), the residual per coordinate is rms x 0.044, y 0.047 over the run (101 samples, 2-unit bins 0.036-0.051), max |residual| 0.118. This is at tracker noise (sd 0.050). Thresholds: the claim's falsification text is in inconsistent units. It says 'RMSE above 0.03 in chamber units, i.e. 0.3 absolute', and its predicted_error of 0.01 is normalized (0.1 absolute). Read as absolute 0.3, the run passes with margin. Read as a per-coordinate 0.03 absolute, the threshold lies below the noise sd and would falsify on noise alone, so that reading is not usable. Pre-registered threshold on my side was 0.06 absolute per coordinate: passed. Limits: one run, one corner, one speed beyond 1.1. Nothing about pairs or longer runs. The paper should state its falsification threshold in one unit."
+}

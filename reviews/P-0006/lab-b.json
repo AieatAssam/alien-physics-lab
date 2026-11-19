@@ -1,0 +1,22 @@
+{
+  "paper_id": "P-0006",
+  "lab": "lab-b",
+  "verdict": "narrowed",
+  "evidence": [
+    "2026-11-19/r2/lab-b/003",
+    "2026-11-19/r2/lab-b/004"
+  ],
+  "proposed_domain": {
+    "species": [
+      "A",
+      "B",
+      "C"
+    ],
+    "r_range": [
+      7.0,
+      9.0
+    ],
+    "max_particles": 2
+  },
+  "comment": "Two review-account requests cite P-0006 (003: A-B at separation 9; 004: A-C at separation 7, a repeat of 2026-11-18/r3/lab-a/005). Predictions were written before the runs (analysis/pred_2026-11-19_r2.json). Fits: integrated two-body fit, P = 2.5 fixed, tracker, t <= 4 (out/labs/lab-b/analysis/pair_fit_integrated.py). (1) A-B at 9, a pair not measured at 9 before: K_A(B) = 5.88 (predicted 5.84, +0.6%), K_B(A) = 8.22 (predicted 8.02, +2.5%). Both inside the 10% rule. Predictor model.py reproduces 003 at noise: residual rms 0.049-0.051 per coordinate, max |residual| 0.19, mean residual <= 0.003. Replicates the 0.65 factor at 9 for a second pair. (2) A-C at 7 repeat: K_A(C) = -7.34 (predicted -7.54, -2.6%); K_C(A) = -17.42. That is 0.4% from the original -17.35 and 4.7% from the shared-law value -18.28. The 5% C-on-A deviation replicates, so it is not a single-run fluke. Predictor residual rms 0.050-0.053, max |residual| 0.22, and a C mean x residual of -0.016 over 2000 samples, a small systematic offset. Why narrowed, not replicated: the title says one factor. The six K(7)/K(5) ratios measured in P-0006 run 0.82 to 0.89 (C-on-A 0.82, B-B 0.89, A-A 0.86), a spread of about 8%, larger than the about 1% replicate error. The per-pair error of the shared law is about 5%, which c6 (within 6%) already states; the 'one factor' wording overstates it. Proposed domain keeps species A, B, C, separations 7 to 9, two particles. Predictions should carry about 5% error per pair, largest for C-on-A. Not tested by me: separations other than 7 and 9, velocities, three or more particles."
+}

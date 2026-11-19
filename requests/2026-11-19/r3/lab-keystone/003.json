@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-19/r3/lab-keystone/003",
+  "lab": "lab-keystone",
+  "account": "research",
+  "purpose": "C-C baseline at separation 5, T=2, for the species ratio test (P-0005 value 12.36 has run spread 5%). Predicted 12.36.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          2.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          7.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

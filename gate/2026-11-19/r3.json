@@ -1,0 +1,103 @@
+{
+  "accepted": [
+    "out-lab-a/labs/lab-a/NOTEBOOK.md",
+    "out-lab-a/labs/lab-a/analysis/check_r2_BCC.py",
+    "out-lab-a/labs/lab-a/analysis/make_2026-11-19_r3_requests.py",
+    "out-lab-b/labs/lab-b/NOTEBOOK.md",
+    "out-lab-b/labs/lab-b/analysis/check_p0008_model.txt",
+    "out-lab-b/labs/lab-b/analysis/plan_r3_sides.py",
+    "out-lab-b/labs/lab-b/analysis/check_p0006_r2_2026-11-19.txt",
+    "out-lab-b/labs/lab-b/analysis/pairsum_check_2026-11-19_r3.txt",
+    "out-lab-b/labs/lab-b/analysis/check_p0008_model.py",
+    "out-lab-b/labs/lab-b/analysis/check_p0006_r2.py",
+    "out-lab-b/labs/lab-b/analysis/fit_r2_review_P0006_2026-11-19.txt",
+    "out-lab-b/labs/lab-b/analysis/pairsum_check_2026-11-19_r3.py",
+    "out-lab-c/labs/lab-c/NOTEBOOK.md",
+    "out-lab-c/labs/lab-c/analysis/round3_2026-11-19.py",
+    "out-lab-c/labs/lab-c/analysis/round3_predictions.json",
+    "out-lab-c/labs/lab-c/analysis/side3_prediction.json",
+    "out-lab-c/labs/lab-c/analysis/predict_round3.py",
+    "out-lab-c/labs/lab-c/analysis/fit_pair_K_1d.py",
+    "out-lab-c/labs/lab-c/analysis/round3_part2.py",
+    "out-lab-keystone/labs/lab-keystone/NOTEBOOK.md",
+    "out-lab-keystone/labs/lab-keystone/analysis/round2_check.py",
+    "out-lab-keystone/labs/lab-keystone/analysis/review_p0007_check.py",
+    "out-lab-keystone/labs/lab-keystone/analysis/review_p0004_check.py",
+    "out-lab-keystone/labs/lab-keystone/analysis/predictions_round3.json",
+    "out-lab-vernier/labs/lab-vernier/NOTEBOOK.md",
+    "out-lab-vernier/labs/lab-vernier/analysis/fit_tools.py",
+    "out-lab-vernier/labs/lab-vernier/analysis/round3_reviews.py",
+    "out-lab-vernier/labs/lab-vernier/analysis/noise_pool.py",
+    "out-lab-vernier/labs/lab-vernier/analysis/p0003_domain.py",
+    "out-lab-a/requests/2026-11-19/r3/lab-a/001.json",
+    "out-lab-a/requests/2026-11-19/r3/lab-a/002.json",
+    "out-lab-b/requests/2026-11-19/r3/lab-b/001.json",
+    "out-lab-b/requests/2026-11-19/r3/lab-b/002.json",
+    "out-lab-c/requests/2026-11-19/r3/lab-c/001.json",
+    "out-lab-c/requests/2026-11-19/r3/lab-c/002.json",
+    "out-lab-c/requests/2026-11-19/r3/lab-c/003.json",
+    "out-lab-c/requests/2026-11-19/r3/lab-c/004.json",
+    "out-lab-keystone/requests/2026-11-19/r3/lab-keystone/001.json",
+    "out-lab-keystone/requests/2026-11-19/r3/lab-keystone/003.json",
+    "out-lab-keystone/requests/2026-11-19/r3/lab-keystone/004.json",
+    "out-lab-keystone/requests/2026-11-19/r3/lab-keystone/005.json",
+    "out-lab-keystone/requests/2026-11-19/r3/lab-keystone/007.json",
+    "out-lab-keystone/requests/2026-11-19/r3/lab-keystone/008.json",
+    "out-lab-keystone/requests/2026-11-19/r3/lab-keystone/009.json",
+    "out-lab-keystone/requests/2026-11-19/r3/lab-keystone/010.json",
+    "out-lab-vernier/requests/2026-11-19/r3/lab-vernier/001.json",
+    "out-lab-vernier/requests/2026-11-19/r3/lab-vernier/002.json",
+    "out-lab-vernier/requests/2026-11-19/r3/lab-vernier/003.json",
+    "out-lab-b/papers/P-0008/claim.json",
+    "out-lab-b/papers/P-0008/paper.md",
+    "out-lab-b/papers/P-0008/model.py",
+    "out-lab-b/reviews/P-0006/lab-b.json",
+    "out-lab-c/reviews/P-0007/lab-c.json",
+    "out-lab-c/reviews/P-0006/lab-c.json",
+    "out-lab-vernier/reviews/P-0007/lab-vernier.json",
+    "out-lab-vernier/reviews/P-0001/lab-vernier.json",
+    "out-lab-vernier/reviews/P-0006/lab-vernier.json"
+  ],
+  "rejected": [
+    {
+      "path": "out-lab-keystone/papers/P-0008/claim.json",
+      "reason": "paper id already used in this round"
+    },
+    {
+      "path": "out-lab-keystone/papers/P-0008/paper.md",
+      "reason": "paper id already used in this round"
+    },
+    {
+      "path": "out-lab-keystone/papers/P-0008/model.py",
+      "reason": "paper id already used in this round"
+    },
+    {
+      "path": "out-lab-vernier/papers/P-0008/claim.json",
+      "reason": "paper id already used in this round"
+    },
+    {
+      "path": "out-lab-vernier/papers/P-0008/paper.md",
+      "reason": "paper id already used in this round"
+    },
+    {
+      "path": "out-lab-vernier/papers/P-0008/model.py",
+      "reason": "paper id already used in this round"
+    },
+    {
+      "path": "out-lab-b/reviews/P-0007/lab-b.json",
+      "reason": "evidence must cite this lab's own request ids"
+    },
+    {
+      "path": "out-lab-keystone/reviews/P-0004/lab-keystone.json",
+      "reason": "evidence must cite this lab's own request ids"
+    },
+    {
+      "path": "out-lab-keystone/reviews/P-0007/lab-keystone.json",
+      "reason": "evidence must cite this lab's own request ids"
+    },
+    {
+      "path": "out-lab-vernier/reviews/P-0003/lab-vernier.json",
+      "reason": "evidence must cite this lab's own request ids"
+    }
+  ]
+}

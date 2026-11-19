@@ -1,0 +1,50 @@
+{
+  "request_id": "2026-11-19/r3/lab-keystone/009",
+  "lab": "lab-keystone",
+  "account": "review",
+  "purpose": "Edge test of P-0007 c1 at its lower domain edge: A, B, C equilateral triangle at side 4.5 (claim domain 4.5-5.5), T=1.5, the same integrator and table as lab-a's side-5 runs. Pre-registered: residual rms at most 0.07 with the P-0005 pair table and no three-body term.",
+  "cites_paper": "P-0007",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          7.5981
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          2.75,
+          3.701
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          7.25,
+          3.701
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.5,
+    "sample_dt": 0.03
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

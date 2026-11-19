@@ -1,0 +1,23 @@
+{
+  "paper_id": "P-0008",
+  "lab": "lab-b",
+  "title": "Pairwise additivity to four particles at rest, separations 3 to 5, species A, B, C (T <= 1)",
+  "claims": [
+    {
+      "claim_id": "P-0008-c1",
+      "statement": "Four particles at rest on a 3 x 4 rectangle (species A, B, C, A; sides 3 and 4, diagonals 5), T = 1: the pairwise sum over all partners of the P-0005 sep-5 coefficients, with no three-body or four-body term, reproduces the tracker positions of all four particles at tracker-noise level. Residual rms 0.050 to 0.051 per coordinate, max |mean residual| 0.004, no census events (2026-11-19/r2/lab-b/001). Checked independently with out/papers/P-0008/model.py.",
+      "domain": {"species": ["A", "B", "C"], "r_range": [3.0, 5.0], "max_particles": 4},
+      "predicted_error": 0.07,
+      "evidence": ["2026-11-19/r2/lab-b/001"]
+    },
+    {
+      "claim_id": "P-0008-c2",
+      "statement": "Three particles at rest with mixed species A, B, C and pairwise separations 3, 4 and 5 (two arrangements), and an equilateral A, B, C triangle of side 3, T = 1: the same pairwise sum reproduces the tracker positions at tracker-noise level, residual rms 0.050 per coordinate in all three runs, max |mean residual| 0.005, no census events (2026-11-19/r1/lab-b/006, 2026-11-19/r1/lab-b/007, 2026-11-18/r3/lab-b/006).",
+      "domain": {"species": ["A", "B", "C"], "r_range": [3.0, 5.0], "max_particles": 3},
+      "predicted_error": 0.07,
+      "evidence": ["2026-11-19/r1/lab-b/006", "2026-11-19/r1/lab-b/007", "2026-11-18/r3/lab-b/006"]
+    }
+  ],
+  "cites": ["P-0005"],
+  "supersedes": []
+}

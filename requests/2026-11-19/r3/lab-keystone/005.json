@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-19/r3/lab-keystone/005",
+  "lab": "lab-keystone",
+  "account": "research",
+  "purpose": "Mixed repulsion at separation 7, A-C, T=6. Shared law predicts K_A(C)=-7.54 and K_C(A)=-18.28. P-0006 c4 measured K_C(A)=-17.35 in one run; this run tests whether that 5% shortfall repeats.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          1.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          8.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 6.0,
+    "sample_dt": 0.05
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "paper_id": "P-0006",
+  "lab": "lab-vernier",
+  "verdict": "replicated",
+  "evidence": ["2026-11-19/r2/lab-vernier/003"],
+  "proposed_domain": {"species": ["A", "C"], "r_range": [9.0, 9.0], "max_particles": 2},
+  "comment": "Pre-registered test of the sep-9 shared factor on an untested pair: A at (0.5,5) and C at (9.5,5), at rest, T=3, dt=0.01. The pre-registered prediction from P-0006 c2 (0.65 x P-0005 values) was K_A(C) = -5.70 and K_C(A) = -13.81. Free two-coefficient fit over t<=3 (P=2.5 fixed, specular walls): K_A(C) = -5.53 (-3.0%), K_C(A) = -13.48 (-2.4%). Both are inside my 10% falsification band. The implied factors relative to P-0005 are 0.63 and 0.63, about 3% below the paper's A-A-derived 0.65. The paper's model.py reproduces the run at noise: rms 0.0495 per coordinate over t<=3. Caveats: one run; the K-only signal is modest (zero-force null rms 0.078 vs noise 0.050), so the 2-3% agreement is an agreement statement, not a precision estimate; no uncertainty was computed. This run does not test the paper's claim c4 (A-C at sep 7) or the separation 7 factor again. The shared law is supported at separation 9 for A-C within about 3%."
+}

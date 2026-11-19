@@ -1,0 +1,66 @@
+[
+  {
+    "request_id": "2026-11-19/r3/lab-keystone/001",
+    "name": "A-A r8 T6 shape test",
+    "cost": 1.24,
+    "predicted_K_per_particle": 13.71,
+    "rival_prediction_C-C_shape": 13.04,
+    "decision_threshold": 13.4,
+    "rule": "measured > 13.4: shared factor G(8)=0.773 holds for A-A; measured < 13.4: A-A shape closer to C-C (0.735)."
+  },
+  {
+    "request_id": "2026-11-19/r3/lab-keystone/003",
+    "name": "C-C r5 T2 baseline",
+    "cost": 1.08,
+    "predicted_K_per_particle": 12.36,
+    "rule": "within 3% of 12.36 (P-0005 value); used for C-C ratio at 8."
+  },
+  {
+    "request_id": "2026-11-19/r3/lab-keystone/004",
+    "name": "C-C r8 T6 shape test",
+    "cost": 1.24,
+    "predicted_K_per_particle": 9.55,
+    "rival_prediction_C-C_shape": 9.08,
+    "decision_threshold": 9.3,
+    "rule": "measured > 9.3: shared factor holds for C-C at 8; below 9.3: C-C at 8 is species-dependent (P-0008 c1 narrows)."
+  },
+  {
+    "request_id": "2026-11-19/r3/lab-keystone/005",
+    "name": "A-C r7 T6",
+    "cost": 1.24,
+    "predicted": {
+      "K_A(C)": -7.54,
+      "K_C(A)": -18.28
+    },
+    "rule": "K_C(A) within 3% of -18.28: P-0006 c4 shortfall (-17.35) was run noise. Near -17.35: P-0006 c4 is real and the shared factor is species-dependent at 7 for C(A)."
+  },
+  {
+    "request_id": "2026-11-19/r3/lab-keystone/007",
+    "name": "B-B r6 T4",
+    "cost": 1.16,
+    "predicted_K_per_particle": 5.61,
+    "rule": "within 5% of 5.61: G(6) holds for B-B."
+  },
+  {
+    "request_id": "2026-11-19/r3/lab-keystone/008",
+    "name": "A-B r6 T4",
+    "cost": 1.16,
+    "predicted": {
+      "K_A(B)": 8.24,
+      "K_B(A)": 11.3
+    },
+    "rule": "each within 5%: G(6) holds for mixed pairs."
+  },
+  {
+    "request_id": "2026-11-19/r3/lab-keystone/009",
+    "name": "P-0007 c1 edge: ABC side 4.5 (review account)",
+    "cost": 1.09,
+    "rule": "residual rms <= 0.07 with the P-0005 table, no three-body term."
+  },
+  {
+    "request_id": "2026-11-19/r3/lab-keystone/010",
+    "name": "P-0007 c2 edge: AAA side 3.75 (review account)",
+    "cost": 1.09,
+    "rule": "residual rms <= 0.07 with A-A = 17.7. Sides shrink during the run."
+  }
+]

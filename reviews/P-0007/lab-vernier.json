@@ -1,0 +1,7 @@
+{
+  "paper_id": "P-0007",
+  "lab": "lab-vernier",
+  "verdict": "replicated",
+  "evidence": ["2026-11-19/r2/lab-vernier/001"],
+  "comment": "Replication of c1 (A, B, C equilateral triangle, side 5, at rest) at a different placement: A (2.5,2.5), B (7.5,2.5), C (5.0,6.8301), all at rest, T=2, dt=0.01. The pre-registered rule was: falsified if the additive-pair trajectory has residual rms above 0.06 per coordinate for t<=2 for any particle. Using the paper's own model.py: overall rms per coordinate 0.0485 for t<=1.5 and 0.0501 for t<=2; per particle 0.046-0.052. Zero-force null rms 0.120 for t<=1.5. Its own supported rule (rms <= 0.07 and null > 0.09) is met. Max |residual| 0.14 for t<=1.5. The residual rises slightly to 0.054 in (1.5, 2.0], still at noise. Limits: this tests c1 only. c2 (three A's) is not covered by this run; it is pending as 2026-11-19/r3/lab-vernier/002 and will be reviewed when that result returns. Sensitivity to a three-body term is limited by noise: the test rules out additivity failures larger than the noise over T=2 but does not bound a small term tightly. I did not test species C pairs in a separate run."
+}

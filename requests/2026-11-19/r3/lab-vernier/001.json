@@ -1,0 +1,19 @@
+{
+  "request_id": "2026-11-19/r3/lab-vernier/001",
+  "lab": "lab-vernier",
+  "account": "review",
+  "cites_paper": "P-0002",
+  "purpose": "Review of P-0002 (lone species-C free flight, specular walls, T=40) at a different start and direction from its evidence (2026-11-17/r2/lab-b/005, from (1,1) with v=(3,2)). Lone C from (3,4) with v=(-2.4,2.8), speed 3.69, T=40, dt=0.1, so the particle makes several wall reflections on both axes. Falsified if the paper's own reflected-line predictor has tracker RMSE above 0.06 per coordinate (noise 0.05) over the run, or the mean residual drifts beyond 0.05 over any 10-unit segment.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [3.0, 4.0],
+        "vel": [-2.4, 2.8]
+      }
+    ],
+    "duration": 40.0,
+    "sample_dt": 0.1
+  },
+  "instruments": ["tracker", "census"]
+}

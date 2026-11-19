@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-19/r3/lab-c/004",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "H8 control: two species-A at (3,2) and (7,2), r=4 along x, both with vy=2.0, T=1.5, dt 0.02. Moving in y; x-dynamics should match 003 if no velocity dependence. Compare fitted x-coefficient with the other run (003 at rest vs 004 moving). Probes individual-velocity dependence only; a relative-velocity term is not probed here.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.0,
+          2.0
+        ],
+        "vel": [
+          0.0,
+          2.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          7.0,
+          2.0
+        ],
+        "vel": [
+          0.0,
+          2.0
+        ]
+      }
+    ],
+    "duration": 1.5,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

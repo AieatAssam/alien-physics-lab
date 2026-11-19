@@ -1,0 +1,49 @@
+{
+  "request_id": "2026-11-19/r3/lab-a/002",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "Replicate of 2026-11-19/r2/lab-a/001 (B-C-C equilateral triangle, side 5, at rest, T = 2), same setup and same pre-registered rule (residual rms <= 0.07 supports; > 0.12 refutes). Prediction unchanged: out/labs/lab-a/analysis/pred_2026-11-19_r2_BCC.json. Persona: repeat before trusting.",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          5.0,
+          7.886751345948129
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          2.5,
+          3.5566243270259355
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          7.5,
+          3.5566243270259355
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

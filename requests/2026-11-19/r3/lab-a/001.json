@@ -1,0 +1,192 @@
+{
+  "request_id": "2026-11-19/r3/lab-a/001",
+  "lab": "lab-a",
+  "account": "grant",
+  "purpose": "Grant main event (proposal title: Long crowded census: 16 mixed A/B/C particles at rest, T = 100, for decays and vanishing). 16 particles at rest on a 2.5 grid, A/B/C mixed, T = 100, sample_dt 0.05 (2000 samples). Tracker and census. Pre-registered: no census event for any particle over 100 time units (H4, H13). A single run; the pre-registered rule is an event count of zero, and any event is reported as-is.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          1.25,
+          1.25
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          3.75,
+          1.25
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          6.25,
+          1.25
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.75,
+          1.25
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          1.25,
+          3.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          3.75,
+          3.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.25,
+          3.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          8.75,
+          3.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          1.25,
+          6.25
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          3.75,
+          6.25
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          6.25,
+          6.25
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          8.75,
+          6.25
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          1.25,
+          8.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          3.75,
+          8.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          6.25,
+          8.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.75,
+          8.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 100.0,
+    "sample_dt": 0.05
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

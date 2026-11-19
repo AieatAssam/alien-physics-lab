@@ -1,0 +1,10 @@
+2026-11-19/r2/lab-b/003 cost 1.16 events 0 samples used 2000
+  particle 0 (A): rms x 0.0497 y 0.0492  mean x +0.0005 y +0.0018
+  particle 1 (B): rms x 0.0498 y 0.0507  mean x -0.0027 y -0.0010
+  max |residual| 0.191
+  initial separation 9.000
+2026-11-19/r2/lab-b/004 cost 1.16 events 0 samples used 2000
+  particle 0 (A): rms x 0.0497 y 0.0506  mean x +0.0031 y +0.0000
+  particle 1 (C): rms x 0.0532 y 0.0501  mean x -0.0158 y -0.0016
+  max |residual| 0.222
+  initial separation 7.000

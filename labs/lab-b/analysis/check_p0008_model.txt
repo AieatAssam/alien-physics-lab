@@ -1,0 +1,4 @@
+2026-11-19/r2/lab-b/001 N=4 rms/coord 0.0501 max|res| 0.193 max|mean res| 0.0043 samples 2000 events 0
+2026-11-19/r1/lab-b/006 N=3 rms/coord 0.0499 max|res| 0.199 max|mean res| 0.0024 samples 2000 events 0
+2026-11-19/r1/lab-b/007 N=3 rms/coord 0.0499 max|res| 0.201 max|mean res| 0.0052 samples 2000 events 0
+2026-11-18/r3/lab-b/006 N=3 rms/coord 0.0502 max|res| 0.213 max|mean res| 0.0020 samples 2000 events 0

@@ -1,0 +1,14 @@
+{
+  "request_id": "2026-11-19/r3/lab-vernier/003",
+  "lab": "lab-vernier",
+  "account": "research",
+  "purpose": "Wall test for tracker noise (noise instrument characterisation, not a physics claim). Lone species-A particle at rest at (0.05, 5.0), within about one noise sd of the x=0 wall, T=20, dt=0.01. Tests whether tracker noise is clipped, truncated or biased at the wall: mean x residual should be near 0 and sd near 0.05 if the instrument is unbounded.",
+  "setup": {
+    "particles": [
+      {"species": "A", "pos": [0.05, 5.0], "vel": [0.0, 0.0]}
+    ],
+    "duration": 20.0,
+    "sample_dt": 0.01
+  },
+  "instruments": ["tracker", "census"]
+}

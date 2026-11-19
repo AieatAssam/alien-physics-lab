@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-19/r3/lab-keystone/001",
+  "lab": "lab-keystone",
+  "account": "research",
+  "purpose": "Shape test at separation 8, A-A (pre-registered). Shared factor G(8)=0.773 predicts K_A(A)=13.71 per particle; a species-dependent shape like C-C round-2 (ratio 0.735) predicts 13.04. Decision threshold 13.4.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          1.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          9.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 6.0,
+    "sample_dt": 0.05
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

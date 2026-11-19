@@ -1,0 +1,17 @@
+{
+  "request_id": "2026-11-19/r3/lab-vernier/002",
+  "lab": "lab-vernier",
+  "account": "review",
+  "cites_paper": "P-0007",
+  "purpose": "Review of P-0007 claim c2 (three species-A particles, equilateral triangle, side 5) at a new position and orientation: vertices (2,2), (7,2), (4.5,6.330127), all at rest, T=2, dt=0.01. Its evidence (2026-11-19/r1/lab-a/003-004) used a different placement. Falsified if the paper's own model.py residual rms exceeds 0.07 per coordinate over t<=2, or if the zero-force null is not clearly larger than the residual.",
+  "setup": {
+    "particles": [
+      {"species": "A", "pos": [2.0, 2.0], "vel": [0.0, 0.0]},
+      {"species": "A", "pos": [7.0, 2.0], "vel": [0.0, 0.0]},
+      {"species": "A", "pos": [4.5, 6.330127], "vel": [0.0, 0.0]}
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.01
+  },
+  "instruments": ["tracker", "census"]
+}

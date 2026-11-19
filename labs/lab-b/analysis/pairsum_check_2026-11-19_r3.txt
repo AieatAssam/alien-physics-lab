@@ -1,0 +1,37 @@
+2026-11-19/r1/lab-a/001 species ['A', 'B', 'C'] n_samples 50 events 0 tmax 1.5
+  p0 A rms x 0.0435 y 0.0522 mean x +0.0103 y -0.0050
+  p1 B rms x 0.0583 y 0.0519 mean x +0.0099 y -0.0048
+  p2 C rms x 0.0468 y 0.0527 mean x -0.0115 y -0.0071
+2026-11-19/r1/lab-a/002 species ['A', 'B', 'C'] n_samples 50 events 0 tmax 1.5
+  p0 A rms x 0.0490 y 0.0485 mean x +0.0075 y +0.0006
+  p1 B rms x 0.0474 y 0.0540 mean x -0.0020 y -0.0050
+  p2 C rms x 0.0505 y 0.0444 mean x -0.0022 y +0.0029
+2026-11-19/r1/lab-a/003 species ['A', 'A', 'A'] n_samples 50 events 0 tmax 1.5
+  p0 A rms x 0.0465 y 0.0450 mean x +0.0017 y -0.0041
+  p1 A rms x 0.0582 y 0.0414 mean x -0.0121 y +0.0012
+  p2 A rms x 0.0450 y 0.0405 mean x -0.0053 y -0.0028
+2026-11-19/r1/lab-a/004 species ['A', 'A', 'A'] n_samples 50 events 0 tmax 1.5
+  p0 A rms x 0.0573 y 0.0491 mean x -0.0042 y +0.0147
+  p1 A rms x 0.0491 y 0.0388 mean x -0.0062 y -0.0039
+  p2 A rms x 0.0521 y 0.0426 mean x +0.0118 y -0.0065
+2026-11-19/r2/lab-b/001 species ['A', 'B', 'C', 'A'] n_samples 2000 events 0 tmax 1.0
+  p0 A rms x 0.0500 y 0.0495 mean x -0.0003 y +0.0024
+  p1 B rms x 0.0502 y 0.0498 mean x -0.0030 y -0.0004
+  p2 C rms x 0.0509 y 0.0496 mean x +0.0021 y +0.0009
+  p3 A rms x 0.0503 y 0.0504 mean x -0.0043 y -0.0022
+2026-11-19/r2/lab-b/005 species ['B', 'C', 'C'] n_samples 2000 events 0 tmax 4.0
+  p0 B rms x 0.0506 y 0.0491 mean x +0.0034 y +0.0023
+  p1 C rms x 0.0487 y 0.0541 mean x +0.0013 y -0.0129
+  p2 C rms x 0.0548 y 0.0521 mean x -0.0107 y +0.0088
+2026-11-19/r1/lab-b/006 species ['A', 'B', 'C'] n_samples 2000 events 0 tmax 1.0
+  p0 A rms x 0.0499 y 0.0491 mean x -0.0007 y +0.0005
+  p1 B rms x 0.0507 y 0.0499 mean x -0.0006 y -0.0024
+  p2 C rms x 0.0509 y 0.0487 mean x -0.0023 y +0.0015
+2026-11-19/r1/lab-b/007 species ['A', 'B', 'C'] n_samples 2000 events 0 tmax 1.0
+  p0 A rms x 0.0513 y 0.0498 mean x +0.0016 y -0.0005
+  p1 B rms x 0.0501 y 0.0489 mean x -0.0052 y -0.0038
+  p2 C rms x 0.0497 y 0.0497 mean x +0.0002 y +0.0008
+2026-11-18/r3/lab-b/006 species ['A', 'B', 'C'] n_samples 2000 events 0 tmax 1.0
+  p0 A rms x 0.0497 y 0.0501 mean x -0.0015 y -0.0007
+  p1 B rms x 0.0505 y 0.0507 mean x -0.0020 y -0.0009
+  p2 C rms x 0.0488 y 0.0514 mean x +0.0007 y +0.0008

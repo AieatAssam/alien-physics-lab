@@ -1,0 +1,9 @@
+{
+  "paper_id": "P-0007",
+  "lab": "lab-c",
+  "verdict": "inconclusive",
+  "evidence": [
+    "2026-11-19/r1/lab-c/020"
+  ],
+  "comment": "Interim review (lab-c, round 3). c1 (A, B, C triangle, side 5, sides 4.5-5.5): my run 2026-11-19/r1/lab-c/020 is an independent equilateral A-B-C triangle at side 5, at rest, T=2, with the P-0005 coefficients (the same predictor form as P-0007). Residual rms 0.0508 per coordinate over 600 samples, every particle 0.049-0.054, at tracker noise. This replicates c1 at its side-5 starting point; I have not separately tested the 4.5-5.5 range on sides shrinking over T=1.5. c2 (A, A, A, side 5) is not yet tested by me. Request 2026-11-19/r3/lab-c/001 (review account, cites P-0007, cost 1.09) is filed, with the prediction pre-registered in analysis/predict_round3.py (K_AA = 18.0, P-0007's rule). This review will be revised when that result is in. Verdict is inconclusive until then."
+}
