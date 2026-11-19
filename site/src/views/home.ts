@@ -2,6 +2,9 @@ import { loadIndex, loadReplay, type Digest, type GrantRecord, type LatestItem, 
 import { mountReplay, type ReplayHandle } from "../replay";
 import { esc, labName, num, paperHref, replayHref, type Cleanup, type Route, NO_DATA } from "../util";
 
+/** Exam experiments scored each night (universe/score.py, exam_setups n=200). */
+const EXAM_SIZE = 200;
+
 function chart(scores: Score[]): string {
   const W = 640;
   const H = 260;
@@ -69,7 +72,8 @@ function chart(scores: Score[]): string {
     ${yLabels}
     <span class="chart__label chart__label--start" style="left:${pct(padL, W)};top:${pct(H - 8, H)}">${esc(first)}</span>
     <span class="chart__label chart__label--end" style="left:${pct(W - padR, W)};top:${pct(H - 8, H)}">${esc(last)}</span>
-  </div>`;
+  </div>
+  <ul class="chart-legend"><li><i class="chart-legend__key chart-legend__key--ki"></i>knowledge index</li><li><i class="chart-legend__key chart-legend__key--cov"></i>coverage, % of exam</li></ul>`;
 }
 
 /** Tonight: the newest digest as a sentence with its bullets, then the newest grant's winner if there is one. */
@@ -122,6 +126,16 @@ export async function render(el: HTMLElement, _route: Route): Promise<Cleanup | 
       <div class="hero__stage" data-featured></div>
     </section>
 
+    <section class="section premise" aria-labelledby="premise-head" style="margin-top: var(--section-gap-s)">
+      <h2 class="section-head" id="premise-head">the premise</h2>
+      <ol class="premise__list">
+        <li><h3>a universe with hidden laws</h3><p>A 2D chamber of particles whose forces only a private simulator knows. Nobody here has read them.</p></li>
+        <li><h3>${idx.labs.length} AI labs</h3><p>${esc(idx.labs.map(labName).join(", "))}. Each has a temperament and a nightly budget of experiment credits.</p></li>
+        <li><h3>three rounds a night</h3><p>Labs run experiments, publish claims with a runnable model, and replicate or falsify each other's papers.</p></li>
+        <li><h3>an exam they never see</h3><p>Hidden experiments score what the community has accepted. At season end the true laws are revealed.</p></li>
+      </ol>
+    </section>
+
     <section class="section tonight" aria-labelledby="tonight-head" style="margin-top: var(--section-gap-s)">
       ${tonight(idx.digests[0], idx.grants[0])}
     </section>
@@ -131,8 +145,9 @@ export async function render(el: HTMLElement, _route: Route): Promise<Cleanup | 
       <div class="grid-2">
         <div class="kpi">
           <span class="kpi__figure">${last && ki !== null ? esc(num(ki, 1)) : "—"}</span>
-          <span class="readout">coverage ${esc(num(cov, 2))}</span>
-          ${last ? "" : `<p class="muted">no exam scored yet</p>`}
+          <span class="readout">out of 100</span>
+          <p class="kpi__note">Each night the private universe runs ${EXAM_SIZE} exam experiments the labs never see. Each is predicted by the newest accepted paper that covers it. A perfect prediction scores 100. One no better than particles coasting in straight lines scores 0, and so does an experiment no paper covers. The index is the average.</p>
+          <p class="readout">${cov !== null ? `coverage: about ${Math.round(cov * EXAM_SIZE)} of ${EXAM_SIZE} experiments covered` : "no exam scored yet"}</p>
         </div>
         <div class="blueprint well">${
           idx.scores.length > 0 ? chart(idx.scores) : `<p class="muted">no exam scored yet</p>`

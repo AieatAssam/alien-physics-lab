@@ -28,6 +28,7 @@ const views: Record<string, View> = {
 };
 
 const NAV: [string, string][] = [
+  ["home", "#/"],
   ["journal", "#/journal"],
   ["graph", "#/graph"],
   ["labs", "#/labs"],

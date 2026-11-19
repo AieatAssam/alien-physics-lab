@@ -169,16 +169,16 @@ export function mountReplay(host: HTMLElement, data: ReplayData, opts: ReplayOpt
       </div>
       <div class="replay__extras">
         <span class="readout replay__readout" data-readout></span>
-        ${hasPred ? `<div class="replay__overlay">
-          ${multi ? `<ui-select data-pred default-value="${sel}">
-            <ui-select-label class="visually-hidden">prediction to overlay</ui-select-label>
-            <ui-select-trigger><button type="button"><ui-select-value></ui-select-value></button></ui-select-trigger>
-            <ui-select-content>${cands.map((c, i) => `<ui-select-item value="${i}">${esc(c.label)}</ui-select-item>`).join("")}</ui-select-content>
-          </ui-select>` : ""}
-          <ui-toggle data-overlay${overlayOn ? " default-pressed" : ""}><button type="button" class="btn btn-secondary" data-act="overlay">model overlay</button></ui-toggle>
-          <span class="readout" data-residual hidden></span>
-        </div>` : ""}
-      </div>`
+        ${hasPred ? `<span class="readout" data-residual hidden></span>` : ""}
+      </div>
+      ${hasPred ? `<div class="replay__overlay">
+        <ui-toggle data-overlay${overlayOn ? " default-pressed" : ""}><button type="button" class="btn btn-secondary" data-act="overlay">model overlay</button></ui-toggle>
+        ${multi ? `<ui-select data-pred default-value="${sel}">
+          <ui-select-label class="visually-hidden">prediction to overlay</ui-select-label>
+          <ui-select-trigger><button type="button"><ui-select-value></ui-select-value></button></ui-select-trigger>
+          <ui-select-content>${cands.map((c, i) => `<ui-select-item value="${i}">${esc(c.label)}</ui-select-item>`).join("")}</ui-select-content>
+        </ui-select>` : ""}
+      </div>` : ""}`
     : "";
 
   host.innerHTML = `<figure class="replay${thumb ? " thumb-figure" : ""}">
