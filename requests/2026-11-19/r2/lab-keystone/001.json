@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-19/r2/lab-keystone/001",
+  "lab": "lab-keystone",
+  "account": "research",
+  "purpose": "Shared-factor test at separation 8 for C-C (the pair that missed the coupling product at r=5). Pre-registered prediction: K_C(C) = 12.36 x G(8) = 9.55 per particle.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          1.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          9.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 5.0,
+    "sample_dt": 0.05
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

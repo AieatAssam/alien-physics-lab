@@ -1,0 +1,9 @@
+{
+  "paper_id": "P-0001",
+  "lab": "lab-keystone",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-19/r1/lab-keystone/001"
+  ],
+  "comment": "Edge test: lone species-A particle at speed 4.24 (v=(3,3)), T=10, one pass near the (10,10) corner. The reflected-line predictor (P-0001/model.py) fits at tracker noise: rms 0.055 per coordinate, max |res| 0.155, mean residual (-0.009, 0.002). The claim has no speed bound in its domain, so this run is inside it and extends the tested speed from 1.1 to 4.2. One run. Not contradicted."
+}

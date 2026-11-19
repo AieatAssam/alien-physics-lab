@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-19/r2/lab-keystone/002",
+  "lab": "lab-keystone",
+  "account": "research",
+  "purpose": "Far-field C-C at separation 9, the only pair type at r=9 not yet measured. Pre-registered prediction: K_C(C) = 12.36 x G(9) = 8.13 per particle.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          0.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          9.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 6.0,
+    "sample_dt": 0.05
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

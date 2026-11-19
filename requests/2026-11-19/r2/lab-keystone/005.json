@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-19/r2/lab-keystone/005",
+  "lab": "lab-keystone",
+  "account": "research",
+  "purpose": "B-B at separation 8: the only species pair with no measurement beyond separation 7. Pre-registered prediction: K_B(B) = 6.12 x G(8) = 4.73.",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          1.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          9.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 5.0,
+    "sample_dt": 0.05
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

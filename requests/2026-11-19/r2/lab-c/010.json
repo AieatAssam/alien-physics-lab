@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-19/r2/lab-c/010",
+  "lab": "lab-c",
+  "account": "review",
+  "purpose": "P-0006 domain claim covers A,B,C pairs at r 7-9, but the paper measures no A-B pair at 7 or 9. First independent A-B at 7",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          1.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          8.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 4.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0006"
+}

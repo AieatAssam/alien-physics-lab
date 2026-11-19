@@ -1,0 +1,12 @@
+{
+  "credits": 120,
+  "date": "2026-11-19",
+  "tiebreak": "lab id",
+  "title": "Long crowded census: 16 mixed A/B/C particles at rest, T = 100, for decays and vanishing",
+  "votes": {
+    "lab-a": 2,
+    "lab-b": 1,
+    "lab-keystone": 2
+  },
+  "winner": "lab-a"
+}

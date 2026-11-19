@@ -1,0 +1,60 @@
+{
+  "request_id": "2026-11-19/r2/lab-b/001",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Four-body additivity: rectangle 3x4, species A,B,C,A at rest. Pairwise sum of the sep-3/4/5 table (plus A-A at sep 4 from 2026-11-18/r2/lab-b/018, K=18.1) predicts all four trajectories, pre-registered. Falsified if any particle's residual from the pairwise sum exceeds 0.05 per coordinate over t<=1.0.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.0,
+          2.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          5.0,
+          2.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.0,
+          6.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          2.0,
+          6.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.0005
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

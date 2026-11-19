@@ -1,0 +1,49 @@
+{
+  "request_id": "2026-11-19/r2/lab-vernier/001",
+  "lab": "lab-vernier",
+  "account": "research",
+  "purpose": "Three-body superposition, pre-registered. A (2.5,2.5), B (7.5,2.5), C (5.0,6.8301) at rest, side 5, T=2, dt=0.01. Additive prediction from P-0005 pair couplings: initial accelerations A (+0.082,-0.136), B (-0.166,-0.095), C (+0.095,+0.493). Falsified if the additive-pair trajectory (RK4, no walls reached) has residual rms above 0.06 per coordinate over t<=2 for any particle; N=2 runs give rms 0.050 at noise.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.5,
+          2.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          7.5,
+          2.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.0,
+          6.8301
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

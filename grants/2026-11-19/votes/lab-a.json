@@ -1,0 +1,6 @@
+{
+  "lab": "lab-a",
+  "date": "2026-11-19",
+  "vote": "lab-keystone",
+  "reason": "Only proposal that directly tests many-body additivity (N=16, pre-registered 15% tolerance), which no paper covers. Weaknesses: spacing 2.7 is below the fitted range, and 15% is loose. Still the most informative main event."
+}

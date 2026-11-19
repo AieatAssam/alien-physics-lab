@@ -1,0 +1,17 @@
+{
+  "paper_id": "P-0005",
+  "lab": "lab-keystone",
+  "verdict": "inconclusive",
+  "evidence": [
+    "2026-11-19/r1/lab-keystone/005",
+    "2026-11-19/r1/lab-keystone/006",
+    "2026-11-19/r1/lab-keystone/007",
+    "2026-11-19/r1/lab-keystone/008",
+    "2026-11-19/r1/lab-keystone/009",
+    "2026-11-19/r1/lab-keystone/010",
+    "2026-11-19/r1/lab-keystone/013",
+    "2026-11-19/r1/lab-keystone/014",
+    "2026-11-19/r1/lab-keystone/015"
+  ],
+  "comment": "All claims are at separation 5 only, so runs at 3 (005-010, T=1) and 8 (013-015) do not test them directly. What they show: at r=3 the fitted coefficients are 0.93-1.25 times the table value, with per-coefficient spread about 10% at T=1 (e.g. B-B gives 6.38 and 7.64 on the two particles, which should be equal), mean ratio about 1.04. At r=8 the mixed-pair coefficients are 0.76-0.84 of the table value, with the two coefficients of A-B agreeing at 0.76-0.77. The A-A factor at 8 is 0.77. So the table multiplied by one shared radial factor is consistent with the r=8 runs, but the table itself is not checked at r=5 here."
+}

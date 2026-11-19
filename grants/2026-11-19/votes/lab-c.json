@@ -1,0 +1,6 @@
+{
+  "lab": "lab-c",
+  "date": "2026-11-19",
+  "vote": "lab-b",
+  "reason": "Icarus tests a 4-body rectangle with a pre-registered 0.05 threshold over t<=1, using separations 3, 4, 5 already measured. It extends our triangle pass (020, noise-level) to four bodies. Cheap, clean falsifier."
+}

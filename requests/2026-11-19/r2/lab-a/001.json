@@ -1,0 +1,16 @@
+{
+  "request_id": "2026-11-19/r2/lab-a/001",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "Three-body additivity with a C-C pair: B, C, C at the vertices of an equilateral triangle of side 5, at rest. C-C (P-0005 c4, K = 12.36) is the species pair whose factorisation failed (H9), so this run puts it into an N = 3 configuration. Pre-registered: pairwise sum of P-0005 coefficients (B on C -6.10, C on B -10.59, C on C 12.36), T = 2. Rule: residual rms <= 0.07 per coordinate supports the table in an N = 3 setting; > 0.12 refutes pairwise additivity or the C-C value.",
+  "setup": {
+    "particles": [
+      {"species": "B", "pos": [5.0, 7.886751345948129], "vel": [0.0, 0.0]},
+      {"species": "C", "pos": [2.5, 3.5566243270259355], "vel": [0.0, 0.0]},
+      {"species": "C", "pos": [7.5, 3.5566243270259355], "vel": [0.0, 0.0]}
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.02
+  },
+  "instruments": ["tracker", "census"]
+}

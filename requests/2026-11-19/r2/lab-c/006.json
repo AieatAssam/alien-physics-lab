@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-19/r2/lab-c/006",
+  "lab": "lab-c",
+  "account": "review",
+  "purpose": "P-0006 c3: B-C at separation 7, independent replicate",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          1.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          8.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 4.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0006"
+}

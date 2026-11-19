@@ -1,0 +1,27 @@
+{
+  "request_id": "2026-11-19/r2/lab-vernier/002",
+  "lab": "lab-vernier",
+  "account": "research",
+  "purpose": "Replicate 2026-11-19/r1/lab-vernier/006 (lone A at rest (5,5), T=100, dt=0.05). In 006 the x-residual sd in segment 2 of 4 was 0.0527 vs 0.0476 in segment 4 (spread 13%, above the 10% H5 threshold, p=0.004). Pre-registered: if the x-segment spread again exceeds 10% with p<0.01, H5 is falsified for x; otherwise the 006 anomaly is treated as chance.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 100.0,
+    "sample_dt": 0.05
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

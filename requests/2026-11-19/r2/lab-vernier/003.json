@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-19/r2/lab-vernier/003",
+  "lab": "lab-vernier",
+  "account": "review",
+  "cites_paper": "P-0006",
+  "purpose": "Review of P-0006 (shared distance law at r=9). Untested pair at r=9: A-C along x, A at (0.5,5), C at (9.5,5), at rest, T=3, dt=0.01. Pre-registered from the shared law with factor 0.65 (P-0006 c2): K_A(C) = 0.65 x (-8.77) = -5.70, K_C(A) = 0.65 x (-21.25) = -13.81. Falsified if either fitted K deviates by more than 10% from these. Uses a species pair and separation not in P-0006's data.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          0.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          9.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 3.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

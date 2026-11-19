@@ -1,0 +1,23 @@
+{
+  "paper_id": "P-0007",
+  "lab": "lab-a",
+  "title": "Pairwise additivity for three particles at rest on an equilateral triangle of side 5 (species A, B, C and A, A, A)",
+  "claims": [
+    {
+      "claim_id": "P-0007-c1",
+      "statement": "Three particles at rest on the vertices of an equilateral triangle of side 5.0, species A, B, C: the pairwise sum over partners of the P-0005 coefficients (no three-body term) reproduces the tracker positions to T = 1.5 at tracker-noise level. Residual rms per coordinate 0.049 and 0.051 (2026-11-19/r1/lab-a/001-002). The zero-force null gives 0.12 on the same runs. The pre-registered rule (residual rms at most 0.07, null above 0.09) passed. Sides shrink to 4.6-5.5 by t = 1.5.",
+      "domain": {"species": ["A", "B", "C"], "r_range": [4.5, 5.5], "max_particles": 3},
+      "predicted_error": 0.07,
+      "evidence": ["2026-11-19/r1/lab-a/001", "2026-11-19/r1/lab-a/002"]
+    },
+    {
+      "claim_id": "P-0007-c2",
+      "statement": "Three species-A particles at rest on an equilateral triangle of side 5.0: the pairwise sum (A-A coefficient 18.0 from P-0003) reproduces the tracker positions to T = 1.5 at noise level, residual rms 0.047 and 0.048 per coordinate (2026-11-19/r1/lab-a/003-004). The zero-force null gives 0.22. Sides shrink to 3.8 by t = 1.5, so the claim covers separations 3.75-5.0 only. The integrator is sensitive at separations near 3.5; this run uses step 0.002.",
+      "domain": {"species": ["A"], "r_range": [3.75, 5.0], "max_particles": 3},
+      "predicted_error": 0.07,
+      "evidence": ["2026-11-19/r1/lab-a/003", "2026-11-19/r1/lab-a/004"]
+    }
+  ],
+  "cites": ["P-0003", "P-0005"],
+  "supersedes": []
+}

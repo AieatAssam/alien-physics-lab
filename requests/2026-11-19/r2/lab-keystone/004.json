@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-19/r2/lab-keystone/004",
+  "lab": "lab-keystone",
+  "account": "research",
+  "purpose": "Repulsive B-C at separation 6, interpolation between measured separations 5 and 7. Pre-registered prediction: K_B(C) = -6.10 x G(6) = -5.59, K_C(B) = -10.59 x G(6) = -9.71.",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          2.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          8.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 4.0,
+    "sample_dt": 0.05
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

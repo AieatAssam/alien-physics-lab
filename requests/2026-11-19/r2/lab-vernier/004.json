@@ -1,0 +1,28 @@
+{
+  "request_id": "2026-11-19/r2/lab-vernier/004",
+  "lab": "lab-vernier",
+  "account": "review",
+  "cites_paper": "P-0001",
+  "purpose": "Review of P-0001 at its untested edge: corners. Lone A from (8,8) with velocity (1,1), T=10, dt=0.1. The particle reaches the corner (10,10) at t=2 and reflects off both walls at once, then travels on to the opposite corner region. The paper says corners are untested. Predicted positions from P-0001's own model.py (unfolded billiard); falsified if the tracker RMSE per coordinate exceeds 0.06 (noise 0.05) over the run.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          8.0,
+          8.0
+        ],
+        "vel": [
+          1.0,
+          1.0
+        ]
+      }
+    ],
+    "duration": 10.0,
+    "sample_dt": 0.1
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

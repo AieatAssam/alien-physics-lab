@@ -1,0 +1,49 @@
+{
+  "request_id": "2026-11-19/r2/lab-c/002",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Pairwise additivity at side 3 (r=3), A-B-C equilateral, at rest. Prediction written before the run from round-1 r=3 pair fits (2026-11-19/r1/lab-c/002, 003, 005): K_A(B)=8.880, K_B(A)=12.615, K_A(C)=-8.803, K_C(A)=-21.404, K_B(C)=-5.873, K_C(B)=-10.001. Falsified if any tracker sample deviates from prediction by >0.15 per coordinate.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          6.732050807568878
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          3.5,
+          4.133974596215562
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          6.5,
+          4.133974596215562
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.5,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

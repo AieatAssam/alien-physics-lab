@@ -1,0 +1,49 @@
+{
+  "request_id": "2026-11-19/r2/lab-b/005",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "N=3 additivity at separation 7: equilateral B,C,C triangle side 7 at rest. Pairwise sum with the P-0006 sep-7 values (B-C: K_B(C)=-5.13, K_C(B)=-8.70; C-C: K=10.44). Pre-registered; falsified if any particle's mean residual over t<=4 exceeds 0.05 per coordinate or rms exceeds 0.07.",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          1.5,
+          2.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          8.5,
+          2.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.0,
+          8.06217782649107
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 4.0,
+    "sample_dt": 0.002
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

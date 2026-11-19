@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-19/r2/lab-b/002",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Determinism control for the sep-1 divergence: identical request to 2026-11-19/r1/lab-b/001 (B-B sep 5, T=2, no close approach). If the trajectories agree at tracker noise, the divergence seen in sep-1 A-B runs is linked to close approach, not to every run.",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          2.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          7.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

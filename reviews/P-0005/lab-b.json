@@ -1,0 +1,25 @@
+{
+  "paper_id": "P-0005",
+  "lab": "lab-b",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-19/r1/lab-b/001",
+    "2026-11-19/r1/lab-b/002",
+    "2026-11-18/r3/lab-b/012",
+    "2026-11-18/r3/lab-b/013",
+    "2026-11-18/r3/lab-b/014"
+  ],
+  "proposed_domain": {
+    "species": [
+      "A",
+      "B",
+      "C"
+    ],
+    "r_range": [
+      5.0,
+      5.0
+    ],
+    "max_particles": 2
+  },
+  "comment": "Replicated at separation 5, with my own independent runs. c3 (B-B): 2026-11-19/r1/lab-b/001 (B-B, sep 5, T=2, tracker) gives K_B(B) = 6.20 (grid step 0.1), against the paper's 6.12: 1.3% off, inside the 10% predicted error. Residual rms 0.049-0.050 per coordinate. c4 (C-C): 2026-11-19/r1/lab-b/002 gives K_C(C) = 12.50 against 12.36: 1.1% off, inside 5%. Residual rms 0.050-0.051. c1, c2, c5: my round-3 runs 2026-11-18/r3/lab-b/012 (A-B), 013 (A-C), 014 (B-C) at sep 5, fitted with P = 2.5 fixed: K_A(B) 8.94 (paper 8.99), K_B(A) 12.58 (paper 12.34, 1.9%), K_A(C) -8.72 (-8.77), K_C(A) -20.97 (-21.25), K_B(C) -6.34 (-6.10, 3.9%), K_C(B) -10.45 (-10.59). All within the paper's stated tolerances. Limits of this review: the replicates are at separation 5 only, and my B-B and C-C fits use one K per run, so they are as precise as the K grid (about 0.1). I did not test the C-C coupling-product remark, which the paper does not claim."
+}

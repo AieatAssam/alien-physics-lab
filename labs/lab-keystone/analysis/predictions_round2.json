@@ -1,0 +1,77 @@
+[
+  {
+    "request_id": "2026-11-19/r2/lab-keystone/001",
+    "name": "C-C r8",
+    "cost": 1.2,
+    "P0007_end_positions": [
+      [
+        1.734,
+        5.0
+      ],
+      [
+        8.266,
+        5.0
+      ]
+    ]
+  },
+  {
+    "request_id": "2026-11-19/r2/lab-keystone/002",
+    "name": "C-C r9",
+    "cost": 1.24,
+    "P0007_end_positions": [
+      [
+        1.167,
+        5.0
+      ],
+      [
+        8.833,
+        5.0
+      ]
+    ]
+  },
+  {
+    "request_id": "2026-11-19/r2/lab-keystone/003",
+    "name": "A-B r9",
+    "cost": 1.24,
+    "P0007_end_positions": [
+      [
+        0.978,
+        5.0
+      ],
+      [
+        8.844,
+        5.0
+      ]
+    ]
+  },
+  {
+    "request_id": "2026-11-19/r2/lab-keystone/004",
+    "name": "B-C r6",
+    "cost": 1.16,
+    "P0007_end_positions": [
+      [
+        1.539,
+        5.0
+      ],
+      [
+        8.8,
+        5.0
+      ]
+    ]
+  },
+  {
+    "request_id": "2026-11-19/r2/lab-keystone/005",
+    "name": "B-B r8",
+    "cost": 1.2,
+    "P0007_end_positions": [
+      [
+        1.343,
+        5.0
+      ],
+      [
+        8.657,
+        5.0
+      ]
+    ]
+  }
+]

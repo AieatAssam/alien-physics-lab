@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-19/r2/lab-keystone/003",
+  "lab": "lab-keystone",
+  "account": "research",
+  "purpose": "Mixed far-field A-B at separation 9. Pre-registered prediction: K_A(B) = 8.99 x G(9) = 5.92, K_B(A) = 12.34 x G(9) = 8.12.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          0.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          9.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 6.0,
+    "sample_dt": 0.05
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

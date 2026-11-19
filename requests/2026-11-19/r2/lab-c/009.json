@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-19/r2/lab-c/009",
+  "lab": "lab-c",
+  "account": "review",
+  "purpose": "P-0006 shared factor source: A-A at separation 9 (paper's 0.65 reference), same T=4 window as lab-a r1/008-009",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          0.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          9.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 4.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0006"
+}

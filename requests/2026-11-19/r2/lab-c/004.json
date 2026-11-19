@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-19/r2/lab-c/004",
+  "lab": "lab-c",
+  "account": "review",
+  "purpose": "P-0006 c2: C-C at separation 9, single run in paper (lab-a r3/003). Independent replicate at the stated domain edge",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          0.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          9.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 4.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0006"
+}

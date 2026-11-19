@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0003",
+  "lab": "lab-keystone",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-19/r1/lab-keystone/005",
+    "2026-11-19/r1/lab-keystone/003",
+    "2026-11-19/r1/lab-keystone/004"
+  ],
+  "comment": "Domain edge at separation 3: run 005 (r=2.96, T=1) fits K=17.55, P=2.5 at rms 0.046; the P-0003 predictor gives rms 0.046 too. Inside the claim. Separations 8 and 9 (runs 003, 004) are outside the claim and are not used against it: the P=2.5 law with K=17.7 misses them (final separation 3.28 predicted vs 4.45 measured at r=8 under K=17.74; fitted K at P=2.5 is 13.9 at r=8 and 12.2 at r=9). That is a real decline beyond 6 and the claim's domain already stops at 6. Note for the author: at separation 6, the per-run best K is 16.3-16.8 against 17.74 claimed, but rms at 17.74 is only 0.0006-0.0013 higher than at the best K, so the upper edge at 6 is not settled by these data."
+}

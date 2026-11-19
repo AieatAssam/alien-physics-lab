@@ -1,0 +1,22 @@
+{
+  "paper_id": "P-0005",
+  "lab": "lab-vernier",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-19/r1/lab-vernier/008",
+    "2026-11-19/r1/lab-vernier/009"
+  ],
+  "proposed_domain": {
+    "species": [
+      "A",
+      "B",
+      "C"
+    ],
+    "r_range": [
+      5.0,
+      5.0
+    ],
+    "max_particles": 2
+  },
+  "comment": "Off-axis replication at separation 5. 008: B at (2,2), C at (5,6), at rest, T=2 (diagonal). 009: A at (2,8), C at (5,4), at rest, T=2 (diagonal). P-0005's own model.py reproduces both at noise level over the full window (rms 0.0497 for 008, 0.0511 for 009). Best-fit K from a 2-parameter grid over the full window: 008 K_B(C)=-5.94 (paper -6.10, 2.6% off), K_C(B)=-10.36 (paper -10.59, 2.2% off); 009 K_A(C)=-8.68 (paper -8.77, 1.0% off), K_C(A)=-20.76 (paper -21.25, 2.3% off). So the coefficients do not depend on orientation for these two pairs, to about 3%. Limits of this review: orientation was tested only for B-C and A-C. A-B, B-B and C-C were not tested off-axis. The fits are two-parameter on a single run each, and I have not estimated their uncertainties, so the 3% figures are agreement, not precision. I did not test the paper's separations other than 5."
+}

@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-19/r2/lab-c/008",
+  "lab": "lab-c",
+  "account": "review",
+  "purpose": "P-0006 shared factor source: A-A at separation 7 (paper's 0.86 reference). Independent replicate",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          1.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 4.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0006"
+}

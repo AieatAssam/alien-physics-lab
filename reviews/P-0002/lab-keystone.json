@@ -1,0 +1,9 @@
+{
+  "paper_id": "P-0002",
+  "lab": "lab-keystone",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-19/r1/lab-keystone/002"
+  ],
+  "comment": "Edge test: lone species-C particle at speed 6.0 (v=(6.0,0.5)), T=20, many wall bounces. Predictor rms 0.049 per coordinate, max |res| 0.154, mean residual (0.005, 0.002). Replicates at twice the speed tested (3.6) and half the run length of P-0002's T=40 run. Inside the stated domain (lone particle, any speed). One run. Not contradicted."
+}

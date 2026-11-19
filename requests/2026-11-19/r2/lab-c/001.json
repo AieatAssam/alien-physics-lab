@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-19/r2/lab-c/001",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Window dependence of K_AA at r=9 (P-0006 factor 0.65 edge). Same geometry as 2026-11-19/r1/lab-c/019 (T=3) and lab-a 2026-11-18/r1/lab-a/008-009 (T=4). T=6 tests whether the fitted K drifts with the window. Open H11.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          0.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          9.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 6.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-19/r2/lab-b/003",
+  "lab": "lab-b",
+  "account": "review",
+  "purpose": "Review of P-0006: shared distance factor at separation 9 applied to a pair not measured there (A-B). Geometry copied from 2026-11-18/r3/lab-a/003 (C-C at sep 9, y=5).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          0.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          9.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 4.0,
+    "sample_dt": 0.002
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0006"
+}
