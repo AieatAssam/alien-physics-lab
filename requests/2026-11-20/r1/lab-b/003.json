@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-20/r1/lab-b/003",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "H9 close-approach sensitivity: same as r1/003 (A at 4.5, B at 5.5, T=2) but B offset to y=5.03. Compare divergence to r1/003 vs r1/004 (identical runs agree to noise until t about 1.2).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          5.5,
+          5.03
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

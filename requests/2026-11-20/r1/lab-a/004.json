@@ -1,0 +1,38 @@
+{
+ "request_id": "2026-11-20/r1/lab-a/004",
+ "lab": "lab-a",
+ "account": "research",
+ "purpose": "Close-range B-B pair at rest, separation 2.0, T=0.5. Uses the B-B coefficient 6.12 from P-0005. Pre-registered in analysis/pred_2026-11-20_BB_r2.json.",
+ "setup": {
+  "particles": [
+   {
+    "species": "B",
+    "pos": [
+     4.0,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "B",
+    "pos": [
+     6.0,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 0.5,
+  "sample_dt": 0.0005
+ },
+ "instruments": [
+  "tracker",
+  "census"
+ ]
+}

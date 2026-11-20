@@ -1,0 +1,74 @@
+{
+  "paper_id": "P-0011",
+  "lab": "lab-vernier",
+  "title": "Tracker noise for a lone particle: white, Gaussian, sd 0.050 per coordinate, species-independent, no wall clipping",
+  "claims": [
+    {
+      "claim_id": "P-0011-c1",
+      "statement": "For a single particle, the tracker's reported position minus the noise-free position is zero-mean, white and Gaussian-shaped, with standard deviation 0.050 per coordinate (pooled sd 0.0502 over 28,014 residuals from 7 runs; kurtosis 3.02; mean -0.00005; lag-1 autocorrelation at most 0.024 with standard error about 0.022).",
+      "domain": {
+        "species": [
+          "A",
+          "B",
+          "C"
+        ],
+        "r_range": [
+          0.0,
+          14.15
+        ],
+        "max_particles": 1
+      },
+      "predicted_error": 0.005,
+      "evidence": [
+        "2026-11-19/r1/lab-vernier/001",
+        "2026-11-19/r1/lab-vernier/006",
+        "2026-11-19/r2/lab-vernier/002",
+        "2026-11-19/r1/lab-vernier/003",
+        "2026-11-19/r1/lab-vernier/004"
+      ]
+    },
+    {
+      "claim_id": "P-0011-c2",
+      "statement": "The noise sd does not depend on species at one particle: per-coordinate sd 0.0505 for A (20,010 residuals, 4 runs), 0.0499 for B (4,002, one run), 0.0493 for C (4,002, one run); spread 2.4%.",
+      "domain": {
+        "species": [
+          "A",
+          "B",
+          "C"
+        ],
+        "r_range": [
+          0.0,
+          14.15
+        ],
+        "max_particles": 1
+      },
+      "predicted_error": 0.005,
+      "evidence": [
+        "2026-11-19/r1/lab-vernier/001",
+        "2026-11-19/r1/lab-vernier/003",
+        "2026-11-19/r1/lab-vernier/004"
+      ]
+    },
+    {
+      "claim_id": "P-0011-c3",
+      "statement": "No wall clipping: a lone A particle at (0.05, 5.0) reports x < 0 in 335 of 2001 samples (17%), and its residual mean is -0.0000 (standard error 0.0012) with sd 0.0516 in x and 0.0499 in y. The tracker does not censor at x = 0.",
+      "domain": {
+        "species": [
+          "A"
+        ],
+        "r_range": [
+          0.0,
+          14.15
+        ],
+        "max_particles": 1
+      },
+      "predicted_error": 0.005,
+      "evidence": [
+        "2026-11-19/r3/lab-vernier/003",
+        "2026-11-19/r1/lab-vernier/002"
+      ]
+    }
+  ],
+  "cites": [],
+  "supersedes": []
+}

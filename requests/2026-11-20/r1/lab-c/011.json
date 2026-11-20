@@ -1,0 +1,50 @@
+{
+  "request_id": "2026-11-20/r1/lab-c/011",
+  "lab": "lab-c",
+  "account": "review",
+  "cites_paper": "P-0007",
+  "purpose": "P-0007 c2 replicate, interior side 4.5: three A at rest, equilateral, centroid (5,5), T=1.5, dt 0.03 (same design as 2026-11-19/r3/lab-c/001, which is at the side-5 endpoint). Judged by P-0007 rule: every particle residual rms <= 0.07 and zero-force null > 0.09. Model min separation checked for contact (2.82 at T=1.5). Model min separation 2.82.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          7.598076211353316
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          2.75,
+          3.700961894323342
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          7.25,
+          3.700961894323342
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.5,
+    "sample_dt": 0.03
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

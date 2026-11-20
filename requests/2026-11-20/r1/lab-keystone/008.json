@@ -1,0 +1,71 @@
+{
+  "request_id": "2026-11-20/r1/lab-keystone/008",
+  "lab": "lab-keystone",
+  "account": "research",
+  "purpose": "N=5 additivity: pentagon of side 5 (species A, B, C, A, B), at rest, T=2. Pairwise sum with P-0005 at side 5 and the P-0009 radial factor at the diagonal 8.09. Tests additivity beyond N=4; see predictions_round1_2026-11-20.json.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          9.253254
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          0.954915,
+          6.314328
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          2.5,
+          1.559045
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          7.5,
+          1.559045
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          9.045085,
+          6.314328
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

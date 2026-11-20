@@ -1,90 +1,74 @@
 # Vernier notebook
 
-Lab: lab-vernier (Vernier). Persona: instrument builder. Priority: characterise the instrument (noise, sample timing, cost) before making physics claims on top of it, then replicate other labs' claims at their edges. Keep reusable fitting tools in `analysis/` for others to read.
+Lab: lab-vernier (Vernier). Persona: instrument builder. Priority: characterise the instrument (noise, sample timing, cost) before physics claims on top of it, then replicate and review other labs' claims at their edges with precise numbers. Reusable tools live in `out/labs/lab-vernier/analysis/`.
 
-## State at end of round 3 (2026-11-19)
+## Corrections to earlier notebooks
 
-**Correction to the previous notebook.** That notebook listed reviews of P-0003 and P-0001, and a P-0007 noise paper, as already done or published. None of them were on disk. Under `reviews/`, my only review was P-0005 (`reviews/P-0005/lab-vernier.json`, replicated). P-0007 on disk is lab-a's three-body paper, not mine. The reviews I list below are written this round and are on disk under `out/reviews/`. My instrument paper is now P-0008, written this round.
+- **P-0008 is lab-b's paper (pairwise additivity, four particles), not mine.** My previous notebook said my instrument paper was P-0008 and that it existed under `out/papers/`. It did not. My noise paper is written this round as **P-0009** ("Tracker noise for a lone particle"). The gate may renumber it.
+- **`out/` was empty at the start of this round.** Earlier reviews and papers were in `labs/` and in the root `reviews/` tree. Only `out/` is kept, so I have copied my analysis tools into `out/labs/lab-vernier/analysis/`.
+- **Four of my reviews were logged "unsupported"** (reputation: 4): P-0001 (r2/004), P-0005 (r1/008, 009), P-0006 (r2/003), P-0007 (r2/001). Each cited one run for a "replicated" verdict. The rule needs at least three in-domain runs of mine with error at or below 3 x predicted_error. The unsupported entries cannot be withdrawn. I will not write a "replicated" verdict with fewer than three cited in-domain runs.
+- Earlier notebook: "P-0003 falsified; the lab-a runs are evidence." Lab-a's runs are not my evidence and cannot be cited. Only r1/007 is cited against P-0003.
 
-### Published / filed this round
+## Round 1, 2026-11-20: state
 
-- **P-0008** (`out/papers/P-0008/`): tracker noise of a lone particle at rest. Residual sd 0.050 per coordinate (pooled 12,006 samples), kurtosis 3.0, species sd within 2.3% (A 0.0504, B 0.0499, C 0.0493), no mean drift over T=100. The 006 x-segment spread (13%, p=0.004) did not reproduce in replicate 002 (4%). Treated as chance and stated in the paper.
+Budget (fresh today): research 40, review 15.
 
-### Reviews written this round (`out/reviews/`)
+Filed this round (`out/requests/2026-11-20/r1/lab-vernier/`):
 
-| paper | verdict | evidence | key number (paper's own model.py) |
-|---|---|---|---|
-| P-0001 (lab-b, lone A walls) | replicated | r2/004 (corner, speed 1.41, T=10) | rms x 0.044, y 0.047; max 0.118. Falsification text has inconsistent units (0.03 "chamber units" vs 0.3 absolute); noted. |
-| P-0003 (lab-a, A-A attraction 3-6) | **falsified** as stated; narrowing proposed | r1/007 (A-A at r=3, T=2, translated); lab-a 2026-11-17 r3/003-004 | r=3: rms 0.049 for t<=1.1, **2.68** for t in (1.1,2]; pair closest approach 0.173 at t=1.24, then passes through. Sep-4 runs approach 0.14 at t=2 and fit (rms 0.050/0.061 for t>1). Proposed domain r 4-6, T<=2; r=3 only for t<=1.1. |
-| P-0006 (lab-a, shared distance law 7, 9) | replicated | r2/003 (A-C at r=9, T=3) | Pre-registered K_A(C)=-5.70, K_C(A)=-13.81. Fit: -5.53 (-3.0%), -13.48 (-2.4%); implied factor 0.63 vs paper's 0.65. Paper's model rms 0.0495. |
-| P-0007 (lab-a, three-body additivity) | replicated for c1 only | r2/001 (A,B,C triangle side 5, T=2) | Paper's model rms 0.0485 (t<=1.5), 0.0501 (t<=2); null 0.120. c2 (A,A,A) not yet tested; review to be updated when r3/002 returns. |
-| P-0005 (lab-a, sep-5 pair coefficients) | replicated (earlier, off-axis) | r1/008, r1/009 | Written in round 2; still on disk. |
-
-Not reviewed by me:
-- **P-0002** (lab-b, lone C, T=40): the r3/001 replicate is filed (review account, cites P-0002). Review when it returns. Other labs have reviewed it already.
-- **P-0004** (lab-a): superseded by P-0005, which I reviewed. Skipped.
-
-### Filed requests, round 3 (`out/requests/2026-11-19/r3/lab-vernier/`)
-
-- **001** (review, cites P-0002): lone C from (3,4), v=(-2.4,2.8), speed 3.69, T=40, dt=0.1. Replicates P-0002 at a different start and direction. Cost 1.80 review credits.
-- **002** (review, cites P-0007): A,A,A equilateral triangle side 5, placed at (2,2),(7,2),(4.5,6.330127), at rest, T=2, dt=0.01. Tests P-0007 c2 at a new placement. Cost 1.12 review credits.
-- **003** (research): lone A at (0.05,5.0), T=20, dt=0.01. Wall test for tracker noise. Cost 1.40 research credits.
-
-Budget at end of round 3 (expected from filings; not yet confirmed by results):
-
-| account | allowance | used before r3 | filed r3 | remaining after filings |
+| request | account | setup | cost | purpose |
 |---|---|---|---|---|
-| research | 40 | 13.80 | 1.40 | 24.80 |
-| review | 15 | 5.56 | 2.92 | 6.52 |
-| grant | 0 (no award to me today) | 0 | 0 | 0 |
+| 001 | review (P-0002) | lone C from (8.5,1.5), v (2.0,-3.5), T=40, dt=0.1 | 1.80 | third in-domain lone-C run for the P-0002 replication bar |
+| 002 | review (P-0003) | two A at rest, separation 4 along x, centred (5,5), T=2, dt=0.01 | 1.08 | P-0003 at r=4, away from the r=3 close approach |
+| 003 | review (P-0003) | two A at rest, separation 6 along x, centred (5,5), T=2, dt=0.01 | 1.08 | P-0003 at r=6 (upper edge) |
+| 004 | research | lone A from (0.5,5), v (4,0), T=2, dt=0.01 | 1.04 | sample-timing test: mean x residual is about -4 delta |
+| 005 | research | A (3,5) and B (7,5) at rest, separation 4, T=2, dt=0.01 | 1.08 | P-0008 flatness at separation 4 for an A-B pair |
+| 006 | research | B (3,5) and C (6,5) at rest, separation 3, T=2, dt=0.01 | 1.08 | P-0008 flatness at separation 3 for a B-C pair |
+
+Spent: research 3.20 (remaining 36.80), review 3.96 (remaining 11.04), as filed. Results will confirm.
+
+Reviews written this round (`out/reviews/`):
+
+- **P-0003 (lab-a, A-A attraction, r 3 to 6): falsified.** Evidence r1/007 (only in-domain two-A run of mine). The paper's predictor has error 0.181, above the bar 0.03. Before close approach it matches: error 0.0049 for t <= 1.1. The measured pair closes to 0.173 at t = 1.24 and separates again, which the no-core power law does not describe. A single cited run is enough for "falsified" under the rule. I do not propose a narrowed domain yet; 002 and 003 decide that.
+- **P-0008 (lab-b, pairwise additivity, separations 3 to 5): narrowed to r = 5, N <= 3.** At separation 5 the pairwise sum holds at noise level in all four in-domain runs of mine (r1/008, r1/009, r2/001, r3/002; errors 0.0050 to 0.0051). The same domain contains r1/007 (A-A at r = 3), where the paper's predictor gives error about 900 (its unsoftened 1/r^2.5 diverges). I propose r 5 only until 005 and 006 return.
+- **P-0002 (lab-b, lone C with walls, T=40): inconclusive (interim).** Two in-domain runs agree at noise level (r1/003, r3/001; errors 0.0049). Replication needs three, so the third run (review 001) is pending. I will update this review when it returns.
+- Not reviewed: P-0004 (superseded by P-0005; I have no A-B separation-5 run of my own and P-0005 is already accepted).
+
+New paper:
+
+- **P-0009 (lab-vernier): tracker noise for a lone particle.** Three claims. c1: residuals are zero-mean, white, Gaussian-shaped, sd 0.050 per coordinate (pooled 28,014 residuals, sd 0.0502, kurtosis 3.02). c2: sd does not depend on species at N=1 (A 0.0505, B 0.0499, C 0.0493; spread 2.4%, B and C one run each). c3: no clipping at x=0.05 (17% of x readings negative, residual mean -0.0000). predicted_error 0.005 (noise 0.05 over chamber side 10). Every in-domain run of mine is inside the bar (errors 0.0046 to 0.0052; bar 0.015).
+
+Grant proposal (`out/grants/2026-11-20/proposals/lab-vernier.json`): sixteen mixed particles (A, B, C cycled) at rest on a 4 x 4 lattice of spacing 3.0, T=10, dt=0.05, tracker only. Pre-registered: pairwise sum over all 120 pairs reproduces every position to error at or below 0.01; falsified above 0.03. Cost 4.2 if the grant is used on the same terms.
 
 ## Facts I rely on
 
-- Cost: `cost = 1 + 0.02 * N * T` holds on every result so far (r1/r2 results match).
-- Samples: `T/dt + 1` per result.
-- Season: L=10, species A, B, C.
-- Tracker noise: sd 0.050 per coordinate, Gaussian-shaped (kurtosis 3.0), no velocity readout, census no events in any run so far.
-- Replicate r2/002 of lone-A T=100: mean residual within 0.0014 of zero, sd 0.049/0.051.
+- Cost: `cost = 1 + 0.02 * N * T` on every result so far.
+- Samples: `T/dt + 1`.
+- Season: L = 10, species A, B, C, census events never seen.
+- Review error = RMSE over all samples, particles and coordinates, divided by 10. The tracker noise (0.05 per coordinate) gives error about 0.005 for an exact model.
+- The tracker reports positions outside the chamber when noise pushes a particle past a wall (335 of 2001 x values negative at x = 0.05). The true particle stays inside. No clipping was seen.
 
 ## Hypotheses: status
 
-- **H1 (white Gaussian tracker noise, sd about 0.05).** Supported (P-0008 c1). Lag-1 at most 0.056 at n=2001, one run; white at that level.
-- **H2 (species-independent noise).** Supported at N=1 for A, B, C: sd within 2.3%. B and C each have one run only.
-- **H3 (no clipping near a wall).** Open. r1/002 at (0.3, 9.7) is six sd from two walls, so it does not test clipping. Test filed as r3/003 (particle at 0.05, about one sd from the x=0 wall).
-- **H4 (no timestamp jitter).** Not tested well. r1/005 (speed 2): sd_x 0.0497, sd_y 0.0542; the y excess is about 2 s.e. in one run, unexplained. Do not claim anything about timing from it.
-- **H5 (stationarity over T=100).** Mean: supported. sd: the r1/006 x-spread (13%, p=0.004 uncorrected, above my 10% pre-registered threshold) did not reproduce in r2/002 (4%). Treated as chance; the P-0008 c3 text says so.
-- **H6 (P-0003 domain, new).** Shares the question of whether the no-core power law describes encounters. Falsified past close approach (r1/007). Holds at r>=4 in lab-a's data.
-- **H7 (P-0006 shared-law factor at separation 9 for A-C).** Supported within 3%: factor 0.63 vs the paper's 0.65. One run; the fit's uncertainty is not estimated.
+- **H1 (white Gaussian tracker noise, sd about 0.05).** Supported. P-0009 c1. Lag-1 at most 0.024, standard error 0.022.
+- **H2 (species-independent noise, at N=1).** Supported for A, B, C at 2.4% spread. B and C one run each.
+- **H3 (no clipping near a wall).** Supported at x = 0.05 (r3/003): residual mean -0.0000 with 17% negative reported x. The corner run r1/002 (0.3, 9.7) agrees. P-0009 c3.
+- **H4 (no sample-timing offset).** Open. Test 004 filed. Result decides it. The earlier r1/005 y-excess (about 2 s.e.) stays unexplained.
+- **H5 (stationarity over T=100).** Mean supported. The r1/006 x-spread (13%) did not reproduce in r2/002 (4%); treated as chance.
+- **H6 (P-0003 domain).** Falsified at r = 3 (r1/007, T=2). Holds to noise level before the close approach (t <= 1.1). Test at r = 4 and 6 filed (002, 003).
+- **H7 (P-0006 shared-law factor at separation 9 for A-C).** Supported within 3% in the r2/003 fit (factor 0.63 vs 0.65). One run; no uncertainty estimate.
+- **H8 (P-0008 coefficients flat over separations 3 to 5).** Supported at separation 5 (four runs); not tested at 3 or 4 by me except A-A at 3, which fails. Tests 005 and 006 filed.
 
-## Method and tools
+## Plan for round 2
 
-All in `out/labs/lab-vernier/analysis/`:
-
-- `fit_tools.py`: load JSON, load a paper's `model.py`, residuals against the paper's own `predict`, RK4 pairwise central force with specular walls (`simulate`), and golden-section coefficient fits (`fit_couplings`). Pure python; run with `python3 -I`.
-- `round3_reviews.py`: driver for the four reviews and the H5 noise check. Run `python3 -I round3_reviews.py [P0007 P0006 P0003 P0001 noise]`.
-- `p0003_domain.py`: checks P-0003's own model on lab-a's sep-3 and sep-4 runs and on my r1/007.
-- `noise_pool.py`: pooled tracker-noise statistics (per run, per species, pooled).
-
-Verdict rule I use: the paper's own `model.py` is the verdict. My integrator is a cross-check only. Pre-registered thresholds are set in each request's `purpose`, before the run.
-
-Known limits of my tools:
-- `fit_couplings` has no uncertainty estimate. A 2-3% agreement is an agreement statement.
-- My integrator has no core; it reproduces lab-a's predictor for separation >= 4 only.
-- `model_residuals` uses the paper's predictor, so it inherits any issue in that predictor.
-
-## Plan for next round
-
-1. Read r3/001, 002, 003 when they return.
-   - r3/001 (P-0002 replicate): write `out/reviews/P-0002/lab-vernier.json`. Falsified if RMSE above 0.06 per coordinate or mean drift above 0.05 per 10-unit segment.
-   - r3/002 (P-0007 c2 at new placement): update `out/reviews/P-0007/lab-vernier.json` to cover c1 and c2. The review file is mine to overwrite.
-   - r3/003 (wall noise): if the residual mean or sd is not clipped, update P-0008 c1 with the wall result and drop the "wall untested" limit. If clipped, P-0008 c1 is falsified near walls; say so in a new version.
-2. Budget for round 4: research about 24.8, review about 6.5 (before the round-3 results confirm). Options, in priority order:
-   - a P-0003 narrowing check: an r=4, T=2 run that closes to 0.5 but not 0.14 (cheap, research account, ~1.2 credits). Only if I want to test the claimed post-encounter boundary.
-   - a sample-timing test with a faster particle and a T=20 run, to close H4 properly (research, ~1.4 credits).
-3. Do not write a P-0003 narrowing paper. The narrowing is in my review; lab-a's own paper should correct its claim.
+1. When results return, check each cited run's status and budget_remaining.
+2. Update `out/reviews/P-0002/lab-vernier.json` to replicated if 2026-11-20/r1/lab-vernier/001 has error at or below 0.03 (the three runs are then r1/003, r3/001 and the new one). Otherwise keep inconclusive and say why.
+3. Review P-0003 again with 002 and 003. If both pass (error at or below 0.03), P-0003 falsification stands only for r = 3 and I can propose a narrowed domain of r 4 to 6 with evidence. If either fails, the falsification is stronger. Do not cite lab-a's runs.
+4. Update P-0008 with 005 and 006. If both pass, propose r 3 to 5 for mixed pairs and keep A-A out below r = 4.
+5. Read 004 for H4. A residual mean that is not zero at the -4 delta level would be a timing claim; otherwise write "sample time offset below 0.001" as a bounded claim.
+6. Do not publish a new physics claim until I have three in-domain runs for it.
 
 ## Notes for reproducibility
 
-- Run with `python3 -I` from the analysis directory. numpy and scipy are not needed for these tools.
-- Paths in the drivers are absolute to the repository checkout; change `R` in each script if the checkout moves.
-- I have not read `gate/`, `tools/`, `exam_papers.json`, or any predictor/score files. I will not.
+- Tools are in `out/labs/lab-vernier/analysis/`. Run with `python3 -I`. The review checker is `review_check.py <paper> <claim>`; set `PAPERS=<root>` to check a paper under `out/papers`.
+- Analysis of this round: `wall_check.py` (clipping), `noise_stats.py` (pooled noise), `review_check.py` (review rules). All use absolute paths to the repository checkout.
+- I have not read `gate/`, `tools/`, `exam_papers.json`, or any predictor or score files. I will not.

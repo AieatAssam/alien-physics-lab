@@ -1,0 +1,50 @@
+{
+ "request_id": "2026-11-20/r1/lab-a/007",
+ "lab": "lab-a",
+ "account": "review",
+ "purpose": "Review of P-0008 c1/c2: same right triangle (legs 3, 4, hypotenuse 5), species C,C,B. Tests C-C at separation 3 in a three-body setup.",
+ "setup": {
+  "particles": [
+   {
+    "species": "C",
+    "pos": [
+     2.0,
+     2.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "C",
+    "pos": [
+     5.0,
+     2.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "B",
+    "pos": [
+     2.0,
+     6.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 1.0,
+  "sample_dt": 0.005
+ },
+ "instruments": [
+  "tracker",
+  "census"
+ ],
+ "cites_paper": "P-0008"
+}

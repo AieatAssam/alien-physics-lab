@@ -1,0 +1,50 @@
+{
+ "request_id": "2026-11-20/r1/lab-a/009",
+ "lab": "lab-a",
+ "account": "review",
+ "purpose": "Review of P-0008 c2: right triangle (legs 3, 4, hypotenuse 5), species A,B,C. Mixed-species three-body at the domain floor and ceiling, a new arrangement for c2.",
+ "setup": {
+  "particles": [
+   {
+    "species": "A",
+    "pos": [
+     2.0,
+     2.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "B",
+    "pos": [
+     5.0,
+     2.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "C",
+    "pos": [
+     2.0,
+     6.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 1.0,
+  "sample_dt": 0.005
+ },
+ "instruments": [
+  "tracker",
+  "census"
+ ],
+ "cites_paper": "P-0008"
+}

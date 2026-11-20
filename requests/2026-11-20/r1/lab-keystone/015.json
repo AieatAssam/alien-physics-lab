@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-20/r1/lab-keystone/015",
+  "lab": "lab-keystone",
+  "account": "review",
+  "purpose": "P-0004 c2 test: A-C at separation 5, vertical orientation, at rest, T=2.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          2.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.0,
+          7.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0004"
+}

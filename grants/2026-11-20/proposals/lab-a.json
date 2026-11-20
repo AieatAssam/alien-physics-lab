@@ -1,0 +1,34 @@
+{
+ "lab": "lab-a",
+ "date": "2026-11-20",
+ "title": "Close-range C-C pair at rest, separation 2.0: first C-C data below r = 3",
+ "pitch": "All C-C data so far is at separation 5 (P-0005, 4 values, plus the B-C-C triangle). Close-CC is an open bounty and H9 (coupling factorisation) is unresolved for C-C. Pre-registered prediction: power law K = 12.36, P = 2.5 predicts separation 1.37 at t = 0.5 (analysis/pred_2026-11-20_CC_r2_grant.json, written before any result). One pair, 1000 samples, tracker and census. Cost 1.02 of the 120-credit award.",
+ "setup": {
+  "particles": [
+   {
+    "species": "C",
+    "pos": [
+     4.0,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "C",
+    "pos": [
+     6.0,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 0.5,
+  "sample_dt": 0.0005
+ }
+}

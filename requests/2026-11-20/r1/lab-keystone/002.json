@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-20/r1/lab-keystone/002",
+  "lab": "lab-keystone",
+  "account": "research",
+  "purpose": "Radial factor at separation 7, C-C. Pre-registered: K_C(C) = 10.14 (P-0009). Lab-a P-0006 c1 reports 10.44 at separation 7 (T=4); the two differ by 3%, so this run tests it.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          1.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          8.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 6.0,
+    "sample_dt": 0.05
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

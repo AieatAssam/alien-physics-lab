@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-20/r1/lab-keystone/001",
+  "lab": "lab-keystone",
+  "account": "research",
+  "purpose": "Radial factor at separation 7, B-B. Pre-registered: K_B(B) = 5.30 from the P-0009 candidate (shared factor 0.866 at r=7). Tests the far-field factor where no B-B data exist.",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          1.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          8.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 6.0,
+    "sample_dt": 0.05
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

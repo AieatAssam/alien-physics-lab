@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-20/r1/lab-vernier/005",
+  "lab": "lab-vernier",
+  "account": "research",
+  "purpose": "Separation-4 test of P-0008 (its coefficients are held flat over separations 3 to 5). Species A at (3,5) and species B at (7,5), both at rest, separation 4.0 along x, T=2, dt=0.01. Predicted by P-0008's model.py (AB coefficient 8.99 on A, 12.34 on B). Pre-registered: error (RMSE/10) at or below 0.03 is consistent with flat coefficients.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          7.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

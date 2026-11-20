@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-20/r1/lab-keystone/006",
+  "lab": "lab-keystone",
+  "account": "research",
+  "purpose": "Radial factor at separation 6, C-C, T=4. Pre-registered: K_C(C) = 11.21 (P-0009). Fills the separation-6 row for C-C; the factor set by BC at 6 implies a C effect.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          2.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          8.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 4.0,
+    "sample_dt": 0.05
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

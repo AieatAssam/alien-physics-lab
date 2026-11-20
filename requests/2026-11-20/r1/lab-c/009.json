@@ -1,0 +1,61 @@
+{
+  "request_id": "2026-11-20/r1/lab-c/009",
+  "lab": "lab-c",
+  "account": "review",
+  "purpose": "P-0008 c1, four particles A,A,B,C at rest on a square of side 3.5 (diagonal 4.95). Tests A-A at 4 bodies with the A-A coefficient at separation 3.5. Same rule as 007. T=1.0 (model min separation 2.63; T=1.5 would reach 1.02, so T=1.0 is chosen).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.0,
+          3.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.5,
+          3.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          6.5,
+          6.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          3.0,
+          6.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0008"
+}

@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-20/r1/lab-vernier/003",
+  "lab": "lab-vernier",
+  "account": "review",
+  "purpose": "Review of P-0003 at the upper separation edge: two species-A particles at rest, separation 6.0 along x, centred at (5,5), T=2, dt=0.01. Together with 002 this checks whether the power law holds for r in 4 to 6 (outside the close approach at r=3). Pre-registered threshold: error (RMSE/10) at or below 0.03 passes.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0003"
+}

@@ -1,0 +1,49 @@
+{
+  "request_id": "2026-11-20/r1/lab-b/002",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Long-time three-body probe: equilateral A,B,C side 5.0 at rest, T=4 (outside P-0007's T=1.5 and P-0008's T<=1). A three-body term should accumulate with time; pair-sum drift past noise would show it. Sides shrink, so this tests the pair sum in closer configurations too.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.5,
+          3.556624
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          7.5,
+          3.556624
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.0,
+          7.886751
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 4.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

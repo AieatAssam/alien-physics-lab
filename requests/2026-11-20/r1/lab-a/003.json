@@ -1,0 +1,38 @@
+{
+ "request_id": "2026-11-20/r1/lab-a/003",
+ "lab": "lab-a",
+ "account": "research",
+ "purpose": "Close-range A-A pair at rest, separation 1.5, T=0.3. Reaches r ~ 0.75 by T; probes the power law at the edge of close range. Pre-registered in analysis/pred_2026-11-20_AA_r1p5.json.",
+ "setup": {
+  "particles": [
+   {
+    "species": "A",
+    "pos": [
+     4.25,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     5.75,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 0.3,
+  "sample_dt": 0.0003
+ },
+ "instruments": [
+  "tracker",
+  "census"
+ ]
+}

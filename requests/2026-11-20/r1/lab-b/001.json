@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-20/r1/lab-b/001",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "H13: A-C at separation 9 along x, at rest, T=4. Tests whether the C-on-A ratio falls with r like the A-A ratio (notebook H13). Pre-registered: under a shared distance factor (A-A ratio K(9)/K(5) = 0.65, lab-a), K_C(A) at 9 = -21.0 * 0.65 = -13.7 (+/-5%). A value more than 10% from -13.7 supports H13 (non-shared shape); within 5% does not reject the shared factor.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          0.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          9.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 4.0,
+    "sample_dt": 0.002
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

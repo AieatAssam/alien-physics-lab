@@ -1,0 +1,16 @@
+{
+  "paper_id": "P-0009",
+  "lab": "lab-a",
+  "title": "Three particles B, C, C on an equilateral triangle of side 5, at rest, T = 2: pairwise sum with P-0005 coefficients (C-C in N = 3)",
+  "claims": [
+    {
+      "claim_id": "P-0009-c1",
+      "statement": "Three particles at rest on an equilateral triangle of side 5 with species B, C, C, T = 2: the pairwise sum over partners of the P-0005 sep-5 coefficients, with no three-body term, reproduces the tracker positions at tracker-noise level. Residual rms 0.047 (2026-11-19/r2/lab-a/001) and 0.050 (2026-11-19/r3/lab-a/002) per coordinate; the zero-force null is 0.14. No census events; labels constant. Domain is the one tested: side 5 only.",
+      "domain": {"species": ["B", "C"], "r_range": [4.99, 5.01], "max_particles": 3},
+      "predicted_error": 0.01,
+      "evidence": ["2026-11-19/r2/lab-a/001", "2026-11-19/r3/lab-a/002"]
+    }
+  ],
+  "cites": ["P-0005"],
+  "supersedes": []
+}

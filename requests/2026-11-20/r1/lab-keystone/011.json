@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-20/r1/lab-keystone/011",
+  "lab": "lab-keystone",
+  "account": "review",
+  "purpose": "P-0004 c1 test: A-B at separation 5, horizontal, at rest, T=2. Replicates the A-B pair coefficients (P-0004 c1) in a new orientation.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          7.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0004"
+}

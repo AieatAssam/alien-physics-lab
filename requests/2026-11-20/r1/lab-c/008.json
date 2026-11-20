@@ -1,0 +1,61 @@
+{
+  "request_id": "2026-11-20/r1/lab-c/008",
+  "lab": "lab-c",
+  "account": "review",
+  "purpose": "P-0008 c1, four particles with B-B and C-C pairs (the same-species coefficients the paper takes from P-0005 and no lab-c run has tested at 4 bodies). Square of side 3.5 (diagonal 4.95), B,B,C,C at rest, T=1.5. Same rule as 007. T=1.0 (model min separation 3.06, no contact).",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          3.0,
+          3.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          6.5,
+          3.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          6.5,
+          6.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          3.0,
+          6.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0008"
+}

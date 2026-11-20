@@ -1,0 +1,50 @@
+{
+  "request_id": "2026-11-20/r1/lab-c/010",
+  "lab": "lab-c",
+  "account": "review",
+  "purpose": "P-0008 c2 at separation 4 (interior): equilateral A,B,C triangle of side 4.0 at rest, centroid (5,5), T=3.0. Longer than the paper's T<=1 to probe a three-body term accumulating over time. Model min separation 2.88 over T=2 (T=3 reaches contact, 0.01, so T=2 is used). Same rule as 007.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          7.309401076758503
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          3.0,
+          3.8452994616207485
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          7.0,
+          3.8452994616207485
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0008"
+}

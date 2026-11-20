@@ -1,0 +1,188 @@
+{
+  "lab": "lab-vernier",
+  "date": "2026-11-20",
+  "title": "Sixteen mixed particles at rest on a 3-unit lattice: does the pairwise sum hold at N = 16?",
+  "pitch": "Tests the pairwise-additivity claims at the largest size the apparatus allows. Sixteen particles (A, B, C cycled) at rest on a 4 x 4 lattice of spacing 3.0, T = 10, tracker only. The nearest-neighbour separations (3.0) lie in P-0008's window; the diagonals (4.2 and 6.0) do not. Prediction: the sum over all 120 pairs of the P-0005 coefficients reproduces every tracker position to the noise level (error at or below 0.01, i.e. RMSE about 0.1). Falsified if error exceeds 0.03 for pairwise-only motion. Either outcome separates pairwise sums from many-body terms.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          0.75,
+          0.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          3.75,
+          0.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          6.75,
+          0.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          9.75,
+          0.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          0.75,
+          3.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          3.75,
+          3.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.75,
+          3.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          9.75,
+          3.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          0.75,
+          6.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          3.75,
+          6.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          6.75,
+          6.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          9.75,
+          6.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          0.75,
+          9.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          3.75,
+          9.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          6.75,
+          9.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          9.75,
+          9.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 10.0,
+    "sample_dt": 0.05
+  }
+}

@@ -1,0 +1,207 @@
+{
+ "001": {
+  "species": "BB",
+  "r0": 7.0,
+  "T": 6.0,
+  "K_pred": [
+   5.3,
+   5.3
+  ],
+  "model_min_separation": 5.368,
+  "model_end_pos": [
+   [
+    2.316,
+    5.0
+   ],
+   [
+    7.684,
+    5.0
+   ]
+  ]
+ },
+ "002": {
+  "species": "CC",
+  "r0": 7.0,
+  "T": 6.0,
+  "K_pred": [
+   10.142,
+   10.142
+  ],
+  "model_min_separation": 3.391,
+  "model_end_pos": [
+   [
+    3.305,
+    5.0
+   ],
+   [
+    6.695,
+    5.0
+   ]
+  ]
+ },
+ "003": {
+  "species": "AA",
+  "r0": 7.0,
+  "T": 4.0,
+  "K_pred": [
+   15.588,
+   15.588
+  ],
+  "model_min_separation": 4.779,
+  "model_end_pos": [
+   [
+    2.611,
+    5.0
+   ],
+   [
+    7.389,
+    5.0
+   ]
+  ]
+ },
+ "004": {
+  "species": "AB",
+  "r0": 7.0,
+  "T": 6.0,
+  "K_pred": [
+   7.785,
+   10.686
+  ],
+  "model_min_separation": 3.823,
+  "model_end_pos": [
+   [
+    2.839,
+    5.0
+   ],
+   [
+    6.662,
+    5.0
+   ]
+  ]
+ },
+ "005": {
+  "species": "BC",
+  "r0": 7.0,
+  "T": 6.0,
+  "K_pred": [
+   -5.005,
+   -8.689
+  ],
+  "model_min_separation": 7.0,
+  "model_end_pos": [
+   [
+    0.869,
+    5.0
+   ],
+   [
+    9.595,
+    5.0
+   ]
+  ]
+ },
+ "006": {
+  "species": "CC",
+  "r0": 6.0,
+  "T": 4.0,
+  "K_pred": [
+   11.219,
+   11.219
+  ],
+  "model_min_separation": 3.535,
+  "model_end_pos": [
+   [
+    3.232,
+    5.0
+   ],
+   [
+    6.768,
+    5.0
+   ]
+  ]
+ },
+ "007": {
+  "species": "AA",
+  "r0": 6.0,
+  "T": 3.0,
+  "K_pred": [
+   17.244,
+   17.244
+  ],
+  "model_min_separation": 3.942,
+  "model_end_pos": [
+   [
+    3.029,
+    5.0
+   ],
+   [
+    6.971,
+    5.0
+   ]
+  ]
+ },
+ "008": {
+  "species": "ABCAB",
+  "model": "pairwise sum, P-0005 at side 5, P-0009 G at diagonal 8.09",
+  "min_separation": 4.107,
+  "end_pos": [
+   [
+    5.062,
+    8.749
+   ],
+   [
+    1.446,
+    6.738
+   ],
+   [
+    1.813,
+    0.992
+   ],
+   [
+    7.769,
+    2.109
+   ],
+   [
+    8.488,
+    6.153
+   ]
+  ]
+ },
+ "009": {
+  "species": "AC",
+  "model": "pure r^-2.5, P-0005 coefficients (no radial factor)",
+  "K_pred": [
+   -8.77,
+   -21.25
+  ],
+  "end_pos": [
+   [
+    3.369,
+    5.0
+   ],
+   [
+    7.884,
+    5.0
+   ]
+  ],
+  "min_separation": 1.501
+ },
+ "010": {
+  "species": "BC",
+  "model": "pure r^-2.5, P-0005 coefficients (no radial factor)",
+  "K_pred": [
+   -6.1,
+   -10.59
+  ],
+  "end_pos": [
+   [
+    3.528,
+    5.0
+   ],
+   [
+    7.003,
+    5.0
+   ]
+  ],
+  "min_separation": 1.5
+ }
+}

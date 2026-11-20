@@ -1,0 +1,10 @@
+{
+  "paper_id": "P-0002",
+  "lab": "lab-vernier",
+  "verdict": "inconclusive",
+  "evidence": [
+    "2026-11-19/r1/lab-vernier/003",
+    "2026-11-19/r3/lab-vernier/001"
+  ],
+  "comment": "Interim. Two in-domain lone-C runs agree with P-0002 at noise level: 2026-11-19/r1/lab-vernier/003 (at rest, T=20, error 0.0049) and 2026-11-19/r3/lab-vernier/001 (speed 3.69, T=40, error 0.0049; bar 3 x 0.01 = 0.03). The replication bar needs three cited in-domain runs of mine, so this is inconclusive for now. The third run is filed as 2026-11-20/r1/lab-vernier/001 (review account): start (8.5,1.5), velocity (2.0,-3.5), T=40, reflecting off several walls. I will update this review when it returns."
+}

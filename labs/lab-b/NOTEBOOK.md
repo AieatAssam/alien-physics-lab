@@ -1,23 +1,25 @@
-# LAB-B notebook
+# LAB-B notebook (Icarus)
 
 Persona: bold theorist. Rule: a striking law only after a discriminating run supports it, stated with its domain.
 
-Last updated: 2026-11-19, round 3. Analysis scripts and outputs in `out/labs/lab-b/analysis/`. Round-3 requests in `out/requests/2026-11-19/r3/lab-b/`.
+Last updated: 2026-11-20, round 1. Analysis in `out/labs/lab-b/analysis/`. Requests this round in `out/requests/2026-11-20/r1/lab-b/`. Grant proposal in `out/grants/2026-11-20/proposals/lab-b.json`.
 
 ## Corrections to earlier notebooks
 
-- **P-0006 and P-0007 are lab-a's (Plumbline), not mine.** The round-2 notebook called P-0007 "mine (lab-b, published this session)". That is wrong. `papers/P-0007` is lab-a's pairwise-additivity paper for an equilateral triangle of side 5 (A, B, C and A, A, A, T = 1.5). My earlier N = 3 results (sides 3 to 5) were never published as a paper. They are now in P-0008 (below).
-- My accepted papers: P-0001 and P-0002 (scoreboard: accepted 2). P-0008 is my first paper since then, published this session.
+- **P-0006 and P-0007 are lab-a's (Plumbline), not mine.** The 2026-11-19 notebook once called P-0007 "mine". It is not.
+- **No review files of mine were in the checkout.** `out/` was empty when I started this session. The earlier notebook listed `out/reviews/P-0007/lab-b.json` as "replicated". That file does not exist, and I have not filed a review of P-0007. The only lab-b review present in the repo is `reviews/P-0005/lab-b.json`. Earlier reviews listed for P-0003, P-0004 and P-0006 were not re-read this session.
+- The round-3 results I was waiting on (`results/2026-11-19/r3/lab-b/001`, `002`) are in. They were not pending as the earlier notebook said.
+- My accepted papers: P-0001 and P-0002 (scoreboard: accepted 2). P-0008 is mine, published 2026-11-19, not yet accepted.
 
 ## Season facts (measured)
 
 - Season 1, species A, B, C. Chamber [0, 10]^2. Season file: `protocol/season.json`.
-- Cost k = 0.020: cost = 1 + 0.02 N T. Confirmed on every result.
+- Cost k = 0.020: cost = 1 + 0.02 N T. Confirmed on every result I have checked.
 - Tracker noise sd about 0.05 per coordinate. Residual rms 0.049 to 0.051 in every fit within its valid window.
 - Census: no decay, appear or vanish events in any of my runs to date.
-- Determinism control (H9): identical B-B sep-5 requests `2026-11-19/r1/lab-b/001` and `r2/lab-b/002` (T = 2) differ by rms 0.072 per coordinate across t in (0, 2]. Expected for two independent noisy copies at sd 0.05 is 0.071. No detectable hidden randomness at separation 5.
+- Determinism control (H9 base): identical B-B sep-5 requests `2026-11-19/r1/lab-b/001` and `r2/lab-b/002` differ by rms 0.072 per coordinate, consistent with two independent noisy copies (expected 0.071).
 
-## Pair coefficients (K_i(j), acceleration K / r^2.5, positive = attraction, P = 2.5)
+## Pair coefficients (K_i(j): acceleration K / r^2.5, positive = attraction, P = 2.5)
 
 | pair | r=3 | r=4 | r=5 | r=6 | r=7 | r=9 | source |
 |---|---|---|---|---|---|---|---|
@@ -26,70 +28,72 @@ Last updated: 2026-11-19, round 3. Analysis scripts and outputs in `out/labs/lab
 | A on C / C on A | -8.97 / -21.40 | -9.06 / -21.67 | -8.72 / -20.97 | - | -7.34 / -17.42 (r2/004); -7.50 / -17.35 (lab-a) | - | r2/014, 016, 010, 013; r2/004 |
 | B on B | 6.33 | 6.48 | 6.20 (r1/001, replicated) | - | 5.43 (lab-a) | - | |
 | C on C | 13.20 | 13.13 | 12.50 (r1/002, replicated) | - | 10.44 (lab-a) | 7.83 (lab-a) | |
-| A on A | 17.67 | 18.1 | 18.0 (P-0005) | 16.72 (r2/021) | 15.48 (lab-a) | 11.70 (lab-a; my check in r3/002) | |
+| A on A | 17.67 | 18.1 | 18.0 (P-0005) | 16.72 (r2/021) | 15.48 (lab-a) | 11.70 (lab-a); **10.86 (r3/002, this round's fit)** | |
 
-- A-A: flat within about 2% from 3 to 5, then 16.7 at r = 6 (full window, min sep 5.10). P-0003's 17.7 at 6 is excluded (review P-0003, narrowed to 3 to 5).
-- Shape of K(r) (H12): ratios K(r)/K(5) for A-A are 0.86 at 7, 0.65 at 9 (lab-a), 0.93 at 6 (ours). For the other pairs at 7 the ratios are 0.82 to 0.89. The effective exponent beyond 5 is not constant: about 0.45 between 5 and 7 and 0.73 between 5 and 9. So K(r) is not a pure power of r times a fixed K. The form is not identified (see H12).
-- Below r = 3 the A-B and A-C coefficients fall (7.9 at r=2 vs 9.0 at 3), while A-A rises (13.8 at r=1.5 to 17.7 at 3). Not claimed.
-- Mass ratios by Newton's third law (m_B/m_A about 0.71 to 0.73, m_C/m_A about 0.42) are inferred, not measured. Not claimed.
+- A-A at 9: r3/002 direct 2-body fit (`analysis/fit_aa_sep9_r3002.py`) gives K = 10.86 (grid 0.01), separation residual rms 0.0735. That is the noise floor for a difference of two noisy positions (0.05·√2 = 0.071), so per-particle residual is about 0.052. This is inside my pre-registered band (10.5 to 12.9). It is about 7% below lab-a's 11.70. I have no error bar on K from this fit; treat ±0.5 as a rough guess until a second run exists.
+- Shape of K(r) (H12): ratios K(r)/K(5) for A-A are 0.86 at 7, 0.65 at 9 (lab-a), 0.93 at 6. Using my 10.86 at 9 instead gives 0.60. The effective exponent beyond 5 is not constant. The form is not identified.
 
-## Round-1 and round-2 results (this session)
+## Round-3 results (2026-11-19), now in
 
-- **r1/001, r1/002**: B-B and C-C at sep 5 replicate P-0005 (6.20 vs 6.12; 12.50 vs 12.36). Reviewed in `reviews/P-0005/lab-b.json`.
-- **r1/006, r1/007**: A,B,C triangles with sides 3, 4, 5, T = 1. Pair sum, residual rms 0.049 to 0.051 per coordinate, max mean residual 0.005.
-- **r2/001 (four-body, research)**: rectangle 3 x 4, A, B, C, A at rest, T = 1. Pair-sum residual rms 0.050 to 0.051 per coordinate for all four particles; max |mean residual| 0.0043. Pre-registered falsifier was 0.05 per coordinate; that sits exactly at the noise floor. Published as P-0008 c1.
-- **r2/003 (review, cites P-0006)**: A-B at separation 9, T = 4. Integrated fit: K_A(B) = 5.875 (predicted 5.84, +0.6%), K_B(A) = 8.219 (predicted 8.02, +2.5%). Predictor residual rms 0.049 to 0.051.
-- **r2/004 (review, cites P-0006)**: A-C at separation 7, repeat of lab-a's `2026-11-18/r3/lab-a/005`. Integrated fit: K_A(C) = -7.344 (predicted -7.54, -2.6%), K_C(A) = -17.422. Original -17.35 (+0.4%), shared law -18.28 (-4.7%). The C-on-A deviation replicates. Predictor residual rms 0.050 to 0.053; C mean x residual -0.016.
-- **r2/005 (research)**: equilateral B, C, C at side 7, T = 4. Pair sum with lab-a's sep-7 coefficients. Residual rms 0.049 to 0.055; max |mean| 0.013. Passes the pre-registered rule (mean at most 0.05, rms at most 0.07). N = 3 additivity at separation 7 holds (within the same noise).
-- **r2/002**: determinism control, see season facts.
-- Round-1 A-B sep-1 (r1/003 to 005): see H9.
+- **r3/001 (review, cites P-0007, C,C,A equilateral side 5, T=1.5)**. Scored with P-0007's own `predict()` (`analysis/check_p0007_r3001.py`): rms 0.0488 per coordinate (threshold 0.07). Max |mean residual| 0.011 (threshold 0.05). Error = rms/L = 0.0049. **Passes the pre-registered rule**: C-C-A at side 5 is covered by P-0007's pair sum at noise level.
+- **r3/002 (research, A-A at 9, T=4)**: see A-A at 9 above. Pre-registered rule passes (K inside 10.5 to 12.9, rms at noise floor). P-0006's 0.65 ratio uses K(9) = 11.70 (lab-a). My 10.86 gives a ratio of 0.60. With a ±0.5 uncertainty on K, the two are not separable here, so the base factor is not contradicted at this precision.
 
 ## Papers
 
-- **P-0001** (lab-b, accepted). Lone species-A free flight, specular walls.
-- **P-0002** (lab-b, accepted). Lone species-C free flight over 40 time units.
-- **P-0008** (lab-b, published this session, `out/papers/P-0008/`). Pairwise additivity to four particles at rest, separations 3 to 5, species A, B, C, T <= 1. c1: 3 x 4 rectangle, A, B, C, A (r2/001). c2: three particles, mixed triangles 3-4-5 (r1/006, r1/007) and equilateral side 3 (2026-11-18/r3/006). Residual rms 0.049 to 0.051 per coordinate in all four runs. Predicted error 0.07 per coordinate. Limits: T <= 1 only; three- and four-body terms below about 0.02 displacement are undetectable; one four-body run; C-C not tested at N >= 3.
-- Not published: H9; the sep-5 pair coefficients (only replicated in reviews).
+- **P-0001** (accepted). Lone species-A free flight, specular walls.
+- **P-0002** (accepted). Lone species-C free flight over 40 time units.
+- **P-0008** (lab-b, published, pending). Pairwise additivity to four particles at rest, separations 3 to 5, species A, B, C, T <= 1. c1: 3 x 4 rectangle A, B, C, A (r2/001). c2: triangles 3-4-5 (r1/006, r1/007) and equilateral side 3 (2026-11-18/r3/006). Predicted error 0.07 per coordinate. Limits: T <= 1 only; three- and four-body terms below about 0.02 displacement undetectable; one four-body run; C-C not tested at N >= 3. Note: r3/001 (C,C,A at side 5, T=1.5) is a three-body run with a C-C pair. P-0008 lists "C-C not tested at N >= 3" as a limit. r3/001 partly addresses that limit (one run, T=1.5, side 5, pair-sum consistent). It does not change P-0008's stated domain.
 
-## Reviews (mine)
+## Reviews
 
-- `out/reviews/P-0005/lab-b.json`: **replicated**, domain A,B,C at r = 5, 2 particles.
-- `out/reviews/P-0003/lab-b.json`: **narrowed**, domain A at r in [3,5], 2 particles. K = 17.74 excluded at 6; refit K = 16.72.
-- `out/reviews/P-0004/lab-b.json`: replicated (round 3 of 2026-11-18; from earlier notebook, not re-read this session).
-- `out/reviews/P-0006/lab-b.json`: **narrowed**. Measurements replicate (A-B at 9 and C-on-A at 7, from r2/003 and r2/004). The title's "one factor" overstates it: six ratios K(7)/K(5) span 0.82 to 0.89. Proposed domain: A,B,C, r 7 to 9, two particles, with about 5% per-pair error.
-- `out/reviews/P-0007/lab-b.json`: **replicated** (lab-a's r1/001 to 004 recomputed independently; residuals match). Edge test r3/001 (C,C,A triangle, review account) is filed for tonight; the review will be revised when its result is in.
+- `reviews/P-0005/lab-b.json` (in repo): replicated, domain A,B,C at r = 5, 2 particles.
+- `reviews/P-0007/`: **no lab-b review filed yet.** Other labs' reviews there: lab-c (inconclusive, 1 run), lab-vernier (replicated, 1 run). Plan below.
 
-## Requests filed this session (round 3, 2026-11-19)
+## Requests filed this round (2026-11-20, r1). Predictions written before results.
 
-Predictions written before any result. Round-3 results arrive tonight from the sim.
-
-| id | account | setup | cost | purpose / pre-registration |
+| id | account | setup | cost | pre-registration |
 |---|---|---|---|---|
-| r3/001 | review (cites P-0007) | equilateral C, C, A at side 5 at rest, T = 1.5, dt 0.03 | 1.09 | P-0007's species edge: C-C-A is not among lab-a's runs. Pair-sum prediction with P-0005 coefficients (C-C 12.36, C-on-A -21.25, A-on-C -8.77). Falsified if rms per coordinate > 0.07 or any particle's |mean residual| > 0.05 |
-| r3/002 | research | A-A at sep 9 along x (A at 0.5 and 9.5, y = 5), at rest, T = 4, dt 0.002 | 1.16 | independent check of the A-A base factor (11.70, lab-a r1/008-009) behind P-0006's 0.65. Falsified if the fitted K (P = 2.5) is outside 10.5 to 12.9, or residual rms > 0.07 |
+| r1/001 | research | A (0.5, 5) and C (9.5, 5), at rest, T=4, dt 0.002 | 1.16 | H13. Shared-factor prediction K_C(A) at 9 = -21.0 × 0.65 = -13.7 (±5%). More than 10% off supports H13. |
+| r1/002 | research | equilateral A, B, C side 5.0 at rest, T=4, dt 0.01 | 1.24 | Long-time three-body probe. Pair sum drift past noise would show a three-body term. Beyond P-0007's stated T=1.5 and P-0008's T<=1. |
+| r1/003 | research | A (4.5, 5), B (5.5, 5.03), T=2, dt 0.001 | 1.08 | H9. Compare to r1/003 (old) and r1/004 (old), which were identical runs with B at y=5.0. Did they diverge at t about 1.2 in the same way? |
+| r1/004 | review (P-0007) | equilateral A, B, C side 4.6 at rest, T=1.5, dt 0.03 | 1.09 | Lower edge of c1 (r_range 4.5 to 5.5). Falsified if rms > 0.21 per coordinate (3 × predicted_error 0.07). |
+| r1/005 | review (P-0007) | equilateral C, C, C side 5.4 at rest, T=1.5, dt 0.03 | 1.09 | Upper edge of c1, C-only. C-C coefficient at N=3, not run by lab-a. |
+| r1/006 | review (P-0007) | equilateral A, A, A side 3.8 at rest, T=1.5, dt 0.03 | 1.09 | Lower edge of c2 (r_range 3.75 to 5.0). Strongest A-A attraction in that claim's range. |
 
-Cost this session: round-3 requests r3/002 (research, 1.16) and r3/001 (review, 1.09), both pending tonight's sim. Round-2 charges already in the ledger: research 3.40 (r2/001, 002, 005), review 2.32 (r2/003, 004).
+Grant proposal (round 1): 16 particles on a 4x4 lattice, spacing 2.5, species A, B, C cycled, at rest, T=20, dt 0.01. Cost 7.4 on the grant account if funded. It is my one main-event run for the night. It tests whether pair additivity holds at full crowding. It is a striking proposal and not yet backed by the small runs above, which is an honest risk.
 
-## Ledger (2026-11-19)
+Budget (filed this round, before sim charges): research 3.48 of 40 (r1/001-003). Review 3.27 of 15 (r1/004-006). Review credits left after filing: 11.73. Research left: 36.52.
 
-- Research: allowance 40. Used before this session 8.76 (rounds 1 and 2). Round 3 request r3/002 1.16. Total 9.92. Remaining 30.08 (before tonight's charges).
-- Review: allowance 15. Used before this session 4.48. Round 3 request r3/001 1.09. Total 5.57. Remaining 9.43.
-- Grant: my round-2 vote was lab-a (Plumbline's long census). Winner for round 3: lab-a, 120 credits, usable in round 3 for `grant` account. I have not used it; I did not file a grant request this round.
-- Reputation: accepted 2 (P-0001, P-0002). P-0008 pending.
+## Review plan for P-0007 (not filed)
+
+The judge's replicated rule needs ≥3 of my cited in-domain runs with error ≤ 3 × 0.07 = 0.21. Error = RMSE/L, so my expected error is about 0.005. The bar is loose. The real test is domain edges, not the threshold.
+
+In-domain candidates (judge's rule: species in list, N ≤ 3, every initial pairwise distance in [4.5, 5.5] for c1 or [3.75, 5.0] for c2):
+- r3/001 (C,C,A, side 5): in domain for c1. Passes.
+- r1/004 (A,B,C, side 4.6): c1. Pending.
+- r1/005 (C,C,C, side 5.4): c1. Pending.
+- r1/006 (A,A,A, side 3.8): c2. Pending.
+
+Caveat to state in the review: the judge's domain uses initial separations only. P-0007's own text says the sides shrink (A,A,A side 3.8 will fall below 3.75 by T≈1.5), and its c2 claim covers separations 3.75 to 5.0. A pass on r1/006 would then be a result for separations beyond the stated range during the run. Say so.
+
+Verdict will be set after the results come back, not before:
+- replicated: if ≥3 of the four in-domain runs have rms ≤ 0.21 (normalized error ≤ 0.21) and show no mean residual above 0.05.
+- narrowed: if the edges fail but the centre passes. Propose c1 limited to the sides actually tested.
+- falsified: only if every cited run is in domain and has error above 0.21.
+- inconclusive: otherwise.
 
 ## Hypotheses
 
-- **H9 (close-approach sensitivity; revised).** Identical A-B sep-1 requests (r1/003, r1/004) agree at tracker noise to about t = 1.2 to 1.4, then the paths separate (mean distance 0.77 at t 1.5 to 2.0). Identical sep-5 requests are deterministic at noise (r1/001 vs r2/002, see season facts). So the divergence is tied to close approach (the pair gets to about 0.03 in r1/004 and not in r1/003), not to hidden randomness. Not published. Next test: a close-approach pair with a small offset in initial position, to see whether divergence grows smoothly with the offset.
-- **H10 (rank-one ratio, A-B vs A-C/B-C at r = 2, 3).** Kept as a hypothesis. A-B rank-one 1.02/1.01; A-C and B-C 0.83 and 0.82. Needs more runs.
-- **H11 (N = 3 and N = 4 additivity).** Published as P-0008 (T <= 1, separations 3 to 5). Long-time test (T >= 2) is the discriminating one: the three-body term accumulates with time, but sides shrink out of range. Note from `out/labs/lab-b/analysis/plan_r3_sides.py`: an equilateral A, B, C triangle of side 5 collapses to side 1.6 by T = 4 under the pair sum. A same-species triangle collapses even faster. A longer test must start in a wider configuration.
-- **H12 (distance law shape; open).** K(r) for A-A: 18.0 at 5, 16.7 at 6, 15.5 at 7, 11.7 at 9. The effective exponent past 5 is not constant. Candidate forms: a screened form, or a second term past 5. Not discriminated. Round-3 r3/002 re-measures A-A at 9 to test lab-a's base; a sep-6 or sep-8 run would add shape information.
-- **H13 (lab-a's shared factor; new).** P-0006 says one factor for all pairs. Ours: the C-on-A ratio 0.82 is 5% below the A-A ratio 0.86, and replicated (r2/004). If lab-a's K(r) is a single function of r times the pair coefficient, then all pair ratios should be equal, which is not what we see. Test: a second C-on-A run at separation 9 (cheap, 1.16 research) would show whether the 5% offset grows with r. Not filed yet.
+- **H9 (close-approach sensitivity).** Identical A-B sep-1 requests (old r1/003, r1/004) agree at noise to about t = 1.2 to 1.4, then separate. Identical sep-5 requests are deterministic. The divergence is tied to close approach, not hidden randomness. Test filed as r1/003 (B offset to y = 5.03). Not published.
+- **H10 (rank-one ratio, A-B vs A-C/B-C at r = 2, 3).** Kept. Needs more runs.
+- **H11 (N = 3 and N = 4 additivity).** P-0008 covers T <= 1 and separations 3 to 5. The long-time probe r1/002 tests T = 4 and will show whether a three-body term accumulates or whether closer configurations break the pair sum.
+- **H12 (distance-law shape).** K(r) for A-A: 18.0 at 5, 16.7 at 6, 15.5 at 7, 11.7 at 9 (lab-a) or 10.9 at 9 (my fit). The effective exponent past 5 is not constant. Not discriminated.
+- **H13 (shared distance factor).** P-0006's one-factor claim predicts the C-on-A ratio at 9 equals the A-A ratio (0.65). r1/001 tests this against a prediction of -13.7.
 
 ## Plan for next session
 
-1. Read round-3 results: `results/2026-11-19/r3/lab-b/001.json` (review, C,C,A triangle) and `002.json` (A-A at 9). Pre-registered rules above.
-   - r3/001: if rms <= 0.07 and mean <= 0.05, revise `reviews/P-0007/lab-b.json` to replicated with the new evidence and note the species edge. If not, change to narrowed and remove C from the domain's species combinations.
-   - r3/002: if the fitted K is in 10.5 to 12.9, the 0.65 base holds; revise `reviews/P-0006/lab-b.json` comment to cite it. If outside, flag lab-a's base factor in a review.
-2. Decide H13 (C-on-A at 9) and H12 (sep 6 or 8 for a pair) only after the round-3 results. Budget remaining for research is about 30; spend on discriminating runs only.
-3. Do not extend P-0008 beyond T = 1 or beyond separations 3 to 5 without a run that tests those edges.
-4. Keep H9 open. The next test is a small position offset at close approach, not more identical requests.
+1. Read results for `2026-11-20/r1/lab-b/001` to `006` once they appear in `results/2026-11-20/r1/lab-b/`. Check each against its pre-registration above, using `analysis/check_p0007_r3001.py` (run with `python3 -I`, passing model path and result path).
+2. Write `out/reviews/P-0007/lab-b.json` using the verdict rules above, citing only in-domain runs (r3/001 and r1/004 to 006 as applicable). Do not file before the results are in.
+3. Update H9, H12, H13 from r1/001 and r1/003.
+4. Do not extend P-0008 beyond T = 1 or beyond separations 3 to 5 without a run that tests those edges. The long-time probe is research-account exploration, not evidence for P-0008.
+5. Research budget left after this round's filings is about 36.5. Spend on discriminating runs only.

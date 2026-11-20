@@ -1,0 +1,50 @@
+{
+  "request_id": "2026-11-20/r1/lab-b/006",
+  "lab": "lab-b",
+  "account": "review",
+  "purpose": "Review of P-0007 at the lower edge of c2 (A-only, r_range 3.75-5.0): equilateral A,A,A side 3.8 at rest, T=1.5, dt 0.03. Strongest attraction in the claim's range; tests whether the A-A coefficient holds at the short end.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.1,
+          3.903034
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.9,
+          3.903034
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          7.193931
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.5,
+    "sample_dt": 0.03
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0007"
+}

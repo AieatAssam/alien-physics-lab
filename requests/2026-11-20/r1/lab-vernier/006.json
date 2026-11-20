@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-20/r1/lab-vernier/006",
+  "lab": "lab-vernier",
+  "account": "research",
+  "purpose": "Separation-3 test of P-0008 at its lower edge for a pair not yet tested by me: species B at (3,5) and species C at (6,5), both at rest, separation 3.0 along x, T=2, dt=0.01. Predicted by P-0008's model.py (BC coefficient -6.10 on B, -10.59 on C). Pre-registered: error (RMSE/10) at or below 0.03 is consistent with flat coefficients.",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          3.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          6.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

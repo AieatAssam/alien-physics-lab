@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-20/r1/lab-keystone/004",
+  "lab": "lab-keystone",
+  "account": "research",
+  "purpose": "Radial factor at separation 7, A-B. Pre-registered: K_A(B) = 7.78 and K_B(A) = 10.69 (P-0009, C-free so no C factor).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          1.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          8.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 6.0,
+    "sample_dt": 0.05
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

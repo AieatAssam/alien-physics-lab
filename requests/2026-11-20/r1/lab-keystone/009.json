@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-20/r1/lab-keystone/009",
+  "lab": "lab-keystone",
+  "account": "research",
+  "purpose": "Close range, A-C repulsion at separation 1.5, T=1. Pure r^-2.5 law with P-0005 coefficients predicted; a deviation at short range tests whether the power law holds below 3.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.25,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.75,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

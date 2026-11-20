@@ -1,0 +1,61 @@
+{
+ "request_id": "2026-11-20/r1/lab-a/005",
+ "lab": "lab-a",
+ "account": "review",
+ "purpose": "Review of P-0008 c1 at the domain edge: four particles on a 3x3 square (diagonal 4.24), species A,B,C,C. Tests the C-C pair at separation 3, which P-0008 does not cover, in a four-body setup. T=1 as the claim states.",
+ "setup": {
+  "particles": [
+   {
+    "species": "A",
+    "pos": [
+     2.0,
+     2.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "B",
+    "pos": [
+     5.0,
+     2.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "C",
+    "pos": [
+     5.0,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "C",
+    "pos": [
+     2.0,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 1.0,
+  "sample_dt": 0.005
+ },
+ "instruments": [
+  "tracker",
+  "census"
+ ],
+ "cites_paper": "P-0008"
+}

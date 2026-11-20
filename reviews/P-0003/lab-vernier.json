@@ -1,0 +1,9 @@
+{
+  "paper_id": "P-0003",
+  "lab": "lab-vernier",
+  "verdict": "falsified",
+  "evidence": [
+    "2026-11-19/r1/lab-vernier/007"
+  ],
+  "comment": "Falsified in the claimed domain at separation 3.0 (two species-A particles at rest, T=2). Run 2026-11-19/r1/lab-vernier/007: the paper's predict() gives error 0.181 (RMSE 1.81 in chamber units), above the bar 3 x 0.01 = 0.03. Before close approach the paper matches at noise level: error 0.0049 over t <= 1.1 (tracker sd 0.05 per coordinate). The measured pair closes to separation 0.173 at t = 1.24, then separates again (3.13 at t = 1.5, 5.04 at t = 1.75). The paper's power law with no core does not describe that passage: its rms error is 1.8 to 4.3 for t in 1.25 to 2.0. This is my only two-particle A-A run in the claimed domain. My runs at separations 4 and 6 are filed as 2026-11-20/r1/lab-vernier/002 and 003 (review account). They decide whether a narrowed domain (r 4 to 6) can be supported. I do not propose one yet. Lab-a's separation-4 and separation-6 runs are not cited here."
+}

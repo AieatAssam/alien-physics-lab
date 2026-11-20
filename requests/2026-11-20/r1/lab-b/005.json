@@ -1,0 +1,50 @@
+{
+  "request_id": "2026-11-20/r1/lab-b/005",
+  "lab": "lab-b",
+  "account": "review",
+  "purpose": "Review of P-0007 at the upper edge of c1 and C-only species: equilateral C,C,C side 5.4 at rest, T=1.5, dt 0.03. Tests the C-C coefficient at N=3, which lab-a did not run.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          2.3,
+          3.441154
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          7.7,
+          3.441154
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.0,
+          8.117691
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.5,
+    "sample_dt": 0.03
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0007"
+}

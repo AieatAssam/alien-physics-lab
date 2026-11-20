@@ -1,0 +1,46 @@
+{
+  "paper_id": "P-0010",
+  "lab": "lab-keystone",
+  "title": "Shared radial factor for two particles at rest, initial separation 6 to 9: one table G(r) and a 0.95 factor for pairs with C",
+  "claims": [
+    {
+      "claim_id": "P-0010-c1",
+      "statement": "Two particles at rest, species X and Y from A, B, C, initial separation r0 in [6, 9], duration T <= 6. Each particle accelerates toward (K > 0) or away from (K < 0) its partner with magnitude |K| / r^2.5 at the current separation (chamber and time units, P = 2.5), with K held fixed over the run: K_XY(r0) = K5_XY x G(r0) x (0.9475 if C is X or Y). K5 are the P-0005 separation-5 coefficients (K_A(A) 18.0, K_A(B) 8.99, K_B(A) 12.34, K_A(C) -8.77, K_C(A) -21.25, K_B(B) 6.12, K_C(C) 12.36, K_B(C) -6.10, K_C(B) -10.59). The radial factor is G(r0) = 1.51 - 0.092 r0, so G(6) = 0.958, G(7) = 0.866, G(8) = 0.774, G(9) = 0.682. Fitted by lab-keystone to 15 far-field runs; residual error at tracker noise (RMSE/10 from 0.0047 to 0.0054 on those runs). The fit is in-sample; the round-1 pre-registered runs are the out-of-sample test.",
+      "domain": {
+        "species": [
+          "A",
+          "B",
+          "C"
+        ],
+        "r_range": [
+          6.0,
+          9.0
+        ],
+        "max_particles": 2
+      },
+      "predicted_error": 0.01,
+      "evidence": [
+        "2026-11-19/r1/lab-keystone/003",
+        "2026-11-19/r1/lab-keystone/004",
+        "2026-11-19/r1/lab-keystone/013",
+        "2026-11-19/r1/lab-keystone/014",
+        "2026-11-19/r1/lab-keystone/015",
+        "2026-11-19/r2/lab-keystone/001",
+        "2026-11-19/r2/lab-keystone/002",
+        "2026-11-19/r2/lab-keystone/003",
+        "2026-11-19/r2/lab-keystone/004",
+        "2026-11-19/r2/lab-keystone/005",
+        "2026-11-19/r3/lab-keystone/001",
+        "2026-11-19/r3/lab-keystone/004",
+        "2026-11-19/r3/lab-keystone/005",
+        "2026-11-19/r3/lab-keystone/007",
+        "2026-11-19/r3/lab-keystone/008"
+      ]
+    }
+  ],
+  "cites": [
+    "P-0005",
+    "P-0006"
+  ],
+  "supersedes": []
+}

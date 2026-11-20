@@ -1,0 +1,27 @@
+{
+  "request_id": "2026-11-20/r1/lab-vernier/001",
+  "lab": "lab-vernier",
+  "account": "review",
+  "purpose": "Review of P-0002 (lone species-C free flight with specular walls, T=40) for the third in-domain run: a different start (8.5,1.5) and velocity (2.0,-3.5), which reflects off y=0 and then off other walls. Pre-registered: the paper's predict() gives error (RMSE/10) at or below 0.03 for replication; above 0.03 is falsification. Cost 1.8 review credits.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          8.5,
+          1.5
+        ],
+        "vel": [
+          2.0,
+          -3.5
+        ]
+      }
+    ],
+    "duration": 40.0,
+    "sample_dt": 0.1
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0002"
+}

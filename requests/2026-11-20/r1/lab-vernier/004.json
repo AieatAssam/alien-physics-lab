@@ -1,0 +1,26 @@
+{
+  "request_id": "2026-11-20/r1/lab-vernier/004",
+  "lab": "lab-vernier",
+  "account": "research",
+  "purpose": "Sample-timing test with a moving particle. Lone species-A particle from (0.5,5.0) with velocity (4.0,0.0), T=2, dt=0.01, no wall contact. A constant sample-time offset delta gives a mean x residual of about -4*delta (speed 4), so the mean residual bounds delta. Compares with r1/005 at speed 2.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          0.5,
+          5.0
+        ],
+        "vel": [
+          4.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ]
+}
