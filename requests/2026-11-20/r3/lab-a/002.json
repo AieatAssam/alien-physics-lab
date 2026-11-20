@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-20/r3/lab-a/002",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "Replicate of 2026-11-20/r2/lab-a/001 (C-C pair at rest, separation 3.0, T = 1.0, centred at (5,5)). That run gave K_fit = 13.05 (P = 2.5 fixed), +5.6% from 12.36: inconclusive under the pre-registered rule. Same design, same rule (analysis/pred_close_CC3_2026-11-20.py).",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          3.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          6.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.002
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

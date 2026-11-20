@@ -1,0 +1,15 @@
+{
+  "request_id": "2026-11-20/r3/lab-keystone/004",
+  "lab": "lab-keystone",
+  "account": "research",
+  "purpose": "A-B attractive pair at separation 1.5, at rest, T=0.4. Unlike-species without C. Universal predicts A K=7.64, B K=10.49 (ratio 0.85); unlike-species rule predicts the same; sign and C-only rivals predict 8.99 and 12.34 (ratio 1.00). Rule: ratio below 0.925 on both particles supports universal or unlike-species shortfall.",
+  "setup": {
+    "particles": [
+      {"species": "A", "pos": [4.25, 5.0], "vel": [0.0, 0.0]},
+      {"species": "B", "pos": [5.75, 5.0], "vel": [0.0, 0.0]}
+    ],
+    "duration": 0.4,
+    "sample_dt": 0.004
+  },
+  "instruments": ["tracker"]
+}

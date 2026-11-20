@@ -1,0 +1,15 @@
+{
+  "request_id": "2026-11-20/r3/lab-keystone/003",
+  "lab": "lab-keystone",
+  "account": "research",
+  "purpose": "C-C attractive pair at separation 1.5, at rest, T=0.4. Like-species with C, attractive. Universal shortfall predicts K=10.51 each (ratio 0.85); sign/unlike rivals predict 12.36 (ratio 1.00); a C-only rival predicts 10.51. Rule: ratio below 0.925 supports universal or C-only.",
+  "setup": {
+    "particles": [
+      {"species": "C", "pos": [4.25, 5.0], "vel": [0.0, 0.0]},
+      {"species": "C", "pos": [5.75, 5.0], "vel": [0.0, 0.0]}
+    ],
+    "duration": 0.4,
+    "sample_dt": 0.004
+  },
+  "instruments": ["tracker"]
+}

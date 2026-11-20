@@ -1,0 +1,19 @@
+-- 001: Shape of the C-factor between r=1.5 and r=3: A-C repulsive pair at separation 2.0, at rest, T=1. Fit K per par
+001 AC r0=2.00 T=1.0  pred K=(-7.630,-18.488)  fitted K=(-8.186,-19.593)  dK=(+7.3%,+6.0%)  rms(fit)=0.0501  rms(pred)=0.0527  error(pred)=0.00527
+-- 002: A-C repulsive pair at separation 2.5, at rest, T=1. Second point of the r-scan for A-C (r=1.5, 2.0, 2.5, 3.5).
+002 AC r0=2.50 T=1.0  pred K=(-7.893,-19.125)  fitted K=(-8.465,-20.775)  dK=(+7.2%,+8.6%)  rms(fit)=0.0502  rms(pred)=0.0526  error(pred)=0.00526
+-- 003: A-C repulsive pair at separation 3.5, at rest, T=2. Bridges the close-range scan (1.5 to 2.5) and the far-fiel
+003 AC r0=3.50 T=2.0  pred K=(-8.331,-20.188)  fitted K=(-9.078,-21.719)  dK=(+9.0%,+7.6%)  rms(fit)=0.0497  rms(pred)=0.0555  error(pred)=0.00555
+-- 004: Non-C attractive pair B-B at separation 2.5, at rest, T=1 (no collapse: pair closes to about 1.9). Tests wheth
+004 BB r0=2.50 T=1.0  pred K=(5.508,5.508)  fitted K=(5.964,5.983)  dK=(+8.3%,+8.6%)  rms(fit)=0.0509  rms(pred)=0.0516  error(pred)=0.00516
+-- 005: C-C attractive pair at separation 2.5, at rest, T=1 (no collapse: pair closes to about 1.25). Same-species C-C
+005 CC r0=2.50 T=1.0  pred K=(11.124,11.124)  fitted K=(12.582,12.593)  dK=(+13.1%,+13.2%)  rms(fit)=0.0512  rms(pred)=0.0655  error(pred)=0.00655
+-- 006: A-A attractive pair at separation 3.0, at rest, T=1 (pair closes to about 1.85). Non-C close-range point betwe
+006 AA r0=3.00 T=1.0  pred K=(16.740,16.740)  fitted K=(17.303,17.687)  dK=(+3.4%,+5.7%)  rms(fit)=0.0499  rms(pred)=0.0510  error(pred)=0.00510
+-- 007: C-C attractive pair at separation 9.0, at rest, T=6. Pre-registered test of the C-C factor at r=9: with S_C=0.
+007 CC r0=9.00 T=6.0  pred K=(8.430,8.430)  fitted K=(8.034,8.109)  dK=(-4.7%,-3.8%)  rms(fit)=0.0488  rms(pred)=0.0497  error(pred)=0.00497
+-- 007 alt (S_C=0.9475 prediction): 7.99 each
+-- P-0011 review runs (review account), lone particle, noise-free position = initial (at rest, no wall reached)
+008 A at (0.05,5.00) N=101  rms/coord=0.0484  mean=(-0.0059,+0.0018)  error=0.00484  bar=0.015  PASS
+009 B at (5.00,5.00) N=101  rms/coord=0.0504  mean=(-0.0031,-0.0017)  error=0.00504  bar=0.015  PASS
+010 C at (9.90,9.90) N=101  rms/coord=0.0503  mean=(-0.0033,+0.0007)  error=0.00503  bar=0.015  PASS

@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-20/r3/lab-c/013",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "BB at r0=2.5 at rest, T=1.0. Expected s in [0.97, 1.03]; falsifier: s < 0.94.",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          3.75,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          6.25,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.0005
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

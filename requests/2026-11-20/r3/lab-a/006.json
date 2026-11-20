@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-20/r3/lab-a/006",
+  "lab": "lab-a",
+  "account": "review",
+  "purpose": "Review of P-0010, bulk edge: C-C pair at rest, r0 = 9.0 (domain upper edge), T = 6 (domain limit). Tests the S_C = 0.9475 factor at r0 = 9 (keystone G(9) = 0.682, K_CC = 8.0). Non-colliding (predicted min separation 7.7).",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          0.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          9.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 6.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0010"
+}

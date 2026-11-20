@@ -1,0 +1,9 @@
+2026-11-20/r2/lab-c/002  min sep 0.040  judged 281.51088 (28151x predicted_error 0.01)
+    model error > 0.2 first at t=4.12  window t<= 3.960
+    best scale s = 0.9742  (curvature a=941.6); chi2/N by scale: 0.90:3.23  0.93:2.02  0.96:1.25  0.98:1.03  1.00:1.06  1.02:1.38  1.04:2.05  1.06:3.14  1.10:16.95
+2026-11-20/r2/lab-c/003  min sep 4.527  judged 0.00728 (1x predicted_error 0.01)
+    model error > 0.2 first at t=None  window t<= 6.000
+    best scale s = 0.9949  (curvature a=139.9); chi2/N by scale: 0.90:2.30  0.93:1.65  0.96:1.24  0.98:1.10  1.00:1.06  1.02:1.14  1.04:1.33  1.06:1.63  1.10:2.62
+2026-11-20/r2/lab-c/001  P-0009 judged 0.00714 (bar 0.03), per-coordinate rms 0.0505 (bar 0.07)
+    zero-force null per-coordinate rms (drift from t=0 positions): 0.1401  (samples at t=0 are part of the data)
+    events: 0

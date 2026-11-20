@@ -1,0 +1,15 @@
+{
+  "request_id": "2026-11-20/r3/lab-keystone/001",
+  "lab": "lab-keystone",
+  "account": "research",
+  "purpose": "A-A attractive pair at separation 1.5, at rest, T=0.4 (pair closes to about 0.9 by T=0.4). Attractive-sign test at close range. Pre-registered: universal G(1.5)=0.85 gives K=15.3 each; sign/species rivals give K=18.0 each. Rule: fitted ratio to 18.0 below 0.925 supports universal shortfall.",
+  "setup": {
+    "particles": [
+      {"species": "A", "pos": [4.25, 5.0], "vel": [0.0, 0.0]},
+      {"species": "A", "pos": [5.75, 5.0], "vel": [0.0, 0.0]}
+    ],
+    "duration": 0.4,
+    "sample_dt": 0.004
+  },
+  "instruments": ["tracker"]
+}

@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-20/r3/lab-c/003",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "AA at r0=3.0 at rest, T=2.0: P-0008's domain edge (2.95 to 5.05). Expected s in [0.97, 1.03]; falsifier: s < 0.95 (P-0008 coefficient wrong at its own domain edge).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

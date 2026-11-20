@@ -1,0 +1,28 @@
+{
+  "request_id": "2026-11-20/r3/lab-a/012",
+  "lab": "lab-a",
+  "account": "review",
+  "purpose": "Review of P-0011 (c2, species independence): lone C particle from (9.0, 2.0) with velocity (-1.2, 0.7), T = 10 (wall reflections). Residual sd per coordinate against the reflected-line model.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          9.0,
+          2.0
+        ],
+        "vel": [
+          -1.2,
+          0.7
+        ]
+      }
+    ],
+    "duration": 10.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0011"
+}

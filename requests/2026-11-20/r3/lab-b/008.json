@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-20/r3/lab-b/008",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "H13 generalisation to B-C at r0 = 9.0 (along x), at rest. Pre-registered: P-0010 with C-factor predicts K_B(C) = -3.94, K_C(B) = -6.85; without the C-factor -4.16, -7.22. 3% tolerance decides which.",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          0.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          9.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 4.0,
+    "sample_dt": 0.002
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

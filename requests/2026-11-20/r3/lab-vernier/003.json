@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-20/r3/lab-vernier/003",
+  "lab": "lab-vernier",
+  "account": "review",
+  "purpose": "Review of P-0010 (A-A at initial separation 6): A at (2.0, 5.0) and (8.0, 5.0), at rest, T=4, dt=0.01. The P-0010 radial factor G(6) was measured only for B-B, A-B and B-C at r0 = 6; this run tests A-A there.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 4.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0010"
+}

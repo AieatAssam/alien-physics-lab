@@ -1,0 +1,15 @@
+{
+  "request_id": "2026-11-20/r3/lab-keystone/005",
+  "lab": "lab-keystone",
+  "account": "research",
+  "purpose": "A-B attractive pair at separation 3.0, at rest, T=0.8 (closes to about 1.6 by T=0.8). Fills the untested A-B pair in the 2.5-3.5 range. Pre-registered: the separation-5 table with no radial factor gives K_A=8.99, K_B=12.34; rule: each fitted K within 4% of the table supports the no-factor claim for A-B.",
+  "setup": {
+    "particles": [
+      {"species": "A", "pos": [3.5, 5.0], "vel": [0.0, 0.0]},
+      {"species": "B", "pos": [6.5, 5.0], "vel": [0.0, 0.0]}
+    ],
+    "duration": 0.8,
+    "sample_dt": 0.004
+  },
+  "instruments": ["tracker"]
+}

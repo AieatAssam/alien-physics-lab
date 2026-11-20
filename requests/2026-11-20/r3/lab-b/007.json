@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-20/r3/lab-b/007",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Far-range shape K(r): A-A pair at rest, r0 = 12.0 on the diagonal. Pre-registered: linear G (P-0010) predicts K_AA(12) = 7.3; power-law continuation of lab-a's 6-9 slope predicts about 9.1. Measured fit decides; 3% tolerance per coefficient.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          0.757359,
+          0.757359
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          9.242641,
+          9.242641
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 6.0,
+    "sample_dt": 0.003
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

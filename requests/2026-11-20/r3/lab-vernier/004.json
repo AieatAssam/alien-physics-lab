@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-20/r3/lab-vernier/004",
+  "lab": "lab-vernier",
+  "account": "review",
+  "purpose": "Review of P-0003 (A-A attraction, claimed separation 3 to 6): diagonal replicate of r1/002 at separation 4.0, centred at (5,5), at rest, T=2, dt=0.01. Tests the narrowed domain r 4 to 6 on a different orientation.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.585786437626905,
+          3.585786437626905
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.414213562373095,
+          6.414213562373095
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0003"
+}

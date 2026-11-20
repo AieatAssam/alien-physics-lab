@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-20/r3/lab-c/009",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "AC at r0=2.5, repulsive, at rest, T=1.0. Expected s in [0.85, 0.97]; falsifier: s in [0.98, 1.02].",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.75,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          6.25,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.0005
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-20/r3/lab-b/009",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Far-range A-C pair at rest, r0 = 12.0 on the diagonal (repulsive). Pre-registered: P-0010 linear G predicts K_A(C) = -3.37, K_C(A) = -8.17; power-law continuation predicts about -4.4 and -11.2.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          0.757359,
+          0.757359
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          9.242641,
+          9.242641
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 6.0,
+    "sample_dt": 0.003
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

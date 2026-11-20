@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-20/r3/lab-b/006",
+  "lab": "lab-b",
+  "account": "review",
+  "purpose": "Edge of P-0010 c1 at its T=6 limit: B-C pair at rest, separation 6.0 (repulsive pair with C). Pre-registered by P-0010 shipped coefficients: K_B(C) = -5.54, K_C(B) = -9.61 (tolerance 3%). Shipped predict() unmodified.",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          2.87868,
+          2.87868
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          7.12132,
+          7.12132
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 6.0,
+    "sample_dt": 0.003
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0010"
+}

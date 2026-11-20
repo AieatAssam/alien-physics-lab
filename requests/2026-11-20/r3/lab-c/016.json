@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-20/r3/lab-c/016",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "CC at r0=3.0, at rest, T=2.0: P-0008 domain edge for this pair. Expected s in [0.97, 1.03]; falsifier: s < 0.94.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          3.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          6.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

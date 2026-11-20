@@ -1,0 +1,13 @@
+{
+ "request_id": "2026-11-20/r2/lab-a/001",
+ "P": 2.5,
+ "K_flat": 12.36,
+ "K_fit": 13.05,
+ "rel": 0.0558,
+ "rms_sep_fit": 0.06849,
+ "rms_sep_flat": 0.07277,
+ "sep_end_measured": 2.001641498870365,
+ "sep_end_flat": 2.090997238097977,
+ "tail_bias_meas_minus_flat": -0.04677,
+ "verdict": "inconclusive"
+}

@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-20/r3/lab-c/001",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Short-range AA at r0=1.0 at rest, T=0.3 (pre-collision window). Expected s in [0.55, 0.80] if the AA deficit keeps growing as r falls; falsifier: s >= 0.90 (deficit not monotone in r).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.3,
+    "sample_dt": 0.0002
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

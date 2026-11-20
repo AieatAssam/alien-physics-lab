@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-20/r3/lab-c/011",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "BC at r0=1.5, repulsive, at rest, T=0.4. Round-1 BC showed weaker repulsion. Expected s in [0.75, 0.95]; falsifier: s in [0.97, 1.03].",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          4.25,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.75,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.4,
+    "sample_dt": 0.0002
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

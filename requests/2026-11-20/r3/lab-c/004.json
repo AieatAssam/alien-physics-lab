@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-20/r3/lab-c/004",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "AA at r0=3.5 at rest, T=1.5, inside P-0008's domain. Expected s in [0.97, 1.03]; falsifier: s < 0.95 or > 1.05.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.25,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.75,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.5,
+    "sample_dt": 0.00075
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

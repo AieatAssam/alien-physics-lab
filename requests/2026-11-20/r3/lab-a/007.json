@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-20/r3/lab-a/007",
+  "lab": "lab-a",
+  "account": "review",
+  "purpose": "Review of P-0010, bulk: A-A pair at rest on the diagonal, r0 = 7.5, T = 6. Isotropy check at the claim's radial factor G(7.5) = 0.820 (K_AA = 14.8). Non-colliding (predicted min separation 2.8).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          1.5,
+          1.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.8033,
+          6.8033
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 6.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0010"
+}

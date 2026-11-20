@@ -1,0 +1,13 @@
+{
+  "paper_id": "P-0010",
+  "lab": "lab-b",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-19/r2/lab-b/003",
+    "2026-11-19/r2/lab-b/004",
+    "2026-11-19/r3/lab-b/002",
+    "2026-11-20/r1/lab-b/001",
+    "2026-11-18/r2/lab-b/021"
+  ],
+  "comment": "Five in-domain lab-b runs: two particles at rest, initial separation 6 to 9, T at most 4. Runs: 2026-11-19/r2/lab-b/003 (A-B, r0 9), 2026-11-19/r2/lab-b/004 (A-C, r0 7), 2026-11-19/r3/lab-b/002 (A-A, r0 9), 2026-11-20/r1/lab-b/001 (A-C, r0 9), 2026-11-18/r2/lab-b/021 (A-A, r0 6, T=2). Errors with the shipped predict(), unmodified: 0.00499, 0.00498, 0.00505, 0.00500, 0.00504. That is the tracker noise floor (rms about 0.05 per coordinate), and the bar is 3 x 0.01 = 0.03. Replicated for A-A, A-B and A-C pairs. Not tested by these runs: B-B, B-C and C-C at 6 to 9, which have no in-domain lab-b run. Caveat on the metric: the bar is loose. Scaling all pair coefficients by 0.9 or 1.1 raises the errors by at most 0.0005 on these runs (analysis/sens_p0010_2026-11-20.py). So the replication shows the claim is at noise level, and says its coefficients are good to roughly 10%, not better. My own earlier A-A estimate at r0 9 (about 12% below the claim's 12.3) changes the error by only 0.0001 to 0.0002 on 2026-11-19/r3/lab-b/002, so these runs do not separate the two."
+}

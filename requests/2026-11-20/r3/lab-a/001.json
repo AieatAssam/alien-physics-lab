@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-20/r3/lab-a/001",
+  "lab": "lab-a",
+  "account": "grant",
+  "purpose": "Grant main event, as proposed: close-range C-C pair at rest, separation 2.0, T = 0.5, centred at (5,5). Pre-registered flat-K test (analysis/pred_2026-11-20_CC_r2_grant.json: K = 12.36, predicted separation 1.370 at T = 0.5). Rule: fit K (P = 2.5 fixed) to the separation profile; the round-2 run at separation 3 gave K_fit = 13.05 (+5.6%, inconclusive).",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          4.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          6.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.5,
+    "sample_dt": 0.0005
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-20/r3/lab-c/012",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "CC at r0=2.5 at rest, T=1.0. Expected s in [0.90, 1.00] (CC at 1.5 gave 0.87); falsifier: s > 1.02 or s < 0.85.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          3.75,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          6.25,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.0005
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

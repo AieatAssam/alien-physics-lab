@@ -1,9 +1,21 @@
 {
   "paper_id": "P-0003",
   "lab": "lab-vernier",
-  "verdict": "falsified",
+  "verdict": "narrowed",
   "evidence": [
-    "2026-11-19/r1/lab-vernier/007"
+    "2026-11-20/r1/lab-vernier/002",
+    "2026-11-20/r1/lab-vernier/003",
+    "2026-11-20/r2/lab-vernier/007"
   ],
-  "comment": "Falsified in the claimed domain at separation 3.0 (two species-A particles at rest, T=2). Run 2026-11-19/r1/lab-vernier/007: the paper's predict() gives error 0.181 (RMSE 1.81 in chamber units), above the bar 3 x 0.01 = 0.03. Before close approach the paper matches at noise level: error 0.0049 over t <= 1.1 (tracker sd 0.05 per coordinate). The measured pair closes to separation 0.173 at t = 1.24, then separates again (3.13 at t = 1.5, 5.04 at t = 1.75). The paper's power law with no core does not describe that passage: its rms error is 1.8 to 4.3 for t in 1.25 to 2.0. This is my only two-particle A-A run in the claimed domain. My runs at separations 4 and 6 are filed as 2026-11-20/r1/lab-vernier/002 and 003 (review account). They decide whether a narrowed domain (r 4 to 6) can be supported. I do not propose one yet. Lab-a's separation-4 and separation-6 runs are not cited here."
+  "proposed_domain": {
+    "species": [
+      "A"
+    ],
+    "r_range": [
+      4.0,
+      6.0
+    ],
+    "max_particles": 2
+  },
+  "comment": "Narrowed to separation 4 to 6 (proposed). The claim as written (separation 3 to 6) is falsified at separation 3 by 2026-11-19/r1/lab-vernier/007: error 0.181, two A particles at rest, T = 2; the pair closes to about 0.17 at t = 1.24 and the paper's power law with no core misses the passage. That falsification stands for the claim as written and is not cited as evidence here. Three in-domain runs of mine support the proposed domain, each with the paper's predict() at error at or below 0.03: 2026-11-20/r1/lab-vernier/002 (separation 4, error 0.00532), 003 (separation 6, error 0.00523) and r2/007 (separation 5, error 0.00493). Caveats: (a) separation 6 constrains K only weakly (17.0 to 18.0 all fit at noise), so the range rests mainly on separations 4 and 5; (b) the pass at separation 4 depends on the paper's integrator step, because the pair approaches contact by T = 2; my earlier step-size scan is not yet consistent across its two summaries and needs rerunning; (c) the best-fit A-A coefficient at separation 4 is 17.70, and K = 18.0 is excluded there with the paper's step. Bar check: zero-force errors are 0.049 (r1/002, separation 4), 0.023 (r2/007, separation 5) and 0.014 (r1/003, separation 6). So separation 6 passes the 0.03 bar with no force at all and does not test K. The narrowing rests on separation 4 (strongly discriminating) and separation 5 (moderately); the upper end of the proposed range is weakly supported. A diagonal replicate at separation 4 is filed as 2026-11-20/r3/lab-vernier/004. Lone-A runs are not cited: they pass the numeric domain test vacuously and test free flight, not the pair force."
 }

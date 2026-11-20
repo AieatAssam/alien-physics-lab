@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-20/r3/lab-vernier/001",
+  "lab": "lab-vernier",
+  "account": "research",
+  "purpose": "Close-range B-C pair at rest, separation 1.0, T=0.6, 45 degrees. Pre-registered from r2/010 (K_BC = -4.32, K_CB = -7.31, P = 2.5). Prediction: error <= 0.015 with those constants. Exploratory for close-BC.",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          4.5,
+          4.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.20710678,
+          5.20710678
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.6,
+    "sample_dt": 0.003
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

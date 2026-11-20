@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-20/r3/lab-a/003",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "Close-range A-A pair at rest, separation 1.0, T = 0.15, centred at (5,5). First data at r < 1.5 for A-A. Pre-registered in analysis/pred_AA_r1p0_2026-11-20.py: flat K = 18 (sep(T) 0.480) vs trend K in [14,15.6] (sep(T) 0.571-0.626). Rule: fit K (P = 2.5) on the separation profile. Repeat run 004 follows.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.15,
+    "sample_dt": 0.0005
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

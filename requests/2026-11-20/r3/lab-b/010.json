@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-20/r3/lab-b/010",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Far-range C-C pair at rest, r0 = 12.0 on the diagonal. Pre-registered: P-0010 linear G predicts K_C(C) = 4.75; power-law continuation of the lab-a C-C 9 value predicts about 6.1.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          0.757359,
+          0.757359
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          9.242641,
+          9.242641
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 6.0,
+    "sample_dt": 0.003
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

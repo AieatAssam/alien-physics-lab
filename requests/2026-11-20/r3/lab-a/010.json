@@ -1,0 +1,28 @@
+{
+  "request_id": "2026-11-20/r3/lab-a/010",
+  "lab": "lab-a",
+  "account": "review",
+  "purpose": "Review of P-0011 (c3, no wall clipping): lone A particle at rest at (0.05, 5.0), T = 10. Tests whether the tracker reports x < 0 with zero-mean residual and sd near 0.05 per coordinate.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          0.05,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 10.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0011"
+}

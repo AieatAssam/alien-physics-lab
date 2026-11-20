@@ -16,7 +16,20 @@
     "2026-11-19/r2/lab-c/005",
     "2026-11-19/r2/lab-c/003",
     "2026-11-19/r1/lab-c/012",
-    "2026-11-19/r1/lab-c/010"
+    "2026-11-19/r1/lab-c/010",
+    "2026-11-20/r2/lab-c/002",
+    "2026-11-20/r2/lab-c/003"
   ],
-  "comment": "Narrowed (lab-c, round 2). Judged errors cannot separate this claim from noise: every in-domain run of mine (two particles at rest, r0 6-9, T<=6) scores 0.0066-0.0074 against a noise floor of 0.0071, so the replication bar is met by all of them. A per-run fit of one coupling scale s (K multiplied by s, chi-square against the tracker data at sigma 0.05 per coordinate; analysis/coupling_scale_scan.py) is more informative. Non-A-A pairs agree with P-0010 to within about 3%: AB 1.00 (r0 6), 0.99 (7), 0.95 (9); AC 1.02 (6), 1.00 (7), 1.05 +/- 0.02 (8); BB 0.98 (6), 0.96 (7); BC 1.02 (6), 0.99 (7); CC 1.01 (6), 1.02 (7), 1.00 (9). A-A is 2-4% low: pooled 0.964 +/- 0.003 at r0 6 (two runs, outside the claim's 3% tolerance); 0.977 +/- 0.005 at 7; 0.959 +/- 0.011 and 0.949 +/- 0.018 at 8; 0.963 +/- 0.013 and 0.981 +/- 0.004 at 9. One A-A run at 9 (T=3, 0.869 +/- 0.027) is about 4 sigma from the T=6 run at 9, which is unresolved. A-A is the only channel that fails the claim's own tolerance. Recommend excluding the A-A pair (the domain schema cannot express a pair-level exclusion) or refitting the A-A factor. Caveats: the fit assumes K constant over each run and sigma 0.05; chi-square per point is 1.0-1.08, so the errors may be 2-5% too small. Two long A-A runs at r0 6 and 8 (T=6, the model's limit) are on the review account (2026-11-20/r2/lab-c/002, 003); the verdict will be finalized from them."
+  "proposed_domain": {
+    "species": [
+      "B",
+      "C"
+    ],
+    "r_range": [
+      6.0,
+      9.0
+    ],
+    "max_particles": 2
+  },
+  "comment": "Narrowed (lab-c, round 3; finalises the round-2 interim review). Judged error is at the noise floor for the long A-A runs: 2026-11-20/r2/lab-c/003 (A-A at r0 8, T=6) scores 0.00728. The judged metric cannot see a few-percent coupling error, so I fitted one coupling scale s (P-0010's G0 and G1 multiplied by s; chi-square at sigma 0.05 per coordinate; out/labs/lab-c/analysis/review_runs_2026-11-20.py). A-A at r0 8, full run to T=6: s = 0.995 (chi2/N 1.06 at s=1). A-A at r0 6, window before closest approach (t <= 3.96): s = 0.974. My earlier A-A values at 8 (0.95 +/- 0.01-0.02) now sit about 2-3 sigma from 0.995, so I no longer claim an A-A deficit at 8. A-A at 6 remains about 3% too strong on the paper's coefficient. Correction to my round-2 comment: I wrote that A-A is 2-4% low. The sign was wrong. s below 1 means the paper's coefficient is too large. Domain failure (new): 2026-11-20/r2/lab-c/002 (A-A at r0 6, at rest, T=6) approaches to a minimum separation of 0.04 near t = 4. The model's error passes 0.2 at t = 4.12 (judged 281). The claim states no closest-approach limit, so this run is inside its stated domain and the model fails it. Non-A-A pairs agree with P-0010 to within about 3% (round 2). Proposed narrowing: species B and C only, r 6-9, max 2. This is conservative: AB and AC also scored within about 5%. The statement's T <= 6 is wrong for A-A at r0 6, which collides before t = 4; it needs a closest-approach condition that the schema cannot express."
 }

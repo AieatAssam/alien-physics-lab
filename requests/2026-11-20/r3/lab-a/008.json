@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-20/r3/lab-a/008",
+  "lab": "lab-a",
+  "account": "review",
+  "purpose": "Review of P-0010, bulk lower edge: B-B pair at rest, r0 = 6.0 (domain lower edge), T = 6. Tests the radial factor G(6) = 0.958 for an own-species pair with no C factor (K_BB = 5.86). Non-colliding (predicted min separation 2.9).",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          2.0,
+          6.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          8.0,
+          6.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 6.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0010"
+}

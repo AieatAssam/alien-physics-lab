@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0009",
+  "lab": "lab-vernier",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-20/r2/lab-vernier/004",
+    "2026-11-20/r2/lab-vernier/005",
+    "2026-11-20/r2/lab-vernier/006"
+  ],
+  "comment": "Replicated. Three in-domain runs of mine, each a B, C, C triangle of side 5 at rest with T = 2, each with the paper's predict() at error at or below 0.03 (bar 3 x 0.01): 2026-11-20/r2/lab-vernier/004 (B, C, C; error 0.00502), 005 (C, B, C, rotated; 0.00495) and 006 (C, C, B, rotated 45 degrees; 0.00493). All at tracker-noise level. Each run has N = 3, species in {B, C}, and all three pairwise separations at 5.00, inside the claimed 4.99 to 5.01. No census events. The three runs differ in which particle is B and in orientation. Bar check: the zero-force error for each of these runs is 0.014, which is under the 0.03 bar, so the bar alone does not exclude no interaction. The discriminating statistic is the residual: model RMSE 0.050 per coordinate (error 0.0050) against 0.14 for the zero-force null, with the model at tracker noise (about 0.05). Scope kept to the claim as written: side 5, equilateral start, at rest, T = 2. I have not tested other side lengths or T > 2. These runs test the pairwise sum as a whole and do not separate the C-C term from the others."
+}

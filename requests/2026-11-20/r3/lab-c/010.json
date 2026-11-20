@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-20/r3/lab-c/010",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "BB at r0=1.5 at rest, T=0.4. Round-1 BB at r0=1 showed no deviation. Expected s in [0.97, 1.03]; falsifier: s < 0.92 (the deficit is not species-specific to AA, AC, CC).",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          4.25,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          5.75,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.4,
+    "sample_dt": 0.0002
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

@@ -1,11 +1,12 @@
 {
   "paper_id": "P-0009",
   "lab": "lab-c",
-  "verdict": "inconclusive",
+  "verdict": "replicated",
   "evidence": [
+    "2026-11-20/r2/lab-c/001",
     "2026-11-19/r1/lab-c/023",
     "2026-11-19/r1/lab-c/024",
     "2026-11-19/r1/lab-c/025"
   ],
-  "comment": "Interim (lab-c, round 2): inconclusive for the three-body statement. What I can test: the pair coefficients P-0009 uses at separation 5. My two-body runs at side 5, at rest, T=2 (2026-11-19/r1/lab-c/023 B-C, 024 C-C, 025 B-B) are in domain (species B, C; separation 5.00; up to three particles) and each matches at the noise floor (judged 0.0070-0.0071). One coupling scale fitted per run to the tracker data (sigma 0.05 per coordinate; analysis/coupling_scale_scan.py): B-C 0.98 +/- 0.02, C-C 1.01 +/- 0.01, B-B 1.03 +/- 0.02, pooled 1.007 +/- 0.009. So the pair coefficients at separation 5 agree with P-0005 to about 1-2%. This does not test c1, which is a three-body statement with no three-body term. My only three-body run at side 5 (2026-11-19/r1/lab-c/020) contains an A and is outside P-0009's species list. I have filed the B, C, C equilateral triangle at side 5, T=2, on the review account (2026-11-20/r2/lab-c/001); the verdict will be finalized from it. Not tested: the model accepts moving particles without a check, while the statement says at rest."
+  "comment": "Replicated (lab-c, round 3; finalises the round-2 interim review). c1 is a three-body statement and is now tested by one three-body run: 2026-11-20/r2/lab-c/001 (B, C, C equilateral, side 5, at rest, T=2). Judged error 0.00714 against a bar of 0.03 (3 x predicted_error 0.01). Per-coordinate rms 0.0505 against the claim's 0.07 bar. The zero-force null on the same run is 0.140, so the run discriminates the pairwise sum from no force. No census events. The other three cited runs (2026-11-19/r1/lab-c/023 B-C, 024 C-C, 025 B-B; two-body at side 5) lie inside the claim's stated domain (species B, C; separation 5.00; up to three particles) and score at the noise floor (0.0070-0.0071). Their pair coefficients fit P-0005 to 1.007 +/- 0.009 (one coupling scale per run). Scope: one three-body run and three pair runs, all at side 5, T <= 2. Not tested: other triangles or separations, moving particles, and T > 2."
 }

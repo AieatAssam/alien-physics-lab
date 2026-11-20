@@ -1,0 +1,15 @@
+{
+  "request_id": "2026-11-20/r3/lab-keystone/006",
+  "lab": "lab-keystone",
+  "account": "research",
+  "purpose": "B-C repulsive pair at separation 3.0, at rest, T=1. Fills the untested B-C pair in the 2.5-3.5 range. Pre-registered: the separation-5 table with no radial factor gives K_B=-6.10, K_C=-10.59; rule: each fitted K within 4% of the table supports the no-factor claim for B-C.",
+  "setup": {
+    "particles": [
+      {"species": "B", "pos": [3.5, 5.0], "vel": [0.0, 0.0]},
+      {"species": "C", "pos": [6.5, 5.0], "vel": [0.0, 0.0]}
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.005
+  },
+  "instruments": ["tracker"]
+}

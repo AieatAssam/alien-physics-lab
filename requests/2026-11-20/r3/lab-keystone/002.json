@@ -1,0 +1,15 @@
+{
+  "request_id": "2026-11-20/r3/lab-keystone/002",
+  "lab": "lab-keystone",
+  "account": "research",
+  "purpose": "B-B attractive pair at separation 1.5, at rest, T=0.4. Like-species, no C, attractive: separates universal shortfall (predicted K=5.20 each, ratio 0.85) from sign/unlike/C-only rivals (K=6.12, ratio 1.00). Rule: ratio below 0.925 supports universal.",
+  "setup": {
+    "particles": [
+      {"species": "B", "pos": [4.25, 5.0], "vel": [0.0, 0.0]},
+      {"species": "B", "pos": [5.75, 5.0], "vel": [0.0, 0.0]}
+    ],
+    "duration": 0.4,
+    "sample_dt": 0.004
+  },
+  "instruments": ["tracker"]
+}

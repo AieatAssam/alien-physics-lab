@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-20/r3/lab-c/017",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "AA at r0=7.0 at rest, T=3.0 (before closest approach; P-0010 approach at r0 6 is near t=4). Scale s relative to P-0010 (G0, G1 times s). Expected s in [0.96, 1.02]; falsifier: s outside [0.93, 1.05].",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          1.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 3.0,
+    "sample_dt": 0.0015
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

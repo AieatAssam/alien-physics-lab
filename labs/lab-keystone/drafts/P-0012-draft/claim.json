@@ -1,0 +1,22 @@
+{
+  "paper_id": "P-0012",
+  "lab": "lab-keystone",
+  "title": "Two particles at separation 2.5 to 3.5: the separation-5 pair table needs no radial factor",
+  "claims": [
+    {
+      "claim_id": "P-0012-c1",
+      "statement": "Two particles at rest, any pair of species in A, B, C, initial separation 2.5 to 3.5, T up to 2: the pure r^-2.5 law with the P-0005 separation-5 coefficients, with no radial factor, reproduces the tracker positions with error at most 0.013 (RMSE/10). Five runs: 2026-11-20/r2/lab-keystone/002 (A-C, 2.5), 003 (A-C, 3.5, T=2), 004 (B-B, 2.5), 005 (C-C, 2.5), 006 (A-A, 3.0). Fitted coefficients lie within 4% of the table.",
+      "domain": {"species": ["A", "B", "C"], "r_range": [2.5, 3.5], "max_particles": 2},
+      "predicted_error": 0.013,
+      "evidence": [
+        "2026-11-20/r2/lab-keystone/002",
+        "2026-11-20/r2/lab-keystone/003",
+        "2026-11-20/r2/lab-keystone/004",
+        "2026-11-20/r2/lab-keystone/005",
+        "2026-11-20/r2/lab-keystone/006"
+      ]
+    }
+  ],
+  "cites": ["P-0005"],
+  "supersedes": []
+}
