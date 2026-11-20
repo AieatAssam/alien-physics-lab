@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-20/r2/lab-keystone/002",
+  "lab": "lab-keystone",
+  "account": "research",
+  "purpose": "A-C repulsive pair at separation 2.5, at rest, T=1. Second point of the r-scan for A-C (r=1.5, 2.0, 2.5, 3.5).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.75,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          6.25,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

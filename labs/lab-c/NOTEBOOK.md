@@ -1,123 +1,141 @@
 # LAB-C notebook (Nullius)
 
-Last updated: 2026-11-20, round 1. Earlier sessions condensed under "History" at the end.
+Last updated: 2026-11-20, round 2. Earlier rounds condensed under "History".
 
 ## Status at a glance
-- Accepted papers: 0. Scoreboard: 2 unsupported reviews (2026-11-18: my `replicated` verdicts on P-0001 and P-0002). The unsupported-review cause is not in my notes; the event log is the record. No paper of mine is currently submitted.
-- This session: inventoried all my in-domain runs against P-0008 (lab-b's paper, the only one awaiting my review). Found that every in-domain run at rest with pairs kept above about 1.5 apart matches P-0008's law at tracker noise. Failures are all close-approach or long-duration runs.
-- Interim reviews written: P-0008 (`inconclusive`), P-0007 (`inconclusive`, revised from round-3 interim after its round-3 replicate passed P-0007's own rule).
-- Requests filed this round: 6 research (close-range pairs, bounty-relevant), 6 review-account (P-0008 c1/c2 interior tests, P-0007 c2 interior replicates). Grant proposal filed (16-body lattice).
-- H15 is now supported at tracker noise (see Hypotheses). The 0.15 per-sample falsifier that fired three times was miscalibrated (my error).
+- Accepted papers: 0. Unsupported reviews on the scoreboard: 2 (2026-11-18, my `replicated` verdicts on P-0001 and P-0002). Those are the reviews to avoid repeating: a `replicated` verdict needs the judge's bar met by runs I cite, and I now check that before writing it.
+- Papers under my review: P-0007 (narrowed), P-0008 (replicated), P-0009 (inconclusive), P-0010 (narrowed), P-0011 (replicated). No paper of mine is submitted.
+- Round 1 results (close-range pairs; P-0008 and P-0007 replicates) are in and analysed below.
+- Round 2: 7 requests filed (3 review, 4 research). Vote cast for lab-a (Plumbline, close-CC pair at r = 2).
+- Main new finding: the P-0008 power law does not hold at separations below about 2. The round-1 r0 = 1.0 runs and the existing r0 = 2.0 runs (2026-11-17 and 2026-11-18) both depart from it, in the same direction for attractive pairs. Not yet established; the r0 = 1.5 and 2.5 requests test it.
+- Main review finding: P-0010's A-A coefficient is 2-4% high per my fits, and P-0010's judged metric cannot see this. P-0007's model refuses its own claimed range.
 
-## Judging rules I now apply (my own reading, to keep my thresholds honest)
-- Judged error = RMSE / 10 (chamber side). Replication bar = 3 x predicted_error. For P-0008 and P-0007 that is 0.21 normalized = 2.1 absolute. Noise is 0.05 absolute (0.005 judged). A bar 40 times the noise cannot separate a correct law from one that misses by a unit. I raise this in the reviews.
-- I write all my own thresholds in absolute units (position rms per coordinate), and convert to judged units only when comparing to the judge's bars.
-- The judged domain checks species, particle count and initial pairwise separations only. It does NOT check duration, velocity, or closest approach. Papers whose statements say "T <= 1, at rest" can be judged on runs at T=10 or on runs that collide. I cite runs honestly against the statement scope and say so in the comment.
-- Endpoint runs (initial separation exactly 3.0 or 5.0) are at the boundary of a closed range. Floating-point distances can land just outside. I do not rely on them as judged evidence; I cite interior runs and mention endpoint runs in comments only.
+## Judging rules (corrected this round)
+- Judged error (editor, tools/editor.py) = sqrt(mean over particle-samples of |dpos|^2) / 10. With tracker noise 0.05 per coordinate, the noise floor is sqrt(2) x 0.05 / 10 = **0.0071**. My earlier note of 0.005 was wrong; it was per-coordinate RMSE divided by 10.
+- Replication bar = 3 x predicted_error, counted over cited in-domain runs that the paper's model.py scores. A run the model refuses (ValueError) does not count, however it matches. Check this before citing (P-0007's model refused my interior runs).
+- The judged domain checks species, particle count, and initial pairwise separations. It does not check duration (except where a model raises), velocity, or closest approach. I say so in every review.
+- Power check: the judged error cannot resolve a few-percent coupling error at this noise. For that I use a per-run coupling-scale fit (chi-square at sigma 0.05 per coordinate): `analysis/coupling_scale_scan.py`. Its per-run uncertainties are probably 2-5% too small (chi2/N 1.0-1.08).
+- Pre-registered falsifiers on single samples are miscalibrated: a separation has noise 0.071, so |residual| > 0.1 on any sample fires about 16% of the time by chance. Use window means against noise. This is the second time I have made this error (H15 in round 3, the round-1 close-range falsifier this round). The round-2 short-range falsifier is written as a window mean.
 
 ## Results this round
 
-### Inventory of my in-domain runs against P-0008 (`analysis/p0008_inventory.py`, output `analysis/p0008_inventory_2026-11-20.txt`)
-31 ok runs of mine fall inside P-0008's judged domain (species A/B/C, 2 to 4 bodies, all initial separations in [3,5]). Scored with P-0008's model.py unmodified:
+### 1. Round-1 close-range pairs (2026-11-20/r1/lab-c/001-006, r0 = 1.0 at rest, T = 0.2, dt 0.005)
+Predicted with the P-0008 power law integrated past r = 2.95 (`analysis/close_prediction.json`; `analysis/close_range_check_2026-11-20.py`).
 
-| class | runs | judged error (rms/10) | reading |
-|---|---|---|---|
-| 2-body, separation 4.0, at rest or moving, T 0.8 to 1.5 | 2026-11-17/r3/003; 2026-11-18/r1/004, 005, 007, 008; 2026-11-19/r3/003, 004 | 0.0050 to 0.0050 (all) | at noise. 2026-11-19/r3/004 has vy=2 and matches too |
-| 2-body, separation 3.0 or 5.0 (endpoints), T 1.0 to 2.0 | 2026-11-19/r1/001-006, 023-025 | 0.0049 to 0.0051 | at noise, including BB, CC, BC, AC |
-| 3-body, endpoints 3.0 (ABC, T=1.5) | 2026-11-19/r2/lab-c/002, r3/002 | 0.0497, 0.0508 | at noise (rms per coordinate) |
-| 3-body, endpoint 5.0 (ABC T=2; AAA T=1.5) | 2026-11-19/r1/lab-c/020, r3/lab-c/001 | 0.0507, 0.0486 | at noise |
-| 2-body, separation 3.0, at rest, T=2 (contact at t about 1.25) | 2026-11-18/r2/001; 2026-11-19/r1/021, 022 | 0.13 | misses by 1.3 absolute; minimum measured separation 0.01 to 0.05 |
-| 2-body, T=10, moving or at contact | 2026-11-17/r1/003 (AA at 4.47, moving; minimum not checked), r2/002 (AB at 4.47, moving), r2/003 (BB, moving), r2/004 (AA, moving), r2/009 (CC, moving), r2/001 (AA at 3.0, at rest) | 0.27 to 0.49 (r2/001: 4443) | r2/002, 003, 004, 009 and r2/001 approach below 1 (minima 0.02 to 0.81) |
-| 2-body AC, T=10 | 2026-11-17/r2/lab-c/008 | 0.0085 | matches; minimum separation 2.73 |
+| run | pair | measured min sep | predicted min sep | measured minus predicted, mid-run |
+|---|---|---|---|---|
+| 001 | AA | 0.42 | 0.04 (then rebound to 2.5 by t=0.2) | +0.05 to +0.3 from t=0.10; no collision observed |
+| 002 | AB | 0.66 | 0.44 | +0.05 to +0.25 from t=0.10 |
+| 003 | AC | 0.90 | 1.00 | -0.04 to -0.15 (repulsion weaker than predicted) |
+| 004 | BB | 0.73 | 0.72 | about 0 |
+| 005 | BC | 0.84 | 1.00 | -0.02 to -0.07 (repulsion weaker) |
+| 006 | CC | 0.52 | 0.28 | +0.02 to +0.29 from t=0.10 |
 
-Contact diagnosis (`analysis/p0008_failures.py`): every failure has a measured minimum pair separation at or below 0.8. The one run that stayed above 1.4 (2026-11-19/r1/lab-c/001, A-A at 3, minimum 1.43 at t=0.99) matches at noise in its first window and drifts to rms 0.069 in the second window, as the pair approaches 1.4. That is the first hint of a deviation near r of 1.4. It is not established.
+Reading. From t about 0.10 (separation about 0.8), attractive pairs separate less than the power law predicts. AA is the clearest: it never collapses to contact (measured separation stays 0.4-0.7 for t = 0.15-0.2) where the law predicts a collision at t about 0.175 and a rebound. Repulsive pairs (AC, BC) also separate less. BB shows no deviation at this resolution.
 
-Note on the scoring: the judge's replication bar (0.21 judged) is easy for any run that does not collide. A collision run with error 1.3 absolute still counts as "in bar" by the judge's rule. So the bar is not evidence of the law at contact.
+Pre-registered falsifier (any sample |diff| > 0.1): it fires on most samples, as expected from the noise (see judging rules). I count it as miscalibrated. The window-mean reading above is the usable result.
 
-### P-0007 c2 rule on 2026-11-19/r3/lab-c/001 (`analysis/p0007_c2_check.py`)
-Three A at rest, equilateral, side 5.0, T=1.5, 51 samples.
-- Residual rms per particle (vs P-0008 law, A-A = 18.0): 0.0529, 0.0504, 0.0417 per coordinate. Overall 0.0486. Rule: <= 0.07. Pass.
-- Zero-force null rms per particle: 0.216, 0.222, 0.219. Rule: > 0.09. Pass.
-- Rule supported. The side-5 endpoint is the only 3-body A run I have at this geometry. Two interior replicates are filed (below).
+### 2. Round-1 review replicates for P-0008 and P-0007 (judged; `analysis/inventory_2026-11-20.txt`)
+All of these are in P-0008's domain and score at the noise floor (0.0070-0.0073):
+- 007 (A, B, C, A at separations 3.2-4.97, T=1.0), 008 (B, B, C, C, 3.5 square, T=1.0), 009 (A, A, B, C, 3.5 square, T=1.0): four bodies, min separations 2.54, 2.99, 2.51.
+- 010 (A, B, C equilateral 4.0, T=2.0, min 2.79), 011 (A, A, A, 4.5, T=1.5, min 2.79), 012 (A, A, A, 4.0, T=1.0, min 2.98).
+- P-0007's model.py raises for 011 and 012 (it accepts only separations 5.0 +/- 0.05). So they do not count against P-0007. See the P-0007 review.
 
-### H15 side-3 triangle (A-B-C, equilateral, side 3.0, T=1.5)
-- 2026-11-19/r2/lab-c/002: residual rms 0.0497 (P-0008 law). Round-2 pre-registered prediction (from analysis/side3_prediction.json) was written before the run.
-- 2026-11-19/r3/lab-c/002: replicate, residual rms 0.0508.
-- The 0.15 per-sample falsifier fired 3 times in 900 values (t=0.53, 0.68, 1.23). At sigma 0.0506 that is expected by chance (about 2.7). My rule was miscalibrated; the physics is not.
-- Verdict: H15 supported at tracker noise for A-B-C at side 3.0 down to pair separations near 1.45 (round-2 002 late window).
+### 3. Round-2 short-range check on existing runs (`analysis/r2_pair_check.py`)
+Runs at r0 = 2.0, T = 0.4 at rest (2026-11-17/r3/lab-c/001 AA, 006 AB, 007 AC, 008 BB, 009 BC, 010 CC; 2026-11-18/r1/lab-c/009 AA at rest) and moving AA (2026-11-18/r1/lab-c/002, 003). The P-0008 integrator was run without its domain check.
+- For the first about 0.2 time units, residual rms is at the noise (0.070-0.080 vs 0.071) for all pairs.
+- Late in the run (last 30% of samples), approximate window means: AA +0.05 to +0.1 (measured separation larger, so weaker attraction); AC and BC -0.03 to -0.07 (weaker repulsion); AB slightly positive; BB and CC near zero.
+- Read at face value, this is 2-4 sigma per window, with windows correlated. Suggestive, not established. The same direction as the r0 = 1.0 runs, at about half the size.
+
+### 4. P-0010 coupling-scale fit (`analysis/coupling_scale_scan.py`)
+Per-run scale s such that the P-0010 coupling is multiplied by s (tracker data, sigma 0.05 per coordinate, parabola through five scales):
+- Non-A-A pairs: within about 3% of P-0010. AB 1.00 (6), 0.99 (7), 0.95 (9). AC 1.02 (6), 1.00 (7), 1.05 +/- 0.02 (8). BB 0.98 (6), 0.96 (7). BC 1.02 (6), 0.99 (7). CC 1.01 (6), 1.02 (7), 1.00 (9).
+- A-A: 0.964 +/- 0.003 at r0 6 (two runs: 0.961 +/- 0.004 and 0.971 +/- 0.006), 0.977 +/- 0.005 at 7, 0.959 +/- 0.011 and 0.949 +/- 0.018 at 8, and at 9: 0.963 +/- 0.013 (T=4), 0.981 +/- 0.004 (T=6), 0.869 +/- 0.027 (T=3). The T=3 run at 9 disagrees with the T=6 run at 9 by about 4 sigma, unresolved.
+- Implied K_AA(7) = 15.59 x 0.977 = 15.2, and K_AA(6) = 17.24 x 0.964 = 16.6. These agree with my own earlier A-A estimates (K(6) 16.7, K(7) 15.2-15.5, K(8) 13.2 in the H11 notes). The discrepancy at 8 is the largest (13.9 claimed vs about 13.3 fitted).
+
+### 5. P-0009 coupling-scale fit (2-body B and C at 5; `analysis/coupling_scale_scan.py`)
+B-C 0.98 +/- 0.02, C-C 1.01 +/- 0.01, B-B 1.03 +/- 0.02; pooled 1.007 +/- 0.009. Agrees with P-0005 coefficients. This does not test the three-body claim.
+
+### 6. Lone-particle noise (P-0011 check; `analysis/lone_noise_check_2026-11-20.py`)
+Six lone runs (A, B, C; T 10-100; moving, free flight). Pooled sd per coordinate 0.0507 over 16,400 residuals, kurtosis 2.99, mean +0.0008. By species: A 0.0512, C 0.0503, B 0.0479 (one short run). The claim says 0.050; 0.0507 +/- 0.0003 is about 2 sigma high.
+
+## Reviews this round (out/reviews/)
+- **P-0008 (lab-b): `replicated`.** Judge bar met: 007, 008, 009 for c1 (four bodies) and 010, 011, 012 for c2 (three bodies), all at noise. Comment states scope: the four-body runs are not the 3 x 4 rectangle; T is 1.0 to 2.0; contact breaks the law (minimum separation below about 1.5); the statement should add a closest-approach limit.
+- **P-0007 (lab-a): `narrowed`.** The model.py accepts only separations 5.0 +/- 0.05, while the claims state 3.75-5.0 (c2) and 4.5-5.5 (c1). My interior runs are refused by the model. Proposed domain: species A, B, C; separations 4.95-5.05; max 3 particles. Endpoint run 2026-11-19/r3/lab-c/001 is accepted and matches.
+- **P-0009 (lab-a): `inconclusive`.** Pair coefficients at separation 5 check out (1.007 +/- 0.009), but c1 is a three-body claim and my runs are two-body. The B, C, C triangle at side 5 is filed (2026-11-20/r2/lab-c/001) to test it.
+- **P-0010 (lab-keystone): `narrowed`.** Every in-domain run meets the judge bar (noise-level judged error), so `replicated` would be a verdict the judge accepts but my fits do not support. A-A is 2-4% high and outside the claim's own 3% tolerance at r0 6 (pooled 0.964 +/- 0.003). Recommend excluding A-A. Two long A-A runs filed (2026-11-20/r2/lab-c/002, 003).
+- **P-0011 (lab-vernier): `replicated` (c1, c2).** Six in-domain runs, all at noise. My own sd check gives 0.0507. c3 (walls) not tested by me, and the comment says so.
+
+Vote (out/grants/2026-11-20/votes/lab-c.json): **lab-a** (Plumbline, close-CC pair at r = 2). Reason: a cheap, pre-registered pair test; the round-1 close-range data show CC departing from K/r^2.5 at short range, so this is where the law's edge is.
+
+Caveat on the vote (my judgment, not tested): Icarus's and Vernier's 16-body proposals at T=10-20 would likely run into contact, so a failure could not be read as a many-body term. Keystone's checkerboard uses the separation-5 coefficients at spacing 3; my notes already show K(3) 17.6 vs K(5) 18.0 for A-A, a 2% r-dependence that the test would have to absorb. My own proposal (16 bodies, T=0.4) is not voted for (own lab).
 
 ## Hypotheses (status)
-- **H1** lone-particle free flight with specular walls: supported (A, B, C; speeds to 4.95; durations to 100). Also in lab-b P-0002 review.
+- **H1** lone-particle free flight with specular walls: supported (A, B, C; T to 100). Re-checked this round: the lone runs also fit at noise with velocities.
 - **H2** free flight species-independent: supported.
-- **H3** no pair interaction at r >= 2: falsified (pairs interact at r=3-9).
-- **H5** monotone attractive A-A static force, r = 1-9: supported as monotone. Fixed-P form not adequate across r (see H11).
-- **H6** pair force species-independent as accelerations: falsified. Reinterpreted as mass-scaled accelerations (H10).
-- **H7** product form F proportional to q_i q_j / r^2: not tested cleanly. C-C fails the coupling product at r=5 by 15-19% (P-0005 c4). P-0006 shows C-C at 7 and 9 matches A-A, so the C-C deficit is in the r=5 coefficient, not the distance dependence.
-- **H8** velocity-dependent pair force: partially tested. 2026-11-19/r3/lab-c/004 (A-A at 4, vy=2 each) matches the velocity-independent pair law at noise (rms 0.050), as does the at-rest twin 003 (rms 0.050). Sensitivity is not yet quantified: I have not checked how much a 5% K change would move these runs. A null here does not rule out a relative-velocity term.
+- **H3** no pair interaction at r >= 2: falsified (pairs interact at r = 3-9).
+- **H5** monotone attractive A-A static force, r = 1-9: supported as monotone; fixed-P form not adequate (H11).
+- **H6** pair force species-independent as accelerations: falsified; reinterpreted as mass-scaled accelerations (H10).
+- **H7** product form F proportional to q_i q_j / r^2: not tested cleanly. C-C fails the coupling product at r=5 by 15-19% (P-0005 c4). P-0006 shows C-C at 7 and 9 matches A-A.
+- **H8** velocity-dependent pair force: partially tested. 2026-11-19/r3/lab-c/004 (A-A at 4, vy=2 each) matches the velocity-independent law at noise, as does the at-rest twin 003. Not yet quantified at the 5% level. Plan item from round 1 (K x 1.05 on run 004) was not done this round.
 - **H9** isotropy at r=2 (round 1): supported. Diagonal runs agree with axis runs at r=5 within 4%.
-- **H10** mass ratio 1 : 0.73 : 0.40, equal-and-opposite forces. Cycle identity holds at r=5 to 1.7%. K_A(B)/K_B(A) consistent across r=3-9 to about +/-4%. Not yet a sharp test.
-- **H11** central law steepens or screens at large r. Window artifact not supported within a run (4% at r=9). K(r) for A-A: K(3) 17.6, K(5) 18.0, K(6) 16.7, K(7) 15.2-15.5, K(8) 13.2, K(9) 11.5-12.0. Form (power vs screened) still open.
-- **H12** post-contact outcomes for two A at rest are not reproducible. 021 and 022 are identical requests; their samples differ. Contact at t about 1.25 (2026-11-19/r1/lab-c/021, 022). Not decided.
-- **H13** pairwise additivity at r=5 for three bodies (ABC triangle, side 5): supported at tracker noise (round-1 020, and P-0008 law gives 0.0507).
-- **H14** coupling-product law K_X(Y) = u_X v_Y. Holds for A-pairs at r=5 to about 2%. Fails for C-C at r=5. The C-C factor at r=7 and 9 matches A-A.
-- **H15** triangle additivity at side 3 (A-B-C): supported at noise (see above). Closed.
-- **H16 (new, open)** close-range law (r = 1 to 3). P-0008's law is only tested at r >= 2.95 and at its endpoints. Contact runs fail. Whether K/r^2.5 holds below about 1.5 is open. Round-1 research 001-006 (below) tests all six pair types at r=1.0.
-- **H17 (new, open)** many-body additivity beyond 4 bodies. Untested by me. Grant proposal (16-body lattice, T=0.4) is the test.
+- **H10** mass ratio 1 : 0.73 : 0.40, equal-and-opposite forces. Cycle identity holds at r=5 to 1.7%. Not yet a sharp test.
+- **H11** central law steepens or screens at large r. K(r) for A-A (my fits): K(3) 17.6, K(5) 18.0, K(6) 16.6-16.7, K(7) 15.2-15.5, K(8) 13.2-13.3, K(9) 11.5-12.0. Form (power vs screened) still open. Round-2 P-0010 check agrees with these numbers at 6 and 7.
+- **H12** post-contact outcomes for two A at rest are not reproducible (2026-11-19/r1/lab-c/021 and 022 are identical requests; their samples differ). Not decided.
+- **H13** pairwise additivity at r=5 for three bodies (ABC triangle, side 5): supported at tracker noise.
+- **H14** coupling-product law K_X(Y) = u_X v_Y. Holds for A-pairs at r=5 to about 2%. Fails for C-C at r=5. C-C matches A-A at 7 and 9.
+- **H15** triangle additivity at side 3 (A-B-C): supported at noise. Closed.
+- **H16 (open; now the main question)** short-range law, r below about 2. Round-1 r0 = 1.0 (six pair types) and round-2 r0 = 2.0 runs both depart from K/r^2.5 in the sense: attractive pairs separate more slowly than predicted, repulsive pairs separate more slowly too (weaker repulsion). The departure starts at separation about 0.8-1.0 at r0 = 1 and about 1.5 at r0 = 2. AA never collapses in the r0 = 1 run. Possible reading: a softened or capped short-range force. Not established. Round-2 requests 004-007 test it.
+- **H18 (new, open)** P-0010 A-A coefficient is 2-4% high on my runs at r0 6-9. Non-A-A pairs fit within about 3%. Test: 2026-11-20/r2/lab-c/002, 003 (T=6) and keystone's round-1 A-A at 7 (r1/003, pre-registered K = 15.59; my fit implies about 15.2).
+- **H19 (new)** P-0005 pair coefficients at separation 5 hold to 1-2% for BB, BC, CC on 2-body runs (P-0009 pair part). Three-body part (P-0009 c1) open.
+- **H20 (new)** tracker noise per coordinate 0.0507 (lone particles, pooled), species-independent within resolution. P-0011 c1 is about 2 sigma above 0.050.
 
-## Reviews this round
-- **P-0008 (lab-b, four-body rectangle and three-body triangles): `inconclusive`, interim.** Evidence: seven in-domain 2-body runs at separation 4.0 (2026-11-17/r3/lab-c/003; 2026-11-18/r1/lab-c/004, 005, 007, 008; 2026-11-19/r3/lab-c/003, 004), all at noise. The 3-body claim (c2) rests on endpoint runs I have not cited. The 4-body claim (c1) is untested by me. Comment also covers: the judged domain omits duration, velocity and closest approach; contact breaks the law; predicted_error 0.07 is 14x the noise floor. Final verdict pending review-account runs 007-010.
-- **P-0007 (lab-a): `inconclusive`, interim (replaces round-3 interim).** Evidence: 2026-11-19/r3/lab-c/001 (passes P-0007 c2 rule) and 2026-11-19/r1/lab-c/020 (c1 replicate at noise). The replicated bar needs three in-domain c2 runs; I have one at the endpoint. Pending review-account runs 011 and 012 (interior sides 4.5 and 4.0).
-- **P-0006 (lab-a): `narrowed`** (final, round 3). Unchanged. **P-0005 (lab-a): `replicated`** (round 2, unchanged). **P-0001 and P-0002:** no change.
+## Requests filed this round (out/requests/2026-11-20/r2/lab-c/)
+Review account (cites papers under review; cost 3.60 of 15, 8.49 left after this):
+- 001: P-0009, B, C, C equilateral triangle, side 5, at rest, T=2. Three-body replicate. Cost 1.12.
+- 002: P-0010, A-A at r0 = 6, at rest, T=6. A-A factor, long run. Cost 1.24. Rule: fitted scale within 0.97-1.03 supports; outside refutes.
+- 003: P-0010, A-A at r0 = 8, at rest, T=6. Same rule. Cost 1.24.
 
-## Requests filed this round (`out/requests/2026-11-20/r1/lab-c/`, results due next session)
-Research (cost 1.008 each, total about 6.05 of 40):
-- 001-006: close-range pairs AA, AB, AC, BB, BC, CC. Two particles 1.0 apart at rest, T=0.2, dt 0.005. Pre-registered predicted separations in `analysis/close_prediction.json` (P-0008 coefficients through the model integrator, run past r = 2.95 where the paper does not apply). Falsifier: any sample separation more than 0.1 from prediction. Bounties: close-AA, close-AB, close-AC, close-BB, close-BC, close-CC.
+Research account (cost 4.09 of 40, 33.94 left before this):
+- 004: A-A at r0 = 1.5, at rest, T=0.4 (dt 0.0002). Cost 1.02.
+- 005: A-C at r0 = 1.5, at rest, T=0.4. Cost 1.02.
+- 006: C-C at r0 = 1.5, at rest, T=0.4. Cost 1.02.
+- 007: A-A at r0 = 2.5, at rest, T=1.0 (dt 0.0005). Cost 1.04.
 
-Review account (cites P-0008, total about 4.36 of 15):
-- 007: four bodies, A,B,C,A rectangle 3.2 x 3.8 (interior distances 3.2, 3.8, 4.97), at rest, T=1.0. Model min separation 2.56 over run.
-- 008: four bodies, B,B,C,C square side 3.5 (diagonal 4.95), at rest, T=1.0. Model min separation 3.06.
-- 009: four bodies, A,A,B,C square side 3.5, at rest, T=1.0. Model min separation 2.63. (T=1.5 would reach 1.02, so T=1.0 chosen.)
-- 010: three bodies, equilateral A,B,C side 4.0, at rest, T=2.0. Model min separation 2.88. (T=3.0 reaches 0.01, so T=2.0 chosen.)
+Pre-registered predictions (power law, P-0008 coefficients, fine integration; predicted separations at every sample): `analysis/pred_2026-11-20_r2_shortrange.json`. Predicted final separations: 004 6.25 (the prediction passes through contact and rebounds; use only samples with prediction >= 0.5), 005 2.23, 006 0.49, 007 1.74.
+Falsifier (window means over samples with predicted >= 0.5, late window = last 30% of those): residual beyond +/- 0.1 with the sign given in each request. The r0 = 1.5 and 2.5 runs are discriminating only if measured separation differs from the prediction by more than the noise in that window (0.071/sqrt(window size)).
 
-Review account (cites P-0007, total about 2.15):
-- 011: three A, equilateral side 4.5, at rest, T=1.5. Model min separation 2.82.
-- 012: three A, equilateral side 4.0, at rest, T=1.0. Model min separation 3.06. (T=1.5 reaches 1.34.)
-
-Grant proposal (`out/grants/2026-11-20/proposals/lab-c.json`): 16 bodies on a 2.5 lattice, species A/B/C pattern, at rest, T=0.4, dt 0.005. Title "Pairwise sum for 16 bodies on a 2.5 lattice, species A/B/C, T=0.4". The lattice collapses into contact by T=0.6 (model minimum separation 1.97 at T=0.6, 2.27 at T=0.4), so the window is short and the sensitivity is limited by 0.05 noise. Falsifier: residual rms above 0.2 per coordinate for a majority of particles.
-
-## Pre-registered falsifiers (absolute units, residual rms per coordinate)
-- P-0008 replication (007-010): consistent if rms <= 0.07. Falsified if rms > 0.2 for all cited in-domain runs. Judged bar is 2.1 absolute, which is too loose to matter; I state this in the comment.
-- P-0007 c2 (011, 012): P-0007's rule, rms <= 0.07 per particle and zero-force null > 0.09.
-- Close-range (001-006): |separation(t) - predicted(t)| > 0.1 at any sample is a falsifier.
+Budget remaining after this round: research 33.94 - 4.09 = 29.85 (unused credits do not roll over; spend next round on discriminating runs). Review 8.49 - 3.60 = 4.89.
 
 ## Plan for next session
-1. Read results for 2026-11-20/r1/lab-c/001-006 (close-range). Compare each to `analysis/close_prediction.json`. If a pair type matches within 0.1, that is a candidate close-* claim (needs r_range starting at 1.0 or less and max_particles 2). File claims only with evidence that holds.
-2. Read 007-010 and finalize the P-0008 review. If 007-009 and 010 match at noise: `replicated` for c1 and c2 with the 4-body and 3-body evidence cited, and state the T-scope and contact limits in the comment. If they fail: `narrowed` or `falsified` with the request ids.
-3. Read 011 and 012, finalize P-0007 review (c2 replicated if all three AAA runs pass the rule).
-4. Quantify H8: scale K by 1.05 and see how much the moving run 004 changes. Decide if the velocity test has any power at 5%.
-5. Look at 2026-11-20/r1/lab-c/001 to 006 for the H16 question: is the close-range law K/r^2.5, or does it soften?
-6. Spend remaining research (about 34 credits) only on discriminating runs. Candidates: close-range triads, and the H16 question at r=1.5 and 2.0 if the close-range pairs disagree with the power law.
+1. Read 2026-11-20/r2/lab-c/001-007 when they return.
+   - 001 (BCC side 5): finalize P-0009. `replicated` if the judge bar is met and my per-coordinate residual is at most 0.07 (lab-a's rule). Otherwise narrow.
+   - 002, 003 (A-A at 6 and 8, T=6): finalize P-0010 as `narrowed` (A-A excluded) or `falsified` for A-A only if every cited A-A run is above 3 x predicted_error (not likely; the judge metric is at noise). Report the per-run scale fits either way.
+   - 004-007: compare window means with the pre-registered predictions. If AA, AC and CC at r0 = 1.5 show the same sign of deviation as r0 = 1.0, H16 moves toward supported. Then fit a softened short-range form to all pair types before any close-* claim.
+2. Do not publish a close-range claim yet. The bounty claims (close-AA etc.) need an accepted claim with r_range starting at 1 or less and a model that predicts it. The current model fails there, and a negative result (no collision where the law predicts one) is not a predictive claim.
+3. Watch keystone's round-1 pre-registered runs (r1/001-007). Their A-A at 7 prediction is K = 15.59; my fit implies 15.2. A value near 15.2 would back H18.
+4. Finish the H8 velocity sensitivity (plan item from round 1), unscored.
+5. Grant: my round-1 proposal (16 bodies on a 2.5 lattice, T=0.4) is in the pool. Check the award and grant results.
 
-## Analysis files (`out/labs/lab-c/analysis/`)
-- `p0008_inventory.py` and `p0008_inventory_2026-11-20.txt`: all 31 in-domain runs, scored with P-0008 model.py.
-- `p0008_failures.py`: minimum separation and error by window for the contact/long-run failures.
-- `contact_scan.py`: minimum pair separation under the P-0008 law versus duration, for candidate setups (used to choose durations).
-- `make_round1_requests.py`, `close_prediction.json`: round-1 research and review requests, grant proposal, and close-range pre-registered predictions.
-- `p0007_c2_check.py`: P-0007 c2 rule (residual and zero-force null) on 2026-11-19/r3/lab-c/001.
-- `make_p0007_requests.py`: A-A-A interior replicates 011, 012.
-- Older analysis files (round 1-3) are in `labs/lab-c/analysis/` in the repository and unchanged.
-
-## Budget (2026-11-20)
-- Research: allowance 40. Planned this round: 6.05 (001-006). Remaining after filing: about 33.95. Unused credits do not roll over.
-- Review: allowance 15. Planned this round: about 6.51 (007-012). Remaining after filing: about 8.49.
-- Cost constant k = 0.02 (confirmed by 2026-11-19/r3/lab-c/001: 1.09 = 1 + 0.02 x 3 x 1.5).
+## Analysis files (out/labs/lab-c/analysis/)
+- `inventory_2026-11-20.py` and `inventory_2026-11-20.txt`: every lab-c ok run, scored with each paper's model.py (judged error, editor metric) where the first in-domain claim matches. Model refusals are printed.
+- `coupling_scale_scan.py`: per-run coupling-scale fit for P-0010 and P-0009 two-body runs.
+- `close_range_check_2026-11-20.py`: round-1 close-range runs vs `close_prediction.json`.
+- `r2_pair_check.py`: P-0008 law integrated at r0 = 2.0 (outside its domain; extrapolation check).
+- `lone_noise_check_2026-11-20.py`: P-0011 noise check on lone runs.
+- `pred_2026-11-20_r2_shortrange.py` and `.json`: pre-registered predictions for 2026-11-20/r2/lab-c/004-007.
+- `make_2026-11-20_r2_requests.py`: generates the seven round-2 requests.
+- `write_round2_reviews.py`: writes the five reviews and the vote.
+- Older analysis (rounds 1-3, including `p0007_c2_check.py`, `p0008_inventory.py`, `contact_scan.py`) is in `labs/lab-c/analysis/` in the repository.
 
 ## Retractions and corrections (cumulative)
-- Round-3 (2026-11-19): the 0.15 per-sample falsifier for H15 was miscalibrated (sits at 3 sigma; fires by chance). Replaced by window-mean and rms rules. My error, not the physics.
-- Round-3: the H11 window rule compared against a different run's T<=3 value (10.65). The within-run comparison (4%) is the intended test. Both reported.
+- This round: the judged noise floor is 0.0071, not 0.005 (judged = Euclidean RMSE / 10). My earlier threshold arithmetic used per-coordinate RMSE.
+- This round: I wrote in round 1 that P-0007's interior replicates (011, 012) would count against P-0007's replication bar. They do not: P-0007's model refuses them. The P-0007 replicated bar cannot be met from interior runs with this model.
+- This round: the round-1 close-range falsifier (0.1 on any sample) is miscalibrated (noise 0.071 on a separation). Replaced by window means.
+- Round 3 (2026-11-19): the 0.15 per-sample falsifier for H15 was miscalibrated. Replaced by window-mean and rms rules. My error, not the physics.
+- Round 3: the H11 window rule compared against a different run's T<=3 value. The within-run comparison is the intended test.
 - Earlier: energy-excess paragraph retracted (post-contact separation not reproducible). H8 'falsified' downgraded to not decided. P-0004 'replicated' withdrawn to inconclusive. P-0005 'inconclusive' replaced by 'replicated' (round 2 of 2026-11-19), with scope stated.
-- This session: first version of the round-1 request purposes said "no contact (checked)" for the triangle (T=3) and claimed T=1.5 for the square AABC without checking contact. The contact scan showed both collapse (min separations 0.36 and 1.02). I regenerated the requests with durations that stay clear of contact (2.0, 1.0). The filed files are the regenerated ones.
-- This session: mixed absolute and normalized error units in my own early draft thresholds. Corrected; see "Judging rules I now apply".
+- Earlier: first version of the round-1 request purposes said "no contact (checked)" for the triangle (T=3) and claimed T=1.5 for the square AABC without checking contact. Regenerated with durations that stay clear of contact.
 
 ## History (earlier sessions, condensed)
 - Round 1 (2026-11-17): H1-H3 and H5-H6 established. Energy-excess paragraph later retracted.
@@ -126,3 +144,4 @@ Grant proposal (`out/grants/2026-11-20/proposals/lab-c.json`): 16 bodies on a 2.
 - Round 1 of 2026-11-19: 25 requests: species matrix at r=3, 6, 8, A-A r=9, triangle at side 5 (020: additivity at noise), replicates for H12, three review runs on P-0005.
 - Round 2 of 2026-11-19: 11 requests (001 A-A r=9 T=6; 002 side-3 triangle; 003-011 P-0006 review). Results analysed in round 3.
 - Round 3 of 2026-11-19: 4 requests (002 side-3 replicate; 003-004 A-A at 4 with and without velocity; review 001 A-A-A side 5 for P-0007). Results analysed in round 1 of 2026-11-20.
+- Round 1 of 2026-11-20: 6 research (close-range pairs at r = 1.0), 6 review (P-0008 4-body and 3-body interior; P-0007 A-A-A interior), grant proposal (16 bodies, T=0.4). Results analysed in round 2.

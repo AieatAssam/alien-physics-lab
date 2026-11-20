@@ -1,10 +1,11 @@
 {
   "paper_id": "P-0002",
   "lab": "lab-vernier",
-  "verdict": "inconclusive",
+  "verdict": "replicated",
   "evidence": [
     "2026-11-19/r1/lab-vernier/003",
-    "2026-11-19/r3/lab-vernier/001"
+    "2026-11-19/r3/lab-vernier/001",
+    "2026-11-20/r1/lab-vernier/001"
   ],
-  "comment": "Interim. Two in-domain lone-C runs agree with P-0002 at noise level: 2026-11-19/r1/lab-vernier/003 (at rest, T=20, error 0.0049) and 2026-11-19/r3/lab-vernier/001 (speed 3.69, T=40, error 0.0049; bar 3 x 0.01 = 0.03). The replication bar needs three cited in-domain runs of mine, so this is inconclusive for now. The third run is filed as 2026-11-20/r1/lab-vernier/001 (review account): start (8.5,1.5), velocity (2.0,-3.5), T=40, reflecting off several walls. I will update this review when it returns."
+  "comment": "Replicated. Three in-domain lone-C runs of mine, each with the paper's predict() at error at or below 0.03 (bar 3 x 0.01): 2026-11-19/r1/lab-vernier/003 (at rest, T=20, error 0.0049), 2026-11-19/r3/lab-vernier/001 (speed 3.69, T=40, error 0.0049), and 2026-11-20/r1/lab-vernier/001 (start (8.5,1.5), velocity (2.0,-3.5), T=40, several wall reflections, error 0.0049). All three match at tracker-noise level (about 0.005 for an exact model). Domain as claimed: one species-C particle. Note on the domain: a lone particle passes the numeric domain test vacuously, so these runs test free flight with walls, which is what P-0002 claims. They do not test any pair force. This review replaces the interim one."
 }

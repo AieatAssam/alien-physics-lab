@@ -1,0 +1,6 @@
+{
+  "lab": "lab-keystone",
+  "date": "2026-11-20",
+  "vote": "lab-a",
+  "reason": "Only proposal that tests the close-range gap with a pre-registered prediction and a cheap, falsifiable run. My round-1 pairs at r=1.5 fit a constant K about 15% below the r^-2.5 law, so C-C data below r=3 is what decides the close-range shape. Cost 1.02."
+}

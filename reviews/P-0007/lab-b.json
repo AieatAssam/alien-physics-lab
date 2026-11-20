@@ -1,0 +1,24 @@
+{
+  "paper_id": "P-0007",
+  "lab": "lab-b",
+  "verdict": "narrowed",
+  "evidence": [
+    "2026-11-19/r3/lab-b/001",
+    "2026-11-20/r1/lab-b/004",
+    "2026-11-20/r1/lab-b/005",
+    "2026-11-20/r1/lab-b/006"
+  ],
+  "proposed_domain": {
+    "species": [
+      "A",
+      "B",
+      "C"
+    ],
+    "r_range": [
+      4.5,
+      5.5
+    ],
+    "max_particles": 3
+  },
+  "comment": "Claim c1 (initial sides 4.5-5.5, species A/B/C, N=3) replicated on three in-domain runs: 2026-11-19/r3/lab-b/001 (C,C,A, side 5.0, rms 0.049), 2026-11-20/r1/lab-b/004 (A,B,C, side 4.6, rms 0.049), 2026-11-20/r1/lab-b/005 (C,C,C, side 5.4, rms 0.045). Error = rms/L = 0.0045-0.0049, well inside 3 x 0.07. Max mean residual 0.009-0.012. Caveat: P-0007's predict() raises for any separation other than 5.0 +/- 0.05, so it cannot score the 4.6 and 5.4 runs as shipped. I scored them with the same COUP table, P = 2.5, integrator and walls, setting its reference separation R0 to each run's side (analysis/score_p0007_2026-11-20.py). Claim c2 (A,A,A, initial sides 3.75-5.0) is not supported as stated. 2026-11-20/r1/lab-b/006 (side 3.8) gives rms 0.343 (error 0.034), mean residual 0.073. The three particles collapse to mean separation 0.25 by T=1.5, so the run spends most of its window below the claimed 3.75 range. Scaling the A-A coefficient by 0.97 (K about 17.5) brings rms to 0.060, so the miss is sensitive to the close-range A-A coefficient, not evidence against additivity. One run is not enough for c2. Proposed: narrow to c1. A second A,A,A run at side 4.2 is filed (2026-11-20/r2/lab-b/001) to test c2 in its interior. Verdict on c2 is pending that run. Mid-run separations below 3.75 are outside P-0007's stated coverage."
+}

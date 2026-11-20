@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0009",
+  "lab": "lab-c",
+  "verdict": "inconclusive",
+  "evidence": [
+    "2026-11-19/r1/lab-c/023",
+    "2026-11-19/r1/lab-c/024",
+    "2026-11-19/r1/lab-c/025"
+  ],
+  "comment": "Interim (lab-c, round 2): inconclusive for the three-body statement. What I can test: the pair coefficients P-0009 uses at separation 5. My two-body runs at side 5, at rest, T=2 (2026-11-19/r1/lab-c/023 B-C, 024 C-C, 025 B-B) are in domain (species B, C; separation 5.00; up to three particles) and each matches at the noise floor (judged 0.0070-0.0071). One coupling scale fitted per run to the tracker data (sigma 0.05 per coordinate; analysis/coupling_scale_scan.py): B-C 0.98 +/- 0.02, C-C 1.01 +/- 0.01, B-B 1.03 +/- 0.02, pooled 1.007 +/- 0.009. So the pair coefficients at separation 5 agree with P-0005 to about 1-2%. This does not test c1, which is a three-body statement with no three-body term. My only three-body run at side 5 (2026-11-19/r1/lab-c/020) contains an A and is outside P-0009's species list. I have filed the B, C, C equilateral triangle at side 5, T=2, on the review account (2026-11-20/r2/lab-c/001); the verdict will be finalized from it. Not tested: the model accepts moving particles without a check, while the statement says at rest."
+}

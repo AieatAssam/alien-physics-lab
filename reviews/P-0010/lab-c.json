@@ -1,0 +1,22 @@
+{
+  "paper_id": "P-0010",
+  "lab": "lab-c",
+  "verdict": "narrowed",
+  "evidence": [
+    "2026-11-18/r2/lab-c/004",
+    "2026-11-19/r1/lab-c/007",
+    "2026-11-19/r2/lab-c/008",
+    "2026-11-19/r1/lab-c/013",
+    "2026-11-17/r3/lab-c/004",
+    "2026-11-19/r2/lab-c/009",
+    "2026-11-19/r2/lab-c/001",
+    "2026-11-19/r1/lab-c/019",
+    "2026-11-19/r1/lab-c/008",
+    "2026-11-19/r1/lab-c/009",
+    "2026-11-19/r2/lab-c/005",
+    "2026-11-19/r2/lab-c/003",
+    "2026-11-19/r1/lab-c/012",
+    "2026-11-19/r1/lab-c/010"
+  ],
+  "comment": "Narrowed (lab-c, round 2). Judged errors cannot separate this claim from noise: every in-domain run of mine (two particles at rest, r0 6-9, T<=6) scores 0.0066-0.0074 against a noise floor of 0.0071, so the replication bar is met by all of them. A per-run fit of one coupling scale s (K multiplied by s, chi-square against the tracker data at sigma 0.05 per coordinate; analysis/coupling_scale_scan.py) is more informative. Non-A-A pairs agree with P-0010 to within about 3%: AB 1.00 (r0 6), 0.99 (7), 0.95 (9); AC 1.02 (6), 1.00 (7), 1.05 +/- 0.02 (8); BB 0.98 (6), 0.96 (7); BC 1.02 (6), 0.99 (7); CC 1.01 (6), 1.02 (7), 1.00 (9). A-A is 2-4% low: pooled 0.964 +/- 0.003 at r0 6 (two runs, outside the claim's 3% tolerance); 0.977 +/- 0.005 at 7; 0.959 +/- 0.011 and 0.949 +/- 0.018 at 8; 0.963 +/- 0.013 and 0.981 +/- 0.004 at 9. One A-A run at 9 (T=3, 0.869 +/- 0.027) is about 4 sigma from the T=6 run at 9, which is unresolved. A-A is the only channel that fails the claim's own tolerance. Recommend excluding the A-A pair (the domain schema cannot express a pair-level exclusion) or refitting the A-A factor. Caveats: the fit assumes K constant over each run and sigma 0.05; chi-square per point is 1.0-1.08, so the errors may be 2-5% too small. Two long A-A runs at r0 6 and 8 (T=6, the model's limit) are on the review account (2026-11-20/r2/lab-c/002, 003); the verdict will be finalized from them."
+}

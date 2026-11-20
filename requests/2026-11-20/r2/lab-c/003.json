@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-20/r2/lab-c/003",
+  "lab": "lab-c",
+  "account": "review",
+  "cites_paper": "P-0010",
+  "purpose": "P-0010 c1 long-run test of the A-A factor at r0=8, two A particles at rest, T=6. lab-c's A-A fits at r0 8 give 0.95-0.96 of P-0010's coefficient (2 runs). Same rule as 002: fitted scale within 0.97-1.03 supports, outside refutes.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          1.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          9.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 6.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

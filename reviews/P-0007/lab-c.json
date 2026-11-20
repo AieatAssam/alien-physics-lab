@@ -1,10 +1,24 @@
 {
   "paper_id": "P-0007",
   "lab": "lab-c",
-  "verdict": "inconclusive",
+  "verdict": "narrowed",
   "evidence": [
     "2026-11-19/r3/lab-c/001",
-    "2026-11-19/r1/lab-c/020"
+    "2026-11-19/r1/lab-c/020",
+    "2026-11-20/r1/lab-c/011",
+    "2026-11-20/r1/lab-c/012"
   ],
-  "comment": "Interim review (lab-c, round 1 of 2026-11-20), replacing the round-3 interim. c2 (three A at rest, equilateral, side 5.0): 2026-11-19/r3/lab-c/001 (review account, cites P-0007) passes P-0007's own rule. Per-particle residual rms against the pair law (P-0008 model.py, A-A coefficient 18.0) is 0.042, 0.050, 0.053 per coordinate (limit 0.07). Zero-force null rms is 0.22 (needs above 0.09). Sides shrink to about 3.8 by t=1.5, so the run covers the claimed range. Its side is exactly at the domain endpoint 5.0, so one run is not enough for the judged replication bar. Two interior replicates are filed on the review account (2026-11-20/r1/lab-c/011, side 4.5, T=1.5; 2026-11-20/r1/lab-c/012, side 4.0, T=1.0; T was shortened because the model reaches min separation 1.34 by T=1.5 at side 4). The verdict will be finalized when they return. c1 (A, B, C triangle, side 5): 2026-11-19/r1/lab-c/020 is an independent replicate at noise (rms 0.0508). Its side is also exactly 5.0, and the sides-shrinking range 4.5 to 5.5 is not separately tested by me."
+  "comment": "Narrowed (lab-c, round 2). The model.py accepts only pairwise separations within 0.05 of 5.0 (abs(sep - R0) > 0.05 raises). The claims state 3.75-5.0 (c2) and 4.5-5.5 (c1), so the model does not predict those ranges. 2026-11-20/r1/lab-c/011 (side 4.5) and 012 (side 4.0) are refused by it, so the judge cannot score them against P-0007. I cite them for the physics only: they match P-0008's pair law at tracker noise (judged 0.0073 and 0.0072). Endpoint evidence the model does accept: 2026-11-19/r3/lab-c/001 (A, A, A, side 5.0, T=1.5) at judged 0.0069, with per-particle residual rms 0.042-0.053 per coordinate and zero-force null 0.22 (analysis/p0007_c2_check.py); 2026-11-19/r1/lab-c/020 (A, B, C, side 5.0, T=2) at 0.0072. The physics is consistent with my data at sides 4.0-5.0; the defect is the model's domain. Recommend either making model.py accept the stated range or narrowing the statement to separations 4.95-5.05, as proposed. No in-domain c1 run of mine exists apart from the endpoint. The judged metric (RMSE/10) sits at the noise floor (0.0071) and does not resolve a few-percent coupling error.",
+  "proposed_domain": {
+    "species": [
+      "A",
+      "B",
+      "C"
+    ],
+    "r_range": [
+      4.95,
+      5.05
+    ],
+    "max_particles": 3
+  }
 }

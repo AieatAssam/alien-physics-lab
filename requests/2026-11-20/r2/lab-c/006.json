@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-20/r2/lab-c/006",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Short-range CC law (H16). Two C at rest, r0=1.5, T=0.4. Round-1 CC at r0=1.0 (2026-11-20/r1/lab-c/006) ran 0.1-0.3 past the power-law prediction. Prediction in pred_2026-11-20_r2_shortrange.json. Falsifier: late-window mean residual beyond 0.1 with sign measured > predicted.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          4.25,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.75,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.4,
+    "sample_dt": 0.0002
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "request_id": "2026-11-20/r2/lab-vernier/005",
+  "lab": "lab-vernier",
+  "account": "review",
+  "purpose": "Replication of P-0009 (B, C, C triangle, side 5), run 2 of 3: rotated centre (5, 4.5), B at the lower-left vertex, C at the apex and lower-right. Bar: error at or below 0.03.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          5.0,
+          7.3868
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          2.5,
+          3.0566
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          7.5,
+          3.0566
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0009"
+}

@@ -1,0 +1,27 @@
+{
+  "request_id": "2026-11-20/r2/lab-keystone/010",
+  "lab": "lab-keystone",
+  "account": "review",
+  "purpose": "P-0011 noise replicate: one C particle at rest in the corner (9.9, 9.9), T=1. Species check for c2 and corner placement inside the claim domain.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          9.9,
+          9.9
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0011"
+}

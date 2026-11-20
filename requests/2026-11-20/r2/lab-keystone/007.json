@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-20/r2/lab-keystone/007",
+  "lab": "lab-keystone",
+  "account": "research",
+  "purpose": "C-C attractive pair at separation 9.0, at rest, T=6. Pre-registered test of the C-C factor at r=9: with S_C=0.9475 the prediction is K=7.99; with S_CC=1 it is 8.43 (fit runs at r=6-7 favour S_CC near 1).",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          0.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          9.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 6.0,
+    "sample_dt": 0.03
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

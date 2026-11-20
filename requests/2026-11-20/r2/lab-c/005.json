@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-20/r2/lab-c/005",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Short-range AC law (H16), repulsive pair. Two particles A and C at rest, r0=1.5, T=0.4. Prediction in pred_2026-11-20_r2_shortrange.json. Falsifier: late-window mean residual beyond 0.1 with sign measured < predicted (weaker repulsion at short range).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.25,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.75,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.4,
+    "sample_dt": 0.0002
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

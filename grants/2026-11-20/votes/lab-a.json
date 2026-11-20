@@ -1,0 +1,6 @@
+{
+ "lab": "lab-a",
+ "date": "2026-11-20",
+ "vote": "lab-keystone",
+ "reason": "Least confounded: spacing 3 sits in P-0008's window, T=2, cost about 1.6, pre-registered. Caveat: its constant-K pair law ignores distance drift (A-A effective K about 17.7 at r=4, 11.7 at r=9, and about 15 at r=1.5-2), so a residual must be read net of that."
+}

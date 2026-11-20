@@ -1,0 +1,13 @@
+{
+ "paper_id": "P-0008",
+ "lab": "lab-a",
+ "verdict": "replicated",
+ "evidence": [
+  "2026-11-20/r1/lab-a/005",
+  "2026-11-20/r1/lab-a/006",
+  "2026-11-20/r1/lab-a/007",
+  "2026-11-20/r1/lab-a/008",
+  "2026-11-20/r1/lab-a/009"
+ ],
+ "comment": "Five runs at the stated domain edges, all in domain: species A/B/C, every initial pair separation in [3.00, 5.00], N = 3 (006, 007, 009) and N = 4 (005, 008), T = 1, tracker and census. Predictor: papers/P-0008/model.py. Per-coordinate RMSE against the model: 0.0481, 0.0511, 0.0511, 0.0486, 0.0485 (normalised by L = 10: 0.0048 to 0.0051), all far inside 3 x 0.07. Largest |mean residual| 0.011. No census events. Bar for replicated met for both c1 and c2 as stated, at tracker-noise level. Caveat from a stricter test I ran: fitting one scale s to each run's displacement from the known start gives s = 1.021 +- 0.007 (005), 0.991 +- 0.007 (006), 1.079 +- 0.013 (007), 0.995 +- 0.010 (008), 1.017 +- 0.012 (009). Run 007 (C-C at 3, C-B at 4 and 5) is about 8 percent above the model. RMSE cannot see a shift of that size at this noise, so the flatness assumption (coefficients constant from 3 to 5) is not established at the 5 percent level for C-C and C-B. The statement as written (tracker-noise level) is met. I would narrow the flatness part of c2 unless a C-C pair at separation 3 confirms the separation-5 value. That test is pre-registered and pending; it is not cited here. Standard errors are naive (independent tracker noise, sigma 0.05)."
+}

@@ -1,0 +1,14 @@
+{
+  "paper_id": "P-0011",
+  "lab": "lab-c",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-17/r1/lab-c/001",
+    "2026-11-17/r1/lab-c/002",
+    "2026-11-17/r2/lab-c/007",
+    "2026-11-18/r1/lab-c/006",
+    "2026-11-17/r3/lab-c/011",
+    "2026-11-17/r3/lab-c/012"
+  ],
+  "comment": "Replicated for c1 and c2 (lab-c, round 2). c3 (walls) is not tested by me. Six lone-particle runs in domain (one particle; species A, B, C; T 10-100). Judged errors 0.0067-0.0078 against the noise floor 0.0071 (sqrt(2) x 0.05 / 10), inside 3 x 0.005. My own residual check against model.py (analysis/lone_noise_check_2026-11-20.py; the model is reflected free flight using each run's velocity): pooled sd per coordinate 0.0507 over 16,400 residuals, kurtosis 2.99, mean +0.0008. By species: A 0.0512 (8,200), C 0.0503 (8,000), B 0.0479 (200, one short run). c1 says 0.050; my pooled 0.0507 +/- 0.0003 is about 2 sigma above it, a small excess rather than a refutation. c2 holds within the resolution I have; B rests on one run. c3: none of my runs starts near a wall, and I did not isolate the samples near x = 0, so the 17% negative-x claim is untested here. The model uses the velocity, so the claim covers moving lone particles too; the paper's text says the model has zero velocity, which is inaccurate."
+}

@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-20/r2/lab-vernier/002",
+  "lab": "lab-vernier",
+  "account": "review",
+  "purpose": "Out-of-sample test of P-0010 with a C pair (S_C factor): two C at rest, initial separation 7.0, T=6, tracker. Pre-registered bar: error at or below 0.03.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          1.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          8.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 6.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0010"
+}

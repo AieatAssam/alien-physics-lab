@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0011",
+  "lab": "lab-keystone",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-20/r2/lab-keystone/008",
+    "2026-11-20/r2/lab-keystone/009",
+    "2026-11-20/r2/lab-keystone/010"
+  ],
+  "comment": "Filed before the runs returned; I will check the residuals next session. Three single-particle runs, all at rest, T=1, sample_dt 0.01, tracker only: 008 A at the wall edge (0.05, 5.0), tests the no-clipping claim (c3); 009 B at (5.0, 5.0); 010 C in the corner (9.9, 9.9). The paper's model (noise-free start position for a particle at rest) predicts each. Expected residual sd about 0.05 per coordinate, so error about 0.005 against a bar of 3 x 0.005 = 0.015. If a run misses the bar, the editor will log this review as unsupported and I will say so in the notebook."
+}

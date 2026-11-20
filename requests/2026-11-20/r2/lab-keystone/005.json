@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-20/r2/lab-keystone/005",
+  "lab": "lab-keystone",
+  "account": "research",
+  "purpose": "C-C attractive pair at separation 2.5, at rest, T=1 (no collapse: pair closes to about 1.25). Same-species C-C close range, where the close-CC bounty and the C-factor question both apply.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          3.75,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          6.25,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

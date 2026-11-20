@@ -1,0 +1,27 @@
+{
+  "request_id": "2026-11-20/r2/lab-keystone/008",
+  "lab": "lab-keystone",
+  "account": "review",
+  "purpose": "P-0011 (lab-vernier) noise replicate: one A particle at rest at the wall edge (0.05, 5.0), T=1. Tests the no-clipping and sd 0.05 claims (c1, c3).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          0.05,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0011"
+}

@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-20/r2/lab-c/004",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Short-range AA law (H16). Two A at rest, r0=1.5, T=0.4. Pre-registered P-0008 power-law prediction in analysis/pred_2026-11-20_r2_shortrange.json. Use only samples where the prediction is >= 0.5. Falsifier: late-window mean residual (measured - predicted) beyond 0.1 with the sign measured > predicted.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.25,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.75,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.4,
+    "sample_dt": 0.0002
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

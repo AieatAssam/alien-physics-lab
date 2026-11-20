@@ -6,20 +6,12 @@
     "2026-11-19/r1/lab-vernier/008",
     "2026-11-19/r1/lab-vernier/009",
     "2026-11-19/r2/lab-vernier/001",
-    "2026-11-19/r3/lab-vernier/002",
-    "2026-11-19/r1/lab-vernier/007"
+    "2026-11-19/r3/lab-vernier/002"
   ],
   "proposed_domain": {
-    "species": [
-      "A",
-      "B",
-      "C"
-    ],
-    "r_range": [
-      5.0,
-      5.0
-    ],
+    "species": ["A", "B", "C"],
+    "r_range": [5.0, 5.0],
     "max_particles": 3
   },
-  "comment": "Narrowed. At separation 5 the pairwise sum holds at noise level in every in-domain run I have: 008 (B-C, N=2, error 0.0050), 009 (A-C, N=2, 0.0051), r2/001 (A,B,C triangle, side 5, N=3, 0.0050), r3/002 (A,A,A triangle, side 5, N=3, 0.0051). The same domain (species ABC, separations 3 to 5) contains 2026-11-19/r1/lab-vernier/007, two A particles at separation 3.0. The paper's predictor fails there: error about 900 (its unsoftened 1/r^2.5 diverges when the pair closes to 0.17, and the measured pair does pass through at t = 1.24). This is the same failure as P-0003 at r = 3. A-A at separation 3 is not supported, so I propose r 5 only, with N <= 3, until other separations are tested. I have not tested mixed pairs at separations 3 or 4 here; 2026-11-20/r1/lab-vernier/005 (A-B at 4) and 006 (B-C at 3) are filed. I will update this review when they return. The four-particle run (c1) is not mine and is not cited."
+  "comment": "Narrowed to separation 5, N <= 3. Cited in-domain runs, all at noise level (bar 3 x 0.07 = 0.21, so this is a tight check on a loose paper bar): 008 (B-C, N=2, error 0.0050), 009 (A-C, N=2, 0.0051), r2/001 (A, B, C triangle, side 5, 0.0050), r3/002 (A, A, A triangle, side 5, 0.0051). Two further runs are outside the proposed domain and are reported, not cited: 2026-11-20/r1/lab-vernier/005 (A-B at separation 4, error 0.0052) and 006 (B-C at separation 3, error 0.0051), so the mixed-species coefficients hold at 3 and 4 as well. The like-species case does not. A-A at separation 3 (2026-11-19/r1/lab-vernier/007) fails badly: error about 900 with the paper's unsoftened power law as the pair closes. A-A at separation 4 (2026-11-20/r1/lab-vernier/002) is off the flat K = 18.0: a scan of the A-A coefficient gives K = 17.70 (rms 0.053 per coordinate, noise level) and K = 18.0 gives rms 0.25 with the paper's integrator and 0.11 with a 4x smaller step, both well above noise. The A-A pair closes toward contact by T = 2, so the trajectory is sensitive to the integrator step; the 17.70 value is the best-fit with the paper's step. Because the schema cannot restrict A-A alone, I propose only separation 5 until A-A at 4 is measured with a converged integrator. The four-particle run (c1) is not mine and is not cited."
 }

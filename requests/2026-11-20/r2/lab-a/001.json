@@ -1,0 +1,38 @@
+{
+ "request_id": "2026-11-20/r2/lab-a/001",
+ "lab": "lab-a",
+ "account": "research",
+ "purpose": "Pre-registered flat-K test: C-C pair at rest, separation 3.0, T=1. Tests whether the C-C coefficient 12.36 (sep 5) holds at sep 3, the step P-0008 c2 and c1 assume (run 007 of the review set showed scale 1.08 +- 0.01). Rule in analysis/pred_close_CC3_2026-11-20.py, written before filing.",
+ "setup": {
+  "particles": [
+   {
+    "species": "C",
+    "pos": [
+     3.5,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "C",
+    "pos": [
+     6.5,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 1.0,
+  "sample_dt": 0.002
+ },
+ "instruments": [
+  "tracker",
+  "census"
+ ]
+}

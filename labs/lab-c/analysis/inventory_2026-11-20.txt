@@ -1,0 +1,232 @@
+2026-11-17/r1/lab-c/001  acct=research cites=None     sp=A      n= 1 T=10.0  dt=0.1    moving=1 initsep=n/a          minsep=n/a
+      P-0005 P-0005-c1: model-error: P-0005 covers exactly two particles
+      P-0006 P-0006-c4: model-error: P-0006 covers exactly two particles
+      P-0007 P-0007-c1: model-error: P-0007 covers 2 or 3 particles
+      P-0008 P-0008-c1: model-error: P-0008 covers 2 to 4 particles
+      P-0010 P-0010-c1: model-error: P-0009 covers exactly two particles
+      P-0011 P-0011-c1: err=0.00775 pe=0.005  <=3pe
+2026-11-17/r1/lab-c/002  acct=research cites=None     sp=B      n= 1 T=10.0  dt=0.1    moving=1 initsep=n/a          minsep=n/a
+      P-0005 P-0005-c1: model-error: P-0005 covers exactly two particles
+      P-0006 P-0006-c3: model-error: P-0006 covers exactly two particles
+      P-0007 P-0007-c1: model-error: P-0007 covers 2 or 3 particles
+      P-0008 P-0008-c1: model-error: P-0008 covers 2 to 4 particles
+      P-0009 P-0009-c1: model-error: P-0009 covers 2 or 3 particles
+      P-0010 P-0010-c1: model-error: P-0009 covers exactly two particles
+      P-0011 P-0011-c1: err=0.00674 pe=0.005  <=3pe
+2026-11-17/r1/lab-c/003  acct=research cites=None     sp=AA     n= 2 T=10.0  dt=0.1    moving=1 initsep=4.47-4.47    minsep=0.48
+      P-0007 P-0007-c2: model-error: P-0007 covers particles at rest only
+      P-0008 P-0008-c1: err=0.37885 pe=0.07  >3pe
+2026-11-17/r2/lab-c/001  acct=research cites=None     sp=AA     n= 2 T=10.0  dt=0.005  moving=0 initsep=3.00-3.00    minsep=0.02
+      P-0008 P-0008-c1: err=6284.29813 pe=0.07  >3pe
+2026-11-17/r2/lab-c/002  acct=research cites=None     sp=AB     n= 2 T=10.0  dt=0.005  moving=1 initsep=4.47-4.47    minsep=0.52
+      P-0008 P-0008-c1: err=0.68976 pe=0.07  >3pe
+2026-11-17/r2/lab-c/003  acct=research cites=None     sp=BB     n= 2 T=10.0  dt=0.005  moving=1 initsep=4.47-4.47    minsep=0.81
+      P-0008 P-0008-c1: err=0.38506 pe=0.07  >3pe
+2026-11-17/r2/lab-c/004  acct=research cites=None     sp=AA     n= 2 T=10.0  dt=0.005  moving=1 initsep=4.47-4.47    minsep=0.25
+      P-0007 P-0007-c2: model-error: P-0007 covers particles at rest only
+      P-0008 P-0008-c1: err=0.40436 pe=0.07  >3pe
+2026-11-17/r2/lab-c/005  acct=research cites=None     sp=AA     n= 2 T=10.0  dt=0.005  moving=0 initsep=1.50-1.50    minsep=0.04
+2026-11-17/r2/lab-c/006  acct=research cites=None     sp=AA     n= 2 T=10.0  dt=0.005  moving=0 initsep=6.00-6.00    minsep=0.02
+      P-0010 P-0010-c1: model-error: P-0009 is checked only for duration <= 6
+2026-11-17/r2/lab-c/007  acct=research cites=None     sp=C      n= 1 T=100.0 dt=0.05   moving=1 initsep=n/a          minsep=n/a
+      P-0005 P-0005-c2: model-error: P-0005 covers exactly two particles
+      P-0006 P-0006-c1: model-error: P-0006 covers exactly two particles
+      P-0007 P-0007-c1: model-error: P-0007 covers 2 or 3 particles
+      P-0008 P-0008-c1: model-error: P-0008 covers 2 to 4 particles
+      P-0009 P-0009-c1: model-error: P-0009 covers 2 or 3 particles
+      P-0010 P-0010-c1: model-error: P-0009 covers exactly two particles
+      P-0011 P-0011-c1: err=0.00713 pe=0.005  <=3pe
+2026-11-17/r2/lab-c/008  acct=research cites=None     sp=AC     n= 2 T=10.0  dt=0.005  moving=1 initsep=4.47-4.47    minsep=2.73
+      P-0008 P-0008-c1: err=0.01200 pe=0.07  <=3pe
+2026-11-17/r2/lab-c/009  acct=research cites=None     sp=CC     n= 2 T=10.0  dt=0.005  moving=1 initsep=4.47-4.47    minsep=0.34
+      P-0008 P-0008-c1: err=0.65696 pe=0.07  >3pe
+2026-11-17/r3/lab-c/001  acct=research cites=None     sp=AA     n= 2 T=0.4   dt=0.0002 moving=0 initsep=2.00-2.00    minsep=1.28
+2026-11-17/r3/lab-c/002  acct=research cites=None     sp=AA     n= 2 T=0.2   dt=0.0001 moving=0 initsep=1.00-1.00    minsep=0.29
+2026-11-17/r3/lab-c/003  acct=research cites=None     sp=AA     n= 2 T=0.8   dt=0.0004 moving=0 initsep=4.00-4.00    minsep=3.47
+      P-0007 P-0007-c2: model-error: P-0007 covers all pairwise separations 5.0 (got 4.000)
+      P-0008 P-0008-c1: err=0.00707 pe=0.07  <=3pe
+2026-11-17/r3/lab-c/004  acct=research cites=None     sp=AA     n= 2 T=2.0   dt=0.001  moving=0 initsep=8.00-8.00    minsep=7.51
+      P-0006 P-0006-c6: model-error: P-0006 covers initial separation 7 or 9 only (got 8.000)
+      P-0010 P-0010-c1: err=0.00707 pe=0.01  <=3pe
+2026-11-17/r3/lab-c/005  acct=research cites=None     sp=AA     n= 2 T=0.4   dt=0.0002 moving=0 initsep=0.00-0.00    minsep=0.00
+2026-11-17/r3/lab-c/006  acct=research cites=None     sp=AB     n= 2 T=0.4   dt=0.0002 moving=0 initsep=2.00-2.00    minsep=1.55
+2026-11-17/r3/lab-c/007  acct=research cites=None     sp=AC     n= 2 T=0.4   dt=0.0002 moving=0 initsep=2.00-2.00    minsep=1.78
+2026-11-17/r3/lab-c/008  acct=research cites=None     sp=BB     n= 2 T=0.4   dt=0.0002 moving=0 initsep=2.00-2.00    minsep=1.66
+2026-11-17/r3/lab-c/009  acct=research cites=None     sp=BC     n= 2 T=0.4   dt=0.0002 moving=0 initsep=2.00-2.00    minsep=1.81
+2026-11-17/r3/lab-c/010  acct=research cites=None     sp=CC     n= 2 T=0.4   dt=0.0002 moving=0 initsep=2.00-2.00    minsep=1.43
+2026-11-17/r3/lab-c/011  acct=review   cites=P-0001   sp=A      n= 1 T=100.0 dt=0.05   moving=1 initsep=n/a          minsep=n/a
+      P-0005 P-0005-c1: model-error: P-0005 covers exactly two particles
+      P-0006 P-0006-c4: model-error: P-0006 covers exactly two particles
+      P-0007 P-0007-c1: model-error: P-0007 covers 2 or 3 particles
+      P-0008 P-0008-c1: model-error: P-0008 covers 2 to 4 particles
+      P-0010 P-0010-c1: model-error: P-0009 covers exactly two particles
+      P-0011 P-0011-c1: err=0.00729 pe=0.005  <=3pe
+2026-11-17/r3/lab-c/012  acct=review   cites=P-0001   sp=A      n= 1 T=20.0  dt=0.01   moving=1 initsep=n/a          minsep=n/a
+      P-0005 P-0005-c1: model-error: P-0005 covers exactly two particles
+      P-0006 P-0006-c4: model-error: P-0006 covers exactly two particles
+      P-0007 P-0007-c1: model-error: P-0007 covers 2 or 3 particles
+      P-0008 P-0008-c1: model-error: P-0008 covers 2 to 4 particles
+      P-0010 P-0010-c1: model-error: P-0009 covers exactly two particles
+      P-0011 P-0011-c1: err=0.00717 pe=0.005  <=3pe
+2026-11-18/r1/lab-c/001  acct=research cites=None     sp=AA     n= 2 T=0.4   dt=0.0002 moving=1 initsep=2.00-2.00    minsep=0.26
+2026-11-18/r1/lab-c/002  acct=research cites=None     sp=AA     n= 2 T=0.4   dt=0.0002 moving=1 initsep=2.00-2.00    minsep=1.85
+2026-11-18/r1/lab-c/003  acct=research cites=None     sp=AA     n= 2 T=0.4   dt=0.0002 moving=1 initsep=2.00-2.00    minsep=1.33
+2026-11-18/r1/lab-c/004  acct=research cites=None     sp=AA     n= 2 T=0.8   dt=0.0004 moving=1 initsep=4.00-4.00    minsep=1.67
+      P-0007 P-0007-c2: model-error: P-0007 covers particles at rest only
+      P-0008 P-0008-c1: err=0.00706 pe=0.07  <=3pe
+2026-11-18/r1/lab-c/005  acct=research cites=None     sp=AA     n= 2 T=0.8   dt=0.0004 moving=1 initsep=4.00-4.00    minsep=3.87
+      P-0007 P-0007-c2: model-error: P-0007 covers particles at rest only
+      P-0008 P-0008-c1: err=0.00709 pe=0.07  <=3pe
+2026-11-18/r1/lab-c/006  acct=review   cites=P-0002   sp=C      n= 1 T=60.0  dt=0.03   moving=1 initsep=n/a          minsep=n/a
+      P-0005 P-0005-c2: model-error: P-0005 covers exactly two particles
+      P-0006 P-0006-c1: model-error: P-0006 covers exactly two particles
+      P-0007 P-0007-c1: model-error: P-0007 covers 2 or 3 particles
+      P-0008 P-0008-c1: model-error: P-0008 covers 2 to 4 particles
+      P-0009 P-0009-c1: model-error: P-0009 covers 2 or 3 particles
+      P-0010 P-0010-c1: model-error: P-0009 covers exactly two particles
+      P-0011 P-0011-c1: err=0.00711 pe=0.005  <=3pe
+2026-11-18/r1/lab-c/007  acct=research cites=None     sp=AB     n= 2 T=0.8   dt=0.0004 moving=0 initsep=4.00-4.00    minsep=3.61
+      P-0008 P-0008-c1: err=0.00705 pe=0.07  <=3pe
+2026-11-18/r1/lab-c/008  acct=research cites=None     sp=AC     n= 2 T=0.8   dt=0.0004 moving=0 initsep=4.00-4.00    minsep=3.81
+      P-0008 P-0008-c1: err=0.00707 pe=0.07  <=3pe
+2026-11-18/r1/lab-c/009  acct=research cites=None     sp=AA     n= 2 T=0.4   dt=0.0002 moving=0 initsep=2.00-2.00    minsep=1.40
+2026-11-18/r2/lab-c/001  acct=research cites=None     sp=AA     n= 2 T=2.0   dt=0.001  moving=0 initsep=3.00-3.00    minsep=0.05
+      P-0008 P-0008-c1: err=0.18620 pe=0.07  <=3pe
+2026-11-18/r2/lab-c/002  acct=research cites=None     sp=AA     n= 2 T=1.0   dt=0.0005 moving=1 initsep=6.00-6.00    minsep=1.40
+      P-0010 P-0010-c1: model-error: P-0009 covers particles at rest only
+2026-11-18/r2/lab-c/003  acct=research cites=None     sp=AA     n= 2 T=0.9   dt=0.00045 moving=1 initsep=6.00-6.00    minsep=5.86
+      P-0010 P-0010-c1: model-error: P-0009 covers particles at rest only
+2026-11-18/r2/lab-c/004  acct=review   cites=P-0003   sp=AA     n= 2 T=2.0   dt=0.001  moving=0 initsep=6.00-6.00    minsep=5.08
+      P-0010 P-0010-c1: err=0.00718 pe=0.01  <=3pe
+2026-11-18/r2/lab-c/005  acct=review   cites=P-0003   sp=AA     n= 2 T=1.0   dt=0.0005 moving=0 initsep=3.00-3.00    minsep=1.48
+      P-0008 P-0008-c1: err=0.00717 pe=0.07  <=3pe
+2026-11-19/r1/lab-c/001  acct=research cites=None     sp=AA     n= 2 T=1.0   dt=0.01   moving=0 initsep=3.00-3.00    minsep=1.43
+      P-0008 P-0008-c1: err=0.00718 pe=0.07  <=3pe
+2026-11-19/r1/lab-c/002  acct=research cites=None     sp=AB     n= 2 T=1.0   dt=0.01   moving=0 initsep=3.00-3.00    minsep=2.16
+      P-0008 P-0008-c1: err=0.00717 pe=0.07  <=3pe
+2026-11-19/r1/lab-c/003  acct=research cites=None     sp=AC     n= 2 T=1.0   dt=0.01   moving=0 initsep=3.00-3.00    minsep=2.92
+      P-0008 P-0008-c1: err=0.00723 pe=0.07  <=3pe
+2026-11-19/r1/lab-c/004  acct=research cites=None     sp=BB     n= 2 T=1.0   dt=0.01   moving=0 initsep=3.00-3.00    minsep=2.42
+      P-0008 P-0008-c1: err=0.00706 pe=0.07  <=3pe
+2026-11-19/r1/lab-c/005  acct=research cites=None     sp=BC     n= 2 T=1.0   dt=0.01   moving=0 initsep=3.00-3.00    minsep=2.91
+      P-0008 P-0008-c1: err=0.00718 pe=0.07  <=3pe
+2026-11-19/r1/lab-c/006  acct=research cites=None     sp=CC     n= 2 T=1.0   dt=0.01   moving=0 initsep=3.00-3.00    minsep=2.00
+      P-0008 P-0008-c1: err=0.00727 pe=0.07  <=3pe
+2026-11-19/r1/lab-c/007  acct=research cites=None     sp=AA     n= 2 T=3.0   dt=0.02   moving=0 initsep=6.00-6.00    minsep=3.86
+      P-0010 P-0010-c1: err=0.00727 pe=0.01  <=3pe
+2026-11-19/r1/lab-c/008  acct=research cites=None     sp=AB     n= 2 T=3.0   dt=0.02   moving=0 initsep=6.00-6.00    minsep=4.79
+      P-0010 P-0010-c1: err=0.00699 pe=0.01  <=3pe
+2026-11-19/r1/lab-c/009  acct=research cites=None     sp=AC     n= 2 T=3.0   dt=0.02   moving=0 initsep=6.00-6.00    minsep=5.87
+      P-0010 P-0010-c1: err=0.00691 pe=0.01  <=3pe
+2026-11-19/r1/lab-c/010  acct=research cites=None     sp=BB     n= 2 T=3.0   dt=0.02   moving=0 initsep=6.00-6.00    minsep=5.26
+      P-0010 P-0010-c1: err=0.00715 pe=0.01  <=3pe
+2026-11-19/r1/lab-c/011  acct=research cites=None     sp=BC     n= 2 T=3.0   dt=0.02   moving=0 initsep=6.00-6.00    minsep=5.82
+      P-0010 P-0010-c1: err=0.00702 pe=0.01  <=3pe
+2026-11-19/r1/lab-c/012  acct=research cites=None     sp=CC     n= 2 T=3.0   dt=0.02   moving=0 initsep=6.00-6.00    minsep=4.64
+      P-0010 P-0010-c1: err=0.00656 pe=0.01  <=3pe
+2026-11-19/r1/lab-c/013  acct=research cites=None     sp=AA     n= 2 T=3.0   dt=0.02   moving=0 initsep=8.00-8.00    minsep=7.22
+      P-0006 P-0006-c6: model-error: P-0006 covers initial separation 7 or 9 only (got 8.000)
+      P-0010 P-0010-c1: err=0.00735 pe=0.01  <=3pe
+2026-11-19/r1/lab-c/014  acct=research cites=None     sp=AB     n= 2 T=3.0   dt=0.02   moving=0 initsep=8.00-8.00    minsep=7.42
+      P-0006 P-0006-c6: model-error: P-0006 covers initial separation 7 or 9 only (got 8.000)
+      P-0010 P-0010-c1: err=0.00718 pe=0.01  <=3pe
+2026-11-19/r1/lab-c/015  acct=research cites=None     sp=AC     n= 2 T=3.0   dt=0.02   moving=0 initsep=8.00-8.00    minsep=7.88
+      P-0006 P-0006-c6: model-error: P-0006 covers initial separation 7 or 9 only (got 8.000)
+      P-0010 P-0010-c1: err=0.00696 pe=0.01  <=3pe
+2026-11-19/r1/lab-c/016  acct=research cites=None     sp=BB     n= 2 T=3.0   dt=0.02   moving=0 initsep=8.00-8.00    minsep=7.68
+      P-0006 P-0006-c6: model-error: P-0006 covers initial separation 7 or 9 only (got 8.000)
+      P-0010 P-0010-c1: err=0.00741 pe=0.01  <=3pe
+2026-11-19/r1/lab-c/017  acct=research cites=None     sp=BC     n= 2 T=3.0   dt=0.02   moving=0 initsep=8.00-8.00    minsep=7.82
+      P-0006 P-0006-c6: model-error: P-0006 covers initial separation 7 or 9 only (got 8.000)
+      P-0010 P-0010-c1: err=0.00690 pe=0.01  <=3pe
+2026-11-19/r1/lab-c/018  acct=research cites=None     sp=CC     n= 2 T=3.0   dt=0.02   moving=0 initsep=8.00-8.00    minsep=7.49
+      P-0006 P-0006-c6: model-error: P-0006 covers initial separation 7 or 9 only (got 8.000)
+      P-0010 P-0010-c1: err=0.00735 pe=0.01  <=3pe
+2026-11-19/r1/lab-c/019  acct=research cites=None     sp=AA     n= 2 T=3.0   dt=0.02   moving=0 initsep=9.00-9.00    minsep=8.51
+      P-0006 P-0006-c6: err=0.00701 pe=0.06  <=3pe
+      P-0010 P-0010-c1: err=0.00709 pe=0.01  <=3pe
+2026-11-19/r1/lab-c/020  acct=research cites=None     sp=ABC    n= 3 T=2.0   dt=0.01   moving=0 initsep=5.00-5.00    minsep=4.39
+      P-0007 P-0007-c1: err=0.00717 pe=0.07  <=3pe
+      P-0008 P-0008-c1: err=0.00717 pe=0.07  <=3pe
+2026-11-19/r1/lab-c/021  acct=research cites=None     sp=AA     n= 2 T=2.0   dt=0.001  moving=0 initsep=3.00-3.00    minsep=0.01
+      P-0008 P-0008-c1: err=0.18624 pe=0.07  <=3pe
+2026-11-19/r1/lab-c/022  acct=research cites=None     sp=AA     n= 2 T=2.0   dt=0.001  moving=0 initsep=3.00-3.00    minsep=0.04
+      P-0008 P-0008-c1: err=0.18623 pe=0.07  <=3pe
+2026-11-19/r1/lab-c/023  acct=review   cites=P-0005   sp=BC     n= 2 T=2.0   dt=0.01   moving=0 initsep=5.00-5.00    minsep=4.82
+      P-0005 P-0005-c5: err=0.00713 pe=0.05  <=3pe
+      P-0007 P-0007-c1: err=0.00713 pe=0.07  <=3pe
+      P-0008 P-0008-c1: err=0.00713 pe=0.07  <=3pe
+      P-0009 P-0009-c1: err=0.00713 pe=0.01  <=3pe
+2026-11-19/r1/lab-c/024  acct=review   cites=P-0005   sp=CC     n= 2 T=2.0   dt=0.01   moving=0 initsep=5.00-5.00    minsep=3.94
+      P-0005 P-0005-c2: err=0.00698 pe=0.05  <=3pe
+      P-0007 P-0007-c1: err=0.00698 pe=0.07  <=3pe
+      P-0008 P-0008-c1: err=0.00698 pe=0.07  <=3pe
+      P-0009 P-0009-c1: err=0.00698 pe=0.01  <=3pe
+2026-11-19/r1/lab-c/025  acct=review   cites=P-0005   sp=BB     n= 2 T=2.0   dt=0.01   moving=0 initsep=5.00-5.00    minsep=4.45
+      P-0005 P-0005-c1: err=0.00696 pe=0.05  <=3pe
+      P-0007 P-0007-c1: err=0.00696 pe=0.07  <=3pe
+      P-0008 P-0008-c1: err=0.00696 pe=0.07  <=3pe
+      P-0009 P-0009-c1: err=0.00696 pe=0.01  <=3pe
+2026-11-19/r2/lab-c/001  acct=research cites=None     sp=AA     n= 2 T=6.0   dt=0.02   moving=0 initsep=9.00-9.00    minsep=6.99
+      P-0006 P-0006-c6: err=0.00731 pe=0.06  <=3pe
+      P-0010 P-0010-c1: err=0.00725 pe=0.01  <=3pe
+2026-11-19/r2/lab-c/002  acct=research cites=None     sp=ABC    n= 3 T=1.5   dt=0.01   moving=0 initsep=3.00-3.00    minsep=1.41
+      P-0008 P-0008-c1: err=0.00702 pe=0.07  <=3pe
+2026-11-19/r2/lab-c/003  acct=review   cites=P-0006   sp=CC     n= 2 T=4.0   dt=0.02   moving=0 initsep=7.00-7.00    minsep=5.56
+      P-0006 P-0006-c1: err=0.00734 pe=0.05  <=3pe
+      P-0010 P-0010-c1: err=0.00734 pe=0.01  <=3pe
+2026-11-19/r2/lab-c/004  acct=review   cites=P-0006   sp=CC     n= 2 T=4.0   dt=0.02   moving=0 initsep=9.00-9.00    minsep=8.40
+      P-0006 P-0006-c2: err=0.00709 pe=0.05  <=3pe
+      P-0010 P-0010-c1: err=0.00709 pe=0.01  <=3pe
+2026-11-19/r2/lab-c/005  acct=review   cites=P-0006   sp=AC     n= 2 T=4.0   dt=0.02   moving=0 initsep=7.00-7.00    minsep=6.86
+      P-0006 P-0006-c4: err=0.00704 pe=0.06  <=3pe
+      P-0010 P-0010-c1: err=0.00684 pe=0.01  <=3pe
+2026-11-19/r2/lab-c/006  acct=review   cites=P-0006   sp=BC     n= 2 T=4.0   dt=0.02   moving=0 initsep=7.00-7.00    minsep=6.85
+      P-0006 P-0006-c3: err=0.00732 pe=0.05  <=3pe
+      P-0010 P-0010-c1: err=0.00725 pe=0.01  <=3pe
+2026-11-19/r2/lab-c/007  acct=review   cites=P-0006   sp=BB     n= 2 T=4.0   dt=0.02   moving=0 initsep=7.00-7.00    minsep=6.24
+      P-0006 P-0006-c3: err=0.00712 pe=0.05  <=3pe
+      P-0010 P-0010-c1: err=0.00713 pe=0.01  <=3pe
+2026-11-19/r2/lab-c/008  acct=review   cites=P-0006   sp=AA     n= 2 T=4.0   dt=0.02   moving=0 initsep=7.00-7.00    minsep=4.84
+      P-0006 P-0006-c4: err=0.00720 pe=0.06  <=3pe
+      P-0010 P-0010-c1: err=0.00726 pe=0.01  <=3pe
+2026-11-19/r2/lab-c/009  acct=review   cites=P-0006   sp=AA     n= 2 T=4.0   dt=0.02   moving=0 initsep=9.00-9.00    minsep=8.11
+      P-0006 P-0006-c6: err=0.00720 pe=0.06  <=3pe
+      P-0010 P-0010-c1: err=0.00724 pe=0.01  <=3pe
+2026-11-19/r2/lab-c/010  acct=review   cites=P-0006   sp=AB     n= 2 T=4.0   dt=0.02   moving=0 initsep=7.00-7.00    minsep=5.75
+      P-0006 P-0006-c6: err=0.00723 pe=0.06  <=3pe
+      P-0010 P-0010-c1: err=0.00723 pe=0.01  <=3pe
+2026-11-19/r2/lab-c/011  acct=review   cites=P-0006   sp=AB     n= 2 T=4.0   dt=0.02   moving=0 initsep=9.00-9.00    minsep=8.46
+      P-0006 P-0006-c6: err=0.00688 pe=0.06  <=3pe
+      P-0010 P-0010-c1: err=0.00691 pe=0.01  <=3pe
+2026-11-19/r3/lab-c/001  acct=review   cites=P-0007   sp=AAA    n= 3 T=1.5   dt=0.03   moving=0 initsep=5.00-5.00    minsep=3.78
+      P-0007 P-0007-c1: err=0.00687 pe=0.07  <=3pe
+      P-0008 P-0008-c1: err=0.00687 pe=0.07  <=3pe
+2026-11-19/r3/lab-c/002  acct=research cites=None     sp=ABC    n= 3 T=1.5   dt=0.01   moving=0 initsep=3.00-3.00    minsep=1.48
+      P-0008 P-0008-c1: err=0.00719 pe=0.07  <=3pe
+2026-11-19/r3/lab-c/003  acct=research cites=None     sp=AA     n= 2 T=1.5   dt=0.02   moving=0 initsep=4.00-4.00    minsep=2.49
+      P-0007 P-0007-c2: model-error: P-0007 covers all pairwise separations 5.0 (got 4.000)
+      P-0008 P-0008-c1: err=0.00703 pe=0.07  <=3pe
+2026-11-19/r3/lab-c/004  acct=research cites=None     sp=AA     n= 2 T=1.5   dt=0.02   moving=1 initsep=4.00-4.00    minsep=2.57
+      P-0007 P-0007-c2: model-error: P-0007 covers particles at rest only
+      P-0008 P-0008-c1: err=0.00713 pe=0.07  <=3pe
+2026-11-20/r1/lab-c/001  acct=research cites=None     sp=AA     n= 2 T=0.2   dt=0.005  moving=0 initsep=1.00-1.00    minsep=0.42
+2026-11-20/r1/lab-c/002  acct=research cites=None     sp=AB     n= 2 T=0.2   dt=0.005  moving=0 initsep=1.00-1.00    minsep=0.66
+2026-11-20/r1/lab-c/003  acct=research cites=None     sp=AC     n= 2 T=0.2   dt=0.005  moving=0 initsep=1.00-1.00    minsep=0.90
+2026-11-20/r1/lab-c/004  acct=research cites=None     sp=BB     n= 2 T=0.2   dt=0.005  moving=0 initsep=1.00-1.00    minsep=0.73
+2026-11-20/r1/lab-c/005  acct=research cites=None     sp=BC     n= 2 T=0.2   dt=0.005  moving=0 initsep=1.00-1.00    minsep=0.84
+2026-11-20/r1/lab-c/006  acct=research cites=None     sp=CC     n= 2 T=0.2   dt=0.005  moving=0 initsep=1.00-1.00    minsep=0.51
+2026-11-20/r1/lab-c/007  acct=review   cites=P-0008   sp=ABCA   n= 4 T=1.0   dt=0.01   moving=0 initsep=3.20-4.97    minsep=2.54
+      P-0008 P-0008-c1: err=0.00722 pe=0.07  <=3pe
+2026-11-20/r1/lab-c/008  acct=review   cites=P-0008   sp=BBCC   n= 4 T=1.0   dt=0.01   moving=0 initsep=3.50-4.95    minsep=2.99
+      P-0008 P-0008-c1: err=0.00711 pe=0.07  <=3pe
+2026-11-20/r1/lab-c/009  acct=review   cites=P-0008   sp=AABC   n= 4 T=1.0   dt=0.01   moving=0 initsep=3.50-4.95    minsep=2.51
+      P-0008 P-0008-c1: err=0.00702 pe=0.07  <=3pe
+2026-11-20/r1/lab-c/010  acct=review   cites=P-0008   sp=ABC    n= 3 T=2.0   dt=0.01   moving=0 initsep=4.00-4.00    minsep=2.79
+      P-0008 P-0008-c1: err=0.00715 pe=0.07  <=3pe
+2026-11-20/r1/lab-c/011  acct=review   cites=P-0007   sp=AAA    n= 3 T=1.5   dt=0.03   moving=0 initsep=4.50-4.50    minsep=2.79
+      P-0007 P-0007-c1: model-error: P-0007 covers all pairwise separations 5.0 (got 4.500)
+      P-0008 P-0008-c1: err=0.00726 pe=0.07  <=3pe
+2026-11-20/r1/lab-c/012  acct=review   cites=P-0007   sp=AAA    n= 3 T=1.0   dt=0.03   moving=0 initsep=4.00-4.00    minsep=2.98
+      P-0007 P-0007-c2: model-error: P-0007 covers all pairwise separations 5.0 (got 4.000)
+      P-0008 P-0008-c1: err=0.00721 pe=0.07  <=3pe

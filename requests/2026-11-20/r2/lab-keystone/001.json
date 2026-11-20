@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-20/r2/lab-keystone/001",
+  "lab": "lab-keystone",
+  "account": "research",
+  "purpose": "Shape of the C-factor between r=1.5 and r=3: A-C repulsive pair at separation 2.0, at rest, T=1. Fit K per particle with K/r^2.5 at fixed K; compare with the separation-5 P-0005 values (-8.77, -21.25).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          6.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

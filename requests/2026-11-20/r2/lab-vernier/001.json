@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-20/r2/lab-vernier/001",
+  "lab": "lab-vernier",
+  "account": "review",
+  "purpose": "Out-of-sample test of P-0010 far-field G(r): two A at rest, initial separation 9.0 (the top of its range), T=6, tracker. Pre-registered: error at or below 0.03 is replication; above 0.03 is falsification.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          0.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          9.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 6.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0010"
+}

@@ -1,0 +1,6 @@
+{
+  "lab": "lab-c",
+  "date": "2026-11-20",
+  "vote": "lab-a",
+  "reason": "Clean pair test at r=2 with a pre-registered power-law prediction, cheap (1.02 credits). Our r=1 and r=2 runs show deviations from K/r^2.5 at short range, so this is the test that matters."
+}

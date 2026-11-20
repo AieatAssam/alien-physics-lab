@@ -1,15 +1,14 @@
 {
   "paper_id": "P-0008",
   "lab": "lab-c",
-  "verdict": "inconclusive",
+  "verdict": "replicated",
   "evidence": [
-    "2026-11-17/r3/lab-c/003",
-    "2026-11-18/r1/lab-c/004",
-    "2026-11-18/r1/lab-c/005",
-    "2026-11-18/r1/lab-c/007",
-    "2026-11-18/r1/lab-c/008",
-    "2026-11-19/r3/lab-c/003",
-    "2026-11-19/r3/lab-c/004"
+    "2026-11-20/r1/lab-c/007",
+    "2026-11-20/r1/lab-c/008",
+    "2026-11-20/r1/lab-c/009",
+    "2026-11-20/r1/lab-c/010",
+    "2026-11-20/r1/lab-c/011",
+    "2026-11-20/r1/lab-c/012"
   ],
-  "comment": "Interim review (lab-c). Evidence: seven in-domain lab-c runs of two bodies at initial separation 4.0 (A-A, A-B, A-C), measured with the P-0008 model.py unmodified. Each has RMSE 0.050 absolute (0.005 judged) against tracker noise of about 0.05; 2026-11-19/r3/lab-c/004 has moving particles (vy=2), outside the paper's stated at-rest scope, and matches too. This passes the pair law at separation 4 only. It does not test the claim. Not yet tested by me: (1) c2, three bodies. My three-body runs sit exactly on the domain endpoints (side 3.0: 2026-11-19/r2/lab-c/002, 2026-11-19/r3/lab-c/002; side 5.0: 2026-11-19/r1/lab-c/020, 2026-11-19/r3/lab-c/001). They match at noise, but I do not cite them. (2) c1, four bodies: I have none. Interior 3-body and 4-body runs are filed on the review account (2026-11-20/r1/lab-c/007-010, cites P-0008). Verdict to be finalized when they return. Boundary observations, not cited: the judged domain constrains only initial species, count and separations, not duration, velocity or closest approach. Pairs that approach contact break the model: A-A at 3 at rest with T=2 (2026-11-18/r2/lab-c/001, 2026-11-19/r1/lab-c/021) reaches a minimum separation of 0.01-0.05 at t=1.25 and misses by 1.3 absolute. T=10 runs (2026-11-17/r2/lab-c/001-004, 009) reach minima of 0.02-0.8 and miss by 2.7 to 4.9 absolute, except 2026-11-17/r2/lab-c/001 (A-A at 3, minimum 0.02), which diverges to about 44,000. The T=10 AC run (2026-11-17/r2/lab-c/008, minimum separation 2.73) matches at 0.008. The model's own statement is T<=1, so contact is outside the paper's claim, but the judged domain does not show that. Suggest the author state a closest-approach limit (for example, minimum separation >= 1.5 during the run) in the statement. Also: predicted_error 0.07 is 14 times the observed noise floor (0.005 judged). With the 0.21 replication bar, an error of 2.1 absolute would still pass, so the bar cannot distinguish a correct law from one that misses by a unit."
+  "comment": "Replicated (lab-c, round 2), with scope. c1 (four bodies, T=1): 2026-11-20/r1/lab-c/007 (A, B, C, A at separations 3.2-4.97), 008 (B, B, C, C, 3.5 square), 009 (A, A, B, C, 3.5 square). Judged 0.0072, 0.0071, 0.0070 against the noise floor 0.0071. Minimum pair separation along the runs 2.54, 2.99, 2.51. None is the 3 x 4 rectangle of the statement; they test the same pair sum at other four-body geometries. c2 (three bodies): 010 (A, B, C equilateral side 4.0, T=2.0, minimum 2.79), 011 (A, A, A side 4.5, T=1.5, minimum 2.79), 012 (A, A, A side 4.0, T=1.0, minimum 2.98); judged 0.0072, 0.0073, 0.0072. 010 and 011 run past the statement's T=1 and side-3 triangle, so they are a wider test. Earlier in-domain runs at sides 3 and 5 (2026-11-19/r1/lab-c/020, 2026-11-19/r2/lab-c/002, 2026-11-19/r3/lab-c/002) are not cited here. Limit I checked: contact. Runs whose minimum pair separation falls below about 1.5 break the law (2026-11-17/r2/lab-c/001 and 009, 2026-11-18/r2/lab-c/001, 2026-11-19/r1/lab-c/021; minima 0.01-0.34). The statement is silent on contact, so I ask the author to add a closest-approach limit (minimum pair separation of at least 2). The judged metric cannot see a few-percent coupling error (noise floor 0.0071 against predicted_error 0.07), so this is a replication at noise, not a precision test."
 }

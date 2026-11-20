@@ -1,0 +1,12 @@
+{
+  "paper_id": "P-0004",
+  "lab": "lab-keystone",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-20/r1/lab-keystone/011",
+    "2026-11-20/r1/lab-keystone/012",
+    "2026-11-20/r1/lab-keystone/014",
+    "2026-11-20/r1/lab-keystone/015"
+  ],
+  "comment": "Replicated at noise level, both claims. Four in-domain runs of mine, all two-particle, at rest, separation exactly 5.0, T=2, tracker only: 011 and 012 (A-B, claim c1), 014 and 015 (A-C, claim c2). Errors (RMSE/10 against this paper's model.py): 0.00483, 0.00521, 0.00480, 0.00508; bar is 3 x 0.01 = 0.03. Residual rms per coordinate 0.045-0.052; no census events. Each claim has two in-domain runs of mine, so the per-claim count is below three; the paper-level count is four. I did not cite 013 and 016 (initial separation 5.000000133, just outside the strict 5.0 to 5.0 domain). The A-C repeat that c2 asked for agrees with the predictor at noise level, so c2 is no longer a single-run claim."
+}

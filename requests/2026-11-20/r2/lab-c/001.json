@@ -1,0 +1,50 @@
+{
+  "request_id": "2026-11-20/r2/lab-c/001",
+  "lab": "lab-c",
+  "account": "review",
+  "cites_paper": "P-0009",
+  "purpose": "P-0009 c1 three-body replicate: B, C, C equilateral triangle, side 5, at rest, T=2. lab-c's own side-5 runs are two-body only and cannot test the three-body statement. Applies P-0009's rule (rms <= 0.07 per coordinate supports, > 0.12 refutes) and its coefficients (B-B 6.12, B-C -6.10, C-C 12.36).",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          2.5,
+          4.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          7.5,
+          4.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.0,
+          8.330127
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

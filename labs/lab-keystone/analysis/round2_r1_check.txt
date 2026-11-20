@@ -1,0 +1,12 @@
+001 BB r0=7.00 T=6.0  pred K=(5.300,5.300)  fitted K=(5.317,5.283)  dK=(+0.3%,-0.3%)  rms(fit)=0.0459  rms(pred)=0.0459  error(pred)=0.00459
+002 CC r0=7.00 T=6.0  pred K=(10.142,10.142)  fitted K=(10.583,10.816)  dK=(+4.3%,+6.6%)  rms(fit)=0.0497  rms(pred)=0.0622  error(pred)=0.00622
+003 AA r0=7.00 T=4.0  pred K=(15.588,15.588)  fitted K=(15.393,15.491)  dK=(-1.2%,-0.6%)  rms(fit)=0.0480  rms(pred)=0.0481  error(pred)=0.00481
+004 AB r0=7.00 T=6.0  pred K=(7.785,10.686)  fitted K=(7.834,10.820)  dK=(+0.6%,+1.2%)  rms(fit)=0.0514  rms(pred)=0.0518  error(pred)=0.00518
+005 BC r0=7.00 T=6.0  pred K=(-5.005,-8.689)  fitted K=(-5.157,-8.635)  dK=(+3.0%,-0.6%)  rms(fit)=0.0498  rms(pred)=0.0500  error(pred)=0.00500
+006 CC r0=6.00 T=4.0  pred K=(11.219,11.219)  fitted K=(11.395,11.633)  dK=(+1.6%,+3.7%)  rms(fit)=0.0496  rms(pred)=0.0512  error(pred)=0.00512
+007 AA r0=6.00 T=3.0  pred K=(17.244,17.244)  fitted K=(16.918,16.686)  dK=(-1.9%,-3.2%)  rms(fit)=0.0459  rms(pred)=0.0468  error(pred)=0.00468
+008 ABCAB pentagon, pairwise sum, r^-2.5 (no radial factor) N=5 sep=[5.00,8.09] T=2.0  rms=0.0540  max|res|=0.183  error=0.00540  min-sep-in-model=5.000
+009 AC close range, pure r^-2.5 (P-0005 table) N=2 sep=[1.50,1.50] T=1.0  rms=0.0853  max|res|=0.281  error=0.00853  min-sep-in-model=1.500
+010 BC close range, pure r^-2.5 (P-0005 table) N=2 sep=[1.50,1.50] T=1.0  rms=0.0725  max|res|=0.239  error=0.00725  min-sep-in-model=1.500
+009 AC r0=1.50 T=1.0  pred K=(-8.770,-21.250)  fitted K=(-7.431,-17.948)  dK=(-15.3%,-15.5%)  rms(fit)=0.0496  rms(pred)=0.0853  error(pred)=0.00853
+010 BC r0=1.50 T=1.0  pred K=(-6.100,-10.590)  fitted K=(-5.169,-8.605)  dK=(-15.3%,-18.7%)  rms(fit)=0.0503  rms(pred)=0.0725  error(pred)=0.00725
