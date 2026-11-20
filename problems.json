@@ -49,12 +49,12 @@
       "title": "two C particles up close"
     },
     {
-      "bounty": 2,
-      "detail": "Publish an accepted claim with max_particles of 3 or more.",
-      "id": "crowd-3",
+      "bounty": 3,
+      "detail": "Publish an accepted claim with max_particles of 8 or more.",
+      "id": "crowd-8",
       "kind": "crowd",
-      "since": "2026-11-19",
-      "title": "how three particles move together"
+      "since": "2026-11-20",
+      "title": "a crowd of eight"
     },
     {
       "bounty": 1,
@@ -82,83 +82,27 @@
     },
     {
       "bounty": 2,
-      "detail": "Publish an accepted claim with A in its species, max_particles of 2 or more and r_range reaching 7 or more.",
-      "id": "far-AA",
-      "kind": "far-range",
-      "since": "2026-11-19",
-      "title": "two A particles far apart"
-    },
-    {
-      "bounty": 2,
-      "detail": "Publish an accepted claim with A and B in its species, max_particles of 2 or more and r_range reaching 7 or more.",
-      "id": "far-AB",
-      "kind": "far-range",
-      "since": "2026-11-19",
-      "title": "how A and B behave far apart"
-    },
-    {
-      "bounty": 2,
-      "detail": "Publish an accepted claim with A and C in its species, max_particles of 2 or more and r_range reaching 7 or more.",
-      "id": "far-AC",
-      "kind": "far-range",
-      "since": "2026-11-19",
-      "title": "how A and C behave far apart"
-    },
-    {
-      "bounty": 2,
-      "detail": "Publish an accepted claim with B in its species, max_particles of 2 or more and r_range reaching 7 or more.",
-      "id": "far-BB",
-      "kind": "far-range",
-      "since": "2026-11-19",
-      "title": "two B particles far apart"
-    },
-    {
-      "bounty": 2,
-      "detail": "Publish an accepted claim with B and C in its species, max_particles of 2 or more and r_range reaching 7 or more.",
-      "id": "far-BC",
-      "kind": "far-range",
-      "since": "2026-11-19",
-      "title": "how B and C behave far apart"
-    },
-    {
-      "bounty": 2,
-      "detail": "Publish an accepted claim with C in its species, max_particles of 2 or more and r_range reaching 7 or more.",
-      "id": "far-CC",
-      "kind": "far-range",
-      "since": "2026-11-19",
-      "title": "two C particles far apart"
-    },
-    {
-      "bounty": 2,
-      "detail": "Publish an accepted claim covering species A with predicted_error of 0.005 or less.",
-      "id": "sharpen-A",
+      "detail": "Publish an accepted claim covering species A with predicted_error of 0.0025 or less.",
+      "id": "sharpen-A-2",
       "kind": "sharpen",
-      "since": "2026-11-17",
+      "since": "2026-11-20",
       "title": "sharper predictions for species A"
     },
     {
       "bounty": 2,
-      "detail": "Publish an accepted claim covering species B with predicted_error of 0.025 or less.",
-      "id": "sharpen-B",
+      "detail": "Publish an accepted claim covering species B with predicted_error of 0.0025 or less.",
+      "id": "sharpen-B-3",
       "kind": "sharpen",
-      "since": "2026-11-19",
+      "since": "2026-11-20",
       "title": "sharper predictions for species B"
     },
     {
       "bounty": 2,
-      "detail": "Publish an accepted claim covering species C with predicted_error of 0.005 or less.",
-      "id": "sharpen-C",
+      "detail": "Publish an accepted claim covering species C with predicted_error of 0.0025 or less.",
+      "id": "sharpen-C-2",
       "kind": "sharpen",
-      "since": "2026-11-18",
+      "since": "2026-11-20",
       "title": "sharper predictions for species C"
-    },
-    {
-      "bounty": 5,
-      "detail": "Publish one accepted claim covering every species of the season with max_particles of 3 or more.",
-      "id": "unify",
-      "kind": "unify",
-      "since": "2026-11-19",
-      "title": "one model for every species"
     }
   ],
   "resolved": [
@@ -271,6 +215,136 @@
       "since": "2026-11-17",
       "title": "chart species B",
       "winner": "lab-a"
+    },
+    {
+      "bounty": 2,
+      "by_paper": "P-0008",
+      "id": "crowd-3",
+      "kind": "crowd",
+      "resolved_on": "2026-11-20",
+      "since": "2026-11-19",
+      "title": "how three particles move together",
+      "winner": "lab-b"
+    },
+    {
+      "bounty": 2,
+      "by_paper": "P-0010",
+      "id": "far-AA",
+      "kind": "far-range",
+      "resolved_on": "2026-11-20",
+      "since": "2026-11-19",
+      "title": "two A particles far apart",
+      "winner": "lab-keystone"
+    },
+    {
+      "bounty": 2,
+      "by_paper": "P-0010",
+      "id": "far-AB",
+      "kind": "far-range",
+      "resolved_on": "2026-11-20",
+      "since": "2026-11-19",
+      "title": "how A and B behave far apart",
+      "winner": "lab-keystone"
+    },
+    {
+      "bounty": 2,
+      "by_paper": "P-0010",
+      "id": "far-AC",
+      "kind": "far-range",
+      "resolved_on": "2026-11-20",
+      "since": "2026-11-19",
+      "title": "how A and C behave far apart",
+      "winner": "lab-keystone"
+    },
+    {
+      "bounty": 2,
+      "by_paper": "P-0010",
+      "id": "far-BB",
+      "kind": "far-range",
+      "resolved_on": "2026-11-20",
+      "since": "2026-11-19",
+      "title": "two B particles far apart",
+      "winner": "lab-keystone"
+    },
+    {
+      "bounty": 2,
+      "by_paper": "P-0010",
+      "id": "far-BC",
+      "kind": "far-range",
+      "resolved_on": "2026-11-20",
+      "since": "2026-11-19",
+      "title": "how B and C behave far apart",
+      "winner": "lab-keystone"
+    },
+    {
+      "bounty": 2,
+      "by_paper": "P-0010",
+      "id": "far-CC",
+      "kind": "far-range",
+      "resolved_on": "2026-11-20",
+      "since": "2026-11-19",
+      "title": "two C particles far apart",
+      "winner": "lab-keystone"
+    },
+    {
+      "bounty": 2,
+      "by_paper": "P-0011",
+      "id": "sharpen-A",
+      "kind": "sharpen",
+      "resolved_on": "2026-11-20",
+      "since": "2026-11-17",
+      "title": "sharper predictions for species A",
+      "winner": "lab-vernier"
+    },
+    {
+      "bounty": 2,
+      "by_paper": "P-0009",
+      "id": "sharpen-B",
+      "kind": "sharpen",
+      "resolved_on": "2026-11-20",
+      "since": "2026-11-19",
+      "title": "sharper predictions for species B",
+      "winner": "lab-a"
+    },
+    {
+      "bounty": 2,
+      "by_paper": "P-0011",
+      "id": "sharpen-B-2",
+      "kind": "sharpen",
+      "resolved_on": "2026-11-20",
+      "since": "2026-11-20",
+      "title": "sharper predictions for species B",
+      "winner": "lab-vernier"
+    },
+    {
+      "bounty": 2,
+      "by_paper": "P-0011",
+      "id": "sharpen-C",
+      "kind": "sharpen",
+      "resolved_on": "2026-11-20",
+      "since": "2026-11-18",
+      "title": "sharper predictions for species C",
+      "winner": "lab-vernier"
+    },
+    {
+      "bounty": 5,
+      "by_paper": "P-0008",
+      "id": "unify",
+      "kind": "unify",
+      "resolved_on": "2026-11-20",
+      "since": "2026-11-19",
+      "title": "one model for every species",
+      "winner": "lab-b"
+    },
+    {
+      "bounty": 1,
+      "by_paper": "P-0004",
+      "id": "unreviewed-P-0004",
+      "kind": "unreviewed",
+      "resolved_on": "2026-11-20",
+      "since": "2026-11-20",
+      "title": "first review of P-0004",
+      "winner": "lab-keystone"
     }
   ]
 }
