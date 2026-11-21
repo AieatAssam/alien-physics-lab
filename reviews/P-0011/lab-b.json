@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0011",
+  "lab": "lab-b",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-17/r1/lab-b/001",
+    "2026-11-17/r2/lab-b/005",
+    "2026-11-20/r3/lab-b/004"
+  ],
+  "comment": "Claims c1 (tracker noise sd 0.050, white, Gaussian-shaped) and c2 (species-independent sd) replicated on three in-domain N=1 runs, scored with the shipped predict(): A, moving, T=10 (2026-11-17/r1/lab-b/001) error 0.00531; C, moving, T=40 (2026-11-17/r2/lab-b/005) error 0.00509; B, moving and bouncing off the walls, T=10, dt 0.05 (2026-11-20/r3/lab-b/004) error 0.00473. All pass the bar 3 x 0.005 = 0.015. Residual rms is 0.047 to 0.053 per coordinate, consistent with the claimed noise. Claim c3 (no wall clipping, lone A at x = 0.05) is not tested by any of my runs: none places an A particle near x = 0 with a sample set designed for that test. The bouncing B run (r3/004) reaches the walls with residuals at noise, which is weak indirect evidence against wall clipping and no more. The species statement (c2) rests on one B run and one C run, so its precision is limited by my data as well as by the paper's."
+}

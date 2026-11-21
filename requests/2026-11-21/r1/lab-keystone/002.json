@@ -1,0 +1,49 @@
+{
+  "request_id": "2026-11-21/r1/lab-keystone/002",
+  "lab": "lab-keystone",
+  "account": "review",
+  "cites_paper": "P-0009",
+  "purpose": "Review of P-0009 (lab-a): B,C,C side 4.99 (lower edge of paper's r_range), centre (3,3). Pre-registered: P-0009 model.py predictions; error = RMSE/10 vs tracker. Bar for in-domain replicate: error <= 0.03.",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          3.0,
+          5.8809778433
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          0.505,
+          1.5595110784
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.495,
+          1.5595110784
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

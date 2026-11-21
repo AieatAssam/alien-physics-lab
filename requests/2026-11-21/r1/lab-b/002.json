@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-21/r1/lab-b/002",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Far-range shape, C-C at sep 13.294 on the diagonal, at rest, T=10. Pre-registered: linear-G scaling of measured K_CC(12)=4.90 predicts 3.46; power-law continuation predicts 4.5. 3% tolerance decides.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          0.3,
+          0.3
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          9.7,
+          9.7
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 10.0,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "lab": "lab-vernier",
+  "date": "2026-11-21",
+  "title": "Eight-body superposition test: a crowd of eight, mixed species A, B, C, at rest",
+  "pitch": "Crowd-8 open problem. Our pair laws are pairwise: P-0004 (A-B and A-C at separation 5), P-0010 (far-field), and the close B-C constants. Eight particles on a 3x3 grid minus the centre, minimum separation 3.5, at rest, T = 2. If the force is a sum of pair terms, the pairwise predictor should match at tracker noise (error at or below 0.015). A clear miss would show many-body terms. Discrimination against no force is checked after the run, not assumed.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          1.5,
+          1.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          5.0,
+          1.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          8.5,
+          1.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          1.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          1.5,
+          8.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          5.0,
+          8.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.5,
+          8.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.01
+  }
+}

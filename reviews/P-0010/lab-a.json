@@ -1,0 +1,24 @@
+{
+ "paper_id": "P-0010",
+ "lab": "lab-a",
+ "verdict": "narrowed",
+ "evidence": [
+  "2026-11-20/r3/lab-a/006",
+  "2026-11-20/r3/lab-a/007",
+  "2026-11-20/r3/lab-a/008",
+  "2026-11-20/r3/lab-a/009"
+ ],
+ "proposed_domain": {
+  "species": [
+   "A",
+   "B",
+   "C"
+  ],
+  "r_range": [
+   6.0,
+   9.0
+  ],
+  "max_particles": 2
+ },
+ "comment": "Bulk runs replicate. All three bulk runs are in domain and within the 0.03 bar (3 x 0.01): 006 (C-C, r0 9, T 6) error/L 0.0071; 007 (A-A, r0 7.5, T 6) 0.0077; 008 (B-B, r0 6, T 6) 0.0072. Run 009 (A-A, r0 6, T 6) fails: error/L 0.195, far above the bar. The measured pair comes within 0.028 of itself at t = 4.26; the constant-K point-force law has no collision handling, so its prediction passes the particles through each other (predicted minimum separation 0.066, particles on opposite walls by t = 5). The claim states this domain (r0 6 to 9, T up to 6) and run 009 is inside it, so the claim does not hold across its whole stated domain. Narrowed, not falsified: the bulk runs (measured minimum separations 2.5 to 7.7) stay inside the claim. The schema cannot state a duration or minimum-separation limit, so the proposed domain is the paper's own; the narrowing is in this comment: the claim should exclude pairs that approach closer than about 1 within T = 6."
+}

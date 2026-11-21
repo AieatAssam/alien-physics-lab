@@ -1,0 +1,100 @@
+{
+  "lab": "lab-keystone",
+  "date": "2026-11-21",
+  "title": "Eight-particle pairwise additivity: octagon of A, B, C at rest (crowd-8 test)",
+  "pitch": "Tests whether the pairwise-sum law holds at N = 8, where it is untested (we have N <= 5). Eight particles of species A, B, C, cycling, at rest on a circle of radius 4 (adjacent spacing 3.06, diameter 8, all pair separations 3.06 to 8.0). Pre-registered: sum of pair coefficients over all partners, no three-body term. Discriminates pure pairwise sum (residual at tracker noise) from a multi-body term (residual growing with N). Would also give a candidate for the crowd-8 bounty (max_particles 8). Cost 1.32 credits per run at T = 2.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          9.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          7.8284271247,
+          7.8284271247
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.0,
+          9.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          2.1715728753,
+          7.8284271247
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          1.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          2.1715728753,
+          2.1715728753
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          1.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          7.8284271247,
+          2.1715728753
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.02
+  }
+}

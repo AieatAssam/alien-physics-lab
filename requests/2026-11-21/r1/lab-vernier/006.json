@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-21/r1/lab-vernier/006",
+  "lab": "lab-vernier",
+  "account": "review",
+  "purpose": "P-0004 claim c2 (A-C repulsion, separation 5.0, at rest, T=3), orientation v. Replicates the single run 2026-11-18/r1/lab-a/005; zero-force null error about 0.037.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          2.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.0,
+          7.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 3.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0004"
+}

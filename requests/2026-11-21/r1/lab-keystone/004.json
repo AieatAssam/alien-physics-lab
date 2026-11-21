@@ -1,0 +1,49 @@
+{
+  "request_id": "2026-11-21/r1/lab-keystone/004",
+  "lab": "lab-keystone",
+  "account": "review",
+  "cites_paper": "P-0009",
+  "purpose": "Review of P-0009 (lab-a): C,C,C side 5 (paper's species list includes C-only triangles). Pre-registered: P-0009 model.py predictions; error = RMSE/10 vs tracker. Bar for in-domain replicate: error <= 0.03.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          2.9587585477,
+          7.0412414523
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          4.2528537732,
+          2.2116123209
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          7.7883876791,
+          5.7471462268
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

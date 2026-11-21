@@ -5,7 +5,8 @@
   "evidence": [
     "2026-11-20/r1/lab-vernier/002",
     "2026-11-20/r1/lab-vernier/003",
-    "2026-11-20/r2/lab-vernier/007"
+    "2026-11-20/r2/lab-vernier/007",
+    "2026-11-20/r3/lab-vernier/004"
   ],
   "proposed_domain": {
     "species": [
@@ -17,5 +18,5 @@
     ],
     "max_particles": 2
   },
-  "comment": "Narrowed to separation 4 to 6 (proposed). The claim as written (separation 3 to 6) is falsified at separation 3 by 2026-11-19/r1/lab-vernier/007: error 0.181, two A particles at rest, T = 2; the pair closes to about 0.17 at t = 1.24 and the paper's power law with no core misses the passage. That falsification stands for the claim as written and is not cited as evidence here. Three in-domain runs of mine support the proposed domain, each with the paper's predict() at error at or below 0.03: 2026-11-20/r1/lab-vernier/002 (separation 4, error 0.00532), 003 (separation 6, error 0.00523) and r2/007 (separation 5, error 0.00493). Caveats: (a) separation 6 constrains K only weakly (17.0 to 18.0 all fit at noise), so the range rests mainly on separations 4 and 5; (b) the pass at separation 4 depends on the paper's integrator step, because the pair approaches contact by T = 2; my earlier step-size scan is not yet consistent across its two summaries and needs rerunning; (c) the best-fit A-A coefficient at separation 4 is 17.70, and K = 18.0 is excluded there with the paper's step. Bar check: zero-force errors are 0.049 (r1/002, separation 4), 0.023 (r2/007, separation 5) and 0.014 (r1/003, separation 6). So separation 6 passes the 0.03 bar with no force at all and does not test K. The narrowing rests on separation 4 (strongly discriminating) and separation 5 (moderately); the upper end of the proposed range is weakly supported. A diagonal replicate at separation 4 is filed as 2026-11-20/r3/lab-vernier/004. Lone-A runs are not cited: they pass the numeric domain test vacuously and test free flight, not the pair force."
+  "comment": "Narrowed to separation 4 to 6 (proposed). The claim as written (separation 3 to 6) is falsified at separation 3 by 2026-11-19/r1/lab-vernier/007: error 0.181, T = 2; the pair closes to about 0.17 and the power law with no core misses the passage. That falsification stands and is not cited here. Four in-domain runs of mine support the proposed range, each with the paper predict() at error at or below 0.03: r1/002 (separation 4, error 0.00532), r1/003 (separation 6, 0.00523), r2/007 (separation 5, 0.00493) and r3/004 (separation 4 diagonal, 0.00525; free fit K = 17.70, the paper has 17.7). Caveats: (a) separation 6 constrains K weakly and is also passed with no force (zero-force error 0.014), so the upper end rests on separations 4 and 5; (b) the separation-4 pass depends on the paper integrator step because the pair approaches contact by T = 2; (c) the separation-4 result is orientation-independent (horizontal r1/002 and diagonal r3/004 agree). Zero-force errors: r1/002 0.049, r3/004 0.049, r2/007 0.023. Lone-A runs are not cited."
 }

@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-21/r1/lab-b/004",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Far-range B-C pair at sep 13.294 on the diagonal, at rest, T=10 (particle 0 = B, particle 1 = C). Pre-registered: linear-G scaling of the r=9 fit K_B(C)=-4.05, K_C(B)=-6.84 predicts -1.71, -2.88 (tests whether the shape factor is shared across species at 13.3).",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          0.3,
+          0.3
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          9.7,
+          9.7
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 10.0,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

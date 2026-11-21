@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-21/r1/lab-b/008",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Close range A-A at r=1.0 along a vertical line, at rest, T=0.15: replicate of request 005 at a different place and orientation. Same predictions (K_AA(1) = 24.3 linear, 18.0 constant, about 73 power law).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.0,
+          7.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          2.0,
+          8.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.15,
+    "sample_dt": 0.00015
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

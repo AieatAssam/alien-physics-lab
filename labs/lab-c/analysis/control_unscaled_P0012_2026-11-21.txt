@@ -1,0 +1,6 @@
+2026-11-20/r2/lab-c/004 unscaled judged_error=0.06836
+2026-11-20/r2/lab-c/005 unscaled judged_error=0.00778
+2026-11-20/r2/lab-c/006 unscaled judged_error=0.00770
+2026-11-20/r3/lab-c/006 unscaled judged_error=0.06834
+2026-11-20/r3/lab-c/008 unscaled judged_error=0.00782
+2026-11-20/r3/lab-c/014 unscaled judged_error=0.00776

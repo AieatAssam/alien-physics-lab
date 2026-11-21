@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-21/r1/lab-b/006",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Close range C-C at r=1.0, at rest, T=0.15. Pre-registered from K_CC(5)=12.50: linear G gives K_CC(1)=16.8, constant 12.5, power law about 50. 3%% tolerance on the fit.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          4.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.15,
+    "sample_dt": 0.00015
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

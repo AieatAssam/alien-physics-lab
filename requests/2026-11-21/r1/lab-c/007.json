@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-21/r1/lab-c/007",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Replicate of 2026-11-20/r3/lab-c/007 (AB at 1.5, single run, s = 0.777). Tests whether the AB deficit at 1.5 reproduces; falsifier: replicate s outside 0.72-0.84.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.25,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          5.75,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.4,
+    "sample_dt": 0.0002
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

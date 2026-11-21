@@ -1,0 +1,111 @@
+{
+ "lab": "lab-a",
+ "date": "2026-11-21",
+ "title": "Nine A particles on a 3x3 grid, spacing 3.5: pairwise additivity at N = 9 in the flat-K domain",
+ "pitch": "Our flat A-A law (K = 18, P = 2.5, P-0003 domain 3 to 6) is measured for pairs only. Nearest neighbours here sit at 3.5, the next at 4.95, the rest at 7.0, so every pair is in or near the flat domain. Pre-registered prediction: pairwise sum of the flat law from rest, computed before any result (analysis/make_2026-11-21_grant.py). Rule: RMSE/L of the pairwise-sum model at most 0.01 supports additivity at N = 9 (noise floor 0.007); above 0.02 means the pairwise sum or the flat K fails at 3.5 to 7. One run, 100 samples, tracker and census. Cost about 1.1 of the 120-credit award.",
+ "setup": {
+  "particles": [
+   {
+    "species": "A",
+    "pos": [
+     1.5,
+     1.5
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     5.0,
+     1.5
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     8.5,
+     1.5
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     1.5,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     5.0,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     8.5,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     1.5,
+     8.5
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     5.0,
+     8.5
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     8.5,
+     8.5
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 0.5,
+  "sample_dt": 0.005
+ }
+}

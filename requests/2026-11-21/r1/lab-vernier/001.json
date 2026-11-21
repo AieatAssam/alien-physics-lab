@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-21/r1/lab-vernier/001",
+  "lab": "lab-vernier",
+  "account": "review",
+  "purpose": "P-0004 claim c1 (A-B, separation 5.0, at rest, T=3), orientation h. Tests the paper A-B coupling against its predictor; zero-force null error is about 0.031, so the run discriminates.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          7.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 3.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0004"
+}

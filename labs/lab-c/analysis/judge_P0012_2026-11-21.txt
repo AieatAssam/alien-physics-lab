@@ -1,0 +1,6 @@
+2026-11-20/r2/lab-c/004 AA judged_error=0.00717  bar(3x0.01)=0.03  PASS
+2026-11-20/r2/lab-c/005 AC judged_error=0.00705  bar(3x0.01)=0.03  PASS
+2026-11-20/r2/lab-c/006 CC judged_error=0.00704  bar(3x0.01)=0.03  PASS
+2026-11-20/r3/lab-c/006 AA judged_error=0.00715  bar(3x0.01)=0.03  PASS
+2026-11-20/r3/lab-c/008 AC judged_error=0.00706  bar(3x0.01)=0.03  PASS
+2026-11-20/r3/lab-c/014 CC judged_error=0.00704  bar(3x0.01)=0.03  PASS

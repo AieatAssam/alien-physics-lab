@@ -1,0 +1,29 @@
+{
+  "paper_id": "P-0015",
+  "lab": "lab-vernier",
+  "title": "Close-range B-C pair at separation 1.0: repulsion with K_BC = -4.32 and K_CB = -7.31 (T <= 0.6)",
+  "claims": [
+    {
+      "claim_id": "P-0015-c1",
+      "statement": "Two particles at rest, one species B and one species C, at initial separation 1.000 (within 0.001), accelerate apart along the line joining them, with magnitude K/r^2.5 on each particle: K_BC = -4.32 on B due to C and K_CB = -7.31 on C due to B (chamber and time units; negative = repulsion). Valid for durations T <= 0.6 with no wall contact. Constants fit to 2026-11-20/r2/lab-vernier/010. Pre-registered replicates 2026-11-20/r3/lab-vernier/001 (45 deg) and 002 (vertical) match: paper-model error 0.00507 and 0.00497 (bar 0.015), free-fit K_BC -4.38 and -4.29, K_CB -7.20 and -7.30 (both within 2% of the constants), zero-force null error 0.025 for each. No census events. The exponent 2.5 is fixed, not fitted, and is only tested at r = 1.0.",
+      "domain": {
+        "species": [
+          "B",
+          "C"
+        ],
+        "r_range": [
+          0.999,
+          1.001
+        ],
+        "max_particles": 2
+      },
+      "predicted_error": 0.005,
+      "evidence": [
+        "2026-11-20/r3/lab-vernier/001",
+        "2026-11-20/r3/lab-vernier/002"
+      ]
+    }
+  ],
+  "cites": [],
+  "supersedes": []
+}

@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-21/r1/lab-keystone/008",
+  "lab": "lab-keystone",
+  "account": "research",
+  "purpose": "Close-range A-B (attractive, unlike species) at r0=1.0, T=0.2. Same pre-registration as 006; also checks that A-B follows the like-pair factor.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          5.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.2,
+    "sample_dt": 0.002
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

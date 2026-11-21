@@ -1,0 +1,30 @@
+{
+ "paper_id": "P-0012",
+ "lab": "lab-a",
+ "title": "Close-range A-A pair at rest, initial separation 1.0: constant-K law with K = 11.3 at P = 2.5",
+ "claims": [
+  {
+   "claim_id": "P-0012-c1",
+   "statement": "Two A particles at rest, initial separation exactly 1.0, duration at most 0.15: each particle accelerates toward the other with magnitude K / r^2.5 (r the current separation, P = 2.5 fixed) and K = 11.3 held constant over the run. Fitted to two lab-a runs (K = 11.52 and 11.05, separation profile at the tracker-noise floor); the K = 18.0 separation-5 value does not apply here.",
+   "domain": {
+    "species": [
+     "A"
+    ],
+    "r_range": [
+     1.0,
+     1.0
+    ],
+    "max_particles": 2
+   },
+   "predicted_error": 0.008,
+   "evidence": [
+    "2026-11-20/r3/lab-a/003",
+    "2026-11-20/r3/lab-a/004"
+   ]
+  }
+ ],
+ "cites": [
+  "P-0003"
+ ],
+ "supersedes": []
+}

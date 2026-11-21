@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-21/r1/lab-vernier/009",
+  "lab": "lab-vernier",
+  "account": "research",
+  "purpose": "Close-AC probe at separation 1.0 (open problem close-AC), at rest, T=0.6, orientation d. A-C is repulsive so no contact is expected; fit K_AC, K_CA as in r2/010 for B-C.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.0,
+          4.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          4.70710678,
+          4.70710678
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.6,
+    "sample_dt": 0.003
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

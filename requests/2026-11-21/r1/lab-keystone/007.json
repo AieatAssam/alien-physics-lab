@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-21/r1/lab-keystone/007",
+  "lab": "lab-keystone",
+  "account": "research",
+  "purpose": "Close-range C-C at r0=1.0, T=0.2. Same pre-registration as 006 (plateau 0.55 vs power-law 0.25). Tests whether the close-range factor is species-independent at 1.0.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          4.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.2,
+    "sample_dt": 0.002
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "request_id": "2026-11-21/r1/lab-keystone/001",
+  "lab": "lab-keystone",
+  "account": "review",
+  "cites_paper": "P-0009",
+  "purpose": "Review of P-0009 (lab-a): B,C,C side 5, centre (5,5), rotated 30 deg (orientation check). Pre-registered: P-0009 model.py predictions; error = RMSE/10 vs tracker. Bar for in-domain replicate: error <= 0.03.",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          3.556624327,
+          7.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          3.556624327,
+          2.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          7.8867513459,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

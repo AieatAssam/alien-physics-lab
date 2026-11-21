@@ -1,0 +1,6 @@
+001 AA r0=1.00 T=0.2 dt=0.005 n=41 best_grid=0.59 vertex=0.595 chi2/n_best=0.88 chi2/n_s1=2.50 n_win=29 cut_s1=0.140
+002 AB r0=1.00 T=0.2 dt=0.005 n=41 best_grid=0.64 vertex=0.645 chi2/n_best=0.99 chi2/n_s1=1.95 n_win=37 cut_s1=0.180
+003 AC r0=1.00 T=0.2 dt=0.005 n=41 best_grid=0.59 vertex=0.595 chi2/n_best=0.89 chi2/n_s1=2.46 n_win=41 cut_s1=0.200
+004 BB r0=1.00 T=0.2 dt=0.005 n=41 best_grid=0.78 vertex=0.777 chi2/n_best=1.12 chi2/n_s1=1.29 n_win=41 cut_s1=0.200
+005 BC r0=1.00 T=0.2 dt=0.005 n=41 best_grid=0.72 vertex=0.718 chi2/n_best=1.00 chi2/n_s1=1.28 n_win=41 cut_s1=0.200
+006 CC r0=1.00 T=0.2 dt=0.005 n=41 best_grid=0.81 vertex=0.814 chi2/n_best=0.82 chi2/n_s1=1.33 n_win=34 cut_s1=0.165

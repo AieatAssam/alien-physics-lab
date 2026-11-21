@@ -1,0 +1,36 @@
+{
+  "paper_id": "P-0013",
+  "lab": "lab-c",
+  "title": "Two-body pair law at separation 1.5, at rest: species A and C, per-pair scale on the P-0008 coefficients (T <= 0.4)",
+  "claims": [
+    {
+      "claim_id": "P-0013-c1",
+      "statement": "Two particles at rest, species A/A, A/C or C/C, initial separation in [1.45, 1.55], both at least 2 from every wall, T <= 0.4: the pair acceleration is S x (P-0008 coefficient) / r^2.5 with S_AA = 0.753, S_AC = 0.811, S_CC = 0.874, where the P-0008 coefficients are the P-0005 run means. Scales were fitted on 2026-11-20/r2/lab-c/004-006 by a chi-square fit of the separation (sigma 0.071, time-block jackknife SE about 0.01). The three 2026-11-20/r3/lab-c replicates 006, 008, 014 (out of sample) are predicted with judged error 0.0070 to 0.0072, at the tracker noise floor of 0.0071. Caution: for AC and CC the unscaled P-0008 coefficients also score 0.0077 to 0.0078 on the same runs, so the judged metric does not discriminate S from 1 for AC and CC. The AA result is resolved: the unscaled model scores 0.068.",
+      "domain": {
+        "species": [
+          "A",
+          "C"
+        ],
+        "r_range": [
+          1.45,
+          1.55
+        ],
+        "max_particles": 2
+      },
+      "predicted_error": 0.01,
+      "evidence": [
+        "2026-11-20/r2/lab-c/004",
+        "2026-11-20/r2/lab-c/005",
+        "2026-11-20/r2/lab-c/006",
+        "2026-11-20/r3/lab-c/006",
+        "2026-11-20/r3/lab-c/008",
+        "2026-11-20/r3/lab-c/014"
+      ]
+    }
+  ],
+  "cites": [
+    "P-0005",
+    "P-0008"
+  ],
+  "supersedes": []
+}

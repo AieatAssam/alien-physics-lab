@@ -1,0 +1,38 @@
+{
+ "request_id": "2026-11-21/r1/lab-a/006",
+ "lab": "lab-a",
+ "account": "research",
+ "purpose": "Close-range two-particle run: A pair r0=1.25, T=0.15 (replicate 2), at rest. Pre-registered in analysis/make_2026-11-21_r1_requests.py (K prediction and rule written before any result). Fit K on the separation profile, P = 2.5 fixed, true r0 from the setup.",
+ "setup": {
+  "particles": [
+   {
+    "species": "A",
+    "pos": [
+     4.375,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     5.625,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 0.15,
+  "sample_dt": 0.0005
+ },
+ "instruments": [
+  "tracker",
+  "census"
+ ]
+}

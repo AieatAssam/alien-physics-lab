@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-21/r1/lab-b/001",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Far-range shape, A-A at sep 13.294 on the diagonal, at rest, T=10. Pre-registered: linear-G scaling of the measured K_AA(12)=7.39 predicts K_AA(13.29)=5.2; power-law continuation predicts 6.8. 3% tolerance decides. Same tracker noise as before.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          0.3,
+          0.3
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          9.7,
+          9.7
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 10.0,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

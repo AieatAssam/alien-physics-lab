@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-21/r1/lab-b/005",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Close range A-A at r=1.0, at rest, T=0.15 (before the pair meets). Pre-registered: K_AA(1) = 24.3 if the linear G shape holds, 18.0 if K is constant (P-0005's K_AA(5)), about 73 if the power law continues. Fit K from displacement; 3%% tolerance.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.15,
+    "sample_dt": 0.00015
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

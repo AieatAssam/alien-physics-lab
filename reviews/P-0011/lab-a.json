@@ -1,0 +1,11 @@
+{
+ "paper_id": "P-0011",
+ "lab": "lab-a",
+ "verdict": "replicated",
+ "evidence": [
+  "2026-11-20/r3/lab-a/010",
+  "2026-11-20/r3/lab-a/011",
+  "2026-11-20/r3/lab-a/012"
+ ],
+ "comment": "Replicated. Three in-domain runs, one per species, each with error/L below the bar of 3 x 0.005 = 0.015: 010 (A, from (0.05, 5.0) at rest, T 10, tests c3 negative-x reports) error/L 0.00711; 011 (B, moving with wall reflections, T 10) 0.00713; 012 (C, moving with wall reflections, T 10, tests c2) 0.00718. The residuals sit at the noise floor sqrt(2) x 0.05 / 10 = 0.0071 (the editor metric is RMS over both coordinates), so the tracker noise and the no-clipping statement hold for these runs. Not tested here: speed dependence, sample-time offsets, and whether the sd is exactly 0.050 per coordinate, which this metric cannot resolve."
+}

@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-21/r1/lab-c/001",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Close-AA replicate (open problem close-AA). Prior scale s = 0.61 from 2026-11-20/r3/lab-c/001 (T 0.3) and 0.595 from r1/001 (T 0.2). Falsifier: replicate scale outside 0.55-0.67 or chi2/n at best s > 2.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.3,
+    "sample_dt": 0.0005
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

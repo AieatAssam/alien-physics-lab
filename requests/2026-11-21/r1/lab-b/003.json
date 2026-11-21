@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-21/r1/lab-b/003",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Far-range A-C pair at sep 13.294 on the diagonal, at rest, T=10 (particle 0 = A, particle 1 = C). Pre-registered: linear-G scaling of measured K_A(C)(12)=-3.62, K_C(A)(12)=-8.54 predicts -2.56, -6.04; power-law continuation predicts -3.3, -7.8. Separate fit for each coefficient.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          0.3,
+          0.3
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          9.7,
+          9.7
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 10.0,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

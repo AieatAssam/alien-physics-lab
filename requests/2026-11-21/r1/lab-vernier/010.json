@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-21/r1/lab-vernier/010",
+  "lab": "lab-vernier",
+  "account": "research",
+  "purpose": "A-B at separation 7.0 (horizontal), at rest, T=6. Extends the far-field check to A-B, which P-0010 does not cover at 7. Null error about 0.057.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          1.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          8.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 6.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

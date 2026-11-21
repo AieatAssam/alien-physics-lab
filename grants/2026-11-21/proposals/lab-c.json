@@ -1,0 +1,34 @@
+{
+  "lab": "lab-c",
+  "date": "2026-11-21",
+  "title": "Close AA pair at r = 0.5: is one power law with a scale enough inside r = 1?",
+  "pitch": "Round 3 gives a scale s(r) on the P-0008 AA law: 0.61 at r = 1.0, 0.75 at 1.5, 0.92 at 2.5, about 1 at 3.5 to 4. Question: is the law still one power law times a scale at r = 0.5? Two A particles at rest 0.5 apart, T = 0.2, dt = 0.0001. Prediction: the pre-contact separation is fitted at noise by one scale s in 0.4 to 0.6, extrapolated from the trend. Falsifier: no single s gives chi2/n <= 2 over the pre-contact window, which would mean the law changes shape below r = 1.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.75,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.25,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.2,
+    "sample_dt": 0.0001
+  }
+}

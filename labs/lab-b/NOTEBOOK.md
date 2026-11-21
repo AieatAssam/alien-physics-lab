@@ -2,92 +2,97 @@
 
 Persona: bold theorist. Rule: a striking law only after a discriminating run supports it, stated with its domain.
 
-Last updated: 2026-11-20, round 3. Analysis: `out/labs/lab-b/analysis/`. Requests this round: `out/requests/2026-11-20/r3/lab-b/` (001-010). Review filed this round: `out/reviews/P-0010/lab-b.json`.
+Last updated: 2026-11-21, round 1. Analysis: `out/labs/lab-b/analysis/`. Requests this round: `out/requests/2026-11-21/r1/lab-b/` (001-008). Reviews filed this round: `out/reviews/P-0009/lab-b.json`, `out/reviews/P-0011/lab-b.json`, `out/reviews/P-0007/lab-b.json` (replaces my 2026-11-20 P-0007 review). Grant proposal: `out/grants/2026-11-21/proposals/lab-b.json`.
 
 ## Corrections
 
-- **The judge's error is RMSE / L (L = 10), and it is only as sensitive as the bar allows.** The bar is 3 x predicted_error. P-0010 has predicted_error 0.01, so a run passes at error 0.03 (rms 0.3). Scaling all pair coefficients of P-0010 by 0.9 or 1.1 moves the error on my runs by at most 0.0005 (`analysis/sens_p0010_2026-11-20.py`). So a judge "replicated" says a claim is at noise level, not that its coefficients are good to better than about 10%. My notes should use coefficient-shift tests, not error bars, for accuracy claims.
-- **P-0007's shipped predict() refuses any side other than 5.0 +/- 0.05.** My round-2 review of P-0007 scored runs at sides 3.8, 4.2, 4.6 and 5.4 with `score_p0007_2026-11-20.py`, which overrides R0. That override is disclosed in the review, but it means the judge will be unable to score four of my five P-0007 runs with the shipped code. Only `2026-11-19/r3/lab-b/001` (side 5.0) is scoreable as shipped. Fix is in this round's filings (below), to be used next round.
-- **Round-2 claim that A-A at 9 is "about 7% below lab-a's 11.70" was over-precise.** That is withdrawn. The A-A run at 9 (`2026-11-19/r3/lab-b/002`) changes error by only 0.0001 to 0.0002 between K scale 0.88 and 1.0. The data do not separate 10.9 from 12.3.
-- **Review error units (round 2).** The judge's error is RMSE / L, so P-0007's predicted_error 0.07 gives a bar of error 0.21, which is rms 2.1 in absolute units. My earlier "rms <= 0.21" plan was stricter than the judge, so earlier verdicts used the judge's rule.
-- **P-0006 and P-0007 are lab-a's (Plumbline), not mine.** P-0008 is mine (pending). My accepted papers: P-0001, P-0002.
+- **Edge-of-domain request, 2026-11-20/r3/006 is out of domain.** I placed the B-C pair at separation 6.0 and it landed at 5.999999 (rounding in the setup). P-0010's domain is [6, 9], so the run cannot be cited for P-0010 and the shipped predictor raises on it. Lesson: put every pair inside its claim's range with a margin (I now use 6.5 or 13.29, not an exact edge). Not fitted or cited.
+- **P-0007 review, 2026-11-20 (superseded this round).** It cited sides 3.8, 4.2, 4.6 and 5.4 scored with a locally overridden reference separation R0 that is not in the shipped code. The shipped predict() raises for any side other than 5.00 +/- 0.05, so those runs cannot be scored by the judge. Withdrawn as evidence. The new review cites only the four side-5.00 runs the shipped code scores.
+- **Judge's error is RMSE / L (L = 10).** The bar is 3 x predicted_error. For P-0010 (predicted_error 0.01) that is an error of 0.03, which is rms 0.3, so the bar tests noise level, not coefficient accuracy. To test coefficients, use chi2 under a fixed noise sd of 0.05 (`analysis/fit_far_2026-11-21.py`).
+- **Round 2 (2026-11-19) notes on the A-A run at separation 9 still hold:** K changes by at most 0.0002 in error across 0.88-1.0 scaling. The data do not separate 10.9 from 12.3.
 
 ## Season facts (measured)
 
-- Season 1, species A, B, C. Chamber [0, 10]^2. Cost k = 0.020: cost = 1 + 0.02 N T. Checked on every result.
-- Tracker noise sd about 0.05 per coordinate. Residual rms 0.048 to 0.053 in every run scored with a shipped predictor this round (per-run errors 0.0049 to 0.0053).
-- Census: no decay, appear or vanish events in any run to date.
-- Determinism: identical B-B sep-5 requests differ by rms 0.072 per coordinate, consistent with two independent noisy copies (expected 0.071).
+- Season 1, species A, B, C. Chamber [0, 10]^2. Cost k = 0.020: cost = 1 + 0.02 N T (checked on every result).
+- Tracker noise sd about 0.050 per coordinate (pooled sd 0.0502 in P-0011 data; my runs give residual rms 0.047 to 0.053).
+- Census: no decay, appear or vanish events in any run to date (`events` empty in all 2026-11-20 r3 results).
+- Chamber diagonal is 14.14, so the largest pair separation available inside the walls is about 13.3 (corners (0.3,0.3) and (9.7,9.7)).
 
-## Pair coefficients (acceleration K / r^2.5 on the first particle, P = 2.5; positive = attraction)
+## Pair coefficients (acceleration K / r^2.5 on the first particle; positive = attraction)
 
-| pair (acting on / by) | r=3 | r=4 | r=5 | r=6 | r=7 | r=9 | source |
-|---|---|---|---|---|---|---|---|
-| A on B / B on A | 8.95 / 12.58 | 9.16 / 12.92 | 8.94 / 12.58 (P-0005: 8.99 / 12.34) | - | - | 5.88 / 8.22 (fit r2/003) | r2/012, 015, 009; r2/003 |
-| B on C / C on B | -6.41 / -10.66 | -6.42 / -10.91 | -6.34 / -10.45 | - | -5.13 / -8.70 (lab-a) | - | r2/015, r3/011, 014 |
-| A on C / C on A | -8.97 / -21.40 | -9.06 / -21.67 | -8.72 / -20.97 | - | -7.34 / -17.42 (r2/004) | -5.61 / -14.45 (fit r1/001) | r2/014, 016, 010, 013; r2/004; r1/001 |
-| B on B | 6.33 | 6.48 | 6.20 (r1/001 replicated) | - | 5.43 (lab-a) | - | |
-| C on C | 13.20 | 13.13 | 12.50 (r1/002 replicated) | - | 10.44 (lab-a) | 7.83 (lab-a) | |
-| A on A | 17.67 | 18.1 | 18.0 (P-0005) | 16.72 (r2/021) | 15.48 (lab-a) | 11.70 (lab-a); 10.9 (r3/002 fit, not resolved) | |
+Measured at r = 5 (P-0005 and replications), r = 9 (lab-a and mine), r = 12 (this session, chi2 fit):
 
-Shape of K(r): the three pair families fall by 5 to 35% between r = 5 and r = 9. Nothing is measured beyond r = 9 by any lab. The linear G in P-0010 (`G(r) = 1.51 - 0.092 r`, zero at r = 16.4) is an extrapolation past its data. That is the target of this round's far-range runs.
+| pair (acting on / by) | r=5 | r=9 | r=12 (fit) | source |
+|---|---|---|---|---|
+| A on A | 18.0 | 11.70 (lab-a) | 7.39 +/- 0.05 | P-0005; 2026-11-20/r3/007 |
+| B on B | 6.20 | - | - | r1/001 replicated |
+| C on C | 12.50 | 7.83 (lab-a) | 4.90 +/- 0.05 | r1/002; r3/010 |
+| A on B / B on A | 8.94 / 12.58 | 5.88 / 8.22 (fit) | - | r2/012, 015 |
+| B on C / C on B | -6.34 / -10.45 | -4.05 / -6.84 (fit, this session, 2026-11-20/r3/008) | - | r2/015; r3/008 |
+| A on C / C on A | -8.72 / -20.97 | - | -3.62 / -8.54 (fit) | r2/014, 016; r3/009 |
 
-## Round 3 results and scores (all with shipped predictors unless stated)
+**Shape factor f(r) = K(r)/K(5).** At r = 9: AA 0.65, CC 0.63, BC 0.64, CB 0.65. At r = 12: AA 0.41, CC 0.39, AC 0.415, CA 0.41. The factor is shared across pairs to within a few percent, and it falls close to linearly with zero near r = 16.4. This is lab-keystone's linear G(r) = 1.51 - 0.092 r.
 
-Budget at the start of this session: research 36.52 of 40 unspent; review 10.64 of 15 unspent (ledger: 2026-11-20 research used 3.48, review used 4.36).
+## Far-range fits (2026-11-20/r3, scored this session)
 
-- **`2026-11-20/r2/lab-b/001` (review, P-0007 c2 probe, A,A,A side 4.2, T=1.5).** Shipped predict() raises (side 4.2). With the R0 override (my own scorer): rms 0.0506, error 0.0051, max mean residual 0.015. At noise. Interior run, so c2 has one interior and one edge run; see the plan.
-- **`2026-11-20/r1/lab-b/002` (research, A,B,C side 5, T=4; H11 probe).** Scored with P-0007's shipped predict() (side 5.0 is accepted; the probe is not part of the claim's T=1.5 window). Windows (`analysis/window_r1_002_2026-11-20.py`):
-  - t in [0, 1.5): rms 0.0514, error 0.00514, max |mean residual| 0.009.
-  - t in [1.5, 2.5): rms 0.0517, error 0.00517, max |mean| 0.014.
-  - t in [2.5, 4.0): rms 0.0586 (excess about 0.03 over noise), max |mean| 0.037.
-  - Reading: the pair sum holds at noise to T = 2.5 and drifts after. Two explanations I cannot separate yet: (a) a three-body term (H11); (b) a small coefficient error at r about 4 (A-C at 4 differs from its r = 5 value by about 4%, and over T about 3 that gives a displacement of about 0.05). Read as an open question for H11 and H12, not as evidence for either.
-- **Other labs' papers, scored with shipped predictors (for the reviews below):**
-  - P-0009 (lab-a, B,C pair; sep 4.99-5.01; N<=3; T=2): four in-domain lab-b runs, all B,C at sep 5, T=2, N=2: `2026-11-19/r1/lab-b/001` (BB) 0.00494, `2026-11-19/r1/lab-b/002` (CC) 0.00499, `2026-11-19/r2/lab-b/002` (BB) 0.00503, `2026-11-18/r3/lab-b/014` (BC) 0.00505. None tests three-body additivity.
-  - P-0010 (keystone, pairs at rest r0 6-9, T<=6): five in-domain runs, 0.00498 to 0.00505 (table in the review).
-  - P-0011 (vernier, lone particle): two N=1 runs in domain: `2026-11-17/r1/lab-b/001` (A, moving, T=10) 0.00531; `2026-11-17/r2/lab-b/005` (C, moving, T=40) 0.00509. Need a third for the judge's >= 3.
-  - P-0007 (lab-a, shipped): only `2026-11-19/r3/lab-b/001` (side 5.0, CCA) is scoreable, 0.00488.
+chi2 uses noise sd 0.05 per coordinate; chi2/ndata = 1.00 means the residuals are at noise.
+
+- **A-A at sep 12 (r3/007, T=6).** Best K_AA = 7.39 (chi2/ndata 1.004). Linear G (7.30): delta chi2 = 3 (fine). Power-law continuation of lab-a's 6-9 slope (9.1): delta chi2 = 1300 (excluded).
+- **C-C at sep 12 (r3/010).** Best K_CC = 4.90 (1.04). Linear G (4.75): delta chi2 = 9 (3% low). Power-law (6.1): delta chi2 = 630 (excluded).
+- **A-C at sep 12 (r3/009).** Best K_A(C) = -3.62, K_C(A) = -8.54 (0.993). Linear G (-3.37, -8.17): delta chi2 = 39 (5-7% low). Power-law (-4.4, -11.2): delta chi2 = 1500 (excluded).
+- **B-C at sep 9 (r3/008, T=4, H13).** Best K_B(C) = -4.05, K_C(B) = -6.84 (chi2 8072). With C-factor (-3.94, -6.85): delta chi2 = 2. Without C-factor (-4.16, -7.22): delta chi2 = 26. The C-factor version is preferred for B-C.
+
+Reading: the power-law continuation of the 6-9 slope is decisively excluded. The linear shape with zero near 16.4 holds to about 1 to 3% for A-A and C-C, and 5 to 7% low for A-C. So the shape is approximately linear, and the exact amplitude at r = 12 is not yet described by P-0010's G.
+
+## Scores with shipped predictors (round 3 of 2026-11-20 and reviews)
+
+- P-0009 (lab-a, B,C,C): five in-domain runs, errors 0.00494 to 0.00531 (bar 0.03). Details in review.
+- P-0011 (lab-vernier, lone particle): three in-domain N=1 runs, errors 0.00473 to 0.00531 (bar 0.015).
+- P-0007 (lab-a): four side-5.00 runs, errors 0.00488 to 0.00529 (bar 0.21). The side-3.8, 4.2, 4.6, 5.4 runs are not scoreable as shipped.
+- P-0010 (keystone): five earlier runs replicate (review stands). r3/008 (B-C at 9, along x, T=4) scores 0.00502 with the shipped predictor, consistent with the review.
 
 ## Reviews filed this round
 
-- **P-0010 (keystone): replicated.** Evidence: 2026-11-19/r2/lab-b/003, 004; 2026-11-19/r3/lab-b/002; 2026-11-20/r1/lab-b/001; 2026-11-18/r2/lab-b/021. All five pass (error 0.0050 against bar 0.03). The comment says the replication is for A-A, A-B and A-C pairs only, that B-B, B-C and C-C at 6-9 are not tested, and that the bar is too loose to measure coefficient accuracy.
-- **P-0009 (lab-a): held.** Four in-domain runs pass, but they are all N=2. The claim is about N=3 additivity, which none of my runs test. Verdict waits for `2026-11-20/r3/lab-b/005` (B,C,C at side 5, T=2).
-- **P-0011 (vernier): held.** Two in-domain N=1 runs. Judge needs three. Verdict waits for `2026-11-20/r3/lab-b/004`.
-- **P-0007 (lab-a): existing review "narrowed" stands.** Its replicate basis (sides 4.6, 5.4, 3.8, 4.2) relies on the R0 override described above. Next round I will update it with `r3/001` to `003` (side 5.0), which the shipped predictor can score.
+- **P-0009 (lab-a): replicated.** Five in-domain runs. Caveat: the N=3 run's rms 0.053 sits about 2 standard errors above noise (0.050), so a three-body or coefficient error of about 0.02 rms is not excluded.
+- **P-0011 (lab-vernier): replicated.** Three in-domain N=1 runs. c3 (no wall clipping) is not directly tested by my runs.
+- **P-0007 (lab-a): narrowed** to r_range [4.95, 5.05], species A, B, C, max_particles 3. Four side-5.00 runs pass with the shipped code. c2 (A-only, sides 3.75 to 5.0) has only one scoreable run.
+- **P-0010 (keystone): replicated** (2026-11-20 review stands; not re-filed). Its B-C at 6-9 gap is still open because r3/006 is out of domain.
 
-## Requests filed this round (round 3, 2026-11-20)
+## Requests filed this round (round 1, 2026-11-21)
 
-Totals: review 6.83 of 10.64 spent (3.81 left after filing); research 4.88 of 36.52 spent (31.64 left). I am not spending the rest. Budget is scarce, and I have no further discriminating question yet.
+Account research, total cost 9.62 of 40 credits (30.38 left for the rest of the day). Full pre-registrations in each request's `purpose` and in `analysis/make_round1_2026-11-21.py`.
 
-| id | account | setup | cost | pre-registration |
+| id | setup | T | cost | pre-registration |
 |---|---|---|---|---|
-| r3/001 | review (P-0007 c2) | A,A,A side 5.0, at rest, T=1.5, dt 0.03 | 1.09 | shipped P-0007 gives rms <= 0.07 per coordinate. Falsified for c2 if rms > 0.21. |
-| r3/002 | review (P-0007 c1) | A,B,C side 5.0, T=1.5, dt 0.03 | 1.09 | same bar |
-| r3/003 | review (P-0007 c1) | B,B,C side 5.0, T=1.5, dt 0.03 | 1.09 | same bar |
-| r3/004 | review (P-0011) | one B particle from (2.0, 8.0), v (1.3, -0.7), T=10, dt 0.05 (bounces off walls) | 1.20 | rms <= 0.07 per coordinate; a wall-law error would raise it |
-| r3/005 | review (P-0009) | B,C,C side 5.0, at rest, T=2, dt 0.02 (N=3 test) | 1.12 | rms <= 0.07 per coordinate |
-| r3/006 | review (P-0010 edge) | B-C pair, sep 6.0 on the diagonal, at rest, T=6, dt 0.003 | 1.24 | P-0010 shipped: K_B(C) = -5.54, K_C(B) = -9.61, 3% tolerance |
-| r3/007 | research (far range) | A-A pair, sep 12.0 on the diagonal, at rest, T=6, dt 0.003 | 1.24 | linear G (P-0010) predicts K_AA(12) = 7.3; power-law continuation of lab-a's 6-9 slope predicts about 9.1. Fit decides at 3%. |
-| r3/008 | research (H13) | B-C pair, sep 9.0 along x, at rest, T=4, dt 0.002 | 1.16 | P-0010 with C-factor: K_B(C) = -3.94, K_C(B) = -6.85; without: -4.16, -7.22. 3% tolerance decides which. |
-| r3/009 | research (far range) | A-C pair, sep 12.0 on the diagonal, T=6, dt 0.003 | 1.24 | linear G: K_A(C) = -3.37, K_C(A) = -8.17; continuation: about -4.4, -11.2 |
-| r3/010 | research (far range) | C-C pair, sep 12.0 on the diagonal, T=6, dt 0.003 | 1.24 | linear G: K_C(C) = 4.75; continuation: about 6.1 |
+| r1/001 | A-A, sep 13.29 on diagonal, at rest | 10 | 1.40 | linear-G scaling of measured K(12): 5.22; power continuation: 6.76. 3% tolerance decides. |
+| r1/002 | C-C, sep 13.29 | 10 | 1.40 | linear 3.46; power 4.48 |
+| r1/003 | A-C, sep 13.29 (A first) | 10 | 1.40 | linear -2.56, -6.03; power -3.31, -7.81 |
+| r1/004 | B-C, sep 13.29 (B first) | 10 | 1.40 | linear -1.70, -2.88 (shape shared across species at 13.3) |
+| r1/005 | A-A, sep 1.00 horizontal, at rest | 0.15 | 1.01 | K_AA(1): 24.3 linear, 18.0 constant, about 73 power law |
+| r1/006 | C-C, sep 1.00 | 0.15 | 1.01 | K_CC(1): 16.9 linear, 12.5 constant, about 51 power law |
+| r1/007 | B-B, sep 1.00 | 0.15 | 1.01 | K_BB(1): 8.4 linear, 6.2 constant, about 25 power law |
+| r1/008 | A-A, sep 1.00 vertical (replicate of 005 elsewhere) | 0.15 | 1.01 | same as 005 |
 
-All geometry was checked: separations are exact, all particles start inside the chamber, and every request has at most 2000 samples. Pairs at 12 sit on the 45-degree diagonal, from (0.757, 0.757) to (9.243, 9.243), so they stay inside the walls over T=6.
+Predictions use measured K(12) and the lab-keystone G. Close-range predictions assume K(5) and the same G shape. Close-range windows are short (T = 0.15), so the pair has not yet reached the separations where a softening or a short-range law would show.
+
+## Grant proposal (2026-11-21)
+
+Title: "Eight-body crowd test: is the many-body motion a sum of pairs?" Eight particles at rest on an octagon (radius 4, centre (5,5)), species A,B,C,A,B,C,A,B, T = 20, sample_dt 0.01. Pre-registered rule: rms <= 0.07 per coordinate supports pairwise additivity; rms >= 0.2 refutes. This targets open problem crowd-8 (bounty 3). Pair separations 3 to 8 need interpolation of the table, which I state in advance.
 
 ## Hypotheses
 
-- **H9 (close-approach sensitivity).** Open. The P-0007 law cannot score close approach (r1/003 in round 2). Needs a predictor that does not blow up below separation 1. Not tested this round.
-- **H10 (rank-one ratio, A-B vs A-C/B-C at r = 2, 3).** Kept. Needs more runs. Not tested this round.
-- **H11 (three-body additivity).** Open. The ABC side-5 probe (r1/002) is at noise to T = 2.5, then drifts by about 0.03 rms with mean residuals up to 0.037. A three-body term and a coefficient error at r about 4 both fit. The clean test is an N=3 run with B,C,C (r3/005) plus a pair test at r about 4 that isolates the candidate coefficient.
-- **H12 (distance-law shape).** Open, and this round's main question. Candidates: (i) linear G (P-0010), which is K(r) falling linearly to zero near r = 16.4; (ii) a power-law continuation of the 6-9 slope (about 0.88 on top of r^-2.5); (iii) constant K (already rejected at 9). r3/007 and r3/009 and r3/010 discriminate (i) from (ii) at about 25% in K.
-- **H13 (shared distance factor).** Partly supported for A-C and A-B at r = 9 (lab-keystone's runs and my r1/001). Not yet tested for B-C at 9. r3/008 does that.
-- **H14 (P-0007 c2 at small separations).** Open. The A-A miss at side 3.8 (round 2) is a shipped-predictor issue, not an edge failure. Resolved for the judge only by side-5.0 runs (r3/001), since the shipped code refuses everything else.
+- **H9 (close approach).** Now tested by r1/005-008. Prediction table above. The linear G at r = 1 is an extrapolation below the data range (r = 3 is the closest measured pair), so a mismatch here is informative about the shape, not only about the close-range law.
+- **H10 (rank-one ratio, A-B vs A-C/B-C at r = 2, 3).** Open, untested.
+- **H11 (three-body additivity).** Open. The N=3 B,C,C run (r3/005) gives rms 0.053 against noise 0.050. Ambiguous at about 2 sigma. The octagon grant (8 bodies) would be the clean test if granted.
+- **H12 (distance-law shape).** Main question. Power-law continuation rejected. Linear G with zero near 16.4 is roughly right (1 to 3%, with A-C 5 to 7% low). r1/001-004 at sep 13.29 test whether it stays linear. Linear predicts about 0.70 times the r = 12 value.
+- **H13 (shared distance factor including C-factor).** Supported for B-C at r = 9: the version with the C-factor is preferred (delta chi2 26 against without). Still open for other pairs at 13.3 (r1/004 tests B-C).
+- **H14 (P-0007 c2 at small separations).** Open. No shipped-scoreable run for A-only at sides other than 5.0.
 
-## Plan for next session
+## Plan for the next session
 
-1. Read `results/2026-11-20/r3/lab-b/` for 001 to 010. Score with the shipped predictors (`analysis/score_shipped_2026-11-20.py`), not the R0 override.
-2. Update P-0007 review with r3/001-003 (side 5.0, shipped-scoreable). Keep c2 as narrowed to side 5.0 unless the judge's metric says otherwise.
-3. File the P-0009 verdict with r3/005 (N=3). File the P-0011 verdict with r3/004 (moving lone particle). Replicate only if all in-domain runs pass.
-4. Score far-range runs r3/007, 009, 010 against linear G and the power-law continuation. If the measured K sits at 7.3 +/- 3%, that is a bold, striking, falsifiable law (linear G, zero at r about 16.4), and I can draft a paper with domain r 6-12 and max_particles 2. If it sits near 9.1, the claim is a power-law over 6-12 instead. If neither, state it as narrowed.
-5. Score r3/008 (B-C at 9) to test the S_C factor and the shared G for B-C.
-6. Do not publish a paper for H11 until the N=3 and coefficient-at-r4 tests are in. Do not extend close-approach claims without a predictor that works below r = 1 (H9).
+1. Read `results/2026-11-21/r1/lab-b/001-008.json`. Run `analysis/fit_far_2026-11-21.py` on 001-004 (the script takes the request-result pairs by id; adjust the ids) and `analysis/` close-range fit for 005-008.
+2. If K at 13.29 matches linear G within 3% for A-A and C-C, draft a paper: domain r 9 to 14, species A, B, C, max_particles 2, T <= 10, with the shape factor fixed. If it misses, state the measured shape as narrowed. Do not publish before the fits.
+3. If close-range K at r = 1 matches the linear G (24.3 for AA), publish a narrow close-range claim (domain r [1, 1], max_particles 2, T <= 0.15) to target the close-AA bounty. Each close pair needs three in-domain runs for "replicated", so replicate (005 and 008 are both A-A).
+4. Vote in round 2 for a proposal other than my own (rule: no self-votes). Consider the octagon (crowd-8) only if its pitch is credible to others.
+5. Keep the remaining research credits (30.38 today) for round 2 and round 3; do not spend them on runs without a pre-registered prediction.
+6. Review account (15 credits) is unused. Use only for runs that close an open review question with an in-domain run, e.g., B-C at 6.5 for P-0010 if a new review is needed.

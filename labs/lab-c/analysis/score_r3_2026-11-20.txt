@@ -1,0 +1,17 @@
+001 AA r0=1.00 T=0.3 dt=0.0002 n=1501 best_grid=0.61 vertex=0.612 chi2/n_best=0.97 chi2/n_s1=1.96 n_win=681 cut_s1=0.136
+002 AA r0=2.00 T=0.6 dt=0.0004 n=1501 best_grid=0.85 vertex=0.847 chi2/n_best=1.02 chi2/n_s1=3.07 n_win=1387 cut_s1=0.554
+003 AA r0=3.00 T=2.0 dt=0.001 n=2001 best_grid=0.96 vertex=0.964 chi2/n_best=1.10 chi2/n_s1=1.54 n_win=1166 cut_s1=1.165
+004 AA r0=3.50 T=1.5 dt=0.00075 n=2001 best_grid=1.00 vertex=0.995 chi2/n_best=1.04 chi2/n_s1=1.04 n_win=2001 cut_s1=1.500
+005 AA r0=4.00 T=2.0 dt=0.001 n=2001 best_grid=1.01 vertex=1.007 chi2/n_best=1.14 chi2/n_s1=1.14 n_win=1950 cut_s1=1.949
+006 AA r0=1.50 T=0.4 dt=0.0002 n=2001 best_grid=0.74 vertex=0.749 chi2/n_best=1.01 chi2/n_s1=3.20 n_win=1601 cut_s1=0.320
+007 AB r0=1.50 T=0.4 dt=0.0002 n=2001 best_grid=0.78 vertex=0.777 chi2/n_best=0.96 chi2/n_s1=2.41 n_win=2001 cut_s1=0.400
+008 AC r0=1.50 T=0.4 dt=0.0002 n=2001 best_grid=0.81 vertex=0.806 chi2/n_best=0.97 chi2/n_s1=1.69 n_win=2001 cut_s1=0.400
+009 AC r0=2.50 T=1.0 dt=0.0005 n=2001 best_grid=0.98 vertex=0.979 chi2/n_best=0.95 chi2/n_s1=0.98 n_win=2001 cut_s1=1.000
+010 BB r0=1.50 T=0.4 dt=0.0002 n=2001 best_grid=0.80 vertex=0.796 chi2/n_best=0.99 chi2/n_s1=1.27 n_win=2001 cut_s1=0.400
+011 BC r0=1.50 T=0.4 dt=0.0002 n=2001 best_grid=0.81 vertex=0.814 chi2/n_best=0.98 chi2/n_s1=1.22 n_win=2001 cut_s1=0.400
+012 CC r0=2.50 T=1.0 dt=0.0005 n=2001 best_grid=1.01 vertex=1.015 chi2/n_best=1.00 chi2/n_s1=1.04 n_win=2001 cut_s1=1.000
+013 BB r0=2.50 T=1.0 dt=0.0005 n=2001 best_grid=0.98 vertex=0.985 chi2/n_best=1.01 chi2/n_s1=1.02 n_win=2001 cut_s1=1.000
+014 CC r0=1.50 T=0.4 dt=0.0002 n=2001 best_grid=0.87 vertex=0.869 chi2/n_best=0.97 chi2/n_s1=1.62 n_win=1932 cut_s1=0.386
+015 AC r0=3.00 T=2.0 dt=0.001 n=2001 best_grid=1.02 vertex=1.019 chi2/n_best=1.03 chi2/n_s1=1.12 n_win=2001 cut_s1=2.000
+016 CC r0=3.00 T=2.0 dt=0.001 n=2001 best_grid=1.04 vertex=1.045 chi2/n_best=1.00 chi2/n_s1=1.68 n_win=1406 cut_s1=1.405
+017 AA r0=7.00 T=3.0 dt=0.0015 n=2001 best_grid=0.84 vertex=0.844 chi2/n_best=1.03 chi2/n_s1=2.92 n_win=2001 cut_s1=3.000

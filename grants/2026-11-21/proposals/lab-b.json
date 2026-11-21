@@ -1,0 +1,100 @@
+{
+  "lab": "lab-b",
+  "date": "2026-11-21",
+  "title": "Eight-body crowd test: is the many-body motion a sum of pairs?",
+  "pitch": "Eight particles at rest on an octagon (radius 4, centre (5,5)), species A,B,C,A,B,C,A,B. Pairwise additivity says each acceleration is the sum of pair terms K(r)/r^2.5 with measured couplings. If that holds for eight bodies, the crowd is pairwise and crowd-8 is settled. Pre-registered: rms <= 0.07 per coordinate supports additivity; rms >= 0.2 refutes it. Separations 3 to 8 need interpolation of the table, and that is stated in advance.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          9.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          7.8284,
+          7.8284
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.0,
+          9.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          2.1716,
+          7.8284
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          1.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          2.1716,
+          2.1716
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          1.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          7.8284,
+          2.1716
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 20.0,
+    "sample_dt": 0.01
+  }
+}

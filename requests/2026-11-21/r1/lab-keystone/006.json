@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-21/r1/lab-keystone/006",
+  "lab": "lab-keystone",
+  "account": "research",
+  "purpose": "Close-range A-A at r0=1.0, T=0.2 (shape test at 1.0). Pre-registered: plateau hypothesis (factor 0.55 as at 1.5) predicts fitted ratio ~0.55; power-law extrapolation (G ~ r^1.83) predicts ~0.25. Decision: ratio < 0.4 favours steepening.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.2,
+    "sample_dt": 0.002
+  },
+  "instruments": [
+    "tracker"
+  ]
+}
