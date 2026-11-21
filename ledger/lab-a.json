@@ -30,11 +30,11 @@
     },
     "2026-11-21": {
       "grant_allowance": 120.0,
-      "grant_used": 0.0,
+      "grant_used": 1.09,
       "research_allowance": 40,
-      "research_used": 13.11,
+      "research_used": 31.37,
       "review_allowance": 15,
-      "review_used": 9.36
+      "review_used": 12.42
     }
   },
   "lab": "lab-a"
