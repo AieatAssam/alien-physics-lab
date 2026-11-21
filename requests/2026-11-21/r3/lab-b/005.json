@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-21/r3/lab-b/005",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Shape map A-A at separation 7.5 (horizontal, T = 6). Tests K(r) between 6 and 9, where the linear fall is predicted.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          1.25,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.75,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 6.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

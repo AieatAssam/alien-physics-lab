@@ -1,0 +1,32 @@
+{
+  "written_before_result": true,
+  "date": "2026-11-21",
+  "round": "r3",
+  "requests": "out/requests/2026-11-21/r3/lab-a/001-018",
+  "fit_method": "same as fit_r2_2026-11-21.py: separation profile, P = 2.5 fixed, relative RK4 r'' = -2K/r^P (A-A, B-B, C-C); per-particle fits for A-B.",
+  "grant_001_002": {
+    "model": "pairwise sum, K = 18.0 (flat A-A), P = 2.5, from rest",
+    "rule": "RMSE/L <= 0.01 supports pairwise additivity at N = 9; > 0.02 refutes (as in make_2026-11-21_grant.py). 002 is the repeat: both must agree."
+  },
+  "close_BB_003_004": {
+    "reference": "horizontal K 3.82, 3.84 (r1/001-002)",
+    "rule": "mean diagonal K within 5% of 3.83 (3.64 to 4.02) passes the orientation control for B-B; with 001-002 that makes close-BB publishable next round."
+  },
+  "close_CC_005_006": {
+    "reference": "horizontal K 9.43, 9.56 (r1/003-004)",
+    "rule": "mean diagonal K within 5% of 9.50 (9.03 to 9.98) passes the orientation control for C-C; with the horizontal pair that makes close-CC publishable next round."
+  },
+  "AA_orientation_at_5_5": {
+    "horizontal": "2026-11-20/r3/lab-a/003-004 (11.52, 11.05), 2026-11-21/r3/lab-a/007, 008, 019, 020 (new): six runs",
+    "diagonal": "2026-11-21/r2/lab-a/002 (10.65), 2026-11-21/r3/lab-a/009, 010, 011, 021, 022 (new): six runs",
+    "rule": "difference of the two arm means: |diff| < 2 SE (SE from the six runs per arm, pooled scatter) supports no orientation effect at (5,5); diagonal lower by more than 2 SE supports an orientation effect. Either result is reported; P-0012 scope follows the outcome."
+  },
+  "close_AB_012_015": {
+    "rule": "per-particle K_AB (on A) and K_BA (on B). Publish close-AB only if the two horizontal runs (012, 013) and the two diagonal runs (014, 015) each agree within 5% in both K values, and the horizontal and diagonal means agree within 5%.",
+    "discriminator": "ratio K_AB/K_BA at r0 1.0 compared with the separation-5 ratio 8.99/12.34 = 0.728. If the ratio at r0 1.0 is within 5% of 0.728, the pair coefficients share one radial shape (close-range scale factor); if not, the close range is species-specific in shape."
+  },
+  "review_P0016_016_018": {
+    "model": "P-0016 claim as published (K_AC = -6.25, K_CA = -14.78, P = 2.5, repulsion), predicted_error 0.006, bar 3x = 0.018",
+    "rule": "all three in-domain runs <= 0.018: replicated. All three > 0.018: falsified. Mixed: narrowed, with the failing orientation or ordering named."
+  }
+}

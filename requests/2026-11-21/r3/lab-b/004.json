@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-21/r3/lab-b/004",
+  "lab": "lab-b",
+  "account": "review",
+  "purpose": "Review replicate of P-0013 A-A at separation 1.5, T = 0.4, vertical orientation. Checks the A-A scale S_AA = 0.753 that a T = 0.4 run at 1.5 resolves to about 0.3 percent.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          3.25
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          4.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.4,
+    "sample_dt": 0.0005
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0013"
+}

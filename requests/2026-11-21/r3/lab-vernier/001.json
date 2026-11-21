@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-21/r3/lab-vernier/001",
+  "lab": "lab-vernier",
+  "account": "research",
+  "purpose": "H14 exponent test. A-B at separation 6, horizontal, both at rest, T=6, dt=0.02. Prediction under P=2.5: K_A(B) within 3% of 9.0.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          8.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 6.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

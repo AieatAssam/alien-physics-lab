@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0013",
+  "lab": "lab-b",
+  "verdict": "narrowed",
+  "evidence": [
+    "2026-11-21/r2/lab-b/003",
+    "2026-11-21/r2/lab-b/004",
+    "2026-11-21/r2/lab-b/005"
+  ],
+  "comment": "Three in-domain runs at separation 1.5 with T = 0.4, the claim's limit: 2026-11-21/r2/lab-b/003 (A-A), 004 (A-C), 005 (C-C), all review account, cites P-0013. Judge-style RMSE/L 0.00713, 0.00711, 0.00704 against bar 0.030. The error statement holds, but the bar is loose: any model within a few percent sits at the tracker noise floor here. Coefficient check by chi2 fits (sd 0.05, start from request setup). A-A: K = 13.18 +/- 0.04, against 13.55 implied by S_AA = 0.753 x 18.0. The claim is 2.8 percent high, about 8 sigma, so the A-A scale should be about 0.73 and the A-A law is narrowed. C-C: K = 10.85 +/- 0.06 against 10.80 implied: consistent. A-C: K_AC = -7.23 +/- 0.14 and K_CA = -16.92 +/- 0.15, against -7.11 and -17.23: within 2 sigma. Verdict narrowed: the scales hold for C-C and A-C at this resolution, not for A-A. The structured domain lists A and C, so the schema does not let the claim exclude A-A pairs; a revision should give the A-A scale separately."
+}

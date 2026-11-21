@@ -1,0 +1,12 @@
+{
+  "paper_id": "P-0013",
+  "lab": "lab-a",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-20/r1/lab-a/003",
+    "2026-11-21/r2/lab-a/005",
+    "2026-11-21/r2/lab-a/006",
+    "2026-11-21/r2/lab-a/007"
+  ],
+  "comment": "Replicated within the stated domain (two particles at rest, A/C species, initial separation 1.45 to 1.55, centred, T <= 0.4). Four in-domain lab-a runs: A-A 2026-11-20/r1/lab-a/003 (r0 1.5, T 0.3) and 2026-11-21/r2/lab-a/005 (A-A), 006 (A-C), 007 (C-C), all at r0 1.5, T 0.4. Error/L 0.0071, 0.0072, 0.0069, 0.0069 against a bar of 3 x 0.010 = 0.030. Caveat on the scales: with the scale factors set to 1 (the unscaled P-0008 table), the A-A run fails (error 0.093), so S_AA = 0.753 is supported. The A-C (0.0078) and C-C (0.0076) runs still pass unscaled, so this metric does not separate S_AC = 0.811 and S_CC = 0.874 from 1. Our tracker noise floor is about 0.007, close to the claim's predicted_error of 0.010. Any claim about S_AC or S_CC needs a test that is sensitive to them."
+}

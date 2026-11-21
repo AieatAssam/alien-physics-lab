@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0015",
+  "lab": "lab-a",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-21/r2/lab-a/011",
+    "2026-11-21/r2/lab-a/012",
+    "2026-11-21/r2/lab-a/013"
+  ],
+  "comment": "Replicated for one B and one C at rest, initial separation 1.000, T = 0.6. Three lab-a runs: 011 (B left, horizontal), 012 (diagonal), 013 (C first, vertical). Error/L 0.0071, 0.0072, 0.0071 against a bar of 3 x 0.005 = 0.015. Two caveats. (1) The claim's predicted_error of 0.005 is below our tracker noise floor: the same predictor's single-particle runs, where it is exact, give 0.0068 to 0.0073. Run-level error can confirm the 3x bar but cannot confirm 0.005. (2) The machine-readable domain lists species B and C, so B-B and C-C pairs at r0 1.0 are in domain by the rule. The predictor rejects them (ValueError: species pair outside the domain). I did not cite them (2026-11-21/r1/lab-a/001-004). The statement already says one B and one C; the species field should say so too, or the predictor should accept the pairs it claims to cover."
+}

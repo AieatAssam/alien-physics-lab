@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-21/r3/lab-b/007",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Shape map C-C at separation 7.5 (horizontal, T = 6). Paired with request 005 for the A-A / C-C ratio at 7.5.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          1.25,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          8.75,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 6.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

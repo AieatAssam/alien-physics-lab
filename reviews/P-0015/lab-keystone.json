@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0015",
+  "lab": "lab-keystone",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-21/r2/lab-keystone/001",
+    "2026-11-21/r2/lab-keystone/002",
+    "2026-11-21/r2/lab-keystone/003"
+  ],
+  "comment": "Three review-account runs, B and C at rest, initial separation 1.000, T = 0.6 (001 horizontal; 002 C then B at 135 degrees; 003 B,C at 30 degrees). All in the claim's domain (species B/C, N = 2, separation 1.000) per tools/domain.py. Judge error: 001 0.00483, 002 0.00485, 003 0.00531. Bar 3 x 0.005 = 0.015. All pass, so replicated follows the rule. Limit: scaling both constants by 0.95 and 1.05 moves the errors by at most about 0.0005 (1.10 gives up to 0.0006), so this metric does not resolve K to the quoted 2%. The replicates confirm the trajectories at the noise level, not the constants. The exponent 2.5 is tested only at r = 1.0. Zero census events in all three runs."
+}

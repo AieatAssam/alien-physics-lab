@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-21/r3/lab-b/010",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Close A-B at separation 1.0 (vertical, T = 0.15). Third A-B run for close-AB; pre-registered: K_AB and K_BA agree with 2026-11-21/r2/lab-b/013-014 within 3 sigma.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          6.5,
+          3.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          6.5,
+          4.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.15,
+    "sample_dt": 0.0005
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

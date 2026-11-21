@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-21/r3/lab-b/002",
+  "lab": "lab-b",
+  "account": "review",
+  "purpose": "Review test of P-0016 at T = 0.6, vertical orientation (A below C). Same purpose as the horizontal run; checks orientation dependence.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          4.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.6,
+    "sample_dt": 0.002
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0016"
+}

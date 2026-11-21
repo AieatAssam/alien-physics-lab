@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0013",
+  "lab": "lab-keystone",
+  "verdict": "narrowed",
+  "evidence": [
+    "2026-11-21/r2/lab-keystone/007",
+    "2026-11-21/r2/lab-keystone/008",
+    "2026-11-21/r2/lab-keystone/009"
+  ],
+  "comment": "Three review-account runs, all inside the claim's formal domain (species A/C, N = 2, T = 0.4, separations 1.450 for A,A (007, lower edge), 1.550 for A,C (008, upper edge), 1.500 for C,C (009)). Judge error: 007 0.04459, 008 0.00520, 009 0.00522. Bar 3 x 0.010 = 0.030. Two pass and one fails, so the replicated and falsified rules give no verdict. The failure sits in the last part of the run. For 007, the error over t <= 0.35 is 0.0050 and only jumps to 0.0446 when the window reaches t = 0.40. The measured separation falls to about 0.18 at t = 0.40, so the pair nearly collides, and the model's singular force sends it apart after the crossing (model separation about 7.9). I therefore file narrowed, not falsified: the scale fits hold, but the T <= 0.4 limit overreaches for A-A at the lower edge of the separation range. Suggested limit: T <= 0.35 for these pairs. proposed_domain has no duration field, so the limit is stated here. The judge metric cannot separate the scales from 1 for A-C and C-C at these durations, as the authors also say."
+}

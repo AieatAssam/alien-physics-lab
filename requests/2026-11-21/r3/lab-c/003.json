@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-21/r3/lab-c/003",
+  "lab": "lab-c",
+  "account": "review",
+  "purpose": "Review of P-0016 claim c1: species-assignment test at full duration. Horizontal with C on the left, A on the right: C at (4.5,5), A at (5.5,5), T = 0.6. Tests that K_AC acts on A and K_CA on C.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          4.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.6,
+    "sample_dt": 0.0005
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0016"
+}

@@ -1,0 +1,29 @@
+{
+  "paper_id": "P-0018",
+  "lab": "lab-b",
+  "title": "Close-range C-C pair at separation 1.0, at rest: attractive K/r^2.5 law with K = 9.31 (T <= 0.15)",
+  "claims": [
+    {
+      "claim_id": "P-0018-c1",
+      "statement": "Two C particles at rest, initial separation 1.000 (within 0.001), duration at most 0.15: each accelerates toward the other with magnitude K / r^2.5 (r the current separation, P = 2.5 fixed) and K = 9.31 held constant over the run (attractive; chamber and time units). Pooled over three lab-b runs; the run-to-run spread is consistent with the per-run fit error.",
+      "domain": {
+        "species": [
+          "C"
+        ],
+        "r_range": [
+          0.999,
+          1.001
+        ],
+        "max_particles": 2
+      },
+      "predicted_error": 0.008,
+      "evidence": [
+        "2026-11-21/r1/lab-b/006",
+        "2026-11-21/r2/lab-b/011",
+        "2026-11-21/r2/lab-b/012"
+      ]
+    }
+  ],
+  "cites": [],
+  "supersedes": []
+}

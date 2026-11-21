@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0012",
+  "lab": "lab-keystone",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-21/r2/lab-keystone/004",
+    "2026-11-21/r2/lab-keystone/005",
+    "2026-11-21/r2/lab-keystone/006"
+  ],
+  "comment": "Three review-account runs at r0 = 1.000 exactly, two A particles at rest, T = 0.15 (004 horizontal at (4,2); 005 horizontal at (7,6); 006 vertical at (3,7.5)). All in the claim's domain (species A, N = 2, separation 1.000) per tools/domain.py. Judge error (RMSE/10): 004 0.00471, 005 0.00517, 006 0.00429. Bar 3 x 0.008 = 0.024. All three pass, so the verdict follows the rule. Limit of this verdict: the metric does not test K. Scaling K by 0.90 to 1.10 changes these three errors by under 0.0001, so the replicate confirms the trajectories at the tracker-noise level (about 0.005 on this metric) for T = 0.15. It does not confirm K = 11.3 or the exponent P = 2.5; those need a separation-profile fit. Zero census events."
+}

@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-21/r3/lab-keystone/002",
+  "lab": "lab-keystone",
+  "account": "research",
+  "purpose": "A-A at r0 = 1.875 vertical, at rest, T = 0.4. Out-of-sample shape test: pre-registered f = 0.865 (linear between measured knots 1.75 -> 0.82 and 2.0 -> 0.91). Bar: |f_fit - 0.865| <= 0.05 per particle.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          7.0,
+          3.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          7.0,
+          4.875
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.4,
+    "sample_dt": 0.002
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-21/r3/lab-b/009",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Shape map B-B at separation 10.5 (diagonal, T = 10). Weak coupling; long T for signal. Completes the far-range ratio set.",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          1.25,
+          1.25
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          8.75,
+          8.598469228349535
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 10.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

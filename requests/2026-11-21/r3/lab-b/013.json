@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-21/r3/lab-b/013",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Long-time repulsive B-C at separation 1.0 (horizontal, T = 2). Same test for the B-C pair that P-0015 covers.",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          4.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

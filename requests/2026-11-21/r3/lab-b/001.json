@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-21/r3/lab-b/001",
+  "lab": "lab-b",
+  "account": "review",
+  "purpose": "Review test of P-0016 (A-C at separation 1.0) at its stated limit T = 0.6, horizontal orientation. Predicted error bar 0.018. Tests K_AC and K_CA at a duration where T=0.15 runs cannot resolve them.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.6,
+    "sample_dt": 0.002
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0016"
+}

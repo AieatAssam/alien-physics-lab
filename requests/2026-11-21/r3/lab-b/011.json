@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-21/r3/lab-b/011",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Close A-B at separation 1.0 (45-degree, T = 0.15). Third replicate for close-AB.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.5,
+          2.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          3.2071067811865475,
+          3.2071067811865475
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.15,
+    "sample_dt": 0.0005
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

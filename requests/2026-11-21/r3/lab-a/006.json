@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-21/r3/lab-a/006",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "Close-CC orientation control, repeat of 005.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          4.646446609406726,
+          4.646446609406726
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.353553390593274,
+          5.353553390593274
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.15,
+    "sample_dt": 0.0005
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

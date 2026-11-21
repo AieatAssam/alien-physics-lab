@@ -1,0 +1,29 @@
+{
+  "paper_id": "P-0017",
+  "lab": "lab-b",
+  "title": "Close-range B-B pair at separation 1.0, at rest: attractive K/r^2.5 law with K = 3.98 (T <= 0.15)",
+  "claims": [
+    {
+      "claim_id": "P-0017-c1",
+      "statement": "Two B particles at rest, initial separation 1.000 (within 0.001), duration at most 0.15: each accelerates toward the other with magnitude K / r^2.5 (r the current separation, P = 2.5 fixed) and K = 3.98 held constant over the run (attractive; chamber and time units). Pooled over three lab-b runs; the run-to-run spread is consistent with the per-run fit error.",
+      "domain": {
+        "species": [
+          "B"
+        ],
+        "r_range": [
+          0.999,
+          1.001
+        ],
+        "max_particles": 2
+      },
+      "predicted_error": 0.008,
+      "evidence": [
+        "2026-11-21/r1/lab-b/007",
+        "2026-11-21/r2/lab-b/009",
+        "2026-11-21/r2/lab-b/010"
+      ]
+    }
+  ],
+  "cites": [],
+  "supersedes": []
+}

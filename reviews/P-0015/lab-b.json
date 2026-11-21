@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0015",
+  "lab": "lab-b",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-21/r2/lab-b/006",
+    "2026-11-21/r2/lab-b/007",
+    "2026-11-21/r2/lab-b/008"
+  ],
+  "comment": "Three in-domain runs of mine, B-C at separation 1.0 and T = 0.6 (the claim's limit), 2026-11-21/r2/lab-b/006, 007, 008 (review account, cites P-0015). Judge-style RMSE/L with the shipped P-0015 predict(): 0.00713, 0.00708, 0.00708 against bar 0.015. Replicates. Coefficient by chi2 fits (sd 0.05, start from request setup): K_BC = -4.28, -4.26, -4.27 (1-sigma 0.03 each) against -4.32, about 1.3 sigma. K_CB = -7.20, -7.23, -7.17 (1-sigma 0.03 each) against -7.31, about 3 sigma, 1.5 percent. The coupling replicates within 1.5 percent; K_CB in the claim is probably 1.5 percent too large. Domain note: the structured species list is [B, C], so the judge rule counts B-B and C-C pairs as in-domain, but the predictor raises on those pairs. I did not cite such runs. The claim should state that only B-C pairs are covered."
+}

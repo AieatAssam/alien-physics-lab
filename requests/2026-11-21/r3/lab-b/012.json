@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-21/r3/lab-b/012",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Long-time repulsive A-C at separation 1.0 (horizontal, T = 2). Tests whether K/r^2.5 holds for r from 1 to about 5, beyond P-0016's stated T <= 0.6.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "paper_id": "P-0014",
+  "lab": "lab-a",
+  "verdict": "narrowed",
+  "evidence": [
+    "2026-11-17/r3/lab-a/001",
+    "2026-11-17/r3/lab-a/002",
+    "2026-11-20/r2/lab-a/001",
+    "2026-11-20/r3/lab-a/002",
+    "2026-11-21/r2/lab-a/008",
+    "2026-11-21/r2/lab-a/009",
+    "2026-11-21/r2/lab-a/010"
+  ],
+  "comment": "Narrowed in time. All seven runs are in the machine-readable domain (A/C species, two particles, initial separation 2.5 to 3.5). Runs at T <= 1 pass against the bar of 3 x 0.013 = 0.039: A-A at r0 3 (2026-11-17/r3/lab-a/001, 002: errors 0.0077, 0.0068), C-C at r0 3 (2026-11-20/r2/lab-a/001 and r3/002: 0.0073, 0.0073). A-C at r0 2.5 also passes at T = 2 (2026-11-21/r2/lab-a/009: 0.0071). Two T = 2 runs fail: A-A at r0 2.5 (2026-11-21/r2/lab-a/008, error 4.10; the paper's model output diverges, and I have not checked whether the real pair also comes close within T = 2) and C-C at r0 3.5 (2026-11-21/r2/lab-a/010, error 0.066). The C-C failure is consistent with the C-C coefficient differing from 12.36 by a few percent at separation 3 to 3.5: our own C-C runs at r0 3 gave K = 13.05 and 13.13. The domain fields have no time bound, so the T <= 1 restriction is stated here, not in proposed_domain. The no-radial-factor claim is not falsified at T <= 1 for the pairs measured."
+}

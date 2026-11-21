@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-21/r3/lab-vernier/003",
+  "lab": "lab-vernier",
+  "account": "research",
+  "purpose": "H14 replicate. A-B at separation 7, vertical (rotated from run 010), both at rest, T=6, dt=0.02. Prediction: K_A(B) 7.8 +/- 0.3 as in run 010; a vertical match rules out orientation bias.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          1.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          5.0,
+          8.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 6.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

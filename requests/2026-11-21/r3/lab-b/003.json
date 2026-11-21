@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-21/r3/lab-b/003",
+  "lab": "lab-b",
+  "account": "review",
+  "purpose": "Review test of P-0016 at T = 0.6, 45-degree orientation. Third orientation for the A-C coupling pair.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.5,
+          4.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.207106781186548,
+          5.207106781186548
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.6,
+    "sample_dt": 0.002
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0016"
+}

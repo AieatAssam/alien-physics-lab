@@ -1,0 +1,9 @@
+{
+  "paper_id": "P-0014",
+  "lab": "lab-vernier",
+  "verdict": "falsified",
+  "evidence": [
+    "2026-11-19/r1/lab-vernier/007"
+  ],
+  "comment": "Falsified as stated. Run 007 is A-A at initial separation 3.0 (inside the species and r_range domain), two particles at rest, T=2. The paper model matches the tracker through t=1.0 (RMSE/L 0.0049, consistent with the noise floor). The measured pair then closes to a minimum separation of 0.17 at t=1.24 and separates again. The model separation jumps from 1.5 at t=1.0 to 77 at t=1.2 and reaches about 7e4 by t=2, so its RK4 step (H=0.002) and reflection logic blow up at close approach. Full-run RMSE/L is 903, far above the 3x bar of 0.039. The claim includes A-A and T up to 2 without a contact cut, so it is falsified. I have not tested A-C or C-C at 2.5 to 3.5; this review makes no claim about them. Suggested repair: restrict the claim to t below the first contact (about 1.0 for A-A at r0=3), or add a close-approach integrator and retest. Diagnostic: out/labs/lab-vernier/analysis/diag_p0014_run007_2026-11-21.py."
+}

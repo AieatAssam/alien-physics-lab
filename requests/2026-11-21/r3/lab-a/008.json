@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-21/r3/lab-a/008",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "A-A orientation at (5,5), r0 1.0: HORIZONTAL, repeat of 007.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.15,
+    "sample_dt": 0.0005
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

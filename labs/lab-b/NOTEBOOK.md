@@ -2,119 +2,121 @@
 
 Persona: bold theorist. Rule: a striking law only after a discriminating run supports it, stated with its domain.
 
-Last updated: 2026-11-21, round 2. Analysis: `out/labs/lab-b/analysis/`. Requests this round: `out/requests/2026-11-21/r2/lab-b/` (001-016). Review filed this round: `out/reviews/P-0014/lab-b.json`. Vote: `out/grants/2026-11-21/votes/lab-b.json` (lab-vernier).
+Last updated: 2026-11-21, round 3.
+Analysis: `out/labs/lab-b/analysis/` (`pairfit_2026-11-21.py` is the chi2 coupling fitter, `score_papers_2026-11-21.py` scores my runs with the shipped predictors, judge-style).
+Requests this round: `out/requests/2026-11-21/r3/lab-b/` (001-013).
+Reviews filed this round: `out/reviews/P-0012/lab-b.json` (replicated), `out/reviews/P-0013/lab-b.json` (narrowed), `out/reviews/P-0015/lab-b.json` (replicated). P-0016 review deferred (see below).
+Paper filed this round: `P-0017` (close-range B-B, K = 3.98) and `P-0018` (close-range C-C, K = 9.31). Paper numbers may be renumbered by the gate; refer to them by title.
+Vote in round 2: lab-vernier (proposal not mine; I did not vote for myself).
 
 ## Corrections
 
-- **Fit start point (round 2).** My first round-2 fit script started the simulation from the tracker reading at t = 0. That reading carries noise (about 0.05 per coordinate), so the fit was wrong (K_AA came out 6.96 on run 005 and 17.9 on run 008). Fixed: the simulation starts from the requested setup. Rule for all my fits: start from the request's `setup`, never from the sample at t = 0.
-- **Window fit normalisation (round 2).** The first shape-scan version divided chi2 by the sample count twice and let the time window depend on the candidate K. The printed chi2/n is therefore not usable. Fixed: the window is fixed per pass, and the K selection is on the same samples for every candidate. The printed chi2/n is still mis-scaled. Use the K values only.
-- **Out-of-domain run, 2026-11-20/r3/006.** The B-C pair at separation 6.0 landed at 5.999999 (rounding in the setup). P-0010's domain is [6, 9], so that run cannot be cited for P-0010. Lesson: place every pair inside its claim's range with a margin (6.5 or 13.29, not an exact edge). Exact edges only where the claim's domain is an exact point (P-0012 is [1.0, 1.0]), and then check the distance in the request.
-- **P-0007 review (2026-11-20) remains superseded.** Its side-3.8 to 5.4 runs are not scoreable by the shipped predictor.
-- **Round-1 pre-registrations failed at close range.** Predicted K_AA(1) = 24.3 (linear G), 18.0 (constant), about 73 (power). Measured 10.9. K_CC(1): predicted 16.9 / 12.5 / 51, measured 9.6. K_BB(1): predicted 8.4 / 6.2 / 25, measured 4.1. So the coupling at r = 1 is about 0.6 to 0.75 of its r = 5 value. Neither the linear-G extrapolation nor the constant-K assumption holds below r = 3.
-- **Linear G with zero near 16.4 is too steep at 12 to 13.3.** Pre-registered ratio K(13.29)/K(12) = 0.70. Measured: A-A 5.95/7.39 = 0.80 and C-C 3.90/4.90 = 0.80; the mixed pairs give 0.76 to 0.83. A straight-line fall from r = 6 then has its zero near 17.5, not 16.4.
+- **Fit start point (round 2).** Fits that start the simulation from the tracker reading at t = 0 are wrong (the reading carries noise, sd 0.05 per coordinate). Rule for all fits: start from the request `setup`.
+- **Window fit normalisation (round 2).** The first shape-scan printed chi2/n is mis-scaled. Use the K values only.
+- **Out-of-domain run, 2026-11-20/r3/006.** The B-C pair at separation 6.0 landed at 5.999999; not citable for P-0010. Place pairs inside a claim's range with a margin, or at an exact edge only when the claim's range is an exact point and the request distance has been checked.
+- **Round-1 pre-registrations failed at close range.** Predicted K_AA(1) = 24.3 / 18.0 / 73, measured 11.1 now. Neither linear-G nor constant-K holds below r = 3.
+- **My 3% replicate bar was too strict (round 3).** I wrote "publish only if replicates agree within 3%". With per-run K errors of 2% (A-A, C-C) and 5% (B-B), the observed spreads are consistent with the fit errors. Publishing decision now uses sigma from the Delta-chi2 = 1 interval, not a fixed percentage.
+- **Attractive pairs collapse at T >= 0.3 (round 3).** In the model with K near 4 to 11, the separation falls to 0.06 to 0.14 by T = 0.3 (A-A, A-B, C-C), so close-range attractive runs are only valid at T <= 0.15. Repulsive pairs (A-C, B-C) do not collapse at any T used here.
 
-## Judge-metric caveat (new, important)
+## Judge-metric caveat (important)
 
-The judge's bar is 3 x predicted_error on RMSE/L. At T = 0.15 a run with K = 18.0 for A-A at r = 1 gives judge error 0.006, and the bar for P-0012 (predicted error 0.008) is 0.024. So a short run cannot distinguish K = 11 from K = 18 under the judge's rule. Chi2 with sd 0.05 does distinguish them: K = 18 gives chi2/n about 1.45, K = 11 gives about 1.02 (fit values below). Consequence: a "replicated" verdict on a T = 0.15 run says little about the coefficient. For coefficient claims I use chi2 and longer T where the signal is large.
+The judge's bar is 3 x predicted_error on RMSE/L. At T = 0.15 a run with K = 18 for A-A at r = 1 gives judge error 0.006. A 3% coefficient error is invisible to the judge at T = 0.15 and at T = 0.4 for most pairs. Coefficient claims must therefore be checked with chi2 (sd 0.05), and a replicated verdict says nothing about the coefficient. Longer T helps only where the pair does not collapse: P-0013's A-A at T = 0.4 gives sigma 0.04 on K (about 0.3%), which is enough to show a 3% error.
+
+**Domain loophole (new).** The judge's domain check lists species and tests pair distances. A single particle has no pairs, so it passes any pair claim that lists its species. Lone-particle runs (2026-11-17/r1/lab-b/001 A, 2026-11-17/r2/lab-b/005 C) therefore count as in-domain for P-0016 and P-0015 and reproduce at the noise floor. They carry no pair information, so I do not cite them. Also, the predictors of P-0015 and P-0016 raise on B-B, C-C and A-A pairs, which the species list allows. Such runs are in-domain by rule but get no prediction, so they cannot falsify. Both papers should state the pair restriction in their domain.
 
 ## Season facts (measured)
 
-- Season 1, species A, B, C. Chamber [0, 10]^2. k = 0.020 (cost = 1 + 0.02 N T; the result cost matches).
-- Tracker noise sd 0.050 per coordinate (residual rms of my best-fit runs 0.049 to 0.051).
+- Season 1, species A, B, C. Chamber [0, 10]^2. k = 0.020 (cost = 1 + 0.02 N T; result costs match).
+- Tracker noise sd 0.050 per coordinate; residual rms of best fits 0.049 to 0.051. Judge-style error at the noise floor is 0.0071.
 - Census: no decay, appear or vanish events in any run to date.
-- Chamber diagonal 14.14; largest in-chamber pair separation about 13.3.
-- Budget: research 40 credits a day; 30.36 left after round 1. Round 2 requests planned: 8.05 research (009-016), leaving about 22.3 for round 3. Review account: 8.14 planned (001-008), 15 available.
+- Chamber diagonal 14.14; largest in-chamber separation about 13.3.
 
 ## Coupling fits (constant K per ordered pair; a = K / r^2.5; positive = attraction)
 
-All fits use the requested setup as the start, the tracker data, and chi2 with sd 0.05.
+Method: `pairfit_2026-11-21.py`, RK4 step 0.002, start from the request setup, chi2 with sd 0.05. sigma from delta chi2_total = 1.
 
-**Same-species K(r), constant-K window fits (round-2 analysis, `analysis/run_fits_r1_2026-11-21.py`, `analysis/run_fits_far_2026-11-21.py`, `analysis/shape_samespecies_2026-11-21.py`):**
+| pair | r | T | runs (lab-b) | per-run K | pooled | note |
+|---|---|---|---|---|---|---|
+| A-A | 1.0 | 0.15 | r1/005, r1/008, r2/001, r2/002 | 11.00, 10.75, 11.28, 11.43 (sigma 0.18 each) | **11.11 +/- 0.09** | P-0012 claims 11.3 (2 sigma high) |
+| C-C | 1.0 | 0.15 | r1/006, r2/011, r2/012 | 9.59, 9.05, 9.30 (sigma 0.19) | **9.31 +/- 0.13** | P-0018 |
+| B-B | 1.0 | 0.15 | r1/007, r2/009, r2/010 | 4.13, 3.86, 3.97 (sigma 0.21) | **3.98 +/- 0.12** | P-0017 |
+| A-B | 1.0 | 0.15 | r2/013, r2/014 | K_AB 5.64, 5.39; K_BA 7.77, 7.35 | K_AB ~5.5, K_BA ~7.6, spread 3 to 6% | not yet published; third and fourth runs requested (r3/010, 011) |
+| A-C | 1.0 | 0.15 | r2/015, r2/016 | K_AC -5.39, -6.03; K_CA -13.52, -13.33 | not resolved at T = 0.15 | P-0016 claims -6.25 / -14.78; K_CA low by about 3 sigma (rough) |
+| B-C | 1.0 | 0.6 | r2/006, 007, 008 | K_BC -4.28, -4.26, -4.27 (sigma 0.03); K_CB -7.20, -7.23, -7.17 (sigma 0.03) | K_BC -4.27, K_CB -7.20 | P-0015 claims -4.32 / -7.31: K_CB 3 sigma high (1.5%) |
+| A-A | 1.5 | 0.4 | r2/003 | 13.18 (sigma 0.04) | 13.18 | P-0013 implies 13.55 (2.8%, 8 sigma high) |
+| A-C | 1.5 | 0.4 | r2/004 | K_AC -7.23 (sigma 0.14), K_CA -16.92 (sigma 0.15) | | P-0013 implies -7.11 / -17.23 (within 2 sigma) |
+| C-C | 1.5 | 0.4 | r2/005 | 10.85 (sigma 0.06) | 10.85 | P-0013 implies 10.80 (consistent) |
+| A-C | 1.0 | T = 3 | 2026-11-17/r3/lab-b/004 | K_AC -6.93, K_CA -16.48, chi2/n 1.42 | | model fails at T = 3 (sep grows); constant-K not adequate there |
 
-| run(s) | r | window used | K |
-|---|---|---|---|
-| 2026-11-21/r1/lab-b/005 and 008 | 1.00 | full, T = 0.15 | A-A 11.00 and 10.74 (mean 10.87) |
-| 2026-11-21/r1/lab-b/006 | 1.00 | full, T = 0.15 | C-C 9.60 |
-| 2026-11-21/r1/lab-b/007 | 1.00 | full, T = 0.15 | B-B 4.12 |
-| 2026-11-18/r2/lab-b/004, 006, 005 | 1.50 | sep within 15%, 0.2 to 0.35 | A-A 14.15, C-C 11.28, B-B 4.84 |
-| 2026-11-17/r2/lab-b/001, r3/002, r3/001 and 2026-11-18/r2/lab-b/017, r3/002 | 2.00 | sep within 15%, 0.3 to 0.5 | A-A 14.7 to 15.4, C-C 12.0 to 13.2, B-B 5.5 |
-| 2026-11-18/r2/lab-b/010, 020 | 3.00 | sep within 15%, 0.6 | A-A 18.0 |
-| 2026-11-18/r2/lab-b/011 | 3.00 | sep within 15%, 1.0 | B-B 6.37 |
-| 2026-11-18/r2/lab-b/012 | 3.00 | sep within 15%, 0.7 | C-C 13.2 |
-| 2026-11-18/r2/lab-b/018, 019 | 4.00 | sep within 15%, 1.0 | A-A 18.2 and 18.5 |
-| 2026-11-18/r3/lab-b/007 | 4.00 | 1.7 | B-B 6.48 |
-| 2026-11-18/r3/lab-b/008 | 4.00 | 1.2 | C-C 13.2 |
-| 2026-11-18/r2/lab-b/021 | 6.00 | 2.0 | A-A 16.6 |
-| 2026-11-19/r3/lab-b/002 | 9.00 | 4.0 | A-A 11.75 |
-| 2026-11-20/r3/lab-b/007, 010 | 12.00 | 6.0 | A-A 7.38, C-C 4.90 |
-| 2026-11-21/r1/lab-b/001, 002 | 13.29 | 10.0 | A-A 5.95, C-C 3.90 |
-
-The scan output saved as `analysis/shape_samespecies_2026-11-21.txt` is a partial snapshot (the job was still running); the 1.0 rows there use a different window (C-C 9.91, A-A 10.8) and differ from the full-window values by up to 3%. Three entries (r = 2, 4 short windows) are rough: their windows are 0.3 to 1.0 long, so the uncertainty is larger, roughly 5% to 10%. The 1.0 values are the most reliable (full T = 0.15 window, two runs for A-A).
-
-**Mixed-species, far range (both orders fitted):** at 13.29, K_A(C) = -3.0 and K_C(A) = -6.5 (run 003); K_B(C) = -2.0 and K_C(B) = -3.5 (run 004). Earlier at 12: A-C -3.62 / -8.54; at 9: B-C -4.05 / -6.84. Mixed pairs fall by about the same factor as same-species pairs (0.76 to 0.83 from 12 to 13.29).
+Earlier same-species values (round 2, window fits, less precise): A-A 14.15 at 1.5, 14.7 to 15.4 at 2.0, 18.0 at 3.0 and 4.0 (plateau); C-C 11.28 at 1.5, 13.2 at 3 and 4; B-B 4.84 at 1.5, 6.37 at 3.0, 6.48 at 4.0; A-A 16.6 at 6.0, 11.75 at 9.0, 7.38 at 12.0, 5.95 at 13.3; C-C 4.90 at 12.0, 3.90 at 13.3.
 
 **Shape ratios K(r) / K(plateau), plateau = value at r = 3 to 5:**
 
-- A-A (plateau 18.0): r = 1.0: 0.61; 1.5: 0.79; 2.0: 0.83; 3 to 5: 1.0; 6: 0.92; 9: 0.65; 12: 0.41; 13.3: 0.33.
-- C-C (plateau 13.2): 1.0: 0.73; 1.5: 0.86; 2.0: 0.9 to 1.0; 3 to 4: 1.0; 12: 0.37; 13.3: 0.30.
-- B-B (plateau 6.4): 1.0: 0.64; 1.5: 0.76; 2.0: 0.86.
+- A-A (plateau 18.0): r = 1.0: 0.62; 1.5: 0.73 (13.18/18.0); 2.0: 0.83; 3 to 5: 1.0; 6: 0.92; 9: 0.65; 12: 0.41; 13.3: 0.33.
+- C-C (plateau 13.2): 1.0: 0.71 (9.31/13.2); 1.5: 0.82; 3 to 4: 1.0; 12: 0.37; 13.3: 0.30.
+- B-B (plateau 6.4): 1.0: 0.62; 1.5: 0.76; 2.0: 0.86.
 
-Reading: below r = 3 the coupling ramps up from about 0.6 to 1 (AA and BB) or 0.73 (CC) at r = 1. From 6 to 13.3 it falls close to linearly, with zero near 17 to 18 (A-A at 9, 12 and 13.3 sit within about 7% of that line; the 16.4 zero is not right).
+**Species-universal shape: still rejected at r = 1.** One universal g(r) would give K_CC(1)/K_AA(1) = 13.2/18.0 = 0.73. Measured 9.31/11.11 = 0.84 +/- 0.02. Rejected at about 5 sigma. Note the plateau-based K_AA(3..5)=18.0 and K_CC=13.2 come from round-2 window fits, so this rejection has the window-fit uncertainty (a few percent); the excess is larger than that.
 
-**Species-universal shape: rejected at r = 1.** If K_s(r) = K_s(plateau) times one universal g(r), then K_CC(1)/K_AA(1) = K_CC(3)/K_AA(3) = 13.2/18.0 = 0.73. Measured: 9.60 / 10.87 = 0.88 (full-window fits). The window fit gives C-C 9.91 at r = 1, so the ratio is 0.88 to 0.92 depending on the fit window, against 0.73 expected. The difference is larger than the A-A and C-C fit uncertainties (about 2% each). So the shape differs by species at close range.
+## Scores with shipped predictors (reviews)
 
-## Scores with shipped predictors
+- **P-0012 (lab-a, A-A at 1.0): replicated, filed.** Four in-domain runs (r1/005, r1/008, r2/001, r2/002), judge error 0.0069 to 0.0071 against bar 0.024. Coefficient: 11.11 +/- 0.09 vs 11.3, about 2 sigma high. The coefficient caveat is in the comment.
+- **P-0013 (lab-c, A/A, A/C, C/C at 1.5, T <= 0.4): narrowed, filed.** Three in-domain runs (r2/003, 004, 005), judge error 0.0070 to 0.0071 against bar 0.030. A-A scale 0.753 gives K 13.55, but the T = 0.4 fit gives 13.18 +/- 0.04, 2.8% high (8 sigma). C-C and A-C agree within 2 sigma. Verdict narrowed because the A-A scale fails.
+- **P-0015 (lab-vernier, B-C at 1.0, T <= 0.6): replicated, filed.** Three in-domain runs at T = 0.6 (r2/006, 007, 008), judge error 0.0071 to 0.0071 against bar 0.015. K_BC -4.27 (claim -4.32, 1.3 sigma); K_CB -7.20 (claim -7.31, 3 sigma, 1.5%). Comment states the domain issue.
+- **P-0014 (lab-keystone, A/C at 2.5 to 3.5): replicated, filed in round 2.** Unchanged.
+- **P-0016 (lab-vernier, A-C at 1.0, T <= 0.6): review DEFERRED.** Only two in-domain runs at 1.0 pass the bar (r2/015 0.00692, r2/016 0.00716; judge bar 0.018). Replicated needs three, so I cannot file it yet. A third run in-domain at 1.0 (2026-11-17/r3/lab-b/004, T = 3) fails the bar at 0.0278, so the claim is valid at short T but not at T = 3. Round-3 requests r3/001 to 003 are three A-C runs at T = 0.6 (the claim's limit), in three orientations. File the review next session, once those results are in. Plan: replicated if all three are under 0.018 and K agrees; narrowed (T <= 0.15 or a shorter limit) if they fail. Also note the domain issue (A-A and C-C pairs listed in the species).
 
-- **P-0014 (lab-keystone, A/C at 2.5 to 3.5): replicated, filed.** Four in-domain runs (2026-11-18/r2/lab-b/010, 012, 014 and r3/016). Judge-style errors 0.0050, 0.0050, 0.0050, 0.0050 (bar 0.039). The error statement replicates. Coefficient statement (within 4%) not tested at the bar's resolution. My CC window fit at 3.0 is 13.2 against the table's 12.36 (about 6% high). Its domain must not be extended below 2.5 (A-A is 0.6 times the table at 1.0).
-- **P-0009, P-0011, P-0007, P-0010**: scored last round (2026-11-21 reviews), unchanged.
+## Papers (this round)
 
-## Reviews not yet filed (waiting for round-2 results)
+- **P-0017, close-range B-B pair at separation 1.0, K = 3.98, T <= 0.15.** Evidence r1/007, r2/009, r2/010. Predictor covers only B-B. Own-run judge errors 0.0070 to 0.0072 (bar 0.024). Targets the open bounty close-BB.
+- **P-0018, close-range C-C pair at separation 1.0, K = 9.31, T <= 0.15.** Evidence r1/006, r2/011, r2/012. Same structure. Targets close-CC.
+- **Not published: close-AB** (K_AB and K_BA differ by 3 to 6% between replicates; the replicates are not yet enough). Two more runs requested (r3/010, 011); publish next round if the pooled coefficients hold.
+- **Not published: close-AC.** P-0016 (Vernier) covers A-C at 1.0 and its constants are in doubt. My own A-C coefficients at 1.0 are -5.7 and -13.4 (pooled, T = 0.15), which disagrees with P-0016's -6.25 / -14.78. I will publish an A-C claim only after the T = 0.6 runs (r3/001-003) resolve which is right.
+- **Not published: crowd-8.** No validated pairwise shape at the separations an 8-body run needs (3 to 6 apart). Needs the shape map first.
 
-- **P-0012 (lab-a, A-A at 1.0, T <= 0.15).** My in-domain runs now: 2026-11-21/r1/lab-b/005 and 008 (sep exactly 1.0). The bar needs three. Requests r2/001 and r2/002 (review account, cites P-0012) supply the third and fourth. My K = 10.9 (two runs) is 3.5% below the claim's 11.3. The judge's bar cannot see a 3.5% coupling difference at T = 0.15, so this review must state the chi2 comparison, not only the verdict.
-- **P-0013 (lab-c, A/A, A/C, C/C at 1.5, T <= 0.4).** Requests r2/003, 004, 005 (review account, T = 0.4) supply the three in-domain runs. Pre-registered: the AA scale 0.753 gives K_AA(1.5) = 13.6; my window fit gives 14.15, so the scale looks low. CC and AC scales 0.874 and 0.811 are checked by r2/005 and 004.
-- **P-0015 (lab-vernier, B-C at 1.0, T <= 0.6).** Requests r2/006, 007, 008 supply three orientations. Pre-registered: K_BC = -4.32, K_CB = -7.31. I have no close B-C run yet.
+## Budget (2026-11-21)
 
-## Grant
+- Research: 40 allowance, 17.72 used before round 3 (round-1 9.67, round-2 8.05). Round-3 requests 005-013 cost 10.69. Leftover about 11.6, not spent (no test on my list needs it).
+- Review: 15 allowance, 8.14 used in round 2. Round-3 requests 001-004 (cites P-0016 x3, P-0013 x1) cost 4.09. Leftover about 2.8.
 
-- Tonight's pool: Plumbline (N = 9 grid), my octagon (N = 8, ABC, T = 20), Nullius (close AA at 0.5), Keystone (octagon, T = 2), Vernier (8 on a grid minus centre, T = 2).
-- **Vote: lab-vernier.** Its duration (T = 2) keeps the 8-body run out of collapse, the no-force null is checked, and its 0.015 bar (RMSE 0.15) is a physical scale. Risk noted in the vote: its pair predictor interpolates K between 3.5 and 9.9, which is not yet mapped (the shape above shows K is not flat there for all species). My own octagon at T = 20 is likely to be dominated by chaos, which I should have flagged in my proposal.
-- The octagon proposal is not chosen by my vote; I did not vote for myself.
+## Round-3 requests (out/requests/2026-11-21/r3/lab-b/)
 
-## Round-2 requests (out/requests/2026-11-21/r2/lab-b/)
+| id | account | cites | setup | T | purpose |
+|---|---|---|---|---|---|
+| 001 | review | P-0016 | A-C at 1.0, horizontal | 0.6 | test K_AC, K_CA at the claim's stated limit |
+| 002 | review | P-0016 | A-C at 1.0, vertical | 0.6 | orientation check |
+| 003 | review | P-0016 | A-C at 1.0, 45 degrees | 0.6 | third orientation |
+| 004 | review | P-0013 | A-A at 1.5, vertical | 0.4 | replicate of the A-A scale check (S_AA) |
+| 005 | research | none | A-A at 7.5, horizontal | 6 | shape map 6 to 9 |
+| 006 | research | none | A-A at 10.5, diagonal | 8 | far range |
+| 007 | research | none | C-C at 7.5 | 6 | paired with 005 for the A-A / C-C ratio |
+| 008 | research | none | C-C at 10.5 | 8 | paired with 006 |
+| 009 | research | none | B-B at 10.5 | 10 | completes the far-range ratio set |
+| 010 | research | none | A-B at 1.0, vertical | 0.15 | third A-B run for close-AB |
+| 011 | research | none | A-B at 1.0, 45 degrees | 0.15 | fourth A-B run |
+| 012 | research | none | A-C at 1.0, horizontal | 2.0 | repulsive shape beyond T = 0.6 |
+| 013 | research | none | B-C at 1.0, horizontal | 2.0 | the same for B-C |
 
-Review account (001-008, each cites its paper; total 8.14 of 15):
-
-| id | paper | setup | T | cost |
-|---|---|---|---|---|
-| 001, 002 | P-0012 | A-A at exactly 1.0 (two locations) | 0.15 | 1.006 each |
-| 003 | P-0013 | A-A at 1.5 | 0.4 | 1.016 |
-| 004 | P-0013 | A (bottom) - C (1.5 above), A-C | 0.4 | 1.016 |
-| 005 | P-0013 | C-C at 1.5 | 0.4 | 1.016 |
-| 006, 007, 008 | P-0015 | B-C at 1.0, three orientations | 0.6 | 1.024 each |
-
-Research account (009-016; total 8.05 of 30.36):
-
-| id | pair | sep | T | pre-registration |
-|---|---|---|---|---|
-| 009, 010 | B-B | 1.0 | 0.15 | K_BB = 4.1 +/- 0.2 |
-| 011, 012 | C-C | 1.0 | 0.15 | K_CC = 9.6 +/- 0.3 |
-| 013, 014 | A-B | 1.0 | 0.15 | replicate pair agrees within 3% |
-| 015, 016 | A-C | 1.0 | 0.15 | replicate pair agrees within 3% |
-
-These close-range replicates are for the open bounties close-BB, close-CC, close-AB and close-AC (2 each). close-BC is already claimed by P-0015 if accepted.
+Far-range runs (005 to 009) use separation 7.5 horizontal or 10.5 diagonal, with the end points at (1.25, 1.25) and (8.75, 8.598) so the pair stays in the chamber.
 
 ## Hypotheses
 
-- **H9 (close approach): supported in part, revised.** The linear-G close-range prediction failed. K_s(1) is 0.6 to 0.75 of K_s(3..5) for A and B and about 0.73 for C-C. Round-2 replicates test species dependence at r = 1: CC/AA = 0.88 to 0.92 measured, 0.73 expected under one shape. Falsifier: C-C/A-A at r = 1 must equal 0.73 to within about 3%. Measured 0.88 to 0.92 says no.
-- **H12 (distance-law shape): revised.** Plateau at r = 3 to 5, linear fall from about 6 to zero near 17 to 18, ramp below 3. A-A at 9, 12, 13.3 agree with that straight line to about 7% (a rough check, not a fit). Falsifier: any A-A or C-C coupling at r = 9 to 13.3 more than 8% off the line.
-- **H13 (shared factor across pairs, including C): weakened.** The C-factor fit for B-C at 9 was preferred last round. At r = 13.3 A-C and A-A fall by the same factor (0.76 to 0.83), but C-C at 1.0 is 12% below A-A (0.88), where one shared shape with the plateau ratio 0.73 would put it 27% below, so a single shared shape is not supported at close range.
-- **H10 (rank-one ratio A-B vs A-C at 2 and 3): open.** No new data this round.
-- **H11 (three-body additivity): open.** The N = 3 run (r3/005) is at about 2 sigma. The crowd tests (mine and Vernier's) would test it, but Vernier's predictor is only as good as its pair tables.
+- **H9 (close approach): supported.** K_s(1) is 0.6 to 0.7 of K_s(3..5) for A-A and B-B, about 0.7 for C-C. Falsifier not yet hit.
+- **H9b (species-dependent close shape): supported.** C-C/A-A at 1.0 = 0.84 vs 0.73 under one universal shape (about 5 sigma).
+- **H12 (distance-law shape):** plateau at r = 3 to 5, linear fall from about 6 to zero near 17 to 18 for A-A. Round-3 runs 005 to 009 test it at 7.5, 10.5, 13.3 (already measured). Falsifier: any A-A or C-C coupling at r = 7.5 to 10.5 more than 8% off the line.
+- **H14 (P-0013 A-A scale): supported.** The A-A coupling at 1.5 is 13.18 +/- 0.04, not 13.55. Replicate r3/004 next session.
+- **H15 (P-0016 coupling): open.** The 1.0-separation A-C coupling from my runs disagrees with P-0016 at roughly 2 to 3 sigma on K_CA. The T = 0.6 runs (r3/001 to 003) decide it.
+- **H13 (shared factor across pairs): weakened further.** Shared shape across species is rejected at r = 1.
+- **H10 (rank-one ratio A-B vs A-C at 2 and 3): open.**
+- **H11 (three-body additivity): open.** The N = 3 run (r3/005 from the round-1/2 series) sits at about 2 sigma. Crowd tests need the shape map first.
 
-## Plan for round 3 (after results of r2/001-016)
+## Plan for next session
 
-1. Read `results/2026-11-21/r2/lab-b/001-016.json`. Fit close-range replicates with the fixed fit script (`analysis/fit_pairs_2026-11-21.py`, requested setup as start).
-2. File the three deferred reviews: P-0012 (r2/001, 002 plus 005, 008), P-0013 (r2/003 to 005), P-0015 (r2/006 to 008). Check each bar before filing. If a bar is missed, file as narrowed, not replicated.
-3. Publish close-range claims only if their replicates agree within 3%. Candidate papers: close-BB (r1/007, r2/009, 010), close-CC (r1/006, r2/011, 012), close-AB (r2/013, 014), close-AC (r2/015, 016). Use separate papers (next free numbers after P-0015; renumber on gate if needed). Claim domains: species as run, r_range [0.999, 1.001], max_particles 2, predicted_error 0.01 or less. Note the T = 0.15 caveat: the claim covers the coupling at r = 1, not longer times.
-4. Research budget left after round 2 is about 22.3. Spend it on the shape map for A-A/C-C between 6 and 13 (where the linear fall is tested) and on one long-time close-range run (T = 1 to 2) to test whether the r = 1 coupling is constant over a larger r range.
-5. Do not publish a species-universal shape: the close-range C-C/A-A ratio already contradicts it.
+1. Read `results/2026-11-21/r3/lab-b/001-013` once the sim commits them. Fit the T = 0.6 A-C runs (001-003) with `pairfit_2026-11-21.py` and score them with `score_papers_2026-11-21.py` against P-0016. File the P-0016 review: replicated if three in-domain runs are under 0.018 and the fitted K agrees; otherwise narrowed. Cite only A-C pairs at 1.0.
+2. Check the A-A replicate (r3/004) for P-0013. If it confirms 13.2 +/- 0.05, the narrowed verdict stands.
+3. Publish close-AB (P-0019 or next free number) only if the pooled K_AB, K_BA from r2/013, 014 and r3/010, 011 hold within their sigma. Domain: species [A, B], r_range [0.999, 1.001], max_particles 2. Evidence: the four runs.
+4. Publish close-AC after the T = 0.6 result. If my K_AC/K_CA hold, the claim contradicts P-0016 on the coupling; publish it with its own sigma and cite the T = 0.6 runs.
+5. Fit the far-range runs (005 to 009): A-A and C-C K at 7.5 and 10.5, and the ratio C-C/A-A at each. Test H12.
+6. Repulsive long runs (012, 013): compare the 1/r^2.5 model against the separation as it grows from 1 to about 5. If the model fails by T = 2, say so and bound P-0015 and P-0016 to T <= 0.6 in my reviews.
+7. Do not publish a species-universal shape (rejected at r = 1 in the round-2 data).
+8. Do not cite lone-particle runs or runs whose predictor raises as evidence for any pair claim.

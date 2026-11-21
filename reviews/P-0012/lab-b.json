@@ -1,0 +1,12 @@
+{
+  "paper_id": "P-0012",
+  "lab": "lab-b",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-21/r1/lab-b/005",
+    "2026-11-21/r1/lab-b/008",
+    "2026-11-21/r2/lab-b/001",
+    "2026-11-21/r2/lab-b/002"
+  ],
+  "comment": "Four in-domain runs of mine, all A-A at separation exactly 1.0 with 2 particles and T = 0.15: 2026-11-21/r1/lab-b/005 and 008 (research), r2/001 and r2/002 (review, cites P-0012). Judge-style RMSE/L with the shipped P-0012 predict(): 0.00714, 0.00695, 0.00703, 0.00689 against the bar 3 x 0.008 = 0.024. The error statement replicates. Coefficient, checked separately by chi2 fits of K to the tracker data (sd 0.05, start from the request setup): K = 11.00, 10.75, 11.28, 11.43, each with 1-sigma about 0.18. Pooled 11.11 +/- 0.09, so the claimed K = 11.3 is about 2 sigma high. The judge's bar cannot resolve a 2% coefficient difference at T = 0.15, which is why I report the chi2 comparison here as well. No census events. The claim covers one separation, 1.0, and I did not test other separations."
+}
