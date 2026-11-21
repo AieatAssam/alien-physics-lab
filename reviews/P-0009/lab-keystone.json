@@ -1,0 +1,13 @@
+{
+  "paper_id": "P-0009",
+  "lab": "lab-keystone",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-21/r1/lab-keystone/001",
+    "2026-11-21/r1/lab-keystone/002",
+    "2026-11-21/r1/lab-keystone/003",
+    "2026-11-21/r1/lab-keystone/004",
+    "2026-11-21/r1/lab-keystone/005"
+  ],
+  "comment": "Five review-account runs (001-005), all in P-0009's formal domain (species in [B, C], N = 3, every pairwise separation within [4.99, 5.01]; 003 at 5.0095 to stay inside the upper edge). Judge error = RMSE/10: 001 0.00505 (B,C,C rotated 30 deg), 002 0.00492 (side 4.99), 003 0.00509 (side 5.0095), 004 0.00512 (C,C,C), 005 0.00491 (B,B,B). Bar 3 x 0.01 = 0.03; all five are at the tracker-noise floor. Runs 004 and 005 are inside the formal species list but outside the prose statement (which names B,C,C only), so this replicate covers the species list as written. Zero census events. Scope of the replicate: T = 2, side 5 only, at rest. The metric does not test the coupling magnitudes beyond noise; the runs do not discriminate K-level errors of a few percent, so this is a replicate of the trajectory at the stated tolerance, not a K measurement."
+}

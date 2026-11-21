@@ -1,0 +1,39 @@
+{
+ "request_id": "2026-11-21/r2/lab-a/010",
+ "lab": "lab-a",
+ "account": "review",
+ "purpose": "Edge test of P-0014 (C-C, r0 = 3.5, upper edge of 2.5 to 3.5, at rest, T=2.0), horizontal centred (5,5). The paper's model predicts a close approach at this pair within T=2; tests whether the claim holds at the upper edge at the T limit.",
+ "setup": {
+  "particles": [
+   {
+    "species": "C",
+    "pos": [
+     3.25,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "C",
+    "pos": [
+     6.75,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 2.0,
+  "sample_dt": 0.005
+ },
+ "instruments": [
+  "tracker",
+  "census"
+ ],
+ "cites_paper": "P-0014"
+}

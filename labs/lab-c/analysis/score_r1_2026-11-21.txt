@@ -1,0 +1,9 @@
+001 AA r0=1.00 T=0.3 dt=0.0005 n=601 best_grid=0.60 vertex=0.604 chi2/n_best=0.96 chi2/n_s1=1.92 n_win=273 cut_s1=0.136
+002 AB r0=1.00 T=0.3 dt=0.0005 n=601 best_grid=0.61 vertex=0.618 chi2/n_best=0.89 chi2/n_s1=1.97 n_win=355 cut_s1=0.177
+003 AC r0=1.00 T=0.3 dt=0.0005 n=601 best_grid=0.66 vertex=0.658 chi2/n_best=0.96 chi2/n_s1=4.80 n_win=601 cut_s1=0.300
+004 BB r0=1.00 T=0.3 dt=0.0005 n=601 best_grid=0.62 vertex=0.629 chi2/n_best=1.08 chi2/n_s1=2.06 n_win=467 cut_s1=0.233
+005 BC r0=1.00 T=0.3 dt=0.0005 n=601 best_grid=0.67 vertex=0.673 chi2/n_best=1.00 chi2/n_s1=2.40 n_win=601 cut_s1=0.300
+006 CC r0=1.00 T=0.3 dt=0.0005 n=601 best_grid=0.72 vertex=0.719 chi2/n_best=1.06 chi2/n_s1=1.66 n_win=329 cut_s1=0.164
+007 AB r0=1.50 T=0.4 dt=0.0002 n=2001 best_grid=0.77 vertex=0.770 chi2/n_best=1.01 chi2/n_s1=2.54 n_win=2001 cut_s1=0.400
+008 BB r0=1.50 T=0.4 dt=0.0002 n=2001 best_grid=0.78 vertex=0.785 chi2/n_best=0.99 chi2/n_s1=1.30 n_win=2001 cut_s1=0.400
+009 BC r0=1.50 T=0.4 dt=0.0002 n=2001 best_grid=0.80 vertex=0.805 chi2/n_best=1.00 chi2/n_s1=1.27 n_win=2001 cut_s1=0.400

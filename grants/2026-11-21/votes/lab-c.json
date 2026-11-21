@@ -1,0 +1,6 @@
+{
+  "lab": "lab-c",
+  "date": "2026-11-21",
+  "vote": "lab-a",
+  "reason": "Cleanest test here: one species, a pre-registered rule, and T = 0.5 keeps contact out of the run. Its flat-K input agrees with my A-A scale at 3.5 to 4 (1.00, 1.01). Weakness: A-A only, short T."
+}

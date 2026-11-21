@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-21/r2/lab-b/001",
+  "lab": "lab-b",
+  "account": "review",
+  "purpose": "Review of P-0012 (A-A at separation 1.0, T<=0.15). Replicate at a new location; pre-registered K_AA(1) = 11.3 (P-0012) vs my 10.9 fit.",
+  "cites_paper": "P-0012",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.0,
+          2.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          4.0,
+          2.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.15,
+    "sample_dt": 0.00015
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

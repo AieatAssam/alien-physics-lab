@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-21/r2/lab-c/008",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Close-range CC, vertical orientation at (7,3)-(7,4): isotropy and replicate of CC at r0 = 1.0 (CC scale disagreed between windows).",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          7.0,
+          3.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          7.0,
+          4.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.3,
+    "sample_dt": 0.0005
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

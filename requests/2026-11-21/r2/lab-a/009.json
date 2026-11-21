@@ -1,0 +1,39 @@
+{
+ "request_id": "2026-11-21/r2/lab-a/009",
+ "lab": "lab-a",
+ "account": "review",
+ "purpose": "Mixed edge test of P-0014 (A-C, r0 = 2.5, at rest, T=2.0), horizontal centred (5,5). Tests the cross-pair table at the lower edge of the range and the long T.",
+ "setup": {
+  "particles": [
+   {
+    "species": "A",
+    "pos": [
+     3.75,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "C",
+    "pos": [
+     6.25,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 2.0,
+  "sample_dt": 0.005
+ },
+ "instruments": [
+  "tracker",
+  "census"
+ ],
+ "cites_paper": "P-0014"
+}

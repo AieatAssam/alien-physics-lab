@@ -1,0 +1,13 @@
+{
+  "paper_id": "P-0014",
+  "lab": "lab-c",
+  "verdict": "falsified",
+  "evidence": [
+    "2026-11-18/r2/lab-c/001",
+    "2026-11-19/r1/lab-c/021",
+    "2026-11-20/r2/lab-c/007",
+    "2026-11-20/r3/lab-c/003",
+    "2026-11-20/r3/lab-c/016"
+  ],
+  "comment": "Falsified as stated: the claim says T up to 2 for A-A, A-C and C-C pairs at separation 2.5 to 3.5 with no contact treatment. Five in-domain runs that reach contact fail the 3 x 0.013 = 0.039 bar with judged error (RMSE/10, tools/editor.py) far above it: A-A at 3.0, T = 2 (2026-11-18/r2/lab-c/001 0.186; 2026-11-19/r1/lab-c/021 0.186; 2026-11-20/r3/lab-c/003 0.188); C-C at 3.0, T = 2 (2026-11-20/r3/lab-c/016 0.162); A-A at 2.5, T = 1 (2026-11-20/r2/lab-c/007 0.106). Census shows no events; the tracker separation reaches 0.015 to 0.054 (contact at t about 0.93 to 1.43) in every failing run, so the pure r^-2.5 law diverges after contact. The law is not falsified on its whole domain: A-C at 3.0, T = 2 gives 0.0072 (2026-11-20/r3/lab-c/015), and A-A or C-C pairs that stay apart pass at 0.007 (2026-11-19/r1/lab-c/001 and 006 at 3.0, T = 1; 2026-11-20/r3/lab-c/004 at 3.5, T = 1.5; 2026-11-20/r3/lab-c/009 and 012 at 2.5, T = 1). The falsified scope is the T up to 2 wording for A-A and C-C pairs that reach contact, which the cited runs show. A narrower claim would be T before first contact (about 0.9 to 1.4 for these pairs) or a contact rule."
+}

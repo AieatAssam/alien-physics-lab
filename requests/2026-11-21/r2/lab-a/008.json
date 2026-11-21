@@ -1,0 +1,39 @@
+{
+ "request_id": "2026-11-21/r2/lab-a/008",
+ "lab": "lab-a",
+ "account": "review",
+ "purpose": "Edge test of P-0014 at its T limit: A-A at r0 = 2.5 (lower edge of 2.5 to 3.5), at rest, T=2.0, horizontal centred (5,5). The claim's T up to 2 is untested at r0 below 4; the paper's model predicts a close approach here, so the run probes both the coefficient and the collision regime.",
+ "setup": {
+  "particles": [
+   {
+    "species": "A",
+    "pos": [
+     3.75,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     6.25,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 2.0,
+  "sample_dt": 0.005
+ },
+ "instruments": [
+  "tracker",
+  "census"
+ ],
+ "cites_paper": "P-0014"
+}

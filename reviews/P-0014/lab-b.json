@@ -1,0 +1,12 @@
+{
+  "paper_id": "P-0014",
+  "lab": "lab-b",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-18/r2/lab-b/010",
+    "2026-11-18/r2/lab-b/012",
+    "2026-11-18/r2/lab-b/014",
+    "2026-11-18/r3/lab-b/016"
+  ],
+  "comment": "Four in-domain runs of mine (AA 2026-11-18/r2/010, CC r2/012, AC r2/014 and r3/016; all at separation 3.0, species A/C, T = 1 to 2, 2 particles). Scored with the shipped P-0014 predict() on the request setups: RMSE 0.0501, 0.0504, 0.0498 and 0.0505, judge error 0.005 each against a bar of 0.039 (3 x 0.013). All four sit at the tracker-noise floor, so the error statement replicates. Caveat on the coefficient claim (within 4%): this bar is loose, so it does not test coefficients at the 4% level. My window fit gives K_CC(3.0) of about 13 (uncertainty about 0.5), against the table value 12.36 (about 5%+ high); K_AA(3.0) fits 18.0, matching the table. Outside the claim: K_AA falls sharply below separation 3 (K_AA(1.0) about 10.9, from my runs 2026-11-21/r1/lab-b/005 and 008), so the no-radial-factor statement must not be extended below 2.5 and does not apply at close range."
+}

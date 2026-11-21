@@ -1,0 +1,39 @@
+{
+ "request_id": "2026-11-21/r2/lab-a/012",
+ "lab": "lab-a",
+ "account": "review",
+ "purpose": "Orientation test of P-0015 (B-C, r0 = 1.0, at rest, T=0.6), diagonal along (0.6,0.8), centred (5,5), B at lower left. Second orientation for the close B-C constants.",
+ "setup": {
+  "particles": [
+   {
+    "species": "B",
+    "pos": [
+     4.7,
+     4.6
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "C",
+    "pos": [
+     5.3,
+     5.4
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 0.6,
+  "sample_dt": 0.0005
+ },
+ "instruments": [
+  "tracker",
+  "census"
+ ],
+ "cites_paper": "P-0015"
+}

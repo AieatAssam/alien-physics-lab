@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0012",
+  "lab": "lab-c",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-21/r2/lab-c/009",
+    "2026-11-21/r2/lab-c/010",
+    "2026-11-21/r2/lab-c/011"
+  ],
+  "comment": "Replication of the A-A close-range constant-K law, three new in-domain runs (two A at rest, exact separation 1.0, duration 0.15, placed horizontally, vertically and at upper right). The model accepts all three (duration 0.15 is the claim's limit). Bar 3 x 0.008 = 0.024. Pre-run check on my own runs with t <= 0.15: 2026-11-20/r1/lab-c/001 judged-style error 0.0083 and 2026-11-21/r1/lab-c/001 0.0068, both inside the bar. My independent per-run fit of the A-A scale at r = 1.0 is 0.60 to 0.61, i.e. K about 10.8 to 11.0 with the P-0008 A-A coefficient 18, about 3 to 4% below the claim's K = 11.3. The difference is inside the bar and inside the noise floor of 0.0071 at this duration. Not tested: any run with duration above 0.15, which the model refuses, and whether K is constant beyond that time. Single-species, no B or C pairs."
+}

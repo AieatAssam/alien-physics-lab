@@ -1,0 +1,12 @@
+{
+  "paper_id": "P-0015",
+  "lab": "lab-c",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-20/r1/lab-c/005",
+    "2026-11-21/r1/lab-c/005",
+    "2026-11-21/r2/lab-c/012",
+    "2026-11-21/r2/lab-c/013"
+  ],
+  "comment": "Replication of the B-C close-range repulsion at separation 1.0. Four in-domain pair runs (B and C, exact separation 1.0): 2026-11-20/r1/lab-c/005 (T = 0.2) and 2026-11-21/r1/lab-c/005 (T = 0.3) on the first placement; 2026-11-21/r2/lab-c/012 (horizontal, T = 0.6) and 013 (vertical, T = 0.6) on the claim's full stated duration and a second orientation. Bar 3 x 0.005 = 0.015. Judged error of the claim's model on the two earlier runs is 0.0071 and 0.0071, the tracker noise floor. The claim holds at the noise level on these runs. Not tested: exponent 2.5 at any other separation (my own B-C scale at 1.5 is 0.80 to 0.81 of the P-0008 law, i.e. an r-dependent short-range coupling, so the 2.5 exponent is a fixed assumption here). Lone-particle runs were not cited."
+}

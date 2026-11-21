@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-21/r2/lab-b/010",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Close BB at r=1.0, T=0.15, second location. Pre-registered: K_BB = 4.1 +/- 0.2.",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          2.0,
+          8.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          3.0,
+          8.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.15,
+    "sample_dt": 0.00015
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

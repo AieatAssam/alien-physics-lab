@@ -1,0 +1,39 @@
+{
+ "request_id": "2026-11-21/r2/lab-a/006",
+ "lab": "lab-a",
+ "account": "review",
+ "purpose": "Mixed-species test of P-0013 (A-C, r0 = 1.5, at rest, T=0.4): A on the lower side, C above, vertical, centred (5,5). Tests S_AC = 0.811 on the cross pair, with unscaled P-0008 coefficients as the alternative (P-0013 itself says the judged metric does not separate them).",
+ "setup": {
+  "particles": [
+   {
+    "species": "A",
+    "pos": [
+     5.0,
+     4.25
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "C",
+    "pos": [
+     5.0,
+     5.75
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 0.4,
+  "sample_dt": 0.0005
+ },
+ "instruments": [
+  "tracker",
+  "census"
+ ],
+ "cites_paper": "P-0013"
+}

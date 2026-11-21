@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-21/r2/lab-c/009",
+  "lab": "lab-c",
+  "account": "review",
+  "purpose": "Review of P-0012 claim c1 (A-A pair at rest, r0 = 1.0, duration 0.15): run horizontal near the lower-left corner. Judged-domain check: species A, two particles, separation exactly 1.0.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.0,
+          2.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          3.0,
+          2.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.15,
+    "sample_dt": 0.0001
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0012"
+}

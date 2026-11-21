@@ -1,0 +1,38 @@
+{
+ "request_id": "2026-11-21/r2/lab-a/004",
+ "lab": "lab-a",
+ "account": "research",
+ "purpose": "Third replicate of A-A r0 = 1.25, horizontal, centred (5,5), at rest, T=0.15. r1/005 and r1/006 gave K 11.55 and 13.25 (about 2 sigma apart); the pre-registered mean 12.5 needs a third run before the r0 = 1.25 point is used.",
+ "setup": {
+  "particles": [
+   {
+    "species": "A",
+    "pos": [
+     4.375,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     5.625,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 0.15,
+  "sample_dt": 0.0005
+ },
+ "instruments": [
+  "tracker",
+  "census"
+ ]
+}

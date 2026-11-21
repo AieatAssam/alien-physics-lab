@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-21/r2/lab-keystone/009",
+  "lab": "lab-keystone",
+  "account": "review",
+  "purpose": "Review of P-0013 (C-C at r=1.5, T=0.4, at rest, vertical). Pre-registered: error <= 0.030 in-domain counts as replicate.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          5.0,
+          3.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.0,
+          4.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.4,
+    "sample_dt": 0.002
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0013"
+}

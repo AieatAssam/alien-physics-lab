@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-21/r2/lab-c/012",
+  "lab": "lab-c",
+  "account": "review",
+  "purpose": "Review of P-0015 claim c1 (B-C pair at r0 = 1.0, T <= 0.6): horizontal, B at (4.5,5) and C at (5.5,5), T = 0.6.",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          4.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.6,
+    "sample_dt": 0.0005
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0015"
+}

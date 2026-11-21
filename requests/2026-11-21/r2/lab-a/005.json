@@ -1,0 +1,39 @@
+{
+ "request_id": "2026-11-21/r2/lab-a/005",
+ "lab": "lab-a",
+ "account": "review",
+ "purpose": "Edge test of P-0013 (A-A, r0 = 1.5, at rest, T=0.4, both particles 2+ from walls): horizontal centred (5,5). In domain; tests the A-A scale S_AA = 0.753 on a fresh pair. Compare with 2026-11-20/r1/lab-a/003 (A-A r0 = 1.5, T=0.3).",
+ "setup": {
+  "particles": [
+   {
+    "species": "A",
+    "pos": [
+     4.25,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     5.75,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 0.4,
+  "sample_dt": 0.0005
+ },
+ "instruments": [
+  "tracker",
+  "census"
+ ],
+ "cites_paper": "P-0013"
+}

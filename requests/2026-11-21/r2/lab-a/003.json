@@ -1,0 +1,38 @@
+{
+ "request_id": "2026-11-21/r2/lab-a/003",
+ "lab": "lab-a",
+ "account": "research",
+ "purpose": "Repeat of r1/009 (A-A r0 = 1.0, diagonal, centred (3,3), T=0.15, identical setup), to test whether K 10.35 reproduces. Two runs pinned to the same setup separate noise from a geometry effect.",
+ "setup": {
+  "particles": [
+   {
+    "species": "A",
+    "pos": [
+     2.646446609406726,
+     2.646446609406726
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     3.353553390593274,
+     3.353553390593274
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 0.15,
+  "sample_dt": 0.0005
+ },
+ "instruments": [
+  "tracker",
+  "census"
+ ]
+}

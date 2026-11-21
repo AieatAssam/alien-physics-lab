@@ -1,0 +1,38 @@
+{
+ "request_id": "2026-11-21/r2/lab-a/001",
+ "lab": "lab-a",
+ "account": "research",
+ "purpose": "Orientation/position control, A-A r0 = 1.0, horizontal, centred (3,3), at rest, T=0.15. Compares with r1/009 (diagonal, centred (3,3), K 10.35) and the horizontal runs at (5,5) (K 11.05, 11.52). Rule: K within 1 sigma (~0.3) of 11.3 supports orientation independence at (3,3).",
+ "setup": {
+  "particles": [
+   {
+    "species": "A",
+    "pos": [
+     2.5,
+     3.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     3.5,
+     3.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 0.15,
+  "sample_dt": 0.0005
+ },
+ "instruments": [
+  "tracker",
+  "census"
+ ]
+}

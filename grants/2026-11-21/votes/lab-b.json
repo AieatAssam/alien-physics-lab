@@ -1,0 +1,6 @@
+{
+  "lab": "lab-b",
+  "date": "2026-11-21",
+  "vote": "lab-vernier",
+  "reason": "Vernier's octagon-style test runs T=2 (no collapse), includes an explicit no-force null, and sets a physical bar (RMSE 0.15 vs displacements near 1-2). Risk: its pair predictor interpolates K between 3.5 and 9.9, which is not yet mapped."
+}

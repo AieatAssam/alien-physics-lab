@@ -1,0 +1,6 @@
+{
+  "lab": "lab-vernier",
+  "date": "2026-11-21",
+  "vote": "lab-a",
+  "reason": "Plumbline's nine-particle test is the most decisive: it pre-registers a pairwise-sum prediction with explicit RMSE thresholds (at most 0.01 supports, at least 0.02 refutes), uses only a pair law already measured, and costs about 1.1 of the award."
+}

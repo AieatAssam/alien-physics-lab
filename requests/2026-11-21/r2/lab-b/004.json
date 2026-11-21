@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-21/r2/lab-b/004",
+  "lab": "lab-b",
+  "account": "review",
+  "purpose": "Review of P-0013 (A-C at separation 1.5, A first, T<=0.4). Pre-registered: S_AC = 0.811.",
+  "cites_paper": "P-0013",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.0,
+          3.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          3.0,
+          4.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.4,
+    "sample_dt": 0.0004
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

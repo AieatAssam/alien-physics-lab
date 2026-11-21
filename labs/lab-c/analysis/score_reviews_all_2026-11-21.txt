@@ -1,0 +1,39 @@
+== P-0012 (lab-a) claims: P-0012-c1 pe=0.008 dom={'species': ['A'], 'r_range': [1.0, 1.0], 'max_particles': 2}
+  2026-11-17/r1/lab-c/001 refused: P-0012 covers exactly two particles
+  2026-11-17/r3/lab-c/002 refused: P-0012 is checked only for duration <= 0.15
+  2026-11-17/r3/lab-c/011 refused: P-0012 covers exactly two particles
+  2026-11-17/r3/lab-c/012 refused: P-0012 covers exactly two particles
+  2026-11-20/r1/lab-c/001 refused: P-0012 is checked only for duration <= 0.15
+  2026-11-20/r3/lab-c/001 refused: P-0012 is checked only for duration <= 0.15
+  2026-11-21/r1/lab-c/001 refused: P-0012 is checked only for duration <= 0.15
+== P-0014 (lab-keystone) claims: P-0014-c1 pe=0.013 dom={'species': ['A', 'C'], 'r_range': [2.5, 3.5], 'max_particles': 2}
+  2026-11-17/r1/lab-c/001 refused: P-0012 covers exactly 2 particles
+  2026-11-17/r2/lab-c/001 AA seps=[3.0] T=10.0 err=6284.29813 bar=0.0390 FAIL
+  2026-11-17/r2/lab-c/007 refused: P-0012 covers exactly 2 particles
+  2026-11-17/r3/lab-c/011 refused: P-0012 covers exactly 2 particles
+  2026-11-17/r3/lab-c/012 refused: P-0012 covers exactly 2 particles
+  2026-11-18/r1/lab-c/006 refused: P-0012 covers exactly 2 particles
+  2026-11-18/r2/lab-c/001 AA seps=[3.0] T=2.0 err=0.18620 bar=0.0390 FAIL
+  2026-11-18/r2/lab-c/005 AA seps=[3.0] T=1.0 err=0.00717 bar=0.0390 PASS
+  2026-11-19/r1/lab-c/001 AA seps=[3.0] T=1.0 err=0.00718 bar=0.0390 PASS
+  2026-11-19/r1/lab-c/003 AC seps=[3.0] T=1.0 err=0.00723 bar=0.0390 PASS
+  2026-11-19/r1/lab-c/006 CC seps=[3.0] T=1.0 err=0.00727 bar=0.0390 PASS
+  2026-11-19/r1/lab-c/021 AA seps=[3.0] T=2.0 err=0.18624 bar=0.0390 FAIL
+  2026-11-19/r1/lab-c/022 AA seps=[3.0] T=2.0 err=0.18623 bar=0.0390 FAIL
+  2026-11-20/r2/lab-c/007 AA seps=[2.5] T=1.0 err=0.10624 bar=0.0390 FAIL
+  2026-11-20/r3/lab-c/003 AA seps=[3.0] T=2.0 err=0.18789 bar=0.0390 FAIL
+  2026-11-20/r3/lab-c/004 AA seps=[3.5] T=1.5 err=0.00708 bar=0.0390 PASS
+  2026-11-20/r3/lab-c/009 AC seps=[2.5] T=1.0 err=0.00713 bar=0.0390 PASS
+  2026-11-20/r3/lab-c/012 CC seps=[2.5] T=1.0 err=0.00709 bar=0.0390 PASS
+  2026-11-20/r3/lab-c/015 AC seps=[3.0] T=2.0 err=0.00717 bar=0.0390 PASS
+  2026-11-20/r3/lab-c/016 CC seps=[3.0] T=2.0 err=0.16152 bar=0.0390 FAIL
+== P-0015 (lab-vernier) claims: P-0015-c1 pe=0.005 dom={'species': ['B', 'C'], 'r_range': [0.999, 1.001], 'max_particles': 2}
+  2026-11-17/r1/lab-c/002 B seps=[] T=10.0 err=0.00674 bar=0.0150 PASS
+  2026-11-17/r2/lab-c/007 C seps=[] T=100.0 err=0.00713 bar=0.0150 PASS
+  2026-11-18/r1/lab-c/006 C seps=[] T=60.0 err=0.00711 bar=0.0150 PASS
+  2026-11-20/r1/lab-c/004 refused: species pair ('B', 'B') outside the domain
+  2026-11-20/r1/lab-c/005 BC seps=[1.0] T=0.2 err=0.00709 bar=0.0150 PASS
+  2026-11-20/r1/lab-c/006 refused: species pair ('C', 'C') outside the domain
+  2026-11-21/r1/lab-c/004 refused: species pair ('B', 'B') outside the domain
+  2026-11-21/r1/lab-c/005 BC seps=[1.0] T=0.3 err=0.00706 bar=0.0150 PASS
+  2026-11-21/r1/lab-c/006 refused: species pair ('C', 'C') outside the domain

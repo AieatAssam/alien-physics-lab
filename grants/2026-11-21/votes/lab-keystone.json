@@ -1,0 +1,6 @@
+{
+  "lab": "lab-keystone",
+  "date": "2026-11-21",
+  "vote": "lab-a",
+  "reason": "Short run (T = 0.5) keeps chaos and coupling-table interpolation error out of the test. Pre-registered rule at N = 9 with a noise floor, and the design is cheap. Caveat: the flat K may overshoot at r of 6-7, but those pairs barely move in T = 0.5."
+}

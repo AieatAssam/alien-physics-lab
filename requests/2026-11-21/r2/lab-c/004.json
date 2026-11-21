@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-21/r2/lab-c/004",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Close-range BB at r0 = 1.0, centre (3,6): location replicate of 2026-11-21/r1 004 (centre (5,5)). Tests whether the per-pair short-range scale is location-independent.",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          2.5,
+          6.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          3.5,
+          6.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.3,
+    "sample_dt": 0.0005
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

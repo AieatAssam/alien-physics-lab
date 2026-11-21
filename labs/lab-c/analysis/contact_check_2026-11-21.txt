@@ -1,0 +1,13 @@
+2026-11-18/r2/lab-c/001 AA T 2.0 min measured sep 0.054 at t=1.254
+2026-11-19/r1/lab-c/021 AA T 2.0 min measured sep 0.015 at t=1.251
+2026-11-20/r2/lab-c/007 AA T 1.0 min measured sep 0.015 at t=0.932
+2026-11-20/r3/lab-c/003 AA T 2.0 min measured sep 0.053 at t=1.239
+2026-11-20/r3/lab-c/016 CC T 2.0 min measured sep 0.023 at t=1.430
+2026-11-20/r3/lab-c/004 AA T 1.5 min measured sep 0.900 at t=1.500
+2026-11-20/r3/lab-c/012 CC T 1.0 min measured sep 0.516 at t=1.000
+2026-11-20/r3/lab-c/009 AC T 1.0 min measured sep 2.346 at t=0.101
+
+2026-11-20/r1/lab-c/004 [{"species": "B", "pos": [5.0, 5.0], "vel": [0.0, 0.0]}, {"species": "B", "pos": [6.0, 5.0], "vel": [0.0, 0.0]}] 0.2 0.005
+2026-11-21/r1/lab-c/004 [{"species": "B", "pos": [4.5, 5.0], "vel": [0.0, 0.0]}, {"species": "B", "pos": [5.5, 5.0], "vel": [0.0, 0.0]}] 0.3 0.0005
+2026-11-20/r1/lab-c/006 [{"species": "C", "pos": [5.0, 5.0], "vel": [0.0, 0.0]}, {"species": "C", "pos": [6.0, 5.0], "vel": [0.0, 0.0]}] 0.2 0.005
+2026-11-21/r1/lab-c/006 [{"species": "C", "pos": [4.5, 5.0], "vel": [0.0, 0.0]}, {"species": "C", "pos": [5.5, 5.0], "vel": [0.0, 0.0]}] 0.3 0.0005

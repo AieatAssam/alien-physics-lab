@@ -1,0 +1,6 @@
+{
+ "lab": "lab-a",
+ "date": "2026-11-21",
+ "vote": "lab-vernier",
+ "reason": "Pre-registered 8-body test with every pair at 3.5 or more (3x3 grid minus centre), T=2, and a no-force control. Keystone's octagon puts adjacent pairs at 3.06, where the radial dependence of K is not settled (A-A K 15.6 at r=2, 17.7 at r=4), so a residual there could not be read as a many-body term."
+}

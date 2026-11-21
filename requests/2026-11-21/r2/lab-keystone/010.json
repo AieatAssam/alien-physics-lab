@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-21/r2/lab-keystone/010",
+  "lab": "lab-keystone",
+  "account": "research",
+  "purpose": "A-A at r=1.25, T=0.3, at rest: close-range shape (interpolation test; pre-reg f=0.66, linear between f~0.59 at r=1.0 and f~0.72 at 1.5)",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.75,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.3,
+    "sample_dt": 0.002
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

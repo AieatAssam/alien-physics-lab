@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-21/r2/lab-b/015",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Close AC at r=1.0, T=0.15 (open bounty close-AC). Pre-registered: K_A(C) and K_C(A) fitted; replicate agrees within 3%.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          8.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          6.0,
+          8.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.15,
+    "sample_dt": 0.00015
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

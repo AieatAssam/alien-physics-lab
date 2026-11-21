@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-21/r2/lab-b/002",
+  "lab": "lab-b",
+  "account": "review",
+  "purpose": "Review of P-0012 (A-A at separation 1.0, T<=0.15). Second replicate, second location.",
+  "cites_paper": "P-0012",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          6.0,
+          7.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          7.0,
+          7.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.15,
+    "sample_dt": 0.00015
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-21/r2/lab-keystone/001",
+  "lab": "lab-keystone",
+  "account": "review",
+  "purpose": "Review of P-0015 (B-C at r=1.0, T=0.6 (edge of T<=0.6), at rest, horizontal). Pre-registered: error <= 0.015 in-domain counts as replicate.",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          3.0,
+          3.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          4.0,
+          3.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.6,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0015"
+}

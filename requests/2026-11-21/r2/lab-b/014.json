@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-21/r2/lab-b/014",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Close AB at r=1.0, T=0.15, vertical, second location. Pre-registered: same K as 013 within 3%.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          8.0,
+          3.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          8.0,
+          4.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.15,
+    "sample_dt": 0.00015
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

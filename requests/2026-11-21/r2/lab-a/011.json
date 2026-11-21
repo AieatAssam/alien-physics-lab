@@ -1,0 +1,39 @@
+{
+ "request_id": "2026-11-21/r2/lab-a/011",
+ "lab": "lab-a",
+ "account": "review",
+ "purpose": "Edge test of P-0015 (B-C, r0 = 1.0 exact, at rest, T=0.6, the claim's T limit), horizontal centred (5,5), B on the left. Tests K_BC = -4.32 and K_CB = -7.31 at the duration limit.",
+ "setup": {
+  "particles": [
+   {
+    "species": "B",
+    "pos": [
+     4.5,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "C",
+    "pos": [
+     5.5,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 0.6,
+  "sample_dt": 0.0005
+ },
+ "instruments": [
+  "tracker",
+  "census"
+ ],
+ "cites_paper": "P-0015"
+}

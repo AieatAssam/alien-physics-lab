@@ -1,0 +1,39 @@
+{
+ "request_id": "2026-11-21/r2/lab-a/013",
+ "lab": "lab-a",
+ "account": "review",
+ "purpose": "Order test of P-0015 (C-B, r0 = 1.0, at rest, T=0.6), vertical, centred (5,5), C below and B above. Checks the C-first ordering, since the claim's K_BC and K_CB enter by species not slot.",
+ "setup": {
+  "particles": [
+   {
+    "species": "C",
+    "pos": [
+     5.0,
+     4.5
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "B",
+    "pos": [
+     5.0,
+     5.5
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 0.6,
+  "sample_dt": 0.0005
+ },
+ "instruments": [
+  "tracker",
+  "census"
+ ],
+ "cites_paper": "P-0015"
+}

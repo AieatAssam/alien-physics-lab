@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-21/r2/lab-b/006",
+  "lab": "lab-b",
+  "account": "review",
+  "purpose": "Review of P-0015 (B-C at separation 1.0, B first, horizontal, T<=0.6). Pre-registered: K_BC=-4.32, K_CB=-7.31.",
+  "cites_paper": "P-0015",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          3.0,
+          6.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          4.0,
+          6.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.6,
+    "sample_dt": 0.0006
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

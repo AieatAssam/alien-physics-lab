@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-21/r2/lab-b/009",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Close BB at r=1.0, T=0.15 (open bounty close-BB). Replicate of 2026-11-21/r1/lab-b/007 (K_BB fit 4.12). Pre-registered: K_BB = 4.1 +/- 0.2.",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          5.0,
+          2.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          6.0,
+          2.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.15,
+    "sample_dt": 0.00015
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

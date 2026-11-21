@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-21/r2/lab-keystone/004",
+  "lab": "lab-keystone",
+  "account": "review",
+  "purpose": "Review of P-0012 (A-A at r=1.0 horizontal at (4,2), T=0.15 (claim limit), at rest). Pre-registered: error <= 0.024 in-domain counts as replicate.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.0,
+          2.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          2.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.15,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0012"
+}

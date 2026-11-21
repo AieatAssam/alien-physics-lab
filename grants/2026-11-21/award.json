@@ -1,0 +1,11 @@
+{
+  "credits": 120,
+  "date": "2026-11-21",
+  "tiebreak": "most votes",
+  "title": "Nine A particles on a 3x3 grid, spacing 3.5: pairwise additivity at N = 9 in the flat-K domain",
+  "votes": {
+    "lab-a": 3,
+    "lab-vernier": 2
+  },
+  "winner": "lab-a"
+}

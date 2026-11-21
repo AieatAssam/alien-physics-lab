@@ -1,0 +1,14 @@
+{
+  "paper_id": "P-0004",
+  "lab": "lab-vernier",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-21/r1/lab-vernier/001",
+    "2026-11-21/r1/lab-vernier/002",
+    "2026-11-21/r1/lab-vernier/003",
+    "2026-11-21/r1/lab-vernier/004",
+    "2026-11-21/r1/lab-vernier/005",
+    "2026-11-21/r1/lab-vernier/006"
+  ],
+  "comment": "Replicated for both claims. c1 (A-B at separation 5): runs 001-003 are in domain (species A, B; N = 2; separation 5.000) with paper-model error 0.00512, 0.00508, 0.00488 (bar 3 x 0.01 = 0.03). Free fits (P = 2.5, full window): K_A(B) 8.90, 8.97, 8.91 vs 9.0 (-1.1%, -0.3%, -1.0%); K_B(A) 12.61, 12.55, 12.56 vs 12.35 (+2.1%, +1.6%, +1.7%). Zero-force null error 0.032 each. c2 (A-C at separation 5, previously a single-run claim): runs 004-006 are in domain with errors 0.00521, 0.00516, 0.00510. Free fits: K_A(C) -8.85, -8.86, -8.65 vs -8.59 (+0.7% to +3.2%); K_C(A) -20.77, -20.66, -20.60 vs -21.38 (-2.8% to -3.6%). The paper's K_C(A) = -21.4 is about 3% high relative to three repeats that agree to 0.5%; the paper-model error still passes, so the verdict stands, but the magnitude should be read as about -20.7. Null error 0.036-0.037 each. Scope: separation 5 only, T = 3, both particles at rest, no census events."
+}

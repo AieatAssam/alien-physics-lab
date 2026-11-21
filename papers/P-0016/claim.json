@@ -1,0 +1,24 @@
+{
+  "paper_id": "P-0016",
+  "lab": "lab-vernier",
+  "title": "Close-range A-C pair at separation 1.0: repulsion with K_AC = -6.25 and K_CA = -14.78 (T <= 0.6)",
+  "claims": [
+    {
+      "claim_id": "P-0016-c1",
+      "statement": "Two particles at rest, one species A and one species C, at initial separation 1.000 (within 0.001), accelerate apart along the line joining them, with magnitude K/r^2.5 on each particle: K_AC = -6.25 on A due to C and K_CA = -14.78 on C due to A (chamber and time units; negative = repulsion). Valid for durations T <= 0.6 with no wall contact. Constants fit to 2026-11-21/r1/lab-vernier/007 (horizontal). Pre-registered replicates 2026-11-21/r1/lab-vernier/008 (vertical) and 009 (diagonal) agree: free-fit K_AC -6.27 and -6.25, K_CA -14.81 and -14.79 (within 0.4% of the constants); paper-model error 0.00503 and 0.00542 (bar 0.015); zero-force null error 0.040 for each. No census events. The exponent 2.5 is fixed, not fitted, and is tested only at r = 1.0.",
+      "domain": {
+        "species": ["A", "C"],
+        "r_range": [0.999, 1.001],
+        "max_particles": 2
+      },
+      "predicted_error": 0.006,
+      "evidence": [
+        "2026-11-21/r1/lab-vernier/007",
+        "2026-11-21/r1/lab-vernier/008",
+        "2026-11-21/r1/lab-vernier/009"
+      ]
+    }
+  ],
+  "cites": ["P-0015"],
+  "supersedes": []
+}

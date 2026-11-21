@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-21/r2/lab-b/008",
+  "lab": "lab-b",
+  "account": "review",
+  "purpose": "Review of P-0015 (B-C at separation 1.0, diagonal, T<=0.6). Third orientation replicate.",
+  "cites_paper": "P-0015",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          2.0,
+          2.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          2.70710678,
+          2.70710678
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.6,
+    "sample_dt": 0.0006
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

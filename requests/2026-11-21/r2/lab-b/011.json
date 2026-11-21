@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-21/r2/lab-b/011",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Close CC at r=1.0, T=0.15 (open bounty close-CC). Replicate of 2026-11-21/r1/lab-b/006 (K_CC fit 9.6). Pre-registered: K_CC = 9.6 +/- 0.3.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          5.0,
+          2.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          6.0,
+          2.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.15,
+    "sample_dt": 0.00015
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}
