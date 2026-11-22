@@ -308,5 +308,122 @@
     "order": 15,
     "paper_id": "P-0015",
     "predicted_error": 0.005
+  },
+  {
+    "claims": [
+      {
+        "domain": {
+          "max_particles": 2,
+          "r_range": [
+            0.999,
+            1.001
+          ],
+          "species": [
+            "A",
+            "C"
+          ]
+        }
+      }
+    ],
+    "order": 16,
+    "paper_id": "P-0016",
+    "predicted_error": 0.006
+  },
+  {
+    "claims": [
+      {
+        "domain": {
+          "max_particles": 2,
+          "r_range": [
+            0.999,
+            1.001
+          ],
+          "species": [
+            "B"
+          ]
+        }
+      }
+    ],
+    "order": 17,
+    "paper_id": "P-0017",
+    "predicted_error": 0.008
+  },
+  {
+    "claims": [
+      {
+        "domain": {
+          "max_particles": 2,
+          "r_range": [
+            0.999,
+            1.001
+          ],
+          "species": [
+            "C"
+          ]
+        }
+      }
+    ],
+    "order": 18,
+    "paper_id": "P-0018",
+    "predicted_error": 0.008
+  },
+  {
+    "claims": [
+      {
+        "domain": {
+          "max_particles": 2,
+          "r_range": [
+            0.999,
+            1.001
+          ],
+          "species": [
+            "B"
+          ]
+        }
+      }
+    ],
+    "order": 19,
+    "paper_id": "P-0019",
+    "predicted_error": 0.008
+  },
+  {
+    "claims": [
+      {
+        "domain": {
+          "max_particles": 2,
+          "r_range": [
+            0.999,
+            1.001
+          ],
+          "species": [
+            "A",
+            "B"
+          ]
+        }
+      }
+    ],
+    "order": 20,
+    "paper_id": "P-0020",
+    "predicted_error": 0.008
+  },
+  {
+    "claims": [
+      {
+        "domain": {
+          "max_particles": 2,
+          "r_range": [
+            6.9,
+            7.1
+          ],
+          "species": [
+            "A",
+            "B"
+          ]
+        }
+      }
+    ],
+    "order": 21,
+    "paper_id": "P-0021",
+    "predicted_error": 0.007
   }
 ]

@@ -2,22 +2,6 @@
   "open": [
     {
       "bounty": 2,
-      "detail": "Publish an accepted claim with A and B in its species, max_particles of 2 or more and r_range starting at 1 or less.",
-      "id": "close-AB",
-      "kind": "close-range",
-      "since": "2026-11-19",
-      "title": "how A and B behave up close"
-    },
-    {
-      "bounty": 2,
-      "detail": "Publish an accepted claim with A and C in its species, max_particles of 2 or more and r_range starting at 1 or less.",
-      "id": "close-AC",
-      "kind": "close-range",
-      "since": "2026-11-19",
-      "title": "how A and C behave up close"
-    },
-    {
-      "bounty": 2,
       "detail": "Resolved when an accepted paper supersedes P-0014.",
       "id": "contested-P-0014",
       "kind": "contested",
@@ -360,6 +344,26 @@
       "resolved_on": "2026-11-21",
       "since": "2026-11-19",
       "title": "two C particles up close",
+      "winner": "lab-vernier"
+    },
+    {
+      "bounty": 2,
+      "by_paper": "P-0020",
+      "id": "close-AB",
+      "kind": "close-range",
+      "resolved_on": "2026-11-22",
+      "since": "2026-11-19",
+      "title": "how A and B behave up close",
+      "winner": "lab-b"
+    },
+    {
+      "bounty": 2,
+      "by_paper": "P-0016",
+      "id": "close-AC",
+      "kind": "close-range",
+      "resolved_on": "2026-11-22",
+      "since": "2026-11-19",
+      "title": "how A and C behave up close",
       "winner": "lab-vernier"
     }
   ]
