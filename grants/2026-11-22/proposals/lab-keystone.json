@@ -1,0 +1,188 @@
+{
+  "lab": "lab-keystone",
+  "date": "2026-11-22",
+  "title": "Local power law of A-A close-range force: eight pairs at r0 = 0.5 to 2.25 in one run",
+  "pitch": "Tests the P = 2.5 exponent that every close-range claim assumes, at radii where only r = 1.0 is measured. Eight A-A pairs at rest, separations 0.5, 0.75, ..., 2.25, spaced so cross-pair forces are modelled, not ignored. Model-free initial accelerations give the local exponent from a(0.5)/a(1.0) and a(1.0)/a(2.0). Pre-registered: P = 2.5 predicts 5.66 for each ratio. A local exponent near 1.9 (the value implied by our current knots) predicts 3.7. Short duration, so no close approach.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          1.0,
+          1.25
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          1.5,
+          1.25
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          1.0,
+          3.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          1.75,
+          3.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          1.0,
+          6.25
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          2.0,
+          6.25
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          1.0,
+          8.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          2.25,
+          8.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.0,
+          1.25
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          7.5,
+          1.25
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.0,
+          3.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          7.75,
+          3.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.0,
+          6.25
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.0,
+          6.25
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.0,
+          8.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.25,
+          8.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.1,
+    "sample_dt": 0.001
+  }
+}

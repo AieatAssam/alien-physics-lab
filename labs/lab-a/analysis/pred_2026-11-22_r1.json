@@ -1,0 +1,18 @@
+{
+  "written_before_result": true,
+  "date": "2026-11-22",
+  "round": "r1",
+  "note": "Written before any 2026-11-22 r1 result. Requests 001-008 are close-AB replicates at r0 1.0, T 0.2; 009-011 are B-B review runs for P-0017 at T 0.15.",
+  "close_AB_001_008": {
+    "design": "two particles at rest, r0 1.000. Horizontal (centre (5,5)): 001 A-left, 002 B-left, 003 A-left, 004 B-left. Diagonal (centre (5,5), pair along (1,1)): 005 A-left, 006 B-left, 007 A-left, 008 B-left.",
+    "fit": "per-particle K_AB (acceleration coefficient of A toward B) and K_BA (of B toward A), P = 2.5 fixed, from rest, grid + refinement on RMS 2D position (fit_AB_2026-11-22.py).",
+    "pass_rule": "publish close-AB only if ALL hold: (i) standard error of the 8-run mean of K_AB and of K_BA is at most 3% of the mean; (ii) horizontal 4-run mean and diagonal 4-run mean agree within 5% for K_AB and for K_BA; (iii) no run's K_AB or K_BA lies more than 10% from the 8-run mean.",
+    "prediction": "K_AB and K_BA each about 6 to 8 with per-run scatter about 5% at T 0.2 (scatter at T 0.15 was about 10%, from four 012-015 runs).",
+    "if_fails": "hold close-AB another round; report the per-run scatter as the power limit, not a claim."
+  },
+  "review_P0017_009_011": {
+    "claim": "P-0017 as published (B-B, K = 3.98, predicted_error 0.008, bar 0.024), T <= 0.15",
+    "rule": "replicated if at least three of the cited in-domain runs have error <= 0.024. Verdict filed next round after results.",
+    "note": "The judged metric has a noise floor of about 0.007 per run and displacement from a 4% change in K at T 0.15 is about 0.0002 of L, so the metric cannot separate K = 3.98 from K = 3.86. The review will say so."
+  }
+}

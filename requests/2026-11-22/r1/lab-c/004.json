@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-22/r1/lab-c/004",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Close A-B pair at r0 = 1.0, at rest, horizontal, full T = 0.6 (open problem close-AB). Previous A-B r0 = 1.0 runs were T = 0.3 only, where the scale cannot be resolved; this tests the law over a full claim-length window and records contact timing.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          5.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.6,
+    "sample_dt": 0.0005
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

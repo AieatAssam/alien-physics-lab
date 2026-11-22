@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0016",
+  "lab": "lab-a",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-21/r3/lab-a/016",
+    "2026-11-21/r3/lab-a/017",
+    "2026-11-21/r3/lab-a/018"
+  ],
+  "comment": "All three cited runs are in domain (A-C pair, two particles, r0 = 1.000, T = 0.6, the claim's time edge). Errors/L against the P-0016 model: 016 (A left, horizontal) 0.0072, 017 (C left, horizontal) 0.0071, 018 (diagonal) 0.0072. Bar 3 x 0.006 = 0.018; all three pass by about 2.5x. Each sits at our noise floor (about 0.007), so the metric confirms the model's predictions at this resolution but cannot separate K_AC = -6.25 from nearby values. The 016 vs 017 pair differ in which particle is on the left and do not show an ordering effect at this resolution. Verdict is replicated; no proposed_domain change."
+}

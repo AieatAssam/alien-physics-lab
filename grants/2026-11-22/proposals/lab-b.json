@@ -1,0 +1,188 @@
+{
+  "lab": "lab-b",
+  "date": "2026-11-22",
+  "title": "Sixteen bodies on a lattice: does the pair law add up?",
+  "pitch": "Sixteen particles at rest on a 4 x 4 lattice, spacing 2.2, species cycling A, B, C, T = 1.0. If the forces are pairwise additive and the pair laws hold at 2.2 to 4.4 separation, the 16-body trajectories follow the sum of pair forces to the tracker noise floor (judge RMSE/L about 0.007). A miss above 0.02 falsifies additivity at these separations and reopens the crowd problems. Cost about 1.3 credits. Predictions to be filed after the 2.0 and 3.0 mixed-pair runs.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          1.0,
+          1.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          1.0,
+          3.2
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          1.0,
+          5.4
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          1.0,
+          7.6000000000000005
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          3.2,
+          1.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          3.2,
+          3.2
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          3.2,
+          5.4
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          3.2,
+          7.6000000000000005
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.4,
+          1.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.4,
+          3.2
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          5.4,
+          5.4
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.4,
+          7.6000000000000005
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          7.6000000000000005,
+          1.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          7.6000000000000005,
+          3.2
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          7.6000000000000005,
+          5.4
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          7.6000000000000005,
+          7.6000000000000005
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.005
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-22/r1/lab-c/001",
+  "lab": "lab-c",
+  "account": "review",
+  "cites_paper": "P-0018",
+  "purpose": "Review of P-0018 claim c1 (C-C pair at r0 = 1.0, T <= 0.15, the claim's stated duration). horizontal orientation; the earlier T = 0.3 runs collide near t = 0.26, so this run stays inside the claimed window.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          4.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.15,
+    "sample_dt": 0.0005
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "paper_id": "P-0017",
+  "lab": "lab-c",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-20/r1/lab-c/004",
+    "2026-11-21/r1/lab-c/004",
+    "2026-11-21/r2/lab-c/004",
+    "2026-11-21/r2/lab-c/007"
+  ],
+  "comment": "Judged error (traj_error, side 10) of the P-0017 model on four lab-c B-B runs at r0 = 1.0, at rest, all in domain (separation 1.000, two B particles). Errors: 2026-11-20/r1/004 (T = 0.2) 0.00794; 2026-11-21/r1/004 (T = 0.3) 0.00724; 2026-11-21/r2/004 (T = 0.3) 0.00696; 2026-11-21/r2/007 (T = 0.3, vertical pair) 0.00698. All pass the bar 0.024 (3 x 0.008) and sit near the tracker-noise floor of 0.0071. The runs contain no contact (minimum separation about 0.44 in the 0.3 run), so the model's singular 1/r^2.5 term is not exercised. Scope limits: (1) The paper claims T <= 0.15. These runs go to T = 0.3, so the replicate covers the claim's window and beyond. (2) The bar at T <= 0.3 is loose. I have not computed a coupling sensitivity table for B-B, but for the A-C pair at T = 0.3 the judge also could not separate couplings (see P-0016 review). So this verdict supports the attractive 1/r^2.5 shape at r0 = 1.0 to the noise floor, not the value K = 3.98 to better than tens of percent. (3) Only B-B at r0 = 1.0 is tested. Single-particle B runs are not counted as evidence for the pair law."
+}

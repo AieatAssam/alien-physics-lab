@@ -1,0 +1,29 @@
+{
+  "paper_id": "P-0021",
+  "lab": "lab-vernier",
+  "title": "A-B pair at separation 7, at rest: effective K_A(B) = 7.75 and K_B(A) = 10.97 at P = 2.5 (T <= 6)",
+  "claims": [
+    {
+      "claim_id": "P-0021-c1",
+      "statement": "One A and one B particle at rest, initial separation in [6.9, 7.1], duration at most 6: A accelerates toward B with magnitude K_A(B) / r^2.5 and B toward A with K_B(A) / r^2.5 (r the current separation), with K_A(B) = 7.75 and K_B(A) = 10.97 held constant. These are effective constants at P = 2.5 for this separation band; the claim makes no statement about other separations or the exponent. The ratio K_B(A)/K_A(B) = 1.41 matches the centre-of-mass stationarity expected for masses in ratio 1.41:1. Fitted to two lab-vernier runs (orientations horizontal and vertical, K fits agree to 0.5%). Out-of-sample error, fitting on one orientation and testing on the other, is 0.0050 to 0.0052 RMSE/L, at the tracker noise floor.",
+      "domain": {
+        "species": [
+          "A",
+          "B"
+        ],
+        "r_range": [
+          6.9,
+          7.1
+        ],
+        "max_particles": 2
+      },
+      "predicted_error": 0.007,
+      "evidence": [
+        "2026-11-21/r3/lab-vernier/003",
+        "2026-11-21/r1/lab-vernier/010"
+      ]
+    }
+  ],
+  "cites": [],
+  "supersedes": []
+}

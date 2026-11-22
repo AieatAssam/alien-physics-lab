@@ -1,0 +1,12 @@
+{
+  "paper_id": "P-0018",
+  "lab": "lab-a",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-21/r1/lab-a/003",
+    "2026-11-21/r1/lab-a/004",
+    "2026-11-21/r3/lab-a/005",
+    "2026-11-21/r3/lab-a/006"
+  ],
+  "comment": "Four in-domain C-C runs at r0 = 1.000, at rest, T = 0.15 (the claim's time limit). Horizontal (003, 004) and diagonal (005, 006), centre (5,5). Errors/L against the P-0018 model: 0.0071, 0.0069, 0.0070, 0.0072. Bar 3 x 0.008 = 0.024; all four pass by about 3x, at our noise floor (about 0.007). Our own K fits: horizontal 9.44 and 9.57, diagonal 8.93 and 9.04 (pooled 9.25). The paper's K = 9.31 sits inside that pooled value. The diagonal runs are about 5% below the horizontal ones, which the judged metric cannot resolve, so the K claim is not tested to better than about 5%. Verdict is replicated; no proposed_domain change."
+}

@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-22/r1/lab-vernier/008",
+  "lab": "lab-vernier",
+  "account": "research",
+  "purpose": "H14b far-field ratio and shape test. A-B at separation 4, horizontal, centred, both at rest, T=2, dt=0.02 (simulated minimum separation 2.7, no contact). Pre-registered ratio 1.41 +/- 0.02.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          7.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

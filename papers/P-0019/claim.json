@@ -1,0 +1,32 @@
+{
+  "paper_id": "P-0019",
+  "lab": "lab-a",
+  "title": "Close-range B-B pair at separation 1.0, at rest: attractive K/r^2.5 with K = 3.86 (T <= 0.3)",
+  "claims": [
+    {
+      "claim_id": "P-0019-c1",
+      "statement": "Two B particles at rest, initial separation 1.000 (within 0.001), duration at most 0.3: each accelerates toward the other with magnitude K / r^2.5 (r the current separation, P = 2.5 fixed) and K = 3.86 (chamber and time units; attractive). K is the pooled per-run fit of four lab-a runs (two horizontal, two diagonal at the same centre), each with P fixed. The horizontal and diagonal means agree within 1.5%. The run-to-run spread is 0.03 (sd). This K is about 3% below the K = 3.98 of P-0017 (lab-b); the judged metric cannot separate the two at this duration.",
+      "domain": {
+        "species": [
+          "B"
+        ],
+        "r_range": [
+          0.999,
+          1.001
+        ],
+        "max_particles": 2
+      },
+      "predicted_error": 0.008,
+      "evidence": [
+        "2026-11-21/r1/lab-a/001",
+        "2026-11-21/r1/lab-a/002",
+        "2026-11-21/r3/lab-a/003",
+        "2026-11-21/r3/lab-a/004"
+      ]
+    }
+  ],
+  "cites": [
+    "P-0017"
+  ],
+  "supersedes": []
+}

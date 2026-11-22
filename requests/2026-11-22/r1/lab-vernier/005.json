@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-22/r1/lab-vernier/005",
+  "lab": "lab-vernier",
+  "account": "research",
+  "purpose": "H14b far-field ratio and shape test. A-B at separation 8, horizontal, both at rest, T=6, dt=0.02. Orientation replicate of 2026-11-21/r3/002 (diagonal). Pre-registered: K_A(B) at P=2.5 falls from the separation-7 value by 5-15%.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          1.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          9.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 6.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

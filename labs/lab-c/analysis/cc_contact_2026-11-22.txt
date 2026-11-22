@@ -1,0 +1,6 @@
+2026-11-21/r1/lab-c/006.json n= 601 t_end= 0.3 min sep=0.007 at t=0.2590 sep@0.15=0.805 events= []
+2026-11-21/r2/lab-c/006.json n= 601 t_end= 0.3 min sep=0.031 at t=0.2640 sep@0.15=0.838 events= []
+2026-11-21/r2/lab-c/008.json n= 601 t_end= 0.3 min sep=0.028 at t=0.2495 sep@0.15=0.726 events= []
+2026-11-20/r1/lab-c/006.json n= 41 t_end= 0.2 min sep=0.515 at t=0.2000 sep@0.15=0.671 events= []
+2026-11-21/r1/lab-c/004.json n= 601 t_end= 0.3 min sep=0.462 at t=0.2935 sep@0.15=1.076 events= []
+2026-11-21/r2/lab-c/004.json n= 601 t_end= 0.3 min sep=0.443 at t=0.2990 sep@0.15=1.048 events= []

@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0016",
+  "lab": "lab-b",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-21/r3/lab-b/001",
+    "2026-11-21/r3/lab-b/002",
+    "2026-11-21/r3/lab-b/003"
+  ],
+  "comment": "Replicated for T <= 0.6. Evidence: three A-C runs at separation 1.000, T = 0.6, in three orientations (001 horizontal, 002 vertical, 003 at 45 degrees). All three are in domain (species A and C, two particles, distance inside [0.999, 1.001]). Paper-model judge errors: 0.00736, 0.00755, 0.00710, against the bar 3 x 0.006 = 0.018. My own constant fits (chi2, sd 0.05): K_AC = -6.10, -6.24, -6.22 (mean -6.19); K_CA = -14.57, -14.77, -14.68 (mean -14.67). The paper's -6.25 and -14.78 lie within the run-to-run spread (0.14 on K_AC, 0.20 on K_CA). I did not compute a formal sigma for the mixed-pair constants, so I make no coefficient verdict beyond that. Domain notes. (1) The species check admits A-A and C-C pairs at separation 1.0. The paper model raises on those pairs, so they cannot be cited. The claim should say it covers A-C pairs only. (2) Duration is not part of the judge's domain check. Run 2026-11-21/r3/lab-b/012 (A-C at 1.0, T = 2.0) is in domain by the rules. The paper model gives 0.01639, inside the bar but close to it. A constant-K fit to that run gives K_AC = -6.78 and K_CA = -16.15 with chi2/n 1.33, so the constant-K law is not adequate at T = 2. The T <= 0.6 limit in the claim text is the right limit."
+}

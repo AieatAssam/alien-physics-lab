@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-22/r1/lab-a/004",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "close-AB replicate (pre-registered rule in pred_2026-11-22_r1.json): horizontal, centre (5,5), B-left, r0 1.0, T 0.2.",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          4.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.2,
+    "sample_dt": 0.0005
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

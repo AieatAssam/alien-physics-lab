@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-22/r1/lab-b/003",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "A-C at separation 3.0 (horizontal, at rest, T = 1.5). Repulsive mixed shape at a separation where P-0016 (A-C at 1.0) makes no claim. Tests whether the repulsive law continues beyond r = 1.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.5,
+          2.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          6.5,
+          2.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.5,
+    "sample_dt": 0.0075
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

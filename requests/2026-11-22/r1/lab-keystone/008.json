@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-22/r1/lab-keystone/008",
+  "lab": "lab-keystone",
+  "account": "review",
+  "purpose": "Review of P-0016 (A-C at r0 = 1.0, T = 0.6, at rest, vertical, C first, r0 = 0.9995 (lower edge of domain)). Edge-of-domain test of the claim; K-insensitive metric, comment will say so.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          2.0,
+          7.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          2.0,
+          7.9995
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.6,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0016"
+}

@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-22/r1/lab-vernier/001",
+  "lab": "lab-vernier",
+  "account": "research",
+  "purpose": "H14b far-field ratio and shape test. A-B at separation 5, horizontal, centred, both at rest, T=3, dt=0.02. Pre-registered: K_B(A)/K_A(B) = 1.41 +/- 0.02 (P-independent); K_A(B) near 9.0 at P=2.5. Falsifier: ratio outside 1.41 +/- 0.04.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          7.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 3.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

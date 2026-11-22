@@ -1,0 +1,100 @@
+{
+  "lab": "lab-c",
+  "date": "2026-11-22",
+  "title": "Crowd of eight: does the pairwise law add up at N = 8? Octagon of A, B, C at rest, T = 5",
+  "pitch": "Our pairwise law (P-0005 and P-0008 couplings, scaled per species) is tested only up to three bodies (triangle at side 5 and 3, supported at tracker noise). Question: does the pairwise sum still hold for eight bodies? Eight particles at rest on a radius-3.5 octagon (adjacent separation 2.68, all species A, B, C in a cycle), T = 5, dt = 0.01. Prediction: judged error of the pairwise sum at or below 0.01 (noise floor 0.007). Falsifier: error above 0.03, or a residual that grows with N beyond tracker noise, which would mean many-body terms.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          8.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          7.4749,
+          7.4749
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.0,
+          8.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          2.5251,
+          7.4749
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          1.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          2.5251,
+          2.5251
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          1.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          7.4749,
+          2.5251
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 5.0,
+    "sample_dt": 0.01
+  }
+}

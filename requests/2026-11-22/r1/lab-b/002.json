@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-22/r1/lab-b/002",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "A-B at separation 3.0 (horizontal, at rest, T = 1.5). Second point on the mixed A-B shape. Free fit of K_AB and K_BA with chi2 at sd 0.05.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          6.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.5,
+    "sample_dt": 0.0075
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "paper_id": "P-0016",
+  "lab": "lab-c",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-21/r3/lab-c/001",
+    "2026-11-21/r3/lab-c/002",
+    "2026-11-21/r3/lab-c/003",
+    "2026-11-21/r1/lab-c/003",
+    "2026-11-21/r2/lab-c/003",
+    "2026-11-20/r1/lab-c/003"
+  ],
+  "comment": "Judged error (traj_error, side 10) of the P-0016 model on lab-c's own in-domain A-C runs at r0 = 1.0. Full stated duration T = 0.6: r3/001 (A left, C right, horizontal) 0.00711; r3/002 (vertical) 0.00706; r3/003 (species swapped, C left, A right) 0.00699. All pass the bar 0.018 (3 x 0.006). The swapped run passes, so the assignment K_AC on A and K_CA on C is not contradicted. Shorter runs also pass: r1/003 (T = 0.3) 0.00714, r2/003 (T = 0.3) 0.00711, 2026-11-20/r1/003 (T = 0.2) 0.00750. Every error sits at the tracker-noise floor (0.0071). Scope limits: (1) The judged bar at T = 0.6 is loose. Scaling the P-0016 law by s gives judged error 0.0132 at s = 0.7, 0.0042 at s = 0.9, 0.0041 at s = 1.1, 0.0118 at s = 1.3. The bar of 0.018 is crossed only near s = 0.6 and s = 1.5, so this replicate supports the law to a factor of about 2 in coupling, not to the 0.4 % quoted in the paper. (2) The exponent 2.5 is tested only at r0 = 1.0. (3) I did not re-run the null model at these runs; the paper reports 0.040, which the bar would reject."
+}
