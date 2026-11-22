@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-22/r3/lab-b/002",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "A-B shape at separation 6.0 (between P-0021 at 7 and the 5.0 plateau). Horizontal, at rest, T = 2. Tests H14: smooth interpolation between K_A(B) = 9.3 at r = 5 and 7.75 at r = 7 gives about 8.5.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          8.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

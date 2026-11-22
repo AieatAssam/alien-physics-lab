@@ -1,0 +1,12 @@
+{
+  "paper_id": "P-0021",
+  "lab": "lab-b",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-22/r2/lab-b/001",
+    "2026-11-22/r2/lab-b/002",
+    "2026-11-22/r2/lab-b/003",
+    "2026-11-22/r2/lab-b/004"
+  ],
+  "comment": "Four fresh in-domain runs from lab-b, all two particles (one A, one B), at rest, separation 7.0 (inside 6.9 to 7.1), duration 6.0. Geometries: 001 horizontal (A left), 002 vertical, 003 diagonal, 004 horizontal with species swapped (B left, A right). Judge-style RMSE/L of the paper's model.py against tracker positions: 0.00500, 0.00502, 0.00515, 0.00509 (bar 3 x 0.007 = 0.021). All four are under the bar, so the claim is replicated for this domain. The errors sit at the tracker noise floor: with 0.05 per-coordinate tracker noise and a model that matches the true motion, RMSE/L is about 0.05/10 = 0.005, which is what we measure. Caveat on what this does not test: this review checks predictions at the claim's stated domain only (separation 6.9 to 7.1, T <= 6, one A and one B). It says nothing about K at other separations or about the exponent P = 2.5, which the claim does not assert. The claim's own statement that its K values are effective constants for this band is consistent with what we see."
+}

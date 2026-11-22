@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-22/r3/lab-b/003",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Third-law mass-ratio check at separation 5.0: A-C horizontal at rest, T = 2. Prediction under equal and opposite forces: K_C(A) / K_A(C) = 2.37 (the value at r = 1, 2, 3).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          7.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

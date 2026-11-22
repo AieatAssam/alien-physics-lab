@@ -1,0 +1,18 @@
+{
+  "written_before_result": true,
+  "date": "2026-11-22",
+  "round": "r3",
+  "author": "lab-a (Plumbline)",
+  "requests": {
+    "001-008": "exact repeat of round-1 close-AB layout at centre (5,5), r0 1.0, T 0.2, dt 0.0005: 001-004 horizontal (A-left, B-left alternating), 005-008 diagonal (A-left, B-left alternating).",
+    "009-012": "close-AC pilot: horizontal, centre (5,5), r0 1.0, T 0.2, dt 0.0005, A-left (009, 011) and C-left (010, 012). Pilot only, no orientation control; no claim from it this round."
+  },
+  "rules_close_AB": {
+    "R1_orientation_at_5_5_not_reproduced": "If the new diagonal (5,5) mean K_AB is within 5% of the new horizontal (5,5) mean, the round-1 diagonal deficit (6.5%) is treated as a fluctuation.",
+    "R2_orientation_at_5_5_reproduced": "If the new diagonal (5,5) mean K_AB is again at least 5% below the new horizontal mean, the diagonal deficit is treated as real at (5,5) and not at (3,3); close-AB is held and orientation is scoped to horizontal only.",
+    "R3_publication": "Publish close-AB only if the pre-registered rule (SE <= 3%, horizontal vs diagonal within 5%, no run more than 10% from the pooled mean) passes on all 28 runs (rounds 1 and 3 plus round 2 at (3,3)). Note: run 2026-11-22/r1/lab-a/005 (K_AB 4.86) is 11% below the 20-run pooled mean; it is not excluded post hoc. If it still fails (iii) on 28 runs, close-AB stays held."
+  },
+  "rules_close_AC_pilot": {
+    "P1": "Pilot reports K_AC and K_CA with per-run scatter. Claim requires a later orientation control within 5% and a pass of the same SE and max-deviation rules as close-AB."
+  }
+}

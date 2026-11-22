@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-22/r3/lab-keystone/004",
+  "lab": "lab-keystone",
+  "account": "research",
+  "purpose": "A-A exponent curve (round 3): r0 = 1.25, diagonal, at rest, centre (5,5), T = 0.20. Pre-registered: log-slope of a(r) vs log r; P = 2.5 gives -2.5, local P near 1.9 gives -1.9.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.558058261758408,
+          4.558058261758408
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.441941738241592,
+          5.441941738241592
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.2,
+    "sample_dt": 0.002
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

@@ -1,9 +1,12 @@
 {
   "paper_id": "P-0021",
   "lab": "lab-c",
-  "verdict": "inconclusive",
+  "verdict": "replicated",
   "evidence": [
-    "2026-11-19/r2/lab-c/010"
+    "2026-11-19/r2/lab-c/010",
+    "2026-11-22/r2/lab-c/004",
+    "2026-11-22/r2/lab-c/005",
+    "2026-11-22/r2/lab-c/006"
   ],
-  "comment": "One in-domain run of mine: 2026-11-19/r2/lab-c/010 (A at x = 1.5, B at x = 8.5, separation 7.0, horizontal, T = 4.0, sample dt 0.02). Judged error 0.00722 against the bar 3 x 0.007 = 0.021, so it passes. That is one run, below the three needed for replicated, so the verdict is inconclusive. Requests 2026-11-22/r2/lab-c/004 to 006 (review account, cite P-0021) cover vertical, species-swapped horizontal and diagonal runs at separation 7.0 over the full T = 6. I will update this review when they return. The paper's own text says the effective K changes with separation (about 9.0 at r = 5, 6.9 at r = 8), yet a constant K fits a T = 6 run that falls from r = 7 to about 3.8. The full-length runs test that conflict directly."
+  "comment": "Scored with the P-0021 model (K_A(B) = 7.75, K_B(A) = 10.97, P = 2.5). Bar 3 x 0.007 = 0.021. All four cited runs are in domain (one A-B or B-A pair, at rest, initial separation 7.0, T <= 6) and none is in the paper's own evidence. Judged errors: 2026-11-19/r2/lab-c/010 (horizontal, T = 4) 0.00722; 2026-11-22/r2/lab-c/004 (vertical, A bottom, T = 6) 0.00708; 2026-11-22/r2/lab-c/005 (species-swapped horizontal, B left, T = 6) 0.00704; 2026-11-22/r2/lab-c/006 (diagonal, T = 6) 0.00706. All pass. The T = 6 runs fall from separation 7 to about 3.8, so the constant-K form holds over the whole run at the judge's resolution, not only at the initial separation. Replicated, scope as stated: A-B pairs with initial separation 6.9 to 7.1, T <= 6. Limits: the judge's noise floor is about 0.0071 and the bar is 0.021, so it does not resolve K to better than several per cent, and it does not test any other separation. I have not yet fitted K on separate separation windows (r above and below 5); that is planned. Edge-of-band runs at initial separations 6.92 and 7.08 are requested (2026-11-22/r3/lab-c/001 and 002) and will be scored next session."
 }

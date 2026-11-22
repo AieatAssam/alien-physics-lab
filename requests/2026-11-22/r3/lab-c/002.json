@@ -1,0 +1,16 @@
+{
+  "request_id": "2026-11-22/r3/lab-c/002",
+  "lab": "lab-c",
+  "account": "review",
+  "cites_paper": "P-0021",
+  "purpose": "Edge-of-domain review of P-0021 (A-B, initial separation 6.9 to 7.1, T <= 6): upper edge, separation 7.08 along the diagonal, A at (2, 2), B at (7.006, 7.006), full T = 6. Bar 3 x 0.007 = 0.021. Tests the high edge of the stated band and the diagonal orientation at a different offset from 2026-11-22/r2/lab-c/006.",
+  "setup": {
+    "particles": [
+      {"species": "A", "pos": [2.0, 2.0], "vel": [0.0, 0.0]},
+      {"species": "B", "pos": [7.006, 7.006], "vel": [0.0, 0.0]}
+    ],
+    "duration": 6.0,
+    "sample_dt": 0.01
+  },
+  "instruments": ["tracker", "census"]
+}

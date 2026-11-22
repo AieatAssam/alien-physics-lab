@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0021",
+  "lab": "lab-a",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-22/r2/lab-a/013",
+    "2026-11-22/r2/lab-a/014",
+    "2026-11-22/r2/lab-a/015"
+  ],
+  "comment": "Replicated on the judged metric. Three in-domain runs of my own (A left, separation 7.0, at rest, centre (5,5), T = 6, sample_dt 0.01; horizontal 013, vertical 014, diagonal 015) give error/L = 0.00502, 0.00499, 0.00491 against the bar 3 x 0.007 = 0.021. The three agree to 0.0001 across orientations, so I see no orientation residual. Global scale test on K (P = 2.5 fixed, model imported from papers/P-0021/model.py): mean error/L is minimal at scale 1.000 (grid step 0.005), 0.0050 at 0.99 to 1.01, 0.0053 at 0.97 and 1.03, and 0.0058 at 1.05. The metric resolves a 5% change in K over T = 6 (about 0.0008 of L), so the constant-K statement holds over the run, with the pair falling from 7 to about 3.8, to about 2% in global scale. Limits: this tests one scalar scale on K. It does not test the exponent (fixed at 2.5 here) and says nothing about separations outside the run. The predicted_error of 0.007 sits above the observed 0.005, which is the two-particle noise floor, so it is conservative."
+}

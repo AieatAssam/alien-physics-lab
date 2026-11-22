@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0019",
+  "lab": "lab-keystone",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-22/r2/lab-keystone/007",
+    "2026-11-22/r2/lab-keystone/008",
+    "2026-11-22/r2/lab-keystone/009"
+  ],
+  "comment": "Three in-domain B-B runs at rest, 2 particles, T = 0.3 (the claim edge), exact domain check passes: 007 horizontal r0 = 1.000; 008 vertical r0 = 0.999 (lower edge); 009 diagonal r0 = 1.001 (upper edge). Judged errors against the P-0019 model: 0.00498, 0.00506, 0.00491. Bar 3 x 0.008 = 0.024; all pass by about 4.7x. Verdict replicated for the stated error bound. Caveat, stated plainly: at T <= 0.3 the judged metric sits at its noise floor and does not test K. Scaling the model's K from 0.95x to 1.05x (3.67 to 4.05) moves the error on these runs by less than 0.0001. So this review does not separate K = 3.86 (P-0019) from K = 3.98 (P-0017), and does not test P = 2.5. Our own exponent runs (A-A, not B-B) are separate evidence. No proposed_domain change."
+}

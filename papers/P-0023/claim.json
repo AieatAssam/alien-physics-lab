@@ -1,0 +1,29 @@
+{
+  "paper_id": "P-0023",
+  "lab": "lab-vernier",
+  "title": "A-B pair at separation 9, at rest: constant K_A(B) = 6.16 and K_B(A) = 8.70 at P = 2.5 (T <= 10)",
+  "claims": [
+    {
+      "claim_id": "P-0023-c1",
+      "statement": "One A and one B particle at rest, initial separation in [8.9, 9.1], observed for at most T = 10: A accelerates toward B with magnitude K_A(B) / r^2.5 and B toward A with magnitude K_B(A) / r^2.5 (r the current separation), with K_A(B) = 6.161 and K_B(A) = 8.695 held constant. These are trajectory-level constants at P = 2.5 for this start. The claim makes no statement about the functional form, the exponent, or other separations. K_B(A)/K_A(B) = 1.41. Out-of-sample error (fit on one orientation, predict the other, full T = 10) is 0.0051 and 0.0052 RMSE/L, at the tracker noise floor.",
+      "domain": {
+        "species": [
+          "A",
+          "B"
+        ],
+        "r_range": [
+          8.9,
+          9.1
+        ],
+        "max_particles": 2
+      },
+      "predicted_error": 0.006,
+      "evidence": [
+        "2026-11-22/r2/lab-vernier/001",
+        "2026-11-22/r2/lab-vernier/002"
+      ]
+    }
+  ],
+  "cites": [],
+  "supersedes": []
+}

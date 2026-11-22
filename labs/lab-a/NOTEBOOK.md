@@ -5,6 +5,8 @@ Persona: cautious experimentalist. Every run is repeated before it is trusted. N
 
 Judge note (from the round rules): the domain check covers species, particle count and initial pair separations only. Duration is not part of the domain, so a run at a different T can still count as in-domain. I still cite runs at the claim's stated T where I can, to keep the review clean.
 
+Noise floor of the judged metric: tracker noise is about 0.05 per coordinate, so a correct model scores error/L about 0.005 on two-particle runs. The bar for a replicate is 3 x predicted_error, so predicted_error values below about 0.0025 are not separable from noise on one run.
+
 ## Budget ledger
 
 ### Closed days
@@ -15,12 +17,11 @@ Judge note (from the round rules): the domain check covers species, particle cou
 - 2026-11-21: research used 31.37 of 40 (rounds 1-3); review 12.42 of 15 (P-0013 to P-0016 filings); grant 1.09 of 120 (9-A main event). Voted lab-vernier.
 
 ### 2026-11-22 (today)
-- Round 1 (earlier session): research 8.06 (`r1/001-008`, close-AB); review 3.02 (`r1/009-011`, B-B for P-0017). Grant proposal filed (9-body mixed-species Latin square).
-- Round 2 (this session):
-  - Research filed: 12.10 of 31.94 left (`r2/001-012`, close-AB orientation x centre test, 1.008 each). Research left after filing: 19.84. Unused research lapses at day end.
-  - Review filed: 3.72 of 11.98 left (`r2/013-015`, P-0021 far-field infall, 1.24 each). Review left after filing: 8.26.
-  - Reviews filed (verdicts, no new spend): P-0017 replicated; P-0020 replicated.
-  - Grant vote: lab-c (Nullius, crowd of eight). Reason in `out/grants/2026-11-22/votes/lab-a.json`.
+- Round 1: research 8.06 (`r1/001-008`, close-AB, centre (5,5)); review 3.02 (`r1/009-011`, B-B for P-0017).
+- Round 2: research 12.10 (`r2/001-012`, close-AB orientation x centre test); review 3.72 (`r2/013-015`, P-0021 far-field check). Grant vote: lab-c (Nullius, crowd of eight).
+- Round 3 (this session): research 12.10 (`r3/001-012`: 8 close-AB replicates of the round-1 layout, 4 close-AC pilot). Review: no new spend, the P-0021 review uses the round-2 runs already filed.
+- Totals at end of round 3: research 32.30 of 40 (7.70 left, lapses at day end); review 6.75 of 15 (8.25 left, nothing further planned).
+- Grant allowance today: 0 (tonight's award went to Keystone). Not my lab's.
 
 ## Established (accepted-level claims, or runs I trust)
 
@@ -30,7 +31,7 @@ Convention in this notebook: K_XY = acceleration coefficient of species X toward
 |---|---|---|---|
 | A-A | 18.0 | P-0003 (domain sep 3 to 6) | established at sep 3 to 6; not valid at sep 1 |
 | A-B | 8.99 and 12.34 (P-0005 table; convention open) | replicated | close-range: see Close range |
-| A-C | -8.77 and -21.25, repulsion | replicated | |
+| A-C | -8.77 and -21.25, repulsion | replicated | close range not measured yet (pilot in r3) |
 | B-B | 6.12 | 4 values, spread about 9% | |
 | C-C | 12.36 | 4 values, spread about 5% | |
 | B-C | -6.10 and -10.59 | pre-registered prediction passed | |
@@ -39,11 +40,12 @@ Other established results:
 - Free flight with specular walls (P-0001, P-0002): A, B, C at speeds up to 8.6, T up to 100. Supported.
 - Isotropy at separation 4 (A-A along diagonal, y, horizontal): K = 17.67, 17.71, 17.70. Supported at sep 4.
 - Pairwise additivity for 3 and 4 particles at separations 3 to 5 (T <= 1): at noise level.
-- **N = 9 same-species additivity** (round-3 grant `2026-11-21/r3/lab-a/001, 002`, 9 A on 3x3, spacing 3.5, T 0.5): P-0003 pairwise-sum model gives RMSE/L = 0.0071 in both repeats, inside the pre-registered support threshold of 0.01. Supported for one species at N = 9. Mixed species not tested yet.
+- N = 9 same-species additivity (`2026-11-21/r3/lab-a/001, 002`, 9 A on 3x3, spacing 3.5, T 0.5): P-0003 pairwise-sum model gives RMSE/L = 0.0071 in both repeats. Supported for one species at N = 9. Mixed species not tested.
 - Shared distance law at separations 7 and 9 (P-0006): within about 5%, qualified by the close-range results.
+- P-0021 constant-K over the run (A-B at separation 7, T 6, falling to about 3.8): supported by `2026-11-22/r2/lab-a/013-015` (see Reviews). Global scale on K: best 1.000, uncertainty about 2%.
 - No census event (decay or appearance) in about 70 runs, including 16 particles at T = 100.
 - Cost law cost = 1 + 0.02 N T: supported at N = 1, 2, 3, 4, 9, 16.
-- Noise: tracker noise on separation sd about 0.07 (about 0.05 per coordinate). Free-flight runs give error/L 0.0068 to 0.0073 against an exact model. **0.007 is the noise floor of the judged metric.** A single run cannot confirm an error claim below about 0.007.
+- Noise: tracker noise per coordinate about 0.05. Free-flight runs give error/L 0.0068 to 0.0073 against an exact model (earlier estimate; these runs are not re-scored here). Two-particle runs at T = 6 give 0.0049 to 0.0050 against an accurate model (round 2 `013-015`). **0.005 is the noise floor of the judged metric for two particles.** A single run cannot confirm an error claim below about 0.007 for the free-flight configuration.
 
 ## Close range
 
@@ -67,81 +69,77 @@ Round-3 six-vs-six control at (5,5): horizontal mean K 11.10 (sd 0.24), diagonal
 
 A-A K at r0 0.85 to 2.0 is not constant: about 10.3 (0.85), 10.3 to 11.5 (1.0), 12.4 (1.25), 14.0 (1.5), 15.6 (2.0). P-0003 is not contradicted (its domain is sep 3 to 6).
 
-### A-B at r0 = 1.0: close-AB held (pre-registered rule fails)
-Round 1 `2026-11-22/r1/lab-a/001-008` (T 0.2, per-particle fits, `analysis/fit_AB_2026-11-22.py`, pre-registration `analysis/pred_2026-11-22_r1.json`):
+### A-B at r0 = 1.0: close-AB still held
+Pre-registered rule (`analysis/pred_2026-11-22_r1.json`): publish only if (i) SE of the mean <= 3%, (ii) horizontal and diagonal means within 5%, (iii) no run more than 10% from the mean.
 
-| run | layout | K_AB (on A) | K_BA (on B) |
-|---|---|---|---|
-| 001 | horizontal, A left | 5.20 | 7.92 |
-| 002 | horizontal, B left | 5.66 | 7.86 |
-| 003 | horizontal, A left | 5.94 | 8.02 |
-| 004 | horizontal, B left | 5.54 | 7.80 |
-| 005 | diagonal, A left | 4.86 | 7.56 |
-| 006 | diagonal, B left | 5.18 | 7.62 |
-| 007 | diagonal, A left | 5.34 | 7.66 |
-| 008 | diagonal, B left | 5.50 | 7.80 |
+Round 1 `2026-11-22/r1/lab-a/001-008` (centre (5,5), T 0.2): K_AB horizontal 5.59, diagonal 5.22 (6.5% gap); K_BA horizontal 7.90, diagonal 7.66 (3.0% gap). Run 005 (diagonal, A-left) has K_AB 4.86.
 
-Pre-registered rule, checked today:
-- (i) SE of the 8-run mean <= 3%: K_AB SE 0.125 on mean 5.40 (2.3%); K_BA passes. **Pass.**
-- (ii) horizontal vs diagonal means within 5%: K_AB horizontal 5.59, diagonal 5.22 (6.5% apart). **Fail.** K_BA horizontal 7.90, diagonal 7.66 (3.0%). Pass.
-- (iii) no run more than 10% from the 8-run mean: run 005 K_AB 4.86 is 10.04% below 5.40. **Fail (marginal).**
+Round 2 `2026-11-22/r2/lab-a/001-012` (centre (3,3), T 0.2), fitted with `analysis/fit_AB_2026-11-22.py`:
 
-Verdict: **close-AB held, not published.** The K_AB horizontal-diagonal gap is about 6.5%, the same direction as the C-C gap (diagonal lower). It is an open orientation-or-position question for A-B, which round 2 `001-012` is built to test.
+| centre | orientation | n | K_AB mean | K_BA mean |
+|---|---|---|---|---|
+| (5,5) | horizontal | 4 | 5.585 | 7.900 |
+| (5,5) | diagonal | 4 | 5.220 | 7.660 |
+| (3,3) | horizontal | 6 | 5.517 | 7.880 |
+| (3,3) | diagonal | 6 | 5.517 | 7.653 |
 
-Round 2 test design (`analysis/make_2026-11-22_r2_requests.py`): horizontal and diagonal A-B at r0 1.0, centre (3,3), T 0.2, six per orientation, A-left and B-left alternating. Combined with round 1 at (5,5), this gives a 2 x 2 (orientation x centre) table with 4 to 6 runs per cell. Power: per-run sd of K_AB is about 6.5%, so an orientation difference of 5% at 6 runs per arm is at about 1.5 sigma. This is underpowered for a 5% call. A null result will be read as "no detected effect at this power", not as a bound.
+Round-2 pre-registration (written before results): if the (3,3) diagonal K_AB is about 5% below the (3,3) horizontal, the effect is orientation. **Result: the (3,3) diagonal K_AB equals the (3,3) horizontal (0.0% gap). By the rule, the (5,5) deficit is a position effect or noise.** K_BA shows a 2.9% diagonal gap at (3,3), the same sign as (5,5).
 
-Pre-registration for round 2 A-B (written before results): if the (3,3) diagonal K_AB is again about 5% below the (3,3) horizontal, the effect is orientation, and close-AB will be scoped to horizontal only. If the (3,3) diagonal matches the (3,3) horizontal, the (5,5) deficit is a position effect and close-AB needs a note about the centre.
+Pooled 20 runs (`analysis/pooled_AB_2026-11-22.py`), pre-registered rule:
+- K_AB: mean 5.471, sd 0.259, SE 1.06%. (i) pass. Horizontal vs diagonal gap -2.6%. (ii) pass. Max run deviation 11.2% (r1/005). **(iii) FAIL.**
+- K_BA: mean 7.772, sd 0.261, SE 0.75%. (i) pass. Gap -2.9%. (ii) pass. Max deviation 5.8%. (iii) pass.
+
+So K_BA passes all three clauses. K_AB fails clause (iii) on one run, the round-1 run 005 at 2.3 sd. The rule is applied as written: **close-AB is held, not published.** I will not drop run 005 after the fact.
+
+Round 3 (filed today): an exact repeat of the round-1 layout at (5,5), 8 runs (`r3/001-008`), to test whether run 005 and the (5,5) diagonal deficit repeat. Pre-registration in `analysis/prereg_2026-11-22_r3.json`. Rules R1 (new diagonal within 5% of horizontal: deficit a fluctuation), R2 (new diagonal again at least 5% low: real at (5,5), orientation scoped to horizontal), R3 (publish only if the rule passes on all 28 runs, run 005 not excluded).
+
+## Close-AC pilot (round 3, `r3/009-012`)
+Horizontal, centre (5,5), r0 1.0, T 0.2, A-left and C-left alternating. Pilot only: no orientation control, no claim this round. Fit with a generic two-species fit (the round-1 fit script is hard-coded to A and B; the A-C fit must be written before the pilot is scored). Next step only if the pilot gives a clean K with per-run scatter at or below 10%.
 
 ## Reviews
 
+### Filed 2026-11-22 (round 3)
+- **P-0021 (lab-vernier, A-B at separation 7, at rest, T <= 6, K_A(B) = 7.75, K_B(A) = 10.97, predicted_error 0.007): replicated.** Evidence `2026-11-22/r2/lab-a/013, 014, 015`. Error/L 0.00502 (horizontal), 0.00499 (vertical), 0.00491 (diagonal) against bar 0.021. Global scale on K: minimum at 1.000, 0.0053 at scale 0.97 or 1.03, 0.0058 at 1.05 (`analysis/p0021_sensitivity_2026-11-22.py`). Limits: one scalar scale; exponent not tested; the runs at T = 6 test K across separations 7 to about 3.8. Review written to `out/reviews/P-0021/lab-a.json`.
+
 ### Filed 2026-11-22 (round 2)
-- **P-0017 (lab-b, B-B, K = 3.98, T <= 0.15): replicated.** Evidence `2026-11-22/r1/lab-a/009, 010, 011`. Errors/L 0.0071, 0.0072, 0.0070 against bar 0.024. Comment says the metric cannot separate K = 3.98 from my 3.86, and asks lab-b to refit my four B-B runs. `out/reviews/P-0017/lab-a.json`.
-- **P-0020 (lab-b, A-B, K_AB = 5.39, K_BA = 7.33, T <= 0.15): replicated.** Evidence `2026-11-21/r3/lab-a/012, 013, 014, 015`. Errors/L 0.0068, 0.0070, 0.0074, 0.0070 against bar 0.024. My own fits of the same runs give K_AB about 5.6 and K_BA about 7.8, so K_BA is about 6% above the paper's value. Flagged, not disputed on the judged metric. `out/reviews/P-0020/lab-a.json`.
+- P-0017 (lab-b, B-B, K = 3.98, T <= 0.15): replicated. Evidence `2026-11-22/r1/lab-a/009, 010, 011`. Errors/L 0.0071, 0.0072, 0.0070 against bar 0.024. Comment says the metric cannot separate K = 3.98 from my 3.86, and asks lab-b to refit my four B-B runs.
+- P-0020 (lab-b, A-B, K_AB = 5.39, K_BA = 7.33, T <= 0.15): replicated. Evidence `2026-11-21/r3/lab-a/012, 013, 014, 015`. Errors/L 0.0068, 0.0070, 0.0074, 0.0070 against bar 0.024. My own fits of the same runs give K_AB about 5.6 and K_BA about 7.8, so K_BA is about 6% above the paper's value. Flagged, not disputed on the judged metric.
 
 ### Filed 2026-11-22 (round 1)
 - P-0016 (lab-vernier, A-C): replicated. P-0018 (lab-b, C-C): replicated.
-
-### Pending
-- **P-0021 (lab-vernier, A-B at separation 7, T <= 6, K_A(B) = 7.75, K_B(A) = 10.97, predicted_error 0.007, bar 0.021): verdict next round.** Evidence to come: `2026-11-22/r2/lab-a/013, 014, 015` (horizontal, vertical, diagonal at separation 7.0, T 6, A left, centre (5,5)).
-  - My model check on P-0021's model: the pair reaches r about 3.77 at T = 6 with no collision. So the claim's constant-K statement is tested over separations from 7 down to about 3.8, not just near 7.
-  - Verdict rule I will apply: replicated if at least three of the three runs have error <= 0.021. Narrowed if all three pass but the orientation residuals differ by more than the noise floor, with the domain then narrowed to T <= 3 or the separation band shifted. Falsified only if all three fail.
-- **P-0019 (mine, close-BB)**: no review requested.
 
 ### Standing reviews
 - P-0013 (lab-c): replicated. P-0014 (keystone): narrowed (T <= 1 for close approach). P-0015 (vernier): replicated. P-0010 (keystone): narrowed. P-0011 (vernier): replicated. P-0002: 2026-11-18.
 
 ## Papers
-- **P-0019 (mine, close-BB at r0 1.0, K = 3.86, T <= 0.3, predicted_error 0.008)**: evidence `2026-11-21/r1/lab-a/001, 002` and `r3/003, 004`. Cites P-0017.
+- **P-0019 (mine, close-BB at r0 1.0, K = 3.86, T <= 0.3, predicted_error 0.008)**: evidence `2026-11-21/r1/lab-a/001, 002` and `r3/003, 004`. Cites P-0017. Gate numbering may renumber it; refer to it by title until the final id is visible.
 - **P-0012 (mine, close-AA at r0 1.0, K = 11.3, horizontal)**: stands; diagonal orientation recorded as a 5% to 8% offset in the notebook, not a retraction.
-- Gate numbering: P-0019 may be renumbered; refer to it by title until the final id is visible.
+- No new paper this round. Close-AB is held (see above).
 
 ## Requests
 
 Round 1 (2026-11-22): `r1/001-008` close-AB, `r1/009-011` P-0017 review (all filed, results in).
 
-Round 2 (2026-11-22, this session), all under `out/requests/2026-11-22/r2/lab-a/`, generated by `analysis/make_2026-11-22_r2_requests.py`:
+Round 2 (2026-11-22): `r2/001-012` close-AB orientation x centre (results in), `r2/013-015` P-0021 review (results in).
+
+Round 3 (2026-11-22), `out/requests/2026-11-22/r3/lab-a/`, generated by `analysis/make_2026-11-22_r3_requests.py`:
 
 | id | account | purpose | cost |
 |---|---|---|---|
-| 001-006 | research | close-AB, horizontal, centre (3,3), A-left/B-left alternating, r0 1.0, T 0.2 | 1.008 each |
-| 007-012 | research | close-AB, diagonal, centre (3,3), A-left/B-left alternating, r0 1.0, T 0.2 | 1.008 each |
-| 013 | review (cites P-0021) | P-0021 horizontal, separation 7.0, T 6, A left | 1.24 |
-| 014 | review (cites P-0021) | P-0021 vertical, separation 7.0, T 6, A left | 1.24 |
-| 015 | review (cites P-0021) | P-0021 diagonal, separation 7.0, T 6, A left | 1.24 |
+| 001-008 | research | close-AB replicate of round-1 layout at (5,5), 4 horizontal, 4 diagonal, T 0.2 | 1.008 each |
+| 009-012 | research | close-AC pilot, horizontal, (5,5), A-left / C-left alternating, T 0.2 | 1.008 each |
 
-The request files were checked by field and length. I did not run the full JSON Schema validator (jsonschema is not installed here).
-
-## Grant
-
-- Round-3 event (`2026-11-21/r3/lab-a/001, 002`): RMSE/L 0.0071 both repeats against P-0003. Support for one-species additivity at N = 9.
-- My proposal (round 1, 9-body mixed-species Latin square, spacing 3.5, T 0.5, cost 1.09). Question: does pairwise additivity hold across species? I will fix the prediction before the result, from pair couplings at separation 5. Support: RMSE/L <= 0.01. Refutation: > 0.02.
-- Round-2 vote: **lab-c (Nullius, crowd of eight)**. Reason: the N=8 octagon has a fixed prediction (error <= 0.01), a stated falsifier (> 0.03, or a residual growing with N), and cost about 1.8. It tests the pair sum past N=3 and targets crowd-8. Icarus's 16-body plan defers its predictions until after the mixed-pair runs, so it is weaker as a pre-registration. I did not vote for my own proposal.
+Research spent round 3: 12.10. Research left after round 3: 7.70.
 
 ## Analysis code (`out/labs/lab-a/analysis/`, my files)
 
-- `score_2026-11-22_r2.py`: scores P-0017 (`r1/009-011`) and P-0020 (`r3/012-015`) against the judge bar. Usage: `python3 -I score_2026-11-22_r2.py <repo_root>`.
-- `make_2026-11-22_r2_requests.py`: writes `r2/001-015`.
-- Round-1 scripts (in repo at `labs/lab-a/analysis/`): `analyse_2026-11-22.py`, `fit_AB_2026-11-22.py`, `grant_2026-11-22.py`, `make_2026-11-22_r1_requests.py`, `pred_2026-11-22_r1.json`.
+- `fit_AB_2026-11-22.py`: per-particle K_AB / K_BA fit (P = 2.5 fixed, RK4 grid search on 2D position RMS). Copy of the round-1 script.
+- `analyse_2026-11-22_r3.py`: round-2 close-AB fits; P-0021 judged-metric check on `r2/013-015`. Usage: `python3 -I analyse_2026-11-22_r3.py <repo_root>`.
+- `p0021_sensitivity_2026-11-22.py`: scales the P-0021 model's K by s and reports error/L per run.
+- `pooled_AB_2026-11-22.py`: pooled 20-run close-AB fits with the pre-registered rule. Usage: `python3 -I pooled_AB_2026-11-22.py <repo_root>`.
+- `make_2026-11-22_r3_requests.py`: writes `r3/001-012`. Usage: `python3 -I make_2026-11-22_r3_requests.py <repo_root>`.
+- `prereg_2026-11-22_r3.json`: round-3 pre-registration, written before results.
+- Earlier-round scripts live in the repo under `labs/lab-a/analysis/`. Not copied here.
 
 ## Errors caught
 
@@ -151,22 +149,24 @@ The request files were checked by field and length. I did not run the full JSON 
 - **Model-vs-model divergence (P-0014).** Stated in the review; not checked whether the measured pair comes close within T = 2.
 - **Convention mismatch in the P-0005 table.** Fixed for per-particle fits (K_AB is the acceleration of A toward B); ratio comparisons marked convention-dependent.
 - **Under-powered design (round 3 A-B).** Sized by cells, not power. Round 1 `001-008` lengthened T to 0.2 and doubled the runs; they still fail the pre-registered rule.
-- **Review on my own fits (today).** I compared P-0020's K values with my own fits before filing and found a K_BA gap of about 6%. The review says so; it does not claim agreement on K.
+- **Review on my own fits (round 2).** I compared P-0020's K values with my own fits before filing and found a K_BA gap of about 6%. The review says so; it does not claim agreement on K.
+- **Round-3 review comment.** A sentence claiming per-run K fits of P-0021 runs 013-015 was drafted and removed: those fits were not run. The review relies only on the judged metric and the global K-scale test.
 
 ## What would change my mind
 
-- **Close-AB**: publish only if a later design passes the pre-registered rule with horizontal and diagonal means within 5% at a stated centre. The current evidence shows a 6.5% horizontal-diagonal gap at (5,5) for K_AB.
+- **Close-AB**: publish only if the pre-registered rule passes on the full 28 runs (round-3 replicates included), with run 005 counted. Publication also needs a stated centre note if the (5,5) diagonal deficit is confirmed.
 - **Close-CC**: needs a vertical or diagonal control within 5% of horizontal.
-- **P-0021 review**: replicated if three of `013-015` are within 0.021. If the three disagree with each other by more than the noise floor, that is evidence against the constant-K claim across the run.
-- **Grant (mixed species)**: a result above 0.02 falsifies species-independent coupling at N = 9.
+- **Close-AC**: needs the pilot to give a clean K and a later orientation control within 5%.
+- **Grant (mixed species)**: a result above 0.02 falsifies species-independent coupling at N = 9. Not run; my proposal did not win.
 
 ## Self-criticism
 
 - **Close-BB published on T = 0.3 runs** (P-0019). The claim states T <= 0.3, which matches the runs. The judged metric cannot test K better than about 5% at this T.
 - **B-B K disagrees with P-0017 at about 4 sigma**, and I have asked lab-b to refit. I have not checked whether the disagreement is a fit-method difference (P fixed, fit window, initial separation).
-- **K_BA for P-0020 is about 6% above my own fits.** I flagged it in the review but have not yet resolved it.
-- **Review verdicts at the noise floor.** "Replicated" verdicts only show the stated error bound holds; they do not confirm K to better than about 5%.
-- **Round-2 A-B power.** Six runs per arm at about 6.5% scatter gives about 1.5 sigma for a 5% effect. A null is not a bound.
+- **K_BA for P-0020 is about 6% above my own fits.** Flagged in the review; not yet resolved.
+- **Review verdicts at the noise floor.** "Replicated" verdicts only show the stated error bound holds; they do not confirm K to better than about 5% on the judged metric. The P-0021 global-scale test is tighter (about 2%) and is the one I rely on.
+- **Round-2 A-B power.** Six runs per arm at about 5% scatter gives about 1.5 sigma for a 5% effect. A null is not a bound. The (3,3) result (0.0% gap) is within noise at this power, not proof of no effect.
+- **Single-run outlier vs. rule.** Run 005 may be a real low tail or noise; the round-3 repeat is the test. I am not excluding it post hoc.
 
 ## Hypotheses (status)
 - H1 lone-particle free flight: supported (A, B, C).
@@ -178,7 +178,7 @@ The request files were checked by field and length. I did not run the full JSON 
 - H7 pair attraction, central, P = 2.5: supported at separations 3 to 9 as a shared-scale law. Close range: P = 2.5 fits B-B and A-A at r0 1.0 to 2.0; P not tested alone at r0 = 1.0.
 - H8 pair force identical for all species pairs: refuted at sep 5.
 - H9 coupling factorises as g_ij = q_i q_j: partially supported. Not claimed.
-- H10 isotropy: supported at separation 4; A-A at (5,5) by the six-vs-six control; B-B supported (1.4%). C-C 5.4% and A-B 6.5% horizontal-diagonal gaps, both not significant by the pre-registered rules. **Open.**
+- H10 isotropy: supported at separation 4; A-A at (5,5) by the six-vs-six control; B-B supported (1.4%). C-C 5.4% and A-B 2.6% (pooled) horizontal-diagonal gaps. **Open.**
 - H11 shared distance law: supported within about 5% at sep 7 and 9 (P-0006).
 - H12 pairwise additivity for 3 and 4 particles at separations 3 to 5: supported at T <= 1. N = 9 same species: supported (RMSE/L 0.0071). N = 9 mixed species: proposed grant, not run.
 - H13 no census events in crowded long runs: supported for 16 particles at T = 100.
@@ -188,16 +188,19 @@ The request files were checked by field and length. I did not run the full JSON 
 - H17 A-A K at r0 1.0 orientation-independent at (5,5): supported (-0.9 SE).
 - H18 P-0014's T = 2 predictions: fail at T = 2 for A-A at r0 2.5 (error 4.10) and C-C at r0 3.5 (0.066). Pass for A-C at r0 2.5 (0.0071). T <= 1 holds for pairs measured.
 - H19 P-0013's S_AA = 0.753 supported by the judged metric. S_AC and S_CC not separated from 1.
-- H20 close-range A-B: per-particle K ratio at r0 1.0 equals the separation-5 ratio: **open**. Round 1 `001-008` do not pass the rule; round 2 `001-012` tests the orientation/centre question.
+- H20 close-range A-B: per-particle K ratio at r0 1.0 equals the separation-5 ratio: **open**. Pooled K_BA passes the rule; K_AB fails clause (iii) on one run. Round 3 replicates test it.
 - H21 B-B at r0 1.0: K = 3.86 (lab-a), 3.98 (lab-b, P-0017). About 4 sigma apart on my scatter; open pending lab-b refit.
 - H22 C-C diagonal orientation: 5.4% below horizontal at (5,5). Open.
-- H23 (new) A-B diagonal orientation: K_AB 6.5% below horizontal at (5,5) (round 1 `001-008`, not significant at pre-registered power). K_BA only 3%. Open; round 2 `001-012` tests it at (3,3).
-- H24 (new) P-0020 K_BA: my fit about 7.8 vs paper 7.33 (6%). Open.
-- H25 (new) P-0021 constant-K over T = 6 (separation 7 to about 3.8): open; round 2 `013-015`.
+- H23 A-B diagonal orientation at (5,5): K_AB 6.5% below horizontal (round 1). At (3,3): 0.0%. Pooled 2.6%. **Open; round-3 replicates test (5,5).**
+- H24 P-0020 K_BA: my fit about 7.8 vs paper 7.33 (6%). Open.
+- H25 P-0021 constant-K over T = 6 (separation 7 to about 3.8): **supported** (round 2 `013-015`; global K scale 1.000, about 2%).
+- H26 (new) A-B close-range K_BA: pooled 7.77, orientation gap -2.9%. Passes the pooled rule for K_BA. Open as a claim only if K_AB is resolved.
+- H27 (new) A-C close range (r0 1.0): unknown. Pilot `r3/009-012`.
 
 ## Plan for the next round
-1. Read `results/2026-11-22/r2/lab-a/001-012` (close-AB orientation x centre). Apply the round-2 pre-registration above: if the (3,3) diagonal K_AB is about 5% below the (3,3) horizontal, scope close-AB to horizontal. If the (3,3) diagonal matches the horizontal, the (5,5) deficit is a position effect and close-AB needs a centre note. Either way, re-run the pre-registered rule on all 20 runs before publishing close-AB.
-2. Read `results/2026-11-22/r2/lab-a/013-015` and file the P-0021 review (verdict rule above). Write `out/reviews/P-0021/lab-a.json`.
-3. Check the grant event for mixed species once round 3 runs it (lab-a's proposal, if it wins the vote). Fix the prediction before the result.
+1. Read `results/2026-11-22/r3/lab-a/001-008`. Apply the pre-registration (R1/R2/R3) on 28 runs. Write `analysis/pooled_AB_2026-11-22_r3.py` before scoring, reusing the pooled script. If run 005 is reproduced low, or (iii) still fails on 28 runs, close-AB stays held. If R1 holds and (iii) passes on 28 runs, publish close-AB with domain r_range starting at 1.0, species [A, B], max_particles 2, predicted_error 0.008, T <= 0.2, and the centre note.
+2. Read `results/2026-11-22/r3/lab-a/009-012`. Fit K_AC and K_CA with a generic two-species fit (new script, not the A-B one). If the pilot is clean (per-run scatter at or below 10%), request an orientation control next round.
+3. Tonight's grant went to Keystone (A-A close-range power law, eight pairs at r0 0.5 to 2.25). When their paper appears, compare with my A-A close-range table (H14, H15): K rises from about 10.3 at r0 0.85 to 15.6 at r0 2.0. Keystone's result is the first independent check of that curve.
 4. Consider a C-C vertical control only if close-CC becomes a priority.
 5. Note for lab-b: K_BA disagreement on P-0020 and K_BB disagreement on P-0017. Wait for their refit.
+6. Mixed-species grant: not run (lab-a's proposal did not win). Keep as a proposal idea only.

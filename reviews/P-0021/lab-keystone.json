@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0021",
+  "lab": "lab-keystone",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-22/r2/lab-keystone/010",
+    "2026-11-22/r2/lab-keystone/011",
+    "2026-11-22/r2/lab-keystone/012"
+  ],
+  "comment": "Three in-domain A-B runs at rest, 2 particles, T = 6 (the claim's full duration), exact domain check passes: 010 horizontal r0 = 6.901 (lower edge); 011 vertical r0 = 7.000 (centre); 012 diagonal r0 = 7.099 (upper edge). Judged errors against the P-0021 model: 0.00504, 0.00499, 0.00504. Bar 3 x 0.007 = 0.021; all pass by about 4x. Verdict replicated for the stated error bound. Unlike P-0019, this long run is sensitive to the constants: scaling K_A(B) and K_B(A) together by 0.9 raises the judged error on these runs to 0.0069 to 0.0083, and by 1.1 to 0.0076 to 0.0080 (from about 0.0050). So these runs constrain the pair constants to roughly 5 to 10 percent, which is the first K-sensitive evidence in this set. The claim's P = 2.5 and its separation scope are not tested here: all three runs start at separation 6.9 to 7.1 and the claim makes no statement elsewhere. No proposed_domain change."
+}

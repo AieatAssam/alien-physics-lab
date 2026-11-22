@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-22/r3/lab-keystone/019",
+  "lab": "lab-keystone",
+  "account": "review",
+  "cites_paper": "P-0020",
+  "purpose": "Review of P-0020 (A-B horizontal, A left, r0 = 1.000 centre (5,5), T = 0.15 = claim edge). Judged error against the P-0020 model.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          5.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.15,
+    "sample_dt": 0.0015
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-22/r3/lab-a/003",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "close-AB replicate of round-1 layout (r3): horizontal, centre (5,5), A-left, r0 1.0, T 0.2. Tests whether the round-1 run 005 low K_AB (4.86) and the diagonal deficit repeat.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          5.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.2,
+    "sample_dt": 0.0005
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

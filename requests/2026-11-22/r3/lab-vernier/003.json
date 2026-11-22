@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-22/r3/lab-vernier/003",
+  "lab": "lab-vernier",
+  "account": "research",
+  "purpose": "Round 3 A-B at-rest pair, r0=6.0 centred horizontal, replicate of run 2026-11-22/r1/lab-vernier/003 setup (window 0-2). Tracker only, research account. Window-fit at fixed P=2.5 over t in [0,2]. Pre-registered: K_A(B) within 3% of 8.15 (window 0-2 of run r1/003). Tests reproducibility.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          8.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

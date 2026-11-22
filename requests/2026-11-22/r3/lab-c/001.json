@@ -1,0 +1,16 @@
+{
+  "request_id": "2026-11-22/r3/lab-c/001",
+  "lab": "lab-c",
+  "account": "review",
+  "cites_paper": "P-0021",
+  "purpose": "Edge-of-domain review of P-0021 (A-B, initial separation 6.9 to 7.1, T <= 6): lower edge, separation 6.92 horizontal, A left, full T = 6. Bar 3 x 0.007 = 0.021. Tests whether the constant-K claim holds at the low edge of its stated band.",
+  "setup": {
+    "particles": [
+      {"species": "A", "pos": [1.54, 5.0], "vel": [0.0, 0.0]},
+      {"species": "B", "pos": [8.46, 5.0], "vel": [0.0, 0.0]}
+    ],
+    "duration": 6.0,
+    "sample_dt": 0.01
+  },
+  "instruments": ["tracker", "census"]
+}

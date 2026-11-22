@@ -1,0 +1,15 @@
+{
+  "request_id": "2026-11-22/r3/lab-c/005",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Open item H23 (B-C scale at r0 = 1.5), out-of-sample. One B and one C at rest, separation 1.5, horizontal, B left. Pre-registered prediction: B-C scale S_BC = 0.80 +- 0.02 on the P-0008 coefficients (B away from C: -6.10 / r^2.5; C away from B: -10.59 / r^2.5). Falsifier: free-fit scale outside 0.74 to 0.86 for either direction.",
+  "setup": {
+    "particles": [
+      {"species": "B", "pos": [4.0, 5.0], "vel": [0.0, 0.0]},
+      {"species": "C", "pos": [5.5, 5.0], "vel": [0.0, 0.0]}
+    ],
+    "duration": 0.4,
+    "sample_dt": 0.004
+  },
+  "instruments": ["tracker", "census"]
+}

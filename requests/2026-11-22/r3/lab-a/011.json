@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-22/r3/lab-a/011",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "close-AC pilot (r3): horizontal, centre (5,5), A-left, r0 1.0, T 0.2. Pilot only; no claim from it this round.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.2,
+    "sample_dt": 0.0005
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

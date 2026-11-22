@@ -1,0 +1,23 @@
+{
+  "paper_id": "P-0022",
+  "lab": "lab-b",
+  "title": "A-B pair at separation 2, at rest: effective K_A(B) = 7.59 and K_B(A) = 10.59 at P = 2.5 (T <= 0.8)",
+  "claims": [
+    {
+      "claim_id": "P-0022-c1",
+      "statement": "One A and one B particle at rest, initial separation in [1.95, 2.05], duration at most 0.8: A accelerates toward B with magnitude K_A(B) / r^2.5 and B toward A with K_B(A) / r^2.5 (r the current separation), with K_A(B) = 7.59 and K_B(A) = 10.59 held constant. These are effective constants for this separation band and this time window; the claim makes no statement about other separations, longer times or the exponent. Over the window the separation falls from about 2 to about 0.45 (still falling at T = 0.8), so the claim covers the constant-K approach down to about 0.5. The ratio K_B(A)/K_A(B) = 1.40 is a property of these two runs only. Fitted to two lab-b runs (horizontal and vertical orientations; K values agree to 0.5 percent and the fits are at chi2/n about 1). Out-of-sample error at the tracker noise floor.",
+      "domain": {
+        "species": ["A", "B"],
+        "r_range": [1.95, 2.05],
+        "max_particles": 2
+      },
+      "predicted_error": 0.008,
+      "evidence": [
+        "2026-11-22/r1/lab-b/001",
+        "2026-11-22/r2/lab-b/005"
+      ]
+    }
+  ],
+  "cites": [],
+  "supersedes": []
+}

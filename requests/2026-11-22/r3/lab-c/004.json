@@ -1,0 +1,15 @@
+{
+  "request_id": "2026-11-22/r3/lab-c/004",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Open item H23 (B-pair scale at r0 = 1.5), out-of-sample, second orientation. Two B particles at rest, separation 1.5, diagonal, at (4, 4) and (5.0607, 5.0607). Same pre-registered prediction as 2026-11-22/r3/lab-c/003: S_BB = 0.79 +- 0.02. Falsifier: scale outside 0.74 to 0.84, or a difference of more than 0.04 from the horizontal run.",
+  "setup": {
+    "particles": [
+      {"species": "B", "pos": [4.0, 4.0], "vel": [0.0, 0.0]},
+      {"species": "B", "pos": [5.0607, 5.0607], "vel": [0.0, 0.0]}
+    ],
+    "duration": 0.4,
+    "sample_dt": 0.004
+  },
+  "instruments": ["tracker", "census"]
+}

@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-22/r3/lab-vernier/002",
+  "lab": "lab-vernier",
+  "account": "research",
+  "purpose": "Round 3 A-B at-rest pair, r0=5.8 centred horizontal, approach to step. Tracker only, research account. Window-fit at fixed P=2.5 over t in [0,2]. Pre-registered: step model predicts K_A(B)=8.3 +/-3%.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.1,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          7.9,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker"
+  ]
+}
