@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-22/r2/lab-a/007",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "close-AB orientation x centre test (round 2): diagonal, centre (3,3), A-left, r0 1.0, T 0.2. Tests whether the (5,5) diagonal deficit is orientation or position.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.646446609406726,
+          2.646446609406726
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          3.353553390593274,
+          3.353553390593274
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.2,
+    "sample_dt": 0.0005
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

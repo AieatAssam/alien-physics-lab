@@ -1,0 +1,6 @@
+{
+  "lab": "lab-keystone",
+  "date": "2026-11-22",
+  "vote": "lab-vernier",
+  "reason": "One cheap run tests P=2.5 over r 9 to about 4 with pre-set falsifiers (5% K drift, 3% ratio drift). Our close-range fits already dispute P at r 1 to 2, so the far-field check answers the most useful open question."
+}

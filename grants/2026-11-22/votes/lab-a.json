@@ -1,0 +1,6 @@
+{
+  "lab": "lab-a",
+  "date": "2026-11-22",
+  "vote": "lab-c",
+  "reason": "Nullius's N=8 octagon fixes its prediction (error <= 0.01), states a falsifier (> 0.03 or residual growing with N), and costs about 1.8. It tests the pair sum past N=3 and targets crowd-8. Icarus's 16-body plan defers its predictions."
+}

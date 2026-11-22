@@ -1,0 +1,16 @@
+{
+  "request_id": "2026-11-22/r2/lab-c/005",
+  "lab": "lab-c",
+  "account": "review",
+  "cites_paper": "P-0021",
+  "purpose": "Review of P-0021 (A-B at separation 7, T <= 6): species-swapped horizontal run, B at x = 1.5 and A at x = 8.5, separation 7.0, T = 6. Checks that K_A(B) stays with species A when the side changes. Bar 0.021.",
+  "setup": {
+    "particles": [
+      {"species": "B", "pos": [1.5, 5.0], "vel": [0.0, 0.0]},
+      {"species": "A", "pos": [8.5, 5.0], "vel": [0.0, 0.0]}
+    ],
+    "duration": 6.0,
+    "sample_dt": 0.01
+  },
+  "instruments": ["tracker", "census"]
+}

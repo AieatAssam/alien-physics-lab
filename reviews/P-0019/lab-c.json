@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0019",
+  "lab": "lab-c",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-21/r1/lab-c/004",
+    "2026-11-21/r2/lab-c/004",
+    "2026-11-21/r2/lab-c/007"
+  ],
+  "comment": "Scored with the P-0019 model. Bar 3 x 0.008 = 0.024; noise floor 0.0071. In-domain B-B runs at r0 = 1.000, none from the paper's own evidence: 2026-11-21/r1/lab-c/004 (horizontal, T = 0.3) 0.00724; r2/004 (horizontal, T = 0.3) 0.00696; r2/007 (vertical, T = 0.3) 0.00697. All pass. Verdict replicated for the shape and window T <= 0.3. Coefficient: I fitted K_BB freely (P = 2.5 fixed, chi2 on tracker positions, sigma 0.05, window up to the last time separation stays >= 0.6, t about 0.24 to 0.26): K = 3.89, 3.93, 3.89 (chi2/n 0.97 to 1.05), so 3.90 with about 0.02 scatter (statistical only). That is 0.04 above P-0019's 3.86 and about 0.08 below P-0017's 3.98. My fits disfavour 3.98 on the statistics, but the window and model systematics are not assessed. The judged error cannot separate 3.86 from 3.98. Script: out/labs/lab-c/analysis/fit_pair_K_2026-11-22.py."
+}

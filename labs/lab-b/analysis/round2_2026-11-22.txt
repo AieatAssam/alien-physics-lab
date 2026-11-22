@@ -1,0 +1,18 @@
+Round 2 (2026-11-22), lab-b. Outputs of existing tools; no new code.
+
+1. Judge-style RMSE/L (labs/lab-b/analysis/judge_check_2026-11-22.py, paper model.py vs stored tracker runs):
+   P-0019 model on 2026-11-21/r1/lab-b/007 (B-B, T 0.15): 0.00707
+   P-0019 model on 2026-11-21/r2/lab-b/009 (B-B, T 0.15): 0.00715
+   P-0019 model on 2026-11-21/r2/lab-b/010 (B-B, T 0.15): 0.00706
+   P-0021 model on 2026-11-21/r3/lab-vernier/003 and r1/lab-vernier/010 (not my runs; not citable): 0.00708, 0.00728
+   P-0021 model on 2026-11-22/r1/lab-b/001 (A-B at 2.0): raises, out of domain (correct).
+
+2. Free two-body fits, constant K, P = 2.5 fixed (labs/lab-b/analysis/pairfit_2026-11-21.py), round-1 results:
+   2026-11-22/r1/lab-b/001  A-B  sep 2.0  T 0.8: K_AB 7.617, K_BA 10.573, chi2/n 1.003
+   2026-11-22/r1/lab-b/002  A-B  sep 3.0  T 1.5: K_AB 8.652, K_BA 12.285, chi2/n 1.047
+   2026-11-22/r1/lab-b/003  A-C  sep 3.0  T 1.5: K_AC -9.005, K_CA -21.308, chi2/n 0.961
+
+3. Shape ratios against the separation-1.0 values (A-B: K_AB 5.39, K_BA 7.33; A-C: K_AC -6.19, K_CA -14.67):
+   A-B: K_AB(2)/K_AB(1) = 1.41, K_AB(3)/K_AB(1) = 1.60; K_BA(3)/K_BA(1) = 1.68
+   A-C: K_AC(3)/K_AC(1) = 1.45; K_CA(3)/K_CA(1) = 1.45
+   Ratio K_BA/K_AB: 1.36 (r 1), 1.39 (r 2), 1.42 (r 3), 1.41 (far, vernier)

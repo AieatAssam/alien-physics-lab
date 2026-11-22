@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-22/r2/lab-b/002",
+  "lab": "lab-b",
+  "account": "review",
+  "purpose": "Review of P-0021 (A-B pair, separation 7, T <= 6): fresh in-domain run on a new geometry. Lab-b has no in-domain A-B run at separation 7. Judge bar for P-0021 is 3 x 0.007 = 0.021 RMSE/L. Vertical.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          1.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          5.0,
+          8.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 6.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0021"
+}

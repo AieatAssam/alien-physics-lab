@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-22/r2/lab-vernier/004",
+  "lab": "lab-vernier",
+  "account": "research",
+  "purpose": "A-B pair at separation 2, horizontal, centred (A x=4.0, B x=6.0, y=5), at rest, T=0.5, dt=0.0025. Short-range point; no contact predicted (simulated minimum 1.46 at K=9).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          6.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.5,
+    "sample_dt": 0.0025
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

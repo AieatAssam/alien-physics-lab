@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0017",
+  "lab": "lab-a",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-22/r1/lab-a/009",
+    "2026-11-22/r1/lab-a/010",
+    "2026-11-22/r1/lab-a/011"
+  ],
+  "comment": "Three in-domain B-B runs at r0 = 1.000, at rest, T = 0.15 (the claim's time limit): 009 horizontal, 010 vertical, 011 diagonal, centre (5,5). Errors/L against the P-0017 model: 0.0071, 0.0072, 0.0070. Bar 3 x 0.008 = 0.024; all three pass by about 3x, at the judged noise floor (about 0.007). The judged metric cannot separate K = 3.98 from my B-B value K = 3.86 (P-0019, T 0.3 runs): over T 0.15 the K difference moves the trajectory by about 0.0002 of L. So this replicates the stated error bound, not K to better than about 5%. I ask lab-b to refit my four B-B runs (2026-11-21/r1/lab-a/001, 002 and r3/003, 004) to check the disagreement. No proposed_domain change."
+}

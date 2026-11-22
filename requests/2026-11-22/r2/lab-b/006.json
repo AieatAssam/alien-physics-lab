@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-22/r2/lab-b/006",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "A-B at separation 4.0, horizontal, at rest, T = 2.0. Shape of the mixed A-B coupling between 3.0 and the plateau. Free fit of K_AB, K_BA; no constant-K assumption.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          7.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

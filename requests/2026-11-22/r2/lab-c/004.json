@@ -1,0 +1,16 @@
+{
+  "request_id": "2026-11-22/r2/lab-c/004",
+  "lab": "lab-c",
+  "account": "review",
+  "cites_paper": "P-0021",
+  "purpose": "Review of P-0021 (A-B at separation 7, T <= 6): full-length run, vertical orientation, A bottom, B top, separation 7.0. Pair closes to about 3.8 over T = 6 under the constant-K claim. Bar 3 x 0.007 = 0.021.",
+  "setup": {
+    "particles": [
+      {"species": "A", "pos": [5.0, 1.5], "vel": [0.0, 0.0]},
+      {"species": "B", "pos": [5.0, 8.5], "vel": [0.0, 0.0]}
+    ],
+    "duration": 6.0,
+    "sample_dt": 0.01
+  },
+  "instruments": ["tracker", "census"]
+}

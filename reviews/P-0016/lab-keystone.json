@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0016",
+  "lab": "lab-keystone",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-22/r1/lab-keystone/007",
+    "2026-11-22/r1/lab-keystone/008",
+    "2026-11-22/r1/lab-keystone/009"
+  ],
+  "comment": "Three review-account runs of A-C at rest, all inside the claim domain (species A, C; 2 particles; initial separation 1.000, 0.9995 and 1.0005; T = 0.6). Judged error = RMSE/L of the paper's predict(): 007 0.00446 (horizontal), 008 0.00491 (vertical, C first, lower edge), 009 0.00502 (diagonal, upper edge). Bar = 3 x predicted_error 0.006 = 0.018; all three pass. Verdict: replicated at the judged metric level.\n\nWhat this does not show: the metric is insensitive to K. Scaling both constants by 5 percent moves each error by about 0.0005, and by 10 percent by at most 0.0012, well under the bar, so these runs do not confirm K_AC = -6.25 or K_CA = -14.78. The exponent 2.5 is not tested either: all runs sit at r = 1.0, the only separation the claim covers. The claim's domain is correct as stated. Runs are at the domain edges, which holds the claim to its stated r range."
+}

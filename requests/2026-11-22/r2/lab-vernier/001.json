@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-22/r2/lab-vernier/001",
+  "lab": "lab-vernier",
+  "account": "research",
+  "purpose": "Round-2 far-field infall (H14 shape, H17 ratio). One A-B pair at rest, A x=0.5, B x=9.5, y=5, T=10, dt=0.01. Pre-reg: fixed-P=2.5 K_A(B) per window within 4% of round-1 table (K at r=4,5,6,7,8,9 = 9.1,8.9,8.4,7.75,6.8,6.0); R=K_B(A)/K_A(B)=1.41+/-0.02 in each window. Falsified if windows flat within 3% or R outside 1.41+/-0.04.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          0.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          9.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 10.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

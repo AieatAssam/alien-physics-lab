@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-22/r2/lab-b/009",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "B-C at separation 3.0, horizontal, at rest, T = 1.5. Repulsive B-C shape beyond separation 1.0 (only T <= 0.6 at r = 1 measured so far).",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          3.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          6.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.5,
+    "sample_dt": 0.003
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-22/r2/lab-keystone/008",
+  "lab": "lab-keystone",
+  "account": "review",
+  "purpose": "Review of P-0019 (B-B vertical, r0 = 0.999 (lower edge), T = 0.3). Edge-of-domain run; judged metric only.",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          2.0,
+          2.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          2.0,
+          2.999
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.3,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0019"
+}

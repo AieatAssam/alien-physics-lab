@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0019",
+  "lab": "lab-b",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-21/r1/lab-b/007",
+    "2026-11-21/r2/lab-b/009",
+    "2026-11-21/r2/lab-b/010"
+  ],
+  "comment": "Replicated for the duration I tested (T = 0.15). Evidence: three B-B runs at separation 1.000 (007 horizontal at x = 4.5 and 5.5, y = 5; 009 horizontal at y = 2; 010 horizontal at y = 8). All in domain: species B, two particles, initial separation exactly 1.000. Judge-style RMSE/L of the P-0019 model on these runs: 0.00707, 0.00715, 0.00706, against the bar 3 x 0.008 = 0.024. Coefficient: my pooled B-B fit is K = 3.98 +/- 0.12 (three runs, chi2 with sd 0.05 tracker noise). P-0019's K = 3.86 lies about one sigma from mine. The claim's run-to-run sd of 0.03 is smaller than my scatter, so I would not take it as the coefficient uncertainty. The judged metric cannot separate 3.86 from 3.98 at this duration, and neither can I. Not tested by me: T in (0.15, 0.3], where attractive pairs approach contact. The judge does not check duration, so the T <= 0.3 limit lives only in the claim text."
+}

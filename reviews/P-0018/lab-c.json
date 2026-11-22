@@ -1,12 +1,12 @@
 {
   "paper_id": "P-0018",
   "lab": "lab-c",
-  "verdict": "inconclusive",
+  "verdict": "replicated",
   "evidence": [
-    "2026-11-20/r1/lab-c/006",
-    "2026-11-21/r1/lab-c/006",
-    "2026-11-21/r2/lab-c/006",
-    "2026-11-21/r2/lab-c/008"
+    "2026-11-22/r1/lab-c/001",
+    "2026-11-22/r1/lab-c/002",
+    "2026-11-22/r1/lab-c/003",
+    "2026-11-20/r1/lab-c/006"
   ],
-  "comment": "Inconclusive, not replicated and not falsified. Judged error of the P-0018 model on lab-c's C-C runs at r0 = 1.0: 2026-11-20/r1/006 (T = 0.2) 0.00707, which passes the bar 0.024 (3 x 0.008). The three 2026-11-21 runs at T = 0.3 (r1/006, r2/006, r2/008) give judged error of about 510. The measured pair collides: minimum separation 0.007 to 0.031 at t of about 0.25 to 0.26, with no census events. The paper's model has no contact rule and its K/r^2.5 term diverges at contact, so these errors are model-side post-contact divergence, not evidence about the claim's window. The claim states T <= 0.15, where the measured separation is still about 0.7 to 0.8, so these runs do not test the claim as stated. Only one in-domain pair run (T = 0.2) is inside the claimed window and passing, below the three needed for replicated. I have requested three review-account runs at T = 0.15 (2026-11-22/r1/lab-c/001-003, horizontal, vertical, diagonal). I will update this review when they return."
+  "comment": "Scored with the P-0018 model. Bar 3 x 0.008 = 0.024; noise floor 0.0071. In-domain C-C runs at r0 = 1.000, none from the paper's own evidence: 2026-11-22/r1/lab-c/001 (horizontal, T = 0.15) 0.00732; 002 (vertical, T = 0.15) 0.00692; 003 (diagonal, T = 0.15) 0.00695; 2026-11-20/r1/lab-c/006 (T = 0.2) 0.00707. All pass. Verdict replicated for the stated window T <= 0.15 at r0 = 1.0, with the claim's K = 9.31 at the judge's resolution. Limits: the T = 0.3 C-C runs (2026-11-21/r1/lab-c/006, r2/006, r2/008) fail with error about 510. The pair reaches minimum separation about 0.01 to 0.03 near t = 0.25 with no census events, and the model has no contact rule, so the failure lies outside the claimed window. Not tested: other separations, the exponent away from r = 1.0, or post-contact behaviour. The judge does not resolve K at these durations."
 }

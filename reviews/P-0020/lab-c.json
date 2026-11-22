@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0020",
+  "lab": "lab-c",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-20/r1/lab-c/002",
+    "2026-11-21/r1/lab-c/002",
+    "2026-11-21/r2/lab-c/002"
+  ],
+  "comment": "Scored with the P-0020 model. Bar 3 x 0.008 = 0.024; noise floor 0.0071. In-domain A-B runs at r0 = 1.000, none from the paper's own evidence: 2026-11-20/r1/lab-c/002 (horizontal, T = 0.2) 0.00694; 2026-11-21/r1/lab-c/002 (horizontal, T = 0.3) 0.00759; 2026-11-21/r2/lab-c/002 (horizontal at centre (3,6), T = 0.3) 0.00778. All pass. The runs go past the claim's T <= 0.15 window, so the window is covered. Verdict replicated at the judge's resolution. Coefficients: the judge does not resolve K. My free chi2 fits on the pre-contact window T <= 0.15 for five A-B runs (the three above, plus 2026-11-22/r1/lab-c/004 and 005) give K_A(B) = 8.10, 4.54, 6.58, 5.62, 6.00 (mean 6.2 +- 0.6) and K_B(A) = 7.05, 7.53, 8.65, 7.13, 8.63 (mean 7.8 +- 0.35). The claim's 5.39 and 7.33 are within about 1.4 sigma. My data do not confirm the coefficients to better than about 10 percent. Outside the window: 2026-11-22/r1/lab-c/004 and 005 (T = 0.6) fail with error 0.198. The pair reaches separation 0.5 at t about 0.20 to 0.23 and collides (minimum separation 0.004 to 0.015 near t = 0.30), so the T <= 0.15 restriction is needed. Next step: T = 0.15 replicates requested as 2026-11-22/r2/lab-c/001 to 003."
+}

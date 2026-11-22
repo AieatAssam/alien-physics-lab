@@ -1,0 +1,16 @@
+{
+  "request_id": "2026-11-22/r2/lab-c/006",
+  "lab": "lab-c",
+  "account": "review",
+  "cites_paper": "P-0021",
+  "purpose": "Review of P-0021 (A-B at separation 7, T <= 6): diagonal run, A at (2,2), B at (6.9497,6.9497), separation 7.0, T = 6. Third orientation. Bar 0.021.",
+  "setup": {
+    "particles": [
+      {"species": "A", "pos": [2.0, 2.0], "vel": [0.0, 0.0]},
+      {"species": "B", "pos": [6.9497, 6.9497], "vel": [0.0, 0.0]}
+    ],
+    "duration": 6.0,
+    "sample_dt": 0.01
+  },
+  "instruments": ["tracker", "census"]
+}

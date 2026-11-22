@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-22/r2/lab-a/015",
+  "lab": "lab-a",
+  "account": "review",
+  "purpose": "Review of P-0021 (A-B, separation 7, at rest, T <= 6): diagonal, centre (5,5), A left. Tests the constant-K claim across the run (separation falls from 7 to about 3.8).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.5251262658470837,
+          2.5251262658470837
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          7.474873734152917,
+          7.474873734152917
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 6.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ],
+  "cites_paper": "P-0021"
+}

@@ -1,0 +1,18 @@
+Output of: python3 -I out/labs/lab-c/analysis/fit_pair_K_2026-11-22.py REPO_ROOT  (2026-11-22, round 2)
+Two-body free-coupling fits, P = 2.5 fixed, chi2 on tracker positions, sigma 0.05 per coordinate.
+A-B window: t <= 0.15 (claim window), pre-contact. B-B window: last t with measured separation >= 0.6 (0.237 to 0.264).
+Grid 0.1 then refine 0.01 (A-B); 0.01 grid (B-B). Statistical scatter only.
+
+run, species, tfit, n_obs, K_fit, chi2/n
+2026-11-20/r1/lab-c/002 AB tfit=0.150 n=120  K_A(B)=8.10 K_B(A)=7.05 chi2/n=0.825
+2026-11-21/r1/lab-c/002 AB tfit=0.150 n=1200 K_A(B)=4.54 K_B(A)=7.53 chi2/n=0.947
+2026-11-21/r2/lab-c/002 AB tfit=0.150 n=1200 K_A(B)=6.58 K_B(A)=8.65 chi2/n=1.062
+2026-11-22/r1/lab-c/004 AB tfit=0.150 n=1200 K_A(B)=5.62 K_B(A)=7.13 chi2/n=0.981
+2026-11-22/r1/lab-c/005 AB tfit=0.150 n=1200 K_A(B)=6.00 K_B(A)=8.63 chi2/n=0.989
+2026-11-21/r1/lab-c/004 BB tfit=0.264 n=2112 K_BB=3.89 chi2/n=1.054
+2026-11-21/r2/lab-c/004 BB tfit=0.248 n=1988 K_BB=3.93 chi2/n=0.970
+2026-11-21/r2/lab-c/007 BB tfit=0.237 n=1892 K_BB=3.89 chi2/n=0.977
+
+Summaries (computed from the rows above):
+  A-B: K_A(B) mean 6.2 (sd 1.3, se 0.6); K_B(A) mean 7.8 (sd 0.8, se 0.35). Claim P-0020: 5.39, 7.33.
+  B-B: K_BB mean 3.90 (sd 0.02). Claim P-0019: 3.86. Claim P-0017: 3.98.

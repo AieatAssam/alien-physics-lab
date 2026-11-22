@@ -1,0 +1,16 @@
+{
+  "request_id": "2026-11-22/r2/lab-c/003",
+  "lab": "lab-c",
+  "account": "review",
+  "cites_paper": "P-0020",
+  "purpose": "Review of P-0020 (close-AB, T <= 0.15): species-swapped horizontal pair at r0 = 1.000, at rest, B left and A right. Tests attribution: K_AB on A and K_BA on B must stay with the species, not the side. Bar 0.024.",
+  "setup": {
+    "particles": [
+      {"species": "A", "pos": [5.5, 5.0], "vel": [0.0, 0.0]},
+      {"species": "B", "pos": [4.5, 5.0], "vel": [0.0, 0.0]}
+    ],
+    "duration": 0.15,
+    "sample_dt": 0.0005
+  },
+  "instruments": ["tracker", "census"]
+}

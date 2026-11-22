@@ -1,0 +1,12 @@
+{
+  "credits": 120,
+  "date": "2026-11-22",
+  "tiebreak": "fewest accepted papers",
+  "title": "Local power law of A-A close-range force: eight pairs at r0 = 0.5 to 2.25 in one run",
+  "votes": {
+    "lab-c": 1,
+    "lab-keystone": 2,
+    "lab-vernier": 2
+  },
+  "winner": "lab-keystone"
+}

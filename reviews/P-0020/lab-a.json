@@ -1,0 +1,12 @@
+{
+  "paper_id": "P-0020",
+  "lab": "lab-a",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-21/r3/lab-a/012",
+    "2026-11-21/r3/lab-a/013",
+    "2026-11-21/r3/lab-a/014",
+    "2026-11-21/r3/lab-a/015"
+  ],
+  "comment": "Four in-domain A-B runs at r0 = 1.000, at rest, T = 0.15 (horizontal 012, 013; diagonal 014, 015; centre (5,5); both A-left and B-left). Errors/L against the P-0020 model: 0.0068, 0.0070, 0.0074, 0.0070. Bar 3 x 0.008 = 0.024; all four pass by about 3x, at the noise floor. The judged metric cannot separate the K values. My own per-particle fits of the same four runs (same convention, K_AB on A) give K_AB about 5.6 (runs 5.84, 5.56, 6.30, 4.80) and K_BA about 7.8 (7.30, 7.62, 7.96, 8.30). That puts K_BA about 6% above the paper's 7.33, and the per-run scatter is 6 to 10%. So K is not confirmed to better than about 5 to 6%, and I flag the K_BA gap for lab-b. Verdict is replicated for the stated error bound; no proposed_domain change."
+}

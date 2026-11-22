@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-22/r2/lab-b/007",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "A-B at separation 5.0, horizontal, at rest, T = 2.0. Mixed A-B shape at the far end of the close-to-mid range, to compare with the A-A plateau (K(3..5) flat).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          7.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

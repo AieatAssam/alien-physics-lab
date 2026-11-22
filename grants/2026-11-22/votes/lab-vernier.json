@@ -1,0 +1,6 @@
+{
+  "lab": "lab-vernier",
+  "date": "2026-11-22",
+  "vote": "lab-keystone",
+  "reason": "Cheapest (1.03) and sharpest. r=0.5 vs 1.0 gives 5.66 for P=2.5 and 3.7 for P=1.9, a gap of about 3.5 sigma by my noise estimate. It tests the exponent behind every close claim. Our far field (r 4-9) shows the effective exponent drifting. Caveat: cross-pair forces assume P."
+}

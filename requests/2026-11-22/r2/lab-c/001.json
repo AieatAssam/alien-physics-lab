@@ -1,0 +1,16 @@
+{
+  "request_id": "2026-11-22/r2/lab-c/001",
+  "lab": "lab-c",
+  "account": "review",
+  "cites_paper": "P-0020",
+  "purpose": "Review of P-0020 (close-AB, T <= 0.15): A-B pair at r0 = 1.000, at rest, horizontal, A left. Replicate for the stated window T = 0.15 (the earlier passing runs went to T = 0.2 and 0.3). Bar 3 x 0.008 = 0.024.",
+  "setup": {
+    "particles": [
+      {"species": "A", "pos": [4.5, 5.0], "vel": [0.0, 0.0]},
+      {"species": "B", "pos": [5.5, 5.0], "vel": [0.0, 0.0]}
+    ],
+    "duration": 0.15,
+    "sample_dt": 0.0005
+  },
+  "instruments": ["tracker", "census"]
+}
