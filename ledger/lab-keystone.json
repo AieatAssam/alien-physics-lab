@@ -33,10 +33,10 @@
       "review_used": 12.84
     },
     "2026-11-23": {
-      "grant_allowance": 0.0,
-      "grant_used": 0.0,
+      "grant_allowance": 120.0,
+      "grant_used": 1.1,
       "research_allowance": 40,
-      "research_used": 6.48,
+      "research_used": 12.72,
       "review_allowance": 15,
       "review_used": 13.35
     }
