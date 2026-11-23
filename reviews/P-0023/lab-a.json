@@ -1,0 +1,12 @@
+{
+  "paper_id": "P-0023",
+  "lab": "lab-a",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-23/r1/lab-a/005",
+    "2026-11-23/r1/lab-a/006",
+    "2026-11-23/r1/lab-a/007",
+    "2026-11-23/r1/lab-a/008"
+  ],
+  "comment": "Four in-domain runs from lab-a: A-B at rest, separations 8.92 and 9.08 (horizontal A-left, horizontal B-left, vertical, diagonal), T = 10, dt 0.01. Each passes the paper's own predict() domain check. RMSE/L against predict(): 0.00529, 0.00521, 0.00521, 0.00519. Bar 3 x 0.006 = 0.018. All four pass, so the claim is replicated on the judged metric. Caveat: all four errors are at the tracker noise floor (about 0.005 per run). The paper's own note says K can drift about 5 percent over T = 10 from other starts; these runs do not resolve a drift of that size in the judged metric, so the constancy of K over T = 10 is not tested here. The claim's K values are not tested to better than a few percent."
+}

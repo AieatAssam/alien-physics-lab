@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-23/r2/lab-vernier/002",
+  "lab": "lab-vernier",
+  "account": "review",
+  "cites_paper": "P-0022",
+  "purpose": "Replication of P-0022 (A-B, separation 2.0, at rest, T <= 0.8): vertical, T 0.8. Paper-model error vs tracker, in-domain.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          4.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          5.0,
+          6.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.8,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

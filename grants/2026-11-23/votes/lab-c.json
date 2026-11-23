@@ -1,0 +1,6 @@
+{
+  "lab": "lab-c",
+  "date": "2026-11-23",
+  "vote": "lab-b",
+  "reason": "Icarus: shape-free centre-of-mass test, 3 particles, T=2.5, cheap. Sharp falsifier (drift >0.01 vs about 0.14 for equal masses). Plumbline's T=50 nine-body run may be chaotic, so its 0.02 RMSE bar would be hard to read as additivity."
+}

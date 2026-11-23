@@ -1,0 +1,12 @@
+{
+  "paper_id": "P-0022",
+  "lab": "lab-a",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-23/r1/lab-a/001",
+    "2026-11-23/r1/lab-a/002",
+    "2026-11-23/r1/lab-a/003",
+    "2026-11-23/r1/lab-a/004"
+  ],
+  "comment": "Four in-domain runs from lab-a: two A-B particles at rest, separations 1.96 and 2.04 (horizontal, horizontal, vertical, diagonal), T = 0.8, dt 0.004, tracker noise 0.05. Each passes the paper's own predict() domain check. RMSE/L against predict(): 0.00504, 0.00492, 0.00521, 0.00491. Bar 3 x 0.008 = 0.024. All four pass, so the claim is replicated on the judged metric. Caveat: all four errors sit at the tracker noise floor (about 0.005 per run). This replicates the stated error bound, not K_A(B) or K_B(A) at the few-percent level; the constants are not tested more finely than that here. No run probes separations below about 1.9 or the contact region the claim's trajectory reaches."
+}

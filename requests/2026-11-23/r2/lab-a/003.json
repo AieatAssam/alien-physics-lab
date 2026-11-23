@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-23/r2/lab-a/003",
+  "lab": "lab-a",
+  "account": "review",
+  "cites_paper": "P-0024",
+  "purpose": "Exponent test of P-0024 (A-A, P=2.10 vs 2.5). Two A at rest, separation 2.9 (in P-0024 domain, duration 0.6 window for r0 in [2.5,3.0]), diagonal, centre (5,5). Dense sampling (dt 0.001) to fit the exponent by trajectory; the judged RMSE alone cannot discriminate.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.9746951672795063,
+          3.9746951672795063
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.025304832720494,
+          6.025304832720494
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.6,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

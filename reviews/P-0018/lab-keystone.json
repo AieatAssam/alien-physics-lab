@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0018",
+  "lab": "lab-keystone",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-23/r1/lab-keystone/010",
+    "2026-11-23/r1/lab-keystone/011",
+    "2026-11-23/r1/lab-keystone/012"
+  ],
+  "comment": "Judged on the paper's metric (C-C, r0 = 1.000, T <= 0.15, tracker). Three in-domain runs (H, V, D) give RMSE/L 0.00706, 0.00696, 0.00703 against bar 0.024. As for P-0017, T = 0.15 is at the noise floor, so this does not test K or P; it supports only the short-window reproduction at r0 = 1."
+}

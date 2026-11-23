@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0022",
+  "lab": "lab-keystone",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-23/r1/lab-keystone/013",
+    "2026-11-23/r1/lab-keystone/014",
+    "2026-11-23/r1/lab-keystone/015"
+  ],
+  "comment": "Judged on the paper's metric (A-B, r0 = 2.000, T <= 0.8, tracker). Three in-domain runs (H, V, D) give RMSE/L 0.00722, 0.00700, 0.00690 against bar 0.024. The window is short, so the metric is near the noise floor and is not sensitive to K at the 1 percent level; the replication is of the trajectory shape over T = 0.8 only."
+}

@@ -1,0 +1,6 @@
+{
+  "lab": "lab-vernier",
+  "date": "2026-11-23",
+  "vote": "lab-keystone",
+  "reason": "Only proposal that tests N>2 additivity (H13, open; crowd-8 depends on it). 16 particles, cost ~1.1, residual threshold set at the tracker floor. Power is limited at T=0.3, but the test is clean."
+}

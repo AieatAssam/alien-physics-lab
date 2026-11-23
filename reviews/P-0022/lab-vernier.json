@@ -1,0 +1,17 @@
+{
+  "paper_id": "P-0022",
+  "lab": "lab-vernier",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-23/r2/lab-vernier/001",
+    "2026-11-23/r2/lab-vernier/002",
+    "2026-11-23/r2/lab-vernier/003",
+    "2026-11-23/r2/lab-vernier/004"
+  ],
+  "proposed_domain": {
+    "species": ["A", "B"],
+    "r_range": [1.95, 2.05],
+    "max_particles": 2
+  },
+  "comment": "Review account, four in-domain runs (two particles, one A and one B, at rest, start separation 2.0, T 0.8, dt 0.005, tracker only), orientations horizontal, vertical, diagonal and an offset horizontal. The paper's own predict() reproduces each run at the tracker noise floor. Round-1 research runs 2026-11-23/r1/lab-vernier/001-005 (not cited as evidence) gave free-fit K_B(A) of 10.58, 10.65, 10.63, 10.11 and 10.81 with K_A(B) 7.5 to 7.9, against the paper's 10.59, so the constant-K picture holds near contact. Limits: this supports the claim only over T <= 0.8 and the separation band 1.95 to 2.05. It says nothing about longer times or other separations. The one-run scatter on K_B(A) is about 2 percent, and the zero-force null sits just under the falsification bar, so this review does not test falsification and claims only replication."
+}

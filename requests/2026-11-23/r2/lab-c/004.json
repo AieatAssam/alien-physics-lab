@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-23/r2/lab-c/004",
+  "lab": "lab-c",
+  "account": "review",
+  "cites_paper": "P-0023",
+  "purpose": "Review of P-0023 at separation 8.95 (domain 8.9-9.1), horizontal, A left, T=10. Bar 0.018.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          0.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          9.45,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 10.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

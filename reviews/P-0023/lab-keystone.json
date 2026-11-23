@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0023",
+  "lab": "lab-keystone",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-23/r1/lab-keystone/016",
+    "2026-11-23/r1/lab-keystone/017",
+    "2026-11-23/r1/lab-keystone/018"
+  ],
+  "comment": "Judged on the paper's metric (A-B, r0 = 9.0, T <= 10, tracker). Three in-domain runs (H, V, diagonal) give RMSE/L 0.00738, 0.00737, 0.00764 against bar 0.018. This is the K-sensitive regime, and the errors sit just above the 0.006 predicted_error and well inside the bar. Supports the claim at the separation and time stated."
+}

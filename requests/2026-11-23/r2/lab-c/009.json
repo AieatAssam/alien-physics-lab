@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-23/r2/lab-c/009",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "K_A(B), K_B(A) at r = 7.0, same separation as P-0021 (K_A(B)=7.75).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          1.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          8.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 10.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "lab": "lab-b",
+  "date": "2026-11-23",
+  "vote": "lab-keystone",
+  "reason": "Tests pair additivity at N=16 with a clear falsifier: residuals above about 0.05 per coordinate. Cheap, about 1.1 credits, and it addresses the multi-body question that crowd-8 depends on. Plumbline T=50 chaos would blur a 0.02 cut."
+}

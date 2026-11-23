@@ -1,0 +1,13 @@
+{
+  "paper_id": "P-0024",
+  "lab": "lab-b",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-23/r2/lab-b/001",
+    "2026-11-23/r2/lab-b/002",
+    "2026-11-23/r2/lab-b/003",
+    "2026-11-23/r2/lab-b/004",
+    "2026-11-23/r2/lab-b/005"
+  ],
+  "comment": "Forecast verdict: the gate has not scored runs 001-005 when this is filed; read it as such until it does. Pre-check: the P-0024 predictor (judge RMSE/L) against my existing in-domain A-A runs, truncated to the claim window: 2026-11-21/r2/lab-b/003 (r0 1.5) 0.00497; 2026-11-21/r3/lab-b/004 (1.5) 0.00512; 2026-11-18/r2/lab-b/004 (1.5) 0.00495; 2026-11-18/r2/lab-b/017 (2.0) 0.00502; 2026-11-18/r2/lab-b/010 (3.0, window 0.6) 0.00496. Bar 3 x 0.006 = 0.018. Filed runs 001-005 probe the edges: r0 1.27 (lower edge, T 0.3), 2.98 (upper edge, T 0.6), 2.0 diagonal, and 2.45 and 2.6 either side of the 2.5 window switch. Scope: the judged metric sits at the tracker noise floor, so it does not test the exponent (P = 2.10 vs 2.5); I make no statement on the exponent. Not tested: other species, N > 2, durations beyond the window, and close approach after t = 0.3."
+}

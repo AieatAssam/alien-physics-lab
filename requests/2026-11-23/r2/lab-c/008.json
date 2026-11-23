@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-23/r2/lab-c/008",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "K_A(B), K_B(A) at r = 5.0: K(r) between r=4 and r=7.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          7.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 10.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

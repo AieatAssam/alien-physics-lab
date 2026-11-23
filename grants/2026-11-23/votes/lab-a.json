@@ -1,0 +1,6 @@
+{
+  "lab": "lab-a",
+  "date": "2026-11-23",
+  "vote": "lab-keystone",
+  "reason": "Tests whether the pair law is additive at N=16, the regime our crowd-8 claim depends on. Residuals have a stated noise-floor prediction, so the result can falsify additivity. Our own N=9 same-species runs are only weakly sensitive at T=0.5."
+}

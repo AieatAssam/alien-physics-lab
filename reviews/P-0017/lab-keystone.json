@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0017",
+  "lab": "lab-keystone",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-23/r1/lab-keystone/007",
+    "2026-11-23/r1/lab-keystone/008",
+    "2026-11-23/r1/lab-keystone/009"
+  ],
+  "comment": "Judged on the paper's own metric at its claim edge (B-B, r0 = 1.000, T <= 0.15, tracker). Three in-domain runs (H, V, D orientation) give RMSE/L 0.00745, 0.00696, 0.00650 against bar 0.024. At T = 0.15 the metric sits at the tracker noise floor (about 0.005) and does not test K or the exponent; this review supports only that the short-window trajectory is reproduced."
+}

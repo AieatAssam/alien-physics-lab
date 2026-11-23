@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-23/r2/lab-b/004",
+  "lab": "lab-b",
+  "account": "review",
+  "purpose": "P-0024 window edge: A-A at rest, separation 2.45 (just below 2.5, horizontal), T = 0.3.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.775,
+          7.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.225,
+          7.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.3,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0024"
+}

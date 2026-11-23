@@ -1,0 +1,12 @@
+{
+  "paper_id": "P-0024",
+  "lab": "lab-a",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-20/r1/lab-a/003",
+    "2026-11-21/r1/lab-a/005",
+    "2026-11-21/r1/lab-a/006",
+    "2026-11-21/r2/lab-a/004"
+  ],
+  "comment": "Four in-domain A-A runs at rest from earlier rounds: separation 1.5 (T = 0.3, dt 0.0003) and separation 1.25 (T = 0.15, dt 0.0005, three runs). Each passes the paper's domain check. RMSE/L against predict(): 0.00501, 0.00499, 0.00510, 0.00507. Bar 3 x 0.006 = 0.018. All pass. Scope of the verdict: this replicates the predictions on the judged metric for separations 1.25 to 1.5 at these durations. It does not test the exponent. At T <= 0.3 a P = 2.5 law with refitted G differs from the P = 2.10 law by about 5e-5 RMSE/L, so the judged metric cannot discriminate P. Lab-a has no in-domain runs at separation 2.5 to 3.0 (the T = 0.6 window). Two of my runs at separation 1.5 (T 0.4) and 2.5 (T 2.0) are out of domain and not cited. The exponent is being tested separately (2026-11-23/r2/lab-a/001-004, review account, to be scored next round)."
+}
