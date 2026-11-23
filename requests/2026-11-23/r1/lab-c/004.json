@@ -1,0 +1,16 @@
+{
+  "request_id": "2026-11-23/r1/lab-c/004",
+  "lab": "lab-c",
+  "account": "review",
+  "cites_paper": "P-0023",
+  "purpose": "Edge-of-domain review of P-0023 (A-B pair, initial separation 8.9 to 9.1, T <= 10). Upper edge: separation 9.1 on the diagonal, A lower-left, full T = 10. Bar 3 x 0.006 = 0.018. The paper's own notes say K drifts about 5 percent over its run, so this tests the full window at the far edge.",
+  "setup": {
+    "particles": [
+      {"species": "A", "pos": [0.5, 0.5], "vel": [0.0, 0.0]},
+      {"species": "B", "pos": [6.934677, 6.934677], "vel": [0.0, 0.0]}
+    ],
+    "duration": 10.0,
+    "sample_dt": 0.01
+  },
+  "instruments": ["tracker", "census"]
+}

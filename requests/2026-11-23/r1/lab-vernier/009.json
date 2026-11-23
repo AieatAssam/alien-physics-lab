@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-23/r1/lab-vernier/009",
+  "lab": "lab-vernier",
+  "account": "research",
+  "purpose": "H19 orientation control: separation 6.5 at rest, vertical, T = 2 (replicate of r3/004)",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          1.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          5.0,
+          8.25
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

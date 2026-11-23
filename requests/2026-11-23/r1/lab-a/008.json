@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-23/r1/lab-a/008",
+  "lab": "lab-a",
+  "account": "review",
+  "purpose": "Review of P-0023: diagonal A-B at separation 9.08 (upper edge), at rest, T 10.",
+  "cites_paper": "P-0023",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          1.789735,
+          1.789735
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          8.210265,
+          8.210265
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 10.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

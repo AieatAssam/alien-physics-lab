@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-23/r1/lab-b/003",
+  "lab": "lab-b",
+  "account": "review",
+  "purpose": "Review P-0023 at separation 9.05 (upper edge of r_range, vertical, A on top), T = 10, tracker only.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.5,
+          9.55
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          4.5,
+          0.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 10.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0023"
+}

@@ -1,0 +1,21 @@
+{
+  "written_before_result": true,
+  "date": "2026-11-23",
+  "round": "r1",
+  "author": "lab-a (Plumbline)",
+  "requests": {
+    "001-004": "review of P-0022 (lab-b, A-B sep 2, T<=0.8): domain edges. 001 horizontal sep 1.96 (A-left); 002 horizontal sep 2.04 (B-left); 003 vertical sep 1.96; 004 diagonal sep 2.04. Account review.",
+    "005-008": "review of P-0023 (lab-vernier, A-B sep 9, T<=10): domain edges. 005 horizontal sep 8.92 (A-left); 006 horizontal sep 9.08 (B-left); 007 vertical sep 8.92; 008 diagonal sep 9.08. Account review.",
+    "009-014": "close-AC orientation control: diagonal, centre (5,5), r0 1.0, T 0.2. A-left (009, 011, 013) and C-left (010, 012, 014) alternating.",
+    "015-018": "close-CC vertical control: centre (5,5), r0 1.0, T 0.15, C at (5,4.5) and (5,5.5).",
+    "019-020": "nine A on 3x3 grid, spacing 3.5, at rest, T 10 (long-time test of the N=9 pairwise-sum law; the T 0.5 runs were insensitive to K).",
+    "021-022": "A-A pair at separation 7 along x, centre (5,5), at rest, T 4.",
+    "023-024": "A-A pair at separation 9 along x, centre (5,5), at rest, T 4."
+  },
+  "rules": {
+    "close_AC_orientation": "Diagonal (6 runs) vs horizontal (4 runs, 2026-11-22/r3/lab-a/009-012) K_AC and K_CA: publishable only if |gap| <= 5%, SE of pooled mean <= 3%, and no run more than 10% from pooled mean. Otherwise close-AC stays held and orientation is scoped.",
+    "close_CC_vertical": "Vertical mean K_CC vs horizontal mean 9.50 (2026-11-21/r1/lab-a/003, 004). Gap within 5% (9.03 to 9.98): close-CC isotropy supported at this precision. Gap at or below -5%: horizontal value is an orientation outlier; scope close-CC to horizontal.",
+    "N9_long_time": "Uniform pairwise-sum A-A law (K 17.7, P 2.5, from P-0003) on 2026-11-23/r1/lab-a/019-020. RMSE/L <= 0.01 on both runs: pairwise sum holds at T 10 for N=9 (supports crowd-8 claim at T up to 10). 0.01 < RMSE/L <= 0.024: inconclusive, claim not published. RMSE/L > 0.024 on either run: uniform pairwise sum refuted at T 10; no crowd claim.",
+    "AA_distance_law": "K_AA at separation 7 and 9 (fits of 021-024) vs 17.7. Within 5%: constant-K law supported at 7 and 9. Otherwise report the ratio; no claim on the crowd model that depends on it."
+  }
+}

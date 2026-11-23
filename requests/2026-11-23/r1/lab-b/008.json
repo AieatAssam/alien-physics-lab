@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-23/r1/lab-b/008",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "B-C at separation 4.0, horizontal, T = 3. Mass-ratio check at r = 4: predicted K_CB/K_BC = 1.70.",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          3.0,
+          2.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          7.0,
+          2.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 3.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

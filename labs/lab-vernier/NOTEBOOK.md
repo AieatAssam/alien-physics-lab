@@ -2,158 +2,174 @@
 
 Lab: lab-vernier (Vernier). Persona: instrument builder. Priority: characterise the instrument (noise, sample timing, cost), then replicate and review other labs' claims at their edges with precise numbers.
 
+Last updated: 2026-11-23, round 1.
+
+## Standing rule I now apply to every claim and review
+
+A review can only test a claim if the zero-force null (all K = 0) on the cited runs sits **above** 3 times predicted_error. The tracker noise floor is 0.005 RMSE/L, so predicted_error below about 0.005 is not reachable and the bar is 0.015 or more. Short runs (T <= 2, displacements of about 0.1) give nulls near 0.009 to 0.011 and wrong-K errors near 0.001 to 0.003. Both sit under any honest bar. **Discriminating evidence needs long runs or large displacements, or a close approach where K is sensitive.** I now check both numbers before filing a paper or a review.
+
 ## Cost model (confirmed)
 
-`cost = 1 + 0.02 * particles * duration` (k = 0.02 this season; matches every result so far, e.g. 2 particles, T = 10 gives 1.40). Two-body runs are cheap. A T = 10 pair run costs 1.4, so budget is rarely the binding limit. Design is.
+`cost = 1 + 0.02 * particles * duration` (k = 0.02 this season). Every result so far matches. Budget is rarely binding; design is.
 
-## Corrections to my own earlier work (read first)
+## Corrections to my own earlier work (kept)
 
-1. **The round-1 far-field table was mislabelled. H14 (steepening) is withdrawn.** Each round-1 K was a fit over the whole trajectory, but I labelled it by the *starting* separation. Runs with T = 6 at start 8 or 9 move to about 6 to 7.8 during the window, so "K(8) = 6.78" is an average over roughly r = 6.2 to 8, not a value at r = 8. The steepening (local exponent 2.6 to 3.5) was derived from those labels and is not supported. The pre-registered round-2 predictions were built on the same table, so their "falsification" tests a mislabelled table, not the physics.
-2. **Window fits replace trajectory averages.** Free K at fixed P = 2.5 in time windows, labelled by the mean observed separation inside each window (`analysis/windows_all_P2.5.jsonl`, `analysis/windows_all_2026-11-22.py`). This is the correct way to read K(r) from these runs.
-3. **Short windows are unidentified.** A window of 2 time units starting at r = 9 gives K anywhere from 4.7 to 7.1 (2026-11-22 r1 006/007, first window: R = 1.17 and 1.77). Only use windows where the pair moves enough for the fit to bite (fit null RMSE/L > 2 times fit RMSE/L), and treat R from short windows as noise.
-4. **Standing: lone-particle runs pass the domain test vacuously**, as before. 2026-11-19 r1 001, 002, 005, 006; r2 002, 004; r3 003 are not pair evidence.
-5. **Null errors must exceed the bar.** Filed claims with null errors below 3 times predicted_error are not discriminating (see Reviews below).
-6. **Fit exponent and coupling are not separately identified over a short window.** Read exponents only from the separation dependence over a wide range, never from one run.
-7. **Close-pass breaks runs.** 2026-11-21 r3 001 (A-B, separation 6, T = 6) passes through contact (r 1.46). Excluded. Use T <= 4 for separation 6.
-8. **Model-blow-up check.** Singular r^-2.5 models can blow up near contact (P-0014). Check minimum separation first.
+1. The round-1 far-field table was labelled by starting separation, not by the separation inside the window. H14 (steepening from that table) was withdrawn. It is revisited below as H22 with window labels.
+2. Window fits (labelled by observed mean separation) replace trajectory averages.
+3. Short windows are unidentified when the null is less than 2 times the fit RMSE (see sensitivity column below).
+4. Lone-particle runs pass the domain test vacuously. 2026-11-19 r1 001, 002, 005, 006; r2 002, 004; r3 003 are not pair evidence.
+5. Null errors must exceed the bar (see standing rule).
+6. Exponent and coupling are not separately identified from one short window.
+7. Close pass breaks runs. 2026-11-21 r3 001 (A-B, separation 6, T = 6) passes through contact (r 1.46). Excluded.
+8. Singular r^-2.5 models can blow up near contact (P-0014). Check minimum separation first.
 
-## Reusable tools (`out/labs/lab-vernier/analysis/`)
-
-- `fit_tools.py`: pair-law simulator (RK4, specular walls), tracker SSE, golden-section coupling fits at fixed P. Copied from `labs/lab-vernier/analysis/` so the folder is self-contained.
-- `fit_r1_2026-11-22.py`, `fit_r2_2026-11-22.py`: free K_A(B), K_B(A) at fixed P, full window (r1 001-008, r2 001-004), and r2 001/002 time windows. `python3 -I <script> [P]` from repo root.
-- `windows_all_2026-11-22.py` (+ `windows_all_P2.5.jsonl`): time-window fits for all A-B runs of 2026-11-22. Labels by observed separation.
-- `xpred_infall_2026-11-22.py`: cross-orientation out-of-sample check for the separation-9 infall (r2 001/002).
-- `file_round3_2026-11-22.py`: writes the round-3 requests and checks their fields by hand (jsonschema is not installed here).
-- Older scripts remain in `labs/lab-vernier/analysis/`.
-
-## Papers
+## Papers (mine, numbers as the gate assigned them)
 
 - **P-0011** tracker noise for a lone particle (published).
 - **P-0015** close-range B-C at separation 1.0.
 - **P-0016** close-range A-C at separation 1.0.
-- **P-0021** A-B pair at separation 7, at rest: constant K_A(B) = 7.75, K_B(A) = 10.97 at P = 2.5, T <= 6. Named "P-0021" in the repo. Its model docstring still says "P-0019" (stale label, `papers/P-0021/model.py`, in the repo; I only write under `out/`).
-  - **At risk.** Its constant K is a whole-trajectory value from start 7 and T <= 6. Window fits show K differs along that kind of trajectory (about 8.4 near r 5, about 6.3 near r 6.5 to 7.6). Its own two runs fit at the noise floor, so it stands as written. Round-3 request 005 (start 7.0, T = 2, at rest) tests its early-time value directly.
-- **P-0022 (filed this round, by title: "A-B pair at separation 9, at rest: constant K_A(B) = 6.16 and K_B(A) = 8.70 at P = 2.5 (T <= 10)")**. Domain: A-B, initial separation 8.9 to 9.1, T <= 10, max_particles 2, predicted_error 0.006. Evidence: round-2 r2/001 (horizontal) and r2/002 (vertical). Out-of-sample across orientations: 0.0051 and 0.0052 RMSE/L (noise floor 0.005). Model residuals with averaged K: 0.00517 and 0.00506. Limits stated in the paper: K drifts about 5% along the run; the claim is trajectory-level, with no functional form. The gate may renumber it.
+- **P-0021** A-B pair at separation 7, at rest, constant K_A(B) = 7.75, K_B(A) = 10.97 at P = 2.5, T <= 6. Domain r 6.9 to 7.1, predicted_error 0.007. Evidence 2026-11-21 r3/003, r1/010. **At risk**: round-3 r3/005 (start 6.9, T = 2) gave K = 7.21, not 7.75. The decisive test is round-1 request 006 (below).
+- **P-0023** (this was filed as "separation 9" and renumbered from the P-0022 I had expected). A-B pair at separation 9, at rest, constant K_A(B) = 6.16, K_B(A) = 8.70 at P = 2.5, T <= 10, domain r 8.9 to 9.1, predicted_error 0.006. Evidence 2026-11-22 r2/001, r2/002. Out-of-sample 0.0051 and 0.0052 RMSE/L.
+- **P-0022** is **Icarus's** (lab-b), not mine: A-B at separation 2, T <= 0.8, K_A(B) = 7.59, K_B(A) = 10.59, domain r 1.95 to 2.05, predicted_error 0.008. I am not the author.
 
-## Round 2 results (2026-11-22 r2 001-004), analysed this round
+No paper filed this round (see plateau check below).
 
-Full-window free fits at P = 2.5 (all in domain; no contact):
+## Round 3 results (2026-11-22 r3 001-008), analysed this round
 
-| run | start sep | T | K_A(B) | K_B(A) | R | fit RMSE/L | null RMSE/L | min. sep observed |
-|---|---|---|---|---|---|---|---|---|
-| 001 | 9 horizontal infall | 10 | 6.18 | 8.68 | 1.404 | 0.0052 | 0.056 | 5.11 |
-| 002 | 9 vertical infall | 10 | 6.14 | 8.71 | 1.419 | 0.0051 | 0.056 | 5.08 |
-| 003 | 3 centred | 1 | 9.42 | 12.73 | 1.35 | 0.0049 | 0.013 | 2.09 |
-| 004 | 2 centred | 0.5 | 7.73 | 11.65 | 1.51 | 0.0050 | 0.009 | 1.49 |
+Free fit of K_A(B), K_B(A) at P = 2.5 over t in [0, 2], all A-B at rest (`analysis/fit_r3_2026-11-22.py`). "null/fit" is the zero-force RMSE/L divided by the fit RMSE/L, a sensitivity measure.
 
-- **Infall windows (001, 002):** K_A(B) = 5.87, 5.97, 6.09, 6.22 (001) and 5.86, 5.96, 5.92, 6.22 (002) for windows centred at r = 8.8, 8.2, 7.4, 6.1. This is flat to about 6%. My pre-registered comparison to the old table (K(8) = 6.8, K(7) = 7.75) fails, but per correction 1 that comparison was invalid.
-- **Short runs (003, 004):** not informative about the local exponent. Window K in 004 goes 10.0 then 7.7 within 0.5 time units, and 003 goes 10.4 then 9.4. Null RMSE is only 1.5 to 3 times the fit RMSE. The pre-registered K(3)/K(4) ratio is not meaningful with these windows.
+| run | start (designed) | placement | mean obs r | min obs r | K_A(B) | K_B(A) | R | fit RMSE/L | null/fit |
+|---|---|---|---|---|---|---|---|---|---|
+| 001 | 5.5 | centred | 5.30 | 4.82 | 8.55 | 12.13 | 1.42 | 0.00489 | 2.2 |
+| 002 | 5.8 | centred | 5.63 | 5.16 | 8.27 | 11.71 | 1.415 | 0.00498 | 1.9 |
+| 003 | 6.0 | centred | 5.85 | 5.43 | 8.43 | 11.59 | 1.374 | 0.00487 | 1.8 |
+| 004 | 6.5 | centred | 6.38 | 6.01 | 7.54 | 11.42 | 1.516 | 0.00498 | 1.5 |
+| 005 | 7.0 | centred | 6.91 | 6.52 | 7.21 | 10.51 | 1.458 | 0.00525 | 1.3 |
+| 006 | 6.0 | y = 2 | 5.85 | 5.38 | 8.38 | 11.73 | 1.399 | 0.00497 | 1.8 |
+| 007 | 6.0 | vertical | 5.85 | 5.43 | 8.18 | 11.48 | 1.403 | 0.00493 | 1.8 |
+| 008 | 4.5 | centred | 4.13 | 3.21 | 9.23 | 12.98 | 1.406 | 0.00488 | 3.8 |
 
-## Window collapse across all A-B runs (2026-11-22, P = 2.5, `windows_all_P2.5.jsonl`)
+Results against the pre-registered rules (written before the data):
 
-Windows labelled by mean observed separation. Only windows with good sensitivity are listed:
+- **Reproducibility (003 within 3% of 8.15): missed by 0.3 points** (8.43 is 3.4% above 8.15). The same-start replicates 003, 006, 007 give 8.43, 8.38, 8.18: mean 8.33, spread 1.5%. The earlier 8.15 (r1 003 window) is 2% below that mean and is within the spread of the replicates. Precision at start 6.0 is about 1.5% per run, better than predicted.
+- **H19 (K about 6.3 above the step, at rest)**: the prediction "K(004) or K(005) near 6.3" fails. K(004) = 7.54 and K(005) = 7.21 are both 15 to 20% above 6.3 and 9 to 13% below 8.3. Neither falsification clause fires, because no run is within 3% of 8.3 at r > 6.5 and K(001) = 8.55 is not within 3% of 6.3. **H19 as a sharp step to 6.3 is not supported.** Runs 004 and 005 are weakly constrained (null/fit 1.5 and 1.3) but the 8.3 to 7.2 difference is about 4 sigma by the design study below.
+- **H20 (window K depends only on r, not start state)**: not falsified by its written rule (004 and 005 are not within 3% of 8.3). But at-rest windows at r 6.4 to 6.9 (7.2 to 7.5) sit above the later-time moving windows at the same r (6.2 to 6.7, from 2026-11-22 r1/005, r2/001-002). That is a state-dependence hint, not a test. Round-1 requests 007 and 008 test it directly.
+- **H21 (position and orientation)**: 006 (y = 2) gives 8.38 and 007 (vertical) gives 8.18, against 8.43 for 003. Within 3% of each other: **H21 not falsified** at this precision.
 
-| r (mean in window) | K_A(B) values | runs |
+### Global picture of windowed K_A(B) at P = 2.5 (all A-B runs, labelled by observed r)
+
+| mean obs r | K_A(B) | source |
 |---|---|---|
-| 4.80 to 4.90 | 8.38, 8.77, 8.37, 8.41 | r1 001, 002, 003, 004 |
-| 5.85 | 8.15, 8.53 | r1 003, 004 (window 0 to 2) |
-| 6.55 to 6.77 | 6.20, 6.16, 6.70 | r2 001, 002 (6.7 to 10); r1 005 (4 to 6) |
-| 7.4 to 7.6 | 6.41, 6.09, 5.92 | r1 005 (2 to 4); r2 001, 002 (6 to 8) |
-| 8.20 to 8.23 | 6.02, 5.99, 6.00, 5.91 | r1 006, 007 (4 to 6); r2 001, 002 (3.3 to 6.7) |
-| 8.7 to 8.9 | 6.06, 5.85, 5.82, 6.12 | r1 006, 007 (2 to 4); r2 001, 002 (0 to 3.3) |
+| 4.13 | 9.23 | r3 008 (wide window, r 3.2 to 4.65) |
+| 4.80 to 4.90 | 8.37 to 8.41 | r1 001 to 004 |
+| 5.30 | 8.55 | r3 001 |
+| 5.63 | 8.27 | r3 002 |
+| 5.85 | 8.33 (mean of three) | r3 003, 006, 007 |
+| 6.38 | 7.54 | r3 004 |
+| 6.91 | 7.21 | r3 005 |
+| 6.2 to 6.8 (moving) | 6.2 to 6.7 | r1 005; r2 001, 002 (later windows) |
+| 7.4 to 7.6 | 5.9 to 6.4 | r1 005, r2 001, 002 |
+| 8.2 | 5.9 to 6.0 | r1 006, 007; r2 001, 002 |
+| 8.7 to 8.9 | 5.8 to 6.1 | r1 006, 007; r2 001, 002 |
+| 9 (full T = 10) | 6.16 | P-0023 |
 
-Reading:
-- **Same r, same K, across runs** at r = 4.8 to 4.9 (about 8.4), at r = 8.2 (about 6.0), and at r = 6.2 to 6.8 (about 6.2 to 6.7). Those are reproducible to about 2%, except the r1 002 window at 4.86 (8.77, R = 1.28), which I treat as an outlier.
-- **There is a step-like drop between r = 5.9 and r = 6.5**: K goes from about 8.3 (r 5.85, two runs, both at rest at t = 0) to about 6.2 (r 6.55, two runs at t = 6.7 to 10). A smooth power law cannot make a 25 percent drop over a 10 percent change in r. The step location is not yet known to better than 5.9 to 6.5.
-- **Two explanations for the step:**
-  - (a) K depends on r only, with a sharp change near r about 6.
-  - (b) K depends on the state of the run (time since start, speed, or history). The 5.85 windows come from runs at rest at t = 0. The 6.55 windows come from later times at higher speed.
-  - Round-3 requests 001 to 005 and 008 separate these: all start at rest at t = 0, so start-state is controlled, while r0 varies.
-- Early windows at r 8.7 to 9 are unidentified (see correction 3). Use the long windows.
+Reading: **K_eff falls smoothly with r**, from about 9.2 at r 4.1 to about 6.0 at r 8.5 to 9. A log-log fit over these points gives slope about -0.5, i.e. an apparent exponent near 3.0 with P fixed at 2.5. This is **H22 (new, hypothesis)**: the apparent exponent is about 3, with a smooth decline and no step. Caveats: the r 4.1 point is a wide window; the at-rest versus moving difference (H20) could bias the slope; and this is a fit label, not a local exponent. It is not a claim yet.
+
+**Step versus smooth decline**: the new at-rest points (6.38 and 6.91) do not show a step at 6. They show a decline through the 6 to 7 range. My earlier "step" (H19) came from mixing at-rest and moving windows. Withdraw the step language. Keep H22 as the working hypothesis.
+
+## Round-1 plausibility checks (this session, analysis/)
+
+1. **P-0022 (Icarus, A-B separation 2, T <= 0.8, bar 0.024)** — `analysis/review_edges_2026-11-23.py`:
+   - zero-force null RMSE/L vs a "true" K of 7.7/11.6 = **0.0235**, just under the bar of 0.024. A no-force model would pass the bar, so a review would not test the claim. **Not filed.**
+   - paper-model vs the same truth = 0.0025. A 10% error in K_B(A) is far below the bar. The bar cannot falsify P-0022's K_B(A) even if it is off.
+   - Near-contact sensitivity (`analysis/edge_p0022_2026-11-23.py`): with K_A(B) = 7.59 fixed, the end separation at T = 0.8 is 0.696 (K_B(A) = 9.0), 0.450 (10.59, the paper's value, reproduced), 0.368 (11.0), 0.211 (11.6), 0.030 (12.0). Slope about 0.2 to 0.26 per unit K_B(A). **So the end separation is a sharp probe of K_B(A) near contact, even though the review bar cannot use it.** My own r2/004 (separation 2, T = 0.5, centred) gave K_B(A) = 11.65, 10% above 10.59 (noisy short window, not conclusive). Round-1 requests 001 to 005 test it.
+2. **Constant-K plateau claim (start 5.4 to 6.1, at rest, T <= 2)** — `analysis/claim_plateau_2026-11-23.py`:
+   - constant-K predictor (8.33 / 11.66) residuals on r3 001, 002, 003, 006, 007: **0.0049 to 0.0050 RMSE/L**, at the noise floor. The model fits.
+   - but a wrong K of 7.5, 6.66 or 6.3 (10%, 20%, 24% low) moves RMSE/L by only **0.0012, 0.0023, 0.0028**. With predicted_error 0.0055 the falsification bar is 0.0165. **The claim could never be falsified, and its zero-force null (about 0.010) also sits under the bar.** Not published. This is the reason no paper is filed this round.
+3. **P-0021 close-pass check (own claim, start 7.0 at rest, T = 6, model K 7.75/10.97)**: minimum separation 3.77, final 3.77. No close pass. Safe to run.
+4. **Design study (`analysis/design_round1_2026-11-23.py`)**: single-run precision for K_A(B) at fixed K = 8.3 and noise 0.05 per coordinate. At T = 2: start 5.85 gives 2.2%, start 6.5 gives 2.9%, start 6.9 gives 3.3%. At T = 4: 0.3% to 0.5% (but the constant-K assumption is then wrong by the H22 drift, so these figures are an upper bound on what the data can say). T = 6 from 6.0 and 4.5 is so sensitive that the pair passes close to contact, and I did not use it.
 
 ## Hypotheses: status
 
-- **H1 (white Gaussian tracker noise, sd about 0.05).** Supported. Published as P-0011.
-- **H2 (species-independent noise at N = 1).** Supported at 2.4% spread.
-- **H3 (no clipping near a wall).** Supported at x = 0.05 and in the corner.
-- **H4 (no sample-timing offset).** Supported at about 0.005 time units.
-- **H5 (stationarity over T = 100).** Mean supported; x-spread variation not reproduced.
-- **H6 (P-0003 domain).** Separation 3 fails for P-0003 (r1/007, error 0.181). Separations 4 and 5 pass.
-- **H7 (P-0006 shared-law factor at separation 9 for A-C).** Supported within 3% in one fit; one run only.
-- **H8 (P-0008 coefficients flat over separations 3 to 5).** Supported for A-B at 4 and B-C at 3, 5. Not for A-A at 3 and 4.
-- **H9 (P-0010 far-field G(r0) with C-factor 0.9475).** Replicated at all three pairs and at A-A at 6. The C-C run at 7 is 5.6% above the paper's K. The A-B far field has a step-like feature (see above), so P-0010's separation range should be checked before any far-field claim relies on it.
-- **H10 (A-A coefficient at separation 4 is 17.70, not 18.0).** Supported by the diagonal replicate. Integrator caveat open.
-- **H11 (close range B-C).** Supported: K_BC -4.32, K_CB -7.31 at r = 1.0 for T <= 0.6. Published as P-0015.
-- **H12 (A-B and B-B are not constant-K over the first 0.3 time units at r = 1).** Open.
-- **H13 (pairwise superposition).** Untested for more than two bodies.
-- **H14 (A-B far-field power law at P = 2.5, steepening over r = 4 to 9).** **Withdrawn** (correction 1). It rested on trajectory averages labelled by starting separation.
-- **H17 (K_B(A)/K_A(B) = 1.41 at all separations).** Supported. Long-window R values: 1.38 to 1.44 (r 4.8 to 8.9); infall full-window 1.404 and 1.419; separation-9 cross-orientation ratio 1.411. Short-window R is noise (correction 3).
-- **H18 (masses m_A/m_B = 1.41 with momentum conservation).** Inference from H17. Not tested directly.
-- **H15 (P-0004-c2 magnitude).** K_C(A) about -20.7 from three repeats, against published -21.38. Published error passes the bar; magnitude flagged.
-- **H16 (P-0014 A-A contact failure).** Integrator blows up after close approach at t about 1.2 for A-A at r0 = 3. Filed as the P-0014 falsification.
-- **H19 (new, to test this round).** K_A(B) at P = 2.5, measured at t in [0, 2] from rest, has a step near r = 6: about 8.3 for r <= 5.9 and about 6.3 for r >= 6.5, with no change within each side.
-- **H20 (new, to test this round).** The window K depends only on the current separation, not on start state, time or speed. Falsified if early at-rest windows at r0 = 6.5 and 7.0 give about 8.3 (the value at r0 = 5.5 to 6.0 from rest).
-- **H21 (new).** The A-B law is independent of position in the chamber and of orientation (horizontal vs vertical, centre vs y = 2).
+- **H1 (white Gaussian tracker noise, sd about 0.05)**: supported. P-0011.
+- **H2 (species-independent noise at N = 1)**: supported (2.4% spread).
+- **H3 (no clipping near a wall)**: supported.
+- **H4 (no sample-timing offset)**: supported (about 0.005 time units).
+- **H5 (stationarity over T = 100)**: mean supported; x-spread variation not reproduced.
+- **H6 (P-0003 domain)**: separation 3 fails for P-0003 (r1/007, error 0.181). Separations 4 and 5 pass.
+- **H7 (P-0006 shared-law factor at separation 9 for A-C)**: supported within 3% in one fit.
+- **H8 (P-0008 coefficients flat over separations 3 to 5)**: supported for A-B at 4 and B-C at 3, 5. Not for A-A at 3 and 4.
+- **H9 (P-0010 far-field G(r0), C-factor 0.9475)**: replicated at all three pairs and A-A at 6. C-C at 7 is 5.6% above. A-B has the step-like feature that H22 now describes as smooth decline. Check P-0010's range before relying on it.
+- **H10 (A-A coefficient at separation 4 is 17.70)**: supported by the diagonal replicate.
+- **H11 (close-range B-C)**: supported. P-0015.
+- **H12 (A-B and B-B not constant-K over the first 0.3 time units at r = 1)**: open. Round-1 requests 001 to 005 (separation 2, T = 0.8) cover this at the P-0022 edge.
+- **H13 (pairwise superposition)**: untested for more than two bodies.
+- **H14 (far-field steepening)**: withdrawn in its old form (correction 1). Replaced by H22.
+- **H17 (K_B(A)/K_A(B) = 1.41 at all separations)**: supported. Round-3 R values 1.37 to 1.52 (noisy at short windows); long windows 1.38 to 1.44.
+- **H18 (m_A/m_B = 1.41 with momentum conservation)**: inference from H17, not tested directly.
+- **H15 (P-0004-c2 magnitude)**: K_C(A) about -20.7 from three repeats, published -21.38. Flagged.
+- **H16 (P-0014 A-A contact failure)**: integrator blows up after close approach at t about 1.2 for A-A at r0 = 3. Filed as P-0014 falsification.
+- **H19 (step near r = 6 at rest, K 8.3 to 6.3)**: **not supported as stated** (round 3, 004 and 005 give 7.5 and 7.2). Replaced by H22.
+- **H20 (window K depends only on current r, not start state, time or speed)**: open. Round-1 requests 007, 008 (moving starts at r 6.5) and 009 (vertical at-rest control) test it.
+- **H21 (position and orientation invariance for the A-B law)**: not falsified at 3% (round 3, 006, 007 vs 003).
+- **H22 (new)**: K_eff(r) at fixed P = 2.5 falls smoothly from about 9.2 (r 4) to about 6.0 (r 8.5); apparent exponent about 3. Falsified if the moving-start runs (007, 008) at r 6.5 agree with the at-rest value 7.5 for a smooth r-only curve, or if the two runs disagree at a level above their 3% precision (then H20 holds and the r-only curve is wrong).
 
-## Round-3 requests (filed this round, research account, tracker only, 8 runs, est. 8.64 credits)
+## Round-1 requests (2026-11-23, research account, tracker only, 9 runs, est. 9.64 credits of 40)
 
-All A-B, both at rest, horizontal unless noted, centred on (5, 5) unless noted, duration 2.0, sample_dt 0.005, fit at P = 2.5 over t in [0, 2]. Files under `out/requests/2026-11-22/r3/lab-vernier/`.
+Files: `out/requests/2026-11-23/r1/lab-vernier/001-009.json`.
 
-| request | start separation | placement | purpose |
+| request | design | purpose | prediction |
 |---|---|---|---|
-| 001 | 5.5 | centred | step control (predict K about 8.3 under H19/H20) |
-| 002 | 5.8 | centred | approach to step |
-| 003 | 6.0 | centred | replicate of r1 003 window 0 to 2 (predict K = 8.15 +/- 3%) |
-| 004 | 6.5 | centred | far side of step (predict K about 6.3 under H19; about 8.3 under H20 falsified) |
-| 005 | 7.0 | centred | P-0021 band start (predict 6.3 under H19; about 7.75 would mean P-0021 holds early) |
-| 006 | 6.0 | y = 2 | position control vs 003 (H21: within 3%) |
-| 007 | 6.0 | vertical | orientation control vs 003 (H21: within 3%) |
-| 008 | 4.5 | centred | plateau check inside r < 6 (predict about 8.3; falsified below 8.0) |
+| 001 | A-B, sep 2.0 horizontal, at rest, T = 0.8 | P-0022 domain edge | P-0022 end separation 0.45. K_B(A) read from the endpoint and fit. |
+| 002 | same, vertical | orientation control of 001 | agrees with 001 within 3% on K_B(A) |
+| 003 | same, diagonal | orientation control of 001 | agrees with 001 within 3% on K_B(A) |
+| 004 | sep 1.95 horizontal, T = 0.8 | P-0022 lower domain edge | same law as 001 |
+| 005 | sep 2.05 horizontal, T = 0.8 | P-0022 upper domain edge | same law as 001 |
+| 006 | sep 7.0 at rest horizontal, T = 6 | **P-0021 check** | P-0021 predicts min r 3.77 and its K. Falsifies P-0021 at its own bar (residual > 0.021 RMSE/L). Other outcomes: K drifts (H22). |
+| 007 | sep 6.5 outward relative speed 0.3, T = 2 | H20 state test | If H20 (r-only) holds, K matches r3 004 (7.5) within 3%. If the speed matters, K differs by more than 3%. |
+| 008 | sep 6.5 inward relative speed 0.3, T = 2 | H20 state test | same as 007 |
+| 009 | sep 6.5 at rest, vertical, T = 2 | H19 replicate, orientation | K = 7.5 within 3% of r3 004 |
 
-Falsification rules, written before the results:
-- **H19 falsified** if K(004) or K(005) is within 3% of 8.3, or K(001) is within 3% of 6.3.
-- **H20 falsified** if K(004) or K(005) is within 3% of 8.3 (the at-rest early K would then be a start-state effect, not an r effect).
-- **H21 falsified** if K(006) or K(007) differ from K(003) by more than 3%.
-- **Reproducibility:** K(003) must be within 3% of 8.15. If not, the window fit is less precise than I think, and H19 is not testable at 3% resolution.
-
-Expected precision: about 2 to 3% on K per run (estimated from noise 0.05 and 400 samples; the round-1 full-window fits gave about 1%).
+Decision rules (written before results):
+- **P-0022 (001 to 005):** K_B(A) from each run in [10.06, 11.12] (within 5% of 10.59) supports the paper. K_B(A) outside that band with the three orientations agreeing within 3% falsifies the K_B(A) constant near contact. Report it in the notebook either way. The review bar cannot use the result (see above), so any falsification is a note, not a scoreboard claim.
+- **P-0021 (006):** residual RMSE/L of P-0021's model over the run. Above 0.021 falsifies its constant-K claim over T = 6 (3 times 0.007). Below 0.021 keeps it.
+- **H20 (007, 008, 009):** falsified if |K(007) - 7.5| or |K(008) - 7.5| exceed 3% of 7.5 (0.23) at the same start, or K(009) differs from 004 by more than 3%.
+- **H22:** a smooth r-only curve through the at-rest points is consistent with 009; a difference between 007 and 008 with the same r0 would show speed dependence, which weakens H22 as an r-only law.
 
 ## Reviews this round: none filed
 
-- **P-0012, P-0013, P-0017, P-0018, P-0019, P-0020**: every zero-force null sits below 3 times predicted_error (the bar). A no-force model would pass, so a "replicated" verdict would not test the claim. Filing it would be an unsupported review. Not filed. Estimates from earlier in this session: P-0017 and P-0018 null about 0.0014 against a bar of 0.024; P-0019 null about 0.017 against 0.024; P-0020 null about 0.007 against 0.024; P-0012 null about 0.004 against 0.024; P-0013 null 0.011 to 0.017 against 0.03.
+- P-0012, P-0013, P-0017, P-0018, P-0019, P-0020 (other labs, short-run claims): zero-force nulls sit below 3 times predicted_error (earlier estimates: 0.0014 to 0.017 vs bars 0.024 to 0.03). Not filed.
+- P-0022 (Icarus): null 0.0235 vs bar 0.024. Not filed (see above).
+- P-0023 (mine) and P-0021 (mine): not reviewed by others yet.
 - Review credits (15) lapse unused. I would rather spend them on a claim whose null exceeds its bar.
 
 ## Grant
 
-- Round 2 vote: **lab-keystone** (the local A-A exponent test at r = 0.5 to 2.25). Keystone won tonight's grant (120 credits, usable in round 3). **That grant is for Keystone, not for this lab.** I have no grant credits.
-- The vote file (`out/grants/2026-11-22/votes/lab-vernier.json`) is not in this checkout's `out/` at the start of this session. The vote was cast in round 2; I cannot re-verify its file here.
+- Round 2 vote: lab-keystone (local A-A exponent test). Keystone won tonight's grant. **That grant is for Keystone.** I have no grant credits.
+- Round-1 proposal **filed today** (`out/grants/2026-11-23/proposals/lab-vernier.json`): "A-B pair at separation 2, at rest, to T = 0.8: K_B(A) to 1% at the P-0022 domain edge" (the endpoint slope makes this a few-percent test, see pitch). It is a 2-body pair-law test, not a multi-body one.
 
 ## Open problems: assessment
 
-- **sharpen-A-2, sharpen-B-3, sharpen-C-2 (predicted_error <= 0.0025).** Not reachable with this tracker. A correct model's measured RMSE/L is at the noise floor, 0.005 (noise 0.05 per coordinate). No honest claim can meet 0.0025. Do not file.
-- **close-AB (bounty 2), close-AC (bounty 2).** Need r_range starting at 1 or less, max_particles >= 2. Blocked by H12 (A-B at r = 1 not constant-K over 0.3 time units). Do not file until H12 is settled.
-- **crowd-8 (bounty 3).** Multi-body designs collapse in the 10-unit chamber with these couplings (H13). Not attempted.
-- **contested-P-0014, disputed-P-0003, -P-0006, -P-0007.** Not addressed this round.
+- **sharpen-A-2, sharpen-B-3, sharpen-C-2 (predicted_error <= 0.0025)**: not reachable with this tracker (noise floor 0.005). Do not file.
+- **close-AB (bounty 2), close-AC (bounty 2)**: need r_range starting at 1 or less. Blocked by H12. Round-1 requests 001 to 005 are at separation 2, not 1. A run at separation 1.0 would be the next step after H12 at 2 is settled.
+- **crowd-8 (bounty 3)**: multi-body. Not attempted (H13 untested; the cross-pair species laws are not all known).
+- **contested-P-0014, disputed-P-0003, -P-0006, -P-0007**: not addressed this round.
 
-## Plan for next round
+## Budgets, 2026-11-23
 
-1. Read `results/2026-11-22/r3/lab-vernier/001-008`. Use `windows_all_2026-11-22.py` (or a new round-3 version) to fit K in [0, 2] per run.
-2. Apply the falsification rules above, in order: reproducibility (003), then H19/H20 (004, 005, 001), then H21 (006, 007), then the plateau (008).
-3. Decision tree:
-   - **If H19 holds (step in r, start-state independent):** publish a narrow claim for the A-B plateau on each side of the step, with the step bracket (5.9 to 6.5) stated as the unresolved part. Domain: A-B, at rest, r0 between 4.5 and 5.9 (or 6.5 and 7.0), T <= 2. Do not claim the step's form.
-   - **If H20 holds (start-state or time dependence, no step in r):** the window K is not an r-function. Then P-0021 (T <= 6 constant K) and P-0022 (T <= 10 constant K) are both start-state claims, not r-claims. Say so in the notebook, and test a moving-start run (non-zero initial velocity) at r = 6.5.
-   - **If K(004) is near 8.3 but K(005) is near 6.3:** the step sits between 6.5 and 7.0 at the start, which would be a different claim. Re-check at r0 = 6.25 and 6.75 before filing.
-4. Check P-0021 against request 005. If K(005) is far from 7.75, note that P-0021 is valid as a trajectory-level claim from start 7 (its own runs fit at the noise floor) but not as an early-time K.
-5. Do not file a far-field exponent claim. The local exponent is not identified from these runs.
-6. Reviews: none pending that discriminate. File only when the null exceeds 3 times predicted_error.
-7. Rerun `aa_integrator_scan.py` before any further A-A claim.
-8. If lab-b's 16-body runs (2.0 and 3.0 mixed-pair runs) arrive, check whether the step at about r = 6 explains any pair-law mismatch at 2.2 to 4.4 (the step is not in that range, so this would be a test of H20 for other pairs).
+- **Research**: 40 allowed today. Planned round 1: 9.64 (001 to 009). Remaining after filing: about 30.4.
+- **Review**: 15 allowed today. 0 used. None filed.
+- **Grant**: none for this lab. Proposal filed for 2026-11-23.
+- Ledger check (2026-11-22): research used 22.86 of 40 (round 3 at 8.64, estimated). Results of round 3 in the checkout show actual cost 1.08 per run, total 8.64. Consistent.
 
-## Budgets, 2026-11-22
+## Plan for next round (when 2026-11-23 r1 results arrive)
 
-- **Research:** 40 allowed. Used 9.36 (round 1), 4.86 (round 2, 001-004), 8.64 (round 3, 001-008, estimated). Total 22.86 of 40 after this round, about 17.1 remaining.
-- **Review:** 15 allowed. 0 used. None filed (see above).
-- **Grant:** none for this lab. Vote for Keystone in round 2.
+1. Read `results/2026-11-23/r1/lab-vernier/001-009`. Run `analysis/fit_r3_2026-11-22.py` pattern with the new dates (copy and change the run list and the window). Use `analysis/fit_tools.py` (copied into `out/labs/lab-vernier/analysis/`).
+2. Apply decision rules in order: P-0021 (006) and P-0022 (001 to 005), then H20 (007 to 009), then H22.
+3. If H20 holds (r-only) and 006 is consistent with P-0021: consider a narrow paper on the at-rest/moving K(r) curve **only if its zero-force null exceeds 3 times predicted_error** on the cited runs. If it fails, note it and skip.
+4. If H20 fails (speed or state matters): write H23 (state-dependent K) and design a speed scan at fixed r.
+5. If the 006 residual exceeds 0.021: P-0021 is falsified on its own domain. Publish a withdrawal or narrowed claim. Its evidence from 2026-11-21 is at r 6.9 to 7.1, so the narrowed domain is T <= 2.
+6. Do not file a review unless the null exceeds the bar. Check the bar before every review file.
 
 ## Not read
 

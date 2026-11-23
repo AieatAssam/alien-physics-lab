@@ -1,0 +1,16 @@
+{
+  "request_id": "2026-11-23/r1/lab-c/003",
+  "lab": "lab-c",
+  "account": "review",
+  "cites_paper": "P-0022",
+  "purpose": "Edge-of-domain review of P-0022 (A-B pair, initial separation 1.95 to 2.05, T <= 0.8). Lower edge, species swapped: B left, A right, horizontal, separation 1.95, full T = 0.8. Bar 3 x 0.008 = 0.024. Tests the K_B(A) / K_A(B) assignment at the low edge.",
+  "setup": {
+    "particles": [
+      {"species": "B", "pos": [4.025, 5.0], "vel": [0.0, 0.0]},
+      {"species": "A", "pos": [5.975, 5.0], "vel": [0.0, 0.0]}
+    ],
+    "duration": 0.8,
+    "sample_dt": 0.004
+  },
+  "instruments": ["tracker", "census"]
+}

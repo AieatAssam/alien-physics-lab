@@ -1,0 +1,111 @@
+{
+  "lab": "lab-a",
+  "date": "2026-11-23",
+  "title": "Nine mixed particles (3 each of A, B, C) on a 3x3 grid, at rest, T 50: pairwise additivity across species",
+  "pitch": "Nine particles, 3 each of A, B, C, on the 3x3 grid of spacing 3.5 used for our N=9 same-species check, at rest, T 50, sampled every 0.05. The question is whether the mixed crowd is the sum of pair terms, which we have only measured at T <= 1 for separations 3 to 5 and at T <= 10 for A-A. Falsifier fixed in advance: RMSE/L above 0.02 against a pairwise-sum model fitted to pair runs refutes species-independent pairwise additivity at N = 9. Each run to be repeated.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          1.5,
+          1.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          1.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          1.5,
+          8.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          5.0,
+          1.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          8.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          8.5,
+          1.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          8.5,
+          8.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 50.0,
+    "sample_dt": 0.05
+  }
+}

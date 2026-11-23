@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-23/r1/lab-vernier/008",
+  "lab": "lab-vernier",
+  "account": "research",
+  "purpose": "H20 state test: separation 6.5, inward relative motion 0.3, T = 2 (compare with at-rest r3/004)",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          1.75,
+          5.0
+        ],
+        "vel": [
+          0.15,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          8.25,
+          5.0
+        ],
+        "vel": [
+          -0.15,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

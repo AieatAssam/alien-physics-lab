@@ -1,0 +1,45 @@
+{
+  "lab": "lab-b",
+  "date": "2026-11-23",
+  "title": "Centre-of-mass test of equal-and-opposite pair forces: masses 2.37 : 1.69 : 1 for A, B, C",
+  "pitch": "Shape-free test of equal-and-opposite pair forces. Three particles at rest on a side-6 triangle, T = 2.5. If pair forces are central and equal-opposite, the mass-weighted centre of mass (m_A, m_B, m_C = 2.37, 1.69, 1, from K_BA/K_AB = 1.40, K_CA/K_AC = 2.37, K_CB/K_BC = 1.70) stays fixed. Prediction: drift below 0.01 (noise floor about 0.003). Equal masses predict drift about 0.14. Falsified if drift exceeds 0.01. Walls at least 0.7 away, pairs at least 5.5 apart: no wall or close approach.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.0,
+          3.2679
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          8.0,
+          3.2679
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.0,
+          8.4641
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.5,
+    "sample_dt": 0.01
+  }
+}

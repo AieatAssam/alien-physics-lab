@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-23/r1/lab-a/017",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "Close-CC vertical control: centre (5,5), r0 1.0, T 0.15.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          5.0,
+          4.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.0,
+          5.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.15,
+    "sample_dt": 0.0005
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

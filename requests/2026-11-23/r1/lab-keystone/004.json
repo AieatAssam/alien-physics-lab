@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-23/r1/lab-keystone/004",
+  "lab": "lab-keystone",
+  "account": "research",
+  "purpose": "A-A exponent extension (round 1 of 2026-11-23): r0 = 5.0, V, at rest, T = 2.0. Tests whether the power law of P-0024 extends beyond r0 = 3.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          2.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          7.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

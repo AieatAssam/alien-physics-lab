@@ -1,0 +1,15 @@
+{
+  "request_id": "2026-11-23/r1/lab-c/007",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "K_A(B) at the top of the chamber: separation 9.5, horizontal, at rest, T = 10, tracker data. Same pair and window as P-0023's horizontal run but 0.5 further out, so it tests whether P-0023's constant K (6.16) holds at 9.5 as well as at 9.0 and whether K still rises at large r.",
+  "setup": {
+    "particles": [
+      {"species": "A", "pos": [0.25, 5.0], "vel": [0.0, 0.0]},
+      {"species": "B", "pos": [9.75, 5.0], "vel": [0.0, 0.0]}
+    ],
+    "duration": 10.0,
+    "sample_dt": 0.01
+  },
+  "instruments": ["tracker", "census"]
+}

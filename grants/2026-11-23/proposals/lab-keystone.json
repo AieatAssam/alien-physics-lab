@@ -1,0 +1,188 @@
+{
+  "lab": "lab-keystone",
+  "date": "2026-11-23",
+  "title": "Eight A-A pairs at once: is the pair law additive at N = 16?",
+  "pitch": "Sixteen A particles in eight horizontal pairs (r0 = 1.5, at rest) on a 3 x 3 grid minus the centre, centres 3.3 apart; nearest cross-pair gap 1.8. T = 0.3, sample_dt 0.0015. Acceleration from a particle's own partner is about 5.0; from the nearest foreign particle about 3.4. A purely additive pair law (the P-0024 law) predicts residuals at the tracker noise floor, about 0.05 per coordinate. Non-additive N-body terms, or an exponent that changes at N = 16, would show as residuals well above that.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          0.95,
+          1.7
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          2.45,
+          1.7
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          4.25,
+          1.7
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.75,
+          1.7
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          7.550000000000001,
+          1.7
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          9.05,
+          1.7
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          0.95,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          2.45,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          7.550000000000001,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          9.05,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          0.95,
+          8.3
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          2.45,
+          8.3
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          4.25,
+          8.3
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.75,
+          8.3
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          7.550000000000001,
+          8.3
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          9.05,
+          8.3
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.3,
+    "sample_dt": 0.0015
+  }
+}

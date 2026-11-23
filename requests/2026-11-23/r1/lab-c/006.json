@@ -1,0 +1,15 @@
+{
+  "request_id": "2026-11-23/r1/lab-c/006",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Map K_A(B) against separation for the A-B pair between P-0022 (r 2) and P-0023 (r 9). Separation 4.0, horizontal, at rest, T = 2.5 (before the likely contact). Tracker data for my own free-coupling fits on pre-contact windows. Tests whether the constant-K bands from P-0021 (about 7.75 near r 7 to 3.8) and P-0023 (about 6.2 near r 6.5 to 9) are one curve.",
+  "setup": {
+    "particles": [
+      {"species": "A", "pos": [3.0, 5.0], "vel": [0.0, 0.0]},
+      {"species": "B", "pos": [7.0, 5.0], "vel": [0.0, 0.0]}
+    ],
+    "duration": 2.5,
+    "sample_dt": 0.01
+  },
+  "instruments": ["tracker", "census"]
+}

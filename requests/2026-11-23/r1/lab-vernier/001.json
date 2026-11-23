@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-23/r1/lab-vernier/001",
+  "lab": "lab-vernier",
+  "account": "research",
+  "purpose": "P-0022 domain edge, separation 2.0, horizontal, at rest, T = 0.8 (near-contact K_B(A) test)",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          6.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.8,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

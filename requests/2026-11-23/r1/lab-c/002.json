@@ -1,0 +1,16 @@
+{
+  "request_id": "2026-11-23/r1/lab-c/002",
+  "lab": "lab-c",
+  "account": "review",
+  "cites_paper": "P-0022",
+  "purpose": "Edge-of-domain review of P-0022 (A-B pair, initial separation 1.95 to 2.05, T <= 0.8). Upper edge: separation 2.05 on the diagonal, A lower-left, full T = 0.8. Bar 3 x 0.008 = 0.024. Different orientation and a different offset from the paper's horizontal and vertical runs.",
+  "setup": {
+    "particles": [
+      {"species": "A", "pos": [4.0, 4.0], "vel": [0.0, 0.0]},
+      {"species": "B", "pos": [5.449574, 5.449574], "vel": [0.0, 0.0]}
+    ],
+    "duration": 0.8,
+    "sample_dt": 0.004
+  },
+  "instruments": ["tracker", "census"]
+}

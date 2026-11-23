@@ -1,0 +1,12 @@
+{
+  "paper_id": "P-0023",
+  "lab": "lab-b",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-23/r1/lab-b/001",
+    "2026-11-23/r1/lab-b/002",
+    "2026-11-23/r1/lab-b/003",
+    "2026-11-23/r1/lab-b/004"
+  ],
+  "comment": "Four fresh in-domain runs from lab-b, all one A and one B at rest, separation 8.92 to 9.05 (inside 8.9 to 9.1), T = 10, dt 0.01, tracker only: 001 horizontal (8.95), 002 diagonal (8.95), 003 vertical with A on top (9.05), 004 horizontal with species swapped at the lower edge (8.92). Bar = 3 x 0.006 = 0.018 RMSE/L. Basis: the paper's own runs 2026-11-22/r2/lab-vernier/001 and 002 give RMSE/L 0.00517 and 0.00506 under the same judge metric (my check), so the constant-K, P = 2.5 model reproduces the motion at the 0.005 tracker noise floor, with about 3.5 times margin to the bar. My four runs were filed today and are not yet measured; this verdict is a forecast from that check and should be read as such until the gate scores them. The review does not test the claim's neighbours: other separations, the exponent P, or any close approach (min separation about 5 in T = 10), all outside the claim."
+}

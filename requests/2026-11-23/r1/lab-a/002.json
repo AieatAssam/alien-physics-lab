@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-23/r1/lab-a/002",
+  "lab": "lab-a",
+  "account": "review",
+  "purpose": "Review of P-0022: horizontal A-B at separation 2.04 (upper edge), B left, at rest, T 0.8.",
+  "cites_paper": "P-0022",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          3.98,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.02,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.8,
+    "sample_dt": 0.004
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

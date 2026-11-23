@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-23/r1/lab-b/002",
+  "lab": "lab-b",
+  "account": "review",
+  "purpose": "Review P-0023 at separation 8.95 along the diagonal, T = 10, tracker only. Tests an orientation not used by the paper.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          1.8357,
+          1.8357
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          8.1643,
+          8.1643
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 10.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0023"
+}

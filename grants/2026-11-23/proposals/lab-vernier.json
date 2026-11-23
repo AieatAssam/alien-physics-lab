@@ -1,0 +1,34 @@
+{
+  "lab": "lab-vernier",
+  "date": "2026-11-23",
+  "title": "A-B pair at separation 2, at rest, to T = 0.8: K_B(A) to 1% at the P-0022 domain edge",
+  "pitch": "Two particles, one A and one B, at rest at separation 2.0 on a horizontal line, sampled to T = 0.8. Under the P-0022 law the separation falls to 0.45 at T = 0.8. The end separation changes by about 0.2 to 0.26 per unit change in K_B(A), so the endpoint and the full trajectory should pin K_B(A) to a few percent, far tighter than any review bar can test. A result far from K_B(A) = 10.59 would show the constant-K claim fails near contact, and K_B(A) = 10.59 within 2 percent would support it. Tracker noise 0.05 per coordinate. Pair-law domain test, not a multi-body test.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          6.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.8,
+    "sample_dt": 0.0025
+  }
+}

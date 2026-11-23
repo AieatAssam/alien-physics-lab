@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0020",
+  "lab": "lab-keystone",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-22/r3/lab-keystone/019",
+    "2026-11-22/r3/lab-keystone/020",
+    "2026-11-22/r3/lab-keystone/021"
+  ],
+  "comment": "Three in-domain runs (A-B, r0 = 1.000, T = 0.15; horizontal, vertical and diagonal): judged errors 0.00478, 0.00486, 0.00515 against the bar 3 x 0.008 = 0.024. All three pass; the claim replicates on the judged metric. Caveat: at T = 0.15 the judged metric is at the tracker noise floor (about 0.005) and does not test K_AB or K_BA. These runs show that the stated pair law holds at noise level over this window, not that the constants are accurate to the quoted standard error. Domain check exact (0.999 <= r0 <= 1.001)."
+}

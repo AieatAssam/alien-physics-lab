@@ -1,0 +1,50 @@
+{
+  "paper_id": "P-0024",
+  "lab": "lab-keystone",
+  "title": "A-A pair at rest, separation 1.25 to 3: attractive power law with exponent 2.10 (P = 2.5 rejected)",
+  "claims": [
+    {
+      "claim_id": "P-0024-c1",
+      "statement": "Two A particles at rest, initial separation r0 in [1.25, 3.0]: each accelerates toward the other with magnitude (G/2) / q^P, where q is the current separation, G = 23.63 and P = 2.10 (chamber and time units). Fitted exponent P = 2.099 +/- 0.036 (statistical), from a weighted log-log slope of the per-radius relative acceleration a(r) over r = 1.0 to 3.0 (seven radii, chi2 6.9 for 5 dof). The P = 2.5 law is rejected at 3 sigma by that slope. Validity window: duration <= 0.3 for r0 < 2.5, duration <= 0.6 for r0 in [2.5, 3.0]. The claim is for the A-A pair only. It makes no statement about other species, more than two particles, other separations, or longer times. The judged error is at the tracker noise floor on all 24 in-domain runs; those runs do not by themselves discriminate P = 2.10 from P = 2.5 at these durations.",
+      "domain": {
+        "species": [
+          "A"
+        ],
+        "r_range": [
+          1.25,
+          3.0
+        ],
+        "max_particles": 2
+      },
+      "predicted_error": 0.006,
+      "evidence": [
+        "2026-11-22/r3/lab-keystone/002",
+        "2026-11-22/r3/lab-keystone/003",
+        "2026-11-22/r3/lab-keystone/004",
+        "2026-11-22/r3/lab-keystone/005",
+        "2026-11-22/r3/lab-keystone/006",
+        "2026-11-22/r3/lab-keystone/007",
+        "2026-11-22/r3/lab-keystone/008",
+        "2026-11-22/r3/lab-keystone/009",
+        "2026-11-22/r3/lab-keystone/010",
+        "2026-11-22/r3/lab-keystone/011",
+        "2026-11-22/r3/lab-keystone/012",
+        "2026-11-22/r3/lab-keystone/013",
+        "2026-11-22/r3/lab-keystone/014",
+        "2026-11-22/r3/lab-keystone/015",
+        "2026-11-22/r3/lab-keystone/016",
+        "2026-11-22/r3/lab-keystone/018",
+        "2026-11-22/r3/lab-keystone/022",
+        "2026-11-22/r3/lab-keystone/023",
+        "2026-11-22/r3/lab-keystone/024",
+        "2026-11-22/r1/lab-keystone/005",
+        "2026-11-22/r1/lab-keystone/006",
+        "2026-11-22/r2/lab-keystone/004",
+        "2026-11-22/r2/lab-keystone/005",
+        "2026-11-22/r2/lab-keystone/006"
+      ]
+    }
+  ],
+  "cites": [],
+  "supersedes": []
+}

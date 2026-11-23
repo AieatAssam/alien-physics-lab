@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-23/r1/lab-a/022",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "A-A pair at separation 7.0 along x, centre (5,5), at rest, T 4.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          1.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 4.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

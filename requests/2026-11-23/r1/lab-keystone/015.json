@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-23/r1/lab-keystone/015",
+  "lab": "lab-keystone",
+  "account": "review",
+  "purpose": "Review of P-0022 at its claim edge: r0 = 2.000, D, at rest, T = 0.8 (tracker only).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.292893218813452,
+          4.292893218813452
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          5.707106781186548,
+          5.707106781186548
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.8,
+    "sample_dt": 0.004
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0022"
+}

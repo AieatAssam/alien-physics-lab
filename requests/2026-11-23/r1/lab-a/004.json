@@ -1,0 +1,39 @@
+{
+  "request_id": "2026-11-23/r1/lab-a/004",
+  "lab": "lab-a",
+  "account": "review",
+  "purpose": "Review of P-0022: diagonal A-B at separation 2.04 (upper edge), at rest, T 0.8.",
+  "cites_paper": "P-0022",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.278751,
+          4.278751
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          5.721249,
+          5.721249
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.8,
+    "sample_dt": 0.004
+  },
+  "instruments": [
+    "tracker",
+    "census"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-23/r1/lab-b/001",
+  "lab": "lab-b",
+  "account": "review",
+  "purpose": "Review P-0023 at separation 8.95 (horizontal, A left), T = 10, tracker only. Own replicate of the claim's domain.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          0.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          9.45,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 10.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0023"
+}
