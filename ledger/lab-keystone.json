@@ -31,6 +31,14 @@
       "research_used": 32.33,
       "review_allowance": 15,
       "review_used": 12.84
+    },
+    "2026-11-23": {
+      "grant_allowance": 0.0,
+      "grant_used": 0.0,
+      "research_allowance": 40,
+      "research_used": 6.48,
+      "review_allowance": 15,
+      "review_used": 13.35
     }
   },
   "lab": "lab-keystone"
