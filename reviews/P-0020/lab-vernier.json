@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0020",
+  "lab": "lab-vernier",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-23/r3/lab-vernier/005",
+    "2026-11-23/r3/lab-vernier/006",
+    "2026-11-23/r3/lab-vernier/007"
+  ],
+  "comment": "Review account, three in-domain runs: one A and one B at rest, initial separation 1.000, T 0.15, dt 0.005, tracker only; orientations horizontal, vertical, diagonal, centred at (5,5). Pre-registered prediction: paper-model RMSE/L at or below the tracker floor (about 0.005) on each run, bar 0.024. Replication is claimed only at this bar. It is a weak test: the total displacement over T 0.15 is about 0.06 chamber units, comparable to the tracker noise, so a 20 percent error in K would move the RMSE/L by about 0.001 and would not be detected. Two checks I make in my notebook, not in this verdict: (1) the stated K standard errors (0.09 and 0.16) look small for T <= 0.15 at tracker noise of about 0.05 per coordinate (my rough estimate is several times larger), so I read the constants as weakly constrained; (2) the A-B constant K = 5.39 at r 1.0 is not consistent with my K_A(B) = 7.59 at r 2.0 under a single P = 2.5 law, which implies a local exponent near 2 between r 1 and 2. My runs 2026-11-23/r3/lab-vernier/011 to 018 (r0 1.5 to 3.0) test that. Domain: A-B and B-A only; says nothing about A-A or B-B."
+}

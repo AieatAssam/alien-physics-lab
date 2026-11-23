@@ -1,0 +1,9 @@
+{
+  "paper_id": "P-0024",
+  "lab": "lab-c",
+  "verdict": "inconclusive",
+  "evidence": [
+    "2026-11-23/r2/lab-c/011"
+  ],
+  "comment": "One in-domain run: A-A pair at rest, r0 = 1.50 (4.25 to 5.75, horizontal), T = 0.3, dt 0.0015, tracker. Judge metric with the paper's predict(): RMSE/L = 0.00492 against bar 3 x 0.006 = 0.018, so it passes. Inconclusive as a test of the claim: one run is short of the three needed for 'replicated', and at T = 0.3 the claim's exponent 2.10 and the rejected 2.5 give almost the same trajectories (the claim says so itself), so this run would pass under either exponent. It does not discriminate the exponent. We plan two more in-domain runs with longer windows (r0 = 2.0 to 2.8, T up to 0.6) next session, when the review allowance resets."
+}

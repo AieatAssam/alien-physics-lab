@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0018",
+  "lab": "lab-vernier",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-23/r3/lab-vernier/008",
+    "2026-11-23/r3/lab-vernier/009",
+    "2026-11-23/r3/lab-vernier/010"
+  ],
+  "comment": "Review account, three in-domain runs: two C particles at rest, initial separation 1.000, T 0.15, dt 0.005, tracker only; orientations horizontal, vertical, diagonal, centred at (5,5). Pre-registered prediction: paper-model RMSE/L at or below the tracker floor (about 0.005) on each run, bar 0.024. Replication is claimed only at this bar, which is not a sharp test: the displacement over T 0.15 is about 0.02 to 0.06 chamber units, comparable to the tracker noise, so a 15 percent change in K would not show here. Cross-check I can state without filing it as a falsification: P-0013 (lab-c) gives a constant-K C-C coefficient of 0.874 x 12.36 = 10.8 at separation 1.5, and this claim gives K = 9.31 at separation 1.0. Both claim a constant r^-2.5 law, so one of the two is off by about 15 percent, but the T <= 0.15 bar cannot decide which. Domain: C-C pairs at separation 1.0 only."
+}

@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-23/r3/lab-keystone/005",
+  "lab": "lab-keystone",
+  "account": "research",
+  "purpose": "A-A early-time law at large r (round 3): r0 = 5.0, V, at rest, centre (5,5), T = 1.0, sample_dt 0.0025. Tests whether the P-0024 relative acceleration (G = 23.63, P = 2.099) holds at r0 = 4-6 over t <= 1, where runs 2026-11-23/r1/lab-keystone/001-006 (T = 2) show residuals of 0.13-0.19 against noise near 0.07. Pre-registered: P-0024 at noise for t <= 1; a P = 2.5 law fitted at r = 1-3 predicts about 20 percent less pull at r = 5.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          2.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          7.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.0025
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

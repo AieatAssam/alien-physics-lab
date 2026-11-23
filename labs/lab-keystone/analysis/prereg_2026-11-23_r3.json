@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-23",
+  "round": 3,
+  "lab": "lab-keystone",
+  "design": "research 2026-11-23/r3/lab-keystone/002-007: A-A at rest, centre (5,5), r0 in {4,5,6} x {H,V}, T = 1.0, sample_dt 0.0025, tracker only",
+  "law_under_test": "P-0024 relative acceleration G/q^P, G = 23.63, P = 2.099 (1D projected separation on the initial axis)",
+  "noise": {
+    "per_coordinate_tracker": 0.05,
+    "projected_separation": 0.071
+  },
+  "predictions": {
+    "effective_relative_accel_M1": {
+      "r0_4": 1.29,
+      "r0_5": 0.81,
+      "r0_6": 0.55
+    },
+    "effective_relative_accel_from_T2_fits_(001-006)": {
+      "r0_4": 1.16,
+      "r0_5": 0.66,
+      "r0_6": 0.38
+    }
+  },
+  "pass_rule": "P-0024 extends to r0 4-6 for t <= 1 if the pooled residual rms of M1 is <= 0.09 on the projected separation (noise 0.071, allowing model slack) and no run's residual drifts past t = 0.5 by more than 0.1. Otherwise M1 is rejected at t <= 1 too and the claim is narrowed to r0 <= 3.",
+  "discriminator": "Effective relative acceleration at r0 = 5: M1 gives 0.81, the T = 2 fits give about 0.66. Measurement precision per run is expected to be a few percent; a 0.66 result would reject M1 at r0 = 5 with the T = 1 data alone.",
+  "grant_request": "2026-11-23/r3/lab-keystone/001: 16 A, 8 pairs, T = 0.3. Full additive M1 model over all 120 pairs is saved in grant_prereg_prediction_2026-11-23.json. Pairs at r > 3 contribute up to about 0.18 of displacement at T = 0.3, so a pass tests additivity and M1 at r = 3-10 jointly. A fail cannot be attributed without the r0 = 4-6 runs above.",
+  "cost": {
+    "research_this_round": 6.24,
+    "research_remaining_before": 33.52,
+    "grant": 1.1,
+    "grant_allowance": 120
+  }
+}

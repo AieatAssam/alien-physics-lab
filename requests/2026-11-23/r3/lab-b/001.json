@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-23/r3/lab-b/001",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "A-B held-out at r = 4.5, horizontal. Tests the P-0025 K-table interpolation between nodes 4 and 5.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.75,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          7.25,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

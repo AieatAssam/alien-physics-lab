@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-23/r3/lab-b/004",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "A-B held-out at r = 7.8, horizontal, near the top of the claim range. Tests the P-0025 table at its upper edge.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          1.1,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          8.9,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-23/r3/lab-vernier/010",
+  "lab": "lab-vernier",
+  "account": "review",
+  "purpose": "Replication of P-0018 at its stated domain (separation 1.0, at rest, T <= 0.15), diagonal orientation; paper-model error vs tracker.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          4.646446609406726,
+          4.646446609406726
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.353553390593274,
+          5.353553390593274
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.15,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0018"
+}

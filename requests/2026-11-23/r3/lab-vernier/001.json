@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-23/r3/lab-vernier/001",
+  "lab": "lab-vernier",
+  "account": "review",
+  "purpose": "Replication of P-0013 at its stated domain (separation 1.5, at rest, T <= 0.4), horizontal orientation; paper-model error vs tracker.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.25,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.75,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.4,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0013"
+}

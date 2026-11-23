@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-23/r3/lab-c/007",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Local K(r) map: A-B pair at rest, r0 = 6.0 (horizontal), centred at (5,5), T = 2.0. Short window so the pair stays near r0; tests whether the effective constant K_eff(r) = a*r^2.5 is separation-independent.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          8.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

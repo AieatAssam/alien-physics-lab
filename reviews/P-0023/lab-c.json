@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0023",
+  "lab": "lab-c",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-23/r2/lab-c/004",
+    "2026-11-23/r2/lab-c/005",
+    "2026-11-23/r2/lab-c/006"
+  ],
+  "comment": "Replicated at the judge's bar. Three fresh in-domain runs, one A and one B at rest, T = 10, dt 0.02, tracker: 004 horizontal (r0 8.95), 005 diagonal (9.00), 006 vertical with B below A (9.05). RMSE/L = 0.00509, 0.00508, 0.00516 against bar 3 x 0.006 = 0.018, all pass, at the noise floor. Limits on the constants: our own free fit (P = 2.5 fixed, full T = 10) gives K_A(B) = 5.997 to 5.998 (statistical error about 0.015) and K_B(A) = 9.005 in run 004 but 8.50 in runs 005 and 006. The claim's K_A(B) = 6.161 is therefore about 3 percent high relative to our fit, and its K_B(A) = 8.695 lies between our two orientations. The K values are good to a few percent; the replication only shows the motion is reproduced within the noise floor. Not tested: other separations, the exponent P, and close approach (minimum separation about 5 in these runs)."
+}

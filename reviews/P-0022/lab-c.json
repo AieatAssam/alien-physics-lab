@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0022",
+  "lab": "lab-c",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-23/r2/lab-c/001",
+    "2026-11-23/r2/lab-c/002",
+    "2026-11-23/r2/lab-c/003"
+  ],
+  "comment": "Replicated inside the stated domain (one A and one B at rest, r0 in [1.95, 2.05], T <= 0.8). Three fresh in-domain runs, all with r0 at least 0.02 inside the edges: 001 horizontal (1.97), 002 diagonal (2.00), 003 vertical with B below A (2.03). Judge metric using the paper's own predict(): RMSE/L = 0.00497, 0.00481, 0.00501 against bar 3 x 0.008 = 0.024, all pass with about 5x margin, at the tracker noise floor. Not tested: T > 0.8 (the claim's window runs to separation about 0.45, which we did not measure), the exponent, and any r outside [1.95, 2.05]. Our windowed fits at other separations (not cited here) give K values that differ from a single constant, so the constant-K statement should not be read as a general law; the claim's own domain disclaimer covers this."
+}

@@ -1,0 +1,153 @@
+{
+  "id": "H30-A-A-distance-law",
+  "date": "2026-11-23",
+  "lab": "lab-a",
+  "status": "pre-registered before H30 results exist",
+  "prediction": {
+    "K": 17.7,
+    "P": 2.5,
+    "local_accel": {
+      "3.0": 1.13546,
+      "5.0": 0.31663,
+      "7.0": 0.13653,
+      "9.0": 0.07284
+    }
+  },
+  "runs": [
+    {
+      "request_id": "2026-11-23/r3/lab-a/001",
+      "sep": 3.0,
+      "T": 1.0,
+      "orient": "horizontal",
+      "predicted_min_sep": 1.578,
+      "cost_est": 1.04
+    },
+    {
+      "request_id": "2026-11-23/r3/lab-a/002",
+      "sep": 3.0,
+      "T": 1.0,
+      "orient": "horizontal",
+      "predicted_min_sep": 1.578,
+      "cost_est": 1.04
+    },
+    {
+      "request_id": "2026-11-23/r3/lab-a/003",
+      "sep": 3.0,
+      "T": 1.0,
+      "orient": "diagonal",
+      "predicted_min_sep": 1.578,
+      "cost_est": 1.04
+    },
+    {
+      "request_id": "2026-11-23/r3/lab-a/004",
+      "sep": 3.0,
+      "T": 1.0,
+      "orient": "diagonal",
+      "predicted_min_sep": 1.578,
+      "cost_est": 1.04
+    },
+    {
+      "request_id": "2026-11-23/r3/lab-a/005",
+      "sep": 5.0,
+      "T": 2.0,
+      "orient": "horizontal",
+      "predicted_min_sep": 3.5584,
+      "cost_est": 1.08
+    },
+    {
+      "request_id": "2026-11-23/r3/lab-a/006",
+      "sep": 5.0,
+      "T": 2.0,
+      "orient": "horizontal",
+      "predicted_min_sep": 3.5584,
+      "cost_est": 1.08
+    },
+    {
+      "request_id": "2026-11-23/r3/lab-a/007",
+      "sep": 5.0,
+      "T": 2.0,
+      "orient": "diagonal",
+      "predicted_min_sep": 3.5584,
+      "cost_est": 1.08
+    },
+    {
+      "request_id": "2026-11-23/r3/lab-a/008",
+      "sep": 5.0,
+      "T": 2.0,
+      "orient": "diagonal",
+      "predicted_min_sep": 3.5584,
+      "cost_est": 1.08
+    },
+    {
+      "request_id": "2026-11-23/r3/lab-a/009",
+      "sep": 7.0,
+      "T": 3.0,
+      "orient": "horizontal",
+      "predicted_min_sep": 5.6643,
+      "cost_est": 1.12
+    },
+    {
+      "request_id": "2026-11-23/r3/lab-a/010",
+      "sep": 7.0,
+      "T": 3.0,
+      "orient": "horizontal",
+      "predicted_min_sep": 5.6643,
+      "cost_est": 1.12
+    },
+    {
+      "request_id": "2026-11-23/r3/lab-a/011",
+      "sep": 7.0,
+      "T": 3.0,
+      "orient": "diagonal",
+      "predicted_min_sep": 5.6643,
+      "cost_est": 1.12
+    },
+    {
+      "request_id": "2026-11-23/r3/lab-a/012",
+      "sep": 7.0,
+      "T": 3.0,
+      "orient": "diagonal",
+      "predicted_min_sep": 5.6643,
+      "cost_est": 1.12
+    },
+    {
+      "request_id": "2026-11-23/r3/lab-a/013",
+      "sep": 9.0,
+      "T": 3.0,
+      "orient": "horizontal",
+      "predicted_min_sep": 8.3232,
+      "cost_est": 1.12
+    },
+    {
+      "request_id": "2026-11-23/r3/lab-a/014",
+      "sep": 9.0,
+      "T": 3.0,
+      "orient": "horizontal",
+      "predicted_min_sep": 8.3232,
+      "cost_est": 1.12
+    },
+    {
+      "request_id": "2026-11-23/r3/lab-a/015",
+      "sep": 9.0,
+      "T": 3.0,
+      "orient": "diagonal",
+      "predicted_min_sep": 8.3232,
+      "cost_est": 1.12
+    },
+    {
+      "request_id": "2026-11-23/r3/lab-a/016",
+      "sep": 9.0,
+      "T": 3.0,
+      "orient": "diagonal",
+      "predicted_min_sep": 8.3232,
+      "cost_est": 1.12
+    }
+  ],
+  "decision_rule": {
+    "supported": "every separation: mean K_fit within 4% of 17.7, and both orientations agree within 3%",
+    "refuted": "any separation mean K_fit off 17.7 by more than 8%, with replicates agreeing within 3%",
+    "inconclusive": "otherwise. Record and do not claim either way.",
+    "secondary": "free-P slope from local accelerations, P = ln(a3/a9)/ln(3). Reported, not decisive."
+  },
+  "total_cost_est": 17.44
+}

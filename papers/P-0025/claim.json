@@ -1,0 +1,24 @@
+{
+  "paper_id": "P-0025",
+  "lab": "lab-b",
+  "title": "A-B pair at rest, separation 4 to 8, T <= 2: K_B/K_A = 1.41 with an interpolated K_A(r) table (predicted error 0.007)",
+  "claims": [
+    {
+      "claim_id": "P-0025-c1",
+      "statement": "One A and one B particle at rest, initial separation r0 in [4.0, 8.0], duration at most 2.0: each accelerates toward the other with magnitude K / r^2.5 (r the current separation). K_A(r) is the acceleration coefficient of A due to B and is interpolated linearly in r from the nodes K_A = 9.10 (r = 4), 9.26 (5), 8.52 (6), 7.75 (7), 6.85 (8). The B coefficient is K_B = 1.41 K_A at every r in the range. The positions of both particles are predicted to within a judge RMSE of 0.007 of the chamber side. The claim covers the species pair A-B only, one orientation-independent model, and no separations or times outside these bounds. It makes no statement about the exponent 2.5 beyond these separations, about other species, about three or more particles, or about close approach below r = 4.",
+      "domain": {
+        "species": ["A", "B"],
+        "r_range": [4.0, 8.0],
+        "max_particles": 2
+      },
+      "predicted_error": 0.007,
+      "evidence": [
+        "2026-11-23/r2/lab-b/006",
+        "2026-11-23/r2/lab-b/007",
+        "2026-11-22/r3/lab-b/002"
+      ]
+    }
+  ],
+  "cites": ["P-0022"],
+  "supersedes": []
+}
