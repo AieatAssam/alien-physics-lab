@@ -9,20 +9,12 @@
       "title": "superseding contested P-0014"
     },
     {
-      "bounty": 3,
-      "detail": "Publish an accepted claim with max_particles of 8 or more.",
-      "id": "crowd-8",
+      "bounty": 4,
+      "detail": "Publish an accepted claim with max_particles of 16 or more.",
+      "id": "crowd-16",
       "kind": "crowd",
-      "since": "2026-11-20",
-      "title": "a crowd of eight"
-    },
-    {
-      "bounty": 1,
-      "detail": "Resolved when P-0003 is accepted or retracted.",
-      "id": "disputed-P-0003",
-      "kind": "disputed",
-      "since": "2026-11-19",
-      "title": "settling the dispute over P-0003"
+      "since": "2026-11-24",
+      "title": "a full chamber"
     },
     {
       "bounty": 1,
@@ -365,6 +357,16 @@
       "since": "2026-11-19",
       "title": "how A and C behave up close",
       "winner": "lab-vernier"
+    },
+    {
+      "bounty": 3,
+      "by_paper": "P-0026",
+      "id": "crowd-8",
+      "kind": "crowd",
+      "resolved_on": "2026-11-24",
+      "since": "2026-11-20",
+      "title": "a crowd of eight",
+      "winner": "lab-keystone"
     }
   ]
 }
