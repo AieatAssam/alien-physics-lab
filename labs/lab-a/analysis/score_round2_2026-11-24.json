@@ -1,0 +1,133 @@
+{
+  "offnode": [
+    {
+      "run": "2026-11-24/r2/lab-a/001",
+      "sep": 3.5,
+      "T": 1.0,
+      "purpose": "A-A K(r) off-node interpolation: sep 3.5 horizontal, T 1.0",
+      "K_fit": 18.2523,
+      "chi2_per_dof": 1.0046,
+      "K_pred_table": 17.7207,
+      "rel_dev": 0.03
+    },
+    {
+      "run": "2026-11-24/r2/lab-a/002",
+      "sep": 4.5,
+      "T": 1.5,
+      "purpose": "A-A K(r) off-node interpolation: sep 4.5 diagonal, T 1.5",
+      "K_fit": 18.2026,
+      "chi2_per_dof": 1.0249,
+      "K_pred_table": 17.7962,
+      "rel_dev": 0.02283
+    },
+    {
+      "run": "2026-11-24/r2/lab-a/003",
+      "sep": 5.5,
+      "T": 2.0,
+      "purpose": "A-A K(r) off-node interpolation: sep 5.5 diagonal, T 2.0",
+      "K_fit": 17.3041,
+      "chi2_per_dof": 1.0042,
+      "K_pred_table": 17.1557,
+      "rel_dev": 0.00865
+    },
+    {
+      "run": "2026-11-24/r2/lab-a/004",
+      "sep": 6.5,
+      "T": 2.0,
+      "purpose": "A-A K(r) off-node interpolation: sep 6.5 horizontal, T 2.0",
+      "K_fit": 15.8076,
+      "chi2_per_dof": 0.9695,
+      "K_pred_table": 15.7993,
+      "rel_dev": 0.00053
+    },
+    {
+      "run": "2026-11-24/r2/lab-a/005",
+      "sep": 6.5,
+      "T": 2.0,
+      "purpose": "A-A K(r) off-node interpolation: sep 6.5 diagonal, T 2.0 (replicate)",
+      "K_fit": 15.8581,
+      "chi2_per_dof": 0.9899,
+      "K_pred_table": 15.7993,
+      "rel_dev": 0.00372
+    },
+    {
+      "run": "2026-11-24/r2/lab-a/006",
+      "sep": 7.5,
+      "T": 3.0,
+      "purpose": "A-A K(r) off-node interpolation: sep 7.5 diagonal, T 3.0",
+      "K_fit": 14.2785,
+      "chi2_per_dof": 0.9953,
+      "K_pred_table": 14.2468,
+      "rel_dev": 0.00223
+    },
+    {
+      "run": "2026-11-24/r2/lab-a/007",
+      "sep": 8.5,
+      "T": 3.0,
+      "purpose": "A-A K(r) off-node interpolation: sep 8.5 horizontal, T 3.0",
+      "K_fit": 12.3019,
+      "chi2_per_dof": 0.9975,
+      "K_pred_table": 12.4983,
+      "rel_dev": -0.01571
+    }
+  ],
+  "crowd8": [
+    {
+      "run": "2026-11-24/r2/lab-a/008",
+      "min_initial_pair": 3.1,
+      "chi2_dof_table": 1.0,
+      "chi2_dof_constK": 1.026,
+      "chi2_const_minus_table": 828.02,
+      "rmse_over_L_table": 0.005,
+      "rmse_over_L_constK": 0.00506
+    },
+    {
+      "run": "2026-11-24/r2/lab-a/009",
+      "min_initial_pair": 3.1,
+      "chi2_dof_table": 1.0026,
+      "chi2_dof_constK": 1.0266,
+      "chi2_const_minus_table": 764.588,
+      "rmse_over_L_table": 0.00501,
+      "rmse_over_L_constK": 0.00507
+    }
+  ],
+  "P0026_review": [
+    {
+      "run": "2026-11-24/r2/lab-a/010",
+      "in_domain": true,
+      "min_pair": 1.52,
+      "max_pair": 6.4488,
+      "n_samples": [
+        1990,
+        1991
+      ],
+      "rmse_over_L": 0.00506,
+      "pass_0021": true
+    },
+    {
+      "run": "2026-11-24/r2/lab-a/011",
+      "in_domain": true,
+      "min_pair": 1.9119,
+      "max_pair": 9.8,
+      "n_samples": [
+        1990,
+        1991
+      ],
+      "rmse_over_L": 0.00507,
+      "pass_0021": true
+    },
+    {
+      "run": "2026-11-24/r2/lab-a/012",
+      "in_domain": true,
+      "min_pair": 1.6019,
+      "max_pair": 9.0706,
+      "n_samples": [
+        1990,
+        1991
+      ],
+      "rmse_over_L": 0.00509,
+      "pass_0021": true
+    }
+  ],
+  "replicate_6p5_spread_pct": 0.319
+}

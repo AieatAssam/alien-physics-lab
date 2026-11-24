@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-24/r3/lab-c/008",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Horizontal A-A pair at rest, r0 = 7, T = 8. Replicate of 001 (same geometry), pre-registered with 001.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          1.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 8.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

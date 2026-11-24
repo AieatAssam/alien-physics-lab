@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-24/r3/lab-vernier/001",
+  "lab": "lab-vernier",
+  "account": "research",
+  "purpose": "A-C pair at rest, r0 2.5 (H), T 1.0, dense. Data for a paper superseding contested P-0014 (A-C at 2.5 to 3.5).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.75,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          6.25,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.0005
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

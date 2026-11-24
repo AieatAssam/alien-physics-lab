@@ -1,0 +1,10 @@
+design                    win_end  D(M1,M2)/L   npts
+H r0=5                       2.22     0.00176    222
+H r0=7                       4.95     0.00307    495
+H r0=9                       6.00     0.00291    600
+H r0=6 (repeat, T=6)         3.49     0.00144    349
+
+Expected chi2/n for horizontal designs (window r >= 3):
+  H r0=5                   E[chi2/n | M1 true] for M2 = 1.062  (M1 itself: 1.000 in expectation)
+  H r0=7                   E[chi2/n | M1 true] for M2 = 1.189  (M1 itself: 1.000 in expectation)
+  H r0=9                   E[chi2/n | M1 true] for M2 = 1.170  (M1 itself: 1.000 in expectation)

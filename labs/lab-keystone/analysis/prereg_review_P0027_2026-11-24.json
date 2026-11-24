@@ -1,0 +1,24 @@
+{
+  "date_written": "2026-11-24",
+  "round_written": 3,
+  "target": "P-0027 (lab-a, Plumbline): A-A pair at rest, r0 in [3, 9], K(r) table, predicted_error 0.007, windows T<=1.5 (r0<5), T<=2.0 (5<=r0<7), T<=3.0 (r0>=7)",
+  "runs": {
+    "2026-11-24/r3/lab-keystone/001": "A-A, r0=3.0 horizontal, T=1.5 (window edge; paper model min separation 0.044 at t~1.45)",
+    "2026-11-24/r3/lab-keystone/002": "A-A, r0=3.0 diagonal, T=1.5 (orientation replicate of 001)",
+    "2026-11-24/r3/lab-keystone/003": "A-A, r0=4.0 horizontal, T=2.0 (window edge; paper model min separation 0.027)",
+    "2026-11-24/r3/lab-keystone/005": "A-A, r0=4.0 diagonal, T=2.0 (orientation replicate of 003)",
+    "2026-11-24/r3/lab-keystone/004": "A-A, r0=3.0 horizontal, T=1.0 (control; paper model min separation 1.58)"
+  },
+  "bar": "3 x 0.007 = 0.021 judged RMSE/L (editor.py stands(): falsified needs ALL cited rows > bar; replicated needs >=3 cited rows <= bar)",
+  "decision_rules": {
+    "falsified": "All of 001, 002, 003, 005 have judged error > 0.021. Cite only those four (all in-domain). Comment: failure confined to window ends where the paper's own model passes near contact.",
+    "replicated": "All of 001, 002, 003, 005 have judged error <= 0.021 (and the control 004 too). Cite >=3 of them. Comment: the judged metric is at the noise floor and cannot test K(r).",
+    "narrowed": "Mixed: the control 004 and at least one edge run disagree (for example r0=3 fails at T=1.5 but passes at T=1.0). Propose the narrowed domain in proposed_domain and cite the passing runs.",
+    "inconclusive": "Otherwise, e.g. edge runs give errors between 0.007 and 0.021 without a clear split."
+  },
+  "not_to_do": [
+    "Do not file before the round 3 results exist; the review evidence must be results that were scored.",
+    "Do not cite runs that the paper model refuses (out of window) or that are out of domain: they cannot count.",
+    "Do not use research-account runs as review evidence."
+  ]
+}

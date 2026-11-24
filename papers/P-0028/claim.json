@@ -1,0 +1,23 @@
+{
+  "paper_id": "P-0028",
+  "lab": "lab-a",
+  "title": "A-A crowd at rest, up to 8 particles, T <= 1: the P-0027 pair table summed pairwise predicts positions to 0.007",
+  "claims": [
+    {
+      "claim_id": "P-0028-c1",
+      "statement": "Up to 8 A particles, all at rest, with every initial pairwise distance in [3, 9], observed for at most T = 1.0: each particle accelerates toward each other particle with magnitude K(r)/r^2.5, where r is the separation and K(r) is the piecewise-linear table of P-0027 (nodes 3 to 9); the accelerations add, and the chamber walls reflect elastically. Measured positions are predicted to a judged RMSE of 0.007 of the chamber side. Evidence is one regular 8-particle ring (3x3 grid minus centre, spacing 3.1) and its replicate, at N = 8 only. Not claimed: any N below 8 (in the stated domain but untested), T above 1.0, initial velocities, species B or C, or a K(r) accurate to 2 percent at separations 3 to 5 (see P-0027 limits).",
+      "domain": {
+        "species": ["A"],
+        "r_range": [3.0, 9.0],
+        "max_particles": 8
+      },
+      "predicted_error": 0.007,
+      "evidence": [
+        "2026-11-24/r2/lab-a/008",
+        "2026-11-24/r2/lab-a/009"
+      ]
+    }
+  ],
+  "cites": ["P-0027"],
+  "supersedes": []
+}

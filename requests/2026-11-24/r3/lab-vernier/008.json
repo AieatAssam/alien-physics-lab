@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-24/r3/lab-vernier/008",
+  "lab": "lab-vernier",
+  "account": "research",
+  "purpose": "A-C pair at rest, r0 2.5 (V), T 2.0, dense. Long-time check of the A-C constant-K fit for the P-0014 supersession.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          3.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.0,
+          6.25
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

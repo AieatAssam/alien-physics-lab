@@ -1,0 +1,12 @@
+{
+  "paper_id": "P-0026",
+  "lab": "lab-b",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-24/r2/lab-b/006",
+    "2026-11-24/r2/lab-b/007",
+    "2026-11-24/r2/lab-b/008",
+    "2026-11-24/r2/lab-b/009"
+  ],
+  "comment": "Replicated within the stated domain (species A, at rest, all pairwise distances in [1.5, 10.5], up to 16 particles, T <= 0.3). Four review-account runs, all in domain, all 16 A at rest, T = 0.3, tracker: 006 ring of radius 4.5 (pair distances 1.76 to 9.00); 007 4x4 grid at spacing 1.52 (1.52 to 6.45); 008 4x4 grid at spacing 2.40 (2.40 to 10.18); 009 seeded irregular layout (1.60 to 10.22). P-0026 predict() gives judged RMSE/L 0.0050, 0.0051, 0.0051, 0.0051 against the bar 0.021 (3 x 0.007). Scored with the judge's method over 0 < t <= 0.3, all particles and coordinates.\n\nPower caveat, so the verdict is not over-read: the zero-force null (particles held at their initial positions) gives RMSE/L 0.0067 (006), 0.0194 (007), 0.0079 (008) and 0.0079 (009). For three of the four runs the null is also under the 0.021 bar, so at T <= 0.3 the judged metric cannot separate P-0026's pair law from no force. Only 007, the densest layout, shows a clear pair-force signal. The sensitivity to the coefficient is also small: scaling G by 0.95 or 1.05 moves judged RMSE/L by under 0.0005 on every run. A falsification by this bar would need the force to be wrong by close to its full size, not by a few percent. The replication therefore shows the model is not worse than the tracker floor on these layouts. It does not show the 1/q^2.099 law is needed at this duration.\n\nNot tested: T > 0.3 (outside the claim, and model.py raises there), and the N-body sum at larger displacements. Not a falsification; no run is above the bar."
+}

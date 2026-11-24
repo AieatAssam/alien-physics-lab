@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-24/r3/lab-keystone/001",
+  "lab": "lab-keystone",
+  "account": "review",
+  "purpose": "Edge test of P-0027 at window end: r0=3.0 horizontal, T=1.5 (paper model min separation ~0.04 near t=1.45).",
+  "cites_paper": "P-0027",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.5,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

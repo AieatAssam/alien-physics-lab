@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0026",
+  "lab": "lab-a",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-24/r2/lab-a/010",
+    "2026-11-24/r2/lab-a/011",
+    "2026-11-24/r2/lab-a/012"
+  ],
+  "comment": "Runs 010-012 (review account, cites P-0026): 16 A particles at rest, T = 0.3, tracker only. 010 is a 4x4 grid at spacing 1.52 (minimum pair 1.520, at the 1.5 lower edge; largest pair 6.45). 011 is a ring of radius 4.9 (adjacent chord 1.91; largest pair 9.80). 012 is a seeded irregular layout (minimum pair 1.602; largest 9.071). All three are inside the stated domain: predict() raises no ValueError on any of them. Judge-style RMSE/L of predict() against each run is 0.00506, 0.00507 and 0.00509, all below the bar 3 x 0.007 = 0.021, so the verdict is replicated on the stated 0.007 bound. Limits: all three runs are at T = 0.3, the claim's own window, so the window edge is not tested. The judged metric sits at the tracker floor (about 0.005 for a correct model), so these runs cannot separate the stated exponent 2.099 from nearby values, nor detect a few-percent cross-pair correction. The verdict covers the stated bound only."
+}

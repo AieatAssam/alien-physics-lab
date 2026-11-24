@@ -1,0 +1,12 @@
+{
+  "paper_id": "P-0027",
+  "lab": "lab-vernier",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-24/r2/lab-vernier/024",
+    "2026-11-24/r2/lab-vernier/025",
+    "2026-11-20/r1/lab-vernier/003",
+    "2026-11-20/r2/lab-vernier/007"
+  ],
+  "comment": "Replicated for P-0027-c1 on four in-domain runs of two A particles at rest: initial separations 3.0 (horizontal, T = 1.1), 3.0 (vertical, T = 1.1), 6.0 (T = 2.0) and 5.0 (T = 2.0). Every run is inside the paper's duration window (T <= 1.5 for r0 < 5, T <= 2.0 for r0 < 7) and its predict() accepts it. The paper's predict() gives RMSE/L 0.00504, 0.00501, 0.00518 and 0.00493 against the bar 3 x 0.007 = 0.021. Discrimination: the zero-force null is 0.027 and 0.030 at r0 3, 0.018 at r0 6 and 0.026 at r0 5, so three of the four runs could have falsified the claim if the table were wrong by more than the bar. None did. Limits: the runs cover r0 = 3, 5 and 6 only; the table at 4, 7, 8 and 9 is untested by me. Nothing is claimed for three or more particles or for species other than A. The 3.0 edge runs sit on the closed end of the domain; the 5.0 and 6.0 runs are interior."
+}

@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-24/r3/lab-c/009",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Horizontal A-A pair at rest, r0 = 8, centre (5,5), T = 10. Longer window than 004 (T = 6 did not reach separation 3). Exploratory; extends the r0 = 8 run past the T = 6 window.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          1.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          9.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 10.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

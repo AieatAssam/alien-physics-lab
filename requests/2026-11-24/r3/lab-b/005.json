@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-24/r3/lab-b/005",
+  "lab": "lab-b",
+  "account": "review",
+  "purpose": "Review of P-0027: A-A pair at rest, r0 = 3.0 (domain edge), T = 1.5 (edge of the r0 < 5 window). Tests the model at its closest approach.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.5,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0027"
+}

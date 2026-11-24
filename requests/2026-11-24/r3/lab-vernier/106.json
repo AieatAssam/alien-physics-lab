@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-24/r3/lab-vernier/106",
+  "lab": "lab-vernier",
+  "account": "review",
+  "purpose": "P-0017 review: B-B at rest, r0 1.0 (vertical), T 0.15, dense.",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          5.0,
+          4.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          5.0,
+          5.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.15,
+    "sample_dt": 7.5e-05
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0017"
+}

@@ -1,0 +1,103 @@
+{
+  "request_id": "2026-11-24/r3/lab-a/005",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "Crowd-8, octagon R 4.2 rotated 0.3 rad (min pair 3.21, max pair 8.4), at rest, T 1.0. Independent test of the pairwise table-K sum at N = 8.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          9.012413,
+          6.241185
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.959554,
+          8.714855
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          3.758815,
+          9.012413
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          1.285145,
+          6.959554
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          0.987587,
+          3.758815
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          3.040446,
+          1.285145
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.241185,
+          0.987587
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.714855,
+          3.040446
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.0005025126
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

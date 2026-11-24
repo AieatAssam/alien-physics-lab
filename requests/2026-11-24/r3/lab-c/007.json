@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-24/r3/lab-c/007",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Horizontal A-B pair at rest, r0 = 9, centre (5,5), T = 8. Species check: is the A-B exponent from the notebook map (r 3 to 8) the same at r = 9? Exploratory, not pre-registered.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          0.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          9.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 8.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

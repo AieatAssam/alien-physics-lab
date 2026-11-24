@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0019",
+  "lab": "lab-vernier",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-24/r2/lab-vernier/001",
+    "2026-11-24/r2/lab-vernier/002",
+    "2026-11-24/r2/lab-vernier/027"
+  ],
+  "comment": "Replicated for P-0019-c1 on three in-domain runs of two B particles at rest, initial separation 1.000 (exact, within [0.999, 1.001]), orientations horizontal, vertical and diagonal, T = 0.3 (the paper's stated limit), dense sampling. The paper's own predict() gives RMSE/L 0.00495, 0.00507, 0.00501 against the bar 3 x 0.008 = 0.024. Falsification was not available: the zero-force null is 0.008 to 0.009 RMSE/L, below the bar. Value check (my own fit, not a judged result): with the paper's K = 3.86 the runs are fitted at the noise floor; a free K fit gives 3.874 +/- 0.029, 3.831 +/- 0.030, 3.823 +/- 0.029 (mean 3.84 +/- 0.02). That is consistent with 3.86 and about 7 standard errors from the 3.98 of P-0017, but the bar (0.024 RMSE/L) cannot separate 3.86 from 3.98, so this replication does not favour one over the other. Limits: T <= 0.3 only; nothing about longer times or other separations."
+}

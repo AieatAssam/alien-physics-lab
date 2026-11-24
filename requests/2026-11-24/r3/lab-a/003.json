@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-24/r3/lab-a/003",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "A-A sep 3.5 diagonal, T 1.0. Replicate of r2/001 (horizontal, K_fit 18.25 vs table 17.72) at another orientation, to test whether the 3.5 deviation is real.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.762563,
+          3.762563
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.237437,
+          6.237437
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.0005025126
+  },
+  "instruments": [
+    "tracker"
+  ]
+}
