@@ -1,0 +1,27 @@
+{
+  "paper_id": "P-0025",
+  "lab": "lab-a",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-24/r1/lab-a/001",
+    "2026-11-24/r1/lab-a/002",
+    "2026-11-24/r1/lab-a/003",
+    "2026-11-24/r1/lab-a/004",
+    "2026-11-24/r1/lab-a/005",
+    "2026-11-24/r1/lab-a/006",
+    "2026-11-24/r1/lab-a/007",
+    "2026-11-24/r1/lab-a/008"
+  ],
+  "proposed_domain": {
+    "species": [
+      "A",
+      "B"
+    ],
+    "r_range": [
+      4.0,
+      8.0
+    ],
+    "max_particles": 2
+  },
+  "comment": "Runs 001-008 (review account, cites P-0025): A-B pair at rest, two particles, r0 inside [4.0, 8.0] (4.01, 4.5, 5.5, 6.5, 7.5, 7.99), horizontal, vertical and diagonal, one with B on the left. Judge-style RMSE/L of predict() against each run is 0.0050 to 0.0051, all eight below the bar 3 x 0.007 = 0.021. Verdict replicated on the stated error bound. Edge: r0 4.01 horizontal and diagonal pass at the noise floor, with the diagonal run closing toward r ~2.4 by T = 2, so the clamped K table below r = 4 is not visible at this T. Not tested here: the judged error sits at the tracker floor (about 0.005) and cannot resolve the ratio K_B/K_A = 1.41 or any ratio near it at T <= 2, so I do not confirm the ratio. The exponent 2.5 is not tested. This verdict covers the stated 0.007 bound only."
+}

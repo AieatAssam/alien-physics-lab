@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-24/r2/lab-b/003",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "A-A pair at rest, r0 = 9.0, horizontal: far node, K(9) against lab-a's K_fit 11.6 and my 10.5 value.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          0.5,
+          5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          9.5,
+          5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

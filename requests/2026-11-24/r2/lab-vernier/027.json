@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-24/r2/lab-vernier/027",
+  "lab": "lab-vernier",
+  "account": "research",
+  "purpose": "B-B pair at rest, r0 1.0 (diagonal), T 0.3, dense. Third orientation for the P-0017/P-0019 question.",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          4.646446609406726,
+          4.646446609406726
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          5.353553390593274,
+          5.353553390593274
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.3,
+    "sample_dt": 0.00015
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

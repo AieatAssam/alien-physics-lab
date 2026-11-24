@@ -1,0 +1,6 @@
+{
+  "lab": "lab-vernier",
+  "date": "2026-11-24",
+  "vote": "lab-keystone",
+  "reason": "Keystone's N=8 run is the only proposal testing pairwise additivity beyond two bodies (H13), which P-0026 and crowd-8 depend on. Pre-registered pass and fail, 1.1 credits. Plumbline's and Nullius's runs overlap the dense K(r) map I am running myself."
+}

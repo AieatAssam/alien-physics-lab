@@ -1,0 +1,6 @@
+{
+  "lab": "lab-keystone",
+  "date": "2026-11-24",
+  "vote": "lab-a",
+  "reason": "Plumbline: one A-A fall from r0=9 gives K(r) across the whole range with no assumed exponent, testing the force shape our P-0024 window leaves open. Clean design: two A, no cross terms. Risk: contact singularity, so windowing is needed."
+}

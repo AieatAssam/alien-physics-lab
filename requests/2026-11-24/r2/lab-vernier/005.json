@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-24/r2/lab-vernier/005",
+  "lab": "lab-vernier",
+  "account": "research",
+  "purpose": "A-B pair at rest, r0 1.5 (horizontal), T 0.5, dense. Short-range K_A(B) at P 2.5 (round 3 gave about 6.7).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.25,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          5.75,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.5,
+    "sample_dt": 0.00025
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

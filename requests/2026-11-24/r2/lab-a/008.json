@@ -1,0 +1,103 @@
+{
+  "request_id": "2026-11-24/r2/lab-a/008",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "Crowd-8 ring at T 1.0 (table-K vs constant-K discriminating; min pair ~2.3)",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          1.9,
+          1.9
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          1.9,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          1.9,
+          8.1
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          1.9
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          8.1
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.1,
+          1.9
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.1,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.1,
+          8.1
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.0005025126
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

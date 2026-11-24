@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-24/r2/lab-vernier/024",
+  "lab": "lab-vernier",
+  "account": "research",
+  "purpose": "A-A pair at rest, r0 3.0 (horizontal), T 1.1, dense. Pre-contact window; compare with P-0024 form (K_eff at P 2.5 frame).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.1,
+    "sample_dt": 0.00055
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

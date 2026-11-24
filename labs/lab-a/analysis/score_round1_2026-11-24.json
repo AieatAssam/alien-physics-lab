@@ -1,0 +1,197 @@
+{
+  "P0025_review": [
+    {
+      "run": "2026-11-24/r1/lab-a/001",
+      "r0": 4.01,
+      "species": "AB",
+      "orient": "P-0025 edge: A-B at rest, r0 4.01 (inside lower edge), horizontal, T 2",
+      "n_samples": [
+        1991,
+        1991
+      ],
+      "rmse_over_L": 0.00503,
+      "pass_21": true
+    },
+    {
+      "run": "2026-11-24/r1/lab-a/002",
+      "r0": 4.01,
+      "species": "AB",
+      "orient": "P-0025 edge: A-B at rest, r0 4.01, diagonal, T 2 (close approach to r ~2.2)",
+      "n_samples": [
+        1991,
+        1991
+      ],
+      "rmse_over_L": 0.00497,
+      "pass_21": true
+    },
+    {
+      "run": "2026-11-24/r1/lab-a/003",
+      "r0": 7.99,
+      "species": "AB",
+      "orient": "P-0025 edge: A-B at rest, r0 7.99 (inside upper edge), horizontal, T 2",
+      "n_samples": [
+        1991,
+        1991
+      ],
+      "rmse_over_L": 0.00504,
+      "pass_21": true
+    },
+    {
+      "run": "2026-11-24/r1/lab-a/004",
+      "r0": 7.99,
+      "species": "AB",
+      "orient": "P-0025 edge: A-B at rest, r0 7.99, diagonal, T 2",
+      "n_samples": [
+        1991,
+        1991
+      ],
+      "rmse_over_L": 0.00503,
+      "pass_21": true
+    },
+    {
+      "run": "2026-11-24/r1/lab-a/005",
+      "r0": 4.5,
+      "species": "AB",
+      "orient": "P-0025 interpolation node check: A-B r0 4.5, vertical, T 2",
+      "n_samples": [
+        1991,
+        1991
+      ],
+      "rmse_over_L": 0.00505,
+      "pass_21": true
+    },
+    {
+      "run": "2026-11-24/r1/lab-a/006",
+      "r0": 5.5,
+      "species": "AB",
+      "orient": "P-0025 interpolation check: A-B r0 5.5, diagonal, T 2",
+      "n_samples": [
+        1991,
+        1991
+      ],
+      "rmse_over_L": 0.00506,
+      "pass_21": true
+    },
+    {
+      "run": "2026-11-24/r1/lab-a/007",
+      "r0": 6.5,
+      "species": "AB",
+      "orient": "P-0025 orientation swap: B on left, A on right, r0 6.5, horizontal, T 2",
+      "n_samples": [
+        1991,
+        1991
+      ],
+      "rmse_over_L": 0.005,
+      "pass_21": true
+    },
+    {
+      "run": "2026-11-24/r1/lab-a/008",
+      "r0": 7.5,
+      "species": "AB",
+      "orient": "P-0025 interpolation check: A-B r0 7.5, vertical, T 2",
+      "n_samples": [
+        1991,
+        1991
+      ],
+      "rmse_over_L": 0.00504,
+      "pass_21": true
+    }
+  ],
+  "AA_K_fits": [
+    {
+      "run": "2026-11-24/r1/lab-a/009",
+      "r0": 5.99,
+      "T": 2.0,
+      "orient": "horizontal",
+      "K": 16.5378,
+      "chi2_per_dof": 1.0054
+    },
+    {
+      "run": "2026-11-24/r1/lab-a/010",
+      "r0": 5.99,
+      "T": 2.0,
+      "orient": "diagonal",
+      "K": 16.6697,
+      "chi2_per_dof": 0.9948
+    },
+    {
+      "run": "2026-11-24/r1/lab-a/011",
+      "r0": 4.0,
+      "T": 2.0,
+      "orient": "horizontal",
+      "K": 17.7009,
+      "chi2_per_dof": 1.0958
+    },
+    {
+      "run": "2026-11-24/r1/lab-a/012",
+      "r0": 4.0,
+      "T": 2.0,
+      "orient": "diagonal",
+      "K": 17.701,
+      "chi2_per_dof": 1.0991
+    },
+    {
+      "run": "2026-11-24/r1/lab-a/013",
+      "r0": 8.0,
+      "T": 3.0,
+      "orient": "horizontal",
+      "K": 13.5408,
+      "chi2_per_dof": 1.0033
+    },
+    {
+      "run": "2026-11-24/r1/lab-a/014",
+      "r0": 8.0,
+      "T": 3.0,
+      "orient": "diagonal",
+      "K": 13.4372,
+      "chi2_per_dof": 1.0065
+    },
+    {
+      "run": "2026-11-24/r1/lab-a/015",
+      "r0": 8.0,
+      "T": 3.0,
+      "orient": "horizontal",
+      "K": 13.4409,
+      "chi2_per_dof": 0.9985
+    },
+    {
+      "run": "2026-11-24/r1/lab-a/016",
+      "r0": 8.0,
+      "T": 3.0,
+      "orient": "diagonal",
+      "K": 13.311,
+      "chi2_per_dof": 0.9909
+    },
+    {
+      "run": "2026-11-24/r1/lab-a/017",
+      "r0": 6.0,
+      "T": 2.0,
+      "orient": "horizontal",
+      "K": 16.5915,
+      "chi2_per_dof": 1.0125
+    },
+    {
+      "run": "2026-11-24/r1/lab-a/018",
+      "r0": 6.0,
+      "T": 2.0,
+      "orient": "diagonal",
+      "K": 16.642,
+      "chi2_per_dof": 1.0114
+    }
+  ],
+  "crowd8": [
+    {
+      "run": "2026-11-24/r1/lab-a/019",
+      "table_RMSE_over_L": 0.00498,
+      "constK_RMSE_over_L": 0.00498,
+      "min_initial_pair": 3.1
+    },
+    {
+      "run": "2026-11-24/r1/lab-a/020",
+      "table_RMSE_over_L": 0.00501,
+      "constK_RMSE_over_L": 0.00501,
+      "min_initial_pair": 3.1
+    }
+  ],
+  "crowd8_replicate_spread": 0.00704
+}

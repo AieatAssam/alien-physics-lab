@@ -1,0 +1,20 @@
+{
+  "paper_id": "P-0025",
+  "lab": "lab-c",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-24/r1/lab-c/001",
+    "2026-11-24/r1/lab-c/002",
+    "2026-11-24/r1/lab-c/003",
+    "2026-11-24/r1/lab-c/004",
+    "2026-11-24/r1/lab-c/005",
+    "2026-11-24/r1/lab-c/006",
+    "2026-11-24/r1/lab-c/007",
+    "2026-11-24/r1/lab-c/008",
+    "2026-11-24/r1/lab-c/009",
+    "2026-11-24/r1/lab-c/010",
+    "2026-11-24/r1/lab-c/011",
+    "2026-11-24/r1/lab-c/012"
+  ],
+  "comment": "Replicated within the stated domain (A-B pair at rest, r0 in [4, 8], T <= 2). All 12 review-account runs (001-012: horizontal and vertical at r0 = 4.05, 4.5, 5.5, 6.5, 7.5, 7.95; T = 2.0, tracker, centred at (5,5)) are strictly inside the domain and pass the judge-style check: RMSE/L 0.0047 to 0.0051 against a bar of 0.021 (3 x 0.007). That is the tracker noise floor (about 0.005), so the claim's 0.007 is consistent with the data, not tightly tested. Limits: (1) the judge metric is nearly blind to the coupling. Scaling K_A by 0.8 to 1.2, or the ratio 1.41 to 1.2 or 1.6, keeps every run below the bar, so this review does not confirm the K table or the ratio beyond roughly 20 percent. (2) The per-run K_A from the T <= 2 windows fits the table at about 5 to 10 percent. H and V agree within that except possibly at r0 = 4. (3) The exponent 2.5 is assumed, not tested here. Longer windows (T = 6 and 10, lab-c 2026-11-24/r1/lab-c/013-024, not cited because they are outside this claim's T <= 2 domain) do not fit one constant K at exponent 2.5: the joint fit gives chi2/n 1.50 at P = 2.5 against 1.05 at P = 3.0. The K_A(r) table behaves like K(r) r^-2.5 with an effective exponent near 2.9. The T <= 2 claim is unaffected, but any extension beyond T = 2 should not use exponent 2.5 with this table."
+}

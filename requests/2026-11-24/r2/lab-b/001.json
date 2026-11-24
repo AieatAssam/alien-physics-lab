@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-24/r2/lab-b/001",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "A-A pair at rest, r0 = 4.0, horizontal: node of the K(r) map between 3 and 5.5.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.0,
+          5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          7.0,
+          5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

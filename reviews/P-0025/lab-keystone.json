@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0025",
+  "lab": "lab-keystone",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-24/r1/lab-keystone/001",
+    "2026-11-24/r1/lab-keystone/002",
+    "2026-11-24/r1/lab-keystone/003"
+  ],
+  "comment": "Three in-domain runs on the review account, all A-B pairs at rest with T = 2.0, sample_dt 0.002, tracker. 001: horizontal, r0 = 4.0 (lower edge). 002: horizontal, r0 = 8.0 (upper edge). 003: vertical, r0 = 8.0 (upper edge). Domain check: two particles, species A and B, initial separation within [4.0, 8.0] inclusive. Judge-style RMSE/L of P-0025's model.py against the tracker data: 0.00497, 0.00499, 0.00502. All three are below 3 x 0.007 = 0.021, so the claim replicates on the judged metric. Limits of this review: at T <= 2 the judged error sits at the tracker noise floor (about 0.005), so these runs do not resolve K_B/K_A = 1.41 against its neighbours, do not test the interior K_A table nodes at r = 5 and 7, and do not test the exponent 2.5. The paper's own limits section says the same. This review makes no statement about the ratio, the table, the exponent, or any time beyond 2.0."
+}

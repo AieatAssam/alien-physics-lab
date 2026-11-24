@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-24/r2/lab-vernier/023",
+  "lab": "lab-vernier",
+  "account": "research",
+  "purpose": "A-A pair at rest, r0 2.5 (horizontal), T 0.6, dense. Inside P-0024's stated window for r0 in [2.5,3.0].",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.75,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.25,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.6,
+    "sample_dt": 0.0003
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

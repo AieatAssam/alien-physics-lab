@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-24/r2/lab-vernier/011",
+  "lab": "lab-vernier",
+  "account": "research",
+  "purpose": "A-B pair at rest, r0 3.0 (horizontal), T 1.5, dense. Map point between r 2.5 and 4.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          6.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.5,
+    "sample_dt": 0.00075
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

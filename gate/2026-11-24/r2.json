@@ -1,0 +1,137 @@
+{
+  "accepted": [
+    "out-lab-a/labs/lab-a/NOTEBOOK.md",
+    "out-lab-a/labs/lab-a/analysis/ring_probe_2026-11-24.py",
+    "out-lab-a/labs/lab-a/analysis/score_round1_2026-11-24.py",
+    "out-lab-a/labs/lab-a/analysis/score_round1_2026-11-24.json",
+    "out-lab-a/labs/lab-a/analysis/make_2026-11-24_r2_requests.py",
+    "out-lab-a/labs/lab-a/analysis/check_P0027_2026-11-24.py",
+    "out-lab-b/labs/lab-b/NOTEBOOK.md",
+    "out-lab-b/labs/lab-b/analysis/score_r1_2026-11-24.py",
+    "out-lab-b/labs/lab-b/analysis/make_2026-11-24_r2_requests.py",
+    "out-lab-c/labs/lab-c/NOTEBOOK.md",
+    "out-lab-c/labs/lab-c/analysis/fit_map_r1_long_2026-11-24.py",
+    "out-lab-c/labs/lab-c/analysis/profile_P_2026-11-24.py",
+    "out-lab-c/labs/lab-c/analysis/profile_P_refine_2026-11-24.py",
+    "out-lab-c/labs/lab-c/analysis/profile_P_refine_2026-11-24.txt",
+    "out-lab-c/labs/lab-c/analysis/make_2026-11-24_r2_requests.py",
+    "out-lab-keystone/labs/lab-keystone/NOTEBOOK.md",
+    "out-lab-keystone/labs/lab-keystone/analysis/score_round2_2026-11-24.txt",
+    "out-lab-vernier/labs/lab-vernier/NOTEBOOK.md",
+    "out-lab-vernier/labs/lab-vernier/analysis/round3_precontact_table_2026-11-24.jsonl",
+    "out-lab-vernier/labs/lab-vernier/analysis/design_round2_2026-11-24.py",
+    "out-lab-a/grants/2026-11-24/votes/lab-a.json",
+    "out-lab-b/grants/2026-11-24/votes/lab-b.json",
+    "out-lab-c/grants/2026-11-24/votes/lab-c.json",
+    "out-lab-keystone/grants/2026-11-24/votes/lab-keystone.json",
+    "out-lab-vernier/grants/2026-11-24/votes/lab-vernier.json",
+    "out-lab-a/requests/2026-11-24/r2/lab-a/001.json",
+    "out-lab-a/requests/2026-11-24/r2/lab-a/002.json",
+    "out-lab-a/requests/2026-11-24/r2/lab-a/003.json",
+    "out-lab-a/requests/2026-11-24/r2/lab-a/004.json",
+    "out-lab-a/requests/2026-11-24/r2/lab-a/005.json",
+    "out-lab-a/requests/2026-11-24/r2/lab-a/006.json",
+    "out-lab-a/requests/2026-11-24/r2/lab-a/007.json",
+    "out-lab-a/requests/2026-11-24/r2/lab-a/008.json",
+    "out-lab-a/requests/2026-11-24/r2/lab-a/009.json",
+    "out-lab-a/requests/2026-11-24/r2/lab-a/010.json",
+    "out-lab-a/requests/2026-11-24/r2/lab-a/011.json",
+    "out-lab-a/requests/2026-11-24/r2/lab-a/012.json",
+    "out-lab-b/requests/2026-11-24/r2/lab-b/001.json",
+    "out-lab-b/requests/2026-11-24/r2/lab-b/002.json",
+    "out-lab-b/requests/2026-11-24/r2/lab-b/003.json",
+    "out-lab-b/requests/2026-11-24/r2/lab-b/004.json",
+    "out-lab-b/requests/2026-11-24/r2/lab-b/005.json",
+    "out-lab-b/requests/2026-11-24/r2/lab-b/006.json",
+    "out-lab-b/requests/2026-11-24/r2/lab-b/007.json",
+    "out-lab-b/requests/2026-11-24/r2/lab-b/008.json",
+    "out-lab-b/requests/2026-11-24/r2/lab-b/009.json",
+    "out-lab-c/requests/2026-11-24/r2/lab-c/001.json",
+    "out-lab-c/requests/2026-11-24/r2/lab-c/002.json",
+    "out-lab-c/requests/2026-11-24/r2/lab-c/003.json",
+    "out-lab-c/requests/2026-11-24/r2/lab-c/004.json",
+    "out-lab-vernier/requests/2026-11-24/r2/lab-vernier/001.json",
+    "out-lab-vernier/requests/2026-11-24/r2/lab-vernier/002.json",
+    "out-lab-vernier/requests/2026-11-24/r2/lab-vernier/003.json",
+    "out-lab-vernier/requests/2026-11-24/r2/lab-vernier/004.json",
+    "out-lab-vernier/requests/2026-11-24/r2/lab-vernier/005.json",
+    "out-lab-vernier/requests/2026-11-24/r2/lab-vernier/006.json",
+    "out-lab-vernier/requests/2026-11-24/r2/lab-vernier/007.json",
+    "out-lab-vernier/requests/2026-11-24/r2/lab-vernier/008.json",
+    "out-lab-vernier/requests/2026-11-24/r2/lab-vernier/009.json",
+    "out-lab-vernier/requests/2026-11-24/r2/lab-vernier/010.json",
+    "out-lab-vernier/requests/2026-11-24/r2/lab-vernier/011.json",
+    "out-lab-vernier/requests/2026-11-24/r2/lab-vernier/012.json",
+    "out-lab-vernier/requests/2026-11-24/r2/lab-vernier/013.json",
+    "out-lab-vernier/requests/2026-11-24/r2/lab-vernier/014.json",
+    "out-lab-vernier/requests/2026-11-24/r2/lab-vernier/015.json",
+    "out-lab-vernier/requests/2026-11-24/r2/lab-vernier/016.json",
+    "out-lab-vernier/requests/2026-11-24/r2/lab-vernier/017.json",
+    "out-lab-vernier/requests/2026-11-24/r2/lab-vernier/018.json",
+    "out-lab-vernier/requests/2026-11-24/r2/lab-vernier/019.json",
+    "out-lab-vernier/requests/2026-11-24/r2/lab-vernier/020.json",
+    "out-lab-vernier/requests/2026-11-24/r2/lab-vernier/021.json",
+    "out-lab-vernier/requests/2026-11-24/r2/lab-vernier/022.json",
+    "out-lab-vernier/requests/2026-11-24/r2/lab-vernier/023.json",
+    "out-lab-vernier/requests/2026-11-24/r2/lab-vernier/024.json",
+    "out-lab-vernier/requests/2026-11-24/r2/lab-vernier/025.json",
+    "out-lab-vernier/requests/2026-11-24/r2/lab-vernier/026.json",
+    "out-lab-vernier/requests/2026-11-24/r2/lab-vernier/027.json",
+    "out-lab-vernier/requests/2026-11-24/r2/lab-vernier/101.json",
+    "out-lab-vernier/requests/2026-11-24/r2/lab-vernier/102.json",
+    "out-lab-vernier/requests/2026-11-24/r2/lab-vernier/103.json",
+    "out-lab-a/papers/P-0027/claim.json",
+    "out-lab-a/papers/P-0027/paper.md",
+    "out-lab-a/papers/P-0027/model.py",
+    "out-lab-a/reviews/P-0025/lab-a.json",
+    "out-lab-c/reviews/P-0025/lab-c.json",
+    "out-lab-keystone/reviews/P-0025/lab-keystone.json"
+  ],
+  "rejected": [
+    {
+      "path": "out-lab-vernier/requests/2026-11-24/r2/lab-vernier/104.json",
+      "reason": "more than 30 requests this round"
+    },
+    {
+      "path": "out-lab-vernier/requests/2026-11-24/r2/lab-vernier/105.json",
+      "reason": "more than 30 requests this round"
+    },
+    {
+      "path": "out-lab-vernier/requests/2026-11-24/r2/lab-vernier/106.json",
+      "reason": "more than 30 requests this round"
+    },
+    {
+      "path": "out-lab-vernier/requests/2026-11-24/r2/lab-vernier/107.json",
+      "reason": "more than 30 requests this round"
+    },
+    {
+      "path": "out-lab-vernier/requests/2026-11-24/r2/lab-vernier/108.json",
+      "reason": "more than 30 requests this round"
+    },
+    {
+      "path": "out-lab-vernier/requests/2026-11-24/r2/lab-vernier/109.json",
+      "reason": "more than 30 requests this round"
+    },
+    {
+      "path": "out-lab-vernier/requests/2026-11-24/r2/lab-vernier/110.json",
+      "reason": "more than 30 requests this round"
+    },
+    {
+      "path": "out-lab-vernier/requests/2026-11-24/r2/lab-vernier/111.json",
+      "reason": "more than 30 requests this round"
+    },
+    {
+      "path": "out-lab-vernier/requests/2026-11-24/r2/lab-vernier/112.json",
+      "reason": "more than 30 requests this round"
+    },
+    {
+      "path": "out-lab-vernier/requests/2026-11-24/r2/lab-vernier/113.json",
+      "reason": "more than 30 requests this round"
+    },
+    {
+      "path": "out-lab-vernier/requests/2026-11-24/r2/lab-vernier/114.json",
+      "reason": "more than 30 requests this round"
+    }
+  ],
+  "renumbered": []
+}

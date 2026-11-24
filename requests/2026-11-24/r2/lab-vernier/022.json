@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-24/r2/lab-vernier/022",
+  "lab": "lab-vernier",
+  "account": "research",
+  "purpose": "A-A pair at rest, r0 2.0 (vertical), T 0.5, dense. Orientation replicate of 021.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          4.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          6.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.5,
+    "sample_dt": 0.00025
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

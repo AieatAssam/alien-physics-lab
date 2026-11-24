@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-24/r2/lab-vernier/001",
+  "lab": "lab-vernier",
+  "account": "research",
+  "purpose": "B-B pair at rest, r0 1.0 (horizontal), T 0.3, dense. Precise K_B(B) at r 1 to adjudicate P-0017 (K 3.98) vs P-0019 (K 3.86). Fit K alone at P 2.5, window pre-contact.",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          4.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          5.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.3,
+    "sample_dt": 0.00015
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

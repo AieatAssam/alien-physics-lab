@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-24/r2/lab-c/003",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Species test (not cited): A-A pair at rest, horizontal, r0 = 6.0, centre (5,5), T = 6.0. Same geometry as the A-B long-window runs 2026-11-24/r1/lab-c/013-022, to compare the fitted exponent and K for an A-A pair.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 6.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

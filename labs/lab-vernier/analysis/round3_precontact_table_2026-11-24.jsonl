@@ -1,0 +1,14 @@
+{"source": "fit_K_P25_precontact_2026-11-24.py (pre-contact window, separation >= 1.0, P fixed 2.5, K fitted alone)", "run": "r3/011", "pair": "AB", "r0": 1.5, "sep_mean": 1.363, "K": 6.624, "seK": 0.262, "rmse_L": 0.0054}
+{"source": "same", "run": "r3/012", "pair": "AB", "r0": 1.5, "sep_mean": 1.367, "K": 6.368, "seK": 0.258, "rmse_L": 0.00485}
+{"source": "same", "run": "r3/013", "pair": "AB", "r0": 1.5, "sep_mean": 1.355, "K": 6.863, "seK": 0.259, "rmse_L": 0.00517}
+{"source": "same", "run": "r3/014", "pair": "AB", "r0": 1.5, "sep_mean": 1.345, "K": 6.963, "seK": 0.239, "rmse_L": 0.0048}
+{"source": "same", "run": "r3/017", "pair": "AB", "r0": 2.5, "sep_mean": 2.059, "K": 8.385, "seK": 0.049, "rmse_L": 0.0049}
+{"source": "same", "run": "r3/018", "pair": "AB", "r0": 2.5, "sep_mean": 2.097, "K": 8.331, "seK": 0.057, "rmse_L": 0.00495}
+{"source": "same", "run": "r3/015", "pair": "AB", "r0": 3.0, "sep_mean": 2.431, "K": 8.745, "seK": 0.034, "rmse_L": 0.00515}
+{"source": "same", "run": "r3/016", "pair": "AB", "r0": 3.0, "sep_mean": 2.449, "K": 8.741, "seK": 0.035, "rmse_L": 0.00507}
+{"source": "same", "run": "r3/019", "pair": "AA", "r0": 2.0, "sep_mean": 1.703, "K": 15.476, "seK": 0.223, "rmse_L": 0.0054}
+{"source": "same", "run": "r3/020", "pair": "AA", "r0": 2.0, "sep_mean": 1.695, "K": 15.324, "seK": 0.193, "rmse_L": 0.00479}
+{"source": "same", "run": "r3/021", "pair": "AA", "r0": 3.0, "sep_mean": 2.441, "K": 17.603, "seK": 0.082, "rmse_L": 0.00518}
+{"source": "same", "run": "r3/022", "pair": "AA", "r0": 3.0, "sep_mean": 2.429, "K": 17.56, "seK": 0.076, "rmse_L": 0.00502}
+{"source": "superseded: fit_r3_H24_H25_2026-11-24.py full-window fits, INVALID (close pass, rmse 0.017-0.058)", "run": "r3/015", "K_fullwindow": 2.025, "rmse_L": 0.04594}
+{"source": "superseded: full-window, INVALID", "run": "r3/021", "K_fullwindow": 11.299, "rmse_L": 0.05778}
