@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-24/r1/lab-a/006",
+  "lab": "lab-a",
+  "account": "review",
+  "purpose": "P-0025 interpolation check: A-B r0 5.5, diagonal, T 2",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.055456,
+          3.055456
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          6.944544,
+          6.944544
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.0010050251
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0025"
+}

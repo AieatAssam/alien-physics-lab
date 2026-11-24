@@ -1,0 +1,34 @@
+{
+  "lab": "lab-a",
+  "date": "2026-11-24",
+  "title": "Radial fall of two A particles from r0 = 9: the full A-A force profile in one run",
+  "pitch": "H30 (2026-11-23) found the constant-K law K/r^2.5 with K = 17.7 holds at separations 3 and 5 but not at 7 (K_fit 15.1) or 9 (K_fit 11.6), each replicated to about 2 percent. One trajectory that falls from r0 = 9 at rest sweeps every separation from 9 down to contact. A fit of the separation-dependent coefficient K(r) over that whole run (no assumed exponent) would show the shape of the force, including whether it is screened as in P-0003's alternative form. Two particles, dense sampling, T = 10.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          0.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          9.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 10.0,
+    "sample_dt": 0.0050251256
+  }
+}

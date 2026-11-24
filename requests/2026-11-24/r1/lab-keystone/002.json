@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-24/r1/lab-keystone/002",
+  "lab": "lab-keystone",
+  "account": "review",
+  "purpose": "P-0025: edge check at r0 = 8.0 (upper bound), horizontal, T = 2.0.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          1.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          9.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.002
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0025"
+}

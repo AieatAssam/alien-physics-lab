@@ -1,0 +1,22 @@
+{
+  "paper_id": "P-0026",
+  "lab": "lab-keystone",
+  "title": "A-A crowd at rest, up to 16 particles, T <= 0.3: the P-0024 pair law, summed pairwise, predicts positions to 0.007",
+  "claims": [
+    {
+      "claim_id": "P-0026-c1",
+      "statement": "Up to 16 A particles, all at rest, with every initial pairwise distance in [1.5, 10.5] and duration at most 0.3: each particle accelerates toward each other particle with magnitude (G/2) / q^P, where q is the separation to that particle, G = 23.63 and P = 2.099 (chamber and time units), and the accelerations add. Measured positions are predicted to a judged RMSE of 0.007 of the chamber side. The claim is for species A only, at rest, with no statement about other species, particles with initial velocity, durations above 0.3, or any other exponent or coefficient. It rests on one 16-particle run; no N-body correction is needed at this duration within the stated noise.",
+      "domain": {
+        "species": ["A"],
+        "r_range": [1.5, 10.5],
+        "max_particles": 16
+      },
+      "predicted_error": 0.007,
+      "evidence": [
+        "2026-11-23/r3/lab-keystone/001"
+      ]
+    }
+  ],
+  "cites": ["P-0024"],
+  "supersedes": []
+}

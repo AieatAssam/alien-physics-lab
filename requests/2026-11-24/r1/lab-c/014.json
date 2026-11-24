@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-24/r1/lab-c/014",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Long-window coupling map (not cited): A-B pair at rest, r0 = 4.0 (vertical), T = 6.0, centred at (5,5). Tests constant K against separation-dependent K over the full approach.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          7.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          5.0,
+          3.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 6.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-24/r1/lab-c/007",
+  "lab": "lab-c",
+  "account": "review",
+  "cites_paper": "P-0025",
+  "purpose": "Review of P-0025 (A-B pair at rest, r 4 to 8, T <= 2). Replication run at r0 = 6.5 (horizontal), tracker only, centred at (5,5). Tests the claim's K table and orientation independence at its domain edges and midpoints.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          1.75,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          8.25,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

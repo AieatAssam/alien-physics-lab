@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-24/r1/lab-a/002",
+  "lab": "lab-a",
+  "account": "review",
+  "purpose": "P-0025 edge: A-B at rest, r0 4.01, diagonal, T 2 (close approach to r ~2.2)",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.582251,
+          3.582251
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          6.417749,
+          6.417749
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.0010050251
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0025"
+}

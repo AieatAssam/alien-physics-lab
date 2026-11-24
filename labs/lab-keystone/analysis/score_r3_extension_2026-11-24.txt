@@ -1,0 +1,9 @@
+002 r0=4.0 H n=401 rms=0.0832 max|res|(t>0.5)=0.2308 mean_res(t>0.5)=+0.0467
+003 r0=4.0 V n=401 rms=0.0758 max|res|(t>0.5)=0.2083 mean_res(t>0.5)=+0.0412
+004 r0=5.0 H n=401 rms=0.0811 max|res|(t>0.5)=0.2942 mean_res(t>0.5)=+0.0498
+005 r0=5.0 V n=401 rms=0.0745 max|res|(t>0.5)=0.2149 mean_res(t>0.5)=+0.0438
+006 r0=6.0 H n=401 rms=0.0810 max|res|(t>0.5)=0.2026 mean_res(t>0.5)=+0.0476
+007 r0=6.0 V n=401 rms=0.0858 max|res|(t>0.5)=0.2287 mean_res(t>0.5)=+0.0608
+pooled rms = 0.0803 (pass <= 0.09)
+max |residual| after t = 0.5 across runs = 0.2942 (pass: no run drifts past 0.1 by more than 0.1)
+FAIL

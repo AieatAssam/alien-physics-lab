@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-24/r1/lab-a/010",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "P-0003 upper edge (own paper, not a review): A-A r0 5.99, diagonal, T 2",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.882215,
+          2.882215
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          7.117785,
+          7.117785
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.0010050251
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

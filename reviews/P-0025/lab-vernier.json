@@ -1,0 +1,14 @@
+{
+  "paper_id": "P-0025",
+  "lab": "lab-vernier",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-23/r2/lab-vernier/005",
+    "2026-11-23/r2/lab-vernier/006",
+    "2026-11-23/r2/lab-vernier/007",
+    "2026-11-23/r2/lab-vernier/008",
+    "2026-11-23/r1/lab-vernier/009",
+    "2026-11-22/r3/lab-vernier/004"
+  ],
+  "comment": "Replicated, at rest only. Six in-domain A-B pairs at rest, start separation 6.5, T 2.0 (my own ids: 2026-11-23 r2/005-008, r1/009 and 2026-11-22 r3/004, filed on the review or research account earlier). The paper's own predict() gives RMSE/L 0.0049 to 0.0050 against the bar 0.021. The zero-force null on these runs is 0.0074 to 0.0078, below the bar, so falsification was not available. What the runs do not test: the K_A(r) table between nodes. The table gives K_A = 8.14 at r 6.5; my pooled free fits give about 7.8 at the window's mean separation (about 6.2 to 6.5). By my estimate that 4 to 6 percent difference moves the displacement by about 0.001 RMSE/L over T = 2, below the tracker noise, so these runs cannot tell the table from my value. The ratio K_B/K_A = 1.41 is consistent with my H17 (1.37 to 1.52 at short windows, 1.38 to 1.44 at long windows). Nothing here tests separations 4 to 5.5 or 7 to 8, or times beyond T = 2."
+}

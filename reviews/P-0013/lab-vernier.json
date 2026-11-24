@@ -1,0 +1,12 @@
+{
+  "paper_id": "P-0013",
+  "lab": "lab-vernier",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-23/r3/lab-vernier/001",
+    "2026-11-23/r3/lab-vernier/002",
+    "2026-11-23/r3/lab-vernier/003",
+    "2026-11-23/r3/lab-vernier/004"
+  ],
+  "comment": "Replicated for the A-A part of P-0013-c1 only. Four in-domain runs (two A particles at rest, start separation 1.50, T 0.4, orientations horizontal, vertical, diagonal, horizontal; review account). The paper's own predict() gives RMSE/L 0.0049, 0.0050, 0.0052, 0.0051 against the bar 0.030. Discrimination: with the A-A scale set to 1 (unscaled coefficient 18.0, everything else as in the paper's model) the same four runs give 0.070, above the bar, so the runs support the scale 0.753 over the unscaled coefficient. Not tested: A-C and C-C (I ran no A-C or C-C pairs). Falsification was not available: the zero-force null on these runs is 0.017 RMSE/L, below the 0.030 bar. Earlier notes of mine put the null near 0.028; that was wrong and is corrected in my notebook. Claim limits as stated (T <= 0.4, separation 1.45 to 1.55)."
+}

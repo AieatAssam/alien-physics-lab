@@ -1,91 +1,81 @@
 # LAB-C notebook (Nullius)
 
-Last updated: 2026-11-23, round 3. Full rewrite; the earlier notebook under `labs/lab-c/NOTEBOOK.md` is superseded for the 2026-11-23 state.
+Last updated: 2026-11-24, round 1. Full rewrite. Supersedes the 2026-11-23 round-3 notebook.
 
 ## Status at a glance
 - Scoreboard (last public): accepted 1 (P-0013), unsupported reviews 2, falsifications landed 1 (P-0014, contested), bounties 1.
-- Research ledger 2026-11-23: allowance 40, used 8.1 before round 3. Round 3 plan 12.8 (001-012, est.), so about 19 left after this round. Unused credits do not roll over.
-- Review ledger 2026-11-23: allowance 15, used 14.19 before round 3 (left 0.81). Round 3 spent none: the cheapest in-domain pair run costs about 1.01, so no further review runs are affordable today.
-- Grant: tonight's winner is lab-keystone (votes: keystone 3, lab-b 2, per `grants/2026-11-23/award.json`). Lab-c filed no proposal and its grant allowance is 0. Our round-2 vote went to lab-b (Icarus).
+- Research ledger 2026-11-24: allowance 40. Round 1 plan 15.2 (24 requests, 001-024; 001-012 are review, see below). About 24.8 left.
+- Review ledger 2026-11-24: allowance 15. Round 1 plan 12.96 (001-012, `cites_paper` P-0025).
+- Grant: proposal filed for 2026-11-24 (`out/grants/2026-11-24/proposals/lab-c.json`). Round-2 vote for the 2026-11-24 proposals comes later; I vote for another lab's proposal, not my own.
+- Papers: none published. Nothing is clean enough yet (see H11 below).
 
-## Round 2 review results (all in domain, all pass the judge bar)
-Scored with the papers' own `predict()` (`analysis/score_predict_2026-11-23.py`). Each run passes the strict domain check (r0 inside the claim's r_range by at least 0.01, species and count inside the claim's domain).
+## What changed this session (analysis of round-3 results 2026-11-23/r3/lab-c/001-012)
+These twelve runs are the local K(r) map (A-B pair at rest, centred at (5,5), tracker only). Runs 001-002 are at r0 = 3.0 (outside P-0025, outside my own claims); 003-012 are at r0 = 4.0 to 8.0 with T = 1.2 or 2.0.
 
-| run | paper | r0 | T | RMSE/L | bar (3 x predicted_error) | pass |
-|---|---|---|---|---|---|---|
-| 2026-11-23/r2/lab-c/001 | P-0022 | 1.97 | 0.8 | 0.00497 | 0.024 | yes |
-| 002 | P-0022 | 2.00 | 0.8 | 0.00481 | 0.024 | yes |
-| 003 | P-0022 | 2.03 | 0.8 | 0.00501 | 0.024 | yes |
-| 004 | P-0023 | 8.95 | 10 | 0.00509 | 0.018 | yes |
-| 005 | P-0023 | 9.00 | 10 | 0.00508 | 0.018 | yes |
-| 006 | P-0023 | 9.05 | 10 | 0.00516 | 0.018 | yes |
-| 011 | P-0024 | 1.50 | 0.3 | 0.00492 | 0.018 | yes |
+1. **P-0025 (lab-b) predictor, judge-style RMSE/L on my runs** (`labs/lab-c/analysis/score_predict_2026-11-23.py`, run with numpy installed):
+   runs 003-012 all pass with RMSE/L 0.0048 to 0.0052 against a bar of 0.021. Strict domain check passes for all ten. Runs 003 and 004 (r0 = 4.0) and 011 and 012 (r0 = 8.0) sit exactly on the edges; the round-2 rule (keep evidence at least 0.01 inside) says do not cite them as review evidence. Runs 005-010 are the usable interior set. Runs 001-002 are OUT_OF_DOMAIN as expected.
+2. **The judge metric is nearly blind to the claim's coupling** (`out/labs/lab-c/analysis/sens_P0025_2026-11-24.py`). Scaling P-0025's K table by 0.8 to 1.2 or the ratio 1.41 to 1.2 or 1.6 keeps every run at 0.0048 to 0.0062, all below 0.021. The noise floor is 0.005 (tracker sigma 0.05 per coordinate over L = 10), so the bar is 4 times the floor and a 20 percent error in K is invisible to it. Consequence: `replicated` is cheap for any model near the right coupling, and `falsified` needs a much larger error than the claim's own K precision.
+3. **Per-run K fits from the notebook's old tool were grid-limited.** `fit_window_2026-11-23.py` (with P-0023's model) returned values sitting on the 0.5-spaced search grid (8.50, 12.00, 10.00, 11.50) with errors of 0.3 to 1.0. The K values in the previous round's windowed table (K_A 6 to 9) were from the same tool and are not reliable at the precision stated there. Withdrawn as evidence for H11 in its old form.
+4. **Fine grid (`out/labs/lab-c/analysis/grid_P0025_map_2026-11-24.py`)**, scale on P-0025's K table and ratio, window t <= 2 (cut at separation 3.0):
 
-Round-1 runs (001-005, reviewed on the r_range edges) remain out of domain: they sat at 1.9499999, 2.0500072, 8.8999999, 9.1000075, etc. Do not cite them. Rule kept from round 1: keep review evidence at least 0.01 inside every edge.
+   | run | r0 | orient | best scale | K_A(r0) | best ratio |
+   |---|---|---|---|---|---|
+   | 003 | 4.0 | H | 1.05 | 9.55 | 1.35 |
+   | 004 | 4.0 | V | 0.925 | 8.42 | 1.45 |
+   | 005 | 5.0 | H | 0.95 | 8.80 | 1.45 |
+   | 006 | 5.0 | V | 0.95 | 8.80 | 1.45 |
+   | 007 | 6.0 | H | 0.95 | 8.09 | 1.40 |
+   | 008 | 6.0 | V | 0.975 | 8.31 | 1.40 |
+   | 009 | 7.0 | H | 1.05 | 8.14 | 1.30 |
+   | 010 | 7.0 | V | 1.00 | 7.75 | 1.35 |
+   | 011 | 8.0 | H | 0.90 | 6.17 | 1.55 |
+   | 012 | 8.0 | V | 0.975 | 6.68 | 1.55 |
 
-## Reviews filed this round (`out/reviews/`)
-- **P-0022** (lab-b, A-B at r 1.95-2.05, T <= 0.8): `replicated`, evidence 001-003. Comment states the untested parts (T > 0.8, the exponent, other r).
-- **P-0023** (lab-vernier, A-B at r 8.9-9.1, T <= 10): `replicated`, evidence 004-006. Comment adds a limits paragraph: our free fit gives K_A(B) = 5.997-5.998 and K_B(A) = 8.50-9.01 (run 004 gives 9.005, runs 005 and 006 give 8.50), so the claim's constants (6.161, 8.695) are a few percent off. The judge's bar still passes.
-- **P-0024** (lab-keystone, A-A, r0 1.25-3.0): `inconclusive`, evidence 011 only. One run is short of the three needed for `replicated`. At T = 0.3 the exponent 2.10 and 2.5 are indistinguishable (the claim says so), so the run does not test the exponent.
-
-## Local K(r) analysis (windowed fits, not yet cited)
-Tool: `analysis/fit_window_2026-11-23.py` (P-0023 integrator with K overridden, P = 2.5 fixed, window ends when the 5-sample smoothed separation falls below 3.0; fits run at the noise floor, RMSE/L about 0.005).
-
-| run | r0 | window end | K_A(B) | K_B(A) |
-|---|---|---|---|---|
-| 008 | 5.0 | t = 2.94 (r 5 to 3) | 9.00 +/- 0.10 | 11.99 +/- 0.10 |
-| 010 | 6.5 | t = 5.40 (r 6.5 to 5.4) | 8.00 +/- 0.04 | 11.50 +/- 0.04 |
-| 009 | 7.0 | t = 6.44 (r 7 to 6.4) | 8.00 +/- 0.03 | 11.00 +/- 0.03 |
-| 004 | 8.95 | t = 10 (full run, min r about 5) | 6.00 +/- 0.02 | 9.01 +/- 0.02 |
-| 005 | 9.00 | t = 10 | 6.00 +/- 0.02 | 8.50 +/- 0.02 |
-| 006 | 9.05 | t = 10 | 6.00 +/- 0.02 | 8.50 +/- 0.02 |
-
-Points to weigh:
-- Each window fits at the noise floor with a single constant, but the constants differ strongly between windows (K_A 6 to 9). With P = 2.5 fixed, that is not a constant-K law.
-- Round-2 runs 007 (r 3) and 001-003 (r 2) are not in the table: 007's window is too short for the cut (noise at t = 0 pushes the smoothed separation below 3). The 007-010 runs close in before T = 10 (008 reaches 0.18, 009 reaches 0.11), so any full-window fit is meaningless past the approach. Any K fit must cut at approach.
-- The K_B(A)/K_A(B) ratio sits near 1.33 to 1.5 in every window; the species ratio looks stable while the overall scale moves.
-- Inside P-0023's own domain (r about 9), the claim's constant is consistent with our fits to a few percent, but 004 vs 005/006 disagrees on K_B(A) by 6 percent (orientation or walls?). Unresolved.
-- P-0022 (r about 2, T <= 0.8): K_A(B) = 7.59 and P-0023 (r about 9): 6.16. These two papers each claim constant K at P = 2.5, and they disagree by about 19 percent. Both can be true only if K varies with r, or if P != 2.5.
+   Reading: P-0025's table is consistent with the map at about 5 to 10 percent in scale (best 0.90 to 1.05), and the ratio sits at 1.30 to 1.55 with 1.41 inside. The one orientation split of note is r0 = 4 (H 1.05 vs V 0.925, 1-sigma ranges barely disjoint). At r0 = 5, 6, 7 the H and V ranges overlap. The orientation question (H32) is therefore open, not resolved either way.
+5. **Joint constant-K and exponent scan** (`out/labs/lab-c/analysis/exponent_scan_2026-11-24.py`, all ten runs pooled, RATIO 1.41 fixed, K constant, P scanned):
+   P = 2.00: rms 0.0589; P = 2.25: 0.0512; **P = 2.50: 0.0506 (best, K = 8.5)**; P = 2.75: 0.0507; P = 3.00: 0.0593.
+   A single constant K with P = 2.5 fits the pooled map at the tracker noise floor (0.050). Exponent 2.25 to 2.75 is not excluded; 2.0 and 3.0 are.
 
 ## Hypotheses (status)
-- **H11 (live, strengthened)** Effective coupling depends on separation: K_eff(r) is not constant at P = 2.5. Evidence: windowed K table above, and the P-0022 vs P-0023 constant gap. Not yet established: whether the dependence is smooth in r, or whether the windows are biased.
-- **H29 (weakened)** Constant K_A(B) = 7.75 for r 3.8-7 (P-0021). Our window at r 6.5-7 gives 8.00 and at r 5 gives 9.00, so a single 7.75 does not describe the window fits either.
-- **H32 (open)** Orientation or wall effects confound the K estimates at large r. Test: the local map below (both orientations at each r). The centre (5,5) keeps walls at least 1.0 away up to r = 8.
-- **H22 (confirmed on round-2 numbers)** The judge's RMSE/L cannot separate K values that differ by 3 to 40 percent over long windows. The judge bar passes P-0023's constants and our alternative fits alike.
-- **P-0024 exponent (open)** Cannot be tested at T <= 0.3. Needs r0 in [2.5, 3.0] with T up to 0.6, and more runs than the review budget allows today.
+- **H11 (downgraded to suggestive)**: effective coupling falls with separation at P = 2.5. Evidence: the per-run point estimates in item 4 fall from about 9 at r 4 to 6 to 7 at r 8. But the per-run K errors are about 0.5 to 1.0 (wide 1-sigma ranges in item 4), and the pooled constant-K fit in item 5 is at the noise floor. The trend is not established. A single long window (T = 10) is the most sensitive test, which is why it is the grant proposal and the research map below.
+- **H32 (open)**: orientation dependence. Only the r0 = 4 pair differs (item 4). Review runs in today's plan test it at 4.05 to 7.95.
+- **H-exp (new, open)**: force exponent is 2.5 with a constant K, versus a different exponent between 2.25 and 2.75. Item 5 gives the best P = 2.5 but cannot exclude 2.25 or 2.75 on this data.
+- **H-judge (new, established)**: the judge bar of 3 times predicted_error is about 4 times the tracker noise floor (0.005) and cannot separate coupling errors of 20 percent. Judge verdicts will mostly be `replicated`; my own review comments must say so and state limits.
+- **H-floor (new, established by arithmetic)**: a perfect model has RMSE/L of about 0.005 against noisy tracker data (sigma 0.05 per coordinate, L = 10). Any predicted_error at or below 0.0025 is therefore unreachable with the tracker alone under the judge metric. This makes `sharpen-A-2`, `sharpen-B-3`, `sharpen-C-2` (predicted_error <= 0.0025) unreachable with tracker data. Census-only or a different noise model would be needed. Not pursued.
+- **H22 (confirmed)**: the judge metric cannot separate K values that differ by 3 to 40 percent over long windows (from round 3, now quantified in item 2).
 
-## Requests filed 2026-11-23 round 3 (`out/requests/2026-11-23/r3/lab-c/`)
-All research account, tracker only, not cited. Local K(r) map: A-B pairs at rest centred on (5,5), both orientations.
-- `001` r0 3.0 horizontal (A left), T 0.8, dt 0.01 (est. cost 1.03)
-- `002` r0 3.0 vertical (B bottom, A top), T 0.8, dt 0.01 (1.03)
-- `003` r0 4.0 horizontal, T 1.2, dt 0.01 (1.05)
-- `004` r0 4.0 vertical, T 1.2, dt 0.01 (1.05)
-- `005` r0 5.0 horizontal, T 2.0, dt 0.02 (1.08)
-- `006` r0 5.0 vertical, T 2.0, dt 0.02 (1.08)
-- `007` r0 6.0 horizontal, T 2.0, dt 0.02 (1.08)
-- `008` r0 6.0 vertical, T 2.0, dt 0.02 (1.08)
-- `009` r0 7.0 horizontal, T 2.0, dt 0.02 (1.08)
-- `010` r0 7.0 vertical, T 2.0, dt 0.02 (1.08)
-- `011` r0 8.0 horizontal, T 2.0, dt 0.02 (1.08)
-- `012` r0 8.0 vertical, T 2.0, dt 0.02 (1.08)
+## Plan for round 1, 2026-11-24 (filed)
+Generator: `out/labs/lab-c/analysis/make_2026-11-24_r1_requests.py`. All 24 requests validate against `protocol/request.schema.json`.
 
-Total est. 12.8 of about 31.9 remaining. Rough estimate (not simulated): the separation changes by about 0.4 over each window at r 3 to 4, about 0.75 at r 5, and about 0.2 to 0.5 at r 6 to 8. So each run gives K_eff averaged over that band, not at a point. This is a caveat for the fits. Fit with `fit_window_2026-11-23.py` (cut at approach) on the new ids, per r, both orientations.
+- **Review, account review, cites P-0025 (001-012, 12.96 credits)**: A-B pair at rest, T = 2.0, dt 0.01, centred at (5,5). Horizontal and vertical at r0 = 4.05, 4.5, 5.5, 6.5, 7.5, 7.95. All are at least 0.05 inside P-0025's [4, 8] range and T = 2.0 is at the claim's limit (allowed). These are for the P-0025 review.
+- **Research, not cited (013-024, 15.2 credits)**: long-window coupling map. Horizontal and vertical at r0 = 4, 5, 6, 7, 8 with T = 6 (dt 0.01), plus horizontal T = 10 at r0 = 6 and 8. Outside the claim's domain on purpose. This is the H11 and H-exp test.
+- **Grant proposal**: single A-B pair, r0 = 8 horizontal, T = 10, dt 0.005 (the 2000-sample limit). Main event for H11.
 
-## Next session plan
-1. Once `results/2026-11-23/r3/lab-c/001-012` exist: fit K_A(B), K_B(A) per run, pooled by r and orientation, with the window tool. Decide H11 (K_eff decreasing with r) versus constant K. The orientation split decides H32 at the same time.
-2. If K_eff(r) is clearly non-constant, publish a small claim: constant-K at P = 2.5 is rejected for A-B on a stated r band, with predicted_error from the fit scatter. Cite only ids from my own lab, in domain. Do not claim more than the local map supports.
-3. Review budget on 2026-11-24 (15 credits): two P-0024 runs at r0 = 2.0 and 2.8 (T up to 0.3 and 0.6, both at least 0.01 inside the edges) to reach three in-domain runs. Then decide `replicated` or `inconclusive` with the bar.
-4. Open bounties: crowd-8 (needs an accepted claim with 8 or more particles; blocked until a validated model exists), sharpen-A/B/C (predicted_error 0.0025 or less; not reachable with our current K scatter), contested P-0014 (superseding paper), disputed P-0003/P-0006/P-0007 (no action from lab-c this round).
-5. Grant: none filed. Consider a proposal for 2026-11-24 only if a single main-event run can settle H11 at a separation not covered by the local map.
+## P-0025 review (pending, not filed today)
+Filing today would cite results that do not exist yet. Plan for the next session:
+1. When `results/2026-11-24/r1/lab-c/001-012` exist, score each with `score_predict_2026-11-23.py` (paper P-0025), check the strict domain (r0 between 4 and 8, 2 particles, species A and B, T <= 2).
+2. If at least three pass the bar (0.021), file `out/reviews/P-0025/lab-c.json` as `replicated`, citing the passing ids from 001-012 (review-account runs only). Comment: the bar is loose, the coupling is not tested to better than about 10 percent, the ratio 1.41 is consistent at 1.30 to 1.55, H and V agree except possibly at r0 = 4, and the exponent is assumed.
+3. If the 4.05 or 7.95 edge runs fail the bar while interior runs pass, use `narrowed` with a proposed_domain that excludes the failing edge.
+4. Only if every in-domain cited run exceeds 0.021 should it be `falsified`. Not expected.
+
+## Requests filed previously (for reference)
+- 2026-11-23/r3/lab-c/001-012: local K(r) map (research), results in hand, analysed above. Not cited anywhere.
+- 2026-11-23/r2/lab-c/001-011: review runs for P-0022, P-0023, P-0024 (reviews filed) and research runs 007-010 (not cited).
+- Round-1 runs 001-005 of 2026-11-23 are out of domain (r_range edges exact); do not cite.
+
+## Open bounties (lab-c view)
+- crowd-8: needs a validated model for 8 or more particles. Design in `crowd8_design_2026-11-22.py` rests on P-0008 coefficients that are not validated at these separations. Not attempted.
+- contested-P-0014, disputed-P-0003, disputed-P-0006, disputed-P-0007: no action this round.
+- sharpen-A-2, sharpen-B-3, sharpen-C-2: unreachable with tracker data under the judge metric (H-floor).
 
 ## Analysis files (this round, under `out/labs/lab-c/analysis/`)
-- `score_predict_2026-11-23.py`: judge-style RMSE/L using each paper's `predict()`, with the paper's own domain checks. Replaces the earlier integrator replay (which broke on P-0024's `_step` signature).
-- `fit_window_2026-11-23.py`: two-constant K fit (P fixed) on the pre-approach window, smoothed cut at separation CUT. Use this, not the full-window fit.
-- `make_2026-11-23_r3_requests.py`: writes the round-3 request files.
-- Older tools remain under `labs/lab-c/analysis/` (repo), including `score_pair_2026-11-23.py` and `fit_K_2026-11-23.py`. The full-window fit in `fit_K_2026-11-23.py` gives meaningless K values on runs that approach (e.g. 007-010, RMSE/L of 4637 and 28), so do not use it on those runs.
+- `sens_P0025_2026-11-24.py`: judge sensitivity of P-0025 to K scale and ratio (item 2).
+- `grid_P0025_map_2026-11-24.py`: fine scale and ratio grid per run (item 4).
+- `exponent_scan_2026-11-24.py`: pooled constant-K and exponent scan (item 5).
+- `make_2026-11-24_r1_requests.py`: round-1 requests and the grant proposal.
+- `score_predict_2026-11-23.py`, `fit_window_2026-11-23.py`: earlier tools (the fit tool is grid-limited; see item 3).
 
 ## History (condensed)
-- 2026-11-17 to 2026-11-22: rounds 1-3. Lone-particle free flight, pair law and species matrix, short-range deficit at r = 1.5 (P-0013 accepted 2026-11-21), P-0016 to P-0021 reviews, free K fits, P-0020 and P-0021 upgraded to `replicated`. Grant proposals lost each night; lab-keystone won 2026-11-22.
-- 2026-11-23 round 1: reviewed P-0022 and P-0023, found the K(r) tension between P-0021 and P-0023, five review runs (001-005) out of domain on exact edge checks, two research runs (006-007).
-- 2026-11-23 round 2: scored round 1 with the paper models, found the edge-domain error, filed 11 requests (7 review, 4 research), voted for lab-b.
-- 2026-11-23 round 3 (this session): scored all round-2 review runs (all pass, all in domain), filed reviews for P-0022 (replicated), P-0023 (replicated with limits), P-0024 (inconclusive). Windowed K fits show K_eff differing across separation windows; filed a 12-run local K(r) map (research, about 12.8 credits). No paper published yet: the evidence on H11 is not clean enough.
+- 2026-11-17 to 2026-11-22: rounds 1 to 3. Lone-particle free flight, pair law and species matrix, short-range deficit at r = 1.5 (P-0013 accepted 2026-11-21), P-0016 to P-0021 reviews, free K fits, P-0020 and P-0021 upgraded to `replicated`. Grant proposals lost each night; lab-keystone won 2026-11-22.
+- 2026-11-23: round 1 reviewed P-0022 and P-0023; round 2 scored the round-1 runs and filed review runs and a voted grant; round 3 filed reviews for P-0022 (replicated), P-0023 (replicated, with limits), and P-0024 (inconclusive), and filed a 12-run K(r) map (results analysed above).
+- 2026-11-24 round 1 (this session): analysed the map; found the judge metric insensitive to 20 percent coupling errors; found the earlier windowed K table grid-limited; scored P-0025 (passes on all in-domain map runs); filed 24 requests and the grant proposal. Review of P-0025 deferred until today's runs return.

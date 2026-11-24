@@ -1,92 +1,105 @@
 # Keystone notebook (lab-keystone, synthesiser)
 
-Last updated: 2026-11-23, round 3.
+Last updated: 2026-11-24, round 1.
 
 ## Status
 
-- **Accepted papers: 1** (P-0010, scoreboard). **Submitted: P-0024** (A-A pair at rest, r0 in [1.25, 3.0], power law exponent 2.10, window T <= 0.3 for r0 < 2.5 and T <= 0.6 for r0 in [2.5, 3.0]). Paper number is provisional; refer to it by title if renumbered.
-- **Unsupported reviews: 3** (scoreboard). Round-2 reviews were judged on the paper's metric with in-domain runs. Caveat for all four (P-0017, P-0018, P-0022, P-0023): the T <= 0.8 runs sit at the tracker noise floor and do not test K or P. P-0023 (T = 10) is the one K-sensitive review.
-- **Grant (round 3, 2026-11-23): we won** (3 votes to lab-b's 2). Title: "Eight A-A pairs at once: is the pair law additive at N = 16?". Award 120 credits on `grant`.
-- **Round-2 vote:** lab-b (centre-of-mass test of equal-and-opposite pair forces). File: `out/grants/2026-11-23/votes/lab-keystone.json`.
+- **Accepted papers: 2** (scoreboard). Submitted: **P-0024** (A-A pair at rest, r0 in [1.25, 3.0], exponent 2.10, window T <= 0.3 / 0.6), **P-0026** (A-A crowd, up to 16 particles at rest, T <= 0.3, summed pair law, predicted error 0.007; new today). Paper numbers are provisional; refer to papers by title if renumbered.
+- **Unsupported reviews: 3** (scoreboard). Caveat for the round-2 reviews (P-0017, P-0018, P-0022, P-0023): their T <= 0.8 runs sit at the tracker noise floor and do not test K or P.
+- **Grants:** won round 3 (2026-11-23, 3 votes to lab-b's 2, title "Eight A-A pairs at once"). Award 120 credits on `grant`, usable in round 3 of that date. Tonight's proposal is filed for round 1 (see below).
+- **Open bounties I can address:** crowd-8 (bounty 3): P-0026 is a candidate (max_particles 16). sharpen-A/B/C need predicted_error <= 0.0025, which is below the judged noise floor (~0.005) for single-run claims. I have not attempted them.
 
-## Round 3 actions (today)
+## Round 1 actions (2026-11-24)
 
-1. **Grant main event filed:** `out/requests/2026-11-23/r3/lab-keystone/001.json`. Voted design, unchanged: 16 A in 8 horizontal pairs, r0 = 1.5, T = 0.3, sample_dt 0.0015, tracker only. Cost 1.10 of 120. The remaining grant credits are unused; the main event is one request per night.
-2. **Research requests filed:** `out/requests/2026-11-23/r3/lab-keystone/002-007.json`. A-A at rest, centre (5, 5), r0 in {4, 5, 6} x {H, V}, T = 1.0, sample_dt 0.0025. Cost 6 x 1.04 = 6.24 of the 33.52 research credits left today.
-3. **Scored research 2026-11-23/r1/lab-keystone/001-006** (r0 = 4, 5, 6, T = 2.0). The P-0024 extension test is done. Script: `out/labs/lab-keystone/analysis/extension_r0_4_6_2026-11-23.py`, with diagnostics in `extension_diag_2026-11-23.py` and `extension_full_T_2026-11-23.py`.
-4. **Pre-registration** for the round-3 runs: `out/labs/lab-keystone/analysis/prereg_2026-11-23_r3.json`. Grant prediction (full additive model): `grant_prereg_2026-11-23.py` and `grant_prereg_prediction_2026-11-23.json`.
+1. **Scored round-3 extension runs 2026-11-23/r3/lab-keystone/002-007** (A-A at rest, centre (5,5), r0 in {4,5,6} x {H,V}, T = 1.0, sample_dt 0.0025). Script `out/labs/lab-keystone/analysis/score_r3_extension_2026-11-24.py`, diagnostics `diag_r3_extension_2026-11-24.py`. Outputs in the matching `.txt` files.
+2. **Scored the N = 16 grant run 2026-11-23/r3/lab-keystone/001** against the pre-registered full additive prediction. Result: per-coordinate rms 0.0512 (noise 0.05). Pass (rule was <= 0.06).
+3. **Published P-0026** (`out/papers/P-0026/`): A-A crowd up to 16, T <= 0.3, pairwise sum of the P-0024 law, predicted error 0.007, evidence 2026-11-23/r3/lab-keystone/001. `model.py` reproduces that run at RMSE/L = 0.0051 (`check_P0026_2026-11-24.txt`).
+4. **Tonight's grant proposal** (`out/grants/2026-11-24/proposals/lab-keystone.json`): 8 A in four horizontal pairs, r0 = 2.5, at rest, centres (2.25|7.75, 2.25|7.75), T = 0.6, sample_dt 0.003, tracker. Pre-registered prediction: `grant_prereg_prediction_2026-11-24.json`, setup `grant_setup_2026-11-24.json`, script `grant_crowd8_2026-11-24.py`. Min pairwise distance over the run is about 1.98, so no close approach. Pass rule: per-coordinate rms <= 0.06. The window is inside P-0024 (r0 in [2.5, 3.0], T <= 0.6), so a fail points at multi-body terms.
+5. **Requests filed today** (`out/requests/2026-11-24/r1/lab-keystone/`):
+   - 001-003 (**review account, cites_paper P-0025**, 1.08 each): A-B edge checks for Icarus' paper. 001: r0 = 4.0 horizontal (A at (3,5), B at (7,5)). 002: r0 = 8.0 horizontal (A at (1,5), B at (9,5)). 003: r0 = 8.0 vertical (A at (5,1), B at (5,9)). T = 2.0, sample_dt 0.002, tracker. All in domain (2 particles, species A/B, distances exactly 4.0 and 8.0 = bounds, inclusive). Review budget used 3.24 of 15.
+   - 004-005 (research, 1.10 each): replicates of 2026-11-23/r3/lab-keystone/001 for P-0026. Not yet cited.
+   - Research credits used today: 2.19 of 40 (plus the grant request, filed in round 3).
+6. **Not filed:** the grant main event itself. It is one request per night in round 3 on the `grant` account. The round-3 request file must carry the proposal's setup unchanged.
 
-Cost coefficient for this season, from result costs: k = 0.02 per particle-time unit (cost = 1 + 0.02 n D).
+## Results and what they say
 
-## Results
+### Round-3 extension runs (2026-11-23/r3/lab-keystone/002-007; T = 1.0; tracker)
 
-### Exponent extension, runs 2026-11-23/r1/lab-keystone/001-006 (r0 = 4, 5, 6; T = 2; tracker)
+Projected separation on the initial axis, against P-0024's 1D law (G = 23.63, P = 2.099; M1). Tracker noise on the projected separation is about 0.071.
 
-Projected separation d(t) on the initial axis, measured against the 1D law q'' = -G/q^P integrated from rest.
-Tracker noise is about 0.05 per coordinate, so the noise on d is about 0.071.
+| run | r0 | orientation | rms (t <= 1) | mean residual, t in [0.8, 1.0) |
+|---|---|---|---|---|
+| 002 | 4.0 | H | 0.083 | +0.072 |
+| 003 | 4.0 | V | 0.076 | +0.056 |
+| 004 | 5.0 | H | 0.081 | +0.072 |
+| 005 | 5.0 | V | 0.075 | +0.060 |
+| 006 | 6.0 | H | 0.081 | +0.058 |
+| 007 | 6.0 | V | 0.086 | +0.075 |
 
-- **Early times (t <= 1): consistent with P-0024 (G = 23.63, P = 2.099).** Per-run rms 0.073 to 0.084 against noise 0.071. Residuals are small at t <= 0.4 and grow after that.
-- **Full time: P-0024 fails at r0 = 5 and 6.** Pooled residual rms over T = 2 is 0.18 to 0.19 (003-006). Run 005 (r0 = 6) is +0.17 at t = 0.6, +0.38 at t = 1.4 and +0.50 at t = 2.0 (measured 5.32, P-0024 predicts 4.82). The P-0024 law pulls too hard at large r.
-- **r0 = 4 (001, 002):** the pair closes to about 0.14 by t = 2.0. The measured separation at t = 1.9 is 0.92; P-0024 gives 0.51 and a P = 2.5 law gives 1.15. A closing pair here is not a smooth power-law trajectory, so the 1D model is only usable up to t = 1.8. Rms over t <= 1.8 is 0.14 for P-0024 and 0.13 for 002.
-- **Effective relative acceleration at large r** (best-fit (G, P) per run, full time, evaluated at the radius): r0 = 4 gives about 1.16 against P-0024's 1.29; r0 = 5 gives about 0.66 (runs 003, 004) against 0.81; r0 = 6 gives about 0.38 (runs 005, 006) against 0.55. The P-0024 overprediction grows with r: about 10% at r = 4, about 20% at r = 5, about 30% at r = 6.
-- **Caveat:** single-run (G, P) fits are degenerate. The best-fit P ranges from 2.0 to 2.8 across runs, and G moves with it. Only the effective acceleration at each radius is constrained. Errors on these effective values are not yet computed.
+- **Pre-registered rule, as written:** pooled rms 0.080 <= 0.09 passes. The drift clause (no run past t = 0.5 by more than 0.1) passes when read as a binned mean (all bins with t > 0.5 at or below +0.075). I first coded it as the max single-sample residual after t = 0.5, which gives 0.29 and fails. That is per-sample noise, not drift, so the coded version was wrong and is not the rule's intent. Recorded here so the record is clear.
+- **What the rule misses:** all six runs have the same-sign residual. It is about zero for t < 0.4 (bin means -0.011 to +0.041, scattered) and rises to +0.04 to +0.05 at t in [0.6, 0.8) and +0.06 to +0.075 at t in [0.8, 1.0). Measured separation is larger than M1, so M1 pulls too hard. The bin-mean standard error is about 0.008, so the bias is significant. Best-fit G at P = 2.099 comes out at 0.85 to 0.90 of 23.63 (grid edge hit at 20.0 for several runs; the scan was not widened).
+- **Reading:** the P-0024 law at r0 = 4 to 6 is biased by roughly 15 percent in acceleration by t ~ 0.8, and the bias starts near t ~ 0.4. This agrees with the T = 2 result (effective acceleration 10 to 30 percent below M1 at r = 4 to 6). The pre-registered pass rule is too loose to catch it. **Decision: no narrowed exponent claim for t <= 1 at r0 = 4 to 6.** A claim for t <= 0.3 at these radii would be honest but sits below the judged noise floor, so it would not test anything the judge measures.
 
-**Reading:** H-exponent-extension is **rejected** for the claim as written (valid beyond T ~ 1, r0 = 4 to 6). The P-0024 claim itself is unchanged: its domain stops at r0 = 3 and T <= 0.6. Its statement "no statement about longer times or other separations" stands.
+### N = 16 grant run (2026-11-23/r3/lab-keystone/001; T = 0.3)
 
-### Previous scoring (carried over)
+- Full pairwise-additive prediction, pre-registered 2026-11-23. Per-coordinate rms **0.0512** (noise 0.05). No particle has a mean residual above about 0.015. Pass.
+- The run tests additivity and the pair law at r = 2 to 10 jointly. Cross-pair displacements at T = 0.3 are up to about 0.18, so a pass does not isolate either part. P-0026 says so.
 
-- Slope fit over r = 1 to 3 (pre-registered 2026-11-22 rule): weighted slope s = -2.099 +/- 0.036 (chi2 6.9, 5 dof). P = 2.5 rejected at 3 sigma. Local exponent 1.9 rejected. Isotropy passes (max |z| = 1.82).
-- Shape check (free P): inconclusive.
+## Things I learned this round
+
+- **Per-particle factor.** P-0024's law is (G/2)/q^P on each particle, which gives relative acceleration G/q^P. When I first wrote the N-body model I used G/q^P per particle, which doubled the acceleration and gave RMSE/L 0.019 against the N = 16 run. The corrected factor gives 0.0051. Check the factor against P-0024's `model.py` before reusing any pair-sum code.
+- **Close approach.** Power-law attraction with P ~ 2.1 makes a pair from rest collapse in finite time, so windows must stop before that. With the corrected per-particle factor (see above), the 4-pair, N = 8 layout at r0 = 2.5 keeps its minimum separation at about 2.0 over T = 0.6 but falls to about 0.45 by T = 1.0 (layout scan `layout_scan_2026-11-24.py`). The 4-pair layout at r0 = 2.0 drops to about 0.07 by T = 1.0 with the wrong factor; not re-checked with the right one. Keep grant and claim windows at T <= 0.6 for r0 >= 2.5 and T <= 0.3 for crowds.
+- **Crowd size.** A 16-particle 10 x 10 box with pairs at r0 >= 2 has many cross distances of 2 to 4. Any run longer than about 0.3 becomes strongly coupled and close-approach limited, so N = 16 tests belong at T = 0.3.
 
 ## Hypotheses
 
-- **P-0024-c1 (submitted, mine):** A-A at rest, r0 in [1.25, 3.0], relative acceleration G/q^P, G = 23.63, P = 2.10. Window: T <= 0.3 (r0 < 2.5), T <= 0.6 (r0 in [2.5, 3.0]). predicted_error 0.006. Judged metric is at noise for these runs and does not test P. Falsification is possible only through the radius slope or the time window.
-- **H-P2.5-close (rejected for A-A, r0 = 1 to 3):** s = -2.10 +/- 0.04 against -2.5.
-- **H-local-1.94 (retired):** do not cite 1.94.
-- **H-exponent-extension (rejected as written; narrowed version open):** the P-0024 law holds to r0 = 4 to 6 for t <= 1. Full-time version rejected (T = 2, r0 = 5, 6). The t <= 1 version is tested by runs 002-007 (round 3). Pre-registered pass rule and discriminator are in `prereg_2026-11-23_r3.json`. Predicted effective acceleration at r0 = 5: 0.81 under P-0024 against about 0.66 from the T = 2 fits.
-- **H-additive (N >= 3):** supported at noise for N = 3 and 4-5. Untested at N >= 6. The round-3 grant (N = 16) is the first test at this size.
-  - **Caveat (new):** the grant layout has many cross-pair distances above 3 (up to about 10). Pairs beyond r = 3 contribute up to 0.18 of displacement at T = 0.3, so the grant test is joint: additivity **and** the pair law at r = 3 to 10 for t <= 0.3. A pass supports both. A fail cannot be attributed without the r0 = 4 to 6 short-time law from runs 002-007.
-- **H-close-approach:** power laws fail at the final close approach. For r0 = 4 the pair closes near t = 2.0 (min separation 0.14). For r0 = 1.25 the close approach is near t = 0.32, and the claim window is set below it.
-- **H-K-constancy (weakly supported):** A-B at r = 7 constants (P-0021) constant to 5-10 percent over T = 6. No new claim.
+- **P-0024-c1 (submitted, mine):** A-A pair at rest, r0 in [1.25, 3.0], G = 23.63, P = 2.10, window T <= 0.3 (r0 < 2.5) or T <= 0.6 (r0 in [2.5, 3.0]). predicted_error 0.006. The judged metric is at noise and does not test P.
+- **P-0026-c1 (submitted today, mine):** up to 16 A at rest, all pairwise distances in [1.5, 10.5], T <= 0.3, pairwise sum of the P-0024 law. One run (001) at RMSE/L 0.0051. Replicates 004-005 are in flight.
+- **H-tonight (grant, round 3 if won):** pair law and additivity at N = 8, r0 = 2.5, T = 0.6. Pre-registered prediction in `grant_prereg_prediction_2026-11-24.json`. A pass would support a crowd-8 claim. A fail is attributable to multi-body terms, since the pair law is inside its own window.
+- **H-exponent-extension (rejected as written; t <= 1 version rejected by round-3 bias):** the P-0024 law holds to r0 = 4 to 6 at t <= 1. The bias above rejects it at the ~15 percent level from t ~ 0.8.
+- **H-additive (N >= 3):** supported at noise for N = 3 to 5 and N = 16 at T = 0.3. Untested at N = 8 with cross gaps of 3. The tonight grant is that test.
+- **H-close-approach:** power laws fail at close approach. For r0 = 4 the pair closes near t = 2.0 (min separation 0.14). For r0 = 1.25 the close approach is near t = 0.32.
+- **H-K-constancy (weakly supported):** A-B at r = 7 constant to 5 to 10 percent over T = 6 (P-0021). No new claim.
 - **H-no-factor at 2.5 to 3.5 (P-0014, submitted):** unchanged.
 - **H-scale-1.5 (lab-c, consistent):** unchanged.
 
+## Reviews
+
+- **P-0025 (lab-b, A-B pair at r0 in [4, 8], T <= 2, K_B/K_A = 1.41 with interpolated K_A table; predicted error 0.007).** Review due. Requests 001-003 filed today on the review account. The review will cite those ids only, after they run. Verdict depends on the results. Points to test: the r0 = 4.0 and 8.0 edges, orientation (H vs V at r0 = 8), and whether the K_A nodes hold. Remember the judge does not check duration. Use only T <= 2 runs for this claim, and state that the claim makes no statement beyond T = 2.
+- **Round-2 reviews (P-0017, P-0018, P-0022, P-0023):** caveat unchanged. Their runs do not test K or P.
+
 ## Things we know about the metric
 
-- **Judged metric is at noise for short runs** (T <= 0.8). Errors are about 0.005 to 0.007 and do not test K or P. Say so in every comment.
-- **Judged metric is K-sensitive at T = 6-10.** A 10 percent K change moves the P-0021 error from 0.0050 to 0.0069 to 0.0083. Use long runs when the claim is about K.
-- Domain check is exact (`lo <= distance <= hi`). Use `tools/domain.py`. The judge does **not** check duration, so a claim's window must be enforced in its statement, and other labs can cite long runs against it.
-- Tracker noise is about 0.05 per coordinate; projected separation noise is about 0.071; judged RMSE/L at noise is about 0.005. A predicted_error below about 0.005 is below the noise floor and cannot be met honestly by single-run claims.
-- Norm of a noisy relative vector is biased upward at small r; project onto the initial axis instead.
+- Judged metric is at noise for short runs (T <= 0.8). Errors are about 0.005 to 0.007 and do not test K or P. Say so in every comment.
+- Judged metric is K-sensitive at T = 6 to 10. A 10 percent K change moves the P-0021 error from 0.0050 to 0.0083.
+- Domain check is exact (`lo <= distance <= hi`). Use `tools/domain.py`. The judge does **not** check duration, so the window must be stated in the claim and enforced in `model.py`.
+- Tracker noise is about 0.05 per coordinate. Projected separation noise is about 0.071. Judged RMSE/L for a perfect model is about 0.005. So a predicted_error below about 0.005 cannot be met honestly by a single-run claim.
+- Noise bias: the norm of a noisy relative vector is biased upward at small r. Project onto the initial axis.
 
 ## Plan for the next session
 
-1. **Score research 002-007** (round 3, r0 = 4, 5, 6, T = 1.0, sample_dt 0.0025). For each run compare the projected separation with P-0024 (M1) and with the effective acceleration from the T = 2 fits. Apply the pass rule in `prereg_2026-11-23_r3.json`. Report effective acceleration at each radius with an error.
-2. **If the T <= 1 law passes at r0 = 4 to 6:** publish a narrowed claim (new paper number, next free) with domain species A, r_range [4.0, 6.0], max_particles 2, and duration <= 1.0 stated in the claim. Cite only runs in domain. Do not cite the T = 2 runs as replication evidence without truncating the claim's stated window, since the judge uses the full run.
-3. **If the T <= 1 law fails:** publish the negative result as a narrowed claim for r0 <= 3 with the power law and window unchanged, and record the effective-acceleration table as the hypothesis for the next synthesis.
-4. **Grant (N = 16, 2026-11-23/r3/lab-keystone/001):** after results arrive, compare measured positions with the full additive prediction (`grant_prereg_prediction_2026-11-23.json`). Pass rule: residual rms per coordinate at or below about 0.06 (noise 0.05) with no systematic trend per particle. Also compare the near-only model (pairs with r <= 3). Report both, and say which pairs carry the signal.
-5. Watch for reviews of P-0024. If a review says narrowed, accept it and update the claim under a new number.
-6. Do not publish a new exponent claim until runs 002-007 are scored.
+1. **Round 2:** score requests 004-005 (replicates of the N = 16 run). If both are at RMSE/L <= 0.01, revise P-0026 to cite all three runs.
+2. **Round 2:** score review requests 001-003 for P-0025 (lab-b). If all three fall at or below 0.021 (3 x predicted_error), file a "replicated" review citing them, and say which edges were tested. If one edge fails above 0.021, file "narrowed" with the proposed domain, citing only in-domain runs.
+3. **Round 3:** file the grant main event `2026-11-24/r3/lab-keystone/001` on the `grant` account, using the proposal's setup unchanged. Pass rule: per-coordinate rms <= 0.06 against `grant_prereg_prediction_2026-11-24.json`. Report per-pair residuals; a fail goes to the r0 = 2.5 pairs first.
+4. **Do not publish** a new exponent or extension claim at r0 = 4 to 6 for t > 0.3 until a G-fitted law is tested on fresh runs.
+5. If a review says P-0024 or P-0026 is narrowed, accept it and update under a new number.
 
 ## Files
 
-- Round-2 review judge: `out/labs/lab-keystone/analysis/judge_round2_2026-11-23.py`. Usage: `python3 -I <script> <repo_root>`.
-- Round-3 slope and isotropy script: `out/labs/lab-keystone/analysis/score_round3_slope_2026-11-23.py` (in repo at `labs/lab-keystone/analysis/`).
-- Extension scoring (round 3, runs 001-006): `out/labs/lab-keystone/analysis/extension_r0_4_6_2026-11-23.py`, `extension_diag_2026-11-23.py`, `extension_full_T_2026-11-23.py`.
-- Grant pre-registration: `out/labs/lab-keystone/analysis/grant_prereg_2026-11-23.py`, prediction `grant_prereg_prediction_2026-11-23.json`.
-- Round-3 pre-registration: `out/labs/lab-keystone/analysis/prereg_2026-11-23_r3.json`.
-- Requests (round 3): `out/requests/2026-11-23/r3/lab-keystone/001.json` (grant), `002-007.json` (research).
-- Paper P-0024: `out/papers/P-0024/{paper.md,claim.json,model.py}` (in repo at `papers/P-0024/`).
-- Reviews: `out/reviews/P-0020/lab-keystone.json`, `P-0017/`, `P-0018/`, `P-0022/`, `P-0023/` (each `lab-keystone.json`).
-- Grant proposal: `out/grants/2026-11-23/proposals/lab-keystone.json`.
-- Grant vote: `out/grants/2026-11-23/votes/lab-keystone.json` (vote lab-b).
+- Scoring: `out/labs/lab-keystone/analysis/score_r3_extension_2026-11-24.py` (+ `.txt`), `diag_r3_extension_2026-11-24.py` (+ `.txt`).
+- P-0026 check: `check_P0026_model_2026-11-24.py` (+ `.txt`). Model: `out/papers/P-0026/model.py`.
+- Tonight's grant: `grant_crowd8_2026-11-24.py`, `grant_setup_2026-11-24.json`, `grant_prereg_prediction_2026-11-24.json`. Proposal `out/grants/2026-11-24/proposals/lab-keystone.json`.
+- Layout scan (close approaches): `layout_scan_2026-11-24.py`.
+- Earlier: `extension_r0_4_6_2026-11-23.py`, `extension_diag_2026-11-23.py`, `extension_full_T_2026-11-23.py`, `grant_prereg_2026-11-23.py`, `prereg_2026-11-23_r3.json`, `judge_round2_2026-11-23.py`, `score_round3_slope_2026-11-23.py`.
+- Papers: `out/papers/P-0026/{paper.md,claim.json,model.py}`. P-0024 is in the repo at `papers/P-0024/`.
+- Requests today: `out/requests/2026-11-24/r1/lab-keystone/001-005.json`.
 
 ## Things not to do
 
 - Do not try to locate simulator source or hidden parameters.
 - Do not extend P-0024 beyond two A particles, at rest, r0 in [1.25, 3.0], or beyond its windows.
+- Do not extend P-0026 beyond species A, at rest, T <= 0.3, or the 1.5 to 10.5 pairwise range.
 - Do not cite another lab's run ids, out-of-domain runs, or file `replicated` with fewer than three in-domain runs.
 - Do not use research-account runs as review evidence; review runs go on the review account with `cites_paper`.
-- Do not publish a shape or exponent claim from fits whose signal is below noise.
-- Do not claim a model-free acceleration from windows where the displacement is below about 0.2 per coordinate.
-- Do not present the grant (N = 16) result as a pure additivity test without the r > 3 caveat above.
+- Do not publish a shape or exponent claim from fits whose signal is below noise, or from the M1 law at t > 0.3 for r0 >= 4.
+- Do not present the N = 16 grant result as a pure additivity test without the r > 3 caveat.

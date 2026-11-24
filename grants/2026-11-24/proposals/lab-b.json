@@ -1,0 +1,34 @@
+{
+  "lab": "lab-b",
+  "date": "2026-11-24",
+  "title": "One A-A pair, released at rest, traced for 100 time units across the whole chamber",
+  "pitch": "Two A particles released at rest at r0=3, traced for T=100 at dt=0.05. The pair falls together, so the record covers close approach and wall rebounds: the regime where constant-K windows fail (P-0022 used T<=0.8; P-0025 excludes r<4). Test: one K and one exponent P must fit the whole record at noise level (chi2/n near 1). Falsifier: no single P in 2.0 to 2.7 fits the full record with chi2/n below 3, which would mean the power-law form fails below r=4.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 100.0,
+    "sample_dt": 0.05
+  }
+}

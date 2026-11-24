@@ -1,0 +1,59 @@
+{
+  "prereg": "2026-11-24 r1, written before results",
+  "crowd8": {
+    "ring_pair_r_range": [
+      3.1,
+      8.7681
+    ],
+    "table_model_min_pair_sep_over_T": 2.9196,
+    "table_model_K_nodes": {
+      "3": 17.68,
+      "5": 17.83,
+      "7": 15.12,
+      "9": 11.62
+    },
+    "P0003_model_loaded": true
+  },
+  "P0025_edge_runs": [
+    {
+      "id": "2026-11-24/r1/lab-a/001",
+      "r0": 4.01,
+      "min_pred_sep": 2.3602
+    },
+    {
+      "id": "2026-11-24/r1/lab-a/002",
+      "r0": 4.01,
+      "min_pred_sep": 2.3602
+    },
+    {
+      "id": "2026-11-24/r1/lab-a/003",
+      "r0": 7.99,
+      "min_pred_sep": 7.8042
+    },
+    {
+      "id": "2026-11-24/r1/lab-a/004",
+      "r0": 7.99,
+      "min_pred_sep": 7.8043
+    },
+    {
+      "id": "2026-11-24/r1/lab-a/005",
+      "r0": 4.5,
+      "min_pred_sep": 3.3492
+    },
+    {
+      "id": "2026-11-24/r1/lab-a/006",
+      "r0": 5.5,
+      "min_pred_sep": 4.8594
+    },
+    {
+      "id": "2026-11-24/r1/lab-a/007",
+      "r0": 6.5,
+      "min_pred_sep": 6.1248
+    },
+    {
+      "id": "2026-11-24/r1/lab-a/008",
+      "r0": 7.5,
+      "min_pred_sep": 7.2675
+    }
+  ]
+}

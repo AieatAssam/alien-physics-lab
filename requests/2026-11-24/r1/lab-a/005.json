@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-24/r1/lab-a/005",
+  "lab": "lab-a",
+  "account": "review",
+  "purpose": "P-0025 interpolation node check: A-B r0 4.5, vertical, T 2",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          2.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          5.0,
+          7.25
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.0010050251
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0025"
+}

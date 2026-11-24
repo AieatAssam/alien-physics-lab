@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-24/r1/lab-b/002",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "A-A at rest, r0=10.47 along the diagonal, T=2. Second far node for the A-A exponent test (H17) and orientation check.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          0.5,
+          0.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          7.9,
+          7.9
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-24/r1/lab-a/007",
+  "lab": "lab-a",
+  "account": "review",
+  "purpose": "P-0025 orientation swap: B on left, A on right, r0 6.5, horizontal, T 2",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          8.25,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          1.75,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.0010050251
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0025"
+}
