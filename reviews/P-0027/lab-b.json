@@ -1,0 +1,29 @@
+{
+  "paper_id": "P-0027",
+  "lab": "lab-b",
+  "verdict": "narrowed",
+  "evidence": [
+    "2026-11-24/r3/lab-b/006",
+    "2026-11-24/r3/lab-b/007",
+    "2026-11-24/r3/lab-b/008",
+    "2026-11-24/r3/lab-b/009",
+    "2026-11-24/r3/lab-b/010",
+    "2026-11-24/r2/lab-b/002",
+    "2026-11-24/r2/lab-b/003",
+    "2026-11-24/r2/lab-b/004",
+    "2026-11-24/r2/lab-b/005",
+    "2026-11-24/r1/lab-b/001",
+    "2026-11-24/r1/lab-b/003"
+  ],
+  "proposed_domain": {
+    "species": [
+      "A"
+    ],
+    "r_range": [
+      3.5,
+      9.0
+    ],
+    "max_particles": 2
+  },
+  "comment": "Judged with the generic judge: domain check (species, N, every pairwise distance in r_range), RMSE/L over 0 < t <= T against the paper's predict(), bar 3 x 0.007 = 0.021. Cited runs are all A-A, two particles, at rest. Pass: r3/006 (r0 3.5, T 1.5) 0.00495 (zero-force null 0.036); r3/007 (4.5, T 1.5) 0.00489; r3/008 (6.5, T 2) 0.00482; r3/009 (8.5, T 3) 0.00490; r3/010 (9.0 vertical, T 3) 0.00492; r2/002 (6.0, T 2) 0.00496; r2/003 (9.0, T 2) 0.00491; r2/004 (9.0, T 2) 0.00509; r2/005 (7.5, T 2) 0.00493; r1/001 (7.5, T 2) 0.00508; r1/003 (5.5, T 2) 0.00516. Miss: r3/005 (r0 3.0, T 1.5) RMSE/L 0.0962 (null 0.0775). The table model's trajectory at the r0 = 3.0 edge is not reliable: its RK4 step at H = 0.001 leaves the chamber there, so the miss may be the model's integrator rather than the physics, but the judged metric is what counts. Verdict narrowed: the r0 < 3.5 end is withdrawn; r0 in [3.5, 9.0] is consistent with the table. Caveat: at r0 >= 6 and these durations the zero-force null is 0.006 to 0.013, under the bar, so the judge cannot separate the table from no force there; the pass means consistent, not a sharp test. r2/001 (r0 4.0, T 2) is not cited: T exceeds the r0 < 5 window of 1.5. Power is clear only at r3/006 (null 0.036)."
+}

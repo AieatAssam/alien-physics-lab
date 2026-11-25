@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-25/r2/lab-c/007",
+  "lab": "lab-c",
+  "account": "review",
+  "purpose": "Review of P-0030 at the low edge of its domain: one A and one C at rest, separation 2.5 exactly, diagonal, T = 2.0 (the claim's window limit). Pre-registered: P-0030 predicts repulsion with the tabulated K_AC, K_CA at r 2.5.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.25,
+          4.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.75,
+          6.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0030"
+}

@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0029",
+  "lab": "lab-c",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-25/r1/lab-c/006",
+    "2026-11-25/r1/lab-c/007",
+    "2026-11-25/r1/lab-c/008"
+  ],
+  "comment": "Three in-domain review runs within P-0029's domain and windows: 006 (r0 5, T 2.0), 007 (r0 7, T 3.0), 008 (r0 9, T 3.0). Judge RMSE/L 0.00502, 0.00497, 0.00507, bar 0.021. Replicated. Same runs back the narrowed P-0027 verdict. Limit: at these layouts the judge cannot separate the table from a power-law continuation (difference below 0.001 RMSE/L), so this does not test the K(r) shape. Out of scope: r0 below 5, which P-0029 withdraws."
+}

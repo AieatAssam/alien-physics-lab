@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0028",
+  "lab": "lab-c",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-25/r1/lab-c/009",
+    "2026-11-25/r1/lab-c/010",
+    "2026-11-25/r1/lab-c/011"
+  ],
+  "comment": "Three in-domain 8-particle review runs at the floor (009: 3x3 grid minus centre, spacing 3.02; 010: 8-circle, neighbour chord 3.02; 011: 8-circle, chord 3.10), T = 1.0. Judge RMSE/L 0.00495, 0.00507, 0.00505, bar 0.021. Replicated at the claim's stated scope. Limits: the judge cannot test the sub-3 clamp here. The paper's model puts the closest pair approach at 2.18 to 2.54 over each run, where the table and a power-law continuation differ by less than the bar (0.006-0.009 RMSE/L). Non-citable context: research run 2026-11-25/r1/lab-c/012 (r0 = 2.0) does separate the clamp from the P-0026 law, so the table's K below 3 may be wrong (one run, not replicated; I am not citing it here). The judged runs reach only 2.18 to 2.54, a shallow part of that region, so they do not test it."
+}

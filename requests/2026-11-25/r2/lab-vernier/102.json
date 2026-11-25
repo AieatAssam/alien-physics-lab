@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-25/r2/lab-vernier/102",
+  "lab": "lab-vernier",
+  "account": "review",
+  "purpose": "P-0029 review, in-domain run: A-A at rest, r0 = 9.0 (upper edge, exact: x 0.5 and 9.5), T = 3.0 (predictor window for r0 >= 7).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          0.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          9.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 3.0,
+    "sample_dt": 0.0015
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0029"
+}

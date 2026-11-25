@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-25/r2/lab-a/009",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "A-A pair at rest, separation 2.0 horizontal, T 0.4: close-range K at r about 1.8 to 2.0 (round-1 gave s 0.87 at this separation). Pre-contact.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.4,
+    "sample_dt": 0.002
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

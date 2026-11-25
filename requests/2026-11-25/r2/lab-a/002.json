@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-25/r2/lab-a/002",
+  "lab": "lab-a",
+  "account": "review",
+  "purpose": "Review of P-0030. A-C diagonal at separation 3.25 (between the 3.0 and 3.5 nodes; orientation check), T 2.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.850951,
+          3.850951
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          6.149049,
+          6.149049
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.002
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0030"
+}

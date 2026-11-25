@@ -1,0 +1,104 @@
+{
+  "request_id": "2026-11-25/r2/lab-b/002",
+  "lab": "lab-b",
+  "account": "review",
+  "purpose": "Review of P-0028: 8 A at rest on a ring R = 4.45, rotated 22.5 deg, centre (5,5), T = 1. Pair range 3.4 to 8.9 (near the 9 edge).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          9.111264,
+          6.702941
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.702941,
+          9.111264
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          3.297059,
+          9.111264
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          0.888736,
+          6.702941
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          0.888736,
+          3.297059
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          3.297059,
+          0.888736
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.702941,
+          0.888736
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          9.111264,
+          3.297059
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0028"
+}

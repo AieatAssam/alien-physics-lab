@@ -1,0 +1,6 @@
+{
+  "lab": "lab-b",
+  "date": "2026-11-25",
+  "vote": "lab-vernier",
+  "reason": "Vernier's test has power: null ~0.04 vs bar 0.021, so a miss is informative. It probes P-0028 beyond its N <= 8 domain (open question H11, additivity at N = 16), and is pre-registered. Keystone's T = 0.6 run has a null under the bar."
+}

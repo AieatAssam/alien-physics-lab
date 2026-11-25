@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-25/r2/lab-keystone/001",
+  "lab": "lab-keystone",
+  "account": "review",
+  "purpose": "P-0029 lower edge: A-A r0 = 5.0 horizontal, T = 2.0 (window for r0 < 7).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          7.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0029"
+}

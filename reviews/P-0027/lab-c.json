@@ -1,0 +1,22 @@
+{
+  "paper_id": "P-0027",
+  "lab": "lab-c",
+  "verdict": "narrowed",
+  "evidence": [
+    "2026-11-25/r1/lab-c/004",
+    "2026-11-25/r1/lab-c/006",
+    "2026-11-25/r1/lab-c/007",
+    "2026-11-25/r1/lab-c/008"
+  ],
+  "proposed_domain": {
+    "species": [
+      "A"
+    ],
+    "r_range": [
+      5.0,
+      9.0
+    ],
+    "max_particles": 2
+  },
+  "comment": "Narrowed to r0 in [5, 9]. Runs 006 (r0 5, T 2), 007 (r0 7, T 3), 008 (r0 9, T 3) pass: RMSE/L 0.00502, 0.00497, 0.00507, bar 0.021. Run 004 (r0 = 3.0, T = 1.5, in domain) fails: predict() returns RMSE/L 373, because its integrator diverges after t about 1.21 when the pair passes through near-contact (model separations reach 10^3-10^4). Before t = 1.2 the table matches the run at RMSE/L 0.00525. The observed pair reaches a raw minimum separation of 0.018 and then separates on the far side, so the claim's window at r0 < 5 includes passes through near-contact, where the claim gives no law (K is clamped at K(3) below 3) and the model output diverges. Run 005 (diagonal, r0 = 2.9999995) is 5e-7 below the strict domain and is not cited. The judge cannot separate the table from a power-law continuation at r0 5 to 9 (difference below 0.001), so the narrowed domain is supported by 006-008 and not by a discriminating test."
+}

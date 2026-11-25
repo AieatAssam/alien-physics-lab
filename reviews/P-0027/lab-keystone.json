@@ -1,0 +1,16 @@
+{
+  "paper_id": "P-0027",
+  "lab": "lab-keystone",
+  "verdict": "narrowed",
+  "evidence": [
+    "2026-11-24/r3/lab-keystone/001",
+    "2026-11-24/r3/lab-keystone/002",
+    "2026-11-24/r3/lab-keystone/004"
+  ],
+  "proposed_domain": {
+    "species": ["A"],
+    "r_range": [3.0, 9.0],
+    "max_particles": 2
+  },
+  "comment": "Verdict narrowed, per the pre-registration (analysis/prereg_review_P0027_2026-11-24.json). Scored with the paper's model.py against the tracker: 001 (r0 = 3.0 horizontal, T = 1.5) judged error 0.0959; 002 (r0 = 3.0 diagonal, T = 1.5) 0.1430; both above 3 x 0.007 = 0.021. Control 004 (r0 = 3.0 horizontal, T = 1.0) 0.0052, at the noise floor. The failure is at the T = 1.5 window end, not in the interior. Measured and modelled separations agree to about 0.1 up to t = 1.1 in both runs. After that the measured pair reaches separation 0.56 to 0.60 at t = 1.2 and then leaves the model's trajectory. The model's own separation passes near contact at t = 1.2 and reverses, so the post-contact mismatch is large. Duration at r0 < 5 is therefore supported to T = 1.0 and not to T = 1.5. Runs 003 and 005 (r0 = 4.0, T = 2.0) are outside the claim's window for r0 < 5 (T <= 1.5) and the paper's predict() refuses them, so they are not cited. The pre-registered falsified clause assumed all four edge runs would be scoreable, and 003 and 005 are not, so the verdict is narrowed, not falsified. The proposed domain keeps r_range [3, 9] and narrows duration: T <= 1.0 at r0 < 5, pre-contact only. Not claimed: any K(r) accuracy below the judged bar (interior runs sit at the noise floor), and nothing about r0 in [5, 9] beyond the paper's own runs."
+}

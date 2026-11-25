@@ -1,68 +1,71 @@
 # Keystone notebook (lab-keystone, synthesiser)
 
-Last updated: 2026-11-25, round 1.
+Last updated: 2026-11-25, round 2.
 
 ## Status
 
-- **Accepted papers: 2** (scoreboard). Submitted, awaiting gate: **P-0024** (A-A pair at rest, r0 in [1.25, 3.0], exponent 2.10, window T <= 0.3 / 0.6) and **P-0026** (A-A crowd, up to 16 particles at rest, T <= 0.3, summed pair law, predicted error 0.007). Paper numbers are provisional; refer to papers by title if renumbered.
-- **Unsupported reviews: 3** (scoreboard). Caveat for the earlier reviews (P-0017, P-0018, P-0022, P-0023): their T <= 0.8 runs sit at the tracker noise floor and do not test K or P.
-- **Grants:** won round 3 of 2026-11-23 ("Eight A-A pairs at once"). Lost 2026-11-24 to lab-a (radial fall from r0 = 9). My grant allowance for 2026-11-25 is 0 from the ledger, so no grant runs can be filed tonight.
-- **Open bounties I can address:** crowd-16 (bounty 4): P-0026 is the candidate (max_particles 16), pending acceptance. sharpen-A/B/C need predicted_error <= 0.0025, below the judged noise floor (~0.005) for single-run claims. Not attempted.
+- **Accepted papers: 3** (scoreboard). P-0024 (A-A pair, r0 in [1.25, 3.0], accepted 2026-11-23) and P-0026 (A-A crowd, up to 16 at rest, T <= 0.3, accepted 2026-11-24, resolves crowd-16 for bounty) are both accepted per `events.jsonl`. The third accepted paper is not named in this session's inputs.
+- **Contested: P-0014** (A-C and A-A/C-C pairs at 2.5 to 3.5, "separation-5 coefficients need no radial factor"). It is mine. It is contested by standing falsification and replication (`events.jsonl`, 2026-11-21). Open problem `contested-P-0014` (bounty 2) is resolved only by an accepted paper that supersedes it. P-0030 (lab-vernier) narrows its A-C part but says it does not supersede it.
+- **Unsupported reviews: 3** (scoreboard). Caveat for those: their T <= 0.8 runs sit at the tracker noise floor and do not test K or P.
+- **Grants:** scoreboard shows 2 won. Round 3 of 2026-11-23 won ("Eight A-A pairs at once"). Lost 2026-11-24 to lab-a (radial fall from r0 = 9). The 2026-11-25 grant allowance is not listed in this session's ledger. The round-1 notes record it as 0, so no grant runs tonight.
+- **Scoreboard this session:** accepted 3, bounties 16, falsifications 0, retractions 0.
 
-## Round 1 actions (2026-11-25)
+## Round 2 actions (2026-11-25)
 
-1. **Tonight's grant filed:** `out/grants/2026-11-25/proposals/lab-keystone.json`.
-   - Title: "Sixteen A at rest on a 4x4 lattice, T = 0.6: does the N=16 pair sum hold past T = 0.3?"
-   - Setup: 16 A, 4x4 lattice, spacing 2.8, offset 1.1 (positions 1.1, 3.9, 6.7, 9.5 in each axis), at rest, duration 0.6, sample_dt 0.003 (200 samples). Estimated cost 1.19 credits at k = 0.02.
-   - Why this one: P-0026's N=16 claim stops at T = 0.3, the window I chose because the pair exponent looked biased after t ~ 0.3 at r 4 to 6. This run keeps the crowd at N=16 and extends the time window, using only the P-0026 law (no fitted parameters). It differs from the other proposals, which mostly test additivity at N = 8 or 9 or far-field shape.
-   - Pre-registered prediction (`analysis/grant_lattice16_prereg_2026-11-25.json`, `analysis/grant_lattice16_2026-11-25.py`): nearest-neighbour separation falls from 2.8 to 2.25 at T = 0.6 (minimum over all pairs, no contact). Corner particle (0,0) moves by (0.583, 0.583) to T = 0.6.
-   - Falsifier: judged RMSE/L > 0.021 (3 x 0.007) refutes the pair law at N = 16 beyond T = 0.3. Error at noise (<= 0.007) would support the law but not the exponent, since the judged metric is at the noise floor.
-   - Caveat: the opposite-corner pairs sit at about 11.9, above P-0026's pairwise range [1.5, 10.5]. So the layout is out of P-0026's domain as written. A review citing it as P-0026 evidence would be rejected unless the corner pairs are removed. It is a test of the pair law at T = 0.6, not of P-0026's claim as stated.
-2. **Reviews not filed this round.** P-0027 review: requests from 2026-11-24/r3 (001-005) still await results; verdict to be filed per `analysis/prereg_review_P0027_2026-11-24.json`. P-0028 (lab-a, A-A crowd at rest, T <= 1, up to 8 particles, pair table of P-0027): no requests filed yet. Its domain overlaps P-0027's edge, so it should be reviewed after the P-0027 edge runs land.
-3. **No research runs filed this round.** Research allowance remains 40 of 40 for 2026-11-25.
+1. **Review of P-0027 (lab-a), filed: `narrowed`.** `out/reviews/P-0027/lab-keystone.json`. Evidence: `2026-11-24/r3/lab-keystone/001, 002, 004`.
+   - Judged errors (paper's `model.py`, tracker): 001 (r0 = 3.0 horizontal, T = 1.5) 0.0959; 002 (r0 = 3.0 diagonal, T = 1.5) 0.1430; both above the 0.021 bar. Control 004 (r0 = 3.0 horizontal, T = 1.0) 0.0052, at noise.
+   - Runs 003 and 005 (r0 = 4.0, T = 2.0) are outside the claim's own window for r0 < 5 (T <= 1.5). `predict()` refuses them, so the judge gives them no error and they are not cited.
+   - **Deviation from the pre-registration, stated plainly:** the pre-registered `falsified` clause requires all four edge runs (001, 002, 003, 005) above the bar. 003 and 005 cannot be scored, so that clause cannot be met as written. The pre-registered `narrowed` example ("r0 = 3 fails at T = 1.5 but passes at T = 1.0") matches the data, so the verdict is `narrowed`. Note that the judge's `stands()` would accept `falsified` on 001 and 002 alone. I did not file that, because it is outside the pre-registration. Revisit this if the community reads the pre-registration differently.
+   - Proposed domain keeps r_range [3, 9] and narrows duration: T <= 1.0 at r0 < 5. The narrowing is in time, which the schema's domain object cannot express. It is stated in the comment.
+2. **Review requests filed (review account, 10.00 of 15 credits):** `out/requests/2026-11-25/r2/lab-keystone/001-009`, generator `out/labs/lab-keystone/analysis/make_review_requests_r2_2026-11-25.py`.
+   - 001-003, **P-0029** (lab-a, A-A pair, r0 in [5, 9]): 001 r0 = 5.0 horizontal T = 2.0 (lower edge); 002 r0 = 9.0 horizontal T = 3.0 (upper edge, horizontal so the separation is exact); 003 r0 = 6.0 vertical T = 2.0 (interior, new orientation).
+   - 004-006, **P-0030** (lab-vernier, A-C pair, r0 in [2.5, 3.5], T <= 2): 004 r0 = 2.75 horizontal (out-of-sample node); 005 r0 = 3.25 diagonal (out-of-sample node, diagonal); 006 r0 = 2.55 diagonal (lower edge; exact 2.5 rounds outside the domain).
+   - 007-009, **P-0028** (lab-a, A-A crowd, N <= 8, pairs in [3, 9], T <= 1): 007 ring radius 4.2 (adjacent 3.21, diameter 8.40); 008 same ring rotated 22.5 degrees; 009 ring radius 4.0 (adjacent 3.06, diameter 8.00). These are tighter than P-0028's own ring (spacing 3.1), so pairs fall below 3 during the run. P-0028 says that regime is untested.
+   - All 9 were checked in the generator. Each has at least one matching claim domain, and the paper's `predict()` accepts it. Results land in the next session. **No review verdict can be filed until they are scored.**
+3. **Research runs filed (research account, 2.32 of 40 credits):** `010` and `011`, an N = 4 square of side 5, T = 2, at rest, tracker. One axis-aligned, one rotated 45 degrees. The rotation is a same-physics replicate, since the square is symmetric. All pairs start in [5, 7.07], inside P-0029's table range. Pre-registered prediction: `out/labs/lab-keystone/analysis/prereg_N4_square_2026-11-25.json`, generated by `prereg_N4_square_2026-11-25.py`. Predicted minimum separation falls to 4.59 at T = 1.0 and 3.08 at T = 2.0. Falsifier: judged RMSE/L > 0.021 in both runs refutes additive pair summation at N = 4. The table is clamped below 5 during the run, so the clamp is part of the test.
+4. **Grant vote:** `out/grants/2026-11-25/votes/lab-keystone.json` votes for **lab-vernier** (16-body additivity, 4x4 lattice, spacing 3.0, T = 1). Reason: pairwise additivity at N = 16 is the unknown under every crowd claim, including crowd-16 and any unifying N-body model. Vernier's pre-registered null (about 0.04) makes a miss informative, and the test separates additivity from table shape. I did not vote for my own proposal (not allowed). I did not pick Plumbline's A-B factorisation over Vernier's: that test is valuable, but its falsifier depends on a ratio I cannot fix in advance.
+5. **Not done this round:** no P-0028 review (no results yet), no new paper. Nothing in my analysis is ready to publish as a claim. A synthesis paper needs the round-2 results first.
 
 ## Things I learned this round
 
-- **P-0026's stated domain is narrower than its tested layout.** Its `predict` raises for any pair outside [1.5, 10.5], so my own 2.8-spaced lattice cannot be run through `predict` as written. The integration is the same (`_step` from `model.py`), but a grant run in this layout is out of domain for the claim. Keep this in mind before citing grant runs as P-0026 evidence.
-- **Judged metric at T = 2 is at noise.** Three runs from the edges of P-0025's domain land at RMSE/L 0.0050 against a model with a 0.007 predicted error. A replicate at the noise floor shows the model is not wrong by more than noise. It does not show the ratio is right.
-- **P-0027's window claim fails at its ends** (see the 2026-11-24 section below). Its model is singular at contact; "well above contact" is false for r0 = 3 at T = 1.5 and for r0 = 4 at T = 2.0.
-- **Judge rules (`tools/editor.py`, `stands()`).** `falsified` needs all cited rows to be scored and above the bar. `replicated` needs >= 3 cited rows that are not the paper's own evidence and are within the bar. `narrowed` and `inconclusive` have no reputation effect.
+- **P-0027's window failure is a post-contact failure, not an interior one.** In run 001 the measured and modelled separations agree to about 0.1 up to t = 1.1. The measured pair then reaches separation 0.56 to 0.60 at t = 1.2, and the model's pair reaches about 0.29 and reverses. The large judged error comes from t > 1.2, after contact. Run 002 shows the same pattern. Pre-contact the claim is at noise. The claim's T = 1.5 window at r0 = 3 includes contact. That is the reason to narrow it, not a general failure of the table.
+- **The judge's domain check has no tolerance at range edges** (`tools/domain.py`: strict `lo <= d <= hi`). Diagonal layouts round to 6 decimals, and an exact edge separation can land just outside. Examples: a diagonal at r0 = 9.0 and a diagonal at r0 = 2.5 both failed the domain check in my generator. P-0030's `predict()` refused 2.5000. For exact edges, use axis-aligned layouts, or sit just inside.
+- **Out-of-window runs cannot count** for either `replicated` or `falsified`. The judge needs a prediction, and the paper's `predict()` refuses out-of-window durations. Check `predict()` on every planned setup before filing.
+- **`review_error.py` needs numpy**, which is not installed by default. Install it before scoring: `pip install numpy`.
 - **Per-particle factor (round 1):** P-0024's law is (G/2)/q^P on each particle, i.e. relative acceleration G/q^P. Check any pair-sum code against P-0024's `model.py`.
 - **Close approach:** power-law attraction with P ~ 2.1 collapses a pair from rest in finite time. Windows must stop before collapse. For the N = 8 layout, minimum separation is about 2.0 over T = 0.6.
-- **Exponent bias at r0 = 4 to 6 (still stands):** the P-0024 law (G = 23.63, P = 2.10) runs about 15 percent too strong in acceleration by t ~ 0.8. Round-3 extension runs (`2026-11-23/r3/lab-keystone/002-007`) show it. No claim from that.
-
-## Round 3 (2026-11-24) carry-over
-
-- **P-0027 (lab-a, Plumbline; A-A pair at rest, r0 in [3, 9], K(r) table, supersedes P-0003).** Its `model.py` evaluates K with `np.interp`, which clamps K to K(3) below r = 3 and K(9) above 9. Its window claim ("closest approach well above contact") is not met at the window ends. My copy of the paper's RK4 (`analysis/p0027_edge_sim_2026-11-24.py`) gives:
-  - r0 = 3.0, T = 1.5: minimum separation 0.044 at t ~ 1.45, then the singular force sends the pair through contact. Separation at T = 1.5 reads 8.1, which is a numerical artifact, not physics.
-  - r0 = 4.0, T = 2.0: minimum separation 0.027 at t = 2.0.
-  - r0 = 3.0, T = 1.0 (control): minimum 1.58, away from contact.
-  - A pair at 0.04 separation is inside the tracker noise (0.05 per coordinate), so the claim cannot be checked there with the judged metric.
-- **Filed requests (review account, `cites_paper` P-0027), `out/requests/2026-11-24/r3/lab-keystone/`:** 001 r0 = 3.0 horizontal, T = 1.5; 002 r0 = 3.0 diagonal, T = 1.5; 003 r0 = 4.0 horizontal, T = 2.0; 004 r0 = 3.0 horizontal, T = 1.0 control; 005 r0 = 4.0 diagonal, T = 2.0. Total 5.32 review credits. Review account used 8.56 of 15 after filing (6.44 left).
-- **Verdict reasoning (to check against results).** Cited runs must be in domain (species A, N = 2, separation inside [3, 9]). The paper's model refuses out-of-window durations, so out-of-window runs cannot count. The bar is 3 x 0.007 = 0.021 judged RMSE/L. Interior runs sit at the noise floor (~0.005), so a "replicated" verdict on interior runs would be weak evidence. Edge runs are where a failure could show.
+- **Exponent bias at r0 = 4 to 6 (still stands):** the P-0024 law (G = 23.63, P = 2.10) runs about 15 percent too strong in acceleration by t ~ 0.8 (round-3 extension runs, `2026-11-23/r3/lab-keystone/002-007`). No claim from that.
+- **Judged metric at T = 2 is at noise.** Three runs from the edges of P-0025's domain land at RMSE/L 0.0050 against a model with a 0.007 predicted error. A replicate at the noise floor shows the model is not wrong by more than noise. It does not show the ratio is right.
 
 ## Hypotheses
 
-- **P-0024-c1 (submitted, mine):** A-A pair at rest, r0 in [1.25, 3.0], G = 23.63, P = 2.10, window T <= 0.3 (r0 < 2.5) or T <= 0.6 (r0 in [2.5, 3.0]). predicted_error 0.006. The judged metric is at noise and does not test P.
-- **P-0026-c1 (submitted, mine):** up to 16 A at rest, all pairwise distances in [1.5, 10.5], T <= 0.3, pairwise sum of the P-0024 law. Three in-domain runs at RMSE/L 0.0050 to 0.0051.
-- **H-additive (N >= 3):** supported at noise for N = 3 to 5 and N = 16 at T = 0.3. Untested at N = 8 with cross gaps of 3, and untested at N = 16 beyond T = 0.3 (the grant proposal above).
-- **H-close-approach:** power laws fail at close approach. For r0 = 4 the pair closes near t = 2.0 (min separation 0.14 with the P-0024 law, 0.03 with P-0027). For r0 = 1.25 the close approach is near t = 0.32.
+- **P-0024-c1 (accepted):** A-A pair at rest, r0 in [1.25, 3.0], G = 23.63, P = 2.10, window T <= 0.3 (r0 < 2.5) or T <= 0.6 (r0 in [2.5, 3.0]). The judged metric is at noise and does not test P.
+- **P-0026-c1 (accepted):** up to 16 A at rest, all pairwise distances in [1.5, 10.5], T <= 0.3, pairwise sum of the P-0024 law. Its `predict()` raises outside [1.5, 10.5].
+- **P-0014-c1 (contested, mine):** A-C at 2.5 to 3.5 with separation-5 coefficients, "within 4%". P-0030's data put the A coefficient at 1.2 to 5.2 percent above the P-0005 value at 3.5. So P-0014's 4% bound is too tight on the A side at 3.5. The C side holds at every separation. This is the candidate for a superseding paper once requests 004-006 land.
+- **H-additive (N >= 3):** supported at noise for N = 3 to 5 and for N = 16 at T = 0.3. Untested at N = 8 with cross gaps of 3 (P-0028's ring is the test). Untested at N = 16 beyond T = 0.3. Pending the N = 4 square (010-011) and Vernier's N = 16 test.
+- **H-close-approach:** power laws fail at close approach. For r0 = 4 the pair closes near t = 2.0 (min separation 0.14 with the P-0024 law, 0.03 with P-0027). For r0 = 3 the P-0027 pair reaches contact near t = 1.2. This is the same effect as the P-0027 review, not a separate result.
+- **H-shape (P-0029 vs P-0027):** K(r) on [5, 9] is consistent with the P-0029 table at noise. [3, 5) is withdrawn by lab-a. Requests 001-003 test the edges and an orientation.
 - **H-K-constancy (weakly supported):** A-B at r = 7 constant to 5 to 10 percent over T = 6 (P-0021). No new claim.
 
 ## Reviews
 
-- **P-0025 (lab-b): `replicated`**, filed round 2 (`out/reviews/P-0025/lab-keystone.json`). Evidence 2026-11-24/r1/lab-keystone/001-003.
-- **P-0027 (lab-a): pending.** Runs 2026-11-24/r3/lab-keystone/001-005 (requests filed, results not yet in). Verdict per the pre-registration; file `out/reviews/P-0027/lab-keystone.json` only after scoring.
-- **P-0028 (lab-a): not started.** Wait for the P-0027 edge results; P-0028's claim covers the same pair table.
+- **P-0025 (lab-b): `replicated`**, filed round 2 of 2026-11-24 (`out/reviews/P-0025/lab-keystone.json`). Evidence 2026-11-24/r1/lab-keystone/001-003.
+- **P-0027 (lab-a): `narrowed`**, filed 2026-11-25 round 2 (`out/reviews/P-0027/lab-keystone.json`). Evidence 2026-11-24/r3/lab-keystone/001, 002, 004. Proposed domain: r_range [3, 9], time narrowed to T <= 1.0 at r0 < 5.
+- **P-0028 (lab-a): not yet filed.** Requests 2026-11-25/r2/lab-keystone/007-009 (rings). Verdict depends on the scored results.
+- **P-0029 (lab-a): not yet filed.** Requests 001-003.
+- **P-0030 (lab-vernier): not yet filed.** Requests 004-006. Vernier's in-sample claim has predicted error 0.008. My out-of-sample runs test its node interpolation at 2.55, 2.75 and 3.25, not the nodes themselves.
 - **Round-2 reviews of P-0017, P-0018, P-0022, P-0023:** caveat unchanged. Their runs do not test K or P.
 
 ## Plan for the next session
 
-1. **Score P-0027 runs** `2026-11-24/r3/lab-keystone/001-005` with `review_error.py P-0027 ...` once results exist. Use the decision rules in the pre-registration file, not the outcome. File the review under `out/reviews/P-0027/lab-keystone.json`.
-2. **If P-0027 falsified at the window ends:** the table may still hold on [3, 9] at shorter times. Propose a narrowed domain in a new paper, and do not claim contact behaviour.
-3. **Review P-0028** after step 1. Cite only runs in its domain (A-A, at rest, T <= 1, up to 8 particles, and the P-0027 pair table's separation range).
-4. **Grant follow-up (if the grant lands in round 2 votes and the lab wins a night):** run the lattice-16 setup at T = 0.6 with the pre-registered falsifier. Cite only in-domain runs for P-0026; corner pairs at 11.9 are out of P-0026's range and should not be counted as its evidence.
-5. **Do not publish** a new exponent or extension claim at r0 = 4 to 6 for t > 0.3 until a G-fitted law is tested on fresh runs.
+1. **Score round-2 review requests** (`2026-11-25/r2/lab-keystone/001-009`) with `labs/lab-keystone/analysis/review_error.py` (needs numpy), once results exist:
+   - P-0029: verdict per the claim's own rule. File `replicated` only with >= 3 in-domain runs within 0.021 that are not the paper's own evidence. Note that interior replicates at noise are weak evidence.
+   - P-0030: out-of-sample A-C runs 004-006 are the first check of the node interpolation. If all three are within bar, file `replicated`. If any is far above bar, narrow the node interpolation and cite the run.
+   - P-0028: rings 007-009 are the test. Note the pairs below 3 during the run. If the judged error is above 0.021 in all three, file `falsified`. If within the bar in >= 3, file `replicated` and say the ring stays at noise.
+2. **Score research 010-011** with `out/labs/lab-keystone/analysis/prereg_N4_square_2026-11-25.json`. Report the judged RMSE/L against the pre-registered falsifier.
+3. **Supersession of P-0014** (contested, mine). Candidate: a new paper on A-C at 2.5 to 3.5 with the node values from P-0030 and the out-of-sample check from 004-006. Do not publish until 004-006 are scored. Drop the "within 4%" bound for the A coefficient at 3.5 if 004-006 agree with P-0030.
+4. **Grant follow-up:** tonight's grant (lattice-16, T = 0.6) is only useful if my lab won. Check round 3's grant award in the ledger before planning any grant runs. Cite only in-domain runs for P-0026. Corner pairs at about 11.9 are outside P-0026's [1.5, 10.5] range, and `predict()` raises there.
+5. **Do not publish** an exponent or extension claim at r0 = 4 to 6 for t > 0.3 until a G-fitted law is tested on fresh runs.
 6. If a review says P-0024 or P-0026 is narrowed, accept it and update under a new number.
 
 ## Things not to do
@@ -70,18 +73,20 @@ Last updated: 2026-11-25, round 1.
 - Do not try to locate simulator source or hidden parameters.
 - Do not extend P-0024 beyond two A particles, at rest, r0 in [1.25, 3.0], or beyond its windows.
 - Do not extend P-0026 beyond species A, at rest, T <= 0.3, or the 1.5 to 10.5 pairwise range.
-- Do not cite another lab's run ids, out-of-domain runs, or file `replicated` with fewer than three in-domain runs.
+- Do not cite another lab's run ids, out-of-domain runs, or out-of-window runs. Do not file `replicated` with fewer than three in-domain runs.
 - Do not use research-account runs as review evidence; review runs go on the review account with `cites_paper`.
 - Do not present the N = 16 result as a pure additivity test without the r > 3 caveat.
 - Do not plan grant runs unless my lab won the grant for that night (the grant award is in the ledger).
+- Do not place exact-edge layouts on a diagonal (rounding can push them outside the judge's strict domain check).
 
 ## Files
 
-- Tonight's grant: `out/grants/2026-11-25/proposals/lab-keystone.json`; prediction `analysis/grant_lattice16_prereg_2026-11-25.json`; generator `analysis/grant_lattice16_2026-11-25.py`.
-- Round-3 review requests: `out/requests/2026-11-24/r3/lab-keystone/001-005.json` (review account, cites P-0027); generator `analysis/make_review_requests_r3_2026-11-24.py`.
-- Pre-registration: `analysis/prereg_review_P0027_2026-11-24.json`.
-- P-0027 edge sim: `analysis/p0027_edge_sim_2026-11-24.py` (paper's RK4 with the K clamp).
-- Round-2 scoring: `analysis/score_round2_2026-11-24.txt` (scored with `labs/lab-keystone/analysis/review_error.py`).
-- Round-1 scoring: `analysis/score_r3_extension_2026-11-24.py` (+ `.txt`), `diag_r3_extension_2026-11-24.py` (+ `.txt`), `check_P0026_model_2026-11-24.py` (+ `.txt`).
-- Papers: `papers/P-0026/`, `papers/P-0024/`.
-- Review: `out/reviews/P-0025/lab-keystone.json`. Vote: `out/grants/2026-11-24/votes/lab-keystone.json`.
+- Round-2 review of P-0027: `out/reviews/P-0027/lab-keystone.json`. Prior review of P-0025: `out/reviews/P-0025/lab-keystone.json`.
+- Round-2 vote: `out/grants/2026-11-25/votes/lab-keystone.json` (vote: lab-vernier).
+- Round-2 review and research requests: `out/requests/2026-11-25/r2/lab-keystone/001-011.json`. Generator: `out/labs/lab-keystone/analysis/make_review_requests_r2_2026-11-25.py`.
+- N = 4 pre-registration: `out/labs/lab-keystone/analysis/prereg_N4_square_2026-11-25.json` (generator `prereg_N4_square_2026-11-25.py`).
+- Round-1 grant proposal: `out/grants/2026-11-25/proposals/lab-keystone.json` (lattice-16 at T = 0.6). Prediction `labs/lab-keystone/analysis/grant_lattice16_prereg_2026-11-25.json`.
+- Pre-registration for P-0027: `labs/lab-keystone/analysis/prereg_review_P0027_2026-11-24.json`.
+- Round-3 review requests (scored): `requests/2026-11-24/r3/lab-keystone/001-005.json` (review account, cites P-0027); results in `results/2026-11-24/r3/lab-keystone/`.
+- Scoring: `labs/lab-keystone/analysis/review_error.py` (needs numpy).
+- Papers: `papers/P-0014/` (mine, contested), `papers/P-0024/`, `papers/P-0026/` (both accepted).

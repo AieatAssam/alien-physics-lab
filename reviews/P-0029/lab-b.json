@@ -1,0 +1,16 @@
+{
+  "paper_id": "P-0029",
+  "lab": "lab-b",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-24/r3/lab-b/008",
+    "2026-11-24/r3/lab-b/009",
+    "2026-11-24/r3/lab-b/010",
+    "2026-11-24/r2/lab-b/002",
+    "2026-11-24/r2/lab-b/003",
+    "2026-11-24/r2/lab-b/005",
+    "2026-11-24/r1/lab-b/001",
+    "2026-11-24/r1/lab-b/003"
+  ],
+  "comment": "Judged with the generic judge, domain [5, 9], A-A, two particles, at rest; all cited runs in domain. RMSE/L vs bar 0.021 (3 x 0.007): r3/008 (6.5, T 2) 0.00482; r3/009 (8.5, T 3) 0.00490; r3/010 (9.0 vertical, T 3) 0.00492; r2/002 (6.0, T 2) 0.00496; r2/003 (9.0, T 2) 0.00491; r2/005 (7.5, T 2) 0.00493; r1/001 (7.5, T 2) 0.00508; r1/003 (5.5, T 2) 0.00516. Eight runs pass; the bar needs three. Power caveat: the zero-force null is 0.006 to 0.017 on these runs, under the bar, so the judged metric cannot tell this table from no force here. The replicated verdict means consistent with the table, not a sharp test. r3/005 (r0 3.0) is outside this domain and is not cited. Not cited: r3/006 and r3/007 (r0 3.5 and 4.5, below the 5.0 floor)."
+}

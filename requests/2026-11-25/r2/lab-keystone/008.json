@@ -1,0 +1,104 @@
+{
+  "request_id": "2026-11-25/r2/lab-keystone/008",
+  "lab": "lab-keystone",
+  "account": "review",
+  "purpose": "P-0028 crowd edge, orientation replicate: same ring rotated by 22.5 degrees, T = 1.0.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          8.880294,
+          6.60727
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.60727,
+          8.880294
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          3.39273,
+          8.880294
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          1.119706,
+          6.60727
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          1.119706,
+          3.39273
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          3.39273,
+          1.119706
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.60727,
+          1.119706
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.880294,
+          3.39273
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0028"
+}

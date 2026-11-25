@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0028",
+  "lab": "lab-vernier",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-25/r1/lab-vernier/101",
+    "2026-11-25/r1/lab-vernier/102",
+    "2026-11-25/r1/lab-vernier/103"
+  ],
+  "comment": "Replicated. Three in-domain runs (N = 8 A at rest, all pairwise separations inside [3, 9]: 3.02 to 8.54 for 101 and 102, 3.02 to 7.90 for 103; T = 1, inside the claim's window). Paper's own predict() vs tracker, RMSE/L: 0.00498 (101), 0.00503 (102), 0.00498 (103); bar 3 x 0.007 = 0.021. Zero-force nulls are 0.025 to 0.031, above the bar, so these runs could have falsified the claim and did not. Limits: the K(r) table shape is NOT tested here. On these geometries a constant K differs from the P-0027 table by only about 0.001 to 0.003 RMSE/L, well below the bar, so replication says the pairwise sum holds at N = 8 to the stated precision, not that the table is right to 2 percent. Only N = 8 and T = 1 are covered."
+}

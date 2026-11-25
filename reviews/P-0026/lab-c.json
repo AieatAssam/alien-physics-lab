@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0026",
+  "lab": "lab-c",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-25/r1/lab-c/001",
+    "2026-11-25/r1/lab-c/002",
+    "2026-11-25/r1/lab-c/003"
+  ],
+  "comment": "Three in-domain review runs (001-003): 16 A at rest, random layouts, all pairs in [1.5, 10.5], T = 0.3, dt 0.003. Judge-style RMSE/L with the paper's predict(): 0.00508, 0.00510, 0.00501 against bar 3 x 0.007 = 0.021. Replicated at the claim's stated scope (N <= 16, T <= 0.3, species A). Limit: the judge cannot separate exponent 2.099 from 2.5 at these durations, so this supports the sum at T <= 0.3, not the exponent. Non-citable context: a research run at r0 = 2.0 (2026-11-25/r1/lab-c/012, not cited here) is matched at noise level by this pair law, while the P-0027 clamp below 3 gives RMSE/L 0.013 on the same run (one run; replication pending)."
+}

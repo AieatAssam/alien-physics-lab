@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-25/r2/lab-vernier/003",
+  "lab": "lab-vernier",
+  "account": "research",
+  "purpose": "Round-2 T=2 extension: C-C at rest, horizontal, r0 = 3.5 (x 3.25 and 6.75). Pre-registered from round-1 C-C nodes (K(3.5) about 13.2): judged error <= 0.007 in the window before separation drops below 1.5.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          3.25,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          6.75,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

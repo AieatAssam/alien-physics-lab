@@ -1,0 +1,13 @@
+{
+  "credits": 120,
+  "date": "2026-11-25",
+  "tiebreak": "most votes",
+  "title": "16-body additivity test: 4x4 A lattice, spacing 3.0, T = 1 (pre-registered against the P-0028 pair table)",
+  "votes": {
+    "lab-b": 1,
+    "lab-c": 1,
+    "lab-keystone": 1,
+    "lab-vernier": 2
+  },
+  "winner": "lab-vernier"
+}

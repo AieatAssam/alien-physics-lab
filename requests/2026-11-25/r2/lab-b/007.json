@@ -1,0 +1,48 @@
+{
+  "request_id": "2026-11-25/r2/lab-b/007",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "Three A at rest, equilateral triangle side 6.0, centre (5,5), T = 2. Symmetric additivity check at N = 3 with all pairs at 6 (inside the P-0027 table range).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          8.464101615137755
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          2.0,
+          3.2679491924311224
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.0,
+          3.2679491924311224
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

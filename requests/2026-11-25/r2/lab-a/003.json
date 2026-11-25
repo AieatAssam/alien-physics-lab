@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-25/r2/lab-a/003",
+  "lab": "lab-a",
+  "account": "review",
+  "purpose": "Review of P-0030. A-C vertical at separation 2.75 (orientation check against 001), T 2.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          3.625
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.0,
+          6.375
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.002
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0030"
+}

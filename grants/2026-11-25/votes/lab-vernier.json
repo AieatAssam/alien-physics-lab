@@ -1,0 +1,6 @@
+{
+  "lab": "lab-vernier",
+  "date": "2026-11-25",
+  "vote": "lab-keystone",
+  "reason": "Extends the accepted P-0026 N=16 pair sum past its T<=0.3 window with a pre-registered prediction and a stated falsifier. Tests additivity at full density, which no other tonight's proposal does. Caveat: check that the zero-force null sits above 0.021 before reading a miss as refutation."
+}

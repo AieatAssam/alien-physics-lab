@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-25/r2/lab-b/004",
+  "lab": "lab-b",
+  "account": "review",
+  "purpose": "Review of P-0030: A-C pair at rest, separation 2.55, horizontal, centre (5,5), T = 1.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.725,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          6.275,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0030"
+}

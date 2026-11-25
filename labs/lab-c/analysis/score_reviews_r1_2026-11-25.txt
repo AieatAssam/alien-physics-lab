@@ -1,0 +1,33 @@
+# Judge-style scoring of 2026-11-25 round-1 review runs (lab-c), via each cited paper's predict()
+# RMSE/L over all samples, bar = 3 x predicted_error
+2026-11-25/r1/lab-c/001 P-0026: n=3232 RMSE/L=0.00508 bar=0.0210 pass=True predict_ok=YES r0=3.6165107 T=0.3 strict_domain=YES acct=review cites=P-0026
+2026-11-25/r1/lab-c/002 P-0026: n=3232 RMSE/L=0.00510 bar=0.0210 pass=True predict_ok=YES r0=6.5404975 T=0.3 strict_domain=YES acct=review cites=P-0026
+2026-11-25/r1/lab-c/003 P-0026: n=3232 RMSE/L=0.00501 bar=0.0210 pass=True predict_ok=YES r0=5.6400189 T=0.3 strict_domain=YES acct=review cites=P-0026
+2026-11-25/r1/lab-c/004 P-0027: n=6004 RMSE/L=373.22920 bar=0.0210 pass=False predict_ok=YES r0=3.0000000 T=1.5 strict_domain=YES acct=review cites=P-0027
+2026-11-25/r1/lab-c/005 P-0027: n=6004 RMSE/L=390.39141 bar=0.0210 pass=False predict_ok=YES r0=2.9999995 T=1.5 strict_domain=NO acct=review cites=P-0027
+2026-11-25/r1/lab-c/006 P-0027: n=4004 RMSE/L=0.00502 bar=0.0210 pass=True predict_ok=YES r0=5.0000000 T=2.0 strict_domain=YES acct=review cites=P-0027
+2026-11-25/r1/lab-c/007 P-0027: n=4004 RMSE/L=0.00497 bar=0.0210 pass=True predict_ok=YES r0=7.0000000 T=3.0 strict_domain=YES acct=review cites=P-0027
+2026-11-25/r1/lab-c/008 P-0027: n=4004 RMSE/L=0.00507 bar=0.0210 pass=True predict_ok=YES r0=9.0000000 T=3.0 strict_domain=YES acct=review cites=P-0027
+2026-11-25/r1/lab-c/012 P-0027: OUT_OF_DOMAIN (initial separation outside [3.0, 9.0])
+2026-11-25/r1/lab-c/013 P-0027: OUT_OF_DOMAIN (initial separation outside [3.0, 9.0])
+2026-11-25/r1/lab-c/014 P-0027: OUT_OF_DOMAIN (duration beyond the window for this initial separation)
+2026-11-25/r1/lab-c/006 P-0029: n=4004 RMSE/L=0.00502 bar=0.0210 pass=True predict_ok=YES r0=5.0000000 T=2.0 strict_domain=YES acct=review cites=P-0027
+2026-11-25/r1/lab-c/007 P-0029: n=4004 RMSE/L=0.00497 bar=0.0210 pass=True predict_ok=YES r0=7.0000000 T=3.0 strict_domain=YES acct=review cites=P-0027
+2026-11-25/r1/lab-c/008 P-0029: n=4004 RMSE/L=0.00507 bar=0.0210 pass=True predict_ok=YES r0=9.0000000 T=3.0 strict_domain=YES acct=review cites=P-0027
+2026-11-25/r1/lab-c/009 P-0028: n=8016 RMSE/L=0.00495 bar=0.0210 pass=True predict_ok=YES r0=3.0200000 T=1.0 strict_domain=YES acct=review cites=P-0028
+2026-11-25/r1/lab-c/010 P-0028: n=8016 RMSE/L=0.00507 bar=0.0210 pass=True predict_ok=YES r0=3.0199998 T=1.0 strict_domain=YES acct=review cites=P-0028
+2026-11-25/r1/lab-c/011 P-0028: n=8016 RMSE/L=0.00505 bar=0.0210 pass=True predict_ok=YES r0=3.1000002 T=1.0 strict_domain=YES acct=review cites=P-0028
+# Windowed RMSE/L (t<=0.6, <=1.0, <=1.2, full) vs P-0027 model
+2026-11-25/r1/lab-c/004 minobs_sep=0.018 model_blowup_t=1.21 | t<=0.6: 0.00505 | t<=1.0: 0.00506 | t<=1.2: 0.00525 | t<=end: 373.22920
+2026-11-25/r1/lab-c/006 minobs_sep=3.357 model_blowup_t=None | t<=0.6: 0.00501 | t<=1.0: 0.00502 | t<=1.2: 0.00502 | t<=end: 0.00502
+2026-11-25/r1/lab-c/007 minobs_sep=5.667 model_blowup_t=None | t<=0.6: 0.00497 | t<=1.0: 0.00490 | t<=1.2: 0.00487 | t<=end: 0.00497
+2026-11-25/r1/lab-c/008 minobs_sep=8.413 model_blowup_t=None | t<=0.6: 0.00499 | t<=1.0: 0.00489 | t<=1.2: 0.00490 | t<=end: 0.00507
+# Sub-3 round-1 runs vs three candidate laws (own RK4, h=1e-4)
+2026-11-25/r1/lab-c/012 r0=2.000 T=0.6 dt=0.001 obs_min_sep(raw)=0.619
+   TAB: RMSE/L=0.01323  model_min_sep=0.071
+   P26: RMSE/L=0.00507  model_min_sep=0.690
+   CON: RMSE/L=0.02374  model_min_sep=0.032
+2026-11-25/r1/lab-c/013 r0=2.500 T=0.6 dt=0.001 obs_min_sep(raw)=1.765
+   TAB: RMSE/L=0.00492  model_min_sep=1.765
+   P26: RMSE/L=0.00489  model_min_sep=1.811
+   CON: RMSE/L=0.00492  model_min_sep=1.765

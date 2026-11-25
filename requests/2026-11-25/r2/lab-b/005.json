@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-25/r2/lab-b/005",
+  "lab": "lab-b",
+  "account": "review",
+  "purpose": "Review of P-0030: A-C pair at rest, separation 3.0, vertical, centre (5,5), T = 1 (orientation check).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          3.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.0,
+          6.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0030"
+}

@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-25/r2/lab-a/001",
+  "lab": "lab-a",
+  "account": "review",
+  "purpose": "Review of P-0030 (A-C pair, separation 2.5 to 3.5, K_AC and K_CA nodes at 2.5, 3.0, 3.5). A-C horizontal at separation 2.75 (between the 2.5 and 3.0 nodes), T 2, tracker only.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.625,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          6.375,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.002
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0030"
+}

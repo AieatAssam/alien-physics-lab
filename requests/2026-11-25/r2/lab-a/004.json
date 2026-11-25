@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-25/r2/lab-a/004",
+  "lab": "lab-a",
+  "account": "review",
+  "purpose": "Review of P-0030. A-C horizontal at separation 3.45 (near the 3.5 node, where the paper's A-side coefficient is contested), T 2.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.275,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          6.725,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.002
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0030"
+}

@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-25/r2/lab-keystone/006",
+  "lab": "lab-keystone",
+  "account": "review",
+  "purpose": "P-0030 lower edge, diagonal orientation: A-C r0 = 2.55 (just inside 2.5; exact diagonal 2.5 rounds outside the domain), T = 2.0.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.098439,
+          4.098439
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.901561,
+          5.901561
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0030"
+}
