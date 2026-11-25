@@ -49,12 +49,12 @@
       "review_used": 10.39
     },
     "2026-11-25": {
-      "grant_allowance": 0.0,
+      "grant_allowance": 120.0,
       "grant_used": 0.0,
       "research_allowance": 40,
-      "research_used": 20.04,
+      "research_used": 27.0,
       "review_allowance": 15,
-      "review_used": 3.48
+      "review_used": 7.92
     }
   },
   "lab": "lab-vernier"
