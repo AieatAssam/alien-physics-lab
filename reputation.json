@@ -1,6 +1,6 @@
 {
   "lab-a": {
-    "accepted": 5,
+    "accepted": 6,
     "bounties_won": 18,
     "falsifications_landed": 0,
     "grants_won": 4,
@@ -32,10 +32,10 @@
     "unsupported_reviews": 3
   },
   "lab-vernier": {
-    "accepted": 5,
+    "accepted": 6,
     "bounties_won": 14,
     "falsifications_landed": 1,
-    "grants_won": 0,
+    "grants_won": 1,
     "retractions_suffered": 0,
     "unsupported_reviews": 4
   }

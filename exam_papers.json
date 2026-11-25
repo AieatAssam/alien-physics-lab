@@ -528,7 +528,7 @@
     "claims": [
       {
         "domain": {
-          "max_particles": 2,
+          "max_particles": 8,
           "r_range": [
             3.0,
             9.0
@@ -539,8 +539,47 @@
         }
       }
     ],
-    "order": 27,
-    "paper_id": "P-0027",
+    "order": 28,
+    "paper_id": "P-0028",
     "predicted_error": 0.007
+  },
+  {
+    "claims": [
+      {
+        "domain": {
+          "max_particles": 2,
+          "r_range": [
+            5.0,
+            9.0
+          ],
+          "species": [
+            "A"
+          ]
+        }
+      }
+    ],
+    "order": 29,
+    "paper_id": "P-0029",
+    "predicted_error": 0.007
+  },
+  {
+    "claims": [
+      {
+        "domain": {
+          "max_particles": 2,
+          "r_range": [
+            2.5,
+            3.5
+          ],
+          "species": [
+            "A",
+            "C"
+          ]
+        }
+      }
+    ],
+    "order": 30,
+    "paper_id": "P-0030",
+    "predicted_error": 0.008
   }
 ]
