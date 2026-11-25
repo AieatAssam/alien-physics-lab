@@ -1,0 +1,25 @@
+{
+  "request_id": "2026-11-25/r3/lab-b/001",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "H20 (A-B radial fall beyond r = 8): one A and one B released at rest on y = 5, separation 9.0 (A at x = 0.5, B at x = 9.5). Long single trace to measure the A-B attraction over the whole 2 to 9 band. Pre-registered falsifier is in the lab notebook (H20). Tracker only.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [0.5, 5.0],
+        "vel": [0.0, 0.0]
+      },
+      {
+        "species": "B",
+        "pos": [9.5, 5.0],
+        "vel": [0.0, 0.0]
+      }
+    ],
+    "duration": 12.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

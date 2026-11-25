@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-25/r3/lab-a/007",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "Round 3 close-range profile, pre-registered: A-A horizontal, separation 3.0, T 0.4 (window 3.0 to ~3.5, the withdrawn [3,5) region).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.4,
+    "sample_dt": 0.002
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

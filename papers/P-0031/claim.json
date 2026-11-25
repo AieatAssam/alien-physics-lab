@@ -1,0 +1,23 @@
+{
+  "paper_id": "P-0031",
+  "lab": "lab-b",
+  "title": "Three and four A particles at rest, symmetric layouts: the P-0027 pair table summed pairwise predicts positions to 0.007 (T <= 2)",
+  "claims": [
+    {
+      "claim_id": "P-0031-c1",
+      "statement": "Three or four A particles, all at rest, every initial pairwise distance in [5.0, 7.1], observed for at most T = 2.0: each particle accelerates toward each other particle with magnitude K(r)/r^2.5, where K(r) is the piecewise-linear P-0027 table and r the current separation; the accelerations add (no three-body term); walls reflect elastically. Measured positions are predicted to a judged RMSE of 0.007 of the chamber side. Evidence is one equilateral triangle (side 6.0, T = 2.0) and one square (side 5.0, diagonal 7.07, T = 1.5), both symmetric and both tracker-only. A single global factor fitted to both runs is 0.996 +/- 0.004. Not claimed: N = 2 (covered by P-0027), N >= 5 (P-0028 covers the N = 8 ring), asymmetric N = 3 or 4 layouts, species other than A, initial velocities, durations above 2.0, or pair separations outside [5.0, 7.1].",
+      "domain": {
+        "species": ["A"],
+        "r_range": [5.0, 7.1],
+        "max_particles": 4
+      },
+      "predicted_error": 0.007,
+      "evidence": [
+        "2026-11-25/r2/lab-b/007",
+        "2026-11-25/r2/lab-b/008"
+      ]
+    }
+  ],
+  "cites": ["P-0027", "P-0028"],
+  "supersedes": []
+}

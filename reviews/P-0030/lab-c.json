@@ -1,0 +1,13 @@
+{
+  "paper_id": "P-0030",
+  "lab": "lab-c",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-19/r1/lab-c/003",
+    "2026-11-20/r3/lab-c/009",
+    "2026-11-20/r3/lab-c/015",
+    "2026-11-25/r2/lab-c/007",
+    "2026-11-25/r2/lab-c/008"
+  ],
+  "comment": "Five lab-c runs, each two particles, species A and C, at rest, separation in [2.5, 3.5] and T <= 2, all in P-0030's domain: 2026-11-19/r1 003 (r0 3.0, T 1), 2026-11-20/r3 009 (r0 2.5, T 1), 2026-11-20/r3 015 (r0 3.0, T 2), 2026-11-25/r2 007 (r0 2.5, T 2) and 008 (r0 3.5, T 2). Judge RMSE/L of predict(): 0.00511, 0.00502, 0.00502, 0.00510, 0.00497. Bar 3 x 0.008 = 0.024. Replicated. Limits: the runs sit at the claimed nodes and ends (2.5, 3.0, 3.5), not between them. At this noise level (0.005) the judge does not resolve the few-percent differences between the node values and the P-0005 table, so this verdict supports the predicted error, not the K(r) shape or the 4% bound on the A side at 3.5 that the paper itself flags. Three cited runs are research-account runs from earlier rounds; they are cited because they are in domain and are lab-c's own. Nothing here tests the claim's silence below 2.5 or above 3.5."
+}

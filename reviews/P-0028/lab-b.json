@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0028",
+  "lab": "lab-b",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-25/r2/lab-b/001",
+    "2026-11-25/r2/lab-b/002",
+    "2026-11-25/r2/lab-b/003"
+  ],
+  "comment": "Replicated, with a power caveat. Three in-domain runs: 8 A particles at rest on a ring centred (5,5), every initial pairwise distance inside [3, 9] (min 3.21, max 8.9), T = 1.0 (inside the claim's window), tracker only, one run per request id. Paper's predict() vs tracker, judged RMSE/L: 0.00498 (001), 0.00482 (002), 0.00497 (003). Bar 3 x 0.007 = 0.021, so all three pass. Power is weak: the zero-force nulls are 0.0215, 0.0182 and 0.0201, at or under the bar. So these runs say the P-0027 table summed pairwise is consistent with the data at N = 8, not that K(r) is resolved to a few percent. Measured pair separations (tracker sd 0.05 per coordinate) dipped to 2.58, 2.88 and 2.69 near t = 0.9 to 1.0, i.e. into r < 3, where the table is clamped at its r = 3 value. The judged error stays at the floor there, so the clamp is not contradicted; the claim is silent on r < 3 and I do not count that as a failure. Not tested by these runs: N < 8, T > 1, any pair exactly at 3.0 or 9.0 (the runs stay inside 3.21 to 8.9), and species other than A."
+}

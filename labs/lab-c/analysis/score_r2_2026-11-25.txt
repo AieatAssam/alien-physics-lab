@@ -1,0 +1,11 @@
+== pre-registered sub-3 runs (tracker raw minimum separation)
+001 d_obs=0.4944 at t=0.600 | TAB 0.0706@0.594 P26 0.6897@0.600 | rule: P26-consistent
+002 d_obs=0.6095 at t=0.599 | TAB 0.0706@0.594 P26 0.6897@0.600 | rule: P26-consistent
+003 d_obs=0.4104 at t=0.499 | TAB 0.0731@0.470 P26 0.5106@0.500 | rule: no verdict
+004 d_obs=0.4375 at t=0.494 | TAB 0.0731@0.470 P26 0.5106@0.500 | rule: no verdict
+005 d_obs=0.7298 at t=0.999 | TAB 0.6324@1.000 P26 0.8475@1.000 | rule: P26-consistent
+006 d_obs=0.6195 at t=0.591 | TAB 0.0706@0.594 P26 0.6897@0.600 | rule: P26-consistent
+
+== P-0030 review runs (RMSE/L vs predict(), bar = 3 x 0.008 = 0.024)
+007: RMSE/L full=0.00510  t<=0.5=0.00501  t<=1.0=0.00508  t<=2.0=0.00510  | model min sep 2.5000, observed raw min sep 2.3393  | worst single-sample rms error 0.1165 at t=1.057
+008: RMSE/L full=0.00497  t<=0.5=0.00493  t<=1.0=0.00496  t<=2.0=0.00497  | model min sep 3.5000, observed raw min sep 3.2941  | worst single-sample rms error 0.1192 at t=1.361

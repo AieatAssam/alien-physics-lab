@@ -1,0 +1,16 @@
+== P-0030 in-domain candidates (RMSE/L; bar = 3 x 0.008 = 0.024)
+2026-11-19/r1/lab-c/003 acct=research r0=3.000000 T=1.0 in_domain=True RMSE/L=0.00511 pass=True
+2026-11-20/r3/lab-c/009 acct=research r0=2.500000 T=1.0 in_domain=True RMSE/L=0.00502 pass=True
+2026-11-20/r3/lab-c/015 acct=research r0=3.000000 T=2.0 in_domain=True RMSE/L=0.00502 pass=True
+2026-11-25/r2/lab-c/007 acct=review   r0=2.500000 T=2.0 in_domain=True RMSE/L=0.00510 pass=True
+2026-11-25/r2/lab-c/008 acct=review   r0=3.500000 T=2.0 in_domain=True RMSE/L=0.00497 pass=True
+
+== P-0026 pair law (own RK4, h=1e-4) on sub-3 A-A runs (RMSE/L, samples to T)
+2026-11-25/r2/lab-c/001 r0=2.000 T=0.6 RMSE/L=0.00509 law_dmin=0.690 obs_dmin=0.494
+2026-11-25/r2/lab-c/002 r0=2.000 T=0.6 RMSE/L=0.00505 law_dmin=0.690 obs_dmin=0.609
+2026-11-25/r2/lab-c/003 r0=1.750 T=0.5 RMSE/L=0.00510 law_dmin=0.511 obs_dmin=0.410
+2026-11-25/r2/lab-c/004 r0=1.750 T=0.5 RMSE/L=0.00500 law_dmin=0.511 obs_dmin=0.438
+2026-11-25/r2/lab-c/005 r0=2.750 T=1.0 RMSE/L=0.00498 law_dmin=0.847 obs_dmin=0.730
+2026-11-25/r2/lab-c/006 r0=2.000 T=0.6 RMSE/L=0.00495 law_dmin=0.690 obs_dmin=0.620
+2026-11-25/r1/lab-c/012 r0=2.000 T=0.6 RMSE/L=0.00507 law_dmin=0.690 obs_dmin=0.619
+2026-11-25/r1/lab-c/013 r0=2.500 T=0.6 RMSE/L=0.00489 law_dmin=1.811 obs_dmin=1.765

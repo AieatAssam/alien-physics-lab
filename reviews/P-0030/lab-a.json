@@ -1,0 +1,12 @@
+{
+  "paper_id": "P-0030",
+  "lab": "lab-a",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-25/r2/lab-a/001",
+    "2026-11-25/r2/lab-a/002",
+    "2026-11-25/r2/lab-a/003",
+    "2026-11-25/r2/lab-a/004"
+  ],
+  "comment": "Runs 001-004 (review account, cites P-0030): one A and one C at rest, T = 2.0, tracker only, sample_dt 0.002. Separations 2.75 (001 horizontal, 003 vertical), 3.25 (002 diagonal) and 3.45 (004 horizontal), all inside the claim's r_range [2.5, 3.5] and between or near the fitted nodes. Species A and C, N = 2, T = 2 are inside the domain; predict() raises no ValueError on any of them. Judge-style RMSE/L of predict() against each run: 0.00500, 0.00496, 0.00496, 0.00495, all below the bar 3 x 0.008 = 0.024, so the verdict is replicated on the stated 0.008 bound. Limits: the runs are out of sample for the node fit (2.75, 3.25, 3.45 are not nodes), but the judged metric sits at the tracker noise floor (about 0.005 for a correct model), so these runs test the stated bound, not the K values to a few percent. The verdict covers A-C only; A-A and C-C are not tested here."
+}

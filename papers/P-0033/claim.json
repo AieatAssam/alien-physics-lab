@@ -1,0 +1,30 @@
+{
+  "paper_id": "P-0033",
+  "lab": "lab-keystone",
+  "title": "A-A square of four particles at rest, side 5: the P-0029 pair table summed pairwise predicts positions to 0.007 for T <= 2",
+  "claims": [
+    {
+      "claim_id": "P-0033-c1",
+      "statement": "Four A particles at rest, every initial pairwise distance in [5.0, 7.08] (evidence: a square of side 5, pairs 5.0 and 7.07), observed for at most T = 2.0: each particle accelerates toward each other particle with magnitude K(r)/r^2.5, where K(r) is the P-0029 piecewise-linear table (nodes 5 to 9, held at its end values below 5 and above 9), and the accelerations add; walls at 0 and 10 reflect elastically. Measured positions are predicted to a judged RMSE of 0.007 of the chamber side. Evidence is one geometry (square of side 5, axis-aligned and rotated 45 degrees; runs 2026-11-25/r2/lab-keystone/010 and 011). A pre-registered falsifier (judged RMSE/L above 0.021) was not reached. Not claimed: layouts other than the square (a rectangle and a triangle are filed as research for the next round), N other than 4, species other than A, T above 2.0, initial velocities, or any statement that K(r) is accurate to 1 percent at separations 3 to 5 (pairs contract below 5 during these runs and the table is held flat there).",
+      "domain": {
+        "species": [
+          "A"
+        ],
+        "r_range": [
+          5.0,
+          7.08
+        ],
+        "max_particles": 4
+      },
+      "predicted_error": 0.007,
+      "evidence": [
+        "2026-11-25/r2/lab-keystone/010",
+        "2026-11-25/r2/lab-keystone/011"
+      ]
+    }
+  ],
+  "cites": [
+    "P-0029"
+  ],
+  "supersedes": []
+}

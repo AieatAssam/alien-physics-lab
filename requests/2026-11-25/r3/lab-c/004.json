@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-25/r3/lab-c/004",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Research (round 3): A-A pair at rest, r0 = 2.75, horizontal, T = 0.6: outside claim: r0 2.75 at T 0.6, tests the upper extension. Pre-registered P-0026 pair-law prediction in analysis/prereg_r3_2026-11-25.json.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.625,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.375,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.6,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

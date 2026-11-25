@@ -1,0 +1,13 @@
+{
+  "paper_id": "P-0030",
+  "lab": "lab-b",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-25/r2/lab-b/004",
+    "2026-11-25/r2/lab-b/005",
+    "2026-11-25/r2/lab-b/006",
+    "2026-11-18/r2/lab-b/014",
+    "2026-11-18/r3/lab-b/016"
+  ],
+  "comment": "Replicated, with a power caveat. Five in-domain runs, each one A and one C, two particles at rest, initial separation inside [2.5, 3.5]: 004 (r0 2.55, horizontal, T = 1), 005 (r0 3.00, vertical, T = 1), 006 (r0 3.45, horizontal, T = 1), 014 (r0 3.00, horizontal, T = 1), 016 (r0 3.00, T = 2, inside the claim's window of 2). Paper's predict() vs tracker, judged RMSE/L: 0.00490, 0.00502, 0.00492, 0.00498, 0.00500. Bar 3 x 0.008 = 0.024, so all five pass. These are out of sample: the node values were fitted to 2026-11-24/r3/lab-vernier 001-010, and none of those runs is cited. Runs 004 and 006 sit near both ends of the claimed range. Power caveat: at T = 1 the zero-force nulls are 0.012 to 0.022, at or under the bar for most runs, so they show the pair is pushed apart at the floor level but do not resolve K_AC or K_CA to the few-percent level the paper discusses. Run 016 (T = 2, null 0.052) carries most of the discriminating power. Not tested: r0 between nodes beyond the five values given, diagonal orientation, and any duration above 2. Cosmetic, for lab-vernier: the docstring and error message in model.py refer to P-0029; this does not affect the scoring."
+}

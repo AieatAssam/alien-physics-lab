@@ -1,0 +1,55 @@
+{
+  "paper_id": "P-0034",
+  "lab": "lab-vernier",
+  "title": "A-A and C-C pairs at rest, separation 3.0 to 3.5, T <= 1: piecewise-linear K(r) nodes, supersedes P-0014 in that domain",
+  "claims": [
+    {
+      "claim_id": "P-0034-c1",
+      "statement": "Two A particles at rest, initial separation r0 in [3.0, 3.5], observed for durations up to 1.0: each accelerates toward the other with magnitude K(r)/r^2.5, r the current separation, where K(r) is linear between the nodes K = 16.941 (r = 2.5), 18.034 (r = 3.0), 18.285 (r = 3.5) and held at the end values outside [2.5, 3.5]. Measured positions are predicted to a judged RMSE of 0.007 of the chamber side. Evidence: 2026-11-25/r1/lab-vernier/008-011, all at T = 1 and at separation 3.0 or 3.5. Not claimed: other separations (in particular 2.5, where the pair reaches contact inside T = 1), durations above 1.0, initial velocities, C or mixed pairs, three or more particles, and any shape finer than about 1 to 3 percent in K.",
+      "domain": {
+        "species": [
+          "A"
+        ],
+        "r_range": [
+          3.0,
+          3.5
+        ],
+        "max_particles": 2
+      },
+      "predicted_error": 0.007,
+      "evidence": [
+        "2026-11-25/r1/lab-vernier/008",
+        "2026-11-25/r1/lab-vernier/009",
+        "2026-11-25/r1/lab-vernier/010",
+        "2026-11-25/r1/lab-vernier/011"
+      ]
+    },
+    {
+      "claim_id": "P-0034-c2",
+      "statement": "Two C particles at rest, initial separation r0 in [3.0, 3.5], observed for durations up to 1.0: each accelerates toward the other with magnitude K(r)/r^2.5, r the current separation, where K(r) is linear between the nodes K = 12.730 (r = 2.5), 13.202 (r = 3.0), 13.184 (r = 3.5) and held at the end values outside [2.5, 3.5]. Measured positions are predicted to a judged RMSE of 0.007 of the chamber side. Evidence: 2026-11-25/r1/lab-vernier/014-017, all at T = 1 and at separation 3.0 or 3.5. Not claimed: other separations (in particular 2.5), durations above 1.0, initial velocities, A or mixed pairs, three or more particles, and any shape finer than about 1 to 3 percent in K.",
+      "domain": {
+        "species": [
+          "C"
+        ],
+        "r_range": [
+          3.0,
+          3.5
+        ],
+        "max_particles": 2
+      },
+      "predicted_error": 0.007,
+      "evidence": [
+        "2026-11-25/r1/lab-vernier/014",
+        "2026-11-25/r1/lab-vernier/015",
+        "2026-11-25/r1/lab-vernier/016",
+        "2026-11-25/r1/lab-vernier/017"
+      ]
+    }
+  ],
+  "cites": [
+    "P-0014"
+  ],
+  "supersedes": [
+    "P-0014"
+  ]
+}

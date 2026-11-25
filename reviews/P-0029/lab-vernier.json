@@ -1,0 +1,12 @@
+{
+  "paper_id": "P-0029",
+  "lab": "lab-vernier",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-25/r2/lab-vernier/101",
+    "2026-11-25/r2/lab-vernier/102",
+    "2026-11-25/r2/lab-vernier/103",
+    "2026-11-25/r2/lab-vernier/104"
+  ],
+  "comment": "Replication of P-0029-c1 (A-A at rest, r0 5 to 9, K(r)/r^2.5 with the piecewise-linear table) on four in-domain runs from this lab, all with two A particles at rest and separation exactly at the edges used: 101 r0 5.0 (T 2.0), 102 r0 9.0 (T 3.0), 103 r0 7.0 (T 3.0), 104 r0 8.0 (T 3.0). Judge-style RMSE/L from the paper's predict(): 0.00499, 0.00505, 0.00500, 0.00501; the claim's bar is 0.021 (3 x 0.007). Zero-force nulls are 0.024 (r0 5), 0.009 (r0 9), 0.015 (r0 7), 0.011 (r0 8). The r0 5 null is above the bar, so that run alone could have falsified the claim; it did not. Two earlier in-domain runs from this lab (2026-11-20) also pass but are not cited. Scope of this review: the replication covers durations inside the claim's own guard (T up to 2 for r0 < 7, up to 3 for r0 >= 7). I did not test table shape finer than the 1 to 3 percent level, and the runs do not probe the table between its nodes."
+}

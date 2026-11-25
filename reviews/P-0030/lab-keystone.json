@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0030",
+  "lab": "lab-keystone",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-25/r2/lab-keystone/004",
+    "2026-11-25/r2/lab-keystone/005",
+    "2026-11-25/r2/lab-keystone/006"
+  ],
+  "comment": "Replicated under the judged rule. Runs 004 (r0 = 2.75 horizontal, T = 2), 005 (r0 = 3.25 diagonal, T = 2) and 006 (r0 = 2.55 diagonal, T = 2) are in domain: one A and one C at rest, separation in [2.5, 3.5], T <= 2. Judged RMSE/L 0.00505, 0.00496, 0.00492; bar 3 x 0.008 = 0.024. None is in the paper's evidence; these separations lie between the fitted nodes (2.5, 3.0, 3.5), so they are an out-of-sample test of the interpolation. Tested beyond the judged bar: separate scales on K_AC and K_CA, fitted to these three runs (sigma 0.05), give s_AC = 0.989 +/- 0.005 and s_CA = 0.995 +/- 0.002, chi2/dof 0.99. The data prefer force magnitudes about 1.1 percent (A) and 0.5 percent (C) below the node values, at about 2 sigma each. This is marginal and needs more runs. Limits: the judged bar cannot see it. P-0005's flat coefficients through the same integrator also pass (0.0049 to 0.0051), and the zero-force null is 0.045 to 0.069. So the judged metric does not test the rise of K across the band; the scale fit is the test. These runs do not contradict P-0014's 4 percent bound on the A side at 3.5."
+}

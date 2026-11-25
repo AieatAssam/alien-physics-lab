@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0029",
+  "lab": "lab-keystone",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-25/r2/lab-keystone/001",
+    "2026-11-25/r2/lab-keystone/002",
+    "2026-11-25/r2/lab-keystone/003"
+  ],
+  "comment": "Replicated under the judged rule. Run 001 (r0 = 5.0 horizontal, T = 2), 002 (r0 = 9.0 horizontal, T = 3) and 003 (r0 = 6.0 vertical, T = 2) are in domain: two A particles at rest, separations inside [5, 9], durations inside the windows. Judged RMSE/L 0.00499, 0.00506, 0.00470; bar 3 x 0.007 = 0.021. None is in the paper's evidence. Tested beyond the judged bar: a per-run scale on the K table, fitted to tracker data (sigma 0.05), gives s = 1.006 +/- 0.007 (r0 = 5), 0.997 +/- 0.013 (r0 = 6), 0.997 +/- 0.020 (r0 = 9). Pooled s = 1.003 +/- 0.006, chi2/dof 0.98. The table agrees with the tracker to about 0.6 percent at these three separations. Limits: a 10 percent change in K moves the judged error by only about 0.0005, and a zero-force model passes the bar for run 002 (0.0086). Not tested here: the r0 = 7 switch between the T = 2 and T = 3 windows, and r0 in (5, 9) at T = 3 other than 9.0 itself."
+}

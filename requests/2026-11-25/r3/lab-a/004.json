@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-25/r3/lab-a/004",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "Round 3 close-range profile, pre-registered: A-A diagonal, separation 2.75, T 0.4 (replicate of 003).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.027728,
+          4.027728
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.972272,
+          5.972272
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.4,
+    "sample_dt": 0.002
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

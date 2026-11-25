@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0028",
+  "lab": "lab-keystone",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-25/r2/lab-keystone/007",
+    "2026-11-25/r2/lab-keystone/008",
+    "2026-11-25/r2/lab-keystone/009"
+  ],
+  "comment": "Replicated under the judged rule. Runs 007 (8 A on a ring of radius 4.2, adjacent 3.21, diameter 8.40), 008 (same ring rotated 22.5 degrees) and 009 (ring of radius 4.0, adjacent 3.06) are in domain: N = 8, species A, at rest, all initial pairs in [3, 9], T = 1.0. Judged RMSE/L 0.00501, 0.00518, 0.00496; bar 3 x 0.007 = 0.021. None is in the paper's evidence. Measured pair separations reach 2.39 to 2.62 during these runs, so they exercise the region below 3 where the model holds K at K(3). Tested beyond the judged bar: a single scale on the P-0028 table, fitted to the three runs pooled (sigma 0.05 per coordinate), gives s = 1.007 +/- 0.003 (statistical), chi2/dof 1.02. The table is about 2.4 sigma high. The offset is 0.7 percent and may come from the held-K(3) region; it does not change the verdict. Limits: a zero-force model would exceed the bar (0.021 to 0.024 on these runs), but a 10 percent change in K moves the judged error only to about 0.0055, so the replicate shows the forces are present and roughly right, not that K is accurate to 1 percent. N below 8 is not tested here."
+}
