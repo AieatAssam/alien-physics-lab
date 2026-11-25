@@ -1,0 +1,104 @@
+{
+  "request_id": "2026-11-25/r1/lab-c/010",
+  "lab": "lab-c",
+  "account": "review",
+  "purpose": "Review of P-0028: 8-particle circle with neighbour chord 3.02 (radius 3.92), T = 1.0. Different geometry from the paper's own ring.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          8.94582,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          7.790116,
+          7.790116
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          8.94582
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          2.209884,
+          7.790116
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          1.05418,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          2.209884,
+          2.209884
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          1.05418
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          7.790116,
+          2.209884
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.002
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0028"
+}

@@ -1,0 +1,15 @@
+2026-11-25/r1/lab-c/001 review   n=16 T=0.3 dt=0.003 samples=100 cost=1.096
+2026-11-25/r1/lab-c/002 review   n=16 T=0.3 dt=0.003 samples=100 cost=1.096
+2026-11-25/r1/lab-c/003 review   n=16 T=0.3 dt=0.003 samples=100 cost=1.096
+2026-11-25/r1/lab-c/004 review   n=2 T=1.5 dt=0.001 samples=1500 cost=1.060
+2026-11-25/r1/lab-c/005 review   n=2 T=1.5 dt=0.001 samples=1500 cost=1.060
+2026-11-25/r1/lab-c/006 review   n=2 T=2.0 dt=0.002 samples=1000 cost=1.080
+2026-11-25/r1/lab-c/007 review   n=2 T=3.0 dt=0.003 samples=1000 cost=1.120
+2026-11-25/r1/lab-c/008 review   n=2 T=3.0 dt=0.003 samples=1000 cost=1.120
+2026-11-25/r1/lab-c/009 review   n=8 T=1.0 dt=0.002 samples=500 cost=1.160
+2026-11-25/r1/lab-c/010 review   n=8 T=1.0 dt=0.002 samples=500 cost=1.160
+2026-11-25/r1/lab-c/011 review   n=8 T=1.0 dt=0.002 samples=500 cost=1.160
+2026-11-25/r1/lab-c/012 research n=2 T=0.6 dt=0.001 samples=600 cost=1.024
+2026-11-25/r1/lab-c/013 research n=2 T=0.6 dt=0.001 samples=600 cost=1.024
+2026-11-25/r1/lab-c/014 research n=2 T=3.0 dt=0.002 samples=1500 cost=1.120
+review total 12.208 (allowance 15); research total 3.168 (allowance 40)

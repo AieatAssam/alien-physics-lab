@@ -1,0 +1,12 @@
+{
+  "paper_id": "P-0012",
+  "lab": "lab-vernier",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-24/r2/lab-vernier/019",
+    "2026-11-24/r2/lab-vernier/020",
+    "2026-11-24/r3/lab-vernier/103",
+    "2026-11-24/r3/lab-vernier/104"
+  ],
+  "comment": "Replicated at the paper's stated domain: two A at rest, exact initial separation 1.0 (distance exact to 1e-12), T = 0.15, 2 particles. Four in-domain runs (r2/019 horizontal, r2/020 vertical, r3/103 horizontal, r3/104 vertical), dense sampling (sample_dt = duration/2000). Judge-rule RMSE/L of the paper's own predict(): 0.00502, 0.00500, 0.00504, 0.00502. Bar = 3 x 0.008 = 0.024. All four are within the bar. Zero-force null on the same runs: 0.0072 to 0.0101, below the bar, so this review cannot falsify anything at T = 0.15. It replicates only. The bar also cannot separate K = 11.3 from nearby values: the paper's error budget is at tracker noise (sd 0.05). Nothing here tests P = 2.5 (the separation changes by about 0.3 over the run). Evidence is the paper's regime only: no claim about r0 != 1.0 or T > 0.15."
+}

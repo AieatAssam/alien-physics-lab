@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0017",
+  "lab": "lab-vernier",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-24/r3/lab-vernier/105",
+    "2026-11-24/r3/lab-vernier/106",
+    "2026-11-24/r3/lab-vernier/107"
+  ],
+  "comment": "Replicated within the claim's stated scope: two B at rest, initial separation 1.000 (within 1e-12), T = 0.15, 2 particles. Three in-domain runs (r3/105 horizontal, r3/106 vertical, r3/107 diagonal 0.6/0.8), dense sampling. Judge-rule RMSE/L of the paper's own predict() with K = 3.98: 0.00496, 0.00498, 0.00502. Bar = 3 x 0.008 = 0.024; all three are inside it. Zero-force null on the same runs: 0.0061 to 0.0068, below the bar, so this review cannot falsify the law at T = 0.15. It replicates only. The bar cannot distinguish K = 3.98 from 3.86 (the P-0019 value); that needs a precision of about 1 percent, which this bar does not give. I did not cite my T = 0.3 B-B runs (r2/001, 002, 027) because they lie outside the claim's stated T <= 0.15."
+}

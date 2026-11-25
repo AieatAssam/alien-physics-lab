@@ -1,0 +1,55 @@
+{
+  "paper_id": "P-0029",
+  "lab": "lab-a",
+  "title": "A-A pair at rest, separation 5 to 9: piecewise-linear K(r) table at P = 2.5, narrows and supersedes P-0027",
+  "claims": [
+    {
+      "claim_id": "P-0029-c1",
+      "statement": "Two A particles at rest, initial separation r0 in [5.0, 9.0]: each accelerates toward the other with magnitude K(r) / r^2.5, r the current separation, where K(r) is linear between the nodes K = 17.834 (r = 5), 16.617 (6), 15.121 (7), 13.432 (8), 11.624 (9). Measured positions are predicted to a judged RMSE of 0.007 of the chamber side for durations up to 2.0 when r0 < 7 and 3.0 when r0 >= 7. The claim is for A-A only, two particles, at rest, at exponent 2.5 with this table. It makes no claim for initial separations in [3, 5) (the P-0027 nodes 3 and 4 and the K(r) values there are withdrawn; replicates r3/003-004 gave K about 2.7% above the table at 3.5 and 4.5), for r < 3 or r > 9, other species, other exponents or shapes, or three or more particles.",
+      "domain": {
+        "species": [
+          "A"
+        ],
+        "r_range": [
+          5.0,
+          9.0
+        ],
+        "max_particles": 2
+      },
+      "predicted_error": 0.007,
+      "evidence": [
+        "2026-11-23/r3/lab-a/005",
+        "2026-11-23/r3/lab-a/006",
+        "2026-11-23/r3/lab-a/007",
+        "2026-11-23/r3/lab-a/008",
+        "2026-11-23/r3/lab-a/009",
+        "2026-11-23/r3/lab-a/010",
+        "2026-11-23/r3/lab-a/011",
+        "2026-11-23/r3/lab-a/012",
+        "2026-11-23/r3/lab-a/013",
+        "2026-11-23/r3/lab-a/014",
+        "2026-11-23/r3/lab-a/015",
+        "2026-11-23/r3/lab-a/016",
+        "2026-11-24/r1/lab-a/009",
+        "2026-11-24/r1/lab-a/010",
+        "2026-11-24/r1/lab-a/013",
+        "2026-11-24/r1/lab-a/014",
+        "2026-11-24/r1/lab-a/015",
+        "2026-11-24/r1/lab-a/016",
+        "2026-11-24/r1/lab-a/017",
+        "2026-11-24/r1/lab-a/018",
+        "2026-11-24/r2/lab-a/003",
+        "2026-11-24/r2/lab-a/004",
+        "2026-11-24/r2/lab-a/005",
+        "2026-11-24/r2/lab-a/006",
+        "2026-11-24/r2/lab-a/007"
+      ]
+    }
+  ],
+  "cites": [
+    "P-0027"
+  ],
+  "supersedes": [
+    "P-0027"
+  ]
+}

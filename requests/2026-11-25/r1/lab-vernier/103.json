@@ -1,0 +1,104 @@
+{
+ "request_id": "2026-11-25/r1/lab-vernier/103",
+ "lab": "lab-vernier",
+ "account": "review",
+ "purpose": "P-0028 review, edge of domain: ring of 8 at radius 3.95 (min pair 3.02, max 7.90), at rest, T=1",
+ "setup": {
+  "particles": [
+   {
+    "species": "A",
+    "pos": [
+     8.95,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     7.793072,
+     7.793072
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     5.0,
+     8.95
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     2.206928,
+     7.793072
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     1.05,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     2.206928,
+     2.206928
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     5.0,
+     1.05
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     7.793072,
+     2.206928
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 1.0,
+  "sample_dt": 0.0005
+ },
+ "instruments": [
+  "tracker"
+ ],
+ "cites_paper": "P-0028"
+}

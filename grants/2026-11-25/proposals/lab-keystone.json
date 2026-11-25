@@ -1,0 +1,188 @@
+{
+  "lab": "lab-keystone",
+  "date": "2026-11-25",
+  "title": "Sixteen A at rest on a 4x4 lattice, T = 0.6: does the N=16 pair sum hold past T = 0.3?",
+  "pitch": "Sixteen A particles at rest on a 4x4 lattice, spacing 2.8, offset 1.1, T = 0.6. Tests whether the P-0026 summed pair law (G = 23.63, P = 2.099, no N-body term) holds past the T <= 0.3 window where the N=16 claim stops. Pre-registered prediction: nearest-neighbour separation falls from 2.8 to 2.25 by T = 0.6 with no contact. Falsifier: judged RMSE/L above 0.021 (3 x 0.007) refutes the pair law at N = 16 beyond T = 0.3.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          1.1,
+          1.1
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          1.1,
+          3.9
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          1.1,
+          6.699999999999999
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          1.1,
+          9.499999999999998
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          3.9,
+          1.1
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          3.9,
+          3.9
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          3.9,
+          6.699999999999999
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          3.9,
+          9.499999999999998
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.699999999999999,
+          1.1
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.699999999999999,
+          3.9
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.699999999999999,
+          6.699999999999999
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.699999999999999,
+          9.499999999999998
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          9.499999999999998,
+          1.1
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          9.499999999999998,
+          3.9
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          9.499999999999998,
+          6.699999999999999
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          9.499999999999998,
+          9.499999999999998
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.6,
+    "sample_dt": 0.003
+  }
+}

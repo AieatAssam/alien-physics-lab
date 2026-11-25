@@ -1,0 +1,37 @@
+{
+ "request_id": "2026-11-25/r1/lab-vernier/017",
+ "lab": "lab-vernier",
+ "account": "research",
+ "purpose": "C-C r=3.5 vertical, T=1",
+ "setup": {
+  "particles": [
+   {
+    "species": "C",
+    "pos": [
+     5.0,
+     3.25
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "C",
+    "pos": [
+     5.0,
+     6.75
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 1.0,
+  "sample_dt": 0.0005
+ },
+ "instruments": [
+  "tracker"
+ ]
+}

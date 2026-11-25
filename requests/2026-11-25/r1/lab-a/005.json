@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-25/r1/lab-a/005",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "A-A separation 3.0 horizontal, T 0.3: boundary check against the table value 17.68 at r = 3.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.3,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

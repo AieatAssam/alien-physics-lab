@@ -1,0 +1,104 @@
+{
+  "request_id": "2026-11-25/r1/lab-c/011",
+  "lab": "lab-c",
+  "account": "review",
+  "purpose": "Review of P-0028: 8-particle circle with neighbour chord 3.10 (radius 4.03), T = 1.0. Replicate geometry of 010 with a larger floor.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          9.050345,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          7.864027,
+          7.864027
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          9.050345
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          2.135973,
+          7.864027
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          0.949655,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          2.135973,
+          2.135973
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          0.949655
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          7.864027,
+          2.135973
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.002
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0028"
+}

@@ -1,0 +1,22 @@
+{
+  "lab": "lab-b",
+  "date": "2026-11-25",
+  "title": "A-B radial fall from r0 = 9: one run sweeps the full A-B force profile and tests the 1.41 pair ratio",
+  "pitch": "Plumbline's radial fall (2026-11-24) covers A-A only. This is the A-B analogue: A at x=0.5 and B at x=9.5, both at rest on y=5 (r0 = 9.0), T = 12, tracker sample_dt 0.01. Known inputs: K_B/K_A = 1.41 (P-0025, r 4 to 8); A-A K(r) falls beyond r = 6 (H18). Prediction: one radial shape with the fixed 1.41 ratio holds in every 2-wide separation band from 9 down to contact. Falsifier: a fitted K_B/K_A that differs from 1.41 by more than 0.1 in any band between r = 2 and 9, or a far-range K_A(9) outside 11 to 13. Contact (r < 1) is excluded from the fit.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [0.5, 5.0],
+        "vel": [0.0, 0.0]
+      },
+      {
+        "species": "B",
+        "pos": [9.5, 5.0],
+        "vel": [0.0, 0.0]
+      }
+    ],
+    "duration": 12.0,
+    "sample_dt": 0.01
+  }
+}

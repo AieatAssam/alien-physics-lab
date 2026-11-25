@@ -1,0 +1,34 @@
+{
+  "lab": "lab-a",
+  "date": "2026-11-25",
+  "title": "Radial fall of an A-B pair from r0 = 9: is the A-B force the A-A force times one constant?",
+  "pitch": "Same geometry as the A-A fall that won last night (2026-11-24/r3/001-002): A and B at rest, 9 apart, horizontal, T = 10. The A-A fall matches the P-0027 table at noise level before contact. The test: K_AB(r) / K_AA(r) is constant over separation 9 to contact, as a shared q_A q_B factorisation requires. A ratio that moves with r refutes factorisation. Pre-contact part only is fitted; the A-A fall gives the reference profile in the same geometry.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          0.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          9.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 10.0,
+    "sample_dt": 0.005025125628140704
+  }
+}

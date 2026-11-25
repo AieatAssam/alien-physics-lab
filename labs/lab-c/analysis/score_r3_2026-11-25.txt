@@ -1,0 +1,12 @@
+001 H species=AA r0=7.00 T_req=8.0 window_end=4.98 n=498 chi2/n M1=1.047 M2=0.997 M3=8.39e+12
+002 H species=AA r0=9.00 T_req=8.0 window_end=8.00 n=800 chi2/n M1=1.708 M2=1.027 M3=1.73e+15
+003 V species=AA r0=7.00 T_req=8.0 window_end=4.99 n=499 chi2/n M1=1.079 M2=1.028 M3=9.54e+12
+004 V species=AA r0=9.00 T_req=8.0 window_end=8.00 n=800 chi2/n M1=1.637 M2=1.001 M3=1.73e+15
+005 H species=AA r0=5.00 T_req=3.0 window_end=2.24 n=224 chi2/n M1=1.093 M2=1.011 M3=3.68
+006 H species=AA r0=9.00 T_req=8.0 window_end=8.00 n=800 chi2/n M1=1.656 M2=1.015 M3=1.73e+15
+007 H species=AB r0=9.00 T_req=8.0 window_end=8.00 n=800 chi2/n M1=40.813 M2=32.518 M3=1.73e+15
+008 H species=AA r0=7.00 T_req=8.0 window_end=4.98 n=498 chi2/n M1=1.072 M2=1.021 M3=8.39e+12
+009 H species=AA r0=8.00 T_req=10.0 window_end=6.74 n=674 chi2/n M1=1.075 M2=1.123 M3=1.18e+15
+
+Pre-registered pool (001,002,006,008; n_runs=4): chi2/n M1=1.371 M2=1.015 Delta=-0.356
+Decision: H-AA-exp refuted (M1 pooled chi2/n > 1.2)

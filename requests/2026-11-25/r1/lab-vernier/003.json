@@ -1,0 +1,37 @@
+{
+ "request_id": "2026-11-25/r1/lab-vernier/003",
+ "lab": "lab-vernier",
+ "account": "research",
+ "purpose": "A-C r=3.25 horizontal, T=2 (out-of-sample point)",
+ "setup": {
+  "particles": [
+   {
+    "species": "A",
+    "pos": [
+     3.375,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "C",
+    "pos": [
+     6.625,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 2.0,
+  "sample_dt": 0.001
+ },
+ "instruments": [
+  "tracker"
+ ]
+}

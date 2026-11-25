@@ -1,0 +1,104 @@
+{
+  "request_id": "2026-11-25/r1/lab-c/009",
+  "lab": "lab-c",
+  "account": "review",
+  "purpose": "Review of P-0028: 3x3 grid minus centre at spacing 3.02 (initial floor pairs at 3.02), T = 1.0. Tests the untested sub-3 regime the paper clamps (K held at K(3)).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          1.98,
+          1.98
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          1.98,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          1.98,
+          8.02
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          1.98
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          8.02
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.02,
+          1.98
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.02,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.02,
+          8.02
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.002
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0028"
+}

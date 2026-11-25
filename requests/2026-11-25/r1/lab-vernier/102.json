@@ -1,0 +1,104 @@
+{
+ "request_id": "2026-11-25/r1/lab-vernier/102",
+ "lab": "lab-vernier",
+ "account": "review",
+ "purpose": "P-0028 review, same grid rotated 30 deg (tests isotropy of the pair sum at N=8)",
+ "setup": {
+  "particles": [
+   {
+    "species": "A",
+    "pos": [
+     3.894603,
+     0.874603
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     2.384603,
+     3.49
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     0.874603,
+     6.105397
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     6.51,
+     2.384603
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     3.49,
+     7.615397
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     9.125397,
+     3.894603
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     7.615397,
+     6.51
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     6.105397,
+     9.125397
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 1.0,
+  "sample_dt": 0.0005
+ },
+ "instruments": [
+  "tracker"
+ ],
+ "cites_paper": "P-0028"
+}

@@ -1,0 +1,12 @@
+{
+  "paper_id": "P-0024",
+  "lab": "lab-vernier",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-24/r2/lab-vernier/023",
+    "2026-11-24/r2/lab-vernier/026",
+    "2026-11-24/r3/lab-vernier/101",
+    "2026-11-24/r3/lab-vernier/102"
+  ],
+  "comment": "Replicated inside the claim's validity window for separations 2.5 and 2.75 (duration 0.6, the r0 >= 2.5 limit). Four in-domain runs, two A at rest: r2/023 and r2/026 at r0 = 2.5 (horizontal, vertical), r3/101 and r3/102 at r0 = 2.75 (horizontal, vertical), dense sampling. Judge-rule RMSE/L of the paper's own predict(): 0.00506, 0.00505, 0.00496, 0.00500. Bar = 3 x 0.006 = 0.018; all four are inside it. Zero-force null on the same runs: 0.0102 to 0.0151, below the bar, so this review cannot falsify the claim at these durations. It replicates only. As the paper itself states, the judged bar does not discriminate P = 2.10 from P = 2.5 at these durations, so this review says nothing about the exponent. Not cited: r2/021 and 022 (duration 0.5 > 0.3 window for r0 < 2.5) and r2/024 and 025 (duration 1.1 > 0.6), because the predictor refuses those setups."
+}

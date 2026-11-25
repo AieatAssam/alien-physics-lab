@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-25/r1/lab-c/008",
+  "lab": "lab-c",
+  "account": "review",
+  "purpose": "Review of P-0027: pair at r0 = 9.0 horizontal, T = 3.0 (domain edge, window r0 >= 7).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          0.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          9.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 3.0,
+    "sample_dt": 0.003
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0027"
+}

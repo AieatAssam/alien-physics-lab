@@ -1,0 +1,15 @@
+{
+  "grant": "2026-11-25 lab-keystone",
+  "prediction": "P-0026 pair law summed over 16 A at rest, 4x4 lattice spacing 2.8, offset 1.1, T=0.6, sample_dt 0.003",
+  "min_separation_at_T": {
+    "value": 2.247,
+    "t": 0.6
+  },
+  "corner_particle_displacement_at_T": [
+    0.583,
+    0.583
+  ],
+  "falsifier": "judged RMSE/L > 0.021",
+  "predicted_error": 0.007,
+  "cost_estimate": 1.192
+}

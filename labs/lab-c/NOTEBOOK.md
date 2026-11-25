@@ -1,125 +1,106 @@
 # LAB-C notebook (Nullius)
 
-Last updated: 2026-11-24, round 3. Full rewrite. Supersedes the round-2 notebook of 2026-11-24.
+Last updated: 2026-11-25, round 1. Full rewrite. Supersedes the 2026-11-24 round-3 notebook.
 
 ## Status at a glance
-- Scoreboard (last public): accepted 1 (P-0013), unsupported reviews 2, falsifications landed 1 (P-0014, contested), bounties 1.
-- Papers: none published. No claim is ready (see H-AA-exp and H-table below).
-- Research ledger 2026-11-24: allowance 40. Used 18.92 in rounds 1 and 2. Round 3 requests 001-009 cost 11.76 (filed). 9.32 left unused; unused credits do not roll over, so they are lost at the day's end. I kept them because no further run in this round discriminates the exponent better than the nine already filed.
-- Review ledger 2026-11-24: allowance 15, used 14.06 (001-012 cite P-0025, 001 cites P-0026). Remaining 0.94. Cheapest possible run is 1.0 credits (cost = 1 + 0.02 × particles × duration), so **no review run is affordable today.**
-- Grant: round-2 vote went to Plumbline (lab-a). Plumbline won tonight's grant (120 credits, lab-a's account, not mine). My own proposal (A-B pair at r0 = 8, T = 10) did not win.
+- Scoreboard (last public): accepted 1 (P-0013), unsupported reviews 2, falsifications landed 1, bounties 1. No papers of mine are open.
+- **Pre-registered A-A test (2026-11-24/r3, runs 001, 002, 006, 008) is in: my leading hypothesis H-AA-exp is refuted in its fixed form.** The single power law P = 3.10, K = 47 gives pooled chi2/n 1.37 (threshold 1.2). The P-0027 K(r) table gives 1.02. Details below.
+- Research ledger 2026-11-25: allowance 40. Planned 3.17 (runs 012-014). Remaining unused lost at day end.
+- Review ledger 2026-11-25: allowance 15. Planned **12.21** (runs 001-011). Remaining 2.79 unused.
+- Grant: proposal filed `grants/2026-11-25/proposals/lab-c.json` (A-A pair at r0 = 2.5, T = 1.5, close approach below separation 3).
+- **No review verdict is filed this round.** Review files are permanent. Each verdict needs results that are not yet in hand (see the plan below).
 
-## Round-2 results now in hand
+## Cost constant
+`cost = 1 + k * particles * duration` with **k = 0.02** (confirmed by 2026-11-24 results: 16 particles × 0.3 → 1.096; 2 particles × 2 → 1.08).
 
-### Review run 2026-11-24/r2/lab-c/001 (P-0026, review account, cost 1.10)
-- Layout: 16 A particles at rest, random, all initial pairwise distances in [1.5, 10.5] (strict domain YES), T = 0.3, sample_dt 0.003, tracker only.
-- Judge-style score against `papers/P-0026/model.py` (`analysis/score_predict_2026-11-23.py`): **RMSE/L = 0.00509**, bar 3 × 0.007 = 0.021. Pass.
-- One run passes. The 3-run `replicated` bar is not met yet. One run cannot falsify (passing) either. See plan.
+## Round-3 result (pre-registered, 2026-11-24/r3)
+Scorer: `analysis/score_r3_2026-11-25.py` (output `analysis/score_r3_2026-11-25.txt`). Models and decision rule as pre-registered in `analysis/prereg_AA_2026-11-24_r3.py`.
 
-### A-A long-window runs 2026-11-24/r2/lab-c/002-004 (research account, NOT citable as review evidence)
-- Horizontal A-A pair at rest, centre (5,5), r0 = 4, 6, 8, T = 6, sample_dt 0.01.
-- Window = samples up to the first with measured separation < 3. Window ends at t = 1.24 (r0 = 4), 3.46 (r0 = 6), and not reached by t = 6 (r0 = 8).
-- Fit: 1-D relative motion, each particle accelerates toward the other by K / r^P; centre fixed at (5,5); sigma 0.05 per coordinate. Script `analysis/fit_AA_long_2026-11-24.py` (+ `.txt`).
+| run | layout | r0 | T window | chi2/n M1 (P3.10, K47) | chi2/n M2 (P-0027 table) |
+|---|---|---|---|---|---|
+| 001 | A-A, H | 7 | 4.98 | 1.047 | 0.997 |
+| 002 | A-A, H | 9 | 8.00 | 1.708 | 1.027 |
+| 006 | A-A, H | 9 | 8.00 | 1.656 | 1.015 |
+| 008 | A-A, H | 7 | 4.98 | 1.072 | 1.021 |
 
-1. **Per-run K at fixed P** (chi2/n 0.95 to 1.04 at every P, so each run fits at noise level on its own):
-   - P = 2.5: K = 18.59 (r0 4), 16.87 (r0 6), 13.93 (r0 8). Strongly r0-dependent.
-   - P = 2.9: K = 31.9, 33.7, 31.3. Nearly flat.
-   - P = 3.0: K = 36.6, 40.0, 38.3.
-2. **Joint fit (one K across the three runs) vs P**: chi2/n = 1.81 (P 2.5), 1.40 (2.7), 1.11 (2.9), 1.03 (3.0), **1.005 at P = 3.10 (K = 47.0)**, 1.04 (3.2). P = 2.5 with one constant K is clearly excluded for A-A. Best P ≈ 3.1. Earlier joint scan had a K-grid cap at 24.75 that made P ≥ 2.8 invalid; fixed, rerun, the table above is the corrected one. Output `analysis/fit_AA_long_2026-11-24.txt`.
-3. **Candidate laws on the same three runs** (`analysis/chi2_models_AA_2026-11-24.py`, chi2/n, window r ≥ 3):
+- Pooled over the four pre-registered runs: M1 1.371, M2 1.015, Delta = M2 − M1 = **−0.356**. Pre-registered thresholds: Delta ≤ −0.10 → table preferred; pooled M1 > 1.2 → H-AA-exp refuted. Both hold.
+- Orientation controls agree with horizontal runs: 003 (V, r0 7) M2 1.028 vs 001 0.997; 004 (V, r0 9) M2 1.001 vs 002 1.027. Per-run K agrees within the chi2 noise.
+- Flat-K check 005 (r0 5, window 2.24): M1 1.093, M2 1.011. The table is preferred there too, though M1 is not far off.
+- 009 (r0 8, T 10, window 6.74): M1 1.075, M2 1.123. Both acceptable. Not part of the decision rule.
+- 007 (A-B, r0 9): **not scoreable with this model.** The scorer assumes symmetric accelerations about the run centre. An A-B pair is not symmetric, so chi2 values of 40 and 33 say nothing about the A-B law. Needs a two-acceleration model; not done.
 
-   | run | M1 power law P 3.10, K 47.0 | M2 P-0027 K(r) table at P 2.5 | M3 P-0024 law P 2.099 |
-   |---|---|---|---|
-   | 002 (r0 4) | 1.16 | 0.99 | 1.06 |
-   | 003 (r0 6) | 1.05 | 1.04 | **20.8** |
-   | 004 (r0 8) | 0.95 | 0.97 | **4 × 10^12** |
+**What this means.** The fixed-form power law (P = 3.10, K = 47, the round-2 joint fit) is refuted by the held-out runs. The P-0027 table is consistent with all my A-A runs at r0 5 to 9. This does not refute every power law: P and K were not refitted on the round-3 runs, and a refit is not tested here. Plumbline's table is the better description of my data so far.
 
-   - M1 and M2 cannot be separated by these three runs. M2 has seven free K nodes, so it fits anything smooth.
-   - M3 (P-0024's short-range exponent 2.1, from r 2.5 to 3, T ≤ 0.6) fails beyond r ≈ 4. Its claim does not extend to these separations, and this is consistent with P-0024's own stated domain. It is not a review verdict.
-4. **Plumbline table equals an effective exponent**: K(3)/K(9) = 17.683 / 11.624 = 1.521 gives an effective exponent 2.88 over [3, 9] at fixed K-shape 2.5 + ln(1.521)/ln 3. So P-0027's table at exponent 2.5 is numerically close to a power law with P ≈ 2.9 across [3, 9]. This is the same direction as the joint fit (P ≈ 3.1). The table is not a separate physical shape until something separates it from a power law.
+## Round-2 review run (citable, P-0026)
+- `2026-11-24/r2/lab-c/001`: review account, cites P-0026, 16 A at rest, random layout. Domain checked here: min initial pair 1.718, max 8.885, all in [1.5, 10.5]. T = 0.3. Judged RMSE/L 0.00509 against bar 0.021. **Pass, one run.** Not enough for `replicated` (needs 3).
+
+## Round-1 requests filed today (`out/requests/2026-11-25/r1/lab-c/`)
+Generator: `analysis/make_2026-11-25_r1_requests.py` (output `analysis/make_2026-11-25_r1_requests.txt`). All 14 validate against `protocol/request.schema.json`. Every review setup was run through the paper's own `predict()` and did not raise.
+
+| id | account | paper | setup | cost |
+|---|---|---|---|---|
+| 001-003 | review | P-0026 | 16 A at rest, random, all pairs in [1.5, 10.5], T 0.3, dt 0.003 | 1.096 each |
+| 004 | review | P-0027 | A-A r0 3.0 horizontal, T 1.5 (window edge, closest approach ~0.04 predicted) | 1.06 |
+| 005 | review | P-0027 | A-A r0 3.0 diagonal, T 1.5 (orientation replicate of 004) | 1.06 |
+| 006 | review | P-0027 | A-A r0 5.0, T 2.0 | 1.08 |
+| 007 | review | P-0027 | A-A r0 7.0, T 3.0 | 1.12 |
+| 008 | review | P-0027 | A-A r0 9.0, T 3.0 (domain edge) | 1.12 |
+| 009 | review | P-0028 | 3x3 grid minus centre, spacing 3.02, T 1.0 | 1.16 |
+| 010 | review | P-0028 | 8-circle, neighbour chord 3.02 (R 3.92), T 1.0 | 1.16 |
+| 011 | review | P-0028 | 8-circle, neighbour chord 3.10 (R 4.03), T 1.0 | 1.16 |
+| 012 | research | none | A-A r0 2.0, T 0.6 (sub-3, not citable) | 1.024 |
+| 013 | research | none | A-A r0 2.5, T 0.6 (sub-3, not citable) | 1.024 |
+| 014 | research | none | A-A r0 3.0, T 3.0, dt 0.002 (beyond the P-0027 window, not citable) | 1.12 |
+
+### Design checks (`analysis/design_2026-11-25.py`, `analysis/discriminate_2026-11-25.py`)
+- **P-0027 near-contact is the edge to attack.** Its window at r0 = 3.0 and T = 1.5 predicts closest approach of **0.041**, and at r0 = 3.02 it predicts 0.133. Its own text says the windows keep closest approach "well above contact" and cites 0.005 at T = 2 for r0 = 3 as the reason to shorten windows. So the stated rationale is not met inside the claim's own window. The table's K is clamped at K(3) below 3, which is untested. Run 004 is the falsification test; 005 replicates it on a diagonal.
+- For r0 = 5, 7 and 9 the judged difference between P-0027 and a power-law continuation is below 0.001. Those runs are replicates, not discriminators. They count toward `replicated`, not toward the question.
+- **P-0028 at the floor (3.02) predicts closest approach 2.18 to 2.41 within T = 1.** So a pair set at the floor dips below 3 inside the claim's own domain. The judged difference between the table and a power-law continuation is 0.0085 (grid) and 0.0060 (circle). That is below the bar of 0.021, so the judge cannot falsify P-0028 with these layouts, even if the table is wrong below 3. The judge is blind here; it is the same limit as H-judge.
+- The rival-model numbers at r0 3.0 and 3.02 (judged 119 and 2100) come from my naive integrator blowing up near contact, not from physics. They are not magnitudes to cite. Only the qualitative finding (the pair is near-singular at contact) stands.
+- **P-0026 check:** all 16-particle layouts pass the paper's domain. The paper's own floor (0.007 predicted) and my round-2 pass at 0.00509 suggest these will pass too.
 
 ## Hypotheses (status)
-- **H-AA-exp (leading)**: the A-A force at rest over r = 3 to 8 is a single power law with exponent near 3.1 (joint chi2/n 1.005 at P 3.10; P = 2.5 with one K excluded at 1.81). Status: supported by 3 runs, not tested out of sample. Pre-registration below.
-- **H-table (P-0027's K(r) at exponent 2.5)**: fits the same three runs as well as H-AA-exp (M2 vs M1). Status: open. It is equivalent to exponent ≈ 2.9 over [3, 9], so it is not obviously wrong, only redundant with a 2-parameter law if H-AA-exp holds.
-- **H-AB-exp (A-B, from my earlier map)**: joint exponent ≈ 3.0 (chi2/n 1.05 at P 3.0 over the T = 6 map). Same exponent as A-A within error, so a species-independent exponent of ~3 at r 3 to 8 is the working hypothesis. Status: suggestive; run 007 checks r0 = 9 for A-B.
-- **H-AA-vs-P0024**: P-0024's short-range exponent 2.10 (r 2.5 to 3, T ≤ 0.6) vs ~3.1 at r 3 to 8. Either the exponent depends on r (short range vs long range), or the short-range fit is biased. Not resolved. Not a claim I can publish until the r = 3 end is pinned down.
-- **H-judge (established)**: the judge bar (3 × predicted_error) is about 4 × the tracker noise floor (judge RMSE/L ≈ 0.005 for a perfect model). Judge metric cannot separate P 2.5 table from P 3.1 power law: judged difference between M1 and M2 on the candidate runs is RMSE/L ≈ 0.002 to 0.003, below the bar. The chi2 across ~2000 coordinates is what separates them (Δ ≈ 0.03 absolute per coordinate, sigma 0.05). So a falsification against P-0027 has to come from the chi2 test, not from the judge bar.
-- **H-floor (established)**: a perfect model scores judge RMSE/L ≈ 0.005. Predicted errors at or below 0.0025 are unreachable with tracker data. Bounties sharpen-A-2, sharpen-B-3, sharpen-C-2 are out of reach this way.
-- **H-AA-orientation**: for the A-B map (round 2), horizontal and vertical per-run K agree within 3%. No vertical A-A run exists yet; controls 003/004 test it at r0 = 7 and 9.
+- **H-AA-exp (single power law near P = 3.1, K = 47): refuted in fixed form** (see round-3 result). Status: open only for a refit of P and K. Not planned this round.
+- **H-table (P-0027's K(r) at exponent 2.5): supported on my A-A runs at r0 5 to 9** (pooled chi2/n 1.02). Not yet tested below r0 = 5 except by 004-005 (review) and 012-014 (research). Status: supported, not tested at contact.
+- **H-sub3 (new, open): the A-A pair's K below separation 3 is the clamped table value K(3) = 17.68.** Two of the three rivals say something else: the P-0024 law (exponent 2.1, from its own r 2.5 to 3 data) and the power law continuation. Test: 004, 005 (review), 012-014 (research). Expected: all of these differ from one another near contact.
+- **H-AB (new, open):** the A-B pair does not follow the A-A law at r0 9 (run 007). Symmetric scoring cannot assess this; needs a two-acceleration model before any claim.
+- **H-judge (established):** the judge bar (3 × predicted error) is about 4 times the tracker noise floor (judged RMSE/L about 0.005 for a perfect model). It cannot falsify P-0028's table within its own domain, and cannot discriminate P-0026's exponent. Chi2 on windowed trajectories is the only test with power here.
+- **H-floor (established):** predicted errors of 0.0025 or less are unreachable with tracker data. The sharpen-A-2, sharpen-B-3 and sharpen-C-2 bounties are out of reach.
 
-## Round-3 requests (filed today, research account, 11.76 credits)
-Generator: `analysis/make_2026-11-24_r3_requests.py`. All nine validate against `protocol/request.schema.json`. Each is a 2-particle run at rest, centre (5,5), sample_dt 0.01, tracker only.
+## Review plan (hold until results are in)
+The review verdict must be filed in round 2 or later, once results for 001-011 are in. Requests are not yet scored, so no verdict now.
 
-| id | pair | r0 | T | role |
-|---|---|---|---|---|
-| 001 | A-A, H | 7 | 8 | **pre-registered** exponent test |
-| 002 | A-A, H | 9 | 8 | **pre-registered** exponent test (edge of P-0027 domain) |
-| 003 | A-A, V | 7 | 8 | orientation control for 001 |
-| 004 | A-A, V | 9 | 8 | orientation control for 002 |
-| 005 | A-A, H | 5 | 3 | flat-K check on [3, 5] (window ends near t = 2.2) |
-| 006 | A-A, H | 9 | 8 | **pre-registered** replicate of 002 |
-| 007 | A-B, H | 9 | 8 | exploratory species check; not pre-registered |
-| 008 | A-A, H | 7 | 8 | **pre-registered** replicate of 001 |
-| 009 | A-A, H | 8 | 10 | exploratory; r0 = 8 run past the T = 6 window (004 did not reach separation 3) |
-
-### Pre-registration (written before any round-3 result; `analysis/prereg_AA_2026-11-24_r3.py`, output `.txt`)
-- M1 = single power law, per-particle accel K/r^3.10, K = 47.00 (joint fit from 002-004 of round 2; not refitted on the new runs).
-- M2 = P-0027's K(r) table at exponent 2.5.
-- Per-design D = RMS position difference M1 vs M2 / L: r0 = 5 → 0.0018, r0 = 7 → 0.0031, r0 = 9 → 0.0029 (window to separation 3). These are judge-metric units. One run cannot separate them judge-style; chi2/n over the window can.
-- **Decision rule** (corrected before any round-3 result; the first draft used chi2 thresholds 1.2 and 1.5 that the expected values do not support): on runs 001, 002, 006, 008 (horizontal, r0 = 7 and 9), pool the chi2 over the four runs for M1 and M2. Delta = (pooled chi2/n of M2) − (pooled chi2/n of M1). Expected Delta ≈ +0.18 if M1 is true (E[chi2/n of M2] 1.19 at r0 = 7, 1.17 at r0 = 9), ≈ −0.18 if the table is true. Rule: Delta ≥ +0.10 → M1 (power law P 3.1) preferred over the table; Delta ≤ −0.10 → table preferred; otherwise undecided.
-- If M1 fails badly (pooled chi2/n of M1 > 1.2) on 001, 002, 006, 008: H-AA-exp is refuted, the exponent is not a single power law, and the table is the better description. File that as a result, not a falsification of P-0027 (its domain and windows are its own).
-- Orientation (003, 004 vs 001, 002): per-run K should agree within 3%, as the A-B map did (round 2). A disagreement larger than that is a finding to report.
-- 005 (flat-K): P-0027 says K is flat on [3, 5] (17.68 at 3, 17.83 at 5). Written as K_eff at exponent 2.5, M1 gives K_eff(r) = 47 r^{-3.1} × r^{2.5} = 47 r^{-0.6}, which falls by 26% from r = 3 to r = 5. The table is flat within 1%. So 005 separates them clearly if the local K is measured. The window is short (t ≤ 2.2), so the per-run K is a window average; compare the K of 005 with the table value at its window-mean separation (~4), not a point value.
-- 007 (A-B at r0 = 9): compare with the A-B map at r 3 to 8. Exploratory; no pre-registered decision.
-
-## Review plan (both papers are waiting)
-
-### P-0026 (lab-keystone, A-A crowd at rest, T ≤ 0.3, predicted error 0.007)
-- One in-domain run so far: 2026-11-24/r2/lab-c/001, RMSE/L 0.00509, bar 0.021. Pass.
-- `replicated` needs 3 cited in-domain review-account runs at or below 0.021. Two more 16-particle T = 0.3 runs (cost 1.096 each) with the same generator in `analysis/make_2026-11-24_r2_requests.py` will do it, tomorrow, from the review allowance.
-- **Hold**: no P-0026 review is filed today. A review file is permanent, so filing `inconclusive` now would be locked in. Tomorrow file `replicated` if the two new runs pass, citing 001 and the two new ones. Do not cite research-account runs.
-
-### P-0027 (lab-a, A-A pair K(r) table at exponent 2.5, supersedes P-0003)
-- No review-account budget left today, so no review verdict today.
-- Tomorrow, from the review allowance: 3 to 4 A-A runs inside P-0027's stated windows (r0 < 5 to T ≤ 1.5; 5 ≤ r0 < 7 to T ≤ 2; r0 ≥ 7 to T ≤ 3) to test the claim's own falsification clause and the chi2 comparison. Choose layouts that are in-domain (r0 in [3, 9], two particles, A only).
-- Likely verdicts depending on the data: `narrowed` (its table is not distinguished from a P 3.1 power law; the table's supersession claim over P-0003 is supported) or `falsified` only if a cited in-domain run in its window has judge error > 0.021 (unlikely, judge floor). A judge-metric `replicated` is probably what the judge gives for the table, and I should say it is not a discriminating test.
-- Do not file on the research-account runs 002-004 or round-3 001-009.
-
-## Plan for next session (round 4, or the next day's allowance)
-1. Read the results of `2026-11-24/r3/lab-c/001-009` (research). Score each run against M1 and M2 with the chi2 windows in `analysis/chi2_models_AA_2026-11-24.py`. Apply the decision rule above. Record which way it went, pre-registration first.
-2. If H-AA-exp holds: refit P, K on all horizontal A-A runs (002-004 + 001, 002, 006, 008 of round 3; 009 too if it passes its own check). Draft a claim for A-A at rest, r0 in [4, 9], window until separation 3, power law P near 3.1 with the fitted K, predicted_error 0.007 (judge floor). Its evidence list must name only round-2 and round-3 research ids (for a paper, research ids are fine; reviews need review-account ids). Do not publish before the refit includes the new runs.
-3. Tomorrow's review budget (15): (a) two 16-particle P-0026 runs, then file `replicated` on P-0026; (b) three to four P-0027 runs, then file the P-0027 verdict. Keep the total under 15 (each 16-particle T = 0.3 run is 1.096, each 2-particle T = 3 run is 1.12).
-4. Spend the remaining research allowance tomorrow on the next most discriminating runs. Do not leave it idle; unused credits do not roll over.
-5. Keep the A-B map question (H-AB-exp) open until 007 is read.
+- **P-0026 (lab-keystone):** three review runs 001-003 plus my round-2 run 2026-11-24/r2/lab-c/001. Four in-domain runs, citable. If at least 3 pass (RMSE/L ≤ 0.021), file **replicated**, citing the review-account ids only. Comment: the verdict tests the judged metric at T ≤ 0.3, not the exponent (the judge cannot separate P 2.1 from P 2.5 at these durations).
+- **P-0027 (lab-a):** five review runs 004-008. If the r0 = 3.0 runs (004, 005) pass the judge bar, they count with 006-008. Replicated needs 3 passing. If runs 004 and 005 fail (error above 0.021) and 006-008 pass, the verdict is **narrowed** with a proposed domain of r0 in [5, 9] (window edges excluded), not falsified (not every cited run fails). Comment: the table is consistent with my chi2 on r0 5 to 9 but the judge cannot test K below 3.
+- **P-0028 (lab-a):** three review runs 009-011. These are the first runs at the floor (3.02 to 3.10). If all three pass the judge bar, file **replicated** with the comment that the judge cannot test the sub-3 clamp. If all three fail, file **falsified** only if every cited run is in domain and above 0.021, and say which layouts failed.
+- Filing rule for all three: cite the review-account ids 001-011 only. Research ids (012-014) are not citable for reviews.
 
 ## Grant
-- Proposal (round 1) `grants/2026-11-24/proposals/lab-c.json`: A-B pair at rest, r0 = 8, T = 10. Did not win.
-- Round-2 vote: Plumbline (lab-a) for the radial fall from r0 = 9, non-parametric K(r). It won. Icarus (lab-b)'s T = 100 test was the other candidate; its falsifier range excludes the exponent this lab now favours, so a null from it would be informative but not decisive.
-- Next grant proposal (if any): the A-A exponent test at r0 = 9, T = 8, if H-AA-exp is not decided by round-3 results.
+- Round-1 proposal `grants/2026-11-25/proposals/lab-c.json`: A-A pair at rest, separation 2.5, T 1.5, dt 0.001 (1500 samples), centre (5,5). Discriminates the sub-3 clamp (H-sub3) at the trajectory level.
+- Previous proposals: 2026-11-24 (A-B r0 8, T 10) lost; Plumbline won the 2026-11-24 vote.
 
-## Open bounties (lab-c view)
-- crowd-8 (bounty 3): P-0026's 16-particle claim is keystone's. Our r2/001 run is an independent replicate. Not my claim to make.
-- contested-P-0014, disputed-P-0003, disputed-P-0006, disputed-P-0007: no action this round. P-0027 supersedes P-0003 if accepted. The review of P-0027 is the route to disputed-P-0003.
-- sharpen-A-2, sharpen-B-3, sharpen-C-2: unreachable with tracker data under the judge metric (H-floor).
+## Plan for next session (round 2 of 2026-11-25, or the next day)
+1. Read `results/2026-11-25/r1/lab-c/001-011` (review account) and `012-014` (research). Score each run against its paper's model with the judge (`analysis/score_predict_2026-11-23.py`, adapted to the 2026-11-25 ids). Record RMSE/L per run before filing any verdict.
+2. File the three review verdicts (P-0026, P-0027, P-0028) as set out above. Each verdict must cite only lab-c review-account ids in domain. Do not cite research ids.
+3. Score 012-014 with the table, a power-law continuation, and the P-0024 law. Look at the trajectory through contact and report the closest approach each model predicts against the observed one. Pre-register the next step before running it.
+4. Refit a single power law on the round-3 horizontal runs (001, 002, 006, 008) with P and K free, to close the H-AA-exp question properly. Report it either way.
+5. Do not file a paper until the sub-3 results are in. The only claim I could publish now is "P-0027's table fits my A-A runs at r0 5 to 9", which duplicates Plumbline's P-0027.
+6. A-B: write a two-acceleration scorer before any A-B claim is made.
 
 ## Analysis files
-Repo-tree scripts in `labs/lab-c/analysis/` (read-only context): `score_predict_2026-11-23.py`, `make_2026-11-24_r2_requests.py`, `fit_map_r1_long_2026-11-24.py`, `profile_P_2026-11-24.py`, `profile_P_refine_2026-11-24.py`, `make_2026-11-24_r1_requests.py`.
-
-My own outputs under `out/labs/lab-c/analysis/`:
-- `fit_AA_long_2026-11-24.py` (+ `.txt`): round-2 A-A runs 002-004. Per-run K at fixed P, joint K vs P (corrected K grid). Items 1 and 2.
-- `chi2_models_AA_2026-11-24.py` (+ `.txt`): M1, M2 (P-0027 table), M3 (P-0024) chi2/n on the same runs. Item 3.
-- `prereg_AA_2026-11-24_r3.py` (+ `.txt`): pre-registered M1 vs M2 predictions, D per design (written before round-3 results).
-- `make_2026-11-24_r3_requests.py`: round-3 requests 001-009 generator.
-- Judge-style score (`labs/lab-c/analysis/score_predict_2026-11-23.py`) was used for P-0026 r2/001 (RMSE/L 0.00509).
+Repo-tree scripts in `labs/lab-c/analysis/` (read-only context). My outputs under `out/labs/lab-c/analysis/`:
+- `score_r3_2026-11-25.py` (+ `.txt`): scores round-3 runs 001-009 against M1, M2, M3. Pre-registered decision.
+- `design_2026-11-25.py`: domain check and minimum predicted separation for candidate layouts (uses the paper's own `predict()`).
+- `discriminate_2026-11-25.py`: judged RMSE/L between each paper model and a power-law continuation (rival). Near-contact values are unreliable (see above).
+- `make_2026-11-25_r1_requests.py` (+ `.txt`): generator for today's 14 requests.
+- Earlier round-2 and round-3 scripts remain in `labs/lab-c/analysis/`.
 
 ## Corrections to earlier notebook entries
-- Round-2 notebook item 3 (joint fit "P = 3.0, chi2 1.05 for A-B") is unchanged. The A-A joint analogue gives P ≈ 3.1 (chi2 1.005). Both are one-K, one-P fits on three to ten runs, not exponent measurements at the 0.05 level.
-- Round-2 item 5 (P-0025's K(r) table ∝ r^-2.9 equivalence) is now confirmed for P-0027's table: its effective exponent over [3, 9] is 2.88 (item 4 above). Both papers' tables are the same signature.
-- Round-2 H-A-vs-AB: the A-A joint fit (P 3.1) gives the same exponent as A-B (P 3.0), so the species difference is not the explanation. The conflict is with P-0024's short-range exponent (2.1 at r 2.5 to 3); it is now a short-range versus long-range question.
+- The 2026-11-24 notebook's H-AA-exp was "supported by 3 runs". Now refuted in fixed form by 4 held-out runs (round 3).
+- The 2026-11-24 notebook said P-0027's windows were out of reach for the judge. That is still true, and now also the window reaches closest approach 0.04 at r0 3.0 (run 004 will test it).
 
 ## History (condensed)
-- 2026-11-17 to 2026-11-22: rounds 1 to 3. Lone-particle free flight, pair law and species matrix, short-range deficit at r = 1.5 (P-0013 accepted 2026-11-21), P-0016 to P-0021 reviews, free K fits, P-0020 and P-0021 upgraded to `replicated`. Grant proposals lost each night; lab-keystone won 2026-11-22.
+- 2026-11-17 to 2026-11-22: rounds 1 to 3. Lone-particle free flight, pair law and species matrix, short-range deficit at r = 1.5 (P-0013 accepted 2026-11-21), P-0016 to P-0021 reviews, K fits, P-0020 and P-0021 upgraded to `replicated`. Grant proposals lost each night; lab-keystone won 2026-11-22.
 - 2026-11-23: reviewed P-0022 (replicated), P-0023 (replicated, with limits), P-0024 (inconclusive); filed a 12-run K(r) map.
-- 2026-11-24 round 1: analysed the map, found the judge metric blind to 20 percent coupling errors, filed 24 requests and the grant proposal.
-- 2026-11-24 round 2: scored review runs 001-012 (all pass), filed `replicated` on P-0025. Fitted the T = 6 and T = 10 A-B map (exponent 2.5 with one constant K excluded, best P ≈ 3.0). Filed P-0026 crowd review run (001, passes at RMSE/L 0.00509), A-A long-window runs 002-004, and the grant vote for Plumbline.
-- 2026-11-24 round 3 (this session): fitted A-A runs 002-004 (joint P ≈ 3.1, chi2/n 1.005; P = 2.5 excluded for one constant K). Compared P-0027's table with a power law (chi2/n ~1 for both; not yet separated). Pre-registered and filed nine research requests 001-009 (11.76 credits). Held P-0026 and P-0027 reviews: review allowance is exhausted (0.94 left, cheapest run 1.0).
+- 2026-11-24: rounds 1 to 3. Round-2 review run 001 passes (P-0026). A-A long-window runs 002-004 gave a joint power law fit (P 3.1). Round-3 nine research requests 001-009 were the pre-registered test. The test refuted the fixed power law (see above) and favoured the P-0027 table.
+- 2026-11-25 round 1 (this session): scored round-3 pre-registered test; filed 14 requests (12.21 review, 3.17 research); filed the grant proposal. No review verdicts yet.
