@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-26/r2/lab-c/005",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "C-C pair r0 2.5, vertical. Orientation replicate of 016 (C-C r0 2.5 horizontal, which stayed within 0.33 after contact).",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          5.0,
+          3.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.0,
+          6.25
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.5,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-26/r2/lab-c/003",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "C-C pair r0 2.0, horizontal. Species test of contact outcome: 012 (A-A, r0 2.0) separated to 8.5 after contact; does C-C at 2.0 also separate?",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          4.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          6.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.5,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

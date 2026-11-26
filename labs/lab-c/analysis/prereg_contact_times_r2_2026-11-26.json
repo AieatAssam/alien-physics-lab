@@ -1,0 +1,17 @@
+{
+  "A-A r0 1.5": {
+    "predicted_contact_time_s": 0.421
+  },
+  "A-A r0 1.75": {
+    "predicted_contact_time_s": 0.535
+  },
+  "A-A r0 2.0": {
+    "predicted_contact_time_s": 0.659
+  },
+  "A-A r0 2.25": {
+    "predicted_contact_time_s": 0.792
+  },
+  "A-A r0 2.5": {
+    "predicted_contact_time_s": 0.932
+  }
+}

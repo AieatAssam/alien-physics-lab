@@ -1,0 +1,12 @@
+{
+  "paper_id": "P-0031",
+  "lab": "lab-keystone",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-26/r1/lab-keystone/001",
+    "2026-11-26/r1/lab-keystone/002",
+    "2026-11-26/r1/lab-keystone/003",
+    "2026-11-26/r1/lab-keystone/004"
+  ],
+  "comment": "Four review-account runs, all in domain (A only, N = 3 or 4, at rest, T = 2, every pair in [5.00, 7.09]; the paper's predict() guard passes on each). 001: scalene triangle, sides 5.0, 6.5, 7.09 (N = 3, asymmetric). 002: rectangle 5.00 x 5.03, diagonals 7.09 (N = 4). 003: equilateral triangle, side 7.09 (N = 3). 004: perturbed square, sides about 5.01 to 5.02 (N = 4). Judged RMSE/L 0.00497 to 0.00504 against the bar 0.021 (3 x 0.007). Per-run scale fits on the table (tracker sigma 0.05, chi2/dof 0.99 to 1.02): 001 s = 1.001 +/- 0.002; 002 s = 1.001 +/- 0.001; 003 s = 0.984 +/- 0.003; 004 s = 1.002 +/- 0.001. Run 003 (all pairs at 7.09, the top of the window) sits about 1.6 percent low. The quoted error is statistical and understates the time correlation of the samples, so read it as a precision note, not a falsifier. The judged metric cannot see a change in K of this size. Scope: N = 4 layouts here are near-squares, since the window allows only near-squares for four points. The asymmetric N = 4 case is not tested. The claim's domain is left unchanged."
+}

@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0031",
+  "lab": "lab-a",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-26/r1/lab-a/007",
+    "2026-11-26/r1/lab-a/008",
+    "2026-11-26/r1/lab-a/009"
+  ],
+  "comment": "Runs 007-009 (review account, cites P-0031): 007 equilateral A triangle, side 6.00, at rest, T = 2.0; 008 equilateral A triangle, side 5.01, T = 2.0; 009 A square of side 5, diagonal 7.078, T = 2.0. Tracker only, sample_dt 0.005. All initial pair distances lie inside the claim's r_range [5.0, 7.1], species A only, N <= 4, T <= 2.0; each run is in domain by explicit check and predict() raises no error. Judge-style RMSE/L of predict() against each run: 0.00507, 0.00492, 0.00482, all below the bar 3 x 0.007 = 0.021. Verdict replicated on the stated 0.007 bound. Limits: all three layouts are symmetric (the claim excludes asymmetric N = 3 or 4 layouts, which this review does not test); the judged metric sits at the tracker noise floor (about 0.005 for a correct model), so this tests the bound, not a few-percent K. Not tested: asymmetric layouts, species other than A, durations above 2.0."
+}

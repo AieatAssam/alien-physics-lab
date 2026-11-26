@@ -1,0 +1,70 @@
+{
+  "P-0032": [
+    {
+      "rid": "001",
+      "in_domain": true,
+      "rmse_over_L": 0.0048246285559758375
+    },
+    {
+      "rid": "002",
+      "in_domain": true,
+      "rmse_over_L": 0.0048937954695654875
+    },
+    {
+      "rid": "003",
+      "in_domain": true,
+      "rmse_over_L": 0.005026531272570581
+    }
+  ],
+  "P-0033": [
+    {
+      "rid": "004",
+      "in_domain": true,
+      "rmse_over_L": 0.004995888908746473
+    },
+    {
+      "rid": "005",
+      "in_domain": true,
+      "rmse_over_L": 0.005052411331014107
+    },
+    {
+      "rid": "006",
+      "in_domain": true,
+      "rmse_over_L": 0.004957177714259438
+    }
+  ],
+  "P-0031": [
+    {
+      "rid": "007",
+      "in_domain": true,
+      "rmse_over_L": 0.005069900064407919
+    },
+    {
+      "rid": "008",
+      "in_domain": true,
+      "rmse_over_L": 0.004922334942897025
+    },
+    {
+      "rid": "009",
+      "in_domain": true,
+      "rmse_over_L": 0.004816426413805105
+    }
+  ],
+  "P-0034": [
+    {
+      "rid": "010",
+      "in_domain": true,
+      "rmse_over_L": 0.004910687782600379
+    },
+    {
+      "rid": "011",
+      "in_domain": true,
+      "rmse_over_L": 0.005233766325840796
+    },
+    {
+      "rid": "012",
+      "in_domain": true,
+      "rmse_over_L": 0.005071059463413021
+    }
+  ]
+}

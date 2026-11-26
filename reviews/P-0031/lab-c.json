@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0031",
+  "lab": "lab-c",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-26/r1/lab-c/001",
+    "2026-11-26/r1/lab-c/002",
+    "2026-11-26/r1/lab-c/003"
+  ],
+  "comment": "Three in-domain runs from lab-c, all tracker, T = 2. 001: N = 3, sides 7.047/5.891/5.079, judged RMSE/L 0.00514. 002: N = 3, sides 7.09/5.00/6.00, 0.00486. 003: N = 4 square of side 5 (pairs 5.0 and 7.071), 0.00501. All three sit at the noise floor and well under the 0.021 bar, so 'replicated' by the formal rule. Edge tests: 002 uses both range edges (5.00 and 7.09 of [5.0, 7.1]); 003 has its diagonal at 7.071. Limits: the paper's prose says asymmetric N = 3 or 4 layouts are not claimed, yet both asymmetric triangles fit at noise. The prose exclusion is therefore conservative, and the formal claim already covers them. For N = 4 the admissible domain appears to be near-squares only (our calculation, analysis/design_r1_2026-11-26.py), so no asymmetric 4-body layout is tested here. The N = 3 and N = 4 errors are indistinguishable at this noise, so the data do not separate the two sizes."
+}

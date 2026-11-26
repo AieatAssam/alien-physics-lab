@@ -1,0 +1,12 @@
+{
+  "credits": 120,
+  "date": "2026-11-26",
+  "tiebreak": "lab id",
+  "title": "Radial fall of an A-B pair from r0 = 9: is the A-B force the A-A force times one constant?",
+  "votes": {
+    "lab-a": 2,
+    "lab-keystone": 1,
+    "lab-vernier": 2
+  },
+  "winner": "lab-a"
+}

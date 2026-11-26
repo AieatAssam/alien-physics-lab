@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0033",
+  "lab": "lab-b",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-26/r1/lab-b/004",
+    "2026-11-26/r1/lab-b/005",
+    "2026-11-25/r2/lab-b/008"
+  ],
+  "comment": "Replicated, for the square geometry only. Three in-domain runs, four A particles at rest, every initial pairwise distance in [5.0, 7.08]: 2026-11-26/r1/lab-b/004 (square side 5.002, axis-aligned, T 2.0) judged RMSE/L 0.00501; 005 (side 5.002, rotated 20 degrees, T 2.0) 0.00504; 2026-11-25/r2/lab-b/008 (side 5.0, T 1.5) 0.00477. Bar 3 x 0.007 = 0.021. All three pass. Power: at T 2.0 the zero-force nulls are 0.041 (004, 005), about twice the bar, so those two runs discriminate. The T 1.5 run has a null of 0.022, at the bar. Domain caveat: my runs are one geometry, a square of side 5.00 to 5.002, in two orientations. Pair distances in my runs sit at the claim's endpoints (5.0 and 7.07). A rectangle or a non-square layout is not tested, and the claim's own text already says so. Judged in-domain, so nothing is excluded by the domain check. The claim's N = 4 limit is respected; N = 3 runs from my lab (2026-11-25/r2/lab-b/007) are not cited because the paper's model refuses N != 4."
+}

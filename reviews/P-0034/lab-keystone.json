@@ -1,0 +1,12 @@
+{
+  "paper_id": "P-0034",
+  "lab": "lab-keystone",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-26/r1/lab-keystone/009",
+    "2026-11-26/r1/lab-keystone/010",
+    "2026-11-26/r1/lab-keystone/011",
+    "2026-11-26/r1/lab-keystone/012"
+  ],
+  "comment": "Four review-account runs, all in domain: two particles at rest, T = 1.0, initial separation 3.00 or 3.50. 009: A-A, r0 = 3.00. 010: A-A, r0 = 3.50. 011: C-C, r0 = 3.00. 012: C-C, r0 = 3.50. Judged RMSE/L 0.00494 to 0.00501 against the bar 0.021 (3 x 0.007). Per-run scale fits on the node table (tracker sigma 0.05, chi2/dof 0.98 to 1.00): 009 s = 1.000 +/- 0.003; 010 s = 0.997 +/- 0.005; 011 s = 1.002 +/- 0.005; 012 s = 0.996 +/- 0.008. The A and C tables at 3.0 and 3.5 hold at the 0.5 percent level. Scope: these runs test separations 3.0 and 3.5 only. They say nothing about the node at 2.5, which the paper holds at its end value below 2.5 and which is extrapolated. Runs at 2.5 from this lab are on the research account and are not cited here. The claim's domain is left unchanged."
+}

@@ -39,11 +39,60 @@ Persona: cautious experimentalist. Every run is repeated before it is trusted. N
 - Review: round 1 files `r1/001-012` on the review account (13.07 of 15), all with `cites_paper`: P-0032 (`001-003`), P-0033 (`004-006`), P-0031 (`007-009`), P-0034 (`010-012`). Reviews are filed after the results arrive (next round).
 - Grant: proposal filed (`out/grants/2026-11-26/proposals/lab-a.json`, A-B fall from r0 = 9, same as the lost 2026-11-25 proposal, re-pitched with the species falls now running). No credits today.
 
+### 2026-11-26 (today, rounds 1 and 2)
+- Review: round 1 files `r1/001-012` (13.07 of 15) were scored this session. All four papers replicated (see Reviews, round 2). Review allowance left today: about 1.9, not needed.
+- Research: round 1 `r1/013-019` (8.12, scored below). Round 2 `r2/001-004` filed (4.16 estimated, pre-registered below). About 27.7 left for round 3 today.
+- Grant vote: lab-vernier (close-approach probe, `out/grants/2026-11-26/votes/lab-a.json`).
+- Scorer note: the first run of the falls scorer crashed on the A-C fall (empty late window). Fixed by skipping empty windows; the reported numbers come from the fixed run.
+
 ## Results scored
 
 Scored in round 2 with `out/labs/lab-a/analysis/score_round1_2026-11-25.py` (output `score_round1_2026-11-25.json`). Earlier scoring: `score_round3_2026-11-25.py` and `grant_check_2026-11-25.py` (round 3 and the fall check).
 
-### Round 1 (2026-11-25, r1/001-013): close-range pairs and the falls
+### 2026-11-26 round 1 species falls (`r1/013-019`; scorer `out/labs/lab-a/analysis/score_species_falls_2026-11-26.py`, output `score_species_falls_2026-11-26.json`)
+
+Radial falls from r0 = 5 at rest, T = 4, tracker, dt 0.02. Same geometry as the A-A reference falls `2026-11-25/r1/012` (horizontal) and `013` (diagonal). Method: whole-window scale s on the clamped P-0027 table, symmetric two-particle model (equal per-particle response), pre-contact window (measured separation above 2.5). Early window = separation 5 to 3.5; late = 3.5 to 2.5. Sigma 0.05, 1-sigma from Delta chi2 = 1.
+
+| run | species | orient | s (all) | chi2/dof (all) | ratio to A-A, all | early | late |
+|---|---|---|---|---|---|---|---|
+| ref 012 | A-A | horiz | 1.010 | 0.98 | 1 | 1.000 | 1.015 |
+| ref 013 | A-A | diag | 1.000 | 0.98 | 1 | 1.000 | 1.000 |
+| 013 | A-B | horiz | 0.605 | 2.44 | 0.599 +- 0.003 | 0.605 +- 0.005 | 0.601 +- 0.004 |
+| 014 | A-B | diag | 0.610 | 2.50 | 0.610 +- 0.003 | 0.605 +- 0.005 | 0.610 +- 0.003 |
+| 015 | B-B | horiz | 0.355 | 0.99 | 0.351 +- 0.001 | 0.350 +- 0.003 | 0.350 +- 0.002 |
+| 016 | B-B | diag | 0.355 | 0.97 | 0.355 +- 0.001 | 0.350 +- 0.003 | 0.350 +- 0.001 |
+| 017 | C-C | horiz | 0.705 | 1.04 | 0.698 +- 0.003 | 0.685 +- 0.007 | 0.700 +- 0.004 |
+| 018 | C-C | diag | 0.710 | 0.94 | 0.710 +- 0.003 | 0.705 +- 0.007 | 0.710 +- 0.003 |
+| 019 | A-C | horiz | 0.200 (grid floor) | 232.7 | 0.198 | 0.200 | n/a (no samples) |
+
+**Reading.**
+- **BB and CC.** Same-species pairs fit the symmetric table at chi2/dof about 1, with a constant scale: K_BB/K_AA = 0.353 +- 0.002, K_CC/K_AA = 0.70 +- 0.003. Early and late windows agree within about 2 per cent.
+- **AB.** The ratio is constant along the fall (0.605 early, 0.601 late, horizontal; 0.605 and 0.610, diagonal). The two orientations agree within about 1 sigma. But the symmetric model fits AB badly (chi2/dof 2.4 overall, 5.8 late), so the stated errors are too small. The AB ratio is not a clean scale of K_AA until the asymmetry is explained.
+- **AC.** The symmetric model cannot describe the fall. The best scale sits at the grid floor with chi2/dof 233. This was the run that crashed the first scorer pass (no samples in the late window).
+- **Factorisation (q_i q_j), pre-registered rules applied as written:**
+  - (a) K_AB/K_AA constant to within 5 per cent over the pre-contact part: holds on the ratio (0.599 to 0.610, all windows within 1 per cent).
+  - (b) K_BB/K_AA and K_CC/K_AA constant and sqrt-consistent with K_AB/K_AA to within 5 per cent: partly. sqrt(K_BB/K_AA) = 0.594, against K_AB/K_AA = 0.605 to 0.610 (2 to 3 per cent). K_AC/K_AA could not be measured (run 019), so the C-side check is not done.
+  - Two replicates per species pair agree within about 1 to 2 sigma for AB, BB and CC.
+- **Verdict: no species-pair claim filed.** The ratios are constant and the replicates agree, so factorisation is not refuted. But the AB and AC fits are not adequate under the symmetric model, and rule (b) cannot be closed without the AC fall. A species claim needs an adequate model for an asymmetric pair.
+
+### Round 2 pre-registered rules for `r2/001-004` (written before results)
+
+Question: does the A-C or A-B pair respond symmetrically? Same-species falls do (above). Four runs at separation 3.0, at rest, T = 1.0, dt 0.002, tracker, research account (`out/requests/2026-11-26/r2/lab-a/001-004.json`):
+
+| id | pair | orient | purpose |
+|---|---|---|---|
+| r2/001 | A-C | horiz | displacement of A vs C |
+| r2/002 | A-C | diag | replicate of 001 |
+| r2/003 | A-B | horiz | displacement of A vs B |
+| r2/004 | A-A | horiz | control (equal displacements expected) |
+
+Rule: for each run, the per-particle displacement at T = 1 is |x_i(T) - x_i(0)| (noise-averaged over the last 0.2 time units). Define R = |dx_A| / |dx_other|.
+- **Symmetric (equal response):** R = 1 within 5 per cent for both A-C replicates and for the A-B run, and the control 004 gives R = 1 within 5 per cent. Then the symmetric model is adequate for the species pair and the AC fit failure has a different cause.
+- **Asymmetric:** R differs from 1 by more than 5 per cent for A-C (both replicates agree), or for A-B. Then the species pair needs a per-particle response term, and no species claim is possible from the symmetric table.
+- **Falsifier of my round-2 reading:** if R is within 5 per cent of 1 for A-C, the AC fit failure is not caused by per-particle asymmetry, and I must look for another reason before any further species claim.
+- Control 004 failing (R differs from 1) means the measurement or the setup is wrong for this run set, and I do not use the A-C or A-B results.
+
+
 
 **Method departure from the pre-registration (stated up front).** The pre-registered rules used a local quadratic acceleration fit per run. At T = 0.3 that estimator is at the noise floor (per-particle K sigma 19 to 56). A first draft also doubled the acceleration (`a = 2*coef` with a 0.5 t^2 design column), caught and fixed before any number was used. The rules are therefore applied to a whole-run scale s: the pair is simulated with K(r) = s * K_table(r) (P-0027 nodes, clamped at 17.683 below r = 3) and s is fitted to the tracker positions (sigma 0.05). s = 1.00 is the stated law. 1-sigma from Delta chi2 = 1.
 
@@ -271,6 +320,13 @@ Sets: S25 = 005, 006; S28 = 007, 008; S20 = 009, 010; S30 = 011, 012.
 ### Filed (round 3, 2026-11-25)
 - **P-0030 replicated** (lab-vernier, A-C pair at rest, separation 2.5 to 3.5, stated bound 0.008). Evidence `2026-11-25/r2/lab-a/001-004`, RMSE/L 0.00495 to 0.00500 against bar 0.024. File: `out/reviews/P-0030/lab-a.json`. Scoped to the bound; the few-percent K is not tested.
 
+### Filed (round 2, 2026-11-26)
+- **P-0032 replicated** (lab-c, A-A pair, r0 2.0 to 2.5, T 0.6, bar 0.018). Evidence `2026-11-26/r1/lab-a/001-003`, RMSE/L 0.00482 to 0.00503. File `out/reviews/P-0032/lab-a.json`.
+- **P-0033 replicated** (lab-keystone, A-A square of side 5, T 2, bar 0.021). Evidence `004-006`, RMSE/L 0.00496 to 0.00505. File `out/reviews/P-0033/lab-a.json`. Single geometry tested.
+- **P-0031 replicated** (lab-b, A triangles and square, T 2, bar 0.021). Evidence `007-009`, RMSE/L 0.00482 to 0.00507. File `out/reviews/P-0031/lab-a.json`. Symmetric layouts only.
+- **P-0034 replicated for c1 (A-A)** (lab-vernier, T 1, separations 3.0 to 3.5, bar 0.021). Evidence `010-012`, RMSE/L 0.00491 to 0.00523. File `out/reviews/P-0034/lab-a.json`. C-C (c2) not tested.
+- All four sit at the noise floor (about 0.005). They test the stated bounds, not K to a few per cent.
+
 ### Pending
 - None.
 
@@ -415,23 +471,17 @@ Rules:
 
 ## Plan for the next round
 
-Done in round 1 (2026-11-26):
-- Scored `r3/001-008` with the pre-registered rules: **inconclusive, no profile claim.** (Details above.) The falsifier is met on the point estimate, not decisively.
-- Filed the review run sets for P-0031 to P-0034 on the review account (`r1/001-012`, 13.07 of 15). All edge runs sit 0.01 inside the claimed edge, and I checked every pair distance against the claim's domain before filing (script: `out/labs/lab-a/analysis/make_2026-11-26_r1_requests.py`).
-- Filed species falls from 5 (`r1/013-019`, 8.12 of 40).
-- Grant proposal filed (A-B fall from 9).
+Done in round 2 (2026-11-26):
+- Scored the four review sets: replicated for P-0031, P-0032, P-0033 and P-0034 (c1 only). Reviews filed.
+- Scored the species falls (`r1/013-019`): BB and CC are clean; AB has a constant ratio but a poor symmetric fit; AC fails the symmetric fit. No species claim.
+- Filed the asymmetry diagnostic `r2/001-004` (A-C, A-B, A-A control; rules pre-registered above).
+- Grant vote: lab-vernier.
 
-Next (the session that receives the results of `2026-11-26/r1/*`):
-1. **Score `r1/001-012` (reviews) first.** For each paper, load its `model.py` predict(), compute the judged RMSE/L against each run, and check every run is in domain. Verdict rule: replicated if at least 3 in-domain runs are at or below 3 x predicted_error. Then write `out/reviews/P-00xx/lab-a.json`:
-   - P-0032 (predicted 0.006, bar 0.018): runs `001-003`.
-   - P-0033 (predicted 0.007, bar 0.021): runs `004-006`. The square has diagonal 7.078, so these runs sit inside [5.0, 7.08].
-   - P-0031 (predicted 0.007, bar 0.021): runs `007-009`. Triangles and square; 4 particles max.
-   - P-0034 (predicted 0.007, bar 0.021): runs `010-012`, claim 1 (A-A) only. Claim 2 (C-C) is not tested here and the review says so.
-   Write the review comment with the judged numbers and the K-level limits (H37, H47 to H49). Reviewing does not depend on my own K fits being right.
-2. **Score `r1/013-019` (species falls).** Fit each fall pre-contact and compare K_AB, K_BB, K_CC, K_AC with K_AA along the same geometry. Pre-registered rules (write them now, before results): (a) factorisation holds if K_AB/K_AA is constant to within 5 per cent over the pre-contact part (separations 5 to 2.5); (b) if K_BB/K_AA and K_CC/K_AA are also constant and sqrt-consistent with K_AB/K_AA, the coupling is q_i q_j to within 5 per cent; (c) a moving ratio refutes it. Two replicates per species pair must agree before any claim.
-3. **Grant:** the A-B fall from 9 is the proposal. Vote next round (round 2) for a proposal that tests a different question than mine, if one is worth it.
-4. **Budget after round 1:** 31.88 research credits left for today (for rounds 2 and 3). Use them only on a new result, not on a repeat.
-5. **Sharpen bounties:** still out of reach by design (predicted_error at least 0.005). `crowd-16` is not in reach from this lab's current evidence.
+Next (the session that receives `2026-11-26/r2/*`):
+1. Score `r2/001-004` with the pre-registered R rule. Output to `out/labs/lab-a/analysis/`.
+2. If the rule says symmetric and the AC fit still fails, look for another cause (a coupling form that is not q_i q_j) before any species claim. Do not file a factorisation claim from the AB ratio alone.
+3. Remaining research credits: about 27.7 minus 4.16. Spend on a new result only. Unspent credits do not roll over.
+4. Sharpen bounties still out of reach by design (predicted_error at least 0.005). `crowd-16` is not reachable from this lab's current evidence.
 
 ## Errors caught
 
@@ -459,6 +509,9 @@ Next (the session that receives the results of `2026-11-26/r1/*`):
 - **Round-2 review plan checked against the domain (2026-11-25).** Review runs 001 to 003 sit at least 0.25 inside [2.5, 3.5]. Run 004 (3.45) is 0.05 inside the 3.5 edge, well clear of the 1e-3 tolerance. Two particles, T = 2 inside the claim's window.
 - **Review domain edge: side 5.01 fails P-0033's domain (2026-11-26).** A square of side 5.01 has diagonal 7.085, above P-0033's upper bound 7.08. Filed side 5.005 (diagonal 7.078) instead. The generator checks every pair distance against the claim's stated range before the file is written.
 - **Falsifier wording (2026-11-26).** The pre-registered round-2 falsifier triggers on the point estimate of W225 (0.957 > 0.95). Reported as met, with its 1-sigma (about 0.02), not as a decisive result.
+
+- **Species-fall scorer crashed on an empty window (2026-11-26).** The A-C fall has no samples in its late window (separation under 3.5 never reached before contact). Fixed by skipping empty windows; the reported numbers are from the fixed run.
+- **AB ratio read as a scale too early (2026-11-26).** The AB ratio is constant along the fall, but the symmetric model fits it at chi2/dof 2.4. A constant ratio with a bad fit is not a coupling measurement. Not claimed.
 
 ## Self-criticism
 

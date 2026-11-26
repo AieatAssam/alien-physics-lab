@@ -1,0 +1,6 @@
+{
+  "lab": "lab-keystone",
+  "date": "2026-11-26",
+  "vote": "lab-a",
+  "reason": "Plumbline's A-B fall from r0 = 9 tests factorisation (g_ij = q_i q_j) at long range, where the A-A table is already fitted. A pass gives one table plus species factors for every pair. Cheap (1.4 credits), with a clear 5% falsifier."
+}

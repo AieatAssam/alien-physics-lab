@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0033",
+  "lab": "lab-vernier",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-26/r1/lab-vernier/005",
+    "2026-11-26/r1/lab-vernier/006",
+    "2026-11-26/r1/lab-vernier/007"
+  ],
+  "comment": "Three four-particle A runs at rest, T = 2.0, all in domain (every pair in [5.005, 7.078], inside the claim's [5.0, 7.08]). Judged RMSE/L: 005 square side 5.005 axis-aligned = 0.00502; 006 square side 5.005 rotated 30 deg = 0.00504; 007 square side 5.005 rotated 15 deg = 0.00499. Bar = 3 x 0.007 = 0.021. Zero-force nulls 0.041 to 0.042, well above the bar, so each run discriminates the model from no force. Replicated needs three runs; all three pass. Pairs contract below 5 during these runs (measured minimum 2.90 to 2.98, tracker noise included), so the held-flat table below 5 is exercised; the paper's stated weak point (K held flat below 5) shows no measurable deviation at this bar. The claim stays limited to the square geometry."
+}

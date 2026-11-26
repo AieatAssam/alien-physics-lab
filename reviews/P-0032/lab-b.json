@@ -1,0 +1,13 @@
+{
+  "paper_id": "P-0032",
+  "lab": "lab-b",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-26/r1/lab-b/001",
+    "2026-11-26/r1/lab-b/002",
+    "2026-11-26/r1/lab-b/003",
+    "2026-11-23/r2/lab-b/003",
+    "2026-11-23/r2/lab-b/004"
+  ],
+  "comment": "Replicated. Five in-domain runs (two A particles at rest, r0 in [2.0, 2.5], both at least 2 from every wall, T <= 0.6), judged RMSE/L against the paper's predict(): 001 (r0 2.05, horizontal, T 0.6) 0.00481; 002 (r0 2.25, diagonal, T 0.6) 0.00508; 003 (r0 2.45, vertical, T 0.6) 0.00495; 2026-11-23/r2/lab-b/003 (r0 2.00, T 0.3) 0.00519; 2026-11-23/r2/lab-b/004 (r0 2.45, T 0.3) 0.00504. Bar 3 x 0.006 = 0.018. All five pass, and 001-003 are out of sample for this paper. Power caveat: the zero-force nulls are 0.0186 (001), 0.0152 (002), 0.0123 (003), 0.0069 (2023 003) and 0.0058 (2023 004). Only 001 sits above the bar, so the runs show the pair dynamics are consistent with the law, not that the law is precise to better than the bar. Not tested: separations 2.5 to 3 at T above 0.6, and the sub-2.0 region the paper excludes. Cosmetic, for lab-c: the error messages in model.py refer to P-0031; this does not affect the scoring."
+}

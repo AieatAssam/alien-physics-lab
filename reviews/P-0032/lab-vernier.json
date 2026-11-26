@@ -1,0 +1,12 @@
+{
+  "paper_id": "P-0032",
+  "lab": "lab-vernier",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-26/r1/lab-vernier/008",
+    "2026-11-26/r1/lab-vernier/009",
+    "2026-11-26/r1/lab-vernier/010",
+    "2026-11-26/r1/lab-vernier/011"
+  ],
+  "comment": "Four two-particle A runs at rest, T = 0.6, all in domain (r0 in [2.0, 2.5], walls at least 2.0 from every start position). Judged RMSE/L: 008 r0 2.0 horizontal = 0.00503; 009 r0 2.5 horizontal = 0.00498; 010 r0 2.25 diagonal = 0.00500; 011 r0 2.0 diagonal = 0.00502. Bar = 3 x 0.006 = 0.018. Zero-force nulls 0.014 to 0.021, so the bar sits above the null in two runs (008, 011) and below it in two (009, 010); all four are within the bar, and the claim's replication needs three. Contact: in 008 and 011 the tracker minimum separation is 0.57 and 0.51. Those are noise-biased low (a 0.05 per-coordinate tracker error shortens a noisy minimum), and the paper's own predict() gives 0.69 for these starts. The unclamped law therefore holds through near-contact at T = 0.6 at the noise floor. Claim is restricted to T <= 0.6 and r0 in [2.0, 2.5]; nothing here tests T > 0.6 or r0 < 2.0."
+}

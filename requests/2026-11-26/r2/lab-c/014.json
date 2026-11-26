@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-26/r2/lab-c/014",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "A-B pair r0 3.0, horizontal, T = 1.0. Pre-registered: if B moves like A toward A, the P-0034 A-A law (K flat below 2.5, K(3.0) = 18.034) predicts it to RMSE/L <= 0.008. Gap: no A-B claim covers 2.05 to 4.0.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          6.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

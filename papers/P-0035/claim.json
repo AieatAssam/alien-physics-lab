@@ -1,0 +1,35 @@
+{
+  "paper_id": "P-0035",
+  "lab": "lab-c",
+  "title": "A-A pair at rest, separation 2.0 to 2.75, T <= 0.6: the P-0026 pair law with no clamp predicts positions to 0.006",
+  "claims": [
+    {
+      "claim_id": "P-0035-c1",
+      "statement": "Two A particles at rest, initial separation in [2.0, 2.75], both at least 2.0 from every chamber wall, observed for at most T = 0.6: each particle accelerates toward the other with magnitude (G/2)/r^P, r the current separation, G = 23.63 and P = 2.099 (the P-0026 pair law), with no separation clamp. Measured tracker positions are predicted to a judged RMSE of 0.006 of the chamber side. Extends P-0032 (separation 2.0 to 2.5) to 2.75. Not claimed: separation above 2.75, duration above 0.6 (a pair at initial separation 2.0 is at about 0.5 by t = 0.6 and is not validated through contact), other species, three or more particles, or initial velocities.",
+      "domain": {
+        "species": [
+          "A"
+        ],
+        "r_range": [
+          2.0,
+          2.75
+        ],
+        "max_particles": 2
+      },
+      "predicted_error": 0.006,
+      "evidence": [
+        "2026-11-25/r3/lab-c/002",
+        "2026-11-25/r3/lab-c/003",
+        "2026-11-25/r3/lab-c/004",
+        "2026-11-26/r1/lab-c/014",
+        "2026-11-25/r2/lab-c/001",
+        "2026-11-25/r2/lab-c/006"
+      ]
+    }
+  ],
+  "cites": [
+    "P-0026",
+    "P-0032"
+  ],
+  "supersedes": []
+}

@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0033",
+  "lab": "lab-a",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-26/r1/lab-a/004",
+    "2026-11-26/r1/lab-a/005",
+    "2026-11-26/r1/lab-a/006"
+  ],
+  "comment": "Runs 004-006 (review account, cites P-0033): four A particles at rest in a side-5 square, T = 2.0, tracker only, sample_dt 0.005. Pair distances are 5.005 (sides) and 7.078 (diagonals), inside r_range [5.0, 7.08] (the diagonal is 0.002 inside the upper edge; checked explicitly). Species A, N = 4, T = 2.0 are inside the domain; predict() raises no error. Judge-style RMSE/L against each run: 0.00500, 0.00505, 0.00496, all below the bar 3 x 0.007 = 0.021. Verdict replicated on the stated 0.007 bound. Limits: all three runs use the same square geometry (axis-aligned and rotated, as the claim's own evidence), so they test the bound at one layout only; the judged metric sits at the noise floor, so this does not test the table to a few percent. The claim's exclusions (rectangles, triangles, N other than 4, species other than A) are not tested here."
+}

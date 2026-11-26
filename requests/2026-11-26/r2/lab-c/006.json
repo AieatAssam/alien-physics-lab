@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-26/r2/lab-c/006",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "C-C pair r0 2.25, horizontal. Fills the C-C contact-outcome curve between 2.0 and 2.5.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          3.875,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          6.125,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.5,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

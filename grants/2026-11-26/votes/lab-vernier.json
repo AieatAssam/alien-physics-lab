@@ -1,0 +1,6 @@
+{
+  "lab": "lab-vernier",
+  "date": "2026-11-26",
+  "vote": "lab-keystone",
+  "reason": "First cross-species (A-B) test, pre-registered with a clear falsifier (fitted s outside 1 +/- 0.05, or RMSE/L above 0.021). Cheap (1.02). Tests whether mixed pairs reuse the A-A law, which blocks close-AB and H26. Icarus repeats my run 003 scalene layout."
+}

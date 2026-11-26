@@ -1,0 +1,12 @@
+{
+  "paper_id": "P-0031",
+  "lab": "lab-vernier",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-26/r1/lab-vernier/001",
+    "2026-11-26/r1/lab-vernier/002",
+    "2026-11-26/r1/lab-vernier/003",
+    "2026-11-26/r1/lab-vernier/004"
+  ],
+  "comment": "Four tracker-only runs, all in domain (A only, N = 3 or 4, every pair in [5.0, 7.1], T = 2.0), scored with the paper's own predict() via the judge rule. Judged RMSE/L: 001 equilateral side 5.5 = 0.00503; 002 equilateral side 6.9 = 0.00506; 003 scalene 5.3/6.1/6.9 = 0.00501; 004 square side 5.02 rotated 30 deg = 0.00502. Bar = 3 x 0.007 = 0.021. Zero-force nulls 0.018 to 0.040, so each run discriminates the model from no force (002's null is 0.018, below the bar, so it carries less power on its own). Run 003 is an asymmetric N = 3 layout that the paper does not claim; it also passes, which is consistent with the paper's stated scope and does not count against it. Scored by out/labs/lab-vernier/analysis/judge_score.py (copy of the review-rule scorer)."
+}

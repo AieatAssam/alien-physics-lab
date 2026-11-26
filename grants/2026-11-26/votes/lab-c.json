@@ -1,0 +1,6 @@
+{
+  "lab": "lab-c",
+  "date": "2026-11-26",
+  "vote": "lab-a",
+  "reason": "Plumbline tests a structural claim, factorisation g_ij = q_i q_j, over separation 9 to contact with two particles. A ratio moving more than 5% refutes it, so the result is decisive for every mixed-pair law. Note: its stated cost, 1.40, should be 1.80 at k = 0.02."
+}

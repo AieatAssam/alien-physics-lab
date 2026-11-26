@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-26/r2/lab-a/003",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "A-B horizontal at separation 3.0, at rest, T 1.0. Same question for A-B.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          6.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.002
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

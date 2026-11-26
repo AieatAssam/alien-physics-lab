@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0033",
+  "lab": "lab-c",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-26/r1/lab-c/004",
+    "2026-11-26/r1/lab-c/005",
+    "2026-11-26/r1/lab-c/006"
+  ],
+  "comment": "Three in-domain runs from lab-c, all N = 4, square of side 5.0 (pairs 5.0 and 7.071, inside [5.0, 7.08]), T = 2, tracker. 004 (translated) 0.00490, 005 (rotated 30 degrees) 0.00497, 006 (near the lower-left wall) 0.00506. All at the noise floor, well under 0.021. Replicated by the formal rule. Limits: the three runs test one shape. The square's diagonal of 7.071 sits at the top of the stated range, so the upper edge is tested only for this shape. Our feasibility calculation suggests that the 4-point domain admits near-squares only, so this claim is in practice a square claim. It says nothing about an asymmetric 4-body layout."
+}

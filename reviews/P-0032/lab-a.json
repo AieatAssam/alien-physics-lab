@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0032",
+  "lab": "lab-a",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-26/r1/lab-a/001",
+    "2026-11-26/r1/lab-a/002",
+    "2026-11-26/r1/lab-a/003"
+  ],
+  "comment": "Runs 001-003 (review account, cites P-0032): two A particles at rest, T = 0.6, tracker only, sample_dt 0.002, both particles at least 2.0 from every wall. Separations 2.01 (001, 0.01 inside the lower edge), 2.25 (003) and 2.49 (002), all inside r_range [2.0, 2.5]. Species A, N = 2, T <= 0.6 are inside the domain; predict() raises no error. Judge-style RMSE/L against each run: 0.00482, 0.00503, 0.00489, all below the bar 3 x 0.006 = 0.018. Verdict replicated on the stated 0.006 bound. Limits: the judged metric sits at the noise floor (about 0.005 for a correct model), so this tests the bound and not the exponent or G to a few percent. The claim's silence below separation 2.0, above 2.5 and above T = 0.6 is unchanged."
+}

@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-26/r2/lab-c/008",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "A-A pair r0 1.5, horizontal. Deeper contact start; tests whether post-contact separation grows as r0 shrinks.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.25,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.75,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.5,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

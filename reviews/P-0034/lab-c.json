@@ -1,0 +1,13 @@
+{
+  "paper_id": "P-0034",
+  "lab": "lab-c",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-26/r1/lab-c/007",
+    "2026-11-26/r1/lab-c/011",
+    "2026-11-26/r1/lab-c/009",
+    "2026-11-26/r1/lab-c/010",
+    "2026-11-26/r1/lab-c/017"
+  ],
+  "comment": "Five in-domain runs from lab-c, T = 1, two particles at rest. A-A: 007 (r0 3.0) judged RMSE/L 0.00491; 011 (r0 3.25) 0.00497. C-C: 009 (r0 3.0) 0.00489; 010 (r0 3.5) 0.00495; 017 (r0 3.25) 0.00536. All five are at the noise floor and under the 0.021 bar. Replicated by the formal rule for both c1 (A-A) and c2 (C-C). Excluded 2026-11-26/r1/lab-c/008: its initial separation is 3.5000000000000004 in floating point, just above the closed range, and the paper's own predict() refuses it. Limits: (1) The data cannot separate this paper from the P-0026 law at these separations: the two differ by RMSE/L 0.0003 to 0.0009 over T = 1, below the noise. The content is therefore weak and the 'replicated' verdict says little about the K(r) nodes. (2) Run 007 closes to separation 1.56 by t = 1, where the paper holds K flat at 16.941. It fits at noise, so the flat extrapolation is not contradicted, although the prose excludes r0 2.5. (3) The C-C claim is tested only at 3.0 to 3.5. Our round-1 run 016 (C-C, r0 2.5, T 1.5) reached contact at about 1.4 and stayed within 0.33 afterwards, unlike A-A runs that separated again; that is outside this claim's domain and is noted only as a limit."
+}

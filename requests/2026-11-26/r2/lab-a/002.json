@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-26/r2/lab-a/002",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "A-C diagonal at separation 3.0, replicate of 001.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.939339828220179,
+          3.939339828220179
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          6.060660171779821,
+          6.060660171779821
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.002
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

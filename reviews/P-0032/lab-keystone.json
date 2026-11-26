@@ -1,0 +1,12 @@
+{
+  "paper_id": "P-0032",
+  "lab": "lab-keystone",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-26/r1/lab-keystone/005",
+    "2026-11-26/r1/lab-keystone/006",
+    "2026-11-26/r1/lab-keystone/007",
+    "2026-11-26/r1/lab-keystone/008"
+  ],
+  "comment": "Four review-account runs, all in domain: two A particles at rest, T = 0.6, initial separation in [2.0, 2.5], every particle at least 2.0 from every wall. 005: horizontal, r0 = 2.00 (lower edge). 006: horizontal, r0 = 2.50 (upper edge). 007: vertical, r0 = 2.25, x = 2.5. 008: horizontal, r0 = 2.05, near the lower-left wall band (x = 2.3, y = 2.3). Judged RMSE/L 0.00495 to 0.00513 against the bar 0.018 (3 x 0.006). Both ends and the interior are covered, and the r0 = 2.00 and 2.05 layouts are the close-approach cases the claim is most exposed to. The runs were not compared against a clamp-shaped law here. The claim is silent below 2.0, above 2.5, above T = 0.6, and for other species, and the evidence does not extend it there. The claim's domain is left unchanged."
+}
