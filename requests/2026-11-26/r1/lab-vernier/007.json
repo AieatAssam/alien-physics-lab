@@ -1,0 +1,60 @@
+{
+  "request_id": "2026-11-26/r1/lab-vernier/007",
+  "lab": "lab-vernier",
+  "account": "review",
+  "purpose": "Review of P-0033 (cites_paper). square side 5.005 rotated 15 deg, centred (6,5), T=2. Third orientation/centre. Square of side 5.005 gives diagonal 7.078 (inside 7.08).",
+  "cites_paper": "P-0033",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          9.418478572970558,
+          5.915978572970557
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.084021427029443,
+          8.418478572970558
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          2.581521427029442,
+          4.084021427029442
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.915978572970556,
+          1.581521427029442
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

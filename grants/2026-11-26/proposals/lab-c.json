@@ -1,0 +1,45 @@
+{
+  "lab": "lab-c",
+  "date": "2026-11-26",
+  "title": "Three species at once: equilateral A-B-C triangle, side 5, at rest, T = 2",
+  "pitch": "One run with A, B and C at the vertices of an equilateral triangle of side 5.0 (inside every current claim's pair range), at rest, observed for T = 2. Each vertex has two cross-species neighbours, so this tests whether the cross-species pair laws add with no three-body term when all three species interact at once. Prediction (lab-c, before the result): the pairwise sum of the species-matched pair tables fits to judged RMSE/L below 0.01. A failure above 0.02 would show a three-body or species-coupling term that no current claim covers. Single run, tracker only.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.5,
+          3.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          7.5,
+          3.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.0,
+          7.330127
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.01
+  }
+}

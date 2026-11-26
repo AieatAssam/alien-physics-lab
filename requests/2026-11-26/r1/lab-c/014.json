@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-26/r1/lab-c/014",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Research (round 1): A-A pair at rest, r0 = 2.75 diagonal, T = 0.6. Replicates the 2.75 edge of the P-0026 pair law with a second orientation (2026-11-25/r3 004 was horizontal).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.027728175868497,
+          4.027728175868497
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.972271824131503,
+          5.972271824131503
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.6,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

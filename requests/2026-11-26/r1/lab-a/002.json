@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-26/r1/lab-a/002",
+  "lab": "lab-a",
+  "account": "review",
+  "purpose": "P-0032 review: A-A diagonal, r0 = 2.49 (0.01 inside the upper edge), T 0.6",
+  "cites_paper": "P-0032",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.0,
+          4.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.760695885154504,
+          5.760695885154504
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.6,
+    "sample_dt": 0.002
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "request_id": "2026-11-26/r1/lab-vernier/004",
+  "lab": "lab-vernier",
+  "account": "review",
+  "purpose": "Review of P-0031 (cites_paper). square side 5.02 rotated 30 deg, centred (5,5), T=2. N=4 at the edge of the pair range (diagonal 7.10, just inside). Interior of the domain by 0.001 to avoid float guards.",
+  "cites_paper": "P-0031",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          8.07410962719289,
+          6.774838020778234
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          3.2251619792217667,
+          8.07410962719289
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          1.9258903728071108,
+          3.2251619792217667
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.774838020778235,
+          1.9258903728071113
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

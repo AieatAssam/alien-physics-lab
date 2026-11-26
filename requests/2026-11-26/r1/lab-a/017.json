@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-26/r1/lab-a/017",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "C-C radial fall from r0 = 5 horizontal: species coupling K_CC/K_AA along the fall (H16)",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          2.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          7.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 4.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

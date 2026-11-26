@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-26/r1/lab-b/009",
+  "lab": "lab-b",
+  "account": "review",
+  "purpose": "C-C pair, r0 3.5 horizontal, T 1.0 (in P-0034 domain; upper edge, C claim).",
+  "cites_paper": "P-0034",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          3.25,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          6.75,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

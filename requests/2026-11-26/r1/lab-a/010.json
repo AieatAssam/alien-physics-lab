@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-26/r1/lab-a/010",
+  "lab": "lab-a",
+  "account": "review",
+  "purpose": "P-0034 review: A-A horizontal, r0 = 3.01 (0.01 inside the lower edge), T 1.0",
+  "cites_paper": "P-0034",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.495,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.505,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+ "lab": "lab-keystone",
+ "date": "2026-11-26",
+ "title": "Mixed pair A-B at rest, separation 2.5: does cross-species coupling follow the A-A law?",
+ "pitch": "First cross-species coupling test. One A and one B at rest, horizontal, centred, separation 2.5, tracker, T = 0.6. Pre-registered: if the A-B coupling equals the A-A law (P-0034 table applied to both particles), a single scale s on that table fits with s = 1. Falsifier: fitted s outside 1 +/- 0.05, or judged RMSE/L above 0.021 against the A-A prediction. A pass licenses a mixed-pair table; a fail means mixed pairs need their own K(r).",
+ "setup": {
+  "particles": [
+   {
+    "species": "A",
+    "pos": [
+     3.75,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "B",
+    "pos": [
+     6.25,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 0.6,
+  "sample_dt": 0.001
+ }
+}

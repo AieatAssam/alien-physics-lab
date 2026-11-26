@@ -1,0 +1,49 @@
+{
+  "request_id": "2026-11-26/r1/lab-vernier/002",
+  "lab": "lab-vernier",
+  "account": "review",
+  "purpose": "Review of P-0031 (cites_paper). equilateral triangle side 6.9 centred (5,5), T=2. Upper edge of the pair range (6.9 of 7.1) at full T=2.",
+  "cites_paper": "P-0031",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          8.983716857408417
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          1.549999999999999,
+          3.008141571295792
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.45,
+          3.008141571295789
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

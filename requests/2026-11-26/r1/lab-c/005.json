@@ -1,0 +1,60 @@
+{
+  "request_id": "2026-11-26/r1/lab-c/005",
+  "lab": "lab-c",
+  "account": "review",
+  "purpose": "Review of P-0033 (lab-keystone): A square of side 5.0 rotated 30 degrees about (5, 5), at rest, T = 2.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.084936490538903,
+          1.5849364905389032
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.415063509461097,
+          4.084936490538903
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.915063509461097,
+          8.415063509461097
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          1.5849364905389034,
+          5.915063509461097
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0033"
+}

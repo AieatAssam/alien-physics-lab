@@ -1,0 +1,49 @@
+{
+  "request_id": "2026-11-26/r1/lab-a/008",
+  "lab": "lab-a",
+  "account": "review",
+  "purpose": "P-0031 review: A equilateral triangle, side 5.01 (0.01 inside the lower edge), vertex on x-axis, T 2.0",
+  "cites_paper": "P-0031",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          7.892524848640026,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          3.553737575679988,
+          7.505000000000001
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          3.5537375756799863,
+          2.4950000000000006
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

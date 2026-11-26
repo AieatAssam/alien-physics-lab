@@ -1,0 +1,49 @@
+{
+ "request_id": "2026-11-26/r1/lab-keystone/001",
+ "lab": "lab-keystone",
+ "account": "review",
+ "purpose": "Review of P-0031 (N=3). Asymmetric scalene triangle, sides 5.0, 6.5, 7.09: both ends of the claim's pair range with no symmetry. Tracker. T=2.0.",
+ "cites_paper": "P-0031",
+ "setup": {
+  "particles": [
+   {
+    "species": "A",
+    "pos": [
+     2.0,
+     2.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     7.0,
+     2.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     3.6981900000000003,
+     8.274245032185148
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 2.0,
+  "sample_dt": 0.001
+ },
+ "instruments": [
+  "tracker"
+ ]
+}

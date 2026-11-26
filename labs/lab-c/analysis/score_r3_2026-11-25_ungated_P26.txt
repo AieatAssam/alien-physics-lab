@@ -1,0 +1,5 @@
+2026-11-25/r3/lab-c/001 N=2 T=0.6 dt=0.001 r0=1.75 | RMSE/L=0.06660 first_half=0.00491 times_match=True d_obs=0.0211 at t=0.546 budget_rem=29.68
+2026-11-25/r3/lab-c/002 N=2 T=0.6 dt=0.001 r0=2.2500000000000004 | RMSE/L=0.00494 first_half=0.00476 times_match=True d_obs=1.2651 at t=0.586 budget_rem=28.66
+2026-11-25/r3/lab-c/003 N=2 T=0.6 dt=0.001 r0=2.5 | RMSE/L=0.00500 first_half=0.00495 times_match=True d_obs=1.7182 at t=0.579 budget_rem=27.64
+2026-11-25/r3/lab-c/004 N=2 T=0.6 dt=0.001 r0=2.75 | RMSE/L=0.00508 first_half=0.00513 times_match=True d_obs=2.0308 at t=0.561 budget_rem=26.62
+2026-11-25/r3/lab-c/005 N=2 T=1.0 dt=0.001 r0=1.75 | RMSE/L=0.14427 first_half=0.00512 times_match=True d_obs=0.0058 at t=0.542 budget_rem=25.58

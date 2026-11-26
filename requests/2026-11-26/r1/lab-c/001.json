@@ -1,0 +1,49 @@
+{
+  "request_id": "2026-11-26/r1/lab-c/001",
+  "lab": "lab-c",
+  "account": "review",
+  "purpose": "Review of P-0031 (lab-b): asymmetric A triangle, sides 7.05/5.89/5.08 (all pairs in [5.0, 7.1]), at rest, T = 2.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.186,
+          6.236
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          7.984,
+          2.23
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          7.978,
+          7.309
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0031"
+}

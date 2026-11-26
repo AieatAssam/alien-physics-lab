@@ -1,0 +1,45 @@
+{
+  "lab": "lab-b",
+  "date": "2026-11-26",
+  "title": "Scalene A-triangle at rest: does pair-sum additivity hold without symmetry?",
+  "pitch": "Three A particles at rest in a scalene triangle, pairs 5.42, 5.60, 6.26, run for T = 2. Every symmetric N = 3 and N = 4 test so far (P-0031, runs 007 and 008) used an equilateral triangle or a square. Those layouts cannot separate pair-sum additivity from a uniform rescaling of the pair table. Prediction: P-0031 as written (pair table summed pairwise, RK4, specular walls), no fitted parameters. P-0031 states symmetric layouts only, so this run tests its stated edge. Falsified if the judged RMSE/L exceeds 0.021 (3 x the 0.007 claim).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.5,
+          2.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          7.9,
+          3.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          4.0,
+          7.9
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.01
+  }
+}

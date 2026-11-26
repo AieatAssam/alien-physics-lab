@@ -1,0 +1,49 @@
+{
+  "request_id": "2026-11-26/r1/lab-a/007",
+  "lab": "lab-a",
+  "account": "review",
+  "purpose": "P-0031 review: A equilateral triangle, side 6.0, T 2.0",
+  "cites_paper": "P-0031",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          8.464101615137755
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          2.0,
+          3.2679491924311224
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          7.999999999999999,
+          3.267949192431121
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

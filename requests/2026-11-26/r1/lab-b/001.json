@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-26/r1/lab-b/001",
+  "lab": "lab-b",
+  "account": "review",
+  "purpose": "A-A pair, r0 2.05 horizontal, T 0.6 (in P-0032 domain; tests the no-clamp pair law at the window edge).",
+  "cites_paper": "P-0032",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.975,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.025,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.6,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

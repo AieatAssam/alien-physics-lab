@@ -1,0 +1,60 @@
+{
+  "request_id": "2026-11-26/r1/lab-b/004",
+  "lab": "lab-b",
+  "account": "review",
+  "purpose": "A-A square side 5.002, axis-aligned, centre (4.5, 5.5), T 2.0 (in P-0033 domain at its full duration).",
+  "cites_paper": "P-0033",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          1.999,
+          2.999
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          7.0009999999999994,
+          2.999
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          7.0009999999999994,
+          8.001
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          1.999,
+          8.001
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

@@ -1,103 +1,72 @@
 #!/usr/bin/env python3
-"""Generic scorer (copy of score_r1_2026-11-20.py), date/round/ids as args.
-Score 2026-11-20/r3/lab-c/001-017 with the P-0008 law times a scale s (two-body runs at rest).
+"""Generic scorer (lab-c, round 1 2026-11-26).
 
-Run: python3 -I score_generic.py REPO_ROOT DATE ROUND ID...
-Same window rule as scale_fit_short_range.py: each scale's prediction is trusted only until its own
-separation first drops below 0.6. Chi2 per separation sample, sigma 0.071. Parabola fit on grid.
-Also reports the mean-residual over the first 60% of the run and the s=1 chi2/n.
+For each request id, loads requests/<id>.json and results/<id>.json from the repo, runs the paper model's
+predict(setup) and reports:
+  - judged error: RMSE over all x/y components of (predicted - measured), divided by L = 10
+  - in-domain check via the model's own ValueError (if it raises, the run is marked out-of-model-domain)
+  - raw tracker minimum pair separation d_obs and its time (two-particle runs)
+
+Run:  python3 -I score_generic.py REPO_ROOT MODEL_PY ID [ID ...]
+      ID like 2026-11-25/r3/lab-c/001
 """
-import importlib.util, json, math, sys
+import importlib.util
+import json
+import math
+import sys
 from pathlib import Path
 
+L = 10.0
 REPO = Path(sys.argv[1])
-SIGMA = 0.071
-H = 0.0005
-spec = importlib.util.spec_from_file_location("p0008", REPO / "papers" / "P-0008" / "model.py")
-mod = importlib.util.module_from_spec(spec); spec.loader.exec_module(mod)
-COUP0 = dict(mod.COUP)
-GRID = [round(0.50 + 0.01 * i, 2) for i in range(81)]  # 0.50 .. 1.30
+MODEL_PY = Path(sys.argv[2])
+spec = importlib.util.spec_from_file_location("paper_model", MODEL_PY)
+mod = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(mod)
 
 
-def sep(p):
-    d = {q["id"]: q["pos"] for q in p}
-    return math.dist(d[0], d[1])
+def rmse_over(pred, meas):
+    se, n = 0.0, 0
+    for p, m in zip(pred, meas):
+        for i in range(len(p["particles"])):
+            for c in range(2):
+                e = p["particles"][i]["pos"][c] - m["particles"][i]["pos"][c]
+                se += e * e
+                n += 1
+    return math.sqrt(se / n) / L
 
 
-def integrate(species, pos0, vel0, times, s):
-    """Predicted separation at each time in `times` (sorted ascending)."""
-    mod.COUP = {k: s * v for k, v in COUP0.items()}
-    pos = [list(p) for p in pos0]; vel = [list(v) for v in vel0]
-    t = 0.0; out = []
-    for target in times:
-        while t < target - 1e-12:
-            h = min(H, target - t)
-            pos, vel = mod._step(pos, vel, species, h)
-            t += h
-        t = target
-        out.append(math.dist(pos[0], pos[1]))
-    return out
+def dmin_obs(meas):
+    best = (float("inf"), None)
+    for m in meas:
+        ps = m["particles"]
+        if len(ps) != 2:
+            return None
+        d = math.dist(ps[0]["pos"], ps[1]["pos"])
+        if d < best[0]:
+            best = (d, m["t"])
+    return best
 
 
-def chi_curve(meas, species, pos0, vel0, T, dt):
-    times = [t for t, _ in meas]
-    chis = []
-    for s in GRID:
-        pr = integrate(species, pos0, vel0, times, s)
-        # trust the prediction only until its own separation first drops below 0.6
-        tc = next((t for t, p in zip(times, pr) if p < 0.6), T)
-        c = 0.0; n = 0
-        for (t, m), p in zip(meas, pr):
-            if t > tc + 1e-9: continue
-            c += (m - p) ** 2; n += 1
-        chis.append((c / SIGMA ** 2 / max(n, 1), n, tc))
-    return chis
-
-
-def parabola_vertex(xs, ys):
-    m = len(xs)
-    Sx = sum(xs); Sx2 = sum(x*x for x in xs); Sx3 = sum(x**3 for x in xs); Sx4 = sum(x**4 for x in xs)
-    Sy = sum(ys); Sxy = sum(x*y for x, y in zip(xs, ys)); Sx2y = sum(x*x*y for x, y in zip(xs, ys))
-    M = [[Sx4, Sx3, Sx2], [Sx3, Sx2, Sx], [Sx2, Sx, m]]; v = [Sx2y, Sxy, Sy]
-    def det(a):
-        return (a[0][0]*(a[1][1]*a[2][2]-a[1][2]*a[2][1]) - a[0][1]*(a[1][0]*a[2][2]-a[1][2]*a[2][0])
-                + a[0][2]*(a[1][0]*a[2][1]-a[1][1]*a[2][0]))
-    d = det(M); coef = []
-    for col in range(3):
-        mk = [r[:] for r in M]
-        for i in range(3): mk[i][col] = v[i]
-        coef.append(det(mk)/d)
-    a, b, _ = coef
-    return -b/(2*a)
-
-
-def main():
-    date, rnd = sys.argv[2], sys.argv[3]
-    ids = sys.argv[4:]
-    rows = []
-    for rid in ids:
-        req = json.loads((REPO / "requests" / date / rnd / "lab-c" / f"{rid}.json").read_text())
-        res = json.loads((REPO / "results" / date / rnd / "lab-c" / f"{rid}.json").read_text())
-        ps = req["setup"]["particles"]
-        species = [p["species"] for p in ps]
-        pos0 = [p["pos"] for p in ps]; vel0 = [p["vel"] for p in ps]
-        T = req["setup"]["duration"]; dt = req["setup"]["sample_dt"]
-        meas = [(s["t"], sep(s["particles"])) for s in res["samples"]]
-        if res.get("status", "ok") != "ok":
-            rows.append((rid, "".join(species), "status " + str(res.get("status"))))
-            continue
-        r0 = math.dist(pos0[0], pos0[1])
-        chis = chi_curve(meas, species, pos0, vel0, T, dt)
-        i0 = min(range(len(GRID)), key=lambda i: chis[i][0])
-        lo, hi = max(0, i0-4), min(len(GRID), i0+5)
-        sv = parabola_vertex(GRID[lo:hi], [chis[i][0] for i in range(lo, hi)])
-        c1 = chis[GRID.index(1.0)]
-        rows.append((rid, "".join(species), f"r0={r0:.2f} T={T} dt={dt} n={len(meas)} "
-                     f"best_grid={GRID[i0]:.2f} vertex={sv:.3f} chi2/n_best={chis[i0][0]:.2f} "
-                     f"chi2/n_s1={c1[0]:.2f} n_win={c1[1]} cut_s1={c1[2]:.3f}"))
-    for r in rows:
-        print(" ".join(str(x) for x in r))
-
-
-if __name__ == "__main__":
-    main()
+for rid in sys.argv[3:]:
+    req = json.loads((REPO / "requests" / f"{rid}.json").read_text())
+    res = json.loads((REPO / "results" / f"{rid}.json").read_text())
+    setup = req["setup"]
+    meas = res["samples"]
+    r0 = math.dist(setup["particles"][0]["pos"], setup["particles"][1]["pos"]) if len(setup["particles"]) == 2 else None
+    head = f"{rid} N={len(setup['particles'])} T={setup['duration']} dt={setup['sample_dt']} r0={r0}"
+    try:
+        pred = mod.predict(setup)
+    except ValueError as e:
+        print(head, "| MODEL REFUSES (out of model domain):", e)
+        continue
+    if len(pred) != len(meas):
+        print(head, f"| LENGTH MISMATCH pred={len(pred)} meas={len(meas)}")
+        continue
+    ok = all(abs(p["t"] - m["t"]) < 1e-9 for p, m in zip(pred, meas))
+    e_full = rmse_over(pred, meas)
+    # windowed: up to half the run and up to t = 0.6
+    half = [i for i, m in enumerate(meas) if m["t"] <= setup["duration"] / 2 + 1e-9]
+    e_half = rmse_over([pred[i] for i in half], [meas[i] for i in half])
+    dm = dmin_obs(meas)
+    dmtxt = f"d_obs={dm[0]:.4f} at t={dm[1]:.3f}" if dm else "d_obs=n/a"
+    print(head, f"| RMSE/L={e_full:.5f} first_half={e_half:.5f} times_match={ok} {dmtxt} budget_rem={res.get('budget_remaining')}")

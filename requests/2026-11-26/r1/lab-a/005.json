@@ -1,0 +1,60 @@
+{
+  "request_id": "2026-11-26/r1/lab-a/005",
+  "lab": "lab-a",
+  "account": "review",
+  "purpose": "P-0033 review: A square, side 5.005, rotated 45 degrees, T 2.0",
+  "cites_paper": "P-0033",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          8.53906943983867,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          8.53906943983867
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          1.46093056016133,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          1.46093056016133
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

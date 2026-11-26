@@ -1,0 +1,49 @@
+{
+  "request_id": "2026-11-26/r1/lab-vernier/003",
+  "lab": "lab-vernier",
+  "account": "review",
+  "purpose": "Review of P-0031 (cites_paper). scalene triangle 5.3/6.1/6.9, T=2. Asymmetric N=3 layout. The paper says asymmetric layouts are not claimed, but the judge domain does not exclude them, so a miss here would be a real test of the no-three-body claim.",
+  "cites_paper": "P-0031",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.2,
+          3.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.5,
+          3.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          4.868867924528301,
+          8.867271925731803
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

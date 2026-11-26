@@ -1,0 +1,49 @@
+{
+ "request_id": "2026-11-26/r1/lab-keystone/003",
+ "lab": "lab-keystone",
+ "account": "review",
+ "purpose": "Review of P-0031 (N=3). Equilateral triangle, side 7.09, centred at (5,5): all three pairs at the upper edge. Tracker. T=2.0.",
+ "cites_paper": "P-0031",
+ "setup": {
+  "particles": [
+   {
+    "species": "A",
+    "pos": [
+     5.0,
+     9.0928
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     1.4545,
+     2.9536
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     8.5455,
+     2.9536
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 2.0,
+  "sample_dt": 0.001
+ },
+ "instruments": [
+  "tracker"
+ ]
+}

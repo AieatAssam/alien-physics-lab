@@ -1,0 +1,60 @@
+{
+  "request_id": "2026-11-26/r1/lab-a/006",
+  "lab": "lab-a",
+  "account": "review",
+  "purpose": "P-0033 review: replicate of the axis-aligned square (side 5.005), T 2.0",
+  "cites_paper": "P-0033",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.4975,
+          2.4975
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          7.5024999999999995,
+          2.4975
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          7.5024999999999995,
+          7.5024999999999995
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          2.4975,
+          7.5024999999999995
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

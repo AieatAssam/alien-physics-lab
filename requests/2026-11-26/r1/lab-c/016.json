@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-26/r1/lab-c/016",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Research (round 1): C-C pair at rest, r0 = 2.5 horizontal, T = 1.5, near-contact check for species C (P-0034 stops at r0 3.0).",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          3.75,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          6.25,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.5,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

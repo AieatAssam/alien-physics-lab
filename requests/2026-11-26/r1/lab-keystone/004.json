@@ -1,0 +1,60 @@
+{
+ "request_id": "2026-11-26/r1/lab-keystone/004",
+ "lab": "lab-keystone",
+ "account": "review",
+ "purpose": "Review of P-0031 (N=4). Asymmetric scalene quadrilateral with pair distances spanning 5.00 to 7.09 (fixed-seed search). Tests the pair sum off symmetric layouts inside the stated range. Tracker. T=2.0.",
+ "cites_paper": "P-0031",
+ "setup": {
+  "particles": [
+   {
+    "species": "A",
+    "pos": [
+     1.9999,
+     1.9981
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     7.0127,
+     1.9983
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     7.0112,
+     7.0126
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     2.0005,
+     7.0112
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 2.0,
+  "sample_dt": 0.001
+ },
+ "instruments": [
+  "tracker"
+ ]
+}

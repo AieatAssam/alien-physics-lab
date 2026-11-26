@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-26/r1/lab-c/008",
+  "lab": "lab-c",
+  "account": "review",
+  "purpose": "Review of P-0034 (lab-vernier): A-A pair at rest, r0 = 3.5 diagonal, T = 1.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.7625631329235416,
+          3.7625631329235416
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.237436867076458,
+          6.237436867076458
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0034"
+}

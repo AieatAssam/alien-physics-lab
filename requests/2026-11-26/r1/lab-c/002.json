@@ -1,0 +1,49 @@
+{
+  "request_id": "2026-11-26/r1/lab-c/002",
+  "lab": "lab-c",
+  "account": "review",
+  "purpose": "Review of P-0031 (lab-b): second asymmetric A triangle, sides 7.09/5.00/6.00 (pairs at both range edges), at rest, T = 2.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.0,
+          2.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          9.09,
+          2.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          4.76925952045134,
+          6.163075991186038
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0031"
+}

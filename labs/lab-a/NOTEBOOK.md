@@ -34,6 +34,11 @@ Persona: cautious experimentalist. Every run is repeated before it is trusted. N
 - Review: round 2 4.32 of 15 (`r2/001-004`, P-0030 review). Round 3 filed the verdict (no further review runs needed; 10.68 of the review allowance is unspent and does not roll over). The review account has no other paper awaiting review.
 - Grant: my proposal filed in round 1 (`out/grants/2026-11-25/proposals/lab-a.json`). Round 2 vote for **lab-c** (`out/grants/2026-11-25/votes/lab-a.json`, Nullius's close-approach proposal). Tonight's grant went to **lab-vernier** (16-body additivity test, 120 credits). I have no grant credits today.
 
+### 2026-11-26 (today, round 1)
+- Research: round 1 files `r1/013-019` (species-coupling falls from 5), 8.12 of 40 (`r1/013-019`, all `research`, tracker, T = 4, dt 0.02, 1.16 each). About 31.9 left for rounds 2 and 3 (does not roll over; spend the rest by round 3).
+- Review: round 1 files `r1/001-012` on the review account (13.07 of 15), all with `cites_paper`: P-0032 (`001-003`), P-0033 (`004-006`), P-0031 (`007-009`), P-0034 (`010-012`). Reviews are filed after the results arrive (next round).
+- Grant: proposal filed (`out/grants/2026-11-26/proposals/lab-a.json`, A-B fall from r0 = 9, same as the lost 2026-11-25 proposal, re-pitched with the species falls now running). No credits today.
+
 ## Results scored
 
 Scored in round 2 with `out/labs/lab-a/analysis/score_round1_2026-11-25.py` (output `score_round1_2026-11-25.json`). Earlier scoring: `score_round3_2026-11-25.py` and `grant_check_2026-11-25.py` (round 3 and the fall check).
@@ -89,6 +94,29 @@ Round-1 requests: nothing else scored. P-0030 review runs are in round 2.
 ### Round 1 (earlier, pre-round-2 results)
 
 P-0025 (lab-b, A-B table at r0 4 to 8): replicated on the stated bound, RMSE/L 0.00497 to 0.00506 (`r1/001-008` in 2026-11-24). A-A K(r) at separations 4 to 9 agrees with the table (per-run K, reduced chi2 0.98 to 1.10). Crowd-8 ring at T = 0.5 (`r1/019-020`): at the floor, not discriminating.
+
+### Round 3 scored 2026-11-26 (`r3/001-008`, S20 `r2/009-010`; scorer `out/labs/lab-a/analysis/score_round3_2026-11-26.py`)
+Whole-run scale s on the clamped P-0027 table, T = 0.4, tracker noise 0.05, chi2 + 1 intervals (`score_round3_2026-11-26.json`):
+
+| set | runs | s per run (1 sigma) | set mean (sd of mean about 0.03) |
+|---|---|---|---|
+| S20 (r0 2.0) | r2/009, 010 | 0.876 (0.858 to 0.895), 0.895 (0.876 to 0.913) | 0.886 |
+| W225 (r0 2.25) | r3/001, 002 | 0.945 (0.919 to 0.971), 0.969 (0.942 to 0.995) | 0.957 |
+| W25 (r0 2.5) | r3/005, 006 | 1.015 (0.980 to 1.051), 0.947 (0.911 to 0.982) | 0.981 |
+| W275 (r0 2.75) | r3/003, 004 | 1.006 (0.960 to 1.052), 0.922 (0.876 to 0.969) | 0.964 |
+| W30 (r0 3.0) | r3/007, 008 | 0.989 (0.930 to 1.047), 0.991 (0.932 to 1.049) | 0.990 |
+
+chi2/dof 0.90 to 1.02 in every run, so each fit is consistent with noise. Pre-registered rules:
+- **R1 (monotone ramp): holds within the replicate error.** The one step that goes down (W25 0.981 to W275 0.964, -0.017) is inside the about 0.03 error on each set mean.
+- **R2 (decline ends by 2.75): not met.** W275 is 0.036 below 1.00 (rule: within 0.02), and its 1-sigma interval (about 0.93 to 1.00) does not reach 1.00.
+- **R3 (decline reaches 2.75, s below 0.95 with upper 1-sigma below 1.00): not triggered.** 0.964 is not below 0.95.
+- **R4 (T-dependence): not triggered.** W25 at T = 0.4 is 0.981 against S25 at T = 0.6 of 0.965, a 0.5 sigma difference.
+- **R5 (replicate failure): not triggered.** Largest within-set difference is W275 at 0.084, about 1.3 sigma of the difference.
+- **Falsifier of the round-2 reading: met on the point estimate.** W225 = 0.957 is above 0.95. This is 0.007 above a threshold whose 1-sigma is about 0.02, so it is not a decisive reading. It does say the deficit is not flat across the start points: S20 (0.886) sits about 3 sigma below W225.
+
+**Verdict: inconclusive. No profile claim** (the claim rule requires R1 and R2 both). The profile rises from about 0.89 at r0 2.0 to about 0.96 to 0.99 at 2.25 to 3.0. It does not clearly reach 1.00 by 2.75.
+
+**Comparison with the P-0026 law (lab-c, `P-0032` under review).** Its power law K_eff(r) = 11.815 / r^2.099 divided by the clamped table 17.683 / r^2.5 is 0.882 at 2.0, 0.925 at 2.25, 0.965 at 2.5, 1.002 at 2.75 and 1.038 at 3.0. Against the window values it is within about 1 to 1.5 sigma at 2.0, 2.25, 2.5 and 2.75. At 3.0 it is 4 per cent above the table (W30 is 0.990). So the P-0026 law fits this profile about as well as anything I have, and the profile does not discriminate P-0026 from a ramp. This is the reason the P-0032 review runs (r0 2.01 to 2.49) matter to me.
 
 ### Round 3 (pre-registered 2026-11-24; scored 2026-11-25)
 
@@ -260,6 +288,24 @@ Sets: S25 = 005, 006; S28 = 007, 008; S20 = 009, 010; S30 = 011, 012.
 - Evidence: `r2/008-009` (ring, N = 8). Octagon `r3/005-006` passes the chi2 rule (see above) but is not yet cited.
 - **Open issue (sharpened by round 1).** Its pairwise sum uses the P-0027 table at separations 3 to 5, which is withdrawn above (K about 2.7% high). The round-1 scale result also shows the clamp below 3 is about 13% high near r = 2. Both bear on the octagon's measured min pair (2.50 to 2.54). The judged error is unaffected (the bar is 0.021), but the claim relies on table values I now believe are off. A revision should restrict to separations at or above 5 (the ring has min pair 3.10 and would then fall outside the domain) or wait for a measured [3, 5) table and a measured close-range law.
 
+## Requests filed 2026-11-26 (round 1; `out/labs/lab-a/analysis/make_2026-11-26_r1_requests.py`)
+
+| id | account | purpose | N | T | cost |
+|---|---|---|---|---|---|
+| r1/001-003 | review (P-0032) | A-A pairs at 2.01 (edge), 2.49 (edge, diagonal), 2.25; T 0.6 | 2 | 0.6 | 1.024 each |
+| r1/004-006 | review (P-0033) | A square, side 5.005 (diagonal 7.078), axis, rotated 45, replicate; T 2.0 | 4 | 2.0 | 1.16 each |
+| r1/007-009 | review (P-0031) | A triangles (side 6.0, side 5.01 edge), A square (side 5.005); T 2.0 | 3, 3, 4 | 2.0 | 1.12, 1.12, 1.16 |
+| r1/010-012 | review (P-0034) | A-A pairs at 3.01 (edge), 3.49 (edge, diagonal), 3.25; T 1.0 | 2 | 1.0 | 1.04 each |
+| r1/013-019 | research | A-B horiz and diag, B-B horiz and diag, C-C horiz and diag, A-C horiz; radial fall from 5, T 4, dt 0.02 | 2 | 4.0 | 1.16 each |
+
+Review cost 13.07 of 15. Research cost 8.12 of 40. Not executed yet; results arrive for the next session.
+
+Pre-registered rules for `r1/013-019`: see the plan above. (Written before the results, as the plan states.)
+
+## Reviews pending (filed later, when `r1/001-012` return)
+
+- P-0031 (lab-b, triangles and square), P-0032 (lab-c, close-range pair), P-0033 (lab-keystone, square), P-0034 (lab-vernier, A-A pair claim). All four queued for this lab's review. Verdicts go to `out/reviews/P-00xx/lab-a.json` once the results are in.
+
 ## Requests filed 2026-11-25 (round 1; `out/labs/lab-a/analysis/make_2026-11-25_r1_requests.py`)
 
 All account `research`, instruments `tracker`. Cost is `1 + 0.02 N T`. Total 13.44. **Executed; scored above.**
@@ -311,6 +357,7 @@ Rules:
 
 ## Grant
 
+- **Proposal (2026-11-26, round 1):** `out/grants/2026-11-26/proposals/lab-a.json`. A-B fall from r0 = 9 (A at 0.5, B at 9.5, T = 10, 1990 samples), the same test as last night's proposal (factorisation over separation 9 to contact), re-pitched with today's species falls from 5 as the short-range arm. Two particles, 1.40 credits.
 - **Proposal (2026-11-25, round 1):** `out/grants/2026-11-25/proposals/lab-a.json`. Radial fall of an A-B pair from r0 = 9, same geometry as the A-A fall (`r3/001-002`), T = 10, 1990 samples. Test: K_AB(r)/K_AA(r) constant over separation 9 to contact (factorisation). A ratio that moves with r refutes factorisation. Pre-contact part only is fitted. Two particles, 1.40 credits. If it wins, the award is used in round 3 on this run and a replicate.
 - **Vote (2026-11-25, round 2): lab-c (Nullius).** Its A-A close approach from r0 = 2.5 to contact tests the same open question as round 1 (the close-range law) on the trajectory, with two named rival laws that predict different paths. Two particles, cheap. I voted for it over Icarus (lab-b), whose A-B fall tests a ratio already in P-0025 (lab-b's own paper), and over Keystone and Vernier, whose N = 16 tests are for the pair sum (a different question). The vote is for discrimination, not for my own proposal.
 
@@ -356,27 +403,35 @@ Rules:
 - H39 A-A K at 5.5, 7.5, 8.5 agrees with the table within 0.5%, 0.0%, 1.8%: supported (`r2/003, 006, 007`).
 - H40 Crowd-8 ring at T = 1: table pairwise sum preferred over constant K at chi2 difference 765 to 828 per run: supported.
 - H41 Pre-contact radial fall from r0 = 9 (A-A) fits the P-0027 table with no free parameter, chi2/dof 1.00 to 1.10 through t = 8 (separation down to about 5): supported. Round 1 extends the falls from r0 = 5: table chi2/dof 0.90 to 1.22 in every window before contact (separations down to about 2.5).
-- H42 Factorisation H9 via A-B fall vs A-A fall, same geometry: open, grant proposal filed.
-- H43 (new, 2026-11-25) **A-A K falls below its r = 3 clamp value at r about 2.** Round 1: s = 0.87 +- 0.05 at r = 2, s = 0.90 +- 0.09 at 2.5. Round 2 (window values, T = 0.4 from 2.0): **s = 0.885 +- 0.012 at 2.0, replicated.** Round 2 at T = 0.6 from 2.5: s = 0.965 +- 0.007 (just above the 0.95 threshold). Round 2 at 2.8 and 3.0: about 1.00. Status: **strengthened (the decline at the 2.0 start is replicated); the profile shape is not yet resolved.** Round 3 (r3/001-008) places it. Not claimed.
+- H42 Factorisation H9 via A-B fall vs A-A fall, same geometry: open. Short-range version filed 2026-11-26 (`r1/013-014`, A-B fall from 5, replicated), and the grant proposal (A-B fall from 9) is filed again.
+- H43 (new, 2026-11-25) **A-A K falls below its r = 3 clamp value at r about 2.** Round 1: s = 0.87 +- 0.05 at r = 2, s = 0.90 +- 0.09 at 2.5. Round 2 (window values, T = 0.4 from 2.0): **s = 0.885 +- 0.012 at 2.0, replicated.** Round 2 at T = 0.6 from 2.5: s = 0.965 +- 0.007 (just above the 0.95 threshold). Round 2 at 2.8 and 3.0: about 1.00. Status: **strengthened (the decline at the 2.0 start is replicated); the profile shape is not yet resolved.** Round 3 (`r3/001-008`, scored 2026-11-26): **profile inconclusive, no claim.** Window values 0.957 (2.25), 0.981 (2.5), 0.964 (2.75), 0.990 (3.0), against 0.886 at 2.0. The decline is a ramp of about 10 per cent from 2.0, not a step, and it is not resolved to 2.75 (R2 not met). Consistent with the P-0026 power law (lab-c) within about 1.5 sigma. Not claimed.
 - H44 (new, 2026-11-25) **The species coupling ratio: A-B against A-A at 2.5.** Round 1 (exploratory): A-B/A-A = 0.55, sqrt(B-B/A-A) = 0.61. Consistent. Not claimed. Grant test pending.
 - H45 (new, 2026-11-25) **A-C K (P-0030) out of sample at 2.75, 3.25 and 3.45.** **Supported at the stated bound (review, round 3):** RMSE/L 0.00495 to 0.00500 on `r2/001-004`, bar 0.024. The few-percent K at these separations is not tested by the judged metric. Not claimed beyond P-0030's own claim.
 
+- H46 (new, 2026-11-26) **Species coupling at short range, same geometry as the A-A fall from 5.** Filed `r1/013-019`: A-B, B-B, C-C, A-C falls from 5 (horizontal and diagonal replicates for A-B, B-B, C-C). Prediction if factorisation holds (H9, g_ij = q_i q_j): K_AB/K_AA, K_BB/K_AA and K_CC/K_AA are each constant along the fall, and K_AB^2 = K_AA K_BB (the sqrt rule). Not yet scored.
+- H47 (new, 2026-11-26) **P-0026 law (lab-c) near 2.0 to 2.5.** Its K_eff against my window values is within about 1.5 sigma at 2.0 to 2.75. Tested out of sample by the P-0032 review runs `r1/001-003` (review account), scored when the results arrive.
+- H48 (new, 2026-11-26) **P-0034 K at 3.0 against my K fits.** P-0034 has K(3.0) = 18.03. My W30 window (0.990 of the clamped P-0027 value, 17.68) gives about 17.5. A 2 to 3 per cent gap, below what the judged metric can resolve (H37). The P-0034 review (`r1/010-012`) tests the stated bound only.
+- H49 (new, 2026-11-26) **P-0033 K below 5 is held flat by the claim.** P-0033 holds K at 17.834 below 5 (its end value), while my K fits at 3.5 to 4.5 give about 18.2 (H35). The square runs contract below 5, so the claim is about 2 per cent low there. The judged metric is unlikely to show it (displacement at T = 2 is small), and I say so in the review.
+
 ## Plan for the next round
 
-Done in round 3 (2026-11-25):
-- Scored `r2/005-012` against Rules A to D: **inconclusive, no claim** (Rule A missed by S25 at 0.965 vs 0.95; Rules B and C not triggered).
-- Filed the P-0030 review: **replicated** (`out/reviews/P-0030/lab-a.json`).
-- Filed `r3/001-008` (A-A window profile at T = 0.4, research account, estimated 8.13 of 18.41). Pre-registered above.
+Done in round 1 (2026-11-26):
+- Scored `r3/001-008` with the pre-registered rules: **inconclusive, no profile claim.** (Details above.) The falsifier is met on the point estimate, not decisively.
+- Filed the review run sets for P-0031 to P-0034 on the review account (`r1/001-012`, 13.07 of 15). All edge runs sit 0.01 inside the claimed edge, and I checked every pair distance against the claim's domain before filing (script: `out/labs/lab-a/analysis/make_2026-11-26_r1_requests.py`).
+- Filed species falls from 5 (`r1/013-019`, 8.12 of 40).
+- Grant proposal filed (A-B fall from 9).
 
-Next (for the session that scores `r3/001-008`):
-1. **Score r3/001-008** with the pre-registered rules R1 to R5 (window sets W225, W25, W275, W30, and the S20 window from r2/009-010). Write the scorer first: reuse `score_round1_2026-11-25.py` through the import pattern in `score_round2_2026-11-25.py`, with `RND = "r3"` and ids 1 to 8.
-2. **If R1 and R2 hold:** file a narrow profile claim (A-A pair at rest, r0 2.0 to 3.0, T <= 0.4, window values, predicted_error at least 0.007). Evidence: `r2/009-010`, `r3/001-008`. Not filed before the scoring.
-3. **If R3 holds (decline reaches 2.75):** no claim. Reopen H35 and look at the [3, 5) table again. The withdrawn region gets a dedicated test.
-4. **If R4 holds (T-dependence):** use only the T = 0.4 values for any window claim and say so.
-5. **P-0028 (crowd):** still open. Its pairwise table at 3 to 5 is in question, and the octagon's min pair (2.5) sits in the biased region. Prefer restricting its domain or waiting for the profile. Judge does not see the bias, so this is about honesty.
-6. **Grant:** none today. Tonight's grant went to lab-vernier. My next grant proposal, if any, should target the close-range question only if the profile is still open.
-7. Keep the sharpen bounties out of reach by design: no predicted_error below 0.005. A window profile claim would carry predicted_error 0.007 at the least, so none of the open bounties (`sharpen-A/B/C-*` need 0.0025) is in reach from it. `crowd-16` needs a 16-particle accepted claim, which is not what this profile is.
-8. Research budget after round 3 (if all 8 run at about 1.02 each): about 10.3 credits left for this day, which does not roll over. Review allowance is unused (10.68), with no paper left to review.
+Next (the session that receives the results of `2026-11-26/r1/*`):
+1. **Score `r1/001-012` (reviews) first.** For each paper, load its `model.py` predict(), compute the judged RMSE/L against each run, and check every run is in domain. Verdict rule: replicated if at least 3 in-domain runs are at or below 3 x predicted_error. Then write `out/reviews/P-00xx/lab-a.json`:
+   - P-0032 (predicted 0.006, bar 0.018): runs `001-003`.
+   - P-0033 (predicted 0.007, bar 0.021): runs `004-006`. The square has diagonal 7.078, so these runs sit inside [5.0, 7.08].
+   - P-0031 (predicted 0.007, bar 0.021): runs `007-009`. Triangles and square; 4 particles max.
+   - P-0034 (predicted 0.007, bar 0.021): runs `010-012`, claim 1 (A-A) only. Claim 2 (C-C) is not tested here and the review says so.
+   Write the review comment with the judged numbers and the K-level limits (H37, H47 to H49). Reviewing does not depend on my own K fits being right.
+2. **Score `r1/013-019` (species falls).** Fit each fall pre-contact and compare K_AB, K_BB, K_CC, K_AC with K_AA along the same geometry. Pre-registered rules (write them now, before results): (a) factorisation holds if K_AB/K_AA is constant to within 5 per cent over the pre-contact part (separations 5 to 2.5); (b) if K_BB/K_AA and K_CC/K_AA are also constant and sqrt-consistent with K_AB/K_AA, the coupling is q_i q_j to within 5 per cent; (c) a moving ratio refutes it. Two replicates per species pair must agree before any claim.
+3. **Grant:** the A-B fall from 9 is the proposal. Vote next round (round 2) for a proposal that tests a different question than mine, if one is worth it.
+4. **Budget after round 1:** 31.88 research credits left for today (for rounds 2 and 3). Use them only on a new result, not on a repeat.
+5. **Sharpen bounties:** still out of reach by design (predicted_error at least 0.005). `crowd-16` is not in reach from this lab's current evidence.
 
 ## Errors caught
 
@@ -402,6 +457,8 @@ Next (for the session that scores `r3/001-008`):
 - **Window read as local (2026-11-25, round 3).** The round-2 pre-registration called S20 "the value at 2.0". A T = 0.4 run from r0 = 2.0 traverses about 2.0 to 2.5, so S20 is a window value. Caught while scoring the round-2 sets against their stated windows. The round-3 design and rules say "window" throughout.
 - **Rule threshold without an error budget (2026-11-25, round 3).** The 0.95 threshold for Rule A was set without the replicate error. S25 came in at 0.965 (+- 0.007), so the rule fails by 0.015. Reported as inconclusive; the rule is not moved after the fact.
 - **Round-2 review plan checked against the domain (2026-11-25).** Review runs 001 to 003 sit at least 0.25 inside [2.5, 3.5]. Run 004 (3.45) is 0.05 inside the 3.5 edge, well clear of the 1e-3 tolerance. Two particles, T = 2 inside the claim's window.
+- **Review domain edge: side 5.01 fails P-0033's domain (2026-11-26).** A square of side 5.01 has diagonal 7.085, above P-0033's upper bound 7.08. Filed side 5.005 (diagonal 7.078) instead. The generator checks every pair distance against the claim's stated range before the file is written.
+- **Falsifier wording (2026-11-26).** The pre-registered round-2 falsifier triggers on the point estimate of W225 (0.957 > 0.95). Reported as met, with its 1-sigma (about 0.02), not as a decisive result.
 
 ## Self-criticism
 
@@ -415,6 +472,7 @@ Next (for the session that scores `r3/001-008`):
 - **The clamp below 3 was carried in P-0027 and P-0028 without a test below 3.** Round 1 is the first measurement there; it contradicts the clamp by about 13% at r = 2.
 
 - **Round-2 pre-registration named a value at 2.0 when its design gave a window.** The rule thresholds were fine; the words were not. Round 3 writes "window" everywhere and pre-registers the window profile instead of a single number.
+- **The falls were filed before the profile verdict (2026-11-26).** The species falls are a new question, and they are in the same geometry as the A-A reference. I should not treat their outcome as bearing on the profile.
 - **The 0.95 threshold for Rule A had no error budget.** S25 landed 0.015 from it. A threshold should be set against the replicate error (about 0.01 here) before the data arrive.
 
 ## What would change my mind

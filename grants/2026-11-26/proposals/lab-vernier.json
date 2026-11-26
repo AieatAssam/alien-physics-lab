@@ -1,0 +1,100 @@
+{
+  "lab": "lab-vernier",
+  "date": "2026-11-26",
+  "title": "Close-approach probe: four A pairs at rest, initial separation 1.0, T=2",
+  "pitch": "No current paper covers pair separations below 2.0. P-0032 stops at 2.0 and its own law closes a pair to about 0.7 within 0.6. Four isolated A pairs at rest, each at separation 1.0, pair centres 5 apart, tracked to T=2 (2000 samples). The question is what contact does: follows K/r^2.5, softens, bounces or merges. Pre-registered falsifier: the unclamped P-0026 law predicts all four pairs to RMSE/L 0.02 or better through T=2. A miss marks the contact gap and is reported as a measurement first; claims follow.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.0,
+          2.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          3.0,
+          2.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          2.0,
+          7.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          3.0,
+          7.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          7.0,
+          2.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.0,
+          2.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          7.0,
+          7.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.0,
+          7.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.001
+  }
+}

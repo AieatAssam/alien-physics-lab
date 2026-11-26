@@ -1,0 +1,60 @@
+{
+  "request_id": "2026-11-26/r1/lab-vernier/006",
+  "lab": "lab-vernier",
+  "account": "review",
+  "purpose": "Review of P-0033 (cites_paper). square side 5.005 rotated 30 deg, centred (4,4), T=2. Same geometry, different orientation and centre: checks the paper's orientation-free claim.",
+  "cites_paper": "P-0033",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          7.064924040657452,
+          5.769534719919335
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          2.230465280080666,
+          7.064924040657452
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          0.935075959342548,
+          2.230465280080666
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.769534719919336,
+          0.9350759593425484
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

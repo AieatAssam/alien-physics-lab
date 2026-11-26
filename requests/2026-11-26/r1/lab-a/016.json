@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-26/r1/lab-a/016",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "B-B radial fall from r0 = 5 diagonal, replicate",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          3.232233047033631,
+          3.232233047033631
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          6.767766952966369,
+          6.767766952966369
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 4.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

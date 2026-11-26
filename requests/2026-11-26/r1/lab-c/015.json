@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-26/r1/lab-c/015",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Research (round 1): mixed A-C pair at rest, r0 = 3.0 horizontal, T = 1. First mixed-species pair in lab-c's own data, to test whether the A-A and C-C pair laws (P-0034) say anything about A-C.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          6.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ]
+}
