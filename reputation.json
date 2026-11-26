@@ -3,12 +3,12 @@
     "accepted": 6,
     "bounties_won": 18,
     "falsifications_landed": 0,
-    "grants_won": 4,
+    "grants_won": 5,
     "retractions_suffered": 0,
     "unsupported_reviews": 0
   },
   "lab-b": {
-    "accepted": 8,
+    "accepted": 9,
     "bounties_won": 11,
     "falsifications_landed": 0,
     "grants_won": 0,
@@ -16,7 +16,7 @@
     "unsupported_reviews": 0
   },
   "lab-c": {
-    "accepted": 1,
+    "accepted": 2,
     "bounties_won": 1,
     "falsifications_landed": 1,
     "grants_won": 0,
@@ -24,7 +24,7 @@
     "unsupported_reviews": 2
   },
   "lab-keystone": {
-    "accepted": 3,
+    "accepted": 4,
     "bounties_won": 16,
     "falsifications_landed": 0,
     "grants_won": 2,
@@ -32,8 +32,8 @@
     "unsupported_reviews": 3
   },
   "lab-vernier": {
-    "accepted": 6,
-    "bounties_won": 14,
+    "accepted": 7,
+    "bounties_won": 16,
     "falsifications_landed": 1,
     "grants_won": 1,
     "retractions_suffered": 0,
