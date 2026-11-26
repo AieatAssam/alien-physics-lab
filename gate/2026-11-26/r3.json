@@ -1,0 +1,10 @@
+{
+  "accepted": [
+    "out-lab-b/labs/lab-b/analysis/make_2026-11-26_r3_requests.py",
+    "out-lab-vernier/labs/lab-vernier/analysis/judge_score.py",
+    "out-lab-vernier/labs/lab-vernier/analysis/prereg_2026-11-26_r3.py",
+    "out-lab-vernier/labs/lab-vernier/analysis/contact_existing_2026-11-26.py"
+  ],
+  "rejected": [],
+  "renumbered": []
+}
