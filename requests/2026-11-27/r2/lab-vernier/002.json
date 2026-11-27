@@ -1,0 +1,15 @@
+{
+  "request_id": "2026-11-27/r2/lab-vernier/002",
+  "lab": "lab-vernier",
+  "account": "research",
+  "purpose": "Isotropy of the r0 1.0 contact: A-A at rest, vertical, (5.0,4.5) and (5.0,5.5), T = 0.6, sample_dt 0.0003. Prediction (pre-registered in NOTEBOOK): same separation-vs-time trace as horizontal run 001 within tracker noise (smoothed RMSE 0.02 in separation units); separation at t = 0.6 about 2.0 (+/- 0.2).",
+  "setup": {
+    "particles": [
+      {"species": "A", "pos": [5.0, 4.5], "vel": [0.0, 0.0]},
+      {"species": "A", "pos": [5.0, 5.5], "vel": [0.0, 0.0]}
+    ],
+    "duration": 0.6,
+    "sample_dt": 0.0003
+  },
+  "instruments": ["tracker"]
+}

@@ -6,7 +6,10 @@
     "2026-11-26/r1/lab-vernier/008",
     "2026-11-26/r1/lab-vernier/009",
     "2026-11-26/r1/lab-vernier/010",
-    "2026-11-26/r1/lab-vernier/011"
+    "2026-11-26/r1/lab-vernier/011",
+    "2026-11-27/r1/lab-vernier/003",
+    "2026-11-27/r1/lab-vernier/004",
+    "2026-11-27/r1/lab-vernier/005"
   ],
-  "comment": "Scored with P-0035's model.py against four of my own A-A tracker runs at rest, T = 0.6, all inside the claim's domain (species A, N = 2, r0 in [2.0, 2.75], checked against each run's initial pair distance). Judged RMSE/L: 008 (r0 2.00, horizontal) 0.00503; 009 (r0 2.50) 0.00498; 010 (r0 2.25, diagonal) 0.00500; 011 (r0 2.00, diagonal) 0.00502. Bar at 3 x predicted_error = 0.018; all four are at the tracker noise floor. Verdict: replicated over r0 2.0 to 2.5. Scope note: the claim's upper edge (r0 2.75) is not covered by these ids. My runs at exactly 2.75 (horizontal, vertical, and at the 2.0 wall corner) are filed as 2026-11-27/r1/lab-vernier/003 to 005 and will be reported next round; this review should be read as covering 2.0 to 2.5 until then. The 2.0 wall clause is non-binding in practice: an attracting pair moves inward, so it does not approach a wall within T = 0.6. The paper's own 0.006 prediction is not contradicted."
+  "comment": "Scored with P-0035's model.py against seven of my own A-A tracker runs at rest, T = 0.6, all inside the claim's domain (species A, N = 2, r0 in [2.0, 2.75], checked on each run's initial pair distance). Judged RMSE/L: 008 (r0 2.00, horizontal) 0.00503; 009 (r0 2.50) 0.00498; 010 (r0 2.25, diagonal) 0.00500; 011 (r0 2.00, diagonal) 0.00502; 003 (r0 2.75, horizontal) 0.00497; 004 (r0 2.75, vertical) 0.00500; 005 (r0 2.75, at the 2.0 wall corner) 0.00502. Bar at 3 x predicted_error = 0.018; all seven are at the tracker noise floor. Verdict: replicated over the full stated r_range, 2.0 to 2.75. Scope: T <= 0.6 as claimed; nothing here tests T above 0.6 or contact. The 2.0 wall clause is non-binding in practice (an attracting pair moves inward). The paper's 0.006 prediction is not contradicted."
 }

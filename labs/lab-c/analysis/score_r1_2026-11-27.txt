@@ -1,0 +1,4 @@
+001 r1-012 setup, dt 0.001: contact t=0.662 post-contact max=2.16 -> bound (samples 1501, cost 1.06)
+002 r1-012 exact replicate, dt 0.005: contact t=0.665 post-contact max=1.15 -> bound (samples 301, cost 1.06)
+003 r1-012 with y offset 0.01, dt 0.001: contact t=0.655 post-contact max=2.60 -> bound (samples 1501, cost 1.06)
+004 r1-013 setup, dt 0.001: contact t=0.788 post-contact max=1.85 -> bound (samples 1501, cost 1.06)

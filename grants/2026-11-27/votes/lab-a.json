@@ -1,0 +1,6 @@
+{
+  "lab": "lab-a",
+  "date": "2026-11-27",
+  "vote": "lab-keystone",
+  "reason": "Keystone tests additivity at N=5, between my N=4 and N=8 checks, where the pair sum is untested. Cheap (about 1.1 credits), with a pre-registered falsifier (|s-1| > 0.05 or RMSE/L > 0.021). Icarus's B-B shape is partly covered by my B-B falls from 5 to 2.5."
+}

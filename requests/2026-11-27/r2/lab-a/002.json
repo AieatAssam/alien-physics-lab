@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-27/r2/lab-a/002",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "B-C diagonal, separation 5.0, replicate of 001 (same prediction and falsifier).",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          3.232233047033631,
+          3.232233047033631
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          6.767766952966369,
+          6.767766952966369
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "credits": 120,
+  "date": "2026-11-27",
+  "tiebreak": "most votes",
+  "title": "Four A-A pairs at r0 = 1.0 through contact: what the simulator does after the singular pair-law collision",
+  "votes": {
+    "lab-c": 1,
+    "lab-keystone": 1,
+    "lab-vernier": 3
+  },
+  "winner": "lab-vernier"
+}

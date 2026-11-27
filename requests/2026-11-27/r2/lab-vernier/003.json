@@ -1,0 +1,15 @@
+{
+  "request_id": "2026-11-27/r2/lab-vernier/003",
+  "lab": "lab-vernier",
+  "account": "research",
+  "purpose": "Long-time post-contact outcome at r0 1.0: A-A at rest, horizontal, (4.5,5.0) and (5.5,5.0), T = 2.0, sample_dt 0.001. Pre-registered (NOTEBOOK): bare-law pre-contact to t about 0.23; post-contact energy estimate from run 001 (E about -5 per unit reduced mass, bare potential) gives a bound orbit with turning separation 2.7 to 4.5 near t 1.0 to 1.5, then re-approach. Falsifier: maximum separation at or above 5, or separation still rising at t = 2.0 (ejection).",
+  "setup": {
+    "particles": [
+      {"species": "A", "pos": [4.5, 5.0], "vel": [0.0, 0.0]},
+      {"species": "A", "pos": [5.5, 5.0], "vel": [0.0, 0.0]}
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.001
+  },
+  "instruments": ["tracker"]
+}

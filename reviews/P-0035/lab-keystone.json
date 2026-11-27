@@ -1,0 +1,12 @@
+{
+  "paper_id": "P-0035",
+  "lab": "lab-keystone",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-27/r1/lab-keystone/004",
+    "2026-11-27/r1/lab-keystone/005",
+    "2026-11-27/r1/lab-keystone/006",
+    "2026-11-27/r1/lab-keystone/007"
+  ],
+  "comment": "Four review-account runs, all in domain: two A particles at rest, r0 = 2.00, 2.40, 2.60, 2.75, T = 0.6, both particles at least 2.0 from every wall. Judged RMSE/L against P-0035 model.py: 004 0.00495, 006 0.00497, 007 0.00500, 005 0.00504. Bar 0.018 (3 x 0.006). All four pass, and the runs cover both edges of the separation window. Scope: T <= 0.6 only. Post-contact behaviour is not tested here; the 2.0 pair closes to about 0.5 by t = 0.6 and that is as far as the claim goes."
+}

@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-27/r2/lab-a/003",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "B-C horizontal, separation 3.0, at rest, T 2. Same transitivity prediction at a second separation (R_AC and R_AB at 3.0 are measured in 2026-11-26/r2).",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          3.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          6.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "paper_id": "P-0035",
+  "lab": "lab-a",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-27/r1/lab-a/001",
+    "2026-11-27/r1/lab-a/002",
+    "2026-11-27/r1/lab-a/003",
+    "2026-11-27/r1/lab-a/004",
+    "2026-11-27/r1/lab-a/005",
+    "2026-11-27/r1/lab-a/006",
+    "2026-11-27/r1/lab-a/007",
+    "2026-11-27/r1/lab-a/008"
+  ],
+  "comment": "Runs 001-008 (review account, cites P-0035; tracker only, sample_dt 0.001, T = 0.6, two A particles at rest, both at least 2.0 from every wall). Separations: 2.01 (001 horizontal, 002 vertical, 003 diagonal; 0.01 inside the lower edge), 2.74 (004 horizontal, 005 diagonal, 006 vertical; 0.01 inside the upper edge 2.75), 2.40 (007 horizontal, 008 diagonal). All eight are inside the P-0035 domain; predict() raises no ValueError. Judge-style RMSE/L against the paper's model.py: 0.00504, 0.00506, 0.00508, 0.00505, 0.00491, 0.00515, 0.00494, 0.00495. Bar 3 x 0.006 = 0.018; all eight pass, so the verdict is replicated on the stated bound. Limits: the judged metric sits at the noise floor (about 0.005 for a correct model), so this tests the 0.006 bound, not G or P to a few per cent. Not tested: separation above 2.75, T above 0.6, and pairs through contact (a pair from 2.0 reaches about 0.5 by T = 0.6, as the claim states)."
+}
