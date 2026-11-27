@@ -66,9 +66,9 @@
     },
     "2026-11-27": {
       "grant_allowance": 120.0,
-      "grant_used": 0.0,
+      "grant_used": 1.32,
       "research_allowance": 40,
-      "research_used": 5.16,
+      "research_used": 14.58,
       "review_allowance": 15,
       "review_used": 3.06
     }
