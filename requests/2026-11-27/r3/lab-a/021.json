@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-27/r3/lab-a/021",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "P-0036 out-of-sample: A-B pair at rest, separation 4.0, horizontal, T 2 (in domain: A-B, r0 in [3,5]).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          7.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

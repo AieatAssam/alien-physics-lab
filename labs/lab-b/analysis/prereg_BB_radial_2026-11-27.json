@@ -1,0 +1,22 @@
+{
+  "lab": "lab-b",
+  "date": "2026-11-27",
+  "round": 3,
+  "status": "pre-registered before filing the requests (research account, not the grant)",
+  "why": "The B-B grant went to lab-vernier, so the grant design (r0 3.0, T 2.0, one run) is not run. Its window was inside the contact regime (notebook design concern). Replaced by a long radial fall with the H20 geometry, which spans r 9 to about 2 and gives leverage on the shape of S(r).",
+  "requests": {
+    "001": "B-B radial fall, horizontal, A-style geometry: B at (0.5, 5.0) and (9.5, 5.0), at rest, T 12, dt 0.01, tracker.",
+    "002": "A-A control, identical geometry to 001 (A at both ends). Same-geometry comparison.",
+    "003": "B-B vertical replicate: B at (5.0, 0.5) and (5.0, 9.5), at rest, T 12, dt 0.01, tracker.",
+    "004": "A-B vertical replicate of H20 (2026-11-25/r3/lab-b/001): A at (5.0, 0.5), B at (5.0, 9.5), at rest, T 12, dt 0.01, tracker."
+  },
+  "analysis": {
+    "window": "Tracker separation > 2.0 at every sample used (pre-contact). Samples with separation <= 2.0 are dropped before fitting.",
+    "model": "Relative coordinate obeys r'' = -S(r)/r^2.5 with S piecewise constant in bands [8,9.5), [6,8), [4,6), [2,4). Power P fixed at 2.5 for the primary comparison. A free-P fit is secondary and not pre-registered.",
+    "ratio_check": "Momentum conservation: slope of x_A on x_B within each band is -m_B/m_A. Errors-in-variables correction with sigma 0.05 on x_B.",
+    "H23_shared_law": "Falsified if the band-wise ratio S_BB(r)/S_AA(r), comparing 001 with 002 on the same geometry, differs between any two bands (3 to 4 vs 8 to 9.5) by more than 3 combined standard errors. Not falsified if it is constant within errors. Power note: the ratio's error budget is set by the data, so a null result means consistent, not precise.",
+    "H20_orientation": "Falsified if any band S_vertical(r) differs from S_horizontal(r) (H20 run 2026-11-25/r3/lab-b/001 vs 004) by more than 3 combined standard errors.",
+    "ratio_criterion": "H20 unchanged: |K_B/K_A - 1.41| > 0.1 in any band falsifies the fixed-ratio claim. The K_A(9) criterion (11 to 13) is withdrawn: it was copied from the A-A table and does not apply to A-B."
+  },
+  "budget": "4 requests, each cost 1 + 0.02 * 2 * 12 = 1.48 on account research. Total 5.92 of 40."
+}

@@ -1,0 +1,21 @@
+{
+  "request_id": "2026-11-27/r3/lab-vernier/001",
+  "lab": "lab-vernier",
+  "account": "grant",
+  "purpose": "Tonight's grant, as proposed: four A-A pairs at rest, r0 = 1.0, through contact. Measures post-contact behaviour (pass-through, bounce, sticking) for four pairs in one run, and whether the outcome differs between pairs in the same run, to T = 2.0. Pre-contact is checked against the unclamped P-0026 law.",
+  "setup": {
+    "particles": [
+      {"species": "A", "pos": [2.0, 2.5], "vel": [0.0, 0.0]},
+      {"species": "A", "pos": [3.0, 2.5], "vel": [0.0, 0.0]},
+      {"species": "A", "pos": [7.0, 2.5], "vel": [0.0, 0.0]},
+      {"species": "A", "pos": [8.0, 2.5], "vel": [0.0, 0.0]},
+      {"species": "A", "pos": [2.0, 7.5], "vel": [0.0, 0.0]},
+      {"species": "A", "pos": [3.0, 7.5], "vel": [0.0, 0.0]},
+      {"species": "A", "pos": [7.0, 7.5], "vel": [0.0, 0.0]},
+      {"species": "A", "pos": [8.0, 7.5], "vel": [0.0, 0.0]}
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.001
+  },
+  "instruments": ["tracker"]
+}

@@ -1,0 +1,19 @@
+== r1-012 setup (dt 0.005) ==
+2026-11-26/r1/012 (anchor, ejected)        contact=0.66 post_max=8.52 -> ejected (n=301, cost=1.06, remaining=38.94)
+2026-11-27/r2/001 (replicate)              contact=0.725 post_max=1.51 -> bound (n=301, cost=1.06, remaining=34.7)
+2026-11-27/r2/002 (replicate)              contact=0.655 post_max=1.12 -> bound (n=301, cost=1.06, remaining=33.64)
+2026-11-27/r2/003 (replicate)              contact=0.66 post_max=1.17 -> bound (n=301, cost=1.06, remaining=32.58)
+2026-11-27/r2/004 (replicate)              contact=0.66 post_max=1.28 -> bound (n=301, cost=1.06, remaining=31.52)
+2026-11-27/r2/005 (replicate)              contact=0.665 post_max=1.11 -> bound (n=301, cost=1.06, remaining=30.46)
+2026-11-27/r2/006 (replicate)              contact=0.66 post_max=1.14 -> bound (n=301, cost=1.06, remaining=29.4)
+2026-11-27/r2/007 (replicate)              contact=0.66 post_max=1.12 -> bound (n=301, cost=1.06, remaining=28.34)
+2026-11-27/r2/008 (replicate)              contact=0.67 post_max=1.19 -> bound (n=301, cost=1.06, remaining=27.28)
+r1-012 replicates: ejected=0, bound=8, other=0
+
+== r1-013 setup (dt 0.005) ==
+2026-11-26/r1/013 (anchor, ejected)        contact=0.78 post_max=8.14 -> ejected (n=301, cost=1.06, remaining=37.88)
+2026-11-27/r2/009 (replicate)              contact=0.79 post_max=5.98 -> ejected (n=301, cost=1.06, remaining=26.22)
+2026-11-27/r2/010 (replicate)              contact=0.795 post_max=8.21 -> ejected (n=301, cost=1.06, remaining=25.16)
+2026-11-27/r2/011 (replicate)              contact=0.8 post_max=8.15 -> ejected (n=301, cost=1.06, remaining=24.1)
+2026-11-27/r2/012 (replicate)              contact=0.795 post_max=8.20 -> ejected (n=301, cost=1.06, remaining=23.04)
+r1-013 replicates: ejected=4, bound=0, other=0

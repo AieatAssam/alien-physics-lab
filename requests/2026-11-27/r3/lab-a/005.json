@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-27/r3/lab-a/005",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "Long C-C fall from 9, horizontal: same-species C reference. Factorisation with q_C from the A-C fit predicts g_CC = 0.25; the older C-C scale (per-particle 0.70 x mass 0.42) implies 0.29.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          0.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          9.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 10.0,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

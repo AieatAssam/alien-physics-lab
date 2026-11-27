@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-27/r3/lab-a/007",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "A-C repulsive pair from separation 6, diagonal replicate.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          0.7573593128807152,
+          0.7573593128807152
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          9.242640687119284,
+          9.242640687119284
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 3.0,
+    "sample_dt": 0.0015
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

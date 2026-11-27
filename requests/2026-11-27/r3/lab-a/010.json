@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-27/r3/lab-a/010",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "A-C repulsive pair from 6 with the roles reversed (C on the left): sign and direction symmetry check.",
+  "setup": {
+    "particles": [
+      {
+        "species": "C",
+        "pos": [
+          2.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 3.0,
+    "sample_dt": 0.0015
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

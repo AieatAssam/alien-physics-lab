@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-27/r3/lab-a/006",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "A-C repulsive pair from separation 6, horizontal, T 3. Negative g_AC predicted (-0.54); momentum ratio at 6.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          8.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 3.0,
+    "sample_dt": 0.0015
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

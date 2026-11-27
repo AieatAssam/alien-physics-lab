@@ -1,0 +1,40 @@
+{
+  "paper_id": "P-0036",
+  "lab": "lab-a",
+  "title": "Mixed-species pairs at rest, separation 3 to 5: a charge-mass pair law (A, B, C) predicts positions to 0.007",
+  "claims": [
+    {
+      "claim_id": "P-0036-c1",
+      "statement": "Two particles at rest of different species (A-B, A-C or B-C), initial separation in [3, 5], both at least 2.0 from every wall, observed for at most T = 2: each pair exerts equal and opposite forces q_i q_j K(r)/r^2.5 along the line of centres, with q_A = 1, q_B = 0.5, q_C = -0.5, K(r) the P-0029 table held constant below r = 5. Each particle accelerates with its force divided by its mass, m_A = 1, m_B = 0.72, m_C = 0.42. Measured tracker positions are predicted to a judged RMSE of 0.007 of the chamber side. Not claimed: same-species pairs (A-A, B-B, C-C), separation outside [3, 5], T above 2, contact, three or more particles, initial velocities.",
+      "domain": {
+        "species": [
+          "A",
+          "B",
+          "C"
+        ],
+        "r_range": [
+          3.0,
+          5.0
+        ],
+        "max_particles": 2
+      },
+      "predicted_error": 0.007,
+      "evidence": [
+        "2026-11-27/r1/lab-a/009",
+        "2026-11-27/r1/lab-a/010",
+        "2026-11-27/r1/lab-a/011",
+        "2026-11-27/r1/lab-a/012",
+        "2026-11-27/r2/lab-a/001",
+        "2026-11-27/r2/lab-a/002",
+        "2026-11-27/r2/lab-a/003",
+        "2026-11-26/r2/lab-a/001",
+        "2026-11-26/r2/lab-a/002",
+        "2026-11-26/r2/lab-a/003"
+      ]
+    }
+  ],
+  "cites": [
+    "P-0029"
+  ],
+  "supersedes": []
+}

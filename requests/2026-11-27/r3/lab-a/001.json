@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-27/r3/lab-a/001",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "Long A-B fall from 9, horizontal, at rest. Pre-contact momentum ratio and g_AB across 9 to 2.5 (mass model, factorisation).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          0.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          9.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 10.0,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

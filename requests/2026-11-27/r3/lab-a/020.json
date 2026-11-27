@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-27/r3/lab-a/020",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "Close-range B-C repulsive pair at r0 = 2.0, diagonal replicate of the horizontal run.",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          3.585786437626905,
+          3.585786437626905
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          6.414213562373095,
+          6.414213562373095
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.5,
+    "sample_dt": 0.0025
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

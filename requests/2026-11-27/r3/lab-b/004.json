@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-27/r3/lab-b/004",
+  "lab": "lab-b",
+  "account": "research",
+  "purpose": "H20 orientation check: A-B radial fall at rest, vertical (x = 5), separation 9.0, A at bottom. Replicate of 2026-11-25/r3/lab-b/001 in the other orientation. Tracker only.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          5.0,
+          0.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          5.0,
+          9.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 12.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

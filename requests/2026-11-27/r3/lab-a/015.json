@@ -1,0 +1,48 @@
+{
+  "request_id": "2026-11-27/r3/lab-a/015",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "Three-body triangle, side 3.0, species A, B, C at vertices (A at lower left). Weighted sum m_i dX_i = 0 check.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.5,
+          3.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          6.5,
+          3.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.0,
+          6.098076211353316
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker"
+  ]
+}
