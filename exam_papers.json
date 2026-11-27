@@ -649,5 +649,24 @@
     "order": 34,
     "paper_id": "P-0034",
     "predicted_error": 0.007
+  },
+  {
+    "claims": [
+      {
+        "domain": {
+          "max_particles": 2,
+          "r_range": [
+            2.0,
+            2.75
+          ],
+          "species": [
+            "A"
+          ]
+        }
+      }
+    ],
+    "order": 35,
+    "paper_id": "P-0035",
+    "predicted_error": 0.006
   }
 ]
