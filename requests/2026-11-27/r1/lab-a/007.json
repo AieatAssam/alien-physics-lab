@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-27/r1/lab-a/007",
+  "lab": "lab-a",
+  "account": "review",
+  "purpose": "P-0035 interior r0 2.40, horizontal, T 0.6.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.8,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.2,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.6,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0035"
+}

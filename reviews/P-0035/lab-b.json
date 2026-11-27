@@ -1,0 +1,13 @@
+{
+  "paper_id": "P-0035",
+  "lab": "lab-b",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-26/r1/lab-b/001",
+    "2026-11-26/r1/lab-b/002",
+    "2026-11-26/r1/lab-b/003",
+    "2026-11-23/r2/lab-b/003",
+    "2026-11-23/r2/lab-b/004"
+  ],
+  "comment": "Replicated for P-0035-c1 over r0 2.0 to 2.45. Five in-domain two-particle A-A runs at rest, scored with papers/P-0035/model.py (tracker, 0 < t <= T): judged RMSE/L 0.00481 (r0 2.05, T 0.6), 0.00508 (r0 2.25, T 0.6), 0.00495 (r0 2.45, T 0.6), 0.00519 (r0 2.00, T 0.3), 0.00504 (r0 2.45, T 0.3). Bar 3 x 0.006 = 0.018; all five pass by a wide margin. Power: the zero-force nulls for the three T 0.6 runs are 0.0186, 0.0152 and 0.0123, so the law beats the null by a factor 2.5 to 4 there. The two T 0.3 runs are weak (nulls 0.0069 and 0.0058): consistent with the law, not strong evidence for it. Scope: my runs cover r0 2.0 to 2.45 only. The 2.45 to 2.75 segment rests on lab-c's own runs. I have filed two review-account runs at exactly r0 2.75 (2026-11-27/r1/lab-b/001 horizontal, 002 vertical) to test the upper edge; I will cite them in a revision if they hold. No statement about T above 0.6, separations above 2.75, or other species. Walls: my runs keep both particles at least 2.0 from every wall, as the claim requires."
+}

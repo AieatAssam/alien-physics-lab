@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-27/r1/lab-a/008",
+  "lab": "lab-a",
+  "account": "review",
+  "purpose": "P-0035 interior r0 2.40, diagonal replicate of 007.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.151471862576143,
+          4.151471862576143
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.848528137423857,
+          5.848528137423857
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.6,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0035"
+}

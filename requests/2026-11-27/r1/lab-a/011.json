@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-27/r1/lab-a/011",
+  "lab": "lab-a",
+  "account": "research",
+  "purpose": "A-B horizontal, separation 5.0, at rest, T 2. Same question for A-B (R_AB = 0.72 at 3.0).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          7.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

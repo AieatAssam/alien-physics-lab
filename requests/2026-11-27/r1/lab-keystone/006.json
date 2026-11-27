@@ -1,0 +1,38 @@
+{
+ "request_id": "2026-11-27/r1/lab-keystone/006",
+ "lab": "lab-keystone",
+ "account": "review",
+ "purpose": "Review of P-0035. Interior r0 = 2.40, horizontal, off-centre at y = 3.0, x = 4.5 and 6.9. Tracker.",
+ "cites_paper": "P-0035",
+ "setup": {
+  "particles": [
+   {
+    "species": "A",
+    "pos": [
+     4.5,
+     3.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     6.9,
+     3.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 0.6,
+  "sample_dt": 0.001
+ },
+ "instruments": [
+  "tracker"
+ ]
+}

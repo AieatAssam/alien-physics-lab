@@ -1,0 +1,38 @@
+{
+ "request_id": "2026-11-27/r1/lab-keystone/004",
+ "lab": "lab-keystone",
+ "account": "review",
+ "purpose": "Review of P-0035 (A-A pair at rest, separation 2.0 to 2.75, T <= 0.6). Lower edge r0 = 2.00, vertical, x = 5.0, y = 4.0 and 6.0 (both >= 2.0 from walls). Tracker.",
+ "cites_paper": "P-0035",
+ "setup": {
+  "particles": [
+   {
+    "species": "A",
+    "pos": [
+     5.0,
+     4.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     5.0,
+     6.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 0.6,
+  "sample_dt": 0.001
+ },
+ "instruments": [
+  "tracker"
+ ]
+}

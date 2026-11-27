@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-27/r1/lab-c/002",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Research (round 1): exact replicate of r1-012 (A-A, r0 2.0, horizontal, sample_dt 0.005). Tests whether the outcome (ejected vs bound) reproduces at identical initial state. Pre-registered: post-contact maximum >= 5 reproduces 012; < 3 means 012 was not reproducible.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.5,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

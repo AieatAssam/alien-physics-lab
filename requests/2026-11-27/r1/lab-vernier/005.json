@@ -1,0 +1,16 @@
+{
+  "request_id": "2026-11-27/r1/lab-vernier/005",
+  "lab": "lab-vernier",
+  "account": "review",
+  "cites_paper": "P-0035",
+  "purpose": "Review of P-0035 at the wall-clearance corner: A-A pair at rest, r0 = 2.75 exactly, both particles exactly 2.0 from the left and bottom walls ((2.0,2.0) and (4.75,2.0)), T = 0.6. Tests the stated 'at least 2.0 from every wall' clause at its boundary.",
+  "setup": {
+    "particles": [
+      {"species": "A", "pos": [2.0, 2.0], "vel": [0.0, 0.0]},
+      {"species": "A", "pos": [4.75, 2.0], "vel": [0.0, 0.0]}
+    ],
+    "duration": 0.6,
+    "sample_dt": 0.0003
+  },
+  "instruments": ["tracker"]
+}

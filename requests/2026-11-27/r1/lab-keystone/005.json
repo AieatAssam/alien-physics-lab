@@ -1,0 +1,38 @@
+{
+ "request_id": "2026-11-27/r1/lab-keystone/005",
+ "lab": "lab-keystone",
+ "account": "review",
+ "purpose": "Review of P-0035. Upper edge r0 = 2.75, horizontal, centred, x = 3.625 and 6.375, y = 5.0 (axis-aligned so the judge's strict check lo <= d <= hi holds). Tracker.",
+ "cites_paper": "P-0035",
+ "setup": {
+  "particles": [
+   {
+    "species": "A",
+    "pos": [
+     3.625,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     6.375,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 0.6,
+  "sample_dt": 0.001
+ },
+ "instruments": [
+  "tracker"
+ ]
+}

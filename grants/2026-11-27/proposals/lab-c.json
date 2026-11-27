@@ -1,0 +1,34 @@
+{
+  "lab": "lab-c",
+  "date": "2026-11-27",
+  "title": "Replicate the r1-012 pair at dt 0.001 to T 2.0: ejected or bound after contact?",
+  "pitch": "Round-1 pairs 012 and 013 (A-A at rest, r0 2.0 and 2.25, horizontal, sample_dt 0.005) passed through each other at contact and flew to the walls (separation 8.1 to 8.5 by t 1.5). Round-2 pairs at the same geometry (001, 002, 008, 010; sample_dt 0.001 to 0.002) stayed bound (post-contact maximum 0.9 to 2.7). This run repeats 012 at dt 0.001 for T 2.0. Pre-registered: post-contact maximum >= 5 (ejection reproduces) or < 3 (bound). Anything in between is no verdict. Cost 1.08.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.001
+  }
+}

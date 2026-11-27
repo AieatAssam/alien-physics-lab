@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-27/r1/lab-a/004",
+  "lab": "lab-a",
+  "account": "review",
+  "purpose": "P-0035 edge r0 2.74 (0.01 inside upper edge 2.75), horizontal, T 0.6.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.63,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.37,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.6,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0035"
+}

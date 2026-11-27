@@ -1,0 +1,37 @@
+{
+ "request_id": "2026-11-27/r1/lab-keystone/001",
+ "lab": "lab-keystone",
+ "account": "research",
+ "purpose": "Research: C-C pair at rest, separation 2.5, horizontal, centred, T=0.6. Second C node at 2.5 for the P-0014 supersession question (first run 2026-11-26/r1/lab-keystone/014 was vertical, 1.021 +/- 0.012). Tracker.",
+ "setup": {
+  "particles": [
+   {
+    "species": "C",
+    "pos": [
+     3.75,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "C",
+    "pos": [
+     6.25,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 0.6,
+  "sample_dt": 0.001
+ },
+ "instruments": [
+  "tracker"
+ ]
+}

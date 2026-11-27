@@ -1,0 +1,67 @@
+{
+ "lab": "lab-keystone",
+ "date": "2026-11-27",
+ "title": "Five A at rest in a pentagon (side 5.5): does the pair sum hold at N = 5?",
+ "pitch": "Additivity at N >= 5 is untested; the N = 3, 4 table holds at 0.3 percent. Five A at rest in a regular pentagon, side 5.5, centre (5, 5), T = 1.0, tracker. Every pair stays inside the P-0029 table (5 to 9) over the run (min 5.27, max 8.90), so the prediction is an interpolation. Pre-registered: additive pair sum with the P-0029 K table gives positions; a single scale s fits with s = 1. Falsifier: |s - 1| > 0.05 or judged RMSE/L above 0.021.",
+ "setup": {
+  "particles": [
+   {
+    "species": "A",
+    "pos": [
+     5.0,
+     9.678579
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     0.550407,
+     6.445761
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     2.25,
+     1.21495
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     7.75,
+     1.21495
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     9.449593,
+     6.445761
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 1.0,
+  "sample_dt": 0.001
+ }
+}

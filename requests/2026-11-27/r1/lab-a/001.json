@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-27/r1/lab-a/001",
+  "lab": "lab-a",
+  "account": "review",
+  "purpose": "P-0035 edge r0 2.01 (0.01 inside lower edge), horizontal, T 0.6. Tests the close end of the claim.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.995,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.005,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.6,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0035"
+}

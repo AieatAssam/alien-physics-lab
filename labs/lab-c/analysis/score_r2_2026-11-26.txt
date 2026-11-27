@@ -1,0 +1,48 @@
+== contact and post-contact (tracker, pair 0-1)
+run  species  r0     T     dmin    t@dmin  contact_t  law_t   post_max  d_end
+001  A-A     2.0000 1.50  0.0214  0.667   0.657      0.659   2.675     2.515
+002  A-A     2.2500 1.50  0.0338  0.796   0.795      0.792   1.811     1.452
+003  C-C     2.0000 1.50  0.0402  1.314   0.743      0.659   0.879     0.820
+004  C-C     2.0000 1.50  0.0055  0.745   0.741      0.659   8.328     8.328
+005  C-C     2.5000 1.50  0.0555  1.073   1.063      0.932   3.179     2.932
+006  C-C     2.2500 1.50  0.0158  0.902   0.891      0.792   3.748     3.581
+007  A-A     1.7500 1.50  0.0176  0.542   0.529      0.535   3.988     3.776
+008  A-A     1.5000 1.50  0.0222  1.422   0.429      0.421   0.948     0.640
+009  A-A     2.5000 1.50  0.0350  0.927   0.916      0.932   1.223     0.684
+010  A-A     1.7500 2.00  0.0097  1.872   0.534      0.535   1.330     0.333
+011  A-A     2.0000 0.60  0.6003  0.597   none       0.659   none      0.701
+012  A-A     2.7500 0.60  2.0377  0.600   none       -       none      2.038
+013  A-C     2.5000 1.00  2.3597  0.015   none       -       none      3.744
+014  A-B     3.0000 1.00  2.1660  0.995   none       -       none      2.311
+
+== round-1 comparison runs (same analysis; 2026-11-26/r1/lab-c)
+r1 012  A-A r0 2.0000 T 1.5  contact 0.660  post_max 8.521  d_end 8.521  (1.5 s window)
+r1 013  A-A r0 2.2500 T 1.5  contact 0.780  post_max 8.138  d_end 8.102  (1.5 s window)
+r1 016  C-C r0 2.5000 T 1.5  contact 1.065  post_max 0.889  d_end 0.290  (1.5 s window)
+
+== pre-registered rules
+contact timing 001 (A-A r0 2.000): obs 0.657 vs law 0.659 diff -0.002 -> consistent
+contact timing 002 (A-A r0 2.250): obs 0.795 vs law 0.792 diff +0.003 -> consistent
+contact timing 007 (A-A r0 1.750): obs 0.529 vs law 0.535 diff -0.006 -> consistent
+contact timing 008 (A-A r0 1.500): obs 0.429 vs law 0.421 diff +0.008 -> consistent
+contact timing 009 (A-A r0 2.500): obs 0.916 vs law 0.932 diff -0.016 -> consistent
+contact timing 010 (A-A r0 1.750): obs 0.534 vs law 0.535 diff -0.001 -> consistent
+post-contact A-A 001: max after contact 2.675 -> FALSIFIED (<3)
+post-contact A-A 002: max after contact 1.811 -> FALSIFIED (<3)
+post-contact A-A 007: max after contact 3.988 -> inconclusive (3-5)
+post-contact A-A 008: max after contact 0.948 -> FALSIFIED (<3)
+post-contact A-A 010: max after contact 1.33 -> FALSIFIED (<3)
+post-contact C-C 003: max after contact 0.879 -> consistent (<=1.0)
+post-contact C-C 004: max after contact 8.328 -> FALSIFIED (>2.0)
+post-contact C-C 005: max after contact 3.179 -> FALSIFIED (>2.0)
+post-contact C-C 006: max after contact 3.748 -> FALSIFIED (>2.0)
+C-C vs A-A 003 (r0 2.000): C contact 0.743 vs A-A law 0.659 -> consistent
+C-C vs A-A 004 (r0 2.000): C contact 0.741 vs A-A law 0.659 -> consistent
+C-C vs A-A 005 (r0 2.500): C contact 1.063 vs A-A law 0.932 -> consistent
+C-C vs A-A 006 (r0 2.250): C contact 0.891 vs A-A law 0.792 -> consistent
+
+== model comparisons (RMSE/L, L = 10)
+P-0035 on 011 (A-A r0 2.0000, T 0.6): RMSE/L 0.00509 -> consistent (<=0.007)
+P-0035 on 012 (A-A r0 2.7500, T 0.6): RMSE/L 0.00498 -> consistent (<=0.007)
+P-0030 on 013 (A-C r0 2.5000): RMSE/L 0.00508 -> consistent (<=0.008)
+P-0034 A-A law (species relaxed) on 014 (A-B r0 3.0000): RMSE/L 0.01081 -> inconclusive

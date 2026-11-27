@@ -1,0 +1,100 @@
+{
+  "lab": "lab-vernier",
+  "date": "2026-11-27",
+  "title": "Four A-A pairs at r0 = 1.0 through contact: what the simulator does after the singular pair-law collision",
+  "pitch": "The published A-A pair law is singular at separation 0 and has no contact model. Released at rest from r0 = 1.0, a pair reaches separation 0.5 at t = 0.19 and collapses near t = 0.23 (pre-registered). Four A-A pairs give four replicate contacts in one run. Pre-contact falsifier: the unclamped P-0026 law predicts all four pairs, up to the first tracker separation below 0.5, to RMSE/L 0.02 or better. Post-contact behaviour is measured, not predicted: pass-through, bounce, or sticking. Cost 1.32 credits.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.0,
+          2.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          3.0,
+          2.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          7.0,
+          2.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.0,
+          2.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          2.0,
+          7.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          3.0,
+          7.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          7.0,
+          7.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.0,
+          7.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.001
+  }
+}

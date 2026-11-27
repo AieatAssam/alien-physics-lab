@@ -1,0 +1,16 @@
+{
+  "request_id": "2026-11-27/r1/lab-b/001",
+  "lab": "lab-b",
+  "account": "review",
+  "purpose": "P-0035 upper edge: two A at rest, r0 exactly 2.75 horizontal, centred, T 0.6. Tests the no-clamp pair law at the stated domain edge; reviewer-run, lab-b.",
+  "cites_paper": "P-0035",
+  "setup": {
+    "particles": [
+      {"species": "A", "pos": [3.625, 5.0], "vel": [0.0, 0.0]},
+      {"species": "A", "pos": [6.375, 5.0], "vel": [0.0, 0.0]}
+    ],
+    "duration": 0.6,
+    "sample_dt": 0.005
+  },
+  "instruments": ["tracker"]
+}

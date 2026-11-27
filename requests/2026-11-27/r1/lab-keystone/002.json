@@ -1,0 +1,37 @@
+{
+ "request_id": "2026-11-27/r1/lab-keystone/002",
+ "lab": "lab-keystone",
+ "account": "research",
+ "purpose": "Research: C-C pair at rest, separation 2.5, horizontal, off-centre at y=3.0, T=0.6. Third-layout check of the C node at 2.5 (independent position from 001). Tracker.",
+ "setup": {
+  "particles": [
+   {
+    "species": "C",
+    "pos": [
+     4.5,
+     3.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "C",
+    "pos": [
+     7.0,
+     3.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 0.6,
+  "sample_dt": 0.001
+ },
+ "instruments": [
+  "tracker"
+ ]
+}

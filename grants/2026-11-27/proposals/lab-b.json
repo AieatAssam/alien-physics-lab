@@ -1,0 +1,14 @@
+{
+  "lab": "lab-b",
+  "date": "2026-11-27",
+  "title": "B-B pair at rest, r0 3.0: does species B obey the A-A pair law's exponent?",
+  "pitch": "Species B has no pair measurement of its own. Every B law so far is A-B or B-A (P-0005, P-0006, P-0025). H13 (one universal shape times a species factor) is rejected, so a B-B pair could carry its own exponent. One run: two B at rest, horizontal, r0 3.0, T 2.0, tracker only. Pre-registered falsifier: fit a single constant K to K/r^P with P fixed at 2.099 (the A-A exponent) on this run. If the judged RMSE/L of that one-constant fit exceeds 0.021 (bar 3 x 0.007), the shared-exponent hypothesis is falsified for B-B. A pass shows only that one K fits this range.",
+  "setup": {
+    "particles": [
+      {"species": "B", "pos": [3.5, 5.0], "vel": [0.0, 0.0]},
+      {"species": "B", "pos": [6.5, 5.0], "vel": [0.0, 0.0]}
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.005
+  }
+}

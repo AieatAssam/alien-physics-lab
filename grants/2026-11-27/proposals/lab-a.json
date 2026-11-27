@@ -1,0 +1,188 @@
+{
+  "lab": "lab-a",
+  "date": "2026-11-27",
+  "title": "16 A at rest on a 4x4 lattice, T=30: long-time test of pairwise additivity",
+  "pitch": "Long-time test of the A-A pair law summed over a crowd. 16 A particles at rest on a 4x4 lattice, spacing 2.5 (every pair at least 2.5 apart), T=30, sampled every 0.02. Predicted before the run by summing the P-0026 pair law pairwise (no clamp). Rivals: the clamped table summed pairwise, and a free-exponent fit. P-0026 only tests T<=0.3 at N=16; this asks whether the pairwise sum still predicts positions after 100 times the duration. Cost about 10 credits. Whichever rival holds separates the close-range law from the crowd law.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          1.25,
+          1.25
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          1.25,
+          3.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          1.25,
+          6.25
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          1.25,
+          8.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          3.75,
+          1.25
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          3.75,
+          3.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          3.75,
+          6.25
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          3.75,
+          8.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.25,
+          1.25
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.25,
+          3.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.25,
+          6.25
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.25,
+          8.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.75,
+          1.25
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.75,
+          3.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.75,
+          6.25
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.75,
+          8.75
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 30.0,
+    "sample_dt": 0.02
+  }
+}

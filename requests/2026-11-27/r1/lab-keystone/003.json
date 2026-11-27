@@ -1,0 +1,48 @@
+{
+ "request_id": "2026-11-27/r1/lab-keystone/003",
+ "lab": "lab-keystone",
+ "account": "research",
+ "purpose": "Research: A equilateral triangle, side 7.0, T=2.0. Repeat of the side-7.09 layout in 2026-11-25/r2 run 003 (1.6 percent low, equilateral, pairs at the top of the P-0031 window). Tests whether the offset repeats at a second side-7 layout. Tracker.",
+ "setup": {
+  "particles": [
+   {
+    "species": "A",
+    "pos": [
+     1.5,
+     2.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     8.5,
+     2.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     5.0,
+     8.06217782649107
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 2.0,
+  "sample_dt": 0.001
+ },
+ "instruments": [
+  "tracker"
+ ]
+}
