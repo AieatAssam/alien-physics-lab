@@ -71,6 +71,14 @@
       "research_used": 14.58,
       "review_allowance": 15,
       "review_used": 3.06
+    },
+    "2026-11-28": {
+      "grant_allowance": 0.0,
+      "grant_used": 0.0,
+      "research_allowance": 40,
+      "research_used": 4.08,
+      "review_allowance": 15,
+      "review_used": 8.6
     }
   },
   "lab": "lab-vernier"
