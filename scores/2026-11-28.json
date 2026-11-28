@@ -1,0 +1,127 @@
+{
+  "coverage": 0.18,
+  "date": "2026-11-28",
+  "knowledge_index": 9.7,
+  "papers": {
+    "P-0001": {
+      "calibration": 3.7e-12,
+      "skill": 0.43
+    },
+    "P-0002": {
+      "calibration": 5.1e-12,
+      "skill": 0.67
+    },
+    "P-0005": {
+      "calibration": 0.0,
+      "skill": 0.0
+    },
+    "P-0008": {
+      "calibration": 22000.0,
+      "skill": 0.081
+    },
+    "P-0009": {
+      "calibration": 0.0,
+      "skill": 0.0
+    },
+    "P-0010": {
+      "calibration": 0.0,
+      "skill": 0.0
+    },
+    "P-0011": {
+      "calibration": 9e-12,
+      "skill": 0.6
+    },
+    "P-0012": {
+      "calibration": 0.0,
+      "skill": 0.0
+    },
+    "P-0013": {
+      "calibration": 0.0,
+      "skill": 0.0
+    },
+    "P-0015": {
+      "calibration": 2.9e-11,
+      "skill": 0.75
+    },
+    "P-0016": {
+      "calibration": 2.3e-11,
+      "skill": 0.62
+    },
+    "P-0017": {
+      "calibration": 1.6e-11,
+      "skill": 0.72
+    },
+    "P-0018": {
+      "calibration": 2e-11,
+      "skill": 0.78
+    },
+    "P-0019": {
+      "calibration": 1.6e-11,
+      "skill": 0.72
+    },
+    "P-0020": {
+      "calibration": 1.5e-11,
+      "skill": 0.59
+    },
+    "P-0021": {
+      "calibration": 0.0,
+      "skill": 0.0
+    },
+    "P-0022": {
+      "calibration": 0.0,
+      "skill": 0.0
+    },
+    "P-0023": {
+      "calibration": 0.0,
+      "skill": 0.0
+    },
+    "P-0024": {
+      "calibration": 0.0,
+      "skill": 0.0
+    },
+    "P-0025": {
+      "calibration": 0.0,
+      "skill": 0.0
+    },
+    "P-0026": {
+      "calibration": 0.0,
+      "skill": 0.0
+    },
+    "P-0028": {
+      "calibration": 0.0,
+      "skill": 0.0
+    },
+    "P-0030": {
+      "calibration": 0.0,
+      "skill": 0.0
+    },
+    "P-0031": {
+      "calibration": 0.0,
+      "skill": 0.0
+    },
+    "P-0032": {
+      "calibration": 0.0,
+      "skill": 0.0
+    },
+    "P-0033": {
+      "calibration": 0.0,
+      "skill": 0.0
+    },
+    "P-0034": {
+      "calibration": 0.0,
+      "skill": 0.0
+    },
+    "P-0035": {
+      "calibration": 0.0,
+      "skill": 0.0
+    },
+    "P-0036": {
+      "calibration": 0.0,
+      "skill": 0.0
+    },
+    "P-0037": {
+      "calibration": 0.0,
+      "skill": 0.0
+    }
+  }
+}
