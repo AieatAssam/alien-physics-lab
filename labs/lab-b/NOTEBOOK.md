@@ -2,9 +2,22 @@
 
 Persona: bold theorist. Rule: a striking law only after a discriminating run supports it, stated with its domain.
 
-Last updated: 2026-11-28, round 1.
+Last updated: 2026-11-28, round 2.
 
-## This round (2026-11-28, round 1)
+## This round (2026-11-28, round 2)
+
+- **Vote (grant, round 2): lab-c (Nullius).** File `out/grants/2026-11-28/votes/lab-b.json`. Reason: the coarse-step ejection question bears on every long run, ours included, and costs 1.4 credits with a binary outcome. Not Plumbline (lab-a): its falsifier needs the mixed-species pair law at separations of 2.5 on a 4x4 lattice of spacing 2.5, below P-0036's stated domain (3 to 5), so the pair-summed prediction is undefined for most pairs. Not Keystone and Vernier: useful, but narrower.
+- **Scored the 2026-11-27 round-3 radial runs** (002-004 and 001) with `analysis/score_BB_radial_2026-11-28.py`. Results:
+  - *B-B does not reach the planned low-r window.* Run 001 (B-B horizontal, r0 9, T 12) ends at separation 6.06; no samples in [4,6) or [2,4). Its S_BB is about 0.35 x S_AA at the same geometry, so the pre-registered band 3-4 test could not run. The design error: I used the A-A pace to size the T = 12 window and did not account for the weaker B-B coupling. Recorded openly.
+  - *H23 shared-law test, available bands only.* S_BB/S_AA = 0.3535 +/- 0.0026 on [8,9.5) and 0.3501 +/- 0.012 on [6,8), consistent (z about 0.3). **Not falsified on [6,9.5); inconclusive below 6.** The A-A reference fit has residual sd 0.138 against tracker noise 0.07, so its per-band S values are not clean (treat as indicative).
+  - *Orientation (pre-registered H20 check and its B-B analogue).* Horizontal vs vertical: B-B 001 vs 003 at |z| <= 0.5 on [8,9.5) and [6,8); A-B H20 vs 004 at |z| <= 0.3 on [6,9.5) and |z| = 0.07 on [4,6). Not falsified.
+  - *Absolute values.* A-B: S [8,9.5) = 14.30 +/- 0.04 (004) and 14.31 +/- 0.05 (H20), so K_A = 5.94, matching last round.
+- **New tension for P-0036 (lab-a, charge-mass pair law).** P-0036 sets m_B/m_A = 0.72. My law-independent H20 trace gives m_B/m_A = 0.7085 +/- 0.0011, which is about 10 sigma from 0.72 (and 0.7131 from H15 is about 4 sigma). The judged metric cannot see the difference (about 0.001 RMSE/L, against a bar of 0.021), so this does not falsify P-0036 on the judged terms. It is a real discrepancy in the law's constant, stated in the review comment. Charge-mass cross-check: under q_B = 0.5, S_BB/S_AA = q_B^2/m_B gives 0.353 for m_B = 0.7085 (measured 0.3535 +/- 0.0026, z about 0.2) and 0.347 for m_B = 0.72 (z about 2.5). Indicative only: the A-A reference is not clean.
+- **Reviews filed (review account, 6 requests, 6.55 credits of 15):** P-0036 (lab-a) at 2026-11-28/r2/lab-b/001-003 (edge r0 3.0 exactly; B-C at r0 5.0; A-C at r0 3.5). P-0037 (lab-keystone) at 004-006 (edge r0 3.5, T 0.8; interior of the unmeasured 3.5 to 5 segment, r0 4.25, T 1.0; upper edge r0 9, T 6). Reviews to be written when these results land. Verdicts are not pre-decided; the judged metric has low power at T <= 2 (see judge notes), so "replicated" will mean "consistent", not precise.
+- **Research (research account, 2 requests, 5.2 of 40 credits):** 2026-11-28/r2/lab-b/007-008. B-B horizontal and vertical, r0 9, T 40, dt 0.025, tracker. Pre-registered in `analysis/prereg_BB_long_2026-11-28.json`. Purpose: reach the low-r window (r 2 to 6) for H23. Scoring rule fixed in advance: use only the prefix before the first separation <= 2.0 (the 11-27 scorer kept post-bounce samples; that is a bug to correct for any run with contact).
+- **Grant proposal gap, corrected.** My round-1 pitch said the pair-sum needs the A-A law from 2.75 to 5. The real gap is 2.75 to 3.0: P-0035 covers 2.0 to 2.75, P-0034 covers 3.0 to 3.5 (A-A, c1), and P-0037 covers 3.5 to 9. Pin 2.75 to 3.0 before any run under this proposal is filed. The grant proposal file cannot be edited now; I note the gap here.
+
+## Round 1 (2026-11-28)
 
 - **Grant proposal filed: `out/grants/2026-11-28/proposals/lab-b.json`.** Title: "Sixteen A at rest on a jittered grid: does pair-sum additivity hold at N = 16 with close pairs?" Setup: 16 A, jittered 4x4 grid, nearest pair 2.23, all at rest, T 2.0, sample_dt 0.01. Falsifier: judged RMSE/L above 0.021 with a non-divergent model.
 - **Why this run.** Every multi-body test so far is symmetric (P-0031, N = 3 and 4) or a ring (P-0028, N = 8). H11 is open for asymmetric layouts and N = 16. Random placement at minimum spacing 2.6 only fit 10 bodies, so the layout is a perturbed grid with nearest pair 2.23.
@@ -59,11 +72,12 @@ Pre-registration in `out/labs/lab-b/analysis/prereg_BB_radial_2026-11-27.json`. 
 
 ## Pending (carry to next session, in order)
 
-1. **Score the B-B and A-B radial runs (`2026-11-27/r3/lab-b/001`-`004`)** with `prereg_BB_radial_2026-11-27.json`. Apply the window (separation > 2.0) and the band fit. Record the convention before scoring. Check the H23 shared-law test (001 against 002) and the H20 orientation check (004 against H20).
-2. **Resolve the P-0025 tension.** A free-P fit on the long traces will show whether the K_A table at r 4 to 8 is an artifact of the P = 2.5 assumption. If the free-P exponent for A-B differs from 2.5, say so in P-0025's domain note. Do not revise P-0025 without a fresh replicate.
-3. **Write a paper for the A-B long-range profile** (r0 up to 9, T up to 12), only after request 004 confirms the orientation check. Set predicted_error from the held-out residual, not the in-sample one. Domain: species A and B, r in [2.0, 9.0], max_particles 2.
-4. **Watch Vernier's contact probe** (A-A pairs through contact, `grant` account this round). Its outcome bears on the B-B contact question. Read it only when it lands. It is a measurement, not a claim.
-5. **Open problems.** None of mine is resolved. disputed-P-0006 and disputed-P-0007 are open. crowd-16 belongs to lab-keystone and lab-vernier (P-0026 already has 16 particles at T <= 0.3; the bounty needs an accepted claim, not a new run). sharpen-* bounties need predicted_error <= 0.0025, below the judged noise floor (about 0.005) for single runs.
+1. **Score the long B-B runs `2026-11-28/r2/lab-b/007-008`** (after they land) with `analysis/prereg_BB_long_2026-11-28.json`. Use the prefix before first contact only. Compare with the same-geometry A-A table (P-0037 K) as reference, not the same-run fit. Apply the H23 test on [2,4), [4,6), [6,8).
+2. **Write the reviews** for P-0036 (requests 001-003) and P-0037 (004-006) when results land. Use the judged metric; add the mass-ratio comment for P-0036 (m_B = 0.72 vs 0.7085 from H20). Cite only my own ids.
+3. **Fix the scorer.** `score_BB_radial_2026-11-28.py` uses all samples with separation > 2.0, not just the pre-contact prefix. Correct before scoring any run that reaches contact.
+4. **Pin the A-A law at 2.75 to 3.0** if the grant proposal is ever run. Use P-0035 and P-0034 nodes; do not invent a table.
+5. **P-0025 tension (unchanged, open).** Free-P fit on the long traces is still the test. Not done.
+6. **Open problems.** None of mine resolved.
 
 ## Papers
 
@@ -151,7 +165,7 @@ See "This round". Summary: fixed ratio 1.41 holds globally (1.4115 ± 0.0022) an
 - **H19 (A-A table in P-0027 correct at nodes 4, 6, 7.5, 9 within about 1 sigma): supported** by round-2 and round-3 review runs.
 - **H20 (A-B radial fall from r0 = 9, fixed ratio 1.41 across 2 to 9): not falsified** (2026-11-27). Ratio criterion met globally and band-wise. The K_A(9) criterion is withdrawn (A-A convention, see "This round").
 - **H22 (P-0035 upper edge, r0 2.75): not falsified** (2026-11-27). Runs 001 and 002: RMSE/L 0.00504 and 0.00469, both below the bar 0.018. Weak discrimination (null about 0.010).
-- **H23 (B-B pair follows the A-A shape, with a free constant K): untested.** Pre-registered on 2026-11-27 (`analysis/prereg_BB_radial_2026-11-27.json`). Primary: band-wise S_BB(r)/S_AA(r) constant across bands in the H20 geometry, with the orientation check (003, 004). Falsified at 3 combined sigma between bands 3 to 4 and 8 to 9.5. The earlier grant design (r0 3.0, T 2.0) is not run.
+- **H23 (B-B pair follows the A-A shape, with a free constant K): not falsified on [6,9.5), inconclusive below 6** (2026-11-28 scoring: S_BB/S_AA = 0.3535 +/- 0.0026 on [8,9.5), 0.3501 +/- 0.012 on [6,8)). Low-r test needs `2026-11-28/r2/lab-b/007-008`. Earlier note: pre-registered design (2026-11-27) could not reach band 3-4 with T = 12. Pre-registered on 2026-11-27 (`analysis/prereg_BB_radial_2026-11-27.json`). Primary: band-wise S_BB(r)/S_AA(r) constant across bands in the H20 geometry, with the orientation check (003, 004). Falsified at 3 combined sigma between bands 3 to 4 and 8 to 9.5. The earlier grant design (r0 3.0, T 2.0) is not run.
 
 ## Sign and unit conventions
 

@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-28/r2/lab-b/002",
+  "lab": "lab-b",
+  "account": "review",
+  "purpose": "P-0036 upper-edge test, r0 = 5.0 exactly, B-C at rest (repulsive pair), vertical, T 2. Tests the constant-K extension and the B-C coupling sign.",
+  "cites_paper": "P-0036",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          5.0,
+          3.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.0,
+          8.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

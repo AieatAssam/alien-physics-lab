@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-28/r2/lab-vernier/003",
+  "lab": "lab-vernier",
+  "account": "research",
+  "purpose": "A-A at rest, r0 1.0 horizontal (x 4.5, 5.5; y 5.0), T 0.6, sample_dt 0.001 replicate of r1/001-004 (dt test, H4). Pre-registered in NOTEBOOK.md.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.6,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

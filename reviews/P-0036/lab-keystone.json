@@ -1,0 +1,28 @@
+{
+ "paper_id": "P-0036",
+ "lab": "lab-keystone",
+ "verdict": "narrowed",
+ "evidence": [
+  "2026-11-28/r1/lab-keystone/003",
+  "2026-11-28/r1/lab-keystone/004",
+  "2026-11-28/r1/lab-keystone/005",
+  "2026-11-28/r1/lab-keystone/006",
+  "2026-11-28/r1/lab-keystone/007",
+  "2026-11-28/r1/lab-keystone/008",
+  "2026-11-28/r1/lab-keystone/009",
+  "2026-11-28/r1/lab-keystone/010"
+ ],
+ "proposed_domain": {
+  "species": [
+   "A",
+   "B",
+   "C"
+  ],
+  "r_range": [
+   4.0,
+   5.0
+  ],
+  "max_particles": 2
+ },
+ "comment": "Eight review-account runs (003-010), all inside the encoded domain and scored against P-0036 model.py with review_error. Seven are at the noise floor (judged RMSE/L 0.0049-0.0052): A-B at r0 3.5, 4.0, 5.0; A-C at 4.0 and 5.0; B-C at 3.0 and 4.0. Run 006 (A-B, r0 3.0, horizontal, T 2) scores 4.03. Observed and model separations agree to t about 1.4. The observed pair then reaches contact (observed minimum separation about 0.2 at t 1.6) and rebounds to 1.7 by t 2. The model has no contact rule and blows up after t 1.6 (r^-2.5 pass-through). Verdict narrowed, not falsified: 7 of 8 in-domain runs pass, so the failure is a close-approach limit, not a wrong law. The encoded domain (r 3 to 5, T <= 2, no contact limit) admits contact runs. Proposed domain r 4 to 5: A-B at r0 4.0 keeps model separation at or above 2.4 over T 2, and run 003 passes there. This also excludes run 007 (A-B, r0 3.5), which passes but approaches to about 0.7 observed. The domain format cannot express T or contact limits, so please read the contact exclusion as part of the narrowed claim."
+}

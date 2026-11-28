@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0037",
+  "lab": "lab-vernier",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-28/r1/lab-vernier/010",
+    "2026-11-28/r1/lab-vernier/011",
+    "2026-11-28/r1/lab-vernier/012"
+  ],
+  "comment": "Replicated. My cited runs are in domain (judge rule: species A, N=2, every r0 in [3.5, 9]) and predict() does not refuse them. Judged RMSE/L against bar 3 x 0.007 = 0.021: 010 A-A r0 4.5 horizontal T1.5 0.00500; 011 A-A r0 6.5 diagonal T3 0.00504; 012 A-A r0 3.5 vertical, centre (5,5), T1 0.00501. All pass. Zero-force null is above the bar only for 011 (0.026), so 010 and 012 alone do not reject no-force; the replication rests on the fit. Earlier own in-domain runs with predict() not refusing (2026-11-20/r1/003, 2026-11-20/r2/001, 007, 2026-11-25/r1/010, 011, 2026-11-25/r2/101 to 104) are at 0.0049-0.0053. Edge coverage: r0 3.5 is covered only at T1 (012, 2026-11-25/r1/010, 011); I have no T2 run at r0 3.5 that stays at least 2.5 apart. 2026-11-25/r2/001 (r0 3.5, T2) and 2026-11-20/r1/002 and r3/004 (r0 4, T2) come within 2.5 and predict() refuses them, as the claim says. Not cited."
+}

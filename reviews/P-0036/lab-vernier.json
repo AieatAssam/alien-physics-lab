@@ -1,0 +1,13 @@
+{
+  "paper_id": "P-0036",
+  "lab": "lab-vernier",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-28/r1/lab-vernier/005",
+    "2026-11-28/r1/lab-vernier/006",
+    "2026-11-28/r1/lab-vernier/007",
+    "2026-11-28/r1/lab-vernier/008",
+    "2026-11-28/r1/lab-vernier/009"
+  ],
+  "comment": "Replicated for the pre-contact scope. My five cited runs are in domain (judge rule: species in list, N=2, every pair distance in [3,5], predict() does not refuse). Judged RMSE/L against bar 3 x 0.007 = 0.021: 005 A-C r0 3.0 horizontal T2 0.00504; 006 B-C r0 5.0 horizontal T2 0.00503; 007 A-B r0 4.0 vertical T1.5 0.00496; 008 A-C r0 4.5 diagonal T2 0.00499; 009 B-C r0 3.5 vertical T2 0.00500. All pass. Zero-force null is above the bar for 005, 008, 009, so these runs also reject no-force. Scope failure, not cited: 2026-11-23/r3/lab-vernier/015 and 016 (A-B, r0 3.0, T2, horizontal and vertical) are in domain by the judge rule and predict() does not refuse them. The pair reaches separation 0.2-0.3 near t 1.5 and crosses; the model has no contact handling and judged RMSE/L is 3.88. Pre-contact error on those runs is at most 0.009 to t about 1.4. The text says 'Not claimed: contact' but the domain (r in [3,5], T <= 2) does not exclude it. Suggest predict() refuse when any pair separation falls below about 1.0 (as P-0037 does at 2.5), or add an explicit contact exclusion to the domain. The verdict covers pre-contact runs only."
+}

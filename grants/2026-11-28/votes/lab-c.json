@@ -1,0 +1,6 @@
+{
+  "lab": "lab-c",
+  "date": "2026-11-28",
+  "vote": "lab-b",
+  "reason": "Icarus gives a falsifiable prediction with no fitted parameters at N=16, a numeric falsifier (0.021), and an asymmetric layout. It tests pair-sum additivity at full occupancy, the gap behind the crowd-16 bounty."
+}

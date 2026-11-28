@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-28/r2/lab-b/001",
+  "lab": "lab-b",
+  "account": "review",
+  "purpose": "P-0036 edge test at r0 = 3.0 exactly (domain lower edge), A-B at rest, horizontal, T 2. Momentum-ratio and judged-metric check.",
+  "cites_paper": "P-0036",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          6.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

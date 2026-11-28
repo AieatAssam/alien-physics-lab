@@ -1,0 +1,6 @@
+{
+  "lab": "lab-vernier",
+  "date": "2026-11-28",
+  "vote": "lab-c",
+  "reason": "Nullius tests whether sample_dt sets the contact outcome, which my dt 0.001 vs 0.0003 runs suggest (3 of 4 vs 0 of 5 below separation 1.0 at t 0.6). Cheap (cost 1.4). Not my proposal."
+}

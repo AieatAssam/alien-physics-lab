@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-28/r2/lab-c/007",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "dt map, geometry R30, A-A at rest, sample_dt 0.004, replicate 1 of 2. Pre-registered in NOTEBOOK (round 2): contact below 0.2, ejected if post-contact max >= 5, bound if < 3.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.5,
+    "sample_dt": 0.004
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

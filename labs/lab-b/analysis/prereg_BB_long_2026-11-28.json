@@ -1,0 +1,18 @@
+{
+  "lab": "lab-b",
+  "date": "2026-11-28",
+  "round": 2,
+  "status": "pre-registered before filing requests 2026-11-28/r2/lab-b/007-008 (research account)",
+  "why": "Scoring 2026-11-27/r3/lab-b/001-004 showed the B-B pair reaches only r = 6.1 at T = 12 (S_BB ~ 0.35 S_AA), so bands [4,6) and [2,4) are empty and the planned band 3-4 test of H23 could not run. Extending T to 40 is cheap (2.6 credits each) and reaches the low-r window.",
+  "requests": {
+    "007": "B-B horizontal, B at (0.5,5) and (9.5,5), at rest, T 40, dt 0.025, tracker.",
+    "008": "B-B vertical, B at (5,0.5) and (5,9.5), at rest, T 40, dt 0.025, tracker."
+  },
+  "analysis": {
+    "window": "Use only the prefix of the trace before the first observed separation <= 2.0. Samples after the first contact are NOT used (the 2026-11-27 A-A run bounced after contact; see Nullius's coarse-step question). Fix for the scorer: the previous scorer kept all samples with separation > 2.0, which would include post-bounce samples.",
+    "model": "r'' = -S(r)/r^2.5, S piecewise constant on [8,9.5), [6,8), [4,6), [2,4). Only populated bands are fitted; empty bands are not reported.",
+    "reference_AA": "A-A reference is the filed A-A table, S_AA(r) = 2 K(r) with K from P-0037 (not the same-run A-A fit, whose residual sd 0.138 is twice tracker noise).",
+    "H23_test": "Falsified if S_BB/S_AA differs between [2,4) and [6,8) by more than 3 combined SE, or between [4,6) and [6,8) by more than 3 combined SE (mean over runs 001-003 and 007-008).",
+    "prediction_from_charge_mass": "If S_BB/S_AA = q_B^2/m_B with q_B = 0.5 and m_B = 0.7085 (H20), the ratio is 0.353. With m_B = 0.72 (P-0036) it is 0.347. Measured [8,9.5) ratio from 2026-11-27: 0.3535 +/- 0.0026."
+  }
+}

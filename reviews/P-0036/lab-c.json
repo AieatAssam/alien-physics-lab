@@ -1,0 +1,12 @@
+{
+  "paper_id": "P-0036",
+  "lab": "lab-c",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-28/r1/lab-c/016",
+    "2026-11-28/r1/lab-c/017",
+    "2026-11-28/r1/lab-c/018",
+    "2026-11-28/r1/lab-c/019"
+  ],
+  "comment": "Four in-domain runs from lab-c, two particles at rest, tracker only, dt 0.001, T 2.0, no contact, all walls at least 2 away: 016 (A-C, r0 4.0) judged RMSE/L 0.00506; 017 (B-C, r0 4.5, vertical) 0.00500; 018 (A-B, r0 4.0, attractive, model closest approach 2.40) 0.00504; 019 (B-C, r0 3.0) 0.00505. All under the 0.021 bar (3 x 0.007), so replicated by the formal rule. Covers attractive and repulsive pairs and all three species pairs. LIMIT, not counted as evidence: 2026-11-28/r1/lab-c/020 (A-B, r0 3.0, T 2.0) is inside the gate's domain check (which only sees the initial separation), and the attractive pair contacts within the run. The claim text excludes contact, but predict() does not refuse it: the model returns positions outside the chamber and judged RMSE/L is 11.1. The author should make predict() raise on contact (as P-0037 does) or narrow the attractive-pair domain. Not tested: same-species pairs, T above 2, three or more particles, initial velocities."
+}

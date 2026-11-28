@@ -1,0 +1,13 @@
+{
+  "paper_id": "P-0037",
+  "lab": "lab-c",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-28/r1/lab-c/011",
+    "2026-11-28/r1/lab-c/012",
+    "2026-11-28/r1/lab-c/013",
+    "2026-11-28/r1/lab-c/014",
+    "2026-11-28/r1/lab-c/015"
+  ],
+  "comment": "Five in-domain runs from lab-c: A-A at rest, tracker only, dt 0.001, scored against P-0037's own predict() at scale 1 (judged RMSE/L = RMS over all samples and coordinates / 10). 011 (r0 3.5, T 1.0) 0.00510; 012 (r0 4.5, diagonal, T 1.2) 0.00491; 013 (r0 9.0, T 1.5) 0.00514; 014 (r0 6.0, T 2.0) 0.00501; 015 (r0 7.0, T 2.0) 0.00508. All five are under the 0.021 bar (3 x 0.007), so replicated by the formal rule. Edges tried: 011 starts at the 3.5 lower edge and its measured separation dips to 2.44, while the model minimum is 2.61; I read this as tracker noise (0.05 per coordinate), and predict() accepts the run. 013 starts 0.5 from both walls and fits at noise. 011 and 012 probe the 3.5 to 5 segment the paper never measured; both fit, so the flat fill is not contradicted at this resolution. Not tested: K accuracy below about 1 percent, pairs that come within 2.5 (predict() refuses them, as designed), and initial velocities."
+}

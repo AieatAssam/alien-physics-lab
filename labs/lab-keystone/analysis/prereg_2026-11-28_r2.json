@@ -1,0 +1,23 @@
+{
+ "lab": "lab-keystone",
+ "date": "2026-11-28",
+ "filed_in": "round 2 (requests 2026-11-28/r2/lab-keystone/001 and 002, research account); written before the runs",
+ "model": "A-A pair sum with the P-0029 table, flat clamp below r = 5 (P-0036 K, q_A = 1, m_A = 1), RK4 h = 1e-3, specular walls; single force scale s fitted by chi2 with sigma = 0.05 per coordinate (scale_fit_2026_11_28.py)",
+ "contact_check": "model min separation over T = 1: 2.63 (r0 3.5 horizontal) and 4.07 (r0 4.5 horizontal), no contact, so scale fits are not contact-sensitive",
+ "reason": "2026-11-28/r1/lab-keystone/002 (A-A r0 3.5 diagonal, T 1) gave s = 1.055 +/- 0.017 (chi2/n 1.02). That is about 3 sigma above 1 from one run in one orientation. Test: replicate in the horizontal orientation (001), and extend to r0 4.5 (002), which the flat clamp covers with no table node.",
+ "predictions": [
+  {
+   "request": "2026-11-28/r2/lab-keystone/001",
+   "setup": "A-A r0 3.5 horizontal, centred (x 3.25 and 6.75, y 5), T 1",
+   "prediction": "If the 3.5 offset is real and orientation-independent: s = 1.05 +/- 0.02. If it was an orientation or noise effect of 002: s = 1.00 +/- 0.02.",
+   "decision": "s in [1.02, 1.08]: offset replicates (H-flat bias confirmed at 3.5). s in [0.97, 1.03]: 002 not replicated; H-flat stays at 'consistent with 2 percent'. Outside [0.94, 1.10]: the model form is wrong at this geometry, not just the scale."
+  },
+  {
+   "request": "2026-11-28/r2/lab-keystone/002",
+   "setup": "A-A r0 4.5 horizontal, centred (x 2.75 and 7.25, y 5), T 1",
+   "prediction": "Flat clamp (P-0036 table): s = 1.00 +/- 0.02. P-0027 note (2 to 3 percent above flat at 3.5 to 4.5): s = 1.02 to 1.03.",
+   "decision": "Falsifier |s - 1| > 0.05. Values 1.00 to 1.03 do not discriminate between the flat clamp and the P-0027 note at this precision; report as a bound."
+  }
+ ],
+ "scoring_note": "Use the chi2 scan on a grid of s (not a quadratic over a grid that crosses contact). Report chi2/n per grid point with the fit."
+}

@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-28/r2/lab-b/006",
+  "lab": "lab-b",
+  "account": "review",
+  "purpose": "P-0037 upper-edge check, A-A at rest, r0 = 9.0, horizontal, T 6 (pair stays above 2.5; the same-geometry run 2026-11-27/r3/lab-b/002 reached 4.7 at t 8).",
+  "cites_paper": "P-0037",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          0.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          9.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 6.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-28/r2/lab-b/005",
+  "lab": "lab-b",
+  "account": "review",
+  "purpose": "P-0037 interior of the unmeasured 3.5 to 5 segment: A-A at rest, r0 = 4.25, T 1.0. Tests the linear interpolation the paper says is not measured directly.",
+  "cites_paper": "P-0037",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.875,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          7.125,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

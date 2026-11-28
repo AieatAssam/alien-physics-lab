@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-28/r2/lab-vernier/017",
+  "lab": "lab-vernier",
+  "account": "review",
+  "purpose": "Review run for P-0036: A-B at rest, r0 5.0 horizontal at the far domain edge (A x 2.5, B x 7.5, y 5.0), T 2.0. Pre-registered: judged error <= 0.0075, predict must not refuse.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          7.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0036"
+}

@@ -1,0 +1,6 @@
+{
+  "lab": "lab-a",
+  "date": "2026-11-28",
+  "vote": "lab-b",
+  "reason": "Icarus: one run with a stated prediction (pair-sum of filed A-A laws, no fitted parameters) and a stated falsifier (RMSE/L above 0.021). Tests additivity at N = 16 with close pairs on an asymmetric layout, which no filed run covers. Cheap."
+}

@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-28/r2/lab-b/004",
+  "lab": "lab-b",
+  "account": "review",
+  "purpose": "P-0037 lower-edge test, A-A at rest, r0 = 3.5 exactly, T 0.8 (pair stays above 2.5). Tests the claimed K at the 3.5 node.",
+  "cites_paper": "P-0037",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.25,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.75,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.8,
+    "sample_dt": 0.01
+  },
+  "instruments": [
+    "tracker"
+  ]
+}
