@@ -1,0 +1,30 @@
+{
+ "lab": "lab-keystone",
+ "date": "2026-11-28",
+ "filed_in": "round 3 (requests 2026-11-28/r3/lab-keystone/001 to 003, research account); written before the runs",
+ "model": "A-A pair sum with the P-0029 table, flat clamp below r = 5 (P-0036 K, q_A = 1, m_A = 1), RK4 h = 1e-3, specular walls; single force scale s fitted by chi2 with sigma = 0.05 per coordinate (scale_fit_2026_11_28.py, copied here)",
+ "prior": "Round-2 results (2026-11-28/r2/lab-keystone/001: s = 1.041 +/- 0.017, horizontal r0 3.5; 2026-11-28/r1/lab-keystone/002: s = 1.055 +/- 0.017, diagonal r0 3.5). Combined about 1.048 +/- 0.012. Working value for these predictions: s = 1.045.",
+ "contact_check": "model min separation over T = 1 (s = 1): 2.63 for r0 3.5 setups, 1.56 for r0 3.0. No contact in any setup below.",
+ "reason": "The notebook rule for a table claim is a replicate in a third layout. Run 003 adds a third orientation (vertical) at r0 3.5. Run 004 keeps r0 3.5 horizontal but moves the pair to y = 2.0, so position is varied. Run 005 at r0 3.0 tests whether any scale offset depends on r, since the flat clamp predicts none.",
+ "predictions": [
+  {
+   "request": "2026-11-28/r3/lab-keystone/003",
+   "setup": "A-A r0 3.5 vertical, centred (x 5.0, y 3.25 and 6.75), T 1",
+   "prediction": "If the 3.5 offset is real and orientation-independent: s = 1.045 +/- 0.02. If not: s = 1.00 +/- 0.02.",
+   "decision": "s in [1.02, 1.08]: offset holds in a third orientation (3.5 table candidate). s in [0.97, 1.03]: the two earlier offsets were orientation or noise effects. Outside [0.94, 1.10]: model form wrong at this geometry."
+  },
+  {
+   "request": "2026-11-28/r3/lab-keystone/004",
+   "setup": "A-A r0 3.5 horizontal, pair at y = 2.0 (x 3.25 and 6.75), T 1",
+   "prediction": "Position-independent offset: s = 1.045 +/- 0.02. Position-dependent (walls or chamber geometry): s departs from 1.045 by more than 0.04.",
+   "decision": "s in [1.02, 1.08]: offset is not a centred-pair artefact. Outside: record as position dependence, do not generalise the offset."
+  },
+  {
+   "request": "2026-11-28/r3/lab-keystone/005",
+   "setup": "A-A r0 3.0 horizontal, centred (x 3.5 and 6.5), T 1",
+   "prediction": "Constant offset in r (flat K): s = 1.045 +/- 0.02. Flat clamp with no offset at r 3 (P-0036 table as written): s = 1.00 +/- 0.02.",
+   "decision": "s in [1.02, 1.08]: offset extends to r 3.0 (narrow the domain before any claim). s in [0.97, 1.03]: offset is confined to about r 3.5 or it is noise. Outside [0.94, 1.10]: model form at r 3.0 is wrong (not only the scale)."
+  }
+ ],
+ "scoring_note": "Scores use the chi2 scan on the grid [0.94 .. 1.10] (scale_fit_2026_11_28.fit), not a quadratic across a contact-crossing grid. Report chi2/n per grid point with each fit. Score from the filed setup, not a stored sample array."
+}

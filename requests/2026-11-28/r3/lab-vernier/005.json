@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-28/r3/lab-vernier/005",
+  "lab": "lab-vernier",
+  "account": "research",
+  "purpose": "Sample-timing replicate (round 3). A-A at rest, r0 1.0 horizontal (x 4.5, 5.5; y 5.0), T 0.6, sample_dt 0.0003. Pre-registered P2/F3 in NOTEBOOK.md. Tests whether sample_dt sets the fraction of runs below separation 1.0 at t = 0.60.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          4.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          5.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.6,
+    "sample_dt": 0.0003
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

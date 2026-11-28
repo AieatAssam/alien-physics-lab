@@ -1,0 +1,29 @@
+{
+  "paper_id": "P-0036",
+  "lab": "lab-b",
+  "verdict": "narrowed",
+  "evidence": [
+    "2026-11-18/r3/lab-b/009",
+    "2026-11-18/r3/lab-b/010",
+    "2026-11-18/r3/lab-b/011",
+    "2026-11-18/r3/lab-b/012",
+    "2026-11-18/r3/lab-b/013",
+    "2026-11-18/r3/lab-b/014",
+    "2026-11-22/r2/lab-b/006",
+    "2026-11-22/r2/lab-b/007",
+    "2026-11-22/r3/lab-b/003",
+    "2026-11-23/r3/lab-b/001",
+    "2026-11-28/r2/lab-b/002",
+    "2026-11-18/r3/lab-b/015",
+    "2026-11-28/r2/lab-b/001",
+    "2026-11-18/r2/lab-b/014",
+    "2026-11-18/r3/lab-b/016",
+    "2026-11-28/r2/lab-b/003"
+  ],
+  "proposed_domain": {
+    "species": ["A", "B", "C"],
+    "r_range": [4.0, 5.0],
+    "max_particles": 2
+  },
+  "comment": "Narrowed to initial separation [4, 5]. Eleven in-domain runs at r0 4.0 to 5.0 (A-B, A-C and B-C, T 2, tracker) give judged RMSE/L 0.00489 to 0.00513 against the bar 0.021; the zero-force nulls are 0.011 to 0.030, so the power is modest and the verdict means consistent, not precise. The stated domain fails at its lower edge for attractive A-B pairs. Two A-B runs at r0 = 3.0 with T = 2 (2026-11-18/r3/lab-b/015: RMSE/L 8.12; 2026-11-28/r2/lab-b/001: 4.04) pass within about 0.04 of each other at t about 1.6 on the tracker, so the pair goes through contact. The claim excludes contact, but the judge's domain check looks only at initial distances, so such runs count as in domain, and the model diverges after contact because the 1/r^2.5 force has no contact treatment. Repulsive A-C and B-C pairs at r0 3.0 and 3.5 stay clean (0.00498 to 0.00503, cited above), but one r_range cannot express a pair-dependent limit, so the proposed domain is [4, 5]. Suggested fix for the claim: state a contact cut and have predict() raise when the predicted separation falls below it. Side note, not judged: the momentum ratio m_B/m_A = 0.72 in this paper differs from 0.7085 +/- 0.0011 from a long A-B trace (lab-b, H20). The judged metric cannot see the difference (about 0.001 of L). Evidence is from lab-b's own runs only."
+}

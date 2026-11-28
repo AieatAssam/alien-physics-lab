@@ -1,0 +1,13 @@
+{"run": "r2/lab-c/001", "r0": 2.25, "T": 1.5, "sample_dt": 0.0025, "cost": 1.06, "n_samples": 601, "min_sep": 0.057, "contact_t": 0.78, "post_max": 4.92, "verdict": "no verdict"}
+{"run": "r2/lab-c/002", "r0": 2.25, "T": 1.5, "sample_dt": 0.0025, "cost": 1.06, "n_samples": 601, "min_sep": 0.035, "contact_t": 0.78, "post_max": 5.09, "verdict": "ejected"}
+{"run": "r2/lab-c/003", "r0": 2.25, "T": 1.5, "sample_dt": 0.0035, "cost": 1.06, "n_samples": 429, "min_sep": 0.029, "contact_t": 0.784, "post_max": 5.03, "verdict": "ejected"}
+{"run": "r2/lab-c/004", "r0": 2.25, "T": 1.5, "sample_dt": 0.0035, "cost": 1.06, "n_samples": 429, "min_sep": 0.054, "contact_t": 0.7875, "post_max": 5.0, "verdict": "ejected"}
+{"run": "r2/lab-c/005", "r0": 2.25, "T": 1.5, "sample_dt": 0.0045, "cost": 1.06, "n_samples": 334, "min_sep": 0.032, "contact_t": 0.7875, "post_max": 0.82, "verdict": "bound"}
+{"run": "r2/lab-c/006", "r0": 2.25, "T": 1.5, "sample_dt": 0.0045, "cost": 1.06, "n_samples": 334, "min_sep": 0.036, "contact_t": 0.783, "post_max": 0.79, "verdict": "bound"}
+{"run": "r2/lab-c/007", "r0": 3.0, "T": 1.5, "sample_dt": 0.004, "cost": 1.06, "n_samples": 376, "min_sep": 0.06, "contact_t": 1.236, "post_max": 0.84, "verdict": "bound"}
+{"run": "r2/lab-c/008", "r0": 3.0, "T": 1.5, "sample_dt": 0.004, "cost": 1.06, "n_samples": 376, "min_sep": 0.005, "contact_t": 1.244, "post_max": 0.9, "verdict": "bound"}
+
+r2/lab-c/001 vs r2/lab-c/002: dt=0.0025 r0=2.25 verdicts no verdict / ejected agree=False post_max 4.92 / 5.09
+r2/lab-c/003 vs r2/lab-c/004: dt=0.0035 r0=2.25 verdicts ejected / ejected agree=True post_max 5.03 / 5.0
+r2/lab-c/005 vs r2/lab-c/006: dt=0.0045 r0=2.25 verdicts bound / bound agree=True post_max 0.82 / 0.79
+r2/lab-c/007 vs r2/lab-c/008: dt=0.004 r0=3.0 verdicts bound / bound agree=True post_max 0.84 / 0.9

@@ -1,0 +1,11 @@
+{
+  "paper_id": "P-0037",
+  "lab": "lab-b",
+  "verdict": "replicated",
+  "evidence": [
+    "2026-11-28/r2/lab-b/004",
+    "2026-11-28/r2/lab-b/005",
+    "2026-11-28/r2/lab-b/006"
+  ],
+  "comment": "Replicated, in the sense of consistent, not precise. Three in-domain A-A pair runs at rest (r0 3.5, 4.25 and 9.0; T 0.8, 1.0 and 6.0; tracker, horizontal) give judged RMSE/L 0.00490, 0.00502 and 0.00497 against the bar 0.021 (3 x 0.007). predict() did not raise on any of the three. The 4.25 run is the interior of the 3.5 to 5 segment the paper says is not measured directly; it agrees with the linear fill at the noise floor. Power is modest: the zero-force nulls are 0.010, 0.009 and 0.031, so these runs cannot separate a linear fill from a flat hold, as the paper already states. The T = 6 run from r0 = 9 tests the upper edge over a long window and also agrees. The review does not test contact, which the claim excludes."
+}
