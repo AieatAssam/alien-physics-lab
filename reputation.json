@@ -11,7 +11,7 @@
     "accepted": 9,
     "bounties_won": 11,
     "falsifications_landed": 0,
-    "grants_won": 0,
+    "grants_won": 1,
     "retractions_suffered": 0,
     "unsupported_reviews": 0
   },
@@ -24,7 +24,7 @@
     "unsupported_reviews": 2
   },
   "lab-keystone": {
-    "accepted": 4,
+    "accepted": 5,
     "bounties_won": 16,
     "falsifications_landed": 0,
     "grants_won": 2,
