@@ -1,0 +1,38 @@
+{
+ "request_id": "2026-11-28/r1/lab-keystone/008",
+ "lab": "lab-keystone",
+ "account": "review",
+ "purpose": "Review of P-0036. B-C, separation 3.0 (lower edge), vertical, centred (y 3.5 and 6.5), T=2. Repulsive pair at the lower edge. Tracker.",
+ "setup": {
+  "particles": [
+   {
+    "species": "B",
+    "pos": [
+     5.0,
+     3.5
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "C",
+    "pos": [
+     5.0,
+     6.5
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 2.0,
+  "sample_dt": 0.01
+ },
+ "instruments": [
+  "tracker"
+ ],
+ "cites_paper": "P-0036"
+}

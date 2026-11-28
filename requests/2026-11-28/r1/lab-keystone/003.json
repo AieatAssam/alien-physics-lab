@@ -1,0 +1,38 @@
+{
+ "request_id": "2026-11-28/r1/lab-keystone/003",
+ "lab": "lab-keystone",
+ "account": "review",
+ "purpose": "Review of P-0036 (mixed-species pair at rest, separation 3 to 5). A-B, separation 4.0, horizontal, centred (x 3 and 7, y 5), T=2. Separation 4 is not in P-0036's own runs. Tracker.",
+ "setup": {
+  "particles": [
+   {
+    "species": "A",
+    "pos": [
+     3.0,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "B",
+    "pos": [
+     7.0,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 2.0,
+  "sample_dt": 0.01
+ },
+ "instruments": [
+  "tracker"
+ ],
+ "cites_paper": "P-0036"
+}

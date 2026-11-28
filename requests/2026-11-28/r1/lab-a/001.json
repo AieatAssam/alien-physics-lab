@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-28/r1/lab-a/001",
+  "lab": "lab-a",
+  "account": "review",
+  "cites_paper": "P-0037",
+  "purpose": "Review of P-0037 (lab-keystone). Edge of the claim's r0 range (3.51, 0.01 inside 3.5): horizontal, longest duration that keeps the pair >= 2.5 apart. Two A at rest, tracker, sample_dt 0.02.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.245,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.755,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-28/r1/lab-vernier/008",
+  "lab": "lab-vernier",
+  "account": "review",
+  "purpose": "Review run for P-0036: A-C at rest, r0 4.5 diagonal, T 2.0.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.0,
+          3.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          6.181981,
+          6.181981
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0036"
+}

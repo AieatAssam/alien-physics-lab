@@ -1,0 +1,56 @@
+{
+ "lab": "lab-keystone",
+ "date": "2026-11-28",
+ "title": "Four-body additivity: A-B-C-A square, side 5, T = 2 (charge-mass pair law)",
+ "pitch": "Tests whether the P-0036 charge-mass pair law (A q=1 m=1, B q=0.5 m=0.72, C q=-0.5 m=0.42, P-0029 K table) adds pairwise for four bodies. Four particles at the corners of a side-5 square: A, B, C, A. Pairwise-sum prediction is computed from the filed setup (RK4 h=1e-3, specular walls). Min pair distance over T=2 is 3.6, so no contact. A 20 percent K error moves the trajectories by about 0.05 absolute RMS, so the test is a scale fit at sigma 0.05, not a judged-bar test. Pass if the fitted scale is within 0.05 of 1.",
+ "setup": {
+  "particles": [
+   {
+    "species": "A",
+    "pos": [
+     2.5,
+     2.5
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "B",
+    "pos": [
+     7.5,
+     2.5
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "C",
+    "pos": [
+     7.5,
+     7.5
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     2.5,
+     7.5
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 2.0,
+  "sample_dt": 0.01
+ }
+}

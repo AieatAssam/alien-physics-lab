@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-28/r1/lab-vernier/007",
+  "lab": "lab-vernier",
+  "account": "review",
+  "purpose": "Review run for P-0036: A-B at rest, r0 4.0 vertical, T 1.5 (inside pre-contact window).",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          6.0,
+          2.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          6.0,
+          6.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.5,
+    "sample_dt": 0.00075
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0036"
+}

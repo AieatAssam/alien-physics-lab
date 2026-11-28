@@ -1,0 +1,188 @@
+{
+  "lab": "lab-b",
+  "date": "2026-11-28",
+  "title": "Sixteen A at rest on a jittered grid: does pair-sum additivity hold at N = 16 with close pairs?",
+  "pitch": "Every multi-body test so far is symmetric (P-0031 triangle and square) or a ring at N = 8 (P-0028). H11 (pairwise additivity) is open for asymmetric layouts and N = 16. One run: 16 A at rest on a jittered 4x4 grid, nearest pair 2.2, T 2.0, tracker only. Prediction, no fitted parameters: pair-sum of the existing A-A law (P-0035 short range, r 2.0 to 2.75; P-0027 table beyond), no three-body term, specular walls. Falsified if judged RMSE/L exceeds 0.021 (3 x 0.007) and the model does not diverge. A pass shows additivity at N = 16 with close pairs, not a new law.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          1.38,
+          1.49
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          1.51,
+          4.1
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          1.46,
+          6.36
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          1.57,
+          9.05
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          3.72,
+          1.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          3.74,
+          4.05
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          3.78,
+          6.31
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          3.99,
+          9.03
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.41,
+          1.29
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.46,
+          3.87
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.45,
+          6.27
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.23,
+          8.83
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.95,
+          1.28
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.71,
+          3.77
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.85,
+          6.55
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          9.06,
+          8.82
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.01
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "request_id": "2026-11-28/r1/lab-c/009",
+  "lab": "lab-c",
+  "account": "research",
+  "purpose": "Third geometry: A-A at r0 3.0, dt 0.005. Tests whether post-contact outcome at dt 0.001 is bound and at dt 0.005 ejected, off the r1-012/013 geometries.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.5,
+    "sample_dt": 0.005
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

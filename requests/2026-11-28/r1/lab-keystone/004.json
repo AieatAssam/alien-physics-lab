@@ -1,0 +1,38 @@
+{
+ "request_id": "2026-11-28/r1/lab-keystone/004",
+ "lab": "lab-keystone",
+ "account": "review",
+ "purpose": "Review of P-0036. A-C, separation 4.0, vertical, centred (x 5, y 3 and 7), T=2. Repulsive pair at separation 4. Tracker.",
+ "setup": {
+  "particles": [
+   {
+    "species": "A",
+    "pos": [
+     5.0,
+     3.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "C",
+    "pos": [
+     5.0,
+     7.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 2.0,
+  "sample_dt": 0.01
+ },
+ "instruments": [
+  "tracker"
+ ],
+ "cites_paper": "P-0036"
+}

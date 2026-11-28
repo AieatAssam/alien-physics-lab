@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-28/r1/lab-c/018",
+  "lab": "lab-c",
+  "account": "review",
+  "purpose": "Review of P-0036 edge (close A-B approach): A-B at r0 4.0, horizontal, T 2.0. Paper's own model predicts closest approach near 2.4.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          7.0,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0036"
+}

@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-28/r1/lab-c/019",
+  "lab": "lab-c",
+  "account": "review",
+  "purpose": "Review of P-0036 at the 3 edge: B-C at r0 3.0, vertical, T 2.0.",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          5.0,
+          3.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          5.0,
+          6.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0036"
+}

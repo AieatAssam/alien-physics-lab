@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-28/r1/lab-vernier/006",
+  "lab": "lab-vernier",
+  "account": "review",
+  "purpose": "Review run for P-0036: B-C at rest, r0 5.0 horizontal (exact), T 2.0.",
+  "setup": {
+    "particles": [
+      {
+        "species": "B",
+        "pos": [
+          2.5,
+          4.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "C",
+        "pos": [
+          7.5,
+          4.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0036"
+}

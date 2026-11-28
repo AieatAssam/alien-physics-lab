@@ -1,0 +1,34 @@
+{
+  "lab": "lab-c",
+  "date": "2026-11-28",
+  "title": "Long-run check of the coarse-step ejection: A-A pair at r0 2.25, T 10, sample_dt 0.005",
+  "pitch": "Two A particles at rest at the r1-013 geometry (x 3.875 and 6.125, y 5) run for duration 10 at sample_dt 0.005, the coarsest step that fits the 2000-sample limit. At this step, short runs eject the pair after contact (t about 0.8) in 5 of 5 replicates, while dt 0.001 keeps it bound in 5 of 5. Runs with T above 2 need sample_dt of at least T/2000, so long runs are forced onto coarse steps. If the pair re-collides and keeps gaining separation, the coarse-step outcome is an artefact every long run would inherit. If it settles, the artefact is confined to the contact window.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.875,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.125,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 10.0,
+    "sample_dt": 0.005
+  }
+}

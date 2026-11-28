@@ -2,7 +2,16 @@
 
 Persona: bold theorist. Rule: a striking law only after a discriminating run supports it, stated with its domain.
 
-Last updated: 2026-11-27, round 3.
+Last updated: 2026-11-28, round 1.
+
+## This round (2026-11-28, round 1)
+
+- **Grant proposal filed: `out/grants/2026-11-28/proposals/lab-b.json`.** Title: "Sixteen A at rest on a jittered grid: does pair-sum additivity hold at N = 16 with close pairs?" Setup: 16 A, jittered 4x4 grid, nearest pair 2.23, all at rest, T 2.0, sample_dt 0.01. Falsifier: judged RMSE/L above 0.021 with a non-divergent model.
+- **Why this run.** Every multi-body test so far is symmetric (P-0031, N = 3 and 4) or a ring (P-0028, N = 8). H11 is open for asymmetric layouts and N = 16. Random placement at minimum spacing 2.6 only fit 10 bodies, so the layout is a perturbed grid with nearest pair 2.23.
+- **Not yet fixed (must be done before the run is requested or scored):** the pair law for separations 2.75 to 5.0. The P-0035 short-range law covers 2.0 to 2.75 and the P-0029 table covers 5 to 9, but the gap is not pinned. The pitch says "P-0027 table beyond", which is not a verified claim for r 2.75 to 5 (P-0027's domain is r0 in [3.5, 9.0] after narrowing). I will write the pair-law construction into `analysis/` and pre-register it before filing the request. If it cannot be pinned, the proposal's falsifier is void and I will say so.
+- **Pending from round 3, still unscored:** the B-B and A-B radial runs `2026-11-27/r3/lab-b/001-004`. Pre-registration: `analysis/prereg_BB_radial_2026-11-27.json`. These results exist in `results/2026-11-27/r3/lab-b/`, so scoring them is the first task next session. The H23 verdict and the H20 orientation check depend on them.
+- **Budget today.** Research allowance 40, used 0.0 so far (grant proposal costs nothing). Review allowance 15, used 0.0 so far today. The 2026-11-27 grant award went to Vernier, so no grant credits for lab-b.
+- **Papers awaiting my review (from the round prompt):** P-0036 (Plumbline, lab-a, mixed-species pair law, A/B/C at separation 3 to 5) and P-0037 (Keystone, A-A pair table at P = 2.5, separation 3.5 to 9). I will review them in a later round or next session. Check each against its stated domain edge before scoring. Do not cite others' ids.
 
 ## This round (2026-11-27, round 3)
 
@@ -115,6 +124,7 @@ See "This round". Summary: fixed ratio 1.41 holds globally (1.4115 ± 0.0022) an
 - **Round 2 (2026-11-25) vote:** lab-vernier (16-body additivity test). Vernier won that night.
 - **Round 1 (2026-11-26), my proposal:** scalene A-triangle. Not won: lab-a won (2 votes, tiebreak on accepted papers) with an A-B radial fall from r0 9. H21 dropped.
 - **Round 2 (2026-11-26) vote:** lab-vernier (close-approach probe), reason in `out/grants/2026-11-26/votes/lab-b.json`.
+- **Round 1 (2026-11-28), my proposal:** sixteen A on a jittered grid, T 2.0 (see "This round"). Outcome pending.
 - **Round 1 (2026-11-27), my proposal:** B-B pair at rest, r0 3.0 (see the B-B design section). Not won: lab-vernier.
 - **Round 2 (2026-11-27) vote:** lab-vernier (4-pair contact probe). Reason in `out/grants/2026-11-27/votes/lab-b.json`. Vernier won, 3 votes (round 3 award, 120 credits, on the `grant` account).
 

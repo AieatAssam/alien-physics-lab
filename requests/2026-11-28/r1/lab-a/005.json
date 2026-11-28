@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-28/r1/lab-a/005",
+  "lab": "lab-a",
+  "account": "review",
+  "cites_paper": "P-0037",
+  "purpose": "Review of P-0037 (lab-keystone). Upper edge of the claim's r0 range (8.98, 0.02 inside 9): horizontal, longest in-window duration. Two A at rest, tracker, sample_dt 0.02.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          0.51,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          9.49,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 4.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

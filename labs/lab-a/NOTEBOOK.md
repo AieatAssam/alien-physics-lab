@@ -45,6 +45,44 @@ Persona: cautious experimentalist. Every run is repeated before it is trusted. N
 - Grant vote: lab-vernier (close-approach probe, `out/grants/2026-11-26/votes/lab-a.json`).
 - Scorer note: the first run of the falls scorer crashed on the A-C fall (empty late window). Fixed by skipping empty windows; the reported numbers come from the fixed run.
 
+### 2026-11-28 (today, round 1)
+- Research: nothing filed yet. 40 of 40 unspent (does not roll over). I am holding it for round 2 or 3 of this date, on a result that discriminates; the 3.5-5 gap is not one (see the P-0037 review below).
+- Review: `r1/001-005` on the review account, cites P-0037 (5.39 of 15 estimated; `out/requests/2026-11-28/r1/lab-a/001-005.json`). Verdict to be filed when they return.
+- Grant: proposal filed (`out/grants/2026-11-28/proposals/lab-a.json`, 16 bodies, mixed A/B/C at rest, T = 100). Round 2 vote and any award come later.
+
+## P-0037 review plan (round 1, 2026-11-28; written before the results)
+
+Paper: P-0037 (lab-keystone), A-A pair at rest, r0 in [3.5, 9], K(r)/r^2.5 through a 3.5-to-5 linear fill, predicted judged RMSE/L 0.007 (bar 0.021), "replicated" needs 3 cited in-domain runs within the bar.
+
+**What the paper leaves untested.** The 3.5-5 segment is a straight line between 18.285 (r = 3.5) and 17.834 (r = 5), measured at neither end of it. My own A-A replicates give K_fit about 18.2 at both 3.5 (`r2/001`, `r3/003`: 18.25, 18.18) and 4.5 (`r2/002`, `r3/004`: 18.20, 18.24). The linear fill at 4.5 is 17.98, so my fits sit about 1.3 per cent above the fill there. The P-0037 paper says that a fill and a flat hold at K(3.5) "differ by about 0.0005 of L" and are not separable by the judge. I agree on the judged metric. The 1.3 per cent is my per-run fit (chi2/dof about 1), not a judged error.
+
+**Design (filed).** Five pairs in domain, tracker, dt 0.02, each placed at least 0.01 inside the edge; duration chosen as the largest 0.25 step that P-0037's own `predict()` accepts (pair stays at least 2.5 apart):
+
+| id | r0 | orient | T | purpose |
+|---|---|---|---|---|
+| 001 | 3.51 | horiz | 1.00 | claim edge (3.5 side) |
+| 002 | 3.90 | diag | 1.25 | inside the linear-fill segment |
+| 003 | 4.25 | horiz | 1.50 | midpoint of the fill |
+| 004 | 4.75 | diag | 2.00 | upper fill, near 5 |
+| 005 | 8.98 | horiz | 4.00 | upper edge (9 side), longest window run |
+
+**Pre-registered reading (before results).**
+- **Replicated** if at least 3 of 001-005 have judged RMSE/L at most 0.021. This is the paper's own bar, and I expect it: the claim is loose enough that a 1 per cent K error does not reach it.
+- **Falsified** only if every cited run is above 0.021. I do not expect this, and a single run in the bar blocks it.
+- **Domain check:** all five are A at rest, N = 2, r0 in [3.5, 9] and within the chamber (generator asserts it). The paper's `predict()` returns a prediction for each, so none is a contact run. Do not cite a run that comes inside 2.5 (judge note above).
+- **What the review will and will not say.** It tests the bound at 3.5 to 9 and the window rule. It does not test the linear fill's shape, because the judge cannot resolve 1 per cent. The 1.3 per cent point above goes in the review comment as a note, not as a claim.
+- **Narrow proposal, if the results support one.** If 001-005 are inside the bar, I will propose no change to P-0037's table. I will note the 4.5 offset in my review comment and ask lab-keystone to say whether the fill was chosen or measured.
+
+**Pre-registered outcome for my own K (not a claim today).** A local K at 4.0 (linear fill 18.14, flat hold 18.29) differs by 0.8 per cent between the two shapes. No design here resolves that, and I will not file a claim on it.
+
+## Round 1 plan (2026-11-28)
+
+- Done: P-0037 review runs (5 requests, validated), grant proposal (16 bodies, validated), notebook updated.
+- Next (the session that receives `2026-11-28/r1/lab-a/*`):
+  1. Score 001-005 with the judged RMSE/L (against P-0037's `predict()`), relative to the bar 0.021. Script goes in `out/labs/lab-a/analysis/`.
+  2. File `out/reviews/P-0037/lab-a.json` with the verdict under the pre-registered reading, evidence ids from my lab only.
+  3. Keep the 40 research credits for round 2 or 3 on a result, not a probe. Check the grant outcome before spending any 120-credit award.
+
 ## Results scored
 
 Scored in round 2 with `out/labs/lab-a/analysis/score_round1_2026-11-25.py` (output `score_round1_2026-11-25.json`). Earlier scoring: `score_round3_2026-11-25.py` and `grant_check_2026-11-25.py` (round 3 and the fall check).

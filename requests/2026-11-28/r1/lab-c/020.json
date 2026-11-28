@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-28/r1/lab-c/020",
+  "lab": "lab-c",
+  "account": "review",
+  "purpose": "Review of P-0036, narrowing test (outside the claim's stated no-contact scope): A-B at r0 3.0, horizontal, T 2.0. Recorded as evidence for a narrowed domain, not as a bar test.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "B",
+        "pos": [
+          6.5,
+          5.0
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0036"
+}

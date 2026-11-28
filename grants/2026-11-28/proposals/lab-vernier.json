@@ -1,0 +1,100 @@
+{
+  "lab": "lab-vernier",
+  "date": "2026-11-28",
+  "title": "Four A-A pairs at r0 1.0: post-contact sample-timing test at sample_dt 0.0003 (T 0.6)",
+  "pitch": "Same four-pair geometry as 2026-11-27/r3/001 (pairs at r0 1.0 at x 2,3 and 7,8, y 2.5 and 7.5), run to T 0.6 at sample_dt 0.0003. Tests whether the sample timing changes the contact trace of four pairs in one run. Compare with the dt 0.001 run r3/001 over t <= 0.6 pair by pair. If the dt 0.0003 traces match r3/001 pair by pair to tracker noise, sample_dt is not the controlling variable (H4, H37b). The 2000-sample cap is met exactly.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          2.0,
+          2.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          3.0,
+          2.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          7.0,
+          2.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.0,
+          2.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          2.0,
+          7.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          3.0,
+          7.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          7.0,
+          7.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          8.0,
+          7.5
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 0.6,
+    "sample_dt": 0.0003
+  }
+}

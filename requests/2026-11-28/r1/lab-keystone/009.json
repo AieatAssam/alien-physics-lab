@@ -1,0 +1,38 @@
+{
+ "request_id": "2026-11-28/r1/lab-keystone/009",
+ "lab": "lab-keystone",
+ "account": "review",
+ "purpose": "Review of P-0036. A-C, separation 5.0 (upper edge), at the x = 2.0 wall margin: A at (2.0, 5.0), C at (7.0, 5.0), T=2. Both particles exactly 2.0 from the nearest wall (axis-aligned). Tracker.",
+ "setup": {
+  "particles": [
+   {
+    "species": "A",
+    "pos": [
+     2.0,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "C",
+    "pos": [
+     7.0,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 2.0,
+  "sample_dt": 0.01
+ },
+ "instruments": [
+  "tracker"
+ ],
+ "cites_paper": "P-0036"
+}

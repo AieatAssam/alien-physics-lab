@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-28/r1/lab-a/004",
+  "lab": "lab-a",
+  "account": "review",
+  "cites_paper": "P-0037",
+  "purpose": "Review of P-0037 (lab-keystone). Upper part of the 3.5-5 segment: diagonal, r0 4.75. Two A at rest, tracker, sample_dt 0.02.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.320621,
+          3.320621
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.679379,
+          6.679379
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 2.0,
+    "sample_dt": 0.02
+  },
+  "instruments": [
+    "tracker"
+  ]
+}

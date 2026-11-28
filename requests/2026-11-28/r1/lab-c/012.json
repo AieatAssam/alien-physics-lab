@@ -1,0 +1,38 @@
+{
+  "request_id": "2026-11-28/r1/lab-c/012",
+  "lab": "lab-c",
+  "account": "review",
+  "purpose": "Review of P-0037 mid-band (3.5 to 5 segment, not measured directly): A-A at r0 4.5, diagonal, T 1.2.",
+  "setup": {
+    "particles": [
+      {
+        "species": "A",
+        "pos": [
+          3.409009742330268,
+          3.409009742330268
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "species": "A",
+        "pos": [
+          6.590990257669732,
+          6.590990257669732
+        ],
+        "vel": [
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "duration": 1.2,
+    "sample_dt": 0.001
+  },
+  "instruments": [
+    "tracker"
+  ],
+  "cites_paper": "P-0037"
+}

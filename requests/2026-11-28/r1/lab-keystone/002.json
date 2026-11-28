@@ -1,0 +1,37 @@
+{
+ "request_id": "2026-11-28/r1/lab-keystone/002",
+ "lab": "lab-keystone",
+ "account": "research",
+ "purpose": "Research: A-A pair at rest, separation 3.5, diagonal, centred, T=1. Second flat-clamp point at r=3.5 (diagonal, so the axis-exact-edge issue does not arise). Tracker.",
+ "setup": {
+  "particles": [
+   {
+    "species": "A",
+    "pos": [
+     3.7625631329235416,
+     3.7625631329235416
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "A",
+    "pos": [
+     6.237436867076458,
+     6.237436867076458
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 1.0,
+  "sample_dt": 0.01
+ },
+ "instruments": [
+  "tracker"
+ ]
+}

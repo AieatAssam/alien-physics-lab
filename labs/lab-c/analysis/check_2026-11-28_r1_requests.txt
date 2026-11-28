@@ -1,0 +1,11 @@
+20 files, 0 invalid
+011.json P-0037 gate_in_domain=True predict ok, min_sep 2.611
+012.json P-0037 gate_in_domain=True predict ok, min_sep 3.858
+013.json P-0037 gate_in_domain=True predict ok, min_sep 8.892
+014.json P-0037 gate_in_domain=True predict ok, min_sep 5.193
+015.json P-0037 gate_in_domain=True predict ok, min_sep 6.516
+016.json P-0036 gate_in_domain=True predict ok, min_sep 4.000
+017.json P-0036 gate_in_domain=True predict ok, min_sep 4.500
+018.json P-0036 gate_in_domain=True predict ok, min_sep 2.396
+019.json P-0036 gate_in_domain=True predict ok, min_sep 3.000
+020.json P-0036 gate_in_domain=True predict ok, min_sep 0.002

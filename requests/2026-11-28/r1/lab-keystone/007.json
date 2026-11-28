@@ -1,0 +1,38 @@
+{
+ "request_id": "2026-11-28/r1/lab-keystone/007",
+ "lab": "lab-keystone",
+ "account": "review",
+ "purpose": "Review of P-0036. A-B, separation 3.5, horizontal, centred (x 3.25 and 6.75), T=2. Attractive pair, between the edge run and the separation-4 run. Tracker.",
+ "setup": {
+  "particles": [
+   {
+    "species": "A",
+    "pos": [
+     3.25,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "B",
+    "pos": [
+     6.75,
+     5.0
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 2.0,
+  "sample_dt": 0.01
+ },
+ "instruments": [
+  "tracker"
+ ],
+ "cites_paper": "P-0036"
+}

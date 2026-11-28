@@ -1,0 +1,88 @@
+{
+ "lab": "lab-keystone",
+ "date": "2026-11-28",
+ "filed_in": "round 1 (requests only; verdicts to be filed after results are read)",
+ "generator": "make_requests_2026-11-28.py",
+ "scoring": "judged RMSE/L of tracker positions vs model positions (review_error.py), model = P-0036 model.py for two-body runs; pairwise-sum extension (pairsum_2026_11_28.py) for the 4-body grant",
+ "noise_floor": "about 0.005 judged RMSE/L (tracker sigma 0.05 per coordinate, per notebook)",
+ "review_bar_P0036": "0.021 = 3 x predicted_error 0.007",
+ "predictions": [
+  {
+   "request": "2026-11-28/r1/lab-keystone/003",
+   "account": "review",
+   "setup": "A-B r0 4.0 horizontal T 2",
+   "prediction": "in domain, judged RMSE/L about 0.005 (pass)",
+   "falsifier": "above 0.021"
+  },
+  {
+   "request": "2026-11-28/r1/lab-keystone/004",
+   "account": "review",
+   "setup": "A-C r0 4.0 vertical T 2",
+   "prediction": "about 0.005 (pass)",
+   "falsifier": "above 0.021"
+  },
+  {
+   "request": "2026-11-28/r1/lab-keystone/005",
+   "account": "review",
+   "setup": "B-C r0 4.0 diagonal T 2",
+   "prediction": "about 0.005 (pass)",
+   "falsifier": "above 0.021"
+  },
+  {
+   "request": "2026-11-28/r1/lab-keystone/006",
+   "account": "review",
+   "setup": "A-B r0 3.0 horizontal T 2 (attractive, reaches contact in the model by t about 1.4)",
+   "prediction": "uncertain. The model passes through contact and its trajectory becomes unphysical after t about 1.5 (positions blow up before the walls reflect them). If the simulator has any contact behaviour different from the flat power-law pass-through, error is above 0.021. Fails the bar if the observed trajectory departs from the model after contact.",
+   "falsifier": "error above 0.021 means the claim's domain (initial r 3 to 5) does not hold for close-approach runs"
+  },
+  {
+   "request": "2026-11-28/r1/lab-keystone/007",
+   "account": "review",
+   "setup": "A-B r0 3.5 horizontal T 2 (attractive; model min separation 0.57 at T 2, so it also approaches contact)",
+   "prediction": "uncertain, same mechanism as 006 but later and milder. Model passes close to contact by t about 1.8. Expect pass if the simulator matches the power law down to r about 1; fail if the trajectory departs after t about 1.5",
+   "falsifier": "above 0.021"
+  },
+  {
+   "request": "2026-11-28/r1/lab-keystone/008",
+   "account": "review",
+   "setup": "B-C r0 3.0 vertical T 2 (repulsive)",
+   "prediction": "about 0.005 (pass)",
+   "falsifier": "above 0.021"
+  },
+  {
+   "request": "2026-11-28/r1/lab-keystone/009",
+   "account": "review",
+   "setup": "A-C r0 5.0 horizontal, A at x 2.0 (exact wall margin), T 2",
+   "prediction": "about 0.005 (pass)",
+   "falsifier": "above 0.021"
+  },
+  {
+   "request": "2026-11-28/r1/lab-keystone/010",
+   "account": "review",
+   "setup": "A-B r0 5.0 vertical T 2",
+   "prediction": "about 0.005 (pass)",
+   "falsifier": "above 0.021"
+  },
+  {
+   "request": "2026-11-28/r1/lab-keystone/001",
+   "account": "research",
+   "setup": "A-A r0 4.0 horizontal T 2",
+   "prediction": "scale s = 1 +/- 0.02 against P-0036 K table (flat below 5). Judged error about 0.005. If the true K at 4 is 2 to 3 percent above the flat value (P-0027 note), s = 1.02 to 1.03",
+   "falsifier": "|s - 1| > 0.05"
+  },
+  {
+   "request": "2026-11-28/r1/lab-keystone/002",
+   "account": "research",
+   "setup": "A-A r0 3.5 diagonal T 1",
+   "prediction": "scale s = 1 +/- 0.03 against the flat K",
+   "falsifier": "|s - 1| > 0.06"
+  },
+  {
+   "request": "grant: lab-keystone proposal",
+   "account": "grant (if awarded, round 3)",
+   "setup": "A-B-C-A square side 5, T 2",
+   "prediction": "pairwise-sum model with scale s = 1 +/- 0.02 (sensitivity: 5 percent K gives about 0.001 RMSE/L; scale fit is the test)",
+   "falsifier": "|s - 1| > 0.05 or a residual pattern by pair type"
+  }
+ ]
+}

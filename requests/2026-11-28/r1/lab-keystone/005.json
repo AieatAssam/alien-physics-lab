@@ -1,0 +1,38 @@
+{
+ "request_id": "2026-11-28/r1/lab-keystone/005",
+ "lab": "lab-keystone",
+ "account": "review",
+ "purpose": "Review of P-0036. B-C, separation 4.0, diagonal, centred, T=2. Repulsive pair, diagonal orientation at separation 4. Tracker.",
+ "setup": {
+  "particles": [
+   {
+    "species": "B",
+    "pos": [
+     3.585786437626905,
+     3.585786437626905
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "species": "C",
+    "pos": [
+     6.414213562373095,
+     6.414213562373095
+    ],
+    "vel": [
+     0.0,
+     0.0
+    ]
+   }
+  ],
+  "duration": 2.0,
+  "sample_dt": 0.01
+ },
+ "instruments": [
+  "tracker"
+ ],
+ "cites_paper": "P-0036"
+}
